@@ -985,38 +985,40 @@
     </div>
 
     <!-- Contact Page -->
-    <div id="contact-page" class="page">
+     <div id="contact-page" class="page">
         <section class="tool-header">
             <div class="container">
                 <h2>Contact Us</h2>
-                <p>Have questions or feedback? We'd love to hear from you!</p>
+                <p>Have questions or feedback? We'd love to hear from you.</p>
             </div>
         </section>
 
         <div class="container">
             <div class="tool-container">
-                <div class="upload-area">
-                    <div class="upload-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Get In Touch</h3>
-                    <p>We're always looking to improve our tools and add new features based on user feedback. Don't hesitate to reach out with suggestions or issues.</p>
-                    <div style="text-align: left; margin-top: 20px;">
-                        <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> support@toolkitpro.com</p>
-                        <p><i class="fas fa-globe" style="color: var(--primary); margin-right: 10px;"></i> www.toolkitpro.com</p>
-                    </div>
+                <div class="controls">
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="control-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Name</label>
+                            <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                        </div>
+                        <div class="control-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Email</label>
+                            <input type="email" placeholder="your@email.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                        </div>
+                        <div class="control-group">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Message</label>
+                            <textarea rows="5" placeholder="How can we help?" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
 
-                <div class="controls">
-                    <div class="control-group">
-                        <h3><i class="fas fa-paper-plane control-icon"></i> Send us a Message</h3>
-                        <form style="display: flex; flex-direction: column; gap: 15px;">
-                            <input type="text" placeholder="Your Name" style="padding: 12px; border: 2px solid #e9ecef; border-radius: var(--radius); font-size: 1rem;">
-                            <input type="email" placeholder="Your Email" style="padding: 12px; border: 2px solid #e9ecef; border-radius: var(--radius); font-size: 1rem;">
-                            <textarea placeholder="Your Message" rows="5" style="padding: 12px; border: 2px solid #e9ecef; border-radius: var(--radius); font-size: 1rem; resize: vertical;"></textarea>
-                            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
-                        </form>
-                    </div>
+                <div class="upload-area" style="cursor: default; border: none;">
+                    <div class="upload-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Mandi Bahauddin, Punjab, Pakistan</p>
+                    <div class="upload-icon" style="font-size: 2rem; margin-top: 20px;"><i class="fas fa-user-circle"></i></div>
+                    <p>Developed by <strong>Shaheera Sadia</strong></p>
                 </div>
             </div>
         </div>
@@ -1028,42 +1030,26 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>ToolKit Pro</h3>
-                    <p>Your all-in-one solution for image and PDF processing needs. Fast, secure, and completely free.</p>
+                    <p style="color: #adb5bd;">Professional grade web tools, built for speed and privacy. 100% browser-based processing.</p>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>Image Tools</h3>
+                    <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#" onclick="navigateTo('home')"><i class="fas fa-compress-arrows-alt"></i> Image Compressor</a></li>
-                        <li><a href="#"><i class="fas fa-exchange-alt"></i> Image Converter</a></li>
-                        <li><a href="#"><i class="fas fa-expand-arrows-alt"></i> Image Resizer</a></li>
-                        <li><a href="#"><i class="fas fa-eraser"></i> Background Remover</a></li>
+                        <li><a href="#" onclick="navigateTo('home')">Image Compressor</a></li>
+                        <li><a href="#" onclick="navigateTo('image-tools')">All Image Tools</a></li>
+                        <li><a href="#" onclick="navigateTo('pdf-tools')">PDF Tools</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>PDF Tools</h3>
+                    <h3>Developer</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> PDF Compressor</a></li>
-                        <li><a href="#"><i class="fas fa-file-image"></i> PDF to JPG</a></li>
-                        <li><a href="#"><i class="fas fa-object-group"></i> PDF Merger</a></li>
-                        <li><a href="#"><i class="fas fa-cut"></i> PDF Splitter</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#" onclick="navigateTo('about')"><i class="fas fa-info-circle"></i> About Us</a></li>
-                        <li><a href="#" onclick="navigateTo('contact')"><i class="fas fa-envelope"></i> Contact</a></li>
-                        <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
-                        <li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                        <li><a href="https://github.com/shaheerasadia" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="copyright">
-                <p>&copy; 2023 ToolKit Pro. All rights reserved.</p>
+                &copy; 2026 ToolKit Pro | Designed & Developed by <strong>Shaheera Sadia</strong>
             </div>
         </div>
     </footer>
