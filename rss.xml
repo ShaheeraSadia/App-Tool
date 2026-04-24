@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>With Sadia | Tech Tools & Decor</title>
+    <link>https://app-tool.vercel.app/</link>
+    <description>Latest web tools and home decor inspiration by Shaheera Sadia</description>
+    <language>en-us</language>
+    <item>
+      <title>Image Compressor Pro</title>
+      <link>https://app-tool.vercel.app/</link>
+      <description>Fast and free tool to optimize your images.</description>
+    </item>
+  </channel>
+</rss>
