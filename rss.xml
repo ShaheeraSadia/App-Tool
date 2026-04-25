@@ -1,14 +1,27 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+ <?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ToolKit Pro | With Sadia</title>
-  <link>https://app-tool.vercel.app/</link>
-    <description>Latest web tools and aesthetic decor inspiration</description>
+    <title>ToolKit Pro | Developed by Shaheera Sadia</title>
+    <link>https://app-tool.vercel.app/</link>
+    <description>Professional image optimization tools and aesthetic design resources for digital creators.</description>
     <language>en-us</language>
+    <lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0500</lastBuildDate>
+    <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>Image Compressor Pro</title>
-     <link>https://app-tool.vercel.app/</link>
-      <description>Optimize your images instantly for free.</description>
+      <link>https://app-tool.vercel.app/</link>
+      <description>Optimize and compress your images instantly for free without losing quality. Perfect for Pinterest and web developers.</description>
+      <category>Web Tools</category>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0500</pubDate>
+    </item>
+
+    <item>
+      <title>Color Palette Extractor</title>
+      <link>https://app-tool.vercel.app/</link>
+      <description>Extract beautiful aesthetic color schemes from any image for your next design project or Pinterest pin.</description>
+      <category>Design Tools</category>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0500</pubDate>
     </item>
   </channel>
-</rss> 
+</rss>
