@@ -1,12 +1,10 @@
  
 import CurrencyConverter from './CurrencyConverter.jsx';
-function App() {
+ function App() {
   return (
-    <div className="App"> 
-      
-      <CurrencyConverter />
-      
-    
+    <div className="App">
+       <CurrencyConverter />
+     
     </div>
   );
 }
