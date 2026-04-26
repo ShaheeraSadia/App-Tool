@@ -1,5 +1,5 @@
-import CurrencyConverter from './CurrencyConverter';
-
+ 
+import CurrencyConverter from './CurrencyConverter.jsx';
 function App() {
   return (
     <div className="App"> 
