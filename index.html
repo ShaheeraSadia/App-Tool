@@ -235,31 +235,37 @@
             &copy; 2026 Developed by <strong>Shaheera Sadia</strong> | Mandi Bahauddin, Punjab, Pakistan
         </div>
     </footer>
-<script>
-    
+ <script>
     const compressorInput = document.getElementById('compressorInput');
+    
+    // جہاں تصویر نظر آئے گی اس کے لیے ایک جگہ بنانا
+    const toolContainer = document.querySelector('.tool-container');
+    const previewDiv = document.createElement('div');
+    previewDiv.id = 'imagePreview';
+    previewDiv.style.marginTop = '20px';
+    toolContainer.appendChild(previewDiv);
+
     compressorInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
+        
         if (file) {
-            alert('Image "' + file.name + '" selected! Logic for compression goes here.');
-            
-        }
-    });
-
-    // 2. Color Palette Extractor Logic
-    const paletteInput = document.getElementById('paletteInput');
-    const paletteResult = document.getElementById('paletteResult');
-
-    paletteInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
+             
             const reader = new FileReader();
+            
             reader.onload = function(event) {
-                 paletteResult.innerHTML = '<img src="' + event.target.result + '" style="max-width:200px; border-radius:10px; margin-bottom:10px;">';
-                paletteResult.innerHTML += '<p style="width:100%; color:#555;">Extracting colors...</p>';
                 
-                
+                previewDiv.innerHTML = `
+                    <div style="padding: 20px; border: 1px solid #eee; border-radius: 15px;">
+                        <p style="color: #2d3436; font-weight: bold;">Selected Image:</p>
+                        <img src="${event.target.result}" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <p style="font-size: 0.8rem; color: #636e72; margin-top: 10px;">
+                            Name: ${file.name} | Size: ${(file.size / 1024).toFixed(2)} KB
+                        </p>
+                        <button class="btn btn-primary" style="margin-top:10px; background: #00b894;">Download Compressed Version</button>
+                    </div>
+                `;
             };
+            
             reader.readAsDataURL(file);
         }
     });
