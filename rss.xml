@@ -17,22 +17,34 @@
       <description>Fast and free image compression tool. Perfect for Pinterest creators and web developers.</description>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
       <media:content url="https://app-tool.vercel.app/image-compressor-preview.jpg" medium="image" />
+      <enclosure url="https://app-tool.vercel.app/image-compressor-preview.jpg" length="0" type="image/jpeg" />
     </item>
 
     <item>
       <title>The Ideal Fit - Compact Pizza Oven for Kitchen</title>
-      <link>https://amzn.to/3QOfkmo</link>
+      <link>https://app-tool.vercel.app/products/pizza-oven</link>
       <description>Check out this sleek, powerful pizza oven that fits perfectly on your countertop.</description>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
       <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image" />
+      <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
     </item>
 
     <item>
       <title>Galaxy Glass Rose - Eternal Gift for Mom</title>
-      <link>https://amzn.to/4w5w2hw</link>
+      <link>https://app-tool.vercel.app/products/galaxy-rose</link>
       <description>Beautiful eternal crystal rose with butterfly - a perfect Mother's Day gift.</description>
       <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
       <media:content url="https://m.media-amazon.com/images/I/71V2x-E0ZGL._AC_SL1500_.jpg" medium="image" />
+      <enclosure url="https://m.media-amazon.com/images/I/71V2x-E0ZGL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
+    </item>
+
+    <item>
+      <title>Sakura Essence Skincare Gift Set - Self-Care Kit</title>
+      <link>https://app-tool.vercel.app/products/sakura-skin</link>
+      <description>Luxurious Sakura skincare set with collagen eye masks and hand cream.</description>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
+      <media:content url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" medium="image" />
+      <enclosure url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" length="0" type="image/jpeg" />
     </item>
 
   </channel>
