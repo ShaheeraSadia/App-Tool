@@ -46,6 +46,13 @@
       <media:content url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" medium="image" />
       <enclosure url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" length="0" type="image/jpeg" />
     </item>
-
+<item>
+  <title>Minimalist Industrial Table Lamp - Aesthetic Home Decor</title>
+  <link>https://app-tool.vercel.app/products/industrial-lamp</link>
+  <description>Upgrade your room with this vintage-style industrial lamp. Perfect for bedside tables, offices, or creating a warm sunset vibe in your bedroom. Minimalist design with a cozy glow.</description>
+  <pubDate>Thu, 30 Apr 2026 13:00:00 +0500</pubDate>
+  <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image"/>
+  <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+</item>
   </channel>
 </rss>
