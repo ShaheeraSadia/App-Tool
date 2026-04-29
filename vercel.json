@@ -1,23 +1,23 @@
-{
+ {
   "redirects": [
     {
       "source": "/products/pizza-oven",
-      "destination": "https://amzn.to/3QOfkmo",
+      "destination": "https://amzn.to/3W9YgXz",
       "permanent": true
     },
     {
       "source": "/products/galaxy-rose",
-      "destination": "https://amzn.to/4w5w2hw",
+      "destination": "https://amzn.to/4bc9vL7",
       "permanent": true
     },
     {
       "source": "/products/sakura-skin",
-      "destination": "https://amzn.to/4cKXQi0",
+      "destination": "https://amzn.to/3Wb1kH9",
       "permanent": true
     },
     {
-      "source": "/products/mom-necklace",
-      "destination": "https://amzn.to/4w0L3Rx",
+      "source": "/products/industrial-lamp",
+      "destination": "https://amzn.to/4tIYtjJ",
       "permanent": true
     }
   ]
