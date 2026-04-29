@@ -11,14 +11,14 @@
     <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0500</lastBuildDate>
     <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
 
-    <item>
-      <title>Image Compressor Pro - Optimize for Pinterest</title>
-      <link>https://app-tool.vercel.app/</link>
-      <description>Fast and free image compression tool. Perfect for Pinterest creators and web developers.</description>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
-      <media:content url="https://app-tool.vercel.app/image-compressor-preview.jpg" medium="image" />
-      <enclosure url="https://app-tool.vercel.app/image-compressor-preview.jpg" length="0" type="image/jpeg" />
-    </item>
+     <item>
+  <title>The Ideal Fit - Compact Pizza Oven</title>
+  <link>https://app-tool.vercel.app/products/pizza-oven</link>
+  <description>Check out this sleek, powerful pizza oven that fits perfectly on your countertop.</description>
+  <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
+  <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image" />
+  <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
+</item>
 
     <item>
       <title>The Ideal Fit - Compact Pizza Oven for Kitchen</title>
