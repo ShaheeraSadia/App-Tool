@@ -19,6 +19,11 @@
       "source": "/products/industrial-lamp",
       "destination": "https://amzn.to/4tIYtjJ",
       "permanent": true
+    },
+    {
+      "source": "/products/eternal-rose-gift",
+      "destination": "https://amzn.to/4tIYtjJ",
+      "permanent": true
     }
   ]
 }
