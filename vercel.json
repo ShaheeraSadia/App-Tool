@@ -39,6 +39,11 @@
       "source": "/products/honey-almond-gift",
       "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
-    }
+    },
+   {
+  "source": "/products/floral-maxi-dress",
+  "destination": "https://amzn.to/426S3P3",
+  "permanent": true
+}
   ]
 }
