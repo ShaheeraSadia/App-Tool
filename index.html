@@ -674,21 +674,33 @@
         </section>
 
     </main>
-<!-- About Developer Section -->
+ <!-- About Developer Section -->
 <section id="about-dev" class="about-section">
     <div class="container">
         <div class="about-card">
             <div class="dev-info">
-                <div class="badge">Developer Profile</div>
+                <div class="badge">Professional Developer</div>
                 <h2>Shaheera Sadia</h2>
                 <p class="role">Web & Mobile Application Developer</p>
                 <p class="bio">
-                    میں ایک پرجوش ڈویلپر ہوں جو جدید ویب ٹیکنالوجیز جیسے <strong>React</strong> کے ذریعے پیچیدہ مسائل کے سادہ اور خوبصورت حل تلاش کرنے میں مہارت رکھتی ہوں۔ 
-                    <strong>Toolkit Pro</strong> میرا ایک ایسا ہی پروجیکٹ ہے جس کا مقصد ڈیزائنرز اور ڈویلپرز کے کام کو آسان بنانا ہے۔
+                    I am a passionate developer specializing in creating simple and elegant solutions to complex problems using modern web technologies like <strong>React</strong>. 
+                    <strong>Toolkit Pro</strong> is one of my key projects, designed to streamline the workflow for designers and developers by providing fast and efficient digital tools.
                 </p>
+                
                 <div class="skills-tags">
                     <span>React</span> <span>Vercel</span> <span>UI/UX</span> <span>Mobile Apps</span>
                 </div>
+
+                <!-- Action Buttons -->
+                <div class="cta-buttons">
+                    <a href="mailto:your-email@example.com" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                    <a href="https://your-portfolio.vercel.app" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-external-link-alt"></i> View Portfolio
+                    </a>
+                </div>
+
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i> Mandi Bahauddin, Punjab, Pakistan
                 </div>
@@ -698,52 +710,125 @@
 </section>
 
 <style>
+    :root {
+        --primary-glow: #00ff88;
+        --secondary-glow: #ff00ea;
+        --card-bg: rgba(255, 255, 255, 0.03);
+    }
+
     .about-section {
-        padding: 60px 20px;
-        background: rgba(255, 255, 255, 0.02);
+        padding: 80px 20px;
+        background: radial-gradient(circle at top right, rgba(0, 255, 136, 0.05), transparent),
+                    radial-gradient(circle at bottom left, rgba(255, 0, 234, 0.05), transparent);
     }
+
     .about-card {
-        max-width: 800px;
+        max-width: 850px;
         margin: 0 auto;
-        background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 24px;
-        padding: 40px;
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
+        padding: 50px 30px;
         text-align: center;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
     }
+
+    .about-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 255, 136, 0.2);
+    }
+
     .badge {
         display: inline-block;
-        padding: 5px 15px;
-        background: #ff00ea22;
-        color: #ff00ea;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-    .role {
-        color: #00ff88;
-        font-weight: 600;
+        padding: 6px 18px;
+        background: rgba(0, 255, 136, 0.1);
+        color: var(--primary-glow);
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 700;
         margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
-    .bio {
-        line-height: 1.8;
-        color: #ccc;
+
+    .role {
+        color: var(--primary-glow);
+        font-size: 1.2rem;
+        font-weight: 600;
         margin-bottom: 25px;
     }
+
+    .bio {
+        line-height: 1.9;
+        color: #b0b0b0;
+        max-width: 700px;
+        margin: 0 auto 30px;
+    }
+
     .skills-tags span {
         display: inline-block;
-        background: rgba(255,255,255,0.1);
-        padding: 5px 12px;
-        border-radius: 8px;
-        margin: 5px;
-        font-size: 0.85rem;
-    }
-    .location {
-        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 6px 15px;
+        border-radius: 12px;
+        margin: 6px;
         font-size: 0.9rem;
-        color: #888;
+        color: #eee;
+        transition: all 0.3s;
+    }
+
+    .skills-tags span:hover {
+        background: var(--primary-glow);
+        color: #000;
+        transform: scale(1.1);
+    }
+
+    /* CTA Buttons CSS */
+    .cta-buttons {
+        margin-top: 35px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .btn-primary {
+        background: var(--primary-glow);
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        transform: scale(1.05);
+    }
+
+    .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #fff;
+    }
+
+    .location {
+        margin-top: 30px;
+        font-size: 0.95rem;
+        color: #666;
     }
 </style>
     <footer>
