@@ -739,16 +739,7 @@
             &copy; 2026 Developed by <strong>Shaheera Sadia</strong> | Mandi Bahauddin, Punjab, Pakistan
         </div>
     </footer>
-
-    <script>
-     // =============================================
-     // =============================================
-    const BRAND_NAME = "Toolkit Pro"; 
-
-    // =============================================
-    // IMAGE COMPRESSOR - FULLY FIXED & WORKING
-    // =============================================
-    const uploadArea = document.getElementById('uploadArea');
+     <script>
         // =============================================
         // IMAGE COMPRESSOR - FULLY FIXED & WORKING
         // =============================================
@@ -919,33 +910,31 @@
                 }, mimeType, quality);
             }, 800);
         }
-function downloadImage() {
-    if (!compressedImageBlob) return;
-    const url = URL.createObjectURL(compressedImageBlob);
-    const a = document.createElement('a');
-    a.href = url;
 
-    const originalName = originalFile ? originalFile.name : 'image';
-    const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
-    const formatRadio = document.querySelector('input[name="format"]:checked');
-    const format = formatRadio ? formatRadio.value : 'original';
+        function downloadImage() {
+            if (!compressedImageBlob) return;
+            const url = URL.createObjectURL(compressedImageBlob);
+            const a = document.createElement('a');
+            a.href = url;
 
-    let extension = '.jpg';
-    if (format === 'png') extension = '.png';
-    else if (format === 'webp') extension = '.webp';
-    else if (format === 'original' && originalFile) {
-        extension = originalFile.name.substring(originalFile.name.lastIndexOf('.'));
-    }
+            const originalName = originalFile ? originalFile.name : 'image';
+            const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
+            const formatRadio = document.querySelector('input[name="format"]:checked');
+            const format = formatRadio ? formatRadio.value : 'original';
 
-    //  BRAND_NAME     
-    a.download = `${BRAND_NAME}-${nameWithoutExt}-compressed${extension}`;
-    
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-      
+            let extension = '.jpg';
+            if (format === 'png') extension = '.png';
+            else if (format === 'webp') extension = '.webp';
+            else if (format === 'original' && originalFile) {
+                extension = originalFile.name.substring(originalFile.name.lastIndexOf('.'));
+            }
+
+            a.download = `${nameWithoutExt}-compressed${extension}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
 
         function resetTool() {
             fileInput.value = '';
@@ -1134,6 +1123,7 @@ function downloadImage() {
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
         });
-    </script>
+    </script>   
 </body>
+    
 </html>
