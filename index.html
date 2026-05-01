@@ -152,6 +152,7 @@
         /* Mobile nav handled above */
     </style>
 </head>
+ 
 <body>
 
     <nav>
@@ -406,7 +407,11 @@
                     </button>
                 </div>
             </div>
+<!-- Currency Converter Section -->
+<div id="currency-converter-root" style="margin-bottom: 40px;"></div>
 
+<!-- Recommendations Section -->
+<div id="recommendations-root" style="margin-bottom: 40px;"></div>
             <!-- Empty State hint -->
             <div id="paletteHint" style="text-align:center; margin-top:10px;">
                 <p style="color:rgba(255,255,255,0.25); font-size:0.8rem;">💡 Great for Pinterest boards, brand kits & social media aesthetics</p>
@@ -1149,7 +1154,17 @@
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
         });
-    </script>   
+    </script>  
+ <!-- React اور Babel (اگر آپ JSX براہ راست براؤزر میں چلا رہی ہیں) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- آپ کی اپنی فائلیں -->
+    <script src="Recommendations.js"></script>
+    <script type="text/babel" src="CurrencyConverter.jsx"></script>
+
+ 
 </body>
     
 </html>
