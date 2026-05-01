@@ -1,4 +1,4 @@
- import React, { useState, useEffect } from 'react';
+ const { useState, useEffect } = React;
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState(1);
@@ -101,5 +101,4 @@ const CurrencyConverter = () => {
     </div>
   );
 };
-
-export default CurrencyConverter;
+ 
