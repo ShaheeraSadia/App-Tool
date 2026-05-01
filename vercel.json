@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/products/family-airfryer",
+      "destination": "/product.html"
+    },
+    {
+      "source": "/products/skin-care-gift-set",
+      "destination": "/product.html"
+    },
+    {
       "source": "/products/pizza-oven",
       "destination": "/product.html"
     },
@@ -21,10 +29,6 @@
       "destination": "/product.html"
     },
     {
-      "source": "/products/family-airfryer",
-      "destination": "/product.html"
-    },
-    {
       "source": "/products/dual-air-fryer",
       "destination": "/product.html"
     },
@@ -34,10 +38,6 @@
     },
     {
       "source": "/products/floral-maxi-dress",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/skin-care-gift-set",
       "destination": "/product.html"
     }
   ]
