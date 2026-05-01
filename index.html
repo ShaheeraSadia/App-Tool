@@ -411,11 +411,7 @@
                     </button>
                 </div>
             </div>
-<!-- Currency Converter Section -->
-<div id="currency-converter-root" style="margin-bottom: 100px;"></div>
-
-<!-- Recommendations Section -->
-<div id="recommendations-root" style="margin-bottom: 100px;"></div>
+ 
             <!-- Empty State hint -->
             <div id="paletteHint" style="text-align:center; margin-top:10px;">
                 <p style="color:rgba(255,255,255,0.25); font-size:0.8rem;">💡 Great for Pinterest boards, brand kits & social media aesthetics</p>
@@ -429,6 +425,8 @@
             <p>MONTHLY VIEWS ON PINTEREST</p>
             <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="btn" style="background:white; color:var(--pinterest-red); margin-top:20px;">Follow Shaheera</a>
         </section>
+      <div id="currency-converter-root" style="min-height: 400px; width: 100%; margin: 20px 0;"></div>
+<div id="recommendations-root" style="min-height: 400px; width: 100%; margin: 20px 0;"></div>
 <!-- Middle Section: Google Ad Slot -->
 <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 1100px; padding: 0 20px;">
     <p style="color: rgba(255,255,255,0.3); font-size: 11px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Advertisement</p>
@@ -1158,34 +1156,35 @@
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
         });
-    </script>  
- <!-- React اور Babel (اگر آپ JSX براہ راست براؤزر میں چلا رہی ہیں) -->
+ <!-- 1. پہلے React اور Babel لائبریریز (سب سے پہلے) -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- آپ کی اپنی فائلیں -->
-    <script src="Recommendations.js"></script>
+    <!-- 2. پھر آپ کی اپنی فائلیں (ان کے بعد) -->
+    <script type="text/babel" src="Recommendations.js"></script>
     <script type="text/babel" src="CurrencyConverter.jsx"></script>
- <script type="text/babel">
-  // Currency Converter کو رینڈر کریں
-  const converterRoot = ReactDOM.createRoot(document.getElementById('currency-converter-root'));
-  converterRoot.render(<CurrencyConverter />);
 
-  // Recommendations کو رینڈر کریں
-  const recsRoot = ReactDOM.createRoot(document.getElementById('recommendations-root'));
-  recsRoot.render(<Recommendations />);
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered!'))
-        .catch(err => console.log('Service Worker failed:', err));
-    });
-  }
-</script>
- 
+    <!-- 3. آخر میں رینڈر کرنے والا اسکرپٹ (سب سے آخر میں) -->
+    <script type="text/babel">
+        // رینڈر کرنے کا عمل یہاں ہوگا
+        const converterRoot = ReactDOM.createRoot(document.getElementById('currency-converter-root'));
+        converterRoot.render(<CurrencyConverter />);
+
+        const recsRoot = ReactDOM.createRoot(document.getElementById('recommendations-root'));
+        recsRoot.render(<Recommendations />);
+    </script>
+
+    <!-- 4. سروس ورکر -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('Service Worker registered!'))
+                    .catch(err => console.log('Service Worker failed:', err));
+            });
+        }
+    </script>
 </body>
     
 </html>
