@@ -1,44 +1,8 @@
-{
+ {
   "rewrites": [
     {
-      "source": "/products/family-airfryer",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/skin-care-gift-set",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/pizza-oven",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/galaxy-rose",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/sakura-skin",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/industrial-lamp",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/mom-necklace",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/dual-air-fryer",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/honey-almond-gift",
-      "destination": "/product.html"
-    },
-    {
-      "source": "/products/floral-maxi-dress",
+      "source": "/products/:path*",
       "destination": "/product.html"
     }
   ]
-} 
+}
