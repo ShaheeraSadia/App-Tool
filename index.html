@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="/manifest.json">
-  <a href="/products/" style="color: #ff85a2; font-weight: bold;">✨ Best Deals</a>
+ 
     <!-- Primary Meta Tags -->
     <title>ToolKit Pro | Creative Suite & Aesthetic Essentials</title>
     <meta name="title" content="ToolKit Pro | Creative Suite & Aesthetic Essentials">
@@ -572,14 +572,7 @@
                 </div>
 
             </div>
-         <!-- Shopping Section -->
-<section style="margin: 50px 20px; padding: 40px; background: #1a1a1a; border-radius: 20px; text-align: center; border: 1px solid #ff85a2;">
-    <h2 style="color: #ff85a2;">Love our Aesthetic?</h2>
-    <p style="color: #ccc;">Explore our curated collection of premium gifts.</p>
-    <a href="/products/skin-care-gift-set" style="display: inline-block; background: #ff85a2; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold;">
-        🛒 Click here for shopping
-    </a>
-</section>
+        
 
                 @media (max-width: 900px) {
                     #aesthetic-lifestyle .cards-grid { grid-template-columns: repeat(2,1fr) !important; }
@@ -1165,35 +1158,7 @@
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainNav').classList.toggle('active');
         });
- <!-- 1. پہلے React اور Babel لائبریریز (سب سے پہلے) -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- 2. پھر آپ کی اپنی فائلیں (ان کے بعد) -->
-    <script type="text/babel" src="Recommendations.js"></script>
-    <script type="text/babel" src="CurrencyConverter.jsx"></script>
-
-    <!-- 3. آخر میں رینڈر کرنے والا اسکرپٹ (سب سے آخر میں) -->
-    <script type="text/babel">
-        // رینڈر کرنے کا عمل یہاں ہوگا
-        const converterRoot = ReactDOM.createRoot(document.getElementById('currency-converter-root'));
-        converterRoot.render(<CurrencyConverter />);
-
-        const recsRoot = ReactDOM.createRoot(document.getElementById('recommendations-root'));
-        recsRoot.render(<Recommendations />);
-    </script>
-
-    <!-- 4. سروس ورکر -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log('Service Worker registered!'))
-                    .catch(err => console.log('Service Worker failed:', err));
-            });
-        }
-    </script>
+ 
 </body>
     
 </html>
