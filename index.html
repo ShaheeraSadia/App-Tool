@@ -1167,6 +1167,15 @@
     <!-- آپ کی اپنی فائلیں -->
     <script src="Recommendations.js"></script>
     <script type="text/babel" src="CurrencyConverter.jsx"></script>
+ <script type="text/babel">
+  // Currency Converter کو رینڈر کریں
+  const converterRoot = ReactDOM.createRoot(document.getElementById('currency-converter-root'));
+  converterRoot.render(<CurrencyConverter />);
+
+  // Recommendations کو رینڈر کریں
+  const recsRoot = ReactDOM.createRoot(document.getElementById('recommendations-root'));
+  recsRoot.render(<Recommendations />);
+</script>
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
