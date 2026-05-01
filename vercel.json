@@ -1,56 +1,41 @@
  
  
-{
-  "redirects": [
-    {
-      "source": "/products/pizza-oven",
-      "destination": "https://amzn.to/3W9YgXz",
-      "permanent": true
-    },
-    {
-      "source": "/products/galaxy-rose",
-      "destination": "https://amzn.to/4bc9vL7",
-      "permanent": true
-    },
-    {
-      "source": "/products/sakura-skin",
-      "destination": "https://amzn.to/3Wb1kH9",
-      "permanent": true
-    },
-    {
-      "source": "/products/industrial-lamp",
-      "destination": "https://amzn.to/4tIYtjJ",
-      "permanent": true
-    },
-    {
-      "source": "/products/mom-necklace",
-      "destination": "https://amzn.to/4vXHYSb",
-      "permanent": true
-    },
-    {
-      "source": "/products/family-airfryer",
-      "destination": "https://amzn.to/3OCJecN",
-      "permanent": true
-    },
-    {
-      "source": "/products/dual-air-fryer",
-      "destination": "https://amzn.to/4cTUBVP",
-      "permanent": true
-    },
-    {
-      "source": "/products/honey-almond-gift",
-      "destination": "https://amzn.to/4tHhPWd",
-      "permanent": true
-    },
-    {
-      "source": "/products/floral-maxi-dress",
-      "destination": "https://amzn.to/426S3P3",
-      "permanent": true
-    },
-    {
-      "source": "/products/skin-care-gift-set",
-      "destination": "https://amzn.to/4vXwgqF",
-      "permanent": true
+<script>
+    const products = {
+        "galaxy-rose": {
+            title: "Eternal Galaxy Rose in Angel Glass Dome",
+            desc: "A stunning preserved real rose encased in a crystal-clear angel figurine. Features LED fairy lights for a magical, romantic atmosphere. Perfect for anniversaries, Valentine's Day, or home decor.",
+            link: "https://amzn.to/4cZ27yy", // آپ کا ایمیزون لنک
+            img: "https://m.media-amazon.com/images/I/71X8k+0X1TL._AC_SL1500_.jpg"
+        },
+        "skin-care-gift-set": {
+            title: "Luxury 56Pcs Skin Care Gift Set",
+            desc: "Give your skin the ultimate love it deserves! This 56-piece spa kit is perfect for an aesthetic self-care routine.",
+            link: "https://amzn.to/4vXwgqF",
+            img: "https://m.media-amazon.com/images/I/81A+Hj7Cq+L._SL1500_.jpg"
+        },
+        "pizza-oven": {
+            title: "Portable Outdoor Pizza Oven",
+            desc: "Cook professional wood-fired pizzas in 60 seconds. Lightweight and perfect for backyard parties.",
+            link: "https://amzn.to/3W9YgXz",
+            img: "https://m.media-amazon.com/images/I/71Y+Hk-yL+L._AC_SL1500_.jpg"
+        },
+        "family-airfryer": {
+            title: "Large Capacity Family Air Fryer",
+            desc: "Healthy frying with 90% less oil. Large enough to cook for the whole family at once.",
+            link: "https://amzn.to/3OCJecN",
+            img: "https://m.media-amazon.com/images/I/71fV9-X4HkL._AC_SL1500_.jpg"
+        }
+    };
+
+    // یو آر ایل سے پروڈکٹ کا نام حاصل کرنا
+    const path = window.location.pathname.split("/").pop();
+
+    if (products[path]) {
+        // پیج کے مواد کو اپ ڈیٹ کرنا
+        document.getElementById("main-title").innerText = products[path].title;
+        document.getElementById("main-desc").innerText = products[path].desc;
+        document.getElementById("main-link").href = products[path].link;
+        document.getElementById("main-img").src = products[path].img;
     }
-  ]
-}
+</script>
