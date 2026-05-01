@@ -1,4 +1,5 @@
- "redirects": [
+{
+  "redirects": [
     {
       "source": "/products/pizza-oven",
       "destination": "https://amzn.to/3W9YgXz",
@@ -49,9 +50,10 @@
       "destination": "https://amzn.to/4vXwgqF",
       "permanent": true
     },
+    {
+      "source": "/products/gold-necklace",
+      "destination": "https://amzn.to/4cZ27yy",
+      "permanent": true
+    }
   ]
 } 
- 
-
- 
- 
