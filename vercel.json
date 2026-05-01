@@ -1,7 +1,7 @@
  
  
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/products/pizza-oven",
       "destination": "https://amzn.to/3W9YgXz",
