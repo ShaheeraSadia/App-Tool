@@ -1,44 +1,44 @@
- {
+{
   "rewrites": [
     {
       "source": "/products/pizza-oven",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/galaxy-rose",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/sakura-skin",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/industrial-lamp",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/mom-necklace",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/family-airfryer",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/dual-air-fryer",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/honey-almond-gift",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/floral-maxi-dress",
-      "destination": "/products.html"
+      "destination": "/product.html"
     },
     {
       "source": "/products/skin-care-gift-set",
-      "destination": "/skin-care.html"
+      "destination": "/product.html"
     }
   ]
-}
+} 
