@@ -1,49 +1,44 @@
  {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/products/pizza-oven",
-      "destination": "https://amzn.to/3W9YgXz",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/galaxy-rose",
-      "destination": "https://amzn.to/4bc9vL7",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/sakura-skin",
-      "destination": "https://amzn.to/3Wb1kH9",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/industrial-lamp",
-      "destination": "https://amzn.to/4tIYtjJ",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/mom-necklace",
-      "destination": "https://amzn.to/4vXHYSb",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/family-airfryer",
-      "destination": "https://amzn.to/3OCJecN",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/dual-air-fryer",
-      "destination": "https://amzn.to/4cTUBVP",
-      "permanent": true
+      "destination": "/products.html"
     },
     {
       "source": "/products/honey-almond-gift",
-      "destination": "https://amzn.to/4tHhPWd",
-      "permanent": true
+      "destination": "/products.html"
     },
-   {
-  "source": "/products/floral-maxi-dress",
-  "destination": "https://amzn.to/426S3P3",
-  "permanent": true
-}
+    {
+      "source": "/products/floral-maxi-dress",
+      "destination": "/products.html"
+    },
+    {
+      "source": "/products/skin-care-gift-set",
+      "destination": "/skin-care.html"
+    }
   ]
 }
