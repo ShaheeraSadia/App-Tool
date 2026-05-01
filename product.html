@@ -1,72 +1,506 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Toolkit Pro</title>
-    <!-- AdMob Auto-Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-    <style>
-        body { background: #121212; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; text-align: center; }
-        .container { max-width: 850px; margin: auto; background: #1a1a1a; padding: 25px; border-radius: 15px; border: 1px solid #333; }
-        .ad-placeholder { background: #222; padding: 10px; border: 1px dashed #444; margin-bottom: 20px; min-height: 100px; }
-        .product-img { width: 100%; max-width: 400px; border-radius: 12px; margin-bottom: 20px; }
-        .amazon-btn { display: inline-block; background: #ff85a2; color: white; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 18px; transition: 0.3s; }
-        .amazon-btn:hover { background: #ff6085; transform: scale(1.05); }
-        .rec-row { display: flex; gap: 15px; overflow-x: auto; padding: 20px 0; scroll-behavior: smooth; }
-        .card { min-width: 160px; background: #252525; padding: 15px; border-radius: 10px; border: 1px solid #333; }
-        .card a { color: #ff85a2; text-decoration: none; font-size: 12px; border: 1px solid #ff85a2; padding: 4px 10px; border-radius: 5px; }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loading Product... | With Sadia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --card: #ffffff;
+      --border: #e8e4dd;
+      --accent: #c0392b;
+      --amazon: #FF9900;
+      --text: #1a1a1a;
+      --muted: #888;
+      --pin: #E60023;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--pin);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .topbar a { color: white; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: white;
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.2rem;
+      color: var(--pin); text-decoration: none;
+    }
+    .back-btn {
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      max-width: 960px; margin: 20px auto 0;
+      padding: 0 24px;
+      font-size: 0.78rem; color: var(--muted);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a { color: var(--pin); text-decoration: none; }
+
+    /* MAIN PRODUCT */
+    .product-wrap {
+      max-width: 960px; margin: 30px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* LEFT - IMAGE */
+    .img-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+    .img-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(230,0,35,0.04), transparent 60%);
+    }
+    #product-img {
+      width: 100%; max-height: 340px;
+      object-fit: contain;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn { from { opacity:0; transform: scale(0.97); } to { opacity:1; transform: scale(1); } }
+
+    .pin-source {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--pin); color: white;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 50px;
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    /* RIGHT - INFO */
+    .product-info { padding-top: 10px; }
+
+    .category-tag {
+      display: inline-block;
+      background: #fff3cd; color: #856404;
+      border: 1px solid #ffc107;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 50px;
+      margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    #product-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem; font-weight: 800;
+      line-height: 1.2; margin-bottom: 14px;
+    }
+
+    .stars {
+      color: var(--amazon); font-size: 1.1rem;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .stars span { color: var(--muted); font-size: 0.8rem; }
+
+    #product-desc {
+      color: #555; line-height: 1.7;
+      font-size: 0.92rem; margin-bottom: 20px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .features li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+      display: flex; align-items: center; gap: 10px;
+      color: #444;
+    }
+    .features li::before { content: '✓'; color: #27ae60; font-weight: 700; }
+
+    .price-box {
+      background: #fff8f0;
+      border: 2px solid var(--amazon);
+      border-radius: 16px; padding: 20px;
+      margin-bottom: 20px;
+    }
+    .price-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 4px; }
+    #product-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      color: var(--accent);
+    }
+    .prime-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 8px;
+      font-size: 0.75rem; color: #00539b; font-weight: 600;
+    }
+
+    .btn-amazon {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%;
+      background: var(--amazon);
+      color: #111; font-weight: 700; font-size: 1rem;
+      padding: 16px; border-radius: 14px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(255,153,0,0.3);
+      margin-bottom: 12px;
+    }
+    .btn-amazon:hover {
+      background: #e68a00;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,153,0,0.4);
+    }
+
+    .btn-save {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
+      background: var(--pin); color: white;
+      font-weight: 600; font-size: 0.9rem;
+      padding: 13px; border-radius: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-save:hover { background: #c0001e; }
+
+    .disclaimer {
+      font-size: 0.72rem; color: var(--muted);
+      margin-top: 14px; line-height: 1.5;
+    }
+
+    /* RELATED PRODUCTS */
+    .related-section {
+      max-width: 960px; margin: 50px auto 80px;
+      padding: 0 24px;
+    }
+    .related-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .related-sub { color: var(--muted); font-size: 0.82rem; margin-bottom: 20px; }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .rel-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      text-decoration: none; color: var(--text);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .rel-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+    .rel-img {
+      width: 100%; height: 130px;
+      background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .rel-img img { width:100%; height:100%; object-fit:contain; padding:8px; }
+    .rel-info { padding: 12px; }
+    .rel-name { font-size: 0.78rem; font-weight: 600; margin-bottom: 4px; line-height: 1.3; }
+    .rel-price { font-size: 0.82rem; color: var(--accent); font-weight: 700; }
+
+    footer {
+      background: #1a1a1a; color: #888;
+      text-align: center; padding: 30px;
+      font-size: 0.78rem;
+    }
+    footer a { color: var(--amazon); text-decoration: none; }
+
+    /* LOADING */
+    .loader {
+      position: fixed; inset: 0;
+      background: white;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.4s;
+    }
+    .loader.hidden { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid #eee;
+      border-top-color: var(--pin);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-bottom: 14px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 680px) {
+      .product-wrap { grid-template-columns: 1fr; gap: 24px; }
+      header { padding: 16px 20px; }
+      #product-title { font-size: 1.4rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Top Ad Mob Unit -->
-    <div class="ad-placeholder">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Product Display -->
-    <img id="display-img" src="https://m.media-amazon.com/images/I/81A+Hj7Cq+L._SL1500_.jpg" class="product-img">
-    <h1 id="display-title" style="color: #ff85a2;">Luxury Aesthetic Collection</h1>
-    <p id="display-desc" style="color: #ccc; line-height: 1.6;">High-quality aesthetic products curated by Toolkit Pro for your professional and creative needs.</p>
-    
-    <a href="https://amzn.to/4vXwgqF" id="display-link" target="_blank" class="amazon-btn">Shop Now on Amazon</a>
-
-    <!-- Recommendations -->
-    <h3 style="margin-top: 40px; color: #ff85a2; border-top: 1px solid #333; padding-top: 20px;">🌟 Recommended for You</h3>
-    <div class="rec-row" id="product-list">
-        <!-- Products will be listed here -->
-    </div>
-
-    <!-- Bottom Ad Mob Unit -->
-    <div class="ad-placeholder" style="margin-top: 30px;">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+<div class="loader" id="loader">
+  <div class="spinner"></div>
+  <div style="color:#888;font-size:0.85rem">Loading product...</div>
 </div>
 
+<div class="topbar">
+  📌 Discovered on Pinterest by <strong>With Sadia</strong> &nbsp;|&nbsp;
+  <a href="https://pinterest.com/shaheerasadia">Follow for more →</a>
+</div>
+
+<header>
+  <a href="https://app-tool.vercel.app" class="logo">✦ With Sadia</a>
+  <a href="https://app-tool.vercel.app" class="back-btn">← All Products</a>
+</header>
+
+<div class="breadcrumb">
+  <a href="https://app-tool.vercel.app">Home</a> › <span id="bread-cat">Products</span> › <span id="bread-name">Loading...</span>
+</div>
+
+<div class="product-wrap">
+  <!-- LEFT -->
+  <div class="img-box">
+    <div class="pin-source">📌 Pinterest Find</div>
+    <img id="product-img" src="" alt="Product"/>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="product-info">
+    <div class="category-tag" id="product-cat">⭐ Amazon Pick</div>
+    <h1 id="product-title">Loading...</h1>
+    <div class="stars">★★★★★ <span id="product-rating">(loading reviews)</span></div>
+    <p id="product-desc">Loading product details...</p>
+
+    <ul class="features" id="product-features"></ul>
+
+    <div class="price-box">
+      <div class="price-label">Amazon Price</div>
+      <div id="product-price">$--</div>
+      <div class="prime-badge">✈️ Fast Shipping Available</div>
+    </div>
+
+    <a href="#" id="amazon-btn" target="_blank" class="btn-amazon">
+      🛒 Shop Now on Amazon
+    </a>
+    <a href="https://pinterest.com/shaheerasadia" target="_blank" class="btn-save">
+      📌 Follow on Pinterest for More Deals
+    </a>
+
+    <p class="disclaimer">
+      *As an Amazon Associate, With Sadia earns from qualifying purchases. Prices may vary.
+    </p>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related-section">
+  <div class="related-title">🔥 More Picks by Sadia</div>
+  <div class="related-sub">Tap any product → goes directly to Amazon</div>
+  <div class="related-grid" id="related-grid"></div>
+</div>
+
+<footer>
+  © 2026 <strong style="color:white">With Sadia</strong> |
+  <a href="https://app-tool.vercel.app">app-tool.vercel.app</a> |
+  Affiliate Disclosure: Links earn commission via <a href="https://affiliate-program.amazon.com">Amazon Associates</a>
+</footer>
+
 <script>
-    const data = {
-        "pizza-oven": { title: "Outdoor Pizza Oven", link: "https://amzn.to/3W9YgXz", img: "https://m.media-amazon.com/images/I/71Y+Hk-yL+L._AC_SL1500_.jpg", desc: "Make professional wood-fired pizzas in your backyard." },
-        "galaxy-rose": { title: "Galaxy Glass Rose", link: "https://amzn.to/4bc9vL7", img: "https://m.media-amazon.com/images/I/71X8k+0X1TL._AC_SL1500_.jpg", desc: "A beautiful aesthetic gift for your loved ones." },
-        "family-airfryer": { title: "Family Size Air Fryer", link: "https://amzn.to/3OCJecN", img: "https://m.media-amazon.com/images/I/71fV9-X4HkL._AC_SL1500_.jpg", desc: "Healthy cooking for the entire family made easy." },
-        "skin-care-gift-set": { title: "Luxury Skincare Set", link: "https://amzn.to/4vXwgqF", img: "https://m.media-amazon.com/images/I/81A+Hj7Cq+L._SL1500_.jpg", desc: "Complete 56-piece spa kit for perfect skin." }
-    };
+// =============================================
+// PRODUCT DATABASE — ADD MORE PRODUCTS HERE
+// =============================================
+const products = {
+  "air-fryer": {
+    title: "Large Family Sized Air Fryer Cooker",
+    cat: "🍳 Kitchen",
+    desc: "Cook crispy, delicious meals with little to no oil. Perfect for families — fits a whole chicken! Features digital controls, multiple cooking modes, and easy-clean basket.",
+    price: "$79.99",
+    rating: "4.6 (2,847 reviews)",
+    img: "https://m.media-amazon.com/images/I/71m7N37I2EL._SL1500_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "Extra-large capacity — perfect for families",
+      "Up to 85% less oil than traditional frying",
+      "8 cooking presets: fry, bake, grill & more",
+      "Easy-clean non-stick basket",
+      "Digital LED display with timer"
+    ]
+  },
+  "dual-basket-air-fryer": {
+    title: "12QT Large Dual Basket Air Fryer",
+    cat: "🍳 Kitchen",
+    desc: "Cook two different foods at the same time at different temperatures! The dual basket design is a game-changer for busy families.",
+    price: "$89.99",
+    rating: "4.5 (1,923 reviews)",
+    img: "https://m.media-amazon.com/images/I/81hZ+tsTEvL._AC_SL1500_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "Dual independent baskets — cook 2 foods at once",
+      "12QT total capacity",
+      "Sync finish technology",
+      "6 cooking functions",
+      "Dishwasher-safe baskets"
+    ]
+  },
+  "table-lamp": {
+    title: "Modern Industrial Table Lamp – Cozy Bedside Light",
+    cat: "🏠 Home Decor",
+    desc: "Warm 2700K vintage bulb included. Adjustable brightness with a beautiful industrial design that transforms any room into a cozy retreat.",
+    price: "$34.99",
+    rating: "4.7 (3,210 reviews)",
+    img: "https://m.media-amazon.com/images/I/61F70oNLPRL._AC_SX466_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "Warm 2700K bulb included",
+      "4W — energy efficient",
+      "Adjustable brightness 300LM",
+      "Industrial vintage design",
+      "Perfect for bedroom & living room"
+    ]
+  },
+  "necklace": {
+    title: "Eternal Rose & Heart Initial Necklace",
+    cat: "💎 Jewelry",
+    desc: "A stunning gift for her — featuring a preserved eternal rose alongside a delicate heart pendant. Perfect for birthdays, anniversaries, and Mother's Day.",
+    price: "$28.99",
+    rating: "4.8 (5,641 reviews)",
+    img: "https://m.media-amazon.com/images/I/71qaN-U0IML._AC_SY575_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "Real preserved eternal rose",
+      "925 sterling silver pendant",
+      "Personalizable initial charm",
+      "Luxury gift box included",
+      "Hypoallergenic & tarnish-resistant"
+    ]
+  },
+  "glass-rose": {
+    title: "Magical Galaxy Glass Rose",
+    cat: "🌹 Gifts",
+    desc: "A breathtaking galaxy glass rose that glows with LED light. The perfect romantic gift — it lasts forever, just like your love.",
+    price: "$32.99",
+    rating: "4.9 (4,182 reviews)",
+    img: "https://m.media-amazon.com/images/I/713w9HClmKL._AC_SY575_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "Hand-blown borosilicate glass",
+      "Built-in LED glow effect",
+      "Galaxy nebula design inside",
+      "Lasts forever — no maintenance",
+      "Premium gift box packaging"
+    ]
+  },
+  "skincare": {
+    title: "Cutest Mother's Day Skincare Gift Set",
+    cat: "💄 Beauty",
+    desc: "A luxurious 10-piece skincare set with crystal collagen eye masks, lip balm, hand cream & more. The ultimate pampering gift!",
+    price: "$39.99",
+    rating: "4.6 (2,019 reviews)",
+    img: "https://m.media-amazon.com/images/I/61YG05KgZuL._SL1500_.jpg",
+    link: "https://amzn.to/4u08jx5",
+    features: [
+      "10-piece luxury skincare set",
+      "Crystal collagen eye masks",
+      "Rose lip balm & hand cream",
+      "Beautiful gift-ready packaging",
+      "Suitable for all skin types"
+    ]
+  }
+};
 
-    const currentPath = window.location.pathname.split("/").pop();
-    if (data[currentPath]) {
-        document.getElementById("display-title").innerText = data[currentPath].title;
-        document.getElementById("display-desc").innerText = data[currentPath].desc;
-        document.getElementById("display-link").href = data[currentPath].link;
-        document.getElementById("display-img").src = data[currentPath].img;
-    }
+// Default / fallback product
+const defaultProduct = products["air-fryer"];
 
-    const list = document.getElementById("product-list");
-    Object.keys(data).forEach(key => {
-        list.innerHTML += `<div class="card"><p style="font-size:13px;">${data[key].title}</p><a href="/products/${key}">View Item</a></div>`;
-    });
+// =============================================
+// LOAD PRODUCT FROM URL
+// =============================================
+function getProductKey() {
+  // Supports: /products/air-fryer  OR  ?p=air-fryer
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+  if (parts.length >= 2 && parts[parts.length - 2] === 'products') {
+    return parts[parts.length - 1];
+  }
+  const params = new URLSearchParams(window.location.search);
+  return params.get('p') || params.get('product') || 'air-fryer';
+}
+
+function loadProduct() {
+  const key = getProductKey();
+  const p = products[key] || defaultProduct;
+
+  document.title = p.title + " | With Sadia";
+  document.getElementById('product-img').src = p.img;
+  document.getElementById('product-img').alt = p.title;
+  document.getElementById('product-title').textContent = p.title;
+  document.getElementById('product-cat').textContent = p.cat;
+  document.getElementById('product-desc').textContent = p.desc;
+  document.getElementById('product-price').textContent = p.price;
+  document.getElementById('product-rating').textContent = p.rating;
+  document.getElementById('amazon-btn').href = p.link;
+  document.getElementById('bread-name').textContent = p.title.substring(0, 30) + '...';
+  document.getElementById('bread-cat').textContent = p.cat;
+
+  // Features
+  const ul = document.getElementById('product-features');
+  p.features.forEach(f => {
+    const li = document.createElement('li');
+    li.textContent = f;
+    ul.appendChild(li);
+  });
+
+  // Related products (all except current)
+  const grid = document.getElementById('related-grid');
+  Object.entries(products).forEach(([k, rel]) => {
+    if (k === key) return;
+    grid.innerHTML += `
+      <a href="/products/${k}" class="rel-card">
+        <div class="rel-img"><img src="${rel.img}" alt="${rel.title}" loading="lazy"/></div>
+        <div class="rel-info">
+          <div class="rel-name">${rel.title}</div>
+          <div class="rel-price">${rel.price}</div>
+        </div>
+      </a>`;
+  });
+
+  // Hide loader
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 400);
+}
+
+loadProduct();
 </script>
 </body>
-</html> 
+</html>
