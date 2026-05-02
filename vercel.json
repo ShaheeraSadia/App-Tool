@@ -1,5 +1,20 @@
-  {
+ {
   "redirects": [
+    {
+      "source": "/products/formal-prom-dress",
+      "destination": "https://amzn.to/4t6tywp",
+      "permanent": true
+    },
+    {
+      "source": "/products/cz-halo-earrings",
+      "destination": "https://amzn.to/4w0r7y5",
+      "permanent": true
+    },
+    {
+      "source": "/products/silver-cross-necklace",
+      "destination": "https://amzn.to/4cOboec",
+      "permanent": true
+    },
     {
       "source": "/products/rose-spa-basket",
       "destination": "https://amzn.to/4t1uK45",
