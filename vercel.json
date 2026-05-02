@@ -48,8 +48,8 @@
       "source": "/products/honey-almond-gift",
       "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
-    }
-  ],
+    },
+  
   "rewrites": [
     {
       "source": "/(.*)",
