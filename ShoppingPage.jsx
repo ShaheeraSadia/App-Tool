@@ -27,8 +27,7 @@ const ShoppingPage = () => {
             borderRadius: '20px', 
             padding: '25px', 
             border: '1px solid rgba(255,255,255,0.1)', 
-            textAlign: 'center',
-            transition: 'transform 0.3s ease'
+            textAlign: 'center'
           }}>
             <div style={{ fontSize: '50px', marginBottom: '15px' }}>{item.emoji}</div>
             <h3 style={{ marginBottom: '10px' }}>{item.title}</h3>
@@ -55,6 +54,6 @@ const ShoppingPage = () => {
       </div>
     </div>
   );
-};
+} // یہاں سے سیمی کولن ہٹا دیا گیا ہے
 
 export default ShoppingPage;
