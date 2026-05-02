@@ -1,167 +1,104 @@
-import React, { useState, useRef } from 'react';
+ import React, { useState, useCallback, useRef } from 'react';
 
 const ToolkitPro = () => {
   // --- States for Image Compressor ---
-  const [compressorData, setCompressorData] = useState({
-    originalUrl: null,
-    compressedUrl: null,
+  const [imageSettings, setImageSettings] = useState({
     originalSize: 0,
     compressedSize: 0,
-    reduction: 0,
+    quality: 0.7,
+    maxWidth: 1200,
     isCompressing: false
   });
-  const [settings, setSettings] = useState({ quality: 0.7, scale: 1, format: 'original' });
+  const [previewUrl, setPreviewUrl] = useState(null);
   const fileInputRef = useRef(null);
 
   // --- States for Color Palette ---
-  const [palette, setPalette] = useState([]);
-  const [paletteImageUrl, setPaletteImageUrl] = useState(null);
-  const paletteInputRef = useRef(null);
+  const [colors, setColors] = useState([]);
+  const [isExtracting, setIsExtracting] = useState(false);
 
-  // --- States for Contact Form ---
-  const [contact, setContact] = useState({ name: '', email: '', message: '' });
-  const [isSending, setIsSending] = useState(false);
-
-  // =============================================
-  // 1. IMAGE COMPRESSOR LOGIC
-  // =============================================
-  const handleFileSelect = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setCompressorData({
-        ...compressorData,
-        originalUrl: URL.createObjectURL(file),
-        originalSize: (file.size / 1024).toFixed(2),
-        compressedUrl: null
-      });
-    }
-  };
-
-  const compressImage = () => {
-    if (!compressorData.originalUrl) return;
-    setCompressorData(prev => ({ ...prev, isCompressing: true }));
-
-    const img = new Image();
-    img.src = compressorData.originalUrl;
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const width = img.width * settings.scale;
-      const height = img.height * settings.scale;
-      canvas.width = width;
-      canvas.height = height;
-      ctx.drawImage(img, 0, 0, width, height);
-
-      const mimeType = settings.format === 'original' ? 'image/jpeg' : `image/${settings.format}`;
-      
-      canvas.toBlob((blob) => {
-        const url = URL.createObjectURL(blob);
-        setCompressorData(prev => ({
-          ...prev,
-          compressedUrl: url,
-          compressedSize: (blob.size / 1024).toFixed(2),
-          reduction: ((1 - blob.size / (prev.originalSize * 1024)) * 100).toFixed(1),
-          isCompressing: false
-        }));
-      }, mimeType, settings.quality);
-    };
-  };
-
-  // =============================================
-  // 2. COLOR PALETTE LOGIC
-  // =============================================
-  const extractPalette = (e) => {
-    const file = e.target.files[0];
+  // --- Image Compression Logic ---
+  const handleCompress = useCallback(async (file) => {
     if (!file) return;
-    const url = URL.createObjectURL(file);
-    setPaletteImageUrl(url);
+    
+    setImageSettings(prev => ({ ...prev, isCompressing: true, originalSize: file.size }));
+    
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
 
-    const img = new Image();
-    img.src = url;
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      canvas.width = 50; canvas.height = 50; // Downscale for speed
-      ctx.drawImage(img, 0, 0, 50, 50);
-      const data = ctx.getImageData(0, 0, 50, 50).data;
-      
-      const colors = {};
-      for (let i = 0; i < data.length; i += 20) {
-        const rgb = `${data[i]},${data[i+1]},${data[i+2]}`;
-        colors[rgb] = (colors[rgb] || 0) + 1;
-      }
-      const sorted = Object.entries(colors).sort((a,b) => b[1]-a[1]).slice(0, 8);
-      setPalette(sorted.map(([rgb]) => {
-        const [r,g,b] = rgb.split(',');
-        return "#" + [r,g,b].map(x => parseInt(x).toString(16).padStart(2,'0')).join('');
-      }));
+        if (width > imageSettings.maxWidth) {
+          height = (imageSettings.maxWidth / width) * height;
+          width = imageSettings.maxWidth;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob((blob) => {
+          setPreviewUrl(URL.createObjectURL(blob));
+          setImageSettings(prev => ({ 
+            ...prev, 
+            compressedSize: blob.size, 
+            isCompressing: false 
+          }));
+        }, 'image/jpeg', imageSettings.quality);
+      };
+      img.src = e.target.result;
     };
-  };
+    reader.readAsDataURL(file);
+  }, [imageSettings.maxWidth, imageSettings.quality]);
 
-  // =============================================
-  // 3. CONTACT FORM LOGIC
-  // =============================================
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-    setTimeout(() => {
-      alert("Message Sent Successfully!");
-      setContact({ name: '', email: '', message: '' });
-      setIsSending(false);
-    }, 1500);
-  };
-
+  // --- Render Function ---
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h1>Toolkit Pro - Creative Suite</h1>
+    <div className="p-6 bg-gray-50 rounded-2xl shadow-inner">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Toolkit Pro Utilities</h2>
+      
+      {/* Upload Section */}
+      <div className="flex flex-col items-center justify-center p-8 border-2 border-dashed border-blue-400 rounded-xl bg-white">
+        <input 
+          type="file" 
+          accept="image/*" 
+          className="hidden" 
+          ref={fileInputRef}
+          onChange={(e) => handleCompress(e.target.files[0])}
+        />
+        <button 
+          onClick={() => fileInputRef.current.click()}
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+        >
+          Upload Image to Compress
+        </button>
 
-      {/* Section 1: Image Compressor */}
-      <section style={{ marginBottom: '40px', border: '1px solid #ddd', padding: '20px' }}>
-        <h2>1. Image Compressor</h2>
-        <input type="file" ref={fileInputRef} onChange={handleFileSelect} hidden />
-        <button onClick={() => fileInputRef.current.click()}>Select Image</button>
-        {compressorData.originalUrl && (
-          <div>
-             <p>Quality: {Math.round(settings.quality * 100)}%</p>
-             <input type="range" min="0.1" max="1" step="0.1" value={settings.quality} 
-                    onChange={e => setSettings({...settings, quality: parseFloat(e.target.value)})} />
-             <button onClick={compressImage}>{compressorData.isCompressing ? "Processing..." : "Compress"}</button>
+        {imageSettings.originalSize > 0 && (
+          <div className="mt-4 text-sm text-gray-600">
+            <p>Original: {(imageSettings.originalSize / 1024).toFixed(2)} KB</p>
+            {imageSettings.compressedSize > 0 && (
+              <p className="text-green-600 font-bold">Compressed: {(imageSettings.compressedSize / 1024).toFixed(2)} KB</p>
+            )}
           </div>
         )}
-        {compressorData.compressedUrl && (
-          <div style={{ marginTop: '10px' }}>
-            <p>Saved: {compressorData.reduction}%</p>
-            <a href={compressorData.compressedUrl} download="toolkit-pro-img.jpg">Download Compressed Image</a>
-          </div>
-        )}
-      </section>
+      </div>
 
-      {/* Section 2: Color Palette */}
-      <section style={{ marginBottom: '40px', border: '1px solid #ddd', padding: '20px' }}>
-        <h2>2. Color Palette Extractor</h2>
-        <input type="file" ref={paletteInputRef} onChange={extractPalette} hidden />
-        <button onClick={() => paletteInputRef.current.click()}>Upload for Palette</button>
-        <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
-          {palette.map(color => (
-            <div key={color} style={{ background: color, width: '50px', height: '50px', borderRadius: '5px' }} 
-                 title={`Copy ${color}`} onClick={() => navigator.clipboard.writeText(color)}></div>
-          ))}
+      {previewUrl && (
+        <div className="mt-8 text-center">
+          <img src={previewUrl} alt="Preview" className="max-w-xs mx-auto rounded-lg shadow-md mb-4" />
+          <a 
+            href={previewUrl} 
+            download="compressed-image.jpg"
+            className="text-blue-600 underline font-medium"
+          >
+            Download Compressed Image
+          </a>
         </div>
-      </section>
-
-      {/* Section 3: Contact Form */}
-      <section style={{ border: '1px solid #ddd', padding: '20px' }}>
-        <h2>3. Contact Us</h2>
-        <form onSubmit={handleContactSubmit}>
-          <input type="text" placeholder="Name" value={contact.name} required
-                 onChange={e => setContact({...contact, name: e.target.value})} style={{ display: 'block', margin: '10px 0' }} />
-          <textarea placeholder="Message" value={contact.message} required
-                    onChange={e => setContact({...contact, message: e.target.value})} style={{ display: 'block', margin: '10px 0' }} />
-          <button type="submit" disabled={isSending}>{isSending ? "Sending..." : "Send Message"}</button>
-        </form>
-      </section>
+      )}
     </div>
   );
-};
+}; // یہاں فنکشن کو صحیح طرح بند کیا گیا ہے
 
 export default ToolkitPro;
