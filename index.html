@@ -812,7 +812,394 @@
             &copy; 2026 Developed by <strong>Shaheera Sadia</strong> | Mandi Bahauddin, Punjab, Pakistan
         </div>
     </footer>
-     
+      <script>
+        // =============================================
+        // IMAGE COMPRESSOR - FULLY FIXED & WORKING
+        // =============================================
+
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const browseBtn = document.getElementById('browseBtn');
+        const compressionSlider = document.getElementById('compressionLevel');
+        const compressionValue = document.getElementById('compressionValue');
+        const resizeSlider = document.getElementById('resizeLevel');
+        const resizeValue = document.getElementById('resizeValue');
+        const compressBtn = document.getElementById('compressBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const originalPreview = document.getElementById('originalPreview');
+        const compressedPreview = document.getElementById('compressedPreview');
+        const originalInfo = document.getElementById('originalInfo');
+        const compressedInfo = document.getElementById('compressedInfo');
+
+        let originalImage = null;
+        let originalFile = null;
+        let compressedImageBlob = null;
+
+        // Browse button click
+        browseBtn.addEventListener('click', () => fileInput.click());
+
+        // Upload area click
+        uploadArea.addEventListener('click', (e) => {
+            if (e.target !== browseBtn) fileInput.click();
+        });
+
+        // File selected
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // Slider events
+        compressionSlider.addEventListener('input', () => {
+            compressionValue.textContent = compressionSlider.value + '%';
+        });
+        resizeSlider.addEventListener('input', () => {
+            resizeValue.textContent = resizeSlider.value + '%';
+        });
+
+        // Button events
+        compressBtn.addEventListener('click', compressImage);
+        downloadBtn.addEventListener('click', downloadImage);
+        resetBtn.addEventListener('click', resetTool);
+
+        // Drag and drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, (e) => { e.preventDefault(); e.stopPropagation(); });
+        });
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => uploadArea.classList.add('highlight'));
+        });
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => uploadArea.classList.remove('highlight'));
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            handleFiles(e.dataTransfer.files);
+        });
+
+        function handleFileSelect(e) {
+            handleFiles(e.target.files);
+        }
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (!file.type.match('image.*')) {
+                    alert('Please select a valid image file (JPG, PNG, WebP, GIF).');
+                    return;
+                }
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size exceeds 10MB limit. Please choose a smaller image.');
+                    return;
+                }
+                originalFile = file;
+                loadImage(file);
+            }
+        }
+
+        function loadImage(file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    originalImage = img;
+                    // Show original preview
+                    originalPreview.innerHTML = '';
+                    const imgEl = document.createElement('img');
+                    imgEl.src = img.src;
+                    imgEl.style.cssText = 'width:100%; border-radius:8px; max-height:250px; object-fit:cover;';
+                    imgEl.alt = 'Original Image';
+                    originalPreview.appendChild(imgEl);
+
+                    const sizeKB = (file.size / 1024).toFixed(2);
+                    originalInfo.innerHTML = `
+                        <div>Size: <span>${sizeKB} KB</span></div>
+                        <div>Dimensions: <span>${img.width} × ${img.height}px</span></div>
+                    `;
+
+                    // Reset compressed preview
+                    compressedPreview.innerHTML = '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'130\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23aaa\'%3EPress Compress%3C/text%3E%3C/svg%3E" style="width:100%;border-radius:8px;">';
+                    compressedInfo.innerHTML = '<div>Size: <span>--</span></div><div>Dimensions: <span>--</span></div><div>Reduction: <span>--</span></div>';
+                    downloadBtn.disabled = true;
+                    compressedImageBlob = null;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function compressImage() {
+            if (!originalImage) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            compressBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Compressing...';
+            compressBtn.disabled = true;
+
+            setTimeout(() => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const resizePercent = resizeSlider.value / 100;
+                const newWidth = Math.round(originalImage.width * resizePercent);
+                const newHeight = Math.round(originalImage.height * resizePercent);
+
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                ctx.drawImage(originalImage, 0, 0, newWidth, newHeight);
+
+                const quality = compressionSlider.value / 100;
+                const formatRadio = document.querySelector('input[name="format"]:checked');
+                const format = formatRadio ? formatRadio.value : 'original';
+
+                let mimeType = 'image/jpeg';
+                if (format === 'png') mimeType = 'image/png';
+                else if (format === 'webp') mimeType = 'image/webp';
+                else if (format === 'original' && originalFile) mimeType = originalFile.type || 'image/jpeg';
+
+                canvas.toBlob(function(blob) {
+                    compressedImageBlob = blob;
+
+                    const url = URL.createObjectURL(blob);
+                    compressedPreview.innerHTML = '';
+                    const imgEl = document.createElement('img');
+                    imgEl.src = url;
+                    imgEl.style.cssText = 'width:100%; border-radius:8px; max-height:250px; object-fit:cover;';
+                    imgEl.alt = 'Compressed Image';
+                    compressedPreview.appendChild(imgEl);
+
+                    const originalSize = originalFile ? originalFile.size : 0;
+                    const compressedSize = blob.size;
+                    const reduction = originalSize > 0 ? ((originalSize - compressedSize) / originalSize * 100).toFixed(1) : 0;
+
+                    compressedInfo.innerHTML = `
+                        <div>Size: <span>${(compressedSize / 1024).toFixed(2)} KB</span></div>
+                        <div>Dimensions: <span>${newWidth} × ${newHeight}px</span></div>
+                        <div>Reduction: <span style="color:#27ae60;">${reduction}%</span></div>
+                    `;
+
+                    downloadBtn.disabled = false;
+                    compressBtn.innerHTML = '<i class="fas fa-compress-arrows-alt"></i> Compress Image';
+                    compressBtn.disabled = false;
+
+                }, mimeType, quality);
+            }, 800);
+        }
+
+        function downloadImage() {
+            if (!compressedImageBlob) return;
+            const url = URL.createObjectURL(compressedImageBlob);
+            const a = document.createElement('a');
+            a.href = url;
+
+            const originalName = originalFile ? originalFile.name : 'image';
+            const nameWithoutExt = originalName.substring(0, originalName.lastIndexOf('.')) || originalName;
+            const formatRadio = document.querySelector('input[name="format"]:checked');
+            const format = formatRadio ? formatRadio.value : 'original';
+
+            let extension = '.jpg';
+            if (format === 'png') extension = '.png';
+            else if (format === 'webp') extension = '.webp';
+            else if (format === 'original' && originalFile) {
+                extension = originalFile.name.substring(originalFile.name.lastIndexOf('.'));
+            }
+
+            a.download = `${nameWithoutExt}-compressed${extension}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function resetTool() {
+            fileInput.value = '';
+            originalImage = null;
+            originalFile = null;
+            compressedImageBlob = null;
+
+            originalPreview.innerHTML = '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'130\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23aaa\'%3ENo Image Selected%3C/text%3E%3C/svg%3E" style="width:100%;border-radius:8px;">';
+            compressedPreview.innerHTML = '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'250\'%3E%3Crect width=\'400\' height=\'250\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'200\' y=\'130\' text-anchor=\'middle\' font-family=\'Arial\' font-size=\'16\' fill=\'%23aaa\'%3ECompressed Preview%3C/text%3E%3C/svg%3E" style="width:100%;border-radius:8px;">';
+
+            originalInfo.innerHTML = '<div>Size: <span>--</span></div><div>Dimensions: <span>--</span></div>';
+            compressedInfo.innerHTML = '<div>Size: <span>--</span></div><div>Dimensions: <span>--</span></div><div>Reduction: <span>--</span></div>';
+
+            compressionSlider.value = 70;
+            compressionValue.textContent = '70%';
+            resizeSlider.value = 100;
+            resizeValue.textContent = '100%';
+            document.getElementById('format-original').checked = true;
+
+            downloadBtn.disabled = true;
+        }
+
+        // =============================================
+        // COLOR PALETTE EXTRACTOR - BEAUTIFUL VERSION
+        // =============================================
+        const paletteInput = document.getElementById('paletteInput');
+        const paletteUploadZone = document.getElementById('paletteUploadZone');
+
+        // Drag & drop on palette zone
+        ['dragenter','dragover','dragleave','drop'].forEach(ev => {
+            paletteUploadZone.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); });
+        });
+        ['dragenter','dragover'].forEach(ev => {
+            paletteUploadZone.addEventListener(ev, () => {
+                paletteUploadZone.style.borderColor = 'rgba(255,150,255,0.8)';
+                paletteUploadZone.style.background = 'rgba(255,255,255,0.1)';
+            });
+        });
+        ['dragleave','drop'].forEach(ev => {
+            paletteUploadZone.addEventListener(ev, () => {
+                paletteUploadZone.style.borderColor = 'rgba(255,255,255,0.25)';
+                paletteUploadZone.style.background = 'rgba(255,255,255,0.04)';
+            });
+        });
+        paletteUploadZone.addEventListener('drop', e => {
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.match('image.*')) extractPalette(file);
+        });
+
+        paletteInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) extractPalette(file);
+        });
+
+        function extractPalette(file) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                // Show image preview
+                const previewDiv = document.getElementById('paletteImagePreview');
+                const previewImg = document.getElementById('palettePreviewImg');
+                previewImg.src = ev.target.result;
+                previewDiv.style.display = 'block';
+
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const scale = Math.min(1, 200 / Math.max(img.width, img.height));
+                    canvas.width = Math.round(img.width * scale);
+                    canvas.height = Math.round(img.height * scale);
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                    const colors = {};
+
+                    for (let i = 0; i < data.length; i += 4 * 5) {
+                        if (data[i+3] < 128) continue; // skip transparent
+                        const r = Math.round(data[i] / 24) * 24;
+                        const g = Math.round(data[i+1] / 24) * 24;
+                        const b = Math.round(data[i+2] / 24) * 24;
+                        const key = `${r},${g},${b}`;
+                        colors[key] = (colors[key] || 0) + 1;
+                    }
+
+                    const sorted = Object.entries(colors).sort((a, b) => b[1] - a[1]).slice(0, 8);
+                    const swatchesEl = document.getElementById('paletteSwatches');
+                    const paletteBar = document.getElementById('palettebar');
+                    const paletteResult = document.getElementById('paletteResult');
+                    const paletteHint = document.getElementById('paletteHint');
+
+                    swatchesEl.innerHTML = '';
+                    paletteBar.innerHTML = '';
+                    let allHex = [];
+
+                    sorted.forEach(([color], idx) => {
+                        const [r, g, b] = color.split(',').map(Number);
+                        const hex = '#' + [r, g, b].map(v => Math.min(255,v).toString(16).padStart(2,'0')).join('');
+                        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+                        const textColor = brightness > 140 ? '#000' : '#fff';
+                        allHex.push(hex);
+
+                        // Swatch card
+                        const swatch = document.createElement('div');
+                        swatch.style.cssText = `
+                            width: 90px; height: 90px; background: ${hex};
+                            border-radius: 14px; cursor: pointer; position: relative;
+                            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+                            transition: transform 0.2s, box-shadow 0.2s;
+                            display: flex; flex-direction: column;
+                            align-items: center; justify-content: flex-end;
+                            padding-bottom: 8px; animation: popIn 0.3s ease ${idx * 0.07}s both;
+                        `;
+                        swatch.title = `Click to copy ${hex}`;
+                        swatch.innerHTML = `
+                            <span style="font-size:0.65rem; font-weight:700; color:${textColor}; background:rgba(0,0,0,0.2); padding:2px 6px; border-radius:20px; backdrop-filter:blur(4px);">${hex.toUpperCase()}</span>
+                        `;
+                        swatch.onmouseenter = () => { swatch.style.transform = 'scale(1.12) translateY(-4px)'; swatch.style.boxShadow = '0 12px 30px rgba(0,0,0,0.5)'; };
+                        swatch.onmouseleave = () => { swatch.style.transform = 'scale(1)'; swatch.style.boxShadow = '0 6px 20px rgba(0,0,0,0.35)'; };
+                        swatch.onclick = () => {
+                            navigator.clipboard.writeText(hex.toUpperCase()).then(() => {
+                                swatch.innerHTML = `<span style="font-size:0.75rem; font-weight:800; color:${textColor};">✓ Copied!</span>`;
+                                setTimeout(() => {
+                                    swatch.innerHTML = `<span style="font-size:0.65rem; font-weight:700; color:${textColor}; background:rgba(0,0,0,0.2); padding:2px 6px; border-radius:20px;">${hex.toUpperCase()}</span>`;
+                                }, 1500);
+                            });
+                        };
+                        swatchesEl.appendChild(swatch);
+
+                        // Palette bar segment
+                        const seg = document.createElement('div');
+                        seg.style.cssText = `flex:1; background:${hex}; transition:flex 0.3s;`;
+                        seg.title = hex;
+                        paletteBar.appendChild(seg);
+                    });
+
+                    // Copy All button
+                    document.getElementById('copyAllBtn').onclick = () => {
+                        navigator.clipboard.writeText(allHex.join(', ')).then(() => {
+                            const btn = document.getElementById('copyAllBtn');
+                            btn.textContent = '✅ All Copied!';
+                            setTimeout(() => { btn.textContent = '📋 Copy All HEX Codes'; }, 2000);
+                        });
+                    };
+
+                    paletteResult.style.display = 'block';
+                    paletteHint.style.display = 'none';
+                };
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // =============================================
+        // CONTACT FORM
+        // =============================================
+        function sendContactMessage() {
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+            const btn = document.getElementById('sendMsgBtn');
+            const success = document.getElementById('contactSuccess');
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields before sending.');
+                return;
+            }
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simulate sending
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right:8px;"></i> Send Message';
+                btn.disabled = false;
+                success.style.display = 'block';
+                document.getElementById('contactName').value = '';
+                document.getElementById('contactEmail').value = '';
+                document.getElementById('contactMessage').value = '';
+                setTimeout(() => { success.style.display = 'none'; }, 4000);
+            }, 1500);
+        }
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+ </script>
+</body>
+    
+</html>
           
 </body>       
 </html>
