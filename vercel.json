@@ -54,6 +54,11 @@
       "source": "/products/galaxy-redrose",
       "destination": "https://amzn.to/4cZ27yy",
       "permanent": true
-    }
+    },
+    {
+  "source": "/products/beauty-beast-rose",
+  "destination": "https://amzn.to/4ujC2Bc",
+  "permanent": true
+}
   ]
 } 
