@@ -2,15 +2,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import ShoppingPage from './ShoppingPage.jsx';
+import ToolkitPro from './components/ToolkitPro'; // جہاں آپ نے نیا ٹول سیو کیا ہے
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center">
+      <div className="min-h-screen bg-gray-50">
         <Navbar />
         
         <Routes>
-          {/* Home Page: یہاں سے کرنسی کنورٹر ہٹا دیا گیا ہے */}
+          {/* ہوم پیج پر آپ کے ٹولز اور بینرز نظر آئیں گے */}
           <Route path="/" element={
             <div className="flex flex-col items-center py-10 space-y-12 w-full">
               
@@ -19,6 +20,11 @@ function App() {
                 <div className="p-10 bg-white shadow-lg rounded-3xl text-center border border-dashed border-gray-300">
                   <h2 className="text-xl font-bold text-gray-700">Image Compressor is Active Below</h2>
                   <p className="text-gray-400">Your existing tools are safe!</p>
+                  
+                  {/* یہاں آپ کا اصل ٹول رینڈر ہوگا */}
+                  <div className="mt-8">
+                    <ToolkitPro />
+                  </div>
                 </div>
               </section>
 
