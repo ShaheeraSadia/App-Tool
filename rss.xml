@@ -1,58 +1,116 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" 
-     xmlns:atom="http://www.w3.org/2005/Atom"
-     xmlns:media="http://search.yahoo.com/mrss/">
+ <?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+  <title>ToolKit Pro | Developed by Shaheera Sadia</title>
+  <link>https://app-tool.vercel.app</link>
+  <description>Professional image optimization tools and aesthetic design resources.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sun, 03 May 2026 00:00:00 +0500</lastBuildDate>
+  <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
 
-  <channel>
-    <title>ToolKit Pro | Developed by Shaheera Sadia</title>
-    <link>https://app-tool.vercel.app/</link>
-    <description>Professional image optimization tools and aesthetic design resources.</description>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0500</lastBuildDate>
-    <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+  <!-- 1. Formal Dress -->
+  <item>
+    <title>Wedtrend Women's Formal Dress - Long Prom &amp; Bridesmaid Dress</title>
+    <link>https://app-tool.vercel.app/products/formal-prom-dress</link>
+    <description>Elegant floral lace halter neck dress, perfect for weddings and formal events.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
 
-     <item>
-  <title>The Ideal Fit - Compact Pizza Oven</title>
-  <link>https://app-tool.vercel.app/products/pizza-oven</link>
-  <description>Check out this sleek, powerful pizza oven that fits perfectly on your countertop.</description>
-  <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
-  <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image" />
-  <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
-</item>
+  <!-- 2. CZ Earrings -->
+  <item>
+    <title>MILACOLATO CZ Halo Stud Earrings - 18K Gold Plated</title>
+    <link>https://app-tool.vercel.app/products/cz-halo-earrings</link>
+    <description>Hypoallergenic brilliant simulated diamond earrings for sensitive ears.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
 
-    <item>
-      <title>The Ideal Fit - Compact Pizza Oven for Kitchen</title>
-      <link>https://app-tool.vercel.app/products/pizza-oven</link>
-      <description>Check out this sleek, powerful pizza oven that fits perfectly on your countertop.</description>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
-      <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image" />
-      <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
-    </item>
+  <!-- 3. Cross Necklace -->
+  <item>
+    <title>MILACOLATO Sterling Silver Cross Necklace for Men &amp; Women</title>
+    <link>https://app-tool.vercel.app/products/silver-cross-necklace</link>
+    <description>Solid 925 sterling silver chain with a durable beveled edge cross pendant.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
 
-    <item>
-      <title>Galaxy Glass Rose - Eternal Gift for Mom</title>
-      <link>https://app-tool.vercel.app/products/galaxy-rose</link>
-      <description>Beautiful eternal crystal rose with butterfly - a perfect Mother's Day gift.</description>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
-      <media:content url="https://m.media-amazon.com/images/I/71V2x-E0ZGL._AC_SL1500_.jpg" medium="image" />
-      <enclosure url="https://m.media-amazon.com/images/I/71V2x-E0ZGL._AC_SL1500_.jpg" length="0" type="image/jpeg" />
-    </item>
+  <!-- 4. Family Sized Airfryer -->
+  <item>
+    <title>Family Sized Airfryer Cooker - Large Capacity 3-Layer</title>
+    <link>https://app-tool.vercel.app/products/family-airfryer</link>
+    <description>Cook healthy meals for the whole family with this versatile 3-layer air fryer cooker.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
 
-    <item>
-      <title>Sakura Essence Skincare Gift Set - Self-Care Kit</title>
-      <link>https://app-tool.vercel.app/products/sakura-skin</link>
-      <description>Luxurious Sakura skincare set with collagen eye masks and hand cream.</description>
-      <pubDate>Wed, 29 Apr 2026 00:00:00 +0500</pubDate>
-      <media:content url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" medium="image" />
-      <enclosure url="https://m.media-amazon.com/images/I/71D0Y7pWbML._AC_SL1500_.jpg" length="0" type="image/jpeg" />
-    </item>
-<item>
-  <title>Minimalist Industrial Table Lamp - Aesthetic Home Decor</title>
-  <link>https://app-tool.vercel.app/products/industrial-lamp</link>
-  <description>Upgrade your room with this vintage-style industrial lamp. Perfect for bedside tables, offices, or creating a warm sunset vibe in your bedroom. Minimalist design with a cozy glow.</description>
-  <pubDate>Thu, 30 Apr 2026 13:00:00 +0500</pubDate>
-  <media:content url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" medium="image"/>
-  <enclosure url="https://m.media-amazon.com/images/I/71u9S-XqSLL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
-</item>
-  </channel>
+  <!-- 5. Dual Air Fryer -->
+  <item>
+    <title>Dual Air Fryer - Double Basket Efficiency</title>
+    <link>https://app-tool.vercel.app/products/dual-air-fryer</link>
+    <description>Save time with double baskets. Perfect for cooking multiple dishes at once.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 6. Rose Spa Basket -->
+  <item>
+    <title>Luxury Rose Spa Gift Basket - 8 Pcs Bath Set</title>
+    <link>https://app-tool.vercel.app/products/rose-spa-basket</link>
+    <description>Indulge in a relaxing home spa experience with this premium rose-scented bath set.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 7. Beauty & Beast Rose -->
+  <item>
+    <title>Enchanting Beauty and The Beast Rose - LED Glass Dome</title>
+    <link>https://app-tool.vercel.app/products/beauty-beast-rose</link>
+    <description>A magical preserved red rose with LED lights, the perfect romantic gift that lasts forever.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 8. Galaxy Red Rose -->
+  <item>
+    <title>Galaxy Red Rose - Aesthetic Crystal Decor</title>
+    <link>https://app-tool.vercel.app/products/galaxy-redrose</link>
+    <description>Beautiful crystal rose with butterfly accent. A stunning eternal gift for Mom or loved ones.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 9. Mom Necklace -->
+  <item>
+    <title>Mom Necklace - Elegant Jewelry Gift</title>
+    <link>https://app-tool.vercel.app/products/mom-necklace</link>
+    <description>Show your love with this elegant personalized necklace designed for mothers.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 10. Industrial Lamp -->
+  <item>
+    <title>Minimalist Industrial Table Lamp - Aesthetic Decor</title>
+    <link>https://app-tool.vercel.app/products/industrial-lamp</link>
+    <description>Vintage-style industrial lamp with a cozy sunset glow. Perfect for bedside tables.</description>
+    <pubDate>Thu, 30 Apr 2026 13:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 11. Floral Maxi Dress -->
+  <item>
+    <title>Elegant Floral Maxi Dress - Summer Fashion</title>
+    <link>https://app-tool.vercel.app/products/floral-maxi-dress</link>
+    <description>Aesthetic and comfortable floral dress for a breezy summer look.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 12. Skin Care Gift Set -->
+  <item>
+    <title>Premium Skin Care Gift Set - Sakura Essence Kit</title>
+    <link>https://app-tool.vercel.app/products/skin-care-gift-set</link>
+    <description>Luxurious skincare essentials set for a glowing and healthy skin routine.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+  <!-- 13. Honey Almond Gift Set -->
+  <item>
+    <title>Honey Almond Bath &amp; Body Gift Set</title>
+    <link>https://app-tool.vercel.app/products/honey-almond-gift</link>
+    <description>Nourishing honey and almond scented spa set for a sweet self-care experience.</description>
+    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+  </item>
+
+</channel>
 </rss>
