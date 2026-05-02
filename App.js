@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import ShoppingPage from './ShoppingPage.jsx';
-import ToolkitPro from './components/ToolkitPro'; // جہاں آپ نے نیا ٹول سیو کیا ہے
+import ToolkitPro from './components/ToolkitPro'; 
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Navbar />
         
         <Routes>
-          {/* ہوم پیج پر آپ کے ٹولز اور بینرز نظر آئیں گے */}
+          {/* ہوم روٹ کو یہاں درست کیا گیا ہے */}
           <Route path="/" element={
             <div className="flex flex-col items-center py-10 space-y-12 w-full">
               
@@ -21,7 +21,6 @@ function App() {
                   <h2 className="text-xl font-bold text-gray-700">Image Compressor is Active Below</h2>
                   <p className="text-gray-400">Your existing tools are safe!</p>
                   
-                  {/* یہاں آپ کا اصل ٹول رینڈر ہوگا */}
                   <div className="mt-8">
                     <ToolkitPro />
                   </div>
