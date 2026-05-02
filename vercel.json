@@ -1,6 +1,26 @@
  {
   "redirects": [
     {
+      "source": "/products/rose-spa-basket",
+      "destination": "https://amzn.to/4t1uK45",
+      "permanent": true
+    },
+    {
+      "source": "/products/beauty-beast-rose",
+      "destination": "https://amzn.to/4ujC2Bc",
+      "permanent": true
+    },
+    {
+      "source": "/products/mom-necklace",
+      "destination": "https://amzn.to/4vXHYSb",
+      "permanent": true
+    },
+    {
+      "source": "/products/industrial-lamp",
+      "destination": "https://amzn.to/4fWqS7u",
+      "permanent": true
+    },
+    {
       "source": "/products/floral-maxi-dress",
       "destination": "https://amzn.to/426S3P3",
       "permanent": true
@@ -16,8 +36,18 @@
       "permanent": true
     },
     {
-      "source": "/products/beauty-beast-rose",
-      "destination": "https://amzn.to/4ujC2Bc",
+      "source": "/products/family-airfryer",
+      "destination": "https://amzn.to/30CJecN",
+      "permanent": true
+    },
+    {
+      "source": "/products/dual-air-fryer",
+      "destination": "https://amzn.to/4cTUBVP",
+      "permanent": true
+    },
+    {
+      "source": "/products/honey-almond-gift",
+      "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
     }
   ],
