@@ -1,294 +1,147 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolkit Pro | Amazon Aesthetic Finds</title>
+    <title>Toolkit Pro | Curated Essentials</title>
     <style>
         :root {
-            --primary: #6366f1;
-            --bg: #f8fafc;
+            --primary-color: #2563eb;
+            --accent-color: #f59e0b;
+            --bg-light: #f8fafc;
             --card-bg: #ffffff;
-            --text: #1e293b;
         }
 
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
             margin: 0;
-            scroll-behavior: smooth;
+            padding: 20px;
         }
 
-        nav {
-            background: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
+        .header {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            border: none;
-            background: #e2e8f0;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .filter-btn.active {
-            background: var(--primary);
-            color: white;
+            padding: 40px 0;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .product-card {
             background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
             display: flex;
             flex-direction: column;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
         }
 
-        .card-top {
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #eee;
         }
 
-        .card-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-body h3 {
-            margin: 0 0 10px 0;
+        .product-title {
             font-size: 1.1rem;
-            min-height: 2.4em;
+            font-weight: 600;
+            margin: 10px 0;
+            color: #1e293b;
         }
 
-        .card-body p {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 1.5rem;
-        }
-
-        .amazon-btn {
+        .buy-btn {
             margin-top: auto;
-            background: #f59e0b;
+            background-color: var(--accent-color);
             color: white;
             text-align: center;
             padding: 12px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 700;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            background: white;
-            margin-top: 4rem;
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
-<body id="top">
+<body>
 
-    <nav>
-        <div class="logo">Toolkit Pro</div>
-        <div>Mandi Bahauddin, PK</div>
-    </nav>
+<div class="header">
+    <h1>Toolkit Pro</h1>
+    <p>Hand-picked recommendations for your lifestyle</p>
+</div>
 
-    <div class="container">
-        <h1 class="section-title">Aesthetic Amazon Finds</h1>
+<div class="product-grid">
 
-        <div class="filter-container">
-            <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
-            <button class="filter-btn" onclick="filterProducts('kitchen', this)">Kitchen</button>
-            <button class="filter-btn" onclick="filterProducts('fashion', this)">Fashion & Jewelry</button>
-            <button class="filter-btn" onclick="filterProducts('home', this)">Home & Decor</button>
-            <button class="filter-btn" onclick="filterProducts('beauty', this)">Beauty & Care</button>
-        </div>
-
-        <div class="product-grid" id="productGrid">
-            <!-- Kitchen -->
-            <div class="product-card" data-category="kitchen">
-                <div class="card-top" style="background: #43e97b">🍟</div>
-                <div class="card-body">
-                    <h3>Family Sized Airfryer</h3>
-                    <p>Large capacity cooker with 3 layers for family meals.</p>
-                    <a href="https://amzn.to/3OCJecN" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="kitchen">
-                <div class="card-top" style="background: #fa709a">🍗</div>
-                <div class="card-body">
-                    <h3>Dual Air Fryer</h3>
-                    <p>Double basket for efficient and healthy cooking.</p>
-                    <a href="https://amzn.to/4cTUBVP" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <!-- Beauty -->
-            <div class="product-card" data-category="beauty">
-                <div class="card-top" style="background: #f5576c">🛁</div>
-                <div class="card-body">
-                    <h3>Rose Spa Basket</h3>
-                    <p>8 Pcs luxury bath set for ultimate relaxation.</p>
-                    <a href="https://amzn.to/4t1uK45" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="beauty">
-                <div class="card-top" style="background: #667eea">🧴</div>
-                <div class="card-body">
-                    <h3>Skin Care Gift Set</h3>
-                    <p>Premium quality skin care essentials kit.</p>
-                    <a href="https://amzn.to/4vXwgqF" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <!-- Jewelry & Fashion -->
-            <div class="product-card" data-category="fashion">
-                <div class="card-top" style="background: #a1c4fd">💎</div>
-                <div class="card-body">
-                    <h3>CZ Halo Stud Earrings</h3>
-                    <p>18K Gold plated brilliant simulated diamond earrings.</p>
-                    <a href="https://amzn.to/4w0r7y5" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="fashion">
-                <div class="card-top" style="background: #764ba2">🤱</div>
-                <div class="card-body">
-                    <h3>Mom Necklace</h3>
-                    <p>Elegant personalized gift for a special mother.</p>
-                    <a href="https://amzn.to/4vXHYSb" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <!-- Home Decor -->
-            <div class="product-card" data-category="home">
-                <div class="card-top" style="background: #e94560">🌹</div>
-                <div class="card-body">
-                    <h3>Beauty and The Beast Rose</h3>
-                    <p>Magical LED light-up rose in a glass dome.</p>
-                    <a href="https://amzn.to/4ujC2Bc" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="home">
-                <div class="card-top" style="background: #4facfe">💡</div>
-                <div class="card-body">
-                    <h3>Industrial Lamp</h3>
-                    <p>Vintage style lighting for home or office decor.</p>
-                    <a href="https://amzn.to/4fWqS7u" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <!-- New Items (Hair Tools) -->
-            <div class="product-card" data-category="beauty">
-                <div class="card-top" style="background: #f5576c">🎒</div>
-                <div class="card-body">
-                    <h3>Relavel Hair Tools Bag</h3>
-                    <p>Professional hairdresser backpack with heat insulation.</p>
-                    <a href="https://amzn.to/4taEbyk" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-
-            <div class="product-card" data-category="beauty">
-                <div class="card-top" style="background: #4facfe">💇‍♀️</div>
-                <div class="card-body">
-                    <h3>5 in 1 Hot Air Styler</h3>
-                    <p>Complete hair dryer and styler set for salon blowouts.</p>
-                    <a href="https://amzn.to/3RgDupL" target="_blank" class="amazon-btn">View on Amazon</a>
-                </div>
-            </div>
-        </div>
+    <!-- Featured: Birthstone Bracelet -->
+    <div class="product-card">
+        <img src="C:\Users\SDC\OneDrive\Pictures\Screenshots\51XVK+MGmrL._AC_SY535_.jpg" alt="Iefil Bracelet" class="product-image">
+        <div class="product-title">Iefil 925 Sterling Silver Heart Birthstone Bracelet</div>
+        <a href="https://amzn.to/4cZNoDr" class="buy-btn" target="_blank">Shop on Amazon</a>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Toolkit Pro | Built by Shaheera Sadia</p>
-        <a href="#top" class="back-to-top">↑</a>
-    </footer>
+    <!-- Featured: Rose Heart Necklace -->
+    <div class="product-card">
+        <img src="51u2l8w07LL._AC_SY535_.jpg" alt="Iefil Necklace" class="product-image">
+        <div class="product-title">Iefil Rose Heart Initial Necklace</div>
+        <a href="https://amzn.to/3RheSx9" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
 
-    <script>
-        function filterProducts(category, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    <!-- Kitchen & Appliances -->
+    <div class="product-card">
+        <div class="product-title">HoninJoy 12QT Large Dual Basket Air Fryer</div>
+        <a href="https://amzn.to/4cTUBVP" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
 
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <div class="product-card">
+        <div class="product-title">Family Sized Airfryer Cooker with 3 Layers</div>
+        <a href="https://amzn.to/3OCJecN" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <!-- Fashion & Accessories -->
+    <div class="product-card">
+        <div class="product-title">Wedtrend Women's Formal Floral Lace Prom Dress</div>
+        <a href="https://amzn.to/4t6tywp" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">ZHMO Canvas Tote Bag for Work & Travel</div>
+        <a href="https://amzn.to/4nf1VjC" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <!-- Beauty & Personal Care -->
+    <div class="product-card">
+        <div class="product-title">5 in 1 Hot Air Styler - Blowout Brush Set</div>
+        <a href="https://amzn.to/3RgDupL" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">Relavel Hair Tools Travel Bag & Stylist Backpack</div>
+        <a href="https://amzn.to/4taEbyk" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <!-- Gift Sets -->
+    <div class="product-card">
+        <div class="product-title">2026 Graduation Gifts Basket for Her</div>
+        <a href="https://amzn.to/3P5DLLw" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+    <div class="product-card">
+        <div class="product-title">Preserved Rose Gift Set with Music Jewelry Box</div>
+        <a href="https://amzn.to/49khMaz" class="buy-btn" target="_blank">Shop on Amazon</a>
+    </div>
+
+</div>
+
 </body>
-</html>
+</html> 
