@@ -3,45 +3,35 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import ShoppingPage from './ShoppingPage.jsx';
 import ToolkitPro from './components/ToolkitPro'; 
-
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
         <Navbar />
-        
         <Routes>
-          {/* ہوم روٹ کو یہاں درست کیا گیا ہے */}
+          {/* ہوم پیج راؤٹ */}
           <Route path="/" element={
-            <div className="flex flex-col items-center py-10 space-y-12 w-full">
-              
-              {/* Image Compressor Section */}
-              <section className="w-full max-w-4xl px-4">
-                <div className="p-10 bg-white shadow-lg rounded-3xl text-center border border-dashed border-gray-300">
-                  <h2 className="text-xl font-bold text-gray-700">Image Compressor is Active Below</h2>
-                  <p className="text-gray-400">Your existing tools are safe!</p>
-                  
-                  <div className="mt-8">
-                    <ToolkitPro />
-                  </div>
-                </div>
-              </section>
-
-              {/* Pinterest Banner */}
-              <div className="w-full max-w-md bg-red-600 text-white p-6 rounded-[2rem] text-center shadow-xl">
-                <h3 className="text-2xl font-black">32K+</h3>
-                <p className="text-sm opacity-90">Monthly Views on Pinterest</p>
+            <div className="p-10 bg-white shadow-lg rounded-3xl text-center border border-dashed">
+              <h2 className="text-xl font-bold">Image Compressor is Active Below</h2>
+              <div className="mt-8">
+                <ToolkitPro />
               </div>
-
+              {/* Pinterest Banner */}
+              <div className="w-full bg-red-600 text-white p-6 rounded-2xl mt-4">
+                <h3>32k+</h3>
+                <p>Monthly Views on Pinterest</p>
+              </div>
             </div>
           } />
 
-          {/* Shopping Page Route */}
+          {/* شاپنگ پیج راؤٹ */}
           <Route path="/shopping" element={<ShoppingPage />} />
         </Routes>
       </div>
     </Router>
   );
 }
+ 
+
 
 export default App;
