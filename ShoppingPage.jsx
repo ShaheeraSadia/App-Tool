@@ -15,6 +15,40 @@ const ShoppingPage = () => {
     { id: 11, title: "Galaxy Red Rose", desc: "Enchanting crystal rose for home decoration.", link: "https://amzn.to/4cZ27yy", emoji: "✨", color: "#f093fb" },
     { id: 12, title: "Dual Air Fryer", desc: "Double basket for efficient and healthy cooking.", link: "https://amzn.to/4cTUBVP", emoji: "🍗", color: "#fa709a" },
     { id: 13, title: "Honey Almond Gift", desc: "Sweet and nourishing holiday gift set.", link: "https://amzn.to/4tHhPWd", emoji: "🍯", color: "#f6d365" }
+  
+    { 
+      id: 14, 
+      title: "Relavel Hair Tools Bag", 
+      desc: "Professional hairdresser backpack with heat insulation for styling tools.", 
+      link: "https://amzn.to/4taEbyk", 
+      emoji: "🎒", 
+      color: "#f5576c" 
+    },
+    { 
+      id: 15, 
+      title: "5 in 1 Hot Air Styler", 
+      desc: "Complete hair dryer and styler set for salon blowouts at home.", 
+      link: "https://amzn.to/3RgDupL", 
+      emoji: "💇‍♀️", 
+      color: "#4facfe" 
+    },
+    { 
+      id: 16, 
+      title: "Silver Heart Bracelet", 
+      desc: "Elegant 925 sterling silver heart birthstone bracelet for her.", 
+      link: "https://amzn.to/4cZNoDr", 
+      emoji: "✨", 
+      color: "#96fbc4" 
+    },
+    { 
+      id: 17, 
+      title: "Rose Heart Necklace", 
+      desc: "925 sterling silver initial necklace - a perfect romantic gift.", 
+      link: "https://amzn.to/3RheSx9", 
+      emoji: "🌹", 
+      color: "#f093fb" 
+    }
+  
   ];
 
   return (
