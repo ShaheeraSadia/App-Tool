@@ -1,4 +1,4 @@
-  {
+ {
   "redirects": [
     {
       "source": "/products/formal-prom-dress",
@@ -64,6 +64,26 @@
       "source": "/products/honey-almond-gift",
       "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
+    },
+    {
+      "source": "/products/hair-tools-bag",
+      "destination": "https://amzn.to/4taEbyk",
+      "permanent": true
+    },
+    {
+      "source": "/products/hot-air-styler",
+      "destination": "https://amzn.to/3RgDupL",
+      "permanent": true
+    },
+    {
+      "source": "/products/heart-birthstone-bracelet",
+      "destination": "https://amzn.to/4cZNoDr",
+      "permanent": true
+    },
+    {
+      "source": "/products/rose-heart-necklace",
+      "destination": "https://amzn.to/3RheSx9",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -72,4 +92,4 @@
       "destination": "/index.html"
     }
   ]
-} 
+}
