@@ -84,8 +84,8 @@
       "source": "/products/rose-heart-necklace",
       "destination": "https://amzn.to/3RheSx9",
       "permanent": true
-    }
-  ],
+    },
+  
   "rewrites": [
     {
       "source": "/(.*)",
