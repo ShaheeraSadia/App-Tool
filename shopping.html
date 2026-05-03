@@ -33,134 +33,380 @@
 }
 }</style>
 <body>
-
-    <nav>
-        <!-- Your navigation bar -->
-    </nav>
-
-    <div class="container">
-        <h1>Exclusive Picks</h1>
-
-        <!-- Product Grid -->
-        <div class="products-grid">
-            
-            <!-- == KITCHEN CATEGORY == -->
-            
-            <!-- 1. Family Sized Airfryer Cooker -->
-
-   
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/71m7N37l2EL._SL1500_.jpg" alt="Family Sized Airfryer" class="product-image">
-                <div class="product-title">Family Sized Airfryer Cooker with 3 Layers</div>
-                <a href="https://amzn.to/3OCJecN" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 2. HoninJoy Dual Basket Air Fryer -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/81hz+tsTEvL._AC_SL1500_.jpg" alt="HoninJoy Dual Air Fryer" class="product-image">
-                <div class="product-title">HoninJoy 12QT Large Dual Basket Air Fryer</div>
-                <a href="https://amzn.to/4cTUBVP" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 3. Dual Basket Air Fryer -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/81O5JWMThL._SL1500_.jpg" alt="Dual Basket Air Fryer" class="product-image">
-                <div class="product-title">Dual Basket Air Fryer with Healthy Features</div>
-                <a href="https://amzn.to/423rVEI" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 4. Pizza Oven Pro -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/81O3y8tHGlL._AC_SL1500_.jpg" alt="Pizza Oven Pro" class="product-image">
-                <div class="product-title">Pizza Oven Pro - Authentic Wood Fired Flavor</div>
-                <a href="https://amzn.to/49aXqjZ" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- == JEWELRY & FASHION == -->
-<!-- Example for the Bracelet Box -->
-<div class="product-card">
-    <div class="card-top">
-        <!-- یہ لنک آپ کی تصویر کو باکس میں دکھائے گا -->
-        <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/51XVK%2BMGmrl._AC_SY535_.jpg" alt="Bracelet" class="product-image">
+ <!-- NAVBAR -->
+<nav>
+    <div class="nav-content">
+        <a href="/" class="logo">
+            <i class="fas fa-toolbox"></i>
+            ToolKit <span>Pro</span>
+        </a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">
+                <i class="fas fa-home"></i> <span>Home</span>
+            </a>
+            <a href="/shopping.html" class="nav-link active">
+                <i class="fas fa-shopping-bag"></i> <span>Shop</span>
+            </a>
+            <a href="/#contact" class="nav-link">
+                <i class="fas fa-envelope"></i> <span>Contact</span>
+            </a>
+        </div>
     </div>
-    <div class="card-body">
-        <h3>Iefil 925 Sterling Silver Heart Birthstone Bracelet</h3>
-        <a href="https://amzn.to/4cZNoDr" target="_blank" class="amazon-btn">Shop on Amazon</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="top">
+    <div class="hero-badge">✨ Handpicked for You</div>
+    <h1>Aesthetic Shopping Picks</h1>
+    <p>Curated beauty, decor, jewelry & lifestyle products loved by creators</p>
+</div>
+
+<!-- AD TOP -->
+<div class="ad-slot">
+    <p class="ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- FILTER TABS -->
+<div class="filter-section">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">🛍️ All Products</button>
+    <button class="filter-btn" onclick="filterProducts('beauty', this)">💄 Beauty</button>
+    <button class="filter-btn" onclick="filterProducts('jewelry', this)">💎 Jewelry</button>
+    <button class="filter-btn" onclick="filterProducts('decor', this)">🏠 Decor</button>
+    <button class="filter-btn" onclick="filterProducts('fashion', this)">👗 Fashion</button>
+    <button class="filter-btn" onclick="filterProducts('kitchen', this)">🍳 Kitchen</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products-section">
+    <p class="section-title">17 Products Found</p>
+    <div class="products-grid" id="productsGrid">
+
+        <!-- 1 -->
+        <div class="product-card" data-category="kitchen">
+            <div class="card-top" style="background: linear-gradient(135deg, #1a3a1a, #2d5a2d);">
+                <span class="card-badge">🍟 Kitchen</span>
+                🍟
+            </div>
+            <div class="card-body">
+                <h3>Family Sized Airfryer</h3>
+                <p>Large capacity cooker with 3 layers for family meals. Healthy cooking made easy!</p>
+                <a href="https://amzn.to/3OCJecN" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product-card" data-category="beauty">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a1a2e, #5a2d45);">
+                <span class="card-badge">🛁 Beauty</span>
+                🛁
+            </div>
+            <div class="card-body">
+                <h3>Rose Spa Basket</h3>
+                <p>8 Pcs luxury bath set for ultimate relaxation. Perfect self-care gift set.</p>
+                <a href="https://amzn.to/4t1uK45" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #f5576c, #f093fb);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="product-card" data-category="decor">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a0a1a, #5a1a2d);">
+                <span class="card-badge">🌹 Decor</span>
+                🌹
+            </div>
+            <div class="card-body">
+                <h3>Beauty and The Beast Rose</h3>
+                <p>Magical LED light-up rose in a glass dome. A fairytale piece for your home.</p>
+                <a href="https://amzn.to/4ujC2Bc" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #e94560, #c62a47);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card" data-category="fashion">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a1a2a, #5a2a40);">
+                <span class="card-badge">👗 Fashion</span>
+                👗
+            </div>
+            <div class="card-body">
+                <h3>Halter Floral Prom Dress</h3>
+                <p>Wedtrend Women's formal lace bridesmaid dress. Elegant & stunning for any occasion.</p>
+                <a href="https://amzn.to/4t6tywp" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #ff758c, #ff7eb3);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card" data-category="jewelry">
+            <div class="card-top" style="background: linear-gradient(135deg, #1a2a3a, #2a3a5a);">
+                <span class="card-badge">💎 Jewelry</span>
+                💎
+            </div>
+            <div class="card-body">
+                <h3>CZ Halo Stud Earrings</h3>
+                <p>18K Gold plated brilliant simulated diamond earrings. Luxurious sparkle every day.</p>
+                <a href="https://amzn.to/4w0r7y5" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card" data-category="jewelry">
+            <div class="card-top" style="background: linear-gradient(135deg, #2a2a2a, #3a3a3a);">
+                <span class="card-badge">✝️ Jewelry</span>
+                ✝️
+            </div>
+            <div class="card-body">
+                <h3>Silver Cross Necklace</h3>
+                <p>Solid 925 sterling silver chain with beveled edge pendant. Timeless & elegant.</p>
+                <a href="https://amzn.to/4cOboec" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #8e9eab, #c1c1c1);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="product-card" data-category="jewelry">
+            <div class="card-top" style="background: linear-gradient(135deg, #2a1a3a, #3d2a5a);">
+                <span class="card-badge">🎁 Gift</span>
+                🤱
+            </div>
+            <div class="card-body">
+                <h3>Mom Necklace</h3>
+                <p>Elegant personalized gift for a special mother. Show your love with a timeless piece.</p>
+                <a href="https://amzn.to/4vXHYSb" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #764ba2, #667eea);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="product-card" data-category="decor">
+            <div class="card-top" style="background: linear-gradient(135deg, #0d1a2e, #1a2a4a);">
+                <span class="card-badge">💡 Decor</span>
+                💡
+            </div>
+            <div class="card-body">
+                <h3>Industrial Lamp</h3>
+                <p>Vintage style lighting for home or office decor. Adds character to any space.</p>
+                <a href="https://amzn.to/4fWqS7u" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="product-card" data-category="fashion">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a1a2e, #5a2040);">
+                <span class="card-badge">🌸 Fashion</span>
+                🌸
+            </div>
+            <div class="card-body">
+                <h3>Floral Maxi Dress</h3>
+                <p>Elegant summer fashion for an aesthetic look. Light, breezy and beautiful.</p>
+                <a href="https://amzn.to/426S3P3" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #ff9a9e, #fecfef);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="product-card" data-category="beauty">
+            <div class="card-top" style="background: linear-gradient(135deg, #1a1a3a, #2a2a5a);">
+                <span class="card-badge">🧴 Beauty</span>
+                🧴
+            </div>
+            <div class="card-body">
+                <h3>Skin Care Gift Set</h3>
+                <p>Premium quality skin care essentials kit. Glow up with this complete routine set.</p>
+                <a href="https://amzn.to/4vXwgqF" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="product-card" data-category="decor">
+            <div class="card-top" style="background: linear-gradient(135deg, #2a0a3a, #4a1a5a);">
+                <span class="card-badge">✨ Decor</span>
+                ✨
+            </div>
+            <div class="card-body">
+                <h3>Galaxy Red Rose</h3>
+                <p>Enchanting crystal rose for home decoration. A magical centerpiece for any room.</p>
+                <a href="https://amzn.to/4cZ27yy" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="product-card" data-category="kitchen">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a1a0a, #5a2a10);">
+                <span class="card-badge">🍗 Kitchen</span>
+                🍗
+            </div>
+            <div class="card-body">
+                <h3>Dual Air Fryer</h3>
+                <p>Double basket for efficient and healthy cooking. Cook two dishes at once!</p>
+                <a href="https://amzn.to/4cTUBVP" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="product-card" data-category="beauty">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a2a0a, #5a4010);">
+                <span class="card-badge">🍯 Beauty</span>
+                🍯
+            </div>
+            <div class="card-body">
+                <h3>Honey Almond Gift</h3>
+                <p>Sweet and nourishing holiday gift set. A luxurious treat for skin and senses.</p>
+                <a href="https://amzn.to/4tHhPWd" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #f6d365, #fda085);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="product-card" data-category="beauty">
+            <div class="card-top" style="background: linear-gradient(135deg, #3a0a1a, #5a1530);">
+                <span class="card-badge">🎒 Beauty</span>
+                🎒
+            </div>
+            <div class="card-body">
+                <h3>Relavel Hair Tools Bag</h3>
+                <p>Professional hairdresser backpack with heat insulation for styling tools. Organize in style.</p>
+                <a href="https://amzn.to/4taEbyk" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #f5576c, #c62a47);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="product-card" data-category="beauty">
+            <div class="card-top" style="background: linear-gradient(135deg, #0a1a3a, #152a5a);">
+                <span class="card-badge">💇‍♀️ Beauty</span>
+                💇‍♀️
+            </div>
+            <div class="card-body">
+                <h3>5 in 1 Hot Air Styler</h3>
+                <p>Complete hair dryer and styler set for salon blowouts at home. 5 attachments included.</p>
+                <a href="https://amzn.to/3RgDupL" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="product-card" data-category="jewelry">
+            <div class="card-top" style="background: linear-gradient(135deg, #0a2a1a, #155a30);">
+                <span class="card-badge">✨ Jewelry</span>
+                ✨
+            </div>
+            <div class="card-body">
+                <h3>Silver Heart Bracelet</h3>
+                <p>Elegant 925 sterling silver heart birthstone bracelet for her. A gift she'll treasure forever.</p>
+                <a href="https://amzn.to/4cZNoDr" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #96fbc4, #f9f586);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="product-card" data-category="jewelry">
+            <div class="card-top" style="background: linear-gradient(135deg, #2a0a2a, #4a104a);">
+                <span class="card-badge">🌹 Jewelry</span>
+                🌹
+            </div>
+            <div class="card-body">
+                <h3>Rose Heart Necklace</h3>
+                <p>925 sterling silver initial necklace — a perfect romantic gift for someone special.</p>
+                <a href="https://amzn.to/3RheSx9" target="_blank" rel="noopener noreferrer" class="amazon-btn" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <i class="fab fa-amazon"></i> View on Amazon
+                </a>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<!-- Example for the Necklace Box -->
-<div class="product-card">
-    <div class="card-top">
-        <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/51u2l8w07LL._AC_SY535_.jpg" alt="Necklace" class="product-image">
-    </div>
-    <div class="card-body">
-        <h3>Iefil Rose Heart Initial Necklace</h3>
-        <a href="https://amzn.to/3RheSx9" target="_blank" class="amazon-btn">Shop on Amazon</a>
-    </div>
+<!-- AD BOTTOM -->
+<div class="ad-slot">
+    <p class="ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="4465934207" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-            
-            <!-- 8. Halter Long Prom Dress -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/e58044b0a8b12cb89af04025f4196010.jpg" alt="Halter Long Prom Dress" class="product-image">
-                <div class="product-title">Halter Floral Lace Prom Dress - Long Elegant</div>
-                <a href="https://amzn.to/4t6tywp" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
 
-            <!-- 9. CZ Halo Stud Earrings -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/61ZkjvGM0L._MCnd_AC_.jpg" alt="CZ Halo Stud Earrings" class="product-image">
-                <div class="product-title">Cubic Zirconia Stud Earrings - Brilliant Sparkle</div>
-                <a href="https://amzn.to/4w0r7y5" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 10. ZHMO Canvas Tote Bag -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/71hafvv%2BFPL._SL1500_.jpg" alt="ZHMO Canvas Tote Bag" class="product-image">
-                <div class="product-title">ZHMO Canvas Tote Bag - Work, Travel & School</div>
-                <a href="https://amzn.to/4nf1VjC" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- == BEAUTY & HAIR == -->
-
-            <!-- 11. 5 in 1 Hot Air Styler -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/612q%2BvH7B%2BL._AC_SL1024_.jpg" alt="5 in 1 Hot Air Styler" class="product-image">
-                <div class="product-title">5 in 1 Hot Air Styler - Blowout Brush Hair Dryer</div>
-                <a href="https://amzn.to/3RgDupL" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 12. Relavel Hair Tools Travel Bag -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/615XEHimi7L._AC_SL1200_.jpg" alt="Relavel Hair Tools Travel Bag" class="product-image">
-                <div class="product-title">Relavel Hair Tools Travel Bag Stylist Backpack</div>
-                <a href="https://amzn.to/4taEbyk" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- == HOME DECOR & GIFTS == -->
-
-            <!-- 13. Beauty and The Beast Rose -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/71XC9ZLyo0L._AC_SL1500_.jpg" alt="Beauty and The Beast Rose" class="product-image">
-                <div class="product-title">Beauty and The Beast Rose - Valentines & Moms Gift</div>
-                <a href="https://amzn.to/4ujC2Bc" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 14. Almond Milk & Honey Set -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/61LYSQFYIL._AC_SL1000_.jpg" alt="Almond Milk & Honey Set" class="product-image">
-                <div class="product-title">9 Pc Almond Milk & Honey Holiday Gift Set</div>
-                <a href="https://amzn.to/4tHhPWd" target="_blank" class="buy-btn">View on Amazon</a>
-            </div>
-
-            <!-- 15. Industrial Lamp -->
-            <div class="product-card">
-                <img src="https://raw.githubusercontent.com/ShaheeraSadia/App-Tool/main/image/71d52SjV%2BpL._AC_SL1500_.jpg" alt="Industrial Lamp" class="product-image">
-                <div class="product-title">Vintage Industrial Lamp - Modern Desk Lighting</div>
-                <a href="https://amzn.to/4ugr3sv" target="_blank" class="buy-btn">View on Amazon</a>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" style="background:#e60023;">
+            <i class="fab fa-pinterest"></i>
+        </a>
+        <a href="https://github.com/shaheerasadia" target="_blank" style="background:#333;">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:shaheerasadia@gmail.com" style="background:linear-gradient(135deg,#3a4fd4,#2c3de0);">
+            <i class="fas fa-envelope"></i>
+        </a>
     </div>
+    <div class="footer-links">
+        <a href="/">🏠 Home</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="mailto:shaheerasadia@gmail.com">Contact</a>
+    </div>
+    <p>© 2026 Developed by <strong style="color:#f5576c;">Shaheera Sadia</strong> | Mandi Bahauddin, Punjab, Pakistan</p>
+</footer>
 
-</div>
+<!-- Back to Top -->
+<a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // Filter products by category
+    function filterProducts(category, btn) {
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        const cards = document.querySelectorAll('.product-card');
+        let count = 0;
+        cards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = 'flex';
+                count++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update count
+        document.querySelector('.section-title').textContent = count + ' Products Found';
+    }
+
+    // Hover effect on cards
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+</script>
 
 </body>
 </html>
+ 
