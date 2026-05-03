@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import ShoppingPage from './ShoppingPage.jsx';
-import ToolkitPro from './components/ToolkitPro'; 
+ import ToolkitPro from './ToolkitPro'; 
 function App() {
   return (
     <Router>
