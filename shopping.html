@@ -1,1 +1,246 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolkit Pro | Aesthetic Finds</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Nav & Header */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        /* Filter Tabs */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            background: #e2e8f0;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* CSS-based Hover logic is more efficient */
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-top {
+            height: 200px;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #e0e7ff;
+            color: #4338ca;
+            padding: 4px 10px;
+            border-radius: 12px;
+            width: fit-content;
+            margin-bottom: 15px;
+        }
+
+        .amazon-btn {
+            margin-top: auto;
+            background: #f59e0b;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .amazon-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer & Back to Top */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 4rem;
+            background: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 99;
+        }
+    </style>
+</head>
+<body id="top"> <!-- Corrected: Added ID for back-to-top button -->
+
+    <nav>
+        <div class="logo">Toolkit Pro</div>
+        <div>Featured Recommendations</div>
+    </nav>
+
+    <div class="container">
+        <h1 class="section-title">Aesthetic Finds</h1>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All Items</button>
+            <button class="filter-btn" onclick="filterProducts('kitchen', this)">Kitchen</button>
+            <button class="filter-btn" onclick="filterProducts('tech', this)">Tech</button>
+            <button class="filter-btn" onclick="filterProducts('skincare', this)">Skincare</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <div class="product-card" data-category="kitchen">
+                <div class="card-top">🍟</div>
+                <div class="card-body">
+                    <span class="tag">Kitchen</span>
+                    <h3>Air Fryer Pro</h3>
+                    <p>Perfect for healthy snacks and quick meals.</p>
+                    <a href="#" class="amazon-btn">View on Amazon</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tech">
+                <div class="card-top">💻</div>
+                <div class="card-body">
+                    <span class="tag">Tech</span>
+                    <h3>Mechanical Keyboard</h3>
+                    <p>Upgrade your workstation setup.</p>
+                    <a href="#" class="amazon-btn">View on Amazon</a>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="skincare">
+                <div class="card-top">🛁</div>
+                <div class="card-body">
+                    <span class="tag">Skincare</span>
+                    <h3>Essential Serum</h3>
+                    <p>Maintain your skin's natural health and glow.</p>
+                    <a href="#" class="amazon-btn">View on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Toolkit Pro. Mandi Bahauddin, Pakistan.</p>
+        <a href="#top" class="back-to-top">↑</a>
+    </footer>
+
+    <script>
+        function filterProducts(category, btn) {
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter the products
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html> 
