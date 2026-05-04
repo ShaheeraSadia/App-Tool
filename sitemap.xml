@@ -17,24 +17,7 @@
       <priority>0.95</priority>
    </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/best-gifts.html</loc>
-      <lastmod>2026-05-04</lastmod>
-      <priority>0.90</priority>
-   </url>
-
-   <url>
-      <loc>https://app-tool.vercel.app/room-decor.html</loc>
-      <lastmod>2026-05-04</lastmod>
-      <priority>0.90</priority>
-   </url>
-
-   <url>
-      <loc>https://app-tool.vercel.app/best-airfryer.html</loc>
-      <lastmod>2026-05-04</lastmod>
-      <priority>0.90</priority>
-   </url>
-
+   
    <url>
       <loc>https://app-tool.vercel.app/privacy.html</loc>
       <lastmod>2026-05-04</lastmod>
