@@ -1,342 +1,193 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolkit Pro | Shopping Recommendations</title>
-    <meta name="description" content="Handpicked aesthetic products for your lifestyle — beauty, decor, jewelry & more by Shaheera Sadia.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
- 
+    <title>Aesthetic Shopping Picks - Toolkit Pro</title>
     <style>
         :root {
             --bg-color: #0b0e14;
             --card-bg: #1a1e26;
             --accent-color: #ff9900;
             --text-color: #ffffff;
-            --secondary-text: #9ca3af;
         }
-       * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f0c29;
-            color: white;
-            min-height: 100vh;
-        }
-
-        /* ===== NAVBAR ===== */
-        nav {
-            background: linear-gradient(135deg, #2c3de0 0%, #3a4fd4 40%, #4158d0 100%);
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(44,61,224,0.35);
-        }
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 64px;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo span { color: #00d2ff; }
-        .nav-links { display: flex; gap: 10px; align-items: center; }
-        .nav-link {
-            color: rgba(255,255,255,0.88);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 8px 14px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .nav-link:hover { background: rgba(255,255,255,0.15); color: #fff; }
-        .nav-link.active { background: rgba(255,255,255,0.2); color: #fff; }
-
-        /* ===== HERO ===== */
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            padding: 70px 20px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px; right: -100px;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(245,87,108,0.15), transparent);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -80px; left: -80px;
-            width: 300px; height: 300px;
-            background: radial-gradient(circle, rgba(79,172,254,0.12), transparent);
-            border-radius: 50%;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: rgba(245,87,108,0.15);
-            border: 1px solid rgba(245,87,108,0.4);
-            color: #f5576c;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #f5576c, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero p {
-            color: rgba(255,255,255,0.6);
-            font-size: 1.05rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* ===== AD SLOT ===== */
-        .ad-slot {
-            margin: 30px auto;
-            text-align: center;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        .ad-label {
-            color: rgba(255,255,255,0.2);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-      
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 20px;
         }
 
-        .header {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .header h1 {
-            color: #ff4d94; /* Aesthetic Pink */
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+        .header { text-align: center; padding: 30px 0; }
+        .header h1 { color: #ff4d94; margin-bottom: 5px; }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .product-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
             border: 1px solid #2d333b;
-            transition: all 0.3s ease;
+            transition: 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+        .product-card:hover { transform: translateY(-5px); }
 
+        /* تصویر کو باکس میں فٹ کرنے کے لیے */
         .product-card img {
             width: 100%;
-            height: 280px; /* تمام تصاویر کا سائز ایک جیسا رکھنے کے لیے */
+            height: 250px; 
             object-fit: cover;
             border-bottom: 1px solid #2d333b;
         }
 
-        .product-info {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-info h3 {
-            font-size: 1.1rem;
-            margin: 0 0 10px 0;
-            height: 45px; /* ٹائٹل لائنز کو برابر رکھنے کے لیے */
-            overflow: hidden;
-        }
+        .product-info { padding: 15px; text-align: center; flex-grow: 1; }
+        .product-info h3 { font-size: 1rem; margin: 10px 0; height: 40px; overflow: hidden; }
 
         .btn-amazon {
             display: block;
-            background: linear-gradient(90deg, #ff9900, #ffb300);
+            background: #ff9900;
             color: black;
-            text-align: center;
-            padding: 12px;
-            border-radius: 10px;
             text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
             font-weight: bold;
-            margin-top: 15px;
-            transition: opacity 0.2s;
-        }
-
-        .btn-amazon:hover {
-            opacity: 0.9;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            color: var(--secondary-text);
-            padding: 20px;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Aesthetic Shopping Picks</h1>
-        <p>Curated beauty, decor, & lifestyle products loved by creators.</p>
+<div class="header">
+    <h1>Aesthetic Shopping Picks</h1>
+    <p>Curated by Shaheera Sadia | Toolkit Pro</p>
+</div>
+
+<div class="product-grid">
+
+    <!-- Family Sized Airfryer -->
+    <div class="product-card">
+        <img src="./image/71ds2SjV+pL._AC_SL1500_.jpg" alt="Airfryer">
+        <div class="product-info">
+            <h3>Family Sized Airfryer Cooker</h3>
+            <a href="https://amzn.to/3OCJecN" class="btn-amazon">View on Amazon</a>
+        </div>
     </div>
 
-    <div class="product-grid">
-
-        <!-- 1. Iced Coffee Cups -->
-        <div class="product-card">
-            <img src="./image/e58044b0a8b12cb89af04025f4196010.jpg" alt="Iced Coffee Cups">
-            <div class="product-info">
-                <h3>Aesthetic 16oz Clear Iced Coffee Cups</h3>
-                <a href="https://amzn.to/3OHFAOV" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
+    <!-- Rose Spa Basket -->
+    <div class="product-card">
+        <img src="./image/81C3y8tHGlL._AC_SL1500_.jpg" alt="Spa Basket">
+        <div class="product-info">
+            <h3>8 Pcs Rose Spa Gift Basket</h3>
+            <a href="https://amzn.to/4t1uK45" class="btn-amazon">View on Amazon</a>
         </div>
-
-        <!-- 2. Beauty and The Beast Rose -->
-        <div class="product-card">
-            <img src="./image/81OF5JWMThL._SL1500_.jpg" alt="Rose Gift">
-            <div class="product-info">
-                <h3>Beauty and The Beast Preserved Rose</h3>
-                <a href="https://amzn.to/4ujC2Bc" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 3. Dual Basket Airfryer -->
-        <div class="product-card">
-            <img src="./image/71D6Gr3KePL._AC_SY535_.jpg" alt="Airfryer">
-            <div class="product-info">
-                <h3>Large 12QT Dual Basket Airfryer</h3>
-                <a href="https://amzn.to/4cTUBVP" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 4. Rose Spa Basket -->
-        <div class="product-card">
-            <img src="./image/81C3y8tHGIL._AC_SL1500_.jpg" alt="Spa Basket">
-            <div class="product-info">
-                <h3>8 Pcs Rose Spa Gift Basket</h3>
-                <a href="https://amzn.to/4t1uK45" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 5. Mom Jewelry Box Set -->
-        <div class="product-card">
-            <img src="./image/81Ab3F9MZGL._AC_SY535_.jpg" alt="Jewelry Set">
-            <div class="product-info">
-                <h3>Preserved Rose Jewelry Box Gift Set</h3>
-                <a href="https://amzn.to/49khMaz" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 6. 5-in-1 Hair Styler -->
-        <div class="product-card">
-            <img src="./image/71Usdvfv1L._AC_SY695_.jpg" alt="Hair Styler">
-            <div class="product-info">
-                <h3>5 in 1 Hot Air Styler Set</h3>
-                <a href="https://amzn.to/3RgDupL" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 7. Sterling Silver Cross -->
-        <div class="product-card">
-            <img src="./image/71XRc9Zly0L._AC_SL1500_.jpg" alt="Cross Necklace">
-            <div class="product-info">
-                <h3>Solid 925 Sterling Silver Cross Necklace</h3>
-                <a href="https://amzn.to/4cOboec" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 8. Massage Gun -->
-        <div class="product-card">
-            <img src="./image/71Xm7N37l2L._SL1500_.jpg" alt="Massage Gun">
-            <div class="product-info">
-                <h3>Deep Tissue Back & Neck Massage Gun</h3>
-                <a href="https://amzn.to/429rKYH" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 9. Halter Prom Dress -->
-        <div class="product-card">
-            <img src="./image/71BdARIBwmL._SL1500_.jpg" alt="Prom Dress">
-            <div class="product-info">
-                <h3>Formal Halter Long Prom Dress</h3>
-                <a href="https://amzn.to/4t6tywp" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
-        <!-- 10. Neutrogena Sunscreen -->
-        <div class="product-card">
-            <img src="./image/615XEhiMl7L._AC_SL1200_.jpg" alt="Sunscreen">
-            <div class="product-info">
-                <h3>Neutrogena Ultra Sheer SPF 70</h3>
-                <a href="https://amzn.to/4u0PEl6" target="_blank" class="btn-amazon">View on Amazon</a>
-            </div>
-        </div>
-
     </div>
 
-    <div class="footer">
-        <p>Built with ❤️ by Shaheera Sadia | Toolkit Pro</p>
+    <!-- Beauty and The Beast Rose -->
+    <div class="product-card">
+        <img src="./image/81OF5JWMThL._SL1500_.jpg" alt="Rose Gift">
+        <div class="product-info">
+            <h3>Beauty and The Beast Rose</h3>
+            <a href="https://amzn.to/4ujC2Bc" class="btn-amazon">View on Amazon</a>
+        </div>
     </div>
+
+    <!-- Halter Prom Dress -->
+    <div class="product-card">
+        <img src="./image/71BdARIBwmL._SL1500_.jpg" alt="Prom Dress">
+        <div class="product-info">
+            <h3>Floral Lace Halter Prom Dress</h3>
+            <a href="https://amzn.to/4t6tywp" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- CZ Stud Earrings -->
+    <div class="product-card">
+        <img src="./image/81A95t27eyL._AC_SL1500_.jpg" alt="Earrings">
+        <div class="product-info">
+            <h3>MILACOLATO CZ Stud Earrings</h3>
+            <a href="https://amzn.to/4w0r7y5" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Silver Cross Necklace -->
+    <div class="product-card">
+        <img src="./image/71XRc9Zly0L._AC_SL1500_.jpg" alt="Cross Necklace">
+        <div class="product-info">
+            <h3>Sterling Silver Cross Necklace</h3>
+            <a href="https://amzn.to/4cOboec" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Relavel Hair Tools Bag -->
+    <div class="product-card">
+        <img src="./image/71vBKGKggQL._SL1500_.jpg" alt="Hair Tools Bag">
+        <div class="product-info">
+            <h3>Relavel Hair Tools Travel Bag</h3>
+            <a href="https://amzn.to/4taEbyk" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- 5 in 1 Hot Air Styler -->
+    <div class="product-card">
+        <img src="./image/71UsdSvfv1L._AC_SY695_.jpg" alt="Air Styler">
+        <div class="product-info">
+            <h3>5 in 1 Hot Air Styler Set</h3>
+            <a href="https://amzn.to/3RgDupL" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Silver Heart Bracelet -->
+    <div class="product-card">
+        <img src="./image/81KM+G4hdLL._SL1500_.jpg" alt="Bracelet">
+        <div class="product-info">
+            <h3>925 Sterling Silver Heart Bracelet</h3>
+            <a href="https://amzn.to/4cZNoDr" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Rose Heart Necklace -->
+    <div class="product-card">
+        <img src="./image/81Xq8hCqDhL._AC_SL1500_.jpg" alt="Rose Necklace">
+        <div class="product-info">
+            <h3>Rose Heart Initial Necklace</h3>
+            <a href="https://amzn.to/3RheSx9" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Mom Jewelry Box Set -->
+    <div class="product-card">
+        <img src="./image/81Ab3F9MZGL._AC_SY535_.jpg" alt="Jewelry Set">
+        <div class="product-info">
+            <h3>Preserved Rose Jewelry Box Gift Set</h3>
+            <a href="https://amzn.to/49khMaz" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+    <!-- Iced Coffee Cups -->
+    <div class="product-card">
+        <img src="./image/e58044b0a8b12cb89af04025f4196010.jpg" alt="Coffee Cups">
+        <div class="product-info">
+            <h3>Aesthetic Iced Coffee Cups (100 Pack)</h3>
+            <a href="https://amzn.to/3OHFAOV" class="btn-amazon">View on Amazon</a>
+        </div>
+    </div>
+
+</div>
+
+<div style="text-align: center; margin-top: 40px; color: #9ca3af;">
+    <p>© 2026 Developed by Shaheera Sadia | Mandi Bahauddin, Punjab, Pakistan</p>
+</div>
 
 </body>
 </html>
-
-
-
- 
