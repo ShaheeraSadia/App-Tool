@@ -483,51 +483,74 @@
     
     <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 30px;">
 </div>
-        <!-- ✅ ABOUT SECTION - BEAUTIFUL REDESIGN -->
-        <section id="about" style="padding: 60px 30px; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border-radius: 20px; margin-bottom: 40px; border: 1px solid #ddeeff; position:relative; overflow:hidden;">
-            <!-- Decorative blobs -->
-            <div style="position:absolute; top:-80px; right:-80px; width:250px; height:250px; background:radial-gradient(circle, rgba(58,123,213,0.08), transparent); border-radius:50%; pointer-events:none;"></div>
-            <div style="position:absolute; bottom:-60px; left:-60px; width:200px; height:200px; background:radial-gradient(circle, rgba(0,210,255,0.08), transparent); border-radius:50%; pointer-events:none;"></div>
+        <!-- ✅ ABOUT SECTION - COMPLETE & OPTIMIZED -->
+<section id="about" style="padding: 80px 30px; background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%); border-radius: 20px; margin-bottom: 40px; border: 1px solid #ddeeff; position:relative; overflow:hidden; font-family: 'Inter', sans-serif;">
+    
+    <!-- Decorative blobs -->
+    <div style="position:absolute; top:-80px; right:-80px; width:250px; height:250px; background:radial-gradient(circle, rgba(58,123,213,0.08), transparent); border-radius:50%; pointer-events:none; z-index: 1;"></div>
+    <div style="position:absolute; bottom:-60px; left:-60px; width:200px; height:200px; background:radial-gradient(circle, rgba(0,210,255,0.08), transparent); border-radius:50%; pointer-events:none; z-index: 1;"></div>
 
-            <div style="max-width: 900px; margin: 0 auto; position:relative;">
-                <!-- Badge -->
-                <div style="text-align:center; margin-bottom:25px;">
-                    <span style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); color:white; padding:6px 20px; border-radius:50px; font-size:0.78rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;">About ToolKit Pro</span>
+    <div style="max-width: 1000px; margin: 0 auto; position:relative; z-index: 2;">
+        <!-- Badge -->
+        <div style="text-align:center; margin-bottom:25px;">
+            <span style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); color:white; padding:6px 20px; border-radius:50px; font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase;">About Toolkit Pro</span>
+        </div>
+
+        <!-- Main Heading -->
+        <h2 style="text-align:center; font-size:2.2rem; color:#1a2a4a; margin:0 auto 20px; font-weight:800; line-height:1.3; max-width: 700px;">
+            Why Use Toolkit Pro for Your <br>
+            <span style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Creative Projects?</span>
+        </h2>
+        
+        <p style="text-align:center; color:#5a6a7a; font-size:1.05rem; max-width:720px; margin:0 auto 50px; line-height:1.8;">
+            Toolkit Pro is designed to bridge the gap between high-quality imagery and web performance. Whether you are a web developer, Pinterest marketer, or content creator, our tools help you stay ahead.
+        </p>
+
+        <!-- Feature Cards Grid -->
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px;">
+            
+            <!-- Card 1: Image Compression -->
+            <div style="background:white; border-radius:18px; padding:30px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
+                 onmouseenter="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 40px rgba(58,123,213,0.12)'"
+                 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
+                <div style="width:50px; height:50px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.4rem; color:white;">
+                    <i class="fas fa-compress-arrows-alt"></i>
                 </div>
-
-                <h2 style="text-align:center; font-size:1.9rem; color:#1a2a4a; margin-bottom:15px; font-weight:800; line-height:1.3;">Why Use ToolKit Pro for Your<br><span style="background: linear-gradient(135deg, #3a7bd5, #00d2ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Creative Projects?</span></h2>
-                <p style="text-align:center; color:#5a6a7a; font-size:1rem; max-width:680px; margin:0 auto 40px; line-height:1.8;">In today's digital landscape, speed and aesthetics are everything. ToolKit Pro bridges the gap between high-quality imagery and web performance — built for social media managers, web developers, and Pinterest creators.</p>
-
-                <!-- Feature cards row -->
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px;">
-                    <div style="background:white; border-radius:16px; padding:28px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
-                         onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 35px rgba(58,123,213,0.15)'"
-                         onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
-                        <div style="width:48px; height:48px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:1.3rem;">🗜️</div>
-                        <h3 style="color:#1a2a4a; font-size:1.05rem; margin:0 0 10px; font-weight:700;">Efficient Image Compression</h3>
-                        <p style="color:#6b7c93; font-size:0.88rem; line-height:1.7; margin:0;">Large images slow your website. Our <strong>Image Compressor</strong> uses advanced algorithms to reduce file size without sacrificing clarity — keeping your site lightning-fast.</p>
-                    </div>
-
-                    <div style="background:white; border-radius:16px; padding:28px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
-                         onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 35px rgba(58,123,213,0.15)'"
-                         onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
-                        <div style="width:48px; height:48px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:1.3rem;">🎨</div>
-                        <h3 style="color:#1a2a4a; font-size:1.05rem; margin:0 0 10px; font-weight:700;">Instant Color Palette Tool</h3>
-                        <p style="color:#6b7c93; font-size:0.88rem; line-height:1.7; margin:0;">Struggling with color themes? Our <strong>Color Palette Extractor</strong> gives you professional hex codes from any image — essential for branding and maintaining a consistent aesthetic.</p>
-                    </div>
-
-                    <div style="background:white; border-radius:16px; padding:28px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
-                         onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 35px rgba(58,123,213,0.15)'"
-                         onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
-                        <div style="width:48px; height:48px; background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; font-size:1.3rem;">⚡</div>
-                        <h3 style="color:#1a2a4a; font-size:1.05rem; margin:0 0 10px; font-weight:700;">100% Free & Fast</h3>
-                        <p style="color:#6b7c93; font-size:0.88rem; line-height:1.7; margin:0;">All tools are completely free with no sign-up required. Works entirely in your browser — your images never leave your device, keeping your data private and secure.</p>
-                    </div>
-                </div>
+                <h3 style="color:#1a2a4a; font-size:1.1rem; margin:0 0 12px; font-weight:700;">Efficient Image Compression</h3>
+                <p style="color:#6b7c93; font-size:0.9rem; line-height:1.7; margin:0;">
+                    Reduce file sizes significantly without losing quality. Perfect for SEO and fast-loading web pages.
+                </p>
             </div>
-        </section>
 
-       
+            <!-- Card 2: Color Palette -->
+            <div style="background:white; border-radius:18px; padding:30px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
+                 onmouseenter="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 40px rgba(58,123,213,0.12)'"
+                 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
+                <div style="width:50px; height:50px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.4rem; color:white;">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 style="color:#1a2a4a; font-size:1.1rem; margin:0 0 12px; font-weight:700;">Instant Color Palette Tool</h3>
+                <p style="color:#6b7c93; font-size:0.9rem; line-height:1.7; margin:0;">
+                    Extract beautiful hex codes from any image instantly to maintain your brand's aesthetic consistency.
+                </p>
+            </div>
+
+            <!-- Card 3: Free & Secure -->
+            <div style="background:white; border-radius:18px; padding:30px; border:1px solid #e0eeff; box-shadow:0 4px 20px rgba(58,123,213,0.07); transition:0.3s;"
+                 onmouseenter="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 40px rgba(58,123,213,0.12)'"
+                 onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(58,123,213,0.07)'">
+                <div style="width:50px; height:50px; background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:20px; font-size:1.4rem; color:white;">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 style="color:#1a2a4a; font-size:1.1rem; margin:0 0 12px; font-weight:700;">100% Free & Fast</h3>
+                <p style="color:#6b7c93; font-size:0.9rem; line-height:1.7; margin:0;">
+                    No sign-up required. Your images are processed locally, ensuring 100% privacy and security.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <!-- FAQ -->
         <section style="padding: 40px 20px; background: #fff; border-radius: 15px; margin-bottom: 40px;">
