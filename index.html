@@ -549,123 +549,120 @@
             </p>
         </div>
 
-        <!-- ✅ CONTACT SECTION - BEAUTIFUL REDESIGN -->
-        <section id="contact" style="margin-bottom: 40px;">
-            <h2 style="text-align:center; font-size:1.9rem; font-weight:800; color:#1a1a2e; margin-bottom:35px;">Get In Touch</h2>
-
-            <div style="background:white; border-radius:20px; box-shadow:0 8px 40px rgba(0,0,0,0.08); overflow:hidden; display:flex; flex-wrap:wrap; border:1px solid #eef0f5;">
-
-                <!-- Left: Contact Form -->
-                <div style="flex:1; min-width:300px; padding:40px 35px;">
-                    <!-- Name -->
-                    <div style="margin-bottom:18px;">
-                        <input type="text" id="contactName" placeholder="Your Name"
-                               style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; transition:border 0.2s; font-family:inherit;"
-                               onfocus="this.style.borderColor='#3a4fd4'"
-                               onblur="this.style.borderColor='#e0e4f0'">
-                    </div>
-                    <!-- Email -->
-                    <div style="margin-bottom:18px;">
-                        <input type="email" id="contactEmail" placeholder="Email Address"
-                               style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; transition:border 0.2s; font-family:inherit;"
-                               onfocus="this.style.borderColor='#3a4fd4'"
-                               onblur="this.style.borderColor='#e0e4f0'">
-                    </div>
-                    <!-- Message -->
-                    <div style="margin-bottom:22px;">
-                        <textarea id="contactMessage" placeholder="Your Message" rows="5"
-                                  style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; resize:vertical; transition:border 0.2s; font-family:inherit;"
-                                  onfocus="this.style.borderColor='#3a4fd4'"
-                                  onblur="this.style.borderColor='#e0e4f0'"></textarea>
-                    </div>
-                    <!-- Send Button -->
-                    <button id="sendMsgBtn" onclick="sendContactMessage()"
-                            style="width:100%; padding:15px; background:linear-gradient(135deg,#3a4fd4,#2c3de0); color:white; border:none; border-radius:10px; font-size:1rem; font-weight:700; cursor:pointer; transition:all 0.3s; font-family:inherit; letter-spacing:0.3px;"
-                            onmouseenter="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(58,79,212,0.4)'"
-                            onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                        <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Send Message
-                    </button>
-                    <!-- Success message (hidden) -->
-                    <div id="contactSuccess" style="display:none; margin-top:15px; background:#e8f5e9; color:#2e7d32; padding:12px 18px; border-radius:10px; font-size:0.9rem; font-weight:600; text-align:center;">
-                        ✅ Message sent successfully! We'll get back to you soon.
-                    </div>
-                </div>
-
-                <!-- Right: Contact Info -->
-                <div style="flex:1; min-width:280px; background:#f7f9ff; padding:40px 35px; border-left:1px solid #eef0f5;">
-                    <h3 style="color:#1a1a2e; font-size:1.2rem; font-weight:800; margin:0 0 30px;">Contact Info</h3>
-
-                    <!-- Developer -->
-                    <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
-                        <div style="width:40px; height:40px; background:#e8eeff; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="fas fa-user-circle" style="color:#3a4fd4; font-size:1.1rem;"></i>
-                        </div>
-                        <div>
-                            <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Developer</p>
-                            <p style="margin:0; font-weight:700; color:#1a1a2e; font-size:0.95rem;">Shaheera Sadia</p>
-                        </div>
-                    </div>
-
-                    <!-- Location -->
-                    <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
-                        <div style="width:40px; height:40px; background:#fff0f3; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="fas fa-map-marker-alt" style="color:#e84393; font-size:1.1rem;"></i>
-                        </div>
-                        <div>
-                            <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Location</p>
-                            <p style="margin:0; font-weight:700; color:#1a1a2e; font-size:0.95rem;">Mandi Bahauddin, Punjab, Pakistan</p>
-                        </div>
-                    </div>
-
-                    <!-- GitHub -->
-                    <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
-                        <div style="width:40px; height:40px; background:#f0f0f0; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                            <i class="fab fa-github" style="color:#333; font-size:1.1rem;"></i>
-                        </div>
-                        <div>
-                            <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">GitHub</p>
-                            <a href="https://github.com/shaheerasadia" target="_blank" style="margin:0; font-weight:700; color:#3a4fd4; font-size:0.95rem; text-decoration:none;">github.com/shaheerasadia</a>
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:30px;">
-                        <div style="width:40px; height:40px; background:#fff8e6; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-                         
-                        </div>
-                        <div>
-                            <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Email</p>
-                            <a href="mailto:shaheerasadia@gmail.com" style="margin:0; font-weight:700; color:#3a4fd4; font-size:0.95rem; text-decoration:none;">shaheerasadia@gmail.com</a>
-                        </div>
-                    </div>
-
-                    
-                       <!-- Social Icons -->
-                    <div style="display:flex; gap:12px;">
-                        <a href="https://www.pinterest.com/shaheerasadia" target="_blank"
-                           style="width:42px; height:42px; background:#e60023; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
-                           onmouseenter="this.style.transform='scale(1.1)'"
-                           onmouseleave="this.style.transform='scale(1)'">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="https://github.com/shaheerasadia" target="_blank"
-                           style="width:42px; height:42px; background:#333; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
-                           onmouseenter="this.style.transform='scale(1.1)'"
-                           onmouseleave="this.style.transform='scale(1)'">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:shaheerasadia@gmail.com"
-                           style="width:42px; height:42px; background:linear-gradient(135deg,#3a4fd4,#2c3de0); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
-                           onmouseenter="this.style.transform='scale(1.1)'"
-                           onmouseleave="this.style.transform='scale(1)'">
-                       </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+      
  
+<!-- ✅ CONTACT SECTION - BEAUTIFUL REDESIGN -->
+<section id="contact" style="margin-bottom: 40px;">
+    <h2 style="text-align:center; font-size:1.9rem; font-weight:800; color:#1a1a2e; margin-bottom:35px;">Get In Touch</h2>
 
+    <div style="background:white; border-radius:20px; box-shadow:0 8px 40px rgba(0,0,0,0.08); overflow:hidden; display:flex; flex-wrap:wrap; border:1px solid #eef0f5;">
+
+        <!-- Left: Contact Form -->
+        <div style="flex:1; min-width:300px; padding:40px 35px;">
+            <!-- Name -->
+            <div style="margin-bottom:18px;">
+                <input type="text" id="contactName" placeholder="Your Name"
+                       style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; transition:border 0.2s; font-family:inherit;"
+                       onfocus="this.style.borderColor='#3a4fd4'"
+                       onblur="this.style.borderColor='#e0e4f0'">
+            </div>
+            <!-- Email -->
+            <div style="margin-bottom:18px;">
+                <input type="email" id="contactEmail" placeholder="Email Address"
+                       style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; transition:border 0.2s; font-family:inherit;"
+                       onfocus="this.style.borderColor='#3a4fd4'"
+                       onblur="this.style.borderColor='#e0e4f0'">
+            </div>
+            <!-- Message -->
+            <div style="margin-bottom:22px;">
+                <textarea id="contactMessage" placeholder="Your Message" rows="5"
+                          style="width:100%; padding:14px 18px; border:1.5px solid #e0e4f0; border-radius:10px; font-size:0.95rem; color:#333; outline:none; box-sizing:border-box; resize:vertical; transition:border 0.2s; font-family:inherit;"
+                          onfocus="this.style.borderColor='#3a4fd4'"
+                          onblur="this.style.borderColor='#e0e4f0'"></textarea>
+            </div>
+            <!-- Send Button -->
+            <button id="sendMsgBtn" onclick="sendContactMessage()"
+                    style="width:100%; padding:15px; background:linear-gradient(135deg,#3a4fd4,#2c3de0); color:white; border:none; border-radius:10px; font-size:1rem; font-weight:700; cursor:pointer; transition:all 0.3s; font-family:inherit; letter-spacing:0.3px; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-paper-plane" style="margin-right:8px;"></i> Send Message
+            </button>
+            <!-- Success message (hidden) -->
+            <div id="contactSuccess" style="display:none; margin-top:15px; background:#e8f5e9; color:#2e7d32; padding:12px 18px; border-radius:10px; font-size:0.9rem; font-weight:600; text-align:center;">
+                ✅ Message sent successfully! We'll get back to you soon.
+            </div>
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div style="flex:1; min-width:280px; background:#f7f9ff; padding:40px 35px; border-left:1px solid #eef0f5;">
+            <h3 style="color:#1a1a2e; font-size:1.2rem; font-weight:800; margin:0 0 30px;">Contact Info</h3>
+
+            <!-- Developer -->
+            <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+                <div style="width:40px; height:40px; background:#e8eeff; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i class="fas fa-user-circle" style="color:#3a4fd4; font-size:1.1rem;"></i>
+                </div>
+                <div>
+                    <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Developer</p>
+                    <p style="margin:0; font-weight:700; color:#1a1a2e; font-size:0.95rem;">Shaheera Sadia</p>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+                <div style="width:40px; height:40px; background:#fff0f3; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i class="fas fa-map-marker-alt" style="color:#e84393; font-size:1.1rem;"></i>
+                </div>
+                <div>
+                    <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Location</p>
+                    <p style="margin:0; font-weight:700; color:#1a1a2e; font-size:0.95rem;">Mandi Bahauddin, Punjab, Pakistan</p>
+                </div>
+            </div>
+
+            <!-- GitHub -->
+            <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:22px;">
+                <div style="width:40px; height:40px; background:#f0f0f0; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i class="fab fa-github" style="color:#333; font-size:1.1rem;"></i>
+                </div>
+                <div>
+                    <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">GitHub</p>
+                    <a href="https://github.com/shaheerasadia" target="_blank" style="margin:0; font-weight:700; color:#3a4fd4; font-size:0.95rem; text-decoration:none;">github.com/shaheerasadia</a>
+                </div>
+            </div>
+
+            <!-- Email (Icon Fixed Here) -->
+            <div style="display:flex; align-items:flex-start; gap:14px; margin-bottom:30px;">
+                <div style="width:40px; height:40px; background:#fff8e6; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i class="fas fa-envelope" style="color:#f39c12; font-size:1.1rem;"></i>
+                </div>
+                <div>
+                    <p style="margin:0 0 2px; font-size:0.78rem; color:#999; text-transform:uppercase; letter-spacing:1px; font-weight:600;">Email</p>
+                    <a href="mailto:shaheerasadia@gmail.com" style="margin:0; font-weight:700; color:#3a4fd4; font-size:0.95rem; text-decoration:none;">shaheerasadia@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Social Icons (Email Icon Fixed Here) -->
+            <div style="display:flex; gap:12px;">
+                <a href="https://www.pinterest.com/shaheerasadia" target="_blank"
+                   style="width:42px; height:42px; background:#e60023; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
+                   onmouseenter="this.style.transform='scale(1.1)'"
+                   onmouseleave="this.style.transform='scale(1)'">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+                <a href="https://github.com/shaheerasadia" target="_blank"
+                   style="width:42px; height:42px; background:#333; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
+                   onmouseenter="this.style.transform='scale(1.1)'"
+                   onmouseleave="this.style.transform='scale(1)'">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:shaheerasadia@gmail.com"
+                   style="width:42px; height:42px; background:linear-gradient(135deg,#3a4fd4,#2c3de0); border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; text-decoration:none; transition:0.2s;"
+                   onmouseenter="this.style.transform='scale(1.1)'"
+                   onmouseleave="this.style.transform='scale(1)'">
+                   <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
     </main>    
  <!-- About Developer Section -->
