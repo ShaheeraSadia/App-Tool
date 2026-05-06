@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar';
+ 
 import Resources from './Resources';
-import ShoppingPage from './ShoppingPage.jsx';
+import ShoppingPage from './ShoppingPage,
 import ToolkitPro from './ToolkitPro'; 
 
 function App() {
