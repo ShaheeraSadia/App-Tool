@@ -1,4 +1,4 @@
-{
+ {
   "redirects": [
     {
       "source": "/products/formal-prom-dress",
@@ -10,8 +10,6 @@
       "destination": "https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20",
       "permanent": true
     },
-    // اپنے باقی لنکس یہاں شامل کر
-    
     {
       "source": "/products/cz-halo-earrings",
       "destination": "https://amzn.to/4w0r7y5",
@@ -71,8 +69,7 @@
       "source": "/products/honey-almond-gift",
       "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
-    },
-   
+    }
   ],
   "rewrites": [
     {
@@ -85,12 +82,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
   ]
 }
-  
-
-
-
- 
