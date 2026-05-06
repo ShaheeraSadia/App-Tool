@@ -66,6 +66,11 @@
       "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
     }
+   {
+  "source": "/products/audible-trial",
+  "destination": "https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20",
+  "permanent": true
+}
   ],
   "rewrites": [
     {
