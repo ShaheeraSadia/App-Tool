@@ -32,7 +32,7 @@ function App() {
           {/* شاپنگ پیج راؤٹ */}
           <Route path="/shopping" element={<ShoppingPage />} />
 
-          {/* ریسورسز پیج راؤٹ */}
+          {/* ریسورسز پیج راؤٹ - یہ لائن سب سے اہم ہے */}
           <Route path="/resources" element={<Resources />} />
         </Routes>
       </div>
@@ -40,9 +40,4 @@ function App() {
   );
 }
 
-export default App;
-
-
-
-
- 
+export default App; 
