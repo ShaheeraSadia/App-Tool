@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="/manifest.json">
-
-    <!-- Primary Meta Tags -->
-    <title>Toolkit Pro | Professional Image Compressor & Creative Tools</title>
-    <meta name="title" content="Toolkit Pro | Professional Image Compressor & Creative Tools">
-    <meta name="description" content="Optimize your creative workflow with Toolkit Pro. Fast Image Compression and Color Palette Extraction for designers and developers, built by Shaheera Sadia.">
-    <meta name="keywords" content="Image Compressor, Toolkit Pro, Shaheera Sadia, Web Developer Pakistan, Color Palette Extractor, AdSense Optimized Tools, Creative Suite Pro">
+<title>Toolkit Pro | Image Compressor & Nature Serenity Tools</title>
+    <meta name="title" content="Toolkit Pro | Image Compressor & Nature Serenity Tools">
+    <meta name="description" content="Optimize images and find focus with Nature Serenity sounds. Toolkit Pro offers fast image compression and calming rain/sea sounds for a productive workflow.">
+    <meta name="keywords" content="Image Compressor, Nature Serenity, Rain Sounds for Focus, Toolkit Pro, Shaheera Sadia, Web Developer Pakistan, QR Code Generator">
     <meta name="author" content="Shaheera Sadia">
 
-    <!-- Open Graph / Facebook (Social Sharing) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://app-tool.vercel.app/">
-    <meta property="og:title" content="Toolkit Pro | Professional Creative Tools">
-    <meta property="og:description" content="High-quality image optimization and design tools for digital creators.">
-  
+    <meta property="og:title" content="Toolkit Pro | Creative Tools & Nature Serenity">
+    <meta property="og:description" content="Fast image optimization and calming nature sounds for digital creators and readers.">
+    <meta property="og:image" content="https://app-tool.vercel.app/og-image.jpg"> 
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://app-tool.vercel.app/">
+    <meta property="twitter:title" content="Toolkit Pro | Creative Tools & Nature Serenity">
+    <meta property="twitter:description" content="Optimize your workflow and relax with nature sounds.">
+    
     <!-- Verification Tags -->
     <meta name="p:domain_verify" content="6f5f88df2183753c9debe2b7ed349572"/>
     <meta name="google-site-verification" content="CFuxyempwhS14mhML8YBmmSZ2v-rp79dd3jdQSqY-Ow" />
@@ -405,7 +408,24 @@
         As a <strong>Web and Mobile Application Developer</strong>, I have optimized this suite to ensure it meets the highest standards of digital marketing and platform monetization.
     </p>
 </section>
- 
+ <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #f0f7f4; border-radius: 20px; box-shadow: 0 10px 30px rgba(45, 90, 39, 0.1); border-left: 6px solid #2d5a27; text-align: center; font-family: 'Poppins', sans-serif;">
+    
+    <h3 style="color: #2d5a27; margin-bottom: 10px;">Serenity Audio Space</h3>
+    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">Perfect for reading or focusing. Try it now!</p>
+
+    <div style="display: flex; justify-content: center; gap: 15px;">
+        <button onclick="toggleNature('https://www.soundjay.com/nature/rain-07.mp3', this)" style="background: white; border: 1px solid #c3e6cb; padding: 15px; border-radius: 15px; cursor: pointer; transition: 0.3s; flex: 1;">
+            <span style="font-size: 24px;"></span><br><small style="color: #2d5a27; font-weight: bold;">Rain</small>
+        </button>
+
+        <button onclick="toggleNature('https://www.soundjay.com/nature/ocean-wave-1.mp3', this)" style="background: white; border: 1px solid #c3e6cb; padding: 15px; border-radius: 15px; cursor: pointer; transition: 0.3s; flex: 1;">
+            <span style="font-size: 24px;"></span><br><small style="color: #2d5a27; font-weight: bold;">Sea</small>
+        </button>
+    </div>
+
+    <p id="audio-status" style="margin-top: 15px; font-size: 12px; color: #888;">Select a sound to play</p>
+</div>
+
  
         <!-- ✅ COLOR PALETTE EXTRACTOR - BEAUTIFUL VERSION -->
         <div class="tool-container" id="palette-section" style="background: linear-gradient(145deg, #0f0c29, #302b63, #24243e); border-radius: 20px; padding: 40px; position: relative; overflow: hidden;">
@@ -1247,30 +1267,42 @@
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
     </script>
- <script>
-    let currentAudio = null;
+  <script>
+    let currentNatureAudio = null;
+    let activeBtn = null;
 
-    function playNature(type) {
-        stopNature(); // پہلے سے چلنے والی آواز بند کریں
-        // یہاں آپ اپنی پسند کے نیچر ساؤنڈز کے لنکس ڈال سکتی ہیں
-        const sounds = {
-            'rain': 'https://assets.mixkit.co/active_storage/sfx/2533/2533-preview.mp3',
-            'forest': 'https://assets.mixkit.co/active_storage/sfx/2405/2405-preview.mp3',
-            'waves': 'https://assets.mixkit.co/active_storage/sfx/2534/2534-preview.mp3'
-        };
+    function toggleNature(src, btn) {
+        // اگر وہی بٹن دوبارہ دبایا جائے تو بند کر دیں
+        if (currentNatureAudio && !currentNatureAudio.paused && activeBtn === btn) {
+            stopAll();
+            return;
+        }
+
+        stopAll(); // پہلے سے چلنے والی آواز بند کریں
+
+        currentNatureAudio = new Audio(src);
+        currentNatureAudio.loop = true;
+        currentNatureAudio.play();
         
-        currentAudio = new Audio(sounds[type]);
-        currentAudio.loop = true;
-        currentAudio.play();
+        activeBtn = btn;
+        btn.style.background = "#d4edda";
+        btn.style.borderColor = "#2d5a27";
+        document.getElementById("audio-status").innerText = "Playing... 🎵";
     }
 
-    function stopNature() {
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio = null;
+    function stopAll() {
+        if (currentNatureAudio) {
+            currentNatureAudio.pause();
+            currentNatureAudio = null;
         }
+        if (activeBtn) {
+            activeBtn.style.background = "white";
+            activeBtn.style.borderColor = "#c3e6cb";
+        }
+        document.getElementById("audio-status").innerText = "Select a sound to play";
     }
 </script>
+ 
       
           
 </body>       
