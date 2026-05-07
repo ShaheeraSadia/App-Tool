@@ -408,24 +408,7 @@
         As a <strong>Web and Mobile Application Developer</strong>, I have optimized this suite to ensure it meets the highest standards of digital marketing and platform monetization.
     </p>
 </section>
- <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #f0f7f4; border-radius: 20px; box-shadow: 0 10px 30px rgba(45, 90, 39, 0.1); border-left: 6px solid #2d5a27; text-align: center; font-family: 'Poppins', sans-serif;">
-    
-    <h3 style="color: #2d5a27; margin-bottom: 10px;">Serenity Audio Space</h3>
-    <p style="color: #666; font-size: 13px; margin-bottom: 20px;">Perfect for reading or focusing. Try it now!</p>
-
-    <div style="display: flex; justify-content: center; gap: 15px;">
-        <button onclick="toggleNature('https://www.soundjay.com/nature/rain-07.mp3', this)" style="background: white; border: 1px solid #c3e6cb; padding: 15px; border-radius: 15px; cursor: pointer; transition: 0.3s; flex: 1;">
-            <span style="font-size: 24px;"></span><br><small style="color: #2d5a27; font-weight: bold;">Rain</small>
-        </button>
-
-        <button onclick="toggleNature('https://www.soundjay.com/nature/ocean-wave-1.mp3', this)" style="background: white; border: 1px solid #c3e6cb; padding: 15px; border-radius: 15px; cursor: pointer; transition: 0.3s; flex: 1;">
-            <span style="font-size: 24px;"></span><br><small style="color: #2d5a27; font-weight: bold;">Sea</small>
-        </button>
-    </div>
-
-    <p id="audio-status" style="margin-top: 15px; font-size: 12px; color: #888;">Select a sound to play</p>
-</div>
-
+  
  
         <!-- ✅ COLOR PALETTE EXTRACTOR - BEAUTIFUL VERSION -->
         <div class="tool-container" id="palette-section" style="background: linear-gradient(145deg, #0f0c29, #302b63, #24243e); border-radius: 20px; padding: 40px; position: relative; overflow: hidden;">
@@ -499,29 +482,7 @@
         As a specialized <strong>Web and Mobile Application Developer</strong> based in Pakistan, I have built this tool to be fast, responsive, and SEO-friendly, ensuring it supports your workflow from design to deployment.
     </p>
 </section>
-         <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 25px; background: linear-gradient(145deg, #e6f4ea, #ffffff); border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif; border: 1px solid #c3e6cb;">
-    
-    <h3 style="color: #2d5a27; margin-bottom: 15px;"> Nature Serenity Player</h3>
-    <p style="font-size: 13px; color: #555; margin-bottom: 20px;">Focus or relax with the sounds of nature.</p>
-
-    <div style="display: flex; justify-content: space-around; gap: 10px;">
-        <button onclick="playNature('rain')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;"></span><br><small>Rain</small>
-        </button>
-
-        <button onclick="playNature('forest')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;"></span><br><small>Forest</small>
-        </button>
-
-        <button onclick="playNature('waves')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;"></span><br><small>Ocean</small>
-        </button>
-    </div>
-
-    <button onclick="stopNature()" style="margin-top: 20px; background: #2d5a27; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 12px;">
-        Stop Music
-    </button>
-
+         
     <audio id="rain-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"></audio> </div>
 
             <!-- Empty State hint -->
@@ -1268,43 +1229,7 @@
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
     </script>
-  <script>
-    let currentNatureAudio = null;
-    let activeBtn = null;
-
-    function toggleNature(src, btn) {
-        // اگر وہی بٹن دوبارہ دبایا جائے تو بند کر دیں
-        if (currentNatureAudio && !currentNatureAudio.paused && activeBtn === btn) {
-            stopAll();
-            return;
-        }
-
-        stopAll(); // پہلے سے چلنے والی آواز بند کریں
-
-        currentNatureAudio = new Audio(src);
-        currentNatureAudio.loop = true;
-        currentNatureAudio.play();
-        
-        activeBtn = btn;
-        btn.style.background = "#d4edda";
-        btn.style.borderColor = "#2d5a27";
-        document.getElementById("audio-status").innerText = "Playing... 🎵";
-    }
-
-    function stopAll() {
-        if (currentNatureAudio) {
-            currentNatureAudio.pause();
-            currentNatureAudio = null;
-        }
-        if (activeBtn) {
-            activeBtn.style.background = "white";
-            activeBtn.style.borderColor = "#c3e6cb";
-        }
-        document.getElementById("audio-status").innerText = "Select a sound to play";
-    }
-</script>
- 
-      
+   
           
 </body>       
 </html>
