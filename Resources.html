@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Toolkit Pro by Shaheera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #2c3de0;
+            --accent-blue: #00d2ff;
+            --amazon-orange: #FF9900;
+            --bg-gray: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            background-color: var(--bg-gray);
+            color: #333;
+        }
+
+        /* Navbar matches Toolkit Pro layout */
+        nav {
+            background: linear-gradient(135deg, #2c3de0 0%, #4158d0 100%);
+            padding: 0 20px;
+            height: 64px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo { font-weight: 800; font-size: 1.3rem; color: white; text-decoration: none; }
+        .logo span { color: var(--accent-blue); }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .nav-links a:hover { opacity: 1; }
+
+        .hero {
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .resource-card:hover { transform: translateY(-10px); }
+
+        .resource-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .btn-amazon {
+            display: block;
+            background: var(--amazon-orange);
+            color: white;
+            padding: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-amazon:hover { background: #e68a00; }
+
+        .btn-audible { background: #000; color: #f59e0b; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">ToolKit <span>Pro</span></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/Resources.html" style="border-bottom: 2px solid white;">Resources</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Exclusive Resources</h1>
+        <p>Curated tools and deals for digital creators</p>
+    </div>
+
+    <div class="container">
+        <div class="resource-card">
+            <i class="fas fa-headphones"></i>
+            <h3>Audible Plus Trial</h3>
+            <p>Listen to thousands of audiobooks. Start your 30-day free trial and get 2 free books!</p>
+            <a href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" class="btn-amazon btn-audible" target="_blank">Get Free Trial</a>
+        </div>
+
+        <div class="resource-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Home Essentials</h3>
+            <p>Upgrade your lifestyle with our top-rated kitchen gadgets and air fryers.</p>
+            <a href="https://amzn.to/30CJecN" class="btn-amazon" target="_blank">Shop on Amazon</a>
+        </div>
+
+        <div class="resource-card">
+            <i class="fas fa-gem"></i>
+            <h3>Aesthetic Jewelry</h3>
+            <p>Explore beautiful silver necklaces and CZ halo earrings for every occasion.</p>
+            <a href="https://amzn.to/4w0r7y5" class="btn-amazon" style="background: var(--primary-blue);" target="_blank">View Collection</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.9rem;">
+        &copy; 2026 Toolkit Pro | Built by Shaheera Sadia
+    </footer>
+
+</body>
+</html>
