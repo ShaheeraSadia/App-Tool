@@ -264,6 +264,29 @@
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
+<!--QR Code Generator-->
+ <div id="qr-tool" style="max-width: 450px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee;">
+    
+    <h2 style="color: #2c3de0;">QR Code Generator</h2>
+    <input type="text" id="qr-input" placeholder="https://app-tool.vercel.app/" style="width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; margin-bottom: 20px;">
+    
+    <div id="qrcode" style="display: flex; justify-content: center; margin-bottom: 20px;"></div>
+    
+    <button onclick="generateQR()" style="width: 100%; background: #2c3de0; color: white; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">
+        Generate QR Code
+    </button>
+
+    <button id="download-btn" onclick="downloadQR()" 
+            style="width: 100%; background: #ffffff; color: #2c3de0; padding: 12px; border: 2px solid #2c3de0; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; display: none;">
+        Download QR Code
+    </button>
+
+</div>
+
+
+
+
+     
 
         <!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
         <div class="tool-container">
@@ -394,7 +417,7 @@
             <!-- Header -->
             <div style="text-align: center; margin-bottom: 35px; position:relative;">
                 <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); padding:8px 22px; border-radius:50px; margin-bottom:18px;">
-                    <span style="font-size:1.3rem;">🎨</span>
+                    <span style="font-size:1.3rem;"></span>
                     <span style="color:rgba(255,255,255,0.7); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; font-weight:600;">Color Intelligence</span>
                 </div>
                 <h2 style="color:#fff; font-size:2rem; margin:0 0 10px; font-weight:800; letter-spacing:-0.5px;">Color Palette Extractor</h2>
@@ -458,14 +481,14 @@
 </section>
             <!-- Empty State hint -->
             <div id="paletteHint" style="text-align:center; margin-top:10px;">
-                <p style="color:rgba(255,255,255,0.25); font-size:0.8rem;">💡 Great for Pinterest boards, brand kits & social media aesthetics</p>
+                <p style="color:rgba(255,255,255,0.25); font-size:0.8rem;">Great for Pinterest boards, brand kits & social media aesthetics</p>
             </div>
         </div>
 
         <!-- Stats Bar -->
         <section class="stats-bar">
             <i class="fab fa-pinterest" style="font-size: 3rem;"></i>
-            <h2 style="font-size: 1.5rem; margin: 10px 0;">45.1k</h2>
+            <h2 style="font-size: 1.5rem; margin: 10px 0;">45.4k</h2>
             <p>MONTHLY VIEWS ON PINTEREST</p>
             <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="btn" style="background:white; color:var(--pinterest-red); margin-top:20px;">Follow Shaheera</a>
         </section>
@@ -747,7 +770,7 @@
     
     <p><a href="privacy.html" style="color:#ccc; text-decoration:none;">Privacy Policy</a></p>
     <p><a href="terms.html" style="color:#ccc; text-decoration:none;">Terms of Service</a></p>
-    <p><a href="/shopping.html" style="color:#f093fb; text-decoration:none;">🛍️ Shopping</a></p>
+    <p><a href="/shopping.html" style="color:#f093fb; text-decoration:none;">Shopping</a></p>
 </div>
 <div>
                 <h3>Social</h3>
@@ -1144,6 +1167,52 @@
             document.getElementById('mainNav').classList.toggle('active');
         });
  </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        // کیو آر کوڈ آبجیکٹ کو انیشلائز کریں
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 180,
+            height: 180,
+            colorDark : "#2c3de0",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
+        function generateQR() {
+            var input = document.getElementById("qr-input");
+            var downloadBtn = document.getElementById("download-btn");
+
+            if (input.value.trim() === "") {
+                alert("Please enter a link first!");
+                return;
+            }
+
+            qrcode.clear(); 
+            qrcode.makeCode(input.value);
+            
+            // ڈاؤن لوڈ بٹن کو ظاہر کریں
+            downloadBtn.style.display = "block";
+        }
+
+        function downloadQR() {
+            var qrImage = document.querySelector("#qrcode img");
+            
+            if (qrImage) {
+                var link = document.createElement("a");
+                link.href = qrImage.src;
+                link.download = "ToolkitPro-QR.png";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                alert("Please generate a QR code first!");
+            }
+        }
+        
+        // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
+        qrcode.makeCode("https://app-tool.vercel.app/");
+    </script>
  
           
 </body>       
