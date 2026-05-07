@@ -1195,20 +1195,28 @@
             downloadBtn.style.display = "block";
         }
 
-        function downloadQR() {
-            var qrImage = document.querySelector("#qrcode img");
-            
-            if (qrImage) {
-                var link = document.createElement("a");
-                link.href = qrImage.src;
-                link.download = "ToolkitPro-QR.png";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } else {
-                alert("Please generate a QR code first!");
-            }
-        }
+       function downloadQR() {
+    // کیو آر کوڈ کے کینوس یا امیج کو تلاش کریں
+    var qrCanvas = document.querySelector("#qrcode canvas");
+    var qrImage = document.querySelector("#qrcode img");
+    
+    var link = document.createElement("a");
+    link.download = "ToolkitPro-QR.png";
+
+    // اگر لائبریری کینوس استعمال کر رہی ہے
+    if (qrCanvas) {
+        link.href = qrCanvas.toDataURL("image/png");
+        link.click();
+    } 
+    // اگر لائبریری امیج ٹیگ استعمال کر رہی ہے
+    else if (qrImage && qrImage.src) {
+        link.href = qrImage.src;
+        link.click();
+    } 
+    else {
+        alert("Please generate a QR code first!");
+    }
+}
         
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
