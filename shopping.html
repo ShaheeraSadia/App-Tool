@@ -78,15 +78,16 @@
     }
 </style>
 
-<nav class="navbar">
-    <a href="index.html" class="logo">Toolkit<span style="color:#333">Pro</span></a>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Resources.html">Resources</a></li>
-        <li><a href="shopping.html">Shopping</a></li>
-    </ul>
+ <nav>
+    <div class="nav-content">
+        <a href="index.html" class="logo">Toolkit <span>Pro</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="Resources.html" class="nav-link">Resources</a>
+            <a href="shopping.html" class="nav-link active">Shopping</a>
+        </div>
+    </div>
 </nav>
- 
 
 <div class="hero" id="top">
     <div class="hero-badge">✨ Handpicked for You</div>
@@ -101,10 +102,12 @@
     <button class="filter-btn" onclick="filterProducts('decor',this)">Decor</button>
     <button class="filter-btn" onclick="filterProducts('fashion',this)">Fashion</button>
     <button class="filter-btn" onclick="filterProducts('kitchen',this)">Kitchen</button>
-    <button class="filter-btn" onclick="filterProducts('bags',this)">Bags</button>
-    <button class="filter-btn" onclick="filterProducts('gifts',this)">Gifts</button>
-  <button class="filter-btn" onclick="filterProducts('health',this)">Health</button>
+    <button class="filter-btn" onclick="filterProducts('mobile',this)">Mobile</button> <button class="filter-btn" onclick="filterProducts('gifts',this)">Gifts</button>
+    <button class="filter-btn" onclick="filterProducts('health',this)">Health</button>
 </div>
+ 
+
+ 
 <!-- START: Modern Aesthetic Audible Section -->
 <section class="audible-container" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Inter', sans-serif;">
     
