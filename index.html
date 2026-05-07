@@ -597,7 +597,55 @@
                 Our Image Compressor uses advanced algorithms to reduce file size without losing the aesthetic quality your Pinterest followers love. Developed by Shaheera Sadia in Mandi Bahauddin, we provide global-standard efficiency for modern creators.
             </p>
         </div>
+<div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 25px; background: linear-gradient(145deg, #e6f4ea, #ffffff); border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif; border: 1px solid #c3e6cb;">
+    
+    <h3 style="color: #2d5a27; margin-bottom: 15px;"> Nature Serenity Player</h3>
+    <p style="font-size: 13px; color: #555; margin-bottom: 20px;">Focus or relax with the sounds of nature.</p>
 
+    <div style="display: flex; justify-content: space-around; gap: 10px;">
+        <button onclick="playNature('rain')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
+            <span style="font-size: 20px;"></span><br><small>Rain</small>
+        </button>
+
+        <button onclick="playNature('forest')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
+            <span style="font-size: 20px;"></span><br><small>Forest</small>
+        </button>
+
+        <button onclick="playNature('waves')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
+            <span style="font-size: 20px;"></span><br><small>Ocean</small>
+        </button>
+    </div>
+
+    <button onclick="stopNature()" style="margin-top: 20px; background: #2d5a27; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 12px;">
+        Stop Music
+    </button>
+
+    <audio id="rain-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"></audio> </div>
+
+<script>
+    let currentAudio = null;
+
+    function playNature(type) {
+        stopNature(); // پہلے سے چلنے والی آواز بند کریں
+        // یہاں آپ اپنی پسند کے نیچر ساؤنڈز کے لنکس ڈال سکتی ہیں
+        const sounds = {
+            'rain': 'https://assets.mixkit.co/active_storage/sfx/2533/2533-preview.mp3',
+            'forest': 'https://assets.mixkit.co/active_storage/sfx/2405/2405-preview.mp3',
+            'waves': 'https://assets.mixkit.co/active_storage/sfx/2534/2534-preview.mp3'
+        };
+        
+        currentAudio = new Audio(sounds[type]);
+        currentAudio.loop = true;
+        currentAudio.play();
+    }
+
+    function stopNature() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio = null;
+        }
+    }
+</script>
       
  
 <!-- ✅ CONTACT SECTION - BEAUTIFUL REDESIGN -->
