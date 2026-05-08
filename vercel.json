@@ -1,13 +1,208 @@
  {
   "redirects": [
     {
-      "source": "/products/formal-prom-dress",
+      "source": "/products/motorola-razr-plus",
+      "destination": "https://amzn.to/4ncN8pw",
+      "permanent": true
+    },
+    {
+      "source": "/products/samsung-galaxy-s26-ultra",
+      "destination": "https://amzn.to/48CCdzw",
+      "permanent": true
+    },
+    {
+      "source": "/products/stylish-hand-bag",
+      "destination": "https://amzn.to/4w9Vgv8",
+      "permanent": true
+    },
+    {
+      "source": "/products/heart-birthstone-bracelet",
+      "destination": "https://amzn.to/4cZNoDr",
+      "permanent": true
+    },
+    {
+      "source": "/products/rose-heart-necklace",
+      "destination": "https://amzn.to/3RheSx9",
+      "permanent": true
+    },
+    {
+      "source": "/products/canvas-tote-bag",
+      "destination": "https://amzn.to/4nf1VjC",
+      "permanent": true
+    },
+    {
+      "source": "/products/graduation-gift-basket",
+      "destination": "https://amzn.to/3P5DLLw",
+      "permanent": true
+    },
+    {
+      "source": "/products/monogram-canvas-tote",
+      "destination": "https://amzn.to/4uu76P6",
+      "permanent": true
+    },
+    {
+      "source": "/products/mom-necklace",
+      "destination": "https://amzn.to/4vXHYSb",
+      "permanent": true
+    },
+    {
+      "source": "/products/philips-sonicare-4100",
+      "destination": "https://amzn.to/4tZWBTF",
+      "permanent": true
+    },
+    {
+      "source": "/products/philips-sonicare-9500",
+      "destination": "https://amzn.to/4eZ59W3",
+      "permanent": true
+    },
+    {
+      "source": "/products/neutrogena-sunscreen-spf70",
+      "destination": "https://amzn.to/4u0PEl6",
+      "permanent": true
+    },
+    {
+      "source": "/products/anti-aging-moisturizer",
+      "destination": "https://amzn.to/497AXEA",
+      "permanent": true
+    },
+    {
+      "source": "/products/clear-cups-lids-straws",
+      "destination": "https://amzn.to/3OHFAOV",
+      "permanent": true
+    },
+    {
+      "source": "/products/aerlang-massage-gun",
+      "destination": "https://amzn.to/429rKYH",
+      "permanent": true
+    },
+    {
+      "source": "/products/princess-bed-canopy-black",
+      "destination": "https://amzn.to/42Rd2FQ",
+      "permanent": true
+    },
+    {
+      "source": "/products/luxury-ruffle-canopy",
+      "destination": "https://amzn.to/4tdYryX",
+      "permanent": true
+    },
+    {
+      "source": "/products/3-opening-princess-bed-net",
+      "destination": "https://amzn.to/49u42Kq",
+      "permanent": true
+    },
+    {
+      "source": "/products/hellobaby-video-monitor",
+      "destination": "https://amzn.to/4f7Mrvs",
+      "permanent": true
+    },
+    {
+      "source": "/products/solar-fence-lights",
+      "destination": "https://amzn.to/4euYQtg",
+      "permanent": true
+    },
+    {
+      "source": "/products/solar-plant-stand-lamps",
+      "destination": "https://amzn.to/4whcHKk",
+      "permanent": true
+    },
+    {
+      "source": "/products/aesthetic-fake-vines-lights",
+      "destination": "https://amzn.to/3Qy8CAY",
+      "permanent": true
+    },
+    {
+      "source": "/products/solar-watering-can-lights",
+      "destination": "https://amzn.to/3P5TkTt",
+      "permanent": true
+    },
+    {
+      "source": "/products/skin-care-essential",
+      "destination": "https://amzn.to/4tyrsq2",
+      "permanent": true
+    },
+    {
+      "source": "/products/aesthetic-lamp",
+      "destination": "https://amzn.to/4ugr3sv",
+      "permanent": true
+    },
+    {
+      "source": "/products/premium-kitchen-oven",
+      "destination": "https://amzn.to/423rVEI",
+      "permanent": true
+    },
+    {
+      "source": "/products/pizza-pan-set",
+      "destination": "https://amzn.to/49aXqjZ",
+      "permanent": true
+    },
+    {
+      "source": "/products/mothers-day-special-gift",
+      "destination": "https://amzn.to/3PamQaP",
+      "permanent": true
+    },
+    {
+      "source": "/products/elegant-fashion-dress",
+      "destination": "https://amzn.to/3OAOY6S",
+      "permanent": true
+    },
+    {
+      "source": "/products/gales-luxury-candle",
+      "destination": "https://amzn.to/4w5w2hw",
+      "permanent": true
+    },
+    {
+      "source": "/products/advanced-skin-care",
+      "destination": "https://amzn.to/4cKXQi0",
+      "permanent": true
+    },
+    {
+      "source": "/products/mom-gift-set",
+      "destination": "https://amzn.to/4w0L3Rx",
+      "permanent": true
+    },
+    {
+      "source": "/products/family-sized-airfryer",
+      "destination": "https://amzn.to/3OCJecN",
+      "permanent": true
+    },
+    {
+      "source": "/products/dual-basket-airfryer",
+      "destination": "https://amzn.to/4cTUBVP",
+      "permanent": true
+    },
+    {
+      "source": "/products/honey-almond-gift",
+      "destination": "https://amzn.to/4tHhPWd",
+      "permanent": true
+    },
+    {
+      "source": "/products/laptop-table",
+      "destination": "https://amzn.to/4mXjB2R",
+      "permanent": true
+    },
+    {
+      "source": "/products/floral-maxi-dress",
+      "destination": "https://amzn.to/426S3P3",
+      "permanent": true
+    },
+    {
+      "source": "/products/galaxy-rose-gift",
+      "destination": "https://amzn.to/4cZ27yy",
+      "permanent": true
+    },
+    {
+      "source": "/products/halter-prom-dress",
       "destination": "https://amzn.to/4t6tywp",
       "permanent": true
     },
     {
-      "source": "/products/audible-trial",
-      "destination": "https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20",
+      "source": "/products/jewelry-set",
+      "destination": "https://amzn.to/4w0L3Rx",
+      "permanent": true
+    },
+    {
+      "source": "/products/preserved-rose-necklace-set",
+      "destination": "https://amzn.to/49khMaz",
       "permanent": true
     },
     {
@@ -21,6 +216,66 @@
       "permanent": true
     },
     {
+      "source": "/products/hair-tools-travel-bag",
+      "destination": "https://amzn.to/4taEbyk",
+      "permanent": true
+    },
+    {
+      "source": "/products/5-in-1-hot-air-styler",
+      "destination": "https://amzn.to/3RgDupL",
+      "permanent": true
+    },
+    {
+      "source": "/products/infinity-love-birthstone-necklace",
+      "destination": "https://amzn.to/4wkEWYw",
+      "permanent": true
+    },
+    {
+      "source": "/products/purseilver-4-piece-rose-gold-set",
+      "destination": "https://amzn.to/3RbFxvn",
+      "permanent": true
+    },
+    {
+      "source": "/products/berylove-sequin-cocktail-dress",
+      "destination": "https://amzn.to/4dvzomk",
+      "permanent": true
+    },
+    {
+      "source": "/products/berylove-formal-lace-prom-dress",
+      "destination": "https://amzn.to/4wgd87w",
+      "permanent": true
+    },
+    {
+      "source": "/products/black-balloon-arch-kit",
+      "destination": "https://amzn.to/4tX5kGl",
+      "permanent": true
+    },
+    {
+      "source": "/products/amico-led-recessed-lights",
+      "destination": "https://amzn.to/4dedDq4",
+      "permanent": true
+    },
+    {
+      "source": "/products/siepasa-windproof-umbrella",
+      "destination": "https://amzn.to/4wgWRiI",
+      "permanent": true
+    },
+    {
+      "source": "/products/preserved-rose-gift-set",
+      "destination": "https://amzn.to/49khMaz",
+      "permanent": true
+    },
+    {
+      "source": "/products/formal-prom-dress",
+      "destination": "https://amzn.to/4t6tywp",
+      "permanent": true
+    },
+    {
+      "source": "/products/audible-trial",
+      "destination": "https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20",
+      "permanent": true
+    },
+    {
       "source": "/products/rose-spa-basket",
       "destination": "https://amzn.to/4t1uK45",
       "permanent": true
@@ -31,18 +286,8 @@
       "permanent": true
     },
     {
-      "source": "/products/mom-necklace",
-      "destination": "https://amzn.to/4vXHYSb",
-      "permanent": true
-    },
-    {
       "source": "/products/industrial-lamp",
       "destination": "https://amzn.to/4fWqS7u",
-      "permanent": true
-    },
-    {
-      "source": "/products/floral-maxi-dress",
-      "destination": "https://amzn.to/426S3P3",
       "permanent": true
     },
     {
@@ -53,21 +298,6 @@
     {
       "source": "/products/galaxy-redrose",
       "destination": "https://amzn.to/4cZ27yy",
-      "permanent": true
-    },
-    {
-      "source": "/products/family-airfryer",
-      "destination": "https://amzn.to/30CJecN",
-      "permanent": true
-    },
-    {
-      "source": "/products/dual-air-fryer",
-      "destination": "https://amzn.to/4cTUBVP",
-      "permanent": true
-    },
-    {
-      "source": "/products/honey-almond-gift",
-      "destination": "https://amzn.to/4tHhPWd",
       "permanent": true
     }
   ],
