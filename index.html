@@ -160,6 +160,37 @@
         }
 
         /* Mobile nav handled above */
+     /* فوٹر کو موبائل پر پروفیشنل بنانے کے لیے */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 20px; /* موبائل پر سائیڈز سے تھوڑی جگہ دینے کے لیے */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important; /* تمام سیکشنز ایک دوسرے کے نیچے آئیں گے */
+        text-align: center; 
+        gap: 35px; 
+    }
+
+    /* لنکس اور ٹیکسٹ کو سینٹر کرنے کے لیے */
+    .footer-grid div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* سوشل آئیکونز کو ایک لائن میں سینٹر کرنے کے لیے */
+    .footer-grid div:last-child {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+    }
+}
     </style>
 </head>
  
@@ -226,18 +257,8 @@
                     </a>
                 </div>
             </div>
-
-            <a href="#about" class="nav-link">
-                <i class="fas fa-info-circle"></i> About
-            </a>
-
-            <a href="#contact" class="nav-link">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-         <a href="/Resources.html" class="nav-link">
-    <i class="fas fa-book-open"></i> Resources
-</a>
-
+<a href="Resources.html" class="nav-link"><i class="fas fa-book-open"></i> Resources</a>
+          
             <!-- ✅ SHOP LINK -->
             <a href="/shopping.html" class="nav-link" style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white;">
                 <i class="fas fa-shopping-bag"></i> Shop
