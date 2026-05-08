@@ -285,74 +285,23 @@
     </button>
 
 </div>
-     <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #fdfdfd; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #e0eadd; font-family: sans-serif;">
+     <div id="palette-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #e0eadd; font-family: sans-serif;">
     
-    <h3 style="color: #2d5a27; margin-bottom: 5px;">🌿 Nature Soundscape</h3>
-    <p style="color: #888; font-size: 13px; margin-bottom: 25px;">Real nature sounds for focus and relaxation.</p>
+    <h3 style="color: #2d5a27; margin-bottom: 5px;">🍃 Nature Palette Extractor</h3>
+    <p style="color: #888; font-size: 13px; margin-bottom: 25px;">Upload a nature photo to extract its earthy colors.</p>
 
-    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <div style="text-align: center;">
-            <button id="rain-btn" onclick="toggleNature('https://assets.mixkit.co/active_storage/sfx/2533/2533-preview.mp3', 'rain-btn')" 
-                    style="width: 65px; height: 65px; background: #e8f5e9; border: 2px solid #c8e6c9; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                🌧️
-            </button>
-            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #2d5a27;">Real Rain</p>
-        </div>
-
-        <div style="text-align: center;">
-            <button id="ocean-btn" onclick="toggleNature('https://www.soundjay.com/nature/ocean-wave-1.mp3', 'ocean-btn')" 
-                    style="width: 65px; height: 65px; background: #e3f2fd; border: 2px solid #bbdefb; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                🌊
-            </button>
-            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #1565c0;">Ocean</p>
-        </div>
-
-        <div style="text-align: center;">
-            <button id="birds-btn" onclick="toggleNature('https://assets.mixkit.co/active_storage/sfx/2405/2405-preview.mp3', 'birds-btn')" 
-                    style="width: 65px; height: 65px; background: #fff9c4; border: 2px solid #fff176; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                🐦
-            </button>
-            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #fbc02d;">Birds</p>
-        </div>
-    </div>
-
-    <button onclick="stopAll()" style="margin-top: 25px; background: #f44336; color: white; border: none; padding: 10px 30px; border-radius: 30px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase;">
-        Stop All
+    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+    <button onclick="document.getElementById('imageInput').click()" style="background: #2d5a27; color: white; border: none; padding: 12px 25px; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%;">
+        Upload Nature Photo
     </button>
 
-    <p id="nature-status" style="margin-top: 15px; font-size: 11px; color: #aaa;">Ready to Relax</p>
+    <div id="paletteContainer" style="display: flex; justify-content: center; gap: 10px; margin-top: 25px; flex-wrap: wrap;">
+        </div>
+    
+    <canvas id="canvas" style="display:none;"></canvas>
 </div>
 
  
-<!--
-<div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 25px; background: linear-gradient(145deg, #e6f4ea, #ffffff); border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif; border: 1px solid #c3e6cb;">
-    
-    <h3 style="color: #2d5a27; margin-bottom: 15px;">🌿 Nature Serenity Player</h3>
-    <p style="font-size: 13px; color: #555; margin-bottom: 20px;">Focus or relax with the sounds of nature.</p>
-
-    <div style="display: flex; justify-content: space-around; gap: 10px;">
-        <button onclick="playNature('rain')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;">🌧️</span><br><small>Rain</small>
-        </button>
-
-        <button onclick="playNature('forest')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;">🐦</span><br><small>Forest</small>
-        </button>
-
-        <button onclick="playNature('waves')" style="background: white; border: 1px solid #ddd; padding: 10px; border-radius: 12px; cursor: pointer; flex: 1;">
-            <span style="font-size: 20px;">🌊</span><br><small>Ocean</small>
-        </button>
-    </div>
-
-    <button onclick="stopNature()" style="margin-top: 20px; background: #2d5a27; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 12px;">
-        Stop Music
-    </button>
-
-    <audio id="rain-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"></audio> </div -->
-
-
-
-     
  
  
 
@@ -1293,77 +1242,65 @@
         
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
-    </script>
-<!--   <script>
-    let currentAudio = null;
+ <script>
+    document.getElementById('imageInput').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
 
-    function playNature(type) {
-        stopNature(); // پہلے سے چلنے والی آواز بند کریں
-        // یہاں آپ اپنی پسند کے نیچر ساؤنڈز کے لنکس ڈال سکتی ہیں
-        const sounds = {
-            'rain': 'https://assets.mixkit.co/active_storage/sfx/2533/2533-preview.mp3',
-            'forest': 'https://assets.mixkit.co/active_storage/sfx/2405/2405-preview.mp3',
-            'waves': 'https://assets.mixkit.co/active_storage/sfx/2534/2534-preview.mp3'
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = new Image();
+            img.onload = function() {
+                extractColors(img);
+            };
+            img.src = event.target.result;
         };
-        
-        currentAudio = new Audio(sounds[type]);
-        currentAudio.loop = true;
-        currentAudio.play();
-    }
+        reader.readAsDataURL(file);
+    });
 
-    function stopNature() {
-        if (currentAudio) {
-            currentAudio.pause();
-            currentAudio = null;
-        }
-    }
-</script>-->
-<script>
-    let natureAudio = null;
-    let currentActiveId = null;
+    function extractColors(img) {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
 
-    function toggleNature(audioUrl, btnId) {
-        const status = document.getElementById("nature-status");
-        const btn = document.getElementById(btnId);
+        const container = document.getElementById('paletteContainer');
+        container.innerHTML = ''; // پرانے رنگ صاف کریں
 
-        if (natureAudio && !natureAudio.paused && currentActiveId === btnId) {
-            stopAll();
-            return;
-        }
+        // مختلف پوزیشنز سے رنگ نکالنا
+        const coords = [
+            {x: 10, y: 10}, 
+            {x: canvas.width/2, y: canvas.height/2}, 
+            {x: canvas.width-10, y: canvas.height-10},
+            {x: 20, y: canvas.height-20},
+            {x: canvas.width-20, y: 20}
+        ];
 
-        stopAll();
+        coords.forEach(coord => {
+            const data = ctx.getImageData(coord.x, coord.y, 1, 1).data;
+            const hex = "#" + ((1 << 24) + (data[0] << 16) + (data[1] << 8) + data[2]).toString(16).slice(1);
+            
+            const colorBox = document.createElement('div');
+            colorBox.style.width = '60px';
+            colorBox.style.height = '60px';
+            colorBox.style.backgroundColor = hex;
+            colorBox.style.borderRadius = '10px';
+            colorBox.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+            colorBox.title = hex;
+            
+            // کاپی کرنے کا فیچر
+            colorBox.onclick = function() {
+                navigator.clipboard.writeText(hex);
+                alert('Color ' + hex + ' copied!');
+            };
 
-        status.innerText = "Loading Real Sound...";
-        natureAudio = new Audio(audioUrl);
-        natureAudio.loop = true;
-
-        natureAudio.play().then(() => {
-            status.innerText = "Now Playing... 🎵";
-            btn.style.transform = "scale(1.1)";
-            btn.style.boxShadow = "0 0 15px rgba(0,0,0,0.1)";
-            currentActiveId = btnId;
-        }).catch(e => {
-            status.innerText = "Click again to play!";
+            container.appendChild(colorBox);
         });
     }
-
-    function stopAll() {
-        if (natureAudio) {
-            natureAudio.pause();
-            natureAudio = null;
-        }
-        const buttons = ['rain-btn', 'ocean-btn', 'birds-btn'];
-        buttons.forEach(id => {
-            const b = document.getElementById(id);
-            if(b) {
-                b.style.transform = "scale(1)";
-                b.style.boxShadow = "none";
-            }
-        });
-        document.getElementById("nature-status").innerText = "Ready to Relax";
-        currentActiveId = null;
-    }
-</script>
+</script> 
+ 
+     
           
 </body>       
 </html>
