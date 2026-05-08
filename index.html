@@ -287,9 +287,37 @@
 </div>
 
 
+ <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #fdfdfd; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #e0eadd; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    
+    <h3 style="color: #2d5a27; margin-bottom: 5px;">🌿 Nature Soundscape</h3>
+    <p style="color: #888; font-size: 13px; margin-bottom: 25px;">Relax and focus while you work or read.</p>
 
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <div style="text-align: center;">
+            <button id="rain-btn" onclick="toggleNature('https://www.soundjay.com/nature/rain-01.mp3', 'rain-btn')" 
+                    style="width: 70px; height: 70px; background: #e8f5e9; border: 2px solid #c8e6c9; border-radius: 50%; cursor: pointer; font-size: 28px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🌧️
+            </button>
+            <p style="margin-top: 8px; font-size: 12px; font-weight: bold; color: #2d5a27;">Rain</p>
+        </div>
 
-     
+        <div style="text-align: center;">
+            <button id="ocean-btn" onclick="toggleNature('https://www.soundjay.com/nature/ocean-wave-1.mp3', 'ocean-btn')" 
+                    style="width: 70px; height: 70px; background: #e3f2fd; border: 2px solid #bbdefb; border-radius: 50%; cursor: pointer; font-size: 28px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🌊
+            </button>
+            <p style="margin-top: 8px; font-size: 12px; font-weight: bold; color: #1565c0;">Ocean</p>
+        </div>
+    </div>
+
+    <button onclick="stopAll()" style="margin-top: 25px; background: #f44336; color: white; border: none; padding: 8px 25px; border-radius: 30px; cursor: pointer; font-size: 12px; font-weight: bold; letter-spacing: 1px;">
+        STOP ALL
+    </button>
+
+    <p id="nature-status" style="margin-top: 15px; font-size: 11px; color: #aaa; text-transform: uppercase;">Ready to Play</p>
+</div>
+
+ 
 
         <!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
         <div class="tool-container">
@@ -1230,6 +1258,51 @@
         qrcode.makeCode("https://app-tool.vercel.app/");
     </script>
    
+     <script>
+    let natureAudio = null;
+    let currentBtnId = null;
+
+    function toggleNature(audioUrl, btnId) {
+        const status = document.getElementById("nature-status");
+        const btn = document.getElementById(btnId);
+
+        // اگر پہلے سے کوئی آواز چل رہی ہے اور وہی بٹن دبایا گیا ہے تو بند کر دیں
+        if (natureAudio && !natureAudio.paused && currentBtnId === btnId) {
+            stopAll();
+            return;
+        }
+
+        stopAll(); // پہلے سب بند کریں
+
+        status.innerText = "Loading Sound...";
+        natureAudio = new Audio(audioUrl);
+        natureAudio.loop = true;
+
+        natureAudio.play().then(() => {
+            status.innerText = "Playing Now... 🎵";
+            btn.style.transform = "scale(1.1)";
+            btn.style.boxShadow = "0 0 15px rgba(0,0,0,0.1)";
+            currentBtnId = btnId;
+        }).catch(error => {
+            status.innerText = "Error playing audio. Try again!";
+            console.error("Audio error:", error);
+        });
+    }
+
+    function stopAll() {
+        if (natureAudio) {
+            natureAudio.pause();
+            natureAudio = null;
+        }
+        
+        // بٹن اسٹائل ری سیٹ کریں
+        document.getElementById("rain-btn").style.transform = "scale(1)";
+        document.getElementById("ocean-btn").style.transform = "scale(1)";
+        document.getElementById("nature-status").innerText = "Ready to Play";
+        currentBtnId = null;
+    }
+</script>
+
           
 </body>       
 </html>
