@@ -285,67 +285,27 @@
     </button>
 
 </div>
- <div id="aesthetic-designer" style="max-width: 500px; margin: 20px auto; padding: 25px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
-    <h3 style="color: #2d5a27;">🌿 Aesthetic Designer</h3>
-    
-    <canvas id="main-canvas" width="800" height="500" style="width: 100%; height: auto; border-radius: 15px; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); background: #f0f0f0;"></canvas>
+ <div class="card-tool">
+  <h3>🌿 Nature Quote Designer</h3>
 
-    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; text-align: left;">
-        <input type="file" id="upload-photo" accept="image/*" style="display: none;">
-        <button onclick="document.getElementById('upload-photo').click()" style="background: #2d5a27; color: white; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">
-            📸 1. Select Photo
-        </button>
+  <div id="preview-wrap">
+    <canvas id="design-canvas"></canvas>
+  </div>
 
-        <input type="text" id="quote-input" placeholder="2. Enter your quote..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; outline: none;">
-        
-        <button onclick="saveDesign()" style="background: white; color: #2d5a27; padding: 12px; border: 2px solid #2d5a27; border-radius: 10px; cursor: pointer; font-weight: bold;">
-            💾 3. Download Design
-        </button>
-    </div>
+  <div class="controls">
+    <input type="file" id="bg-upload" accept="image/*" style="display:none">
+    <button class="btn-upload" onclick="document.getElementById('bg-upload').click()">
+      📸 1. Upload Your Nature Photo
+    </button>
+    <textarea id="user-quote" placeholder="2. Type your quote here..." rows="2"></textarea>
+    <button class="btn-download" onclick="downloadDesign()">
+      💾 3. Download Design
+    </button>
+    <p id="status"></p>
+  </div>
 </div>
- 
- 
 
-     <!--
-    <div id="aesthetic-card-tool" style="max-width: 550px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.06); text-align: center; border: 1px solid #eef2ee; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    
-    <h3 style="color: #2d5a27; margin-bottom: 8px;">🌿 Nature Quote Designer</h3>
-    <p style="color: #777; font-size: 13px; margin-bottom: 25px;">Create stunning transparent quote cards for your Pinterest pins.</p>
-
-    <div id="capture-area" style="width: 100%; height: 320px; background: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800') center/cover; border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 5px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-        
-        <div id="glass-card" style="width: 80%; padding: 25px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.25); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); color: white; text-align: center;">
-            <p id="card-text" style="margin: 0; font-size: 18px; font-style: italic; font-family: 'Georgia', serif; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">"Nature is the purest portal to inner peace."</p>
-        </div>
-    </div>
-
-    <div style="margin-top: 25px; text-align: left;">
-        <label style="font-size: 12px; color: #2d5a27; font-weight: bold; display: block; margin-bottom: 5px;">Your Message:</label>
-        <textarea id="user-quote" placeholder="Type your nature quote here..." 
-               style="width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 12px; margin-bottom: 15px; outline: none; font-size: 14px; resize: none;" 
-               rows="2" oninput="document.getElementById('card-text').innerText = this.value || 'Your Quote Here'"></textarea>
-        
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div style="flex: 1;">
-                <label style="font-size: 12px; color: #2d5a27; font-weight: bold;">Transparency (Blur):</label>
-                <input type="range" min="0" max="30" value="12" style="width: 100%; cursor: pointer;" 
-                       oninput="document.getElementById('glass-card').style.backdropFilter = `blur(${this.value}px)`; document.getElementById('glass-card').style.webkitBackdropFilter = `blur(${this.value}px)`">
-            </div>
-            
-            <div style="flex: 1;">
-                <label style="font-size: 12px; color: #2d5a27; font-weight: bold;">Background Brightness:</label>
-                <input type="range" min="0.3" max="1" step="0.1" value="1" style="width: 100%; cursor: pointer;" 
-                       oninput="document.getElementById('capture-area').style.filter = `brightness(${this.value})` ">
-            </div>
-        </div>
-    </div>
-
-    <p style="margin-top: 20px; font-size: 11px; color: #999; font-style: italic;">✨ Tip: Take a screenshot to save your creation!</p>
-</div>
- -->
- 
-
-        <!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
+ <!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
         <div class="tool-container">
             <div style="text-align: center; margin-bottom: 25px;">
                 <h2><i class="fas fa-file-image"></i> Image Compressor</h2>
@@ -656,12 +616,7 @@
             <p style="color: #555; line-height: 1.7;">
                 Our Image Compressor uses advanced algorithms to reduce file size without losing the aesthetic quality your Pinterest followers love. Developed by Shaheera Sadia in Mandi Bahauddin, we provide global-standard efficiency for modern creators.
             </p>
-        </div>
-
-     
- 
- 
- 
+        </div> 
 <!-- ✅ CONTACT SECTION - BEAUTIFUL REDESIGN -->
 <section id="contact" style="margin-bottom: 40px;">
     <h2 style="text-align:center; font-size:1.9rem; font-weight:800; color:#1a1a2e; margin-bottom:35px;">Get In Touch</h2>
@@ -793,10 +748,7 @@
                     <span>React</span> <span>Vercel</span> <span>UI/UX</span> <span>Mobile Apps</span>
                 </div>
 
-                
-
-                 
-            </div>
+               </div>
         </div>
     </div>
 </section>
@@ -814,14 +766,7 @@
     </script>
 </div>
        
-        
-
-    
-
-    
-
-    
-    <footer>
+     <footer>
         <div class="container footer-grid">
             <div>
                 <h3>ToolKit Pro</h3>
@@ -1282,82 +1227,180 @@
         
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
-  
-<script>
-    const canvas = document.getElementById('main-canvas');
-    const ctx = canvas.getContext('2d');
-    const quoteInput = document.getElementById('quote-input');
-    const uploadInput = document.getElementById('upload-photo');
-    let baseImage = null;
+  <script>
+  const canvas = document.getElementById('design-canvas');
+  const ctx    = canvas.getContext('2d');
+  const wrap   = document.getElementById('preview-wrap');
+  let bgImage  = null;
 
-    // ابتدائی ڈیزائن (Default View)
-    function drawDesign() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        if (baseImage) {
-            ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-        } else {
-            ctx.fillStyle = "#e8f5e9";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
+  // ── Resize canvas to fill wrapper ──────────────────────────
+  function resizeCanvas() {
+    canvas.width  = wrap.clientWidth;
+    canvas.height = wrap.clientHeight;
+    render();
+  }
+  window.addEventListener('resize', resizeCanvas);
 
-        // شیشے والا کارڈ (Glass Effect)
-        ctx.fillStyle = "rgba(255, 255, 255, 0.2)";
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = "rgba(0,0,0,0.2)";
-        ctx.beginPath();
-        ctx.roundRect(100, 150, 600, 200, 20);
-        ctx.fill();
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
-        ctx.stroke();
+  // ── Draw everything onto canvas ─────────────────────────────
+  function render() {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
 
-        // ٹیکسٹ لکھنا
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = "white";
-        ctx.font = "italic 30px Georgia";
-        ctx.textAlign = "center";
-        const text = quoteInput.value || "Your Aesthetic Quote Here";
-        ctx.fillText(text, canvas.width / 2, canvas.height / 2 + 10);
+    // Background
+    if (bgImage) {
+      const scale = Math.max(W / bgImage.width, H / bgImage.height);
+      const sw = bgImage.width  * scale;
+      const sh = bgImage.height * scale;
+      const sx = (W - sw) / 2;
+      const sy = (H - sh) / 2;
+      ctx.drawImage(bgImage, sx, sy, sw, sh);
+      // dark overlay for text readability
+      ctx.fillStyle = 'rgba(0,0,0,0.28)';
+      ctx.fillRect(0, 0, W, H);
+    } else {
+      // default green gradient
+      const grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, '#a5d6a7');
+      grad.addColorStop(1, '#2e7d32');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
     }
 
-    // امیج اپ لوڈ ہینڈلر
-    uploadInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-                const img = new Image();
-                img.onload = () => {
-                    baseImage = img;
-                    drawDesign();
-                };
-                img.src = event.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+    // Glass card (simulated — backdrop-filter not supported in canvas)
+    const cx = W * 0.1;
+    const cy = H * 0.15;
+    const cw = W * 0.8;
+    const ch = H * 0.70;
+    ctx.save();
+    roundRect(ctx, cx, cy, cw, ch, 18);
+    ctx.fillStyle   = 'rgba(255,255,255,0.22)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    ctx.lineWidth   = 1.5;
+    ctx.stroke();
+    ctx.restore();
 
-    // ٹیکسٹ ٹائپنگ ہینڈلر
-    quoteInput.addEventListener('input', drawDesign);
+    // Quote text
+    const quote = document.getElementById('user-quote').value.trim()
+                  || '"Your Aesthetic Quote Here"';
 
-    // ڈاؤن لوڈ فنکشن (اسی طرح جیسے کمپریسر میں ہے)
-    function saveDesign() {
-        const link = document.createElement('a');
-        link.download = 'ToolkitPro-Aesthetic-Design.png';
-        link.href = canvas.toDataURL("image/png");
-        link.click();
+    ctx.save();
+    ctx.fillStyle    = '#ffffff';
+    ctx.shadowColor  = 'rgba(0,0,0,0.5)';
+    ctx.shadowBlur   = 6;
+    ctx.shadowOffsetY = 2;
+
+    const fontSize = Math.max(14, Math.min(22, cw / (quote.length * 0.52)));
+    ctx.font        = `italic ${fontSize}px Georgia, serif`;
+    ctx.textAlign   = 'center';
+    ctx.textBaseline = 'middle';
+
+    wrapText(ctx, quote, W / 2, H / 2, cw - 44, fontSize * 1.6);
+    ctx.restore();
+  }
+
+  // ── Rounded rectangle path helper ──────────────────────────
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  // ── Multi-line text helper ──────────────────────────────────
+  function wrapText(ctx, text, x, centerY, maxW, lineH) {
+    const words = text.split(' ');
+    const lines = [];
+    let line = '';
+    for (let word of words) {
+      const test = line ? line + ' ' + word : word;
+      if (ctx.measureText(test).width > maxW && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = test;
+      }
+    }
+    if (line) lines.push(line);
+
+    const totalH  = lines.length * lineH;
+    let   startY  = centerY - totalH / 2 + lineH / 2;
+    for (let l of lines) {
+      ctx.fillText(l, x, startY);
+      startY += lineH;
+    }
+  }
+
+  // ── Image upload ────────────────────────────────────────────
+  document.getElementById('bg-upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    setStatus('Loading image…');
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      const img = new Image();
+      img.onload = function() {
+        bgImage = img;
+        render();
+        setStatus('✅ Image loaded! Add your quote then download.');
+      };
+      img.onerror = () => setStatus('❌ Could not load image.');
+      img.src = ev.target.result; // base64 — zero CORS issues
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ── Live quote preview ──────────────────────────────────────
+  document.getElementById('user-quote').addEventListener('input', render);
+
+  // ── Download as high-quality PNG ────────────────────────────
+  function downloadDesign() {
+    const btn = document.querySelector('.btn-download');
+    btn.textContent = 'Generating…';
+
+    // Draw at 2× resolution for crisp output
+    const W = canvas.width;
+    const H = canvas.height;
+
+    const hiCanvas  = document.createElement('canvas');
+    hiCanvas.width  = W * 2;
+    hiCanvas.height = H * 2;
+    const hCtx = hiCanvas.getContext('2d');
+    hCtx.scale(2, 2);
+    hCtx.drawImage(canvas, 0, 0); // copy current frame
+
+    try {
+      const dataUrl = hiCanvas.toDataURL('image/png');
+      const link    = document.createElement('a');
+      link.href     = dataUrl;
+      link.download = 'Nature-Quote-Design.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setStatus('✅ Downloaded successfully!');
+    } catch (err) {
+      setStatus('❌ Download failed: ' + err.message);
     }
 
-    // پہلی بار ڈرا کریں
-    drawDesign();
+    btn.textContent = '💾 3. Download Design';
+    setTimeout(() => setStatus(''), 4000);
+  }
+
+  function setStatus(msg) {
+    document.getElementById('status').textContent = msg;
+  }
+
+  // ── Init ────────────────────────────────────────────────────
+  resizeCanvas();
 </script>
-
  
- 
-
-     
-     
-          
 </body>       
 </html>
