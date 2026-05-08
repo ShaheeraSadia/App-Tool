@@ -261,8 +261,7 @@
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 <!--QR Code Generator-->
- <div id="qr-tool" style="max-width: 900px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee;">
-    
+  <div id="qr-tool" style="max-width: 900px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee;">
     <h2 style="color: #2c3de0;">QR Code Generator</h2>
     <input type="text" id="qr-input" placeholder="https://app-tool.vercel.app/" style="width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; margin-bottom: 20px;">
     
@@ -277,26 +276,43 @@
         Download QR Code
     </button>
 
+    <div style="margin-top: 30px; padding: 25px; background: #fdfdfd; border-top: 2px solid #2c3de0; text-align: left; border-radius: 0 0 15px 15px;">
+        <h4 style="color: #000000; font-family: sans-serif; margin-bottom: 15px;">Why use Toolkit Pro's QR Code Generator?</h4>
+        <p style="color: #000000; font-size: 15px; line-height: 1.8; font-family: 'Segoe UI', Tahoma, sans-serif;">
+            In today's digital-first world, bridging the gap between offline and online experiences is crucial. Our QR Code Generator is designed to provide a seamless way to share your URLs, contact details, or social media profiles instantly. Unlike basic generators, this tool ensures high-precision rendering, making the codes easy to scan even at smaller sizes or in low-light conditions. 
+            <br><br>
+            For developers and marketers, this is an essential utility to drive traffic directly to your Vercel-hosted applications or Pinterest portfolios. Simply paste your link, generate the code, and download it in a clean format ready for print or digital display. It’s fast, secure, and built to support your professional branding needs.
+        </p>
+    </div>
 </div>
-<div id="nature-tool" style="max-width: 900px; margin: auto; padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;">
+
+<div id="nature-tool" style="max-width: 900px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee;">
     <h3 style="color: #2d5a27;">🌿 Nature Designer</h3>
     
-    <div id="capture" style="width: 100%; height: 280px; background: #e8f5e9 center/cover; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 4px solid #fff;">
-        <div style="width: 85%; padding: 20px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); color: white; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-            <p id="preview-text">"Your Quote Here"</p>
+    <div id="capture" style="width: 100%; height: 350px; background: #e8f5e9 center/cover; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 4px solid #fff;">
+        <div style="width: 85%; padding: 25px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3); color: white; font-style: italic; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+            <p id="preview-text" style="font-size: 20px;">"Your Aesthetic Quote Here"</p>
         </div>
     </div>
 
-    <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px; text-align: left;">
         <input type="file" id="imgInp" accept="image/*" style="display:none">
-        <button onclick="document.getElementById('imgInp').click()" style="background:#2d5a27; color:#fff; padding:10px; border:none; border-radius:10px; cursor:pointer;">📸 1. Upload Photo</button>
+        <button onclick="document.getElementById('imgInp').click()" style="background:#2d5a27; color:#fff; padding:12px; border:none; border-radius:10px; cursor:pointer; font-weight:bold;">📸 1. Upload Your Nature Photo</button>
         
-        <input type="text" id="textInp" placeholder="2. Type quote..." style="padding:10px; border:1px solid #ddd; border-radius:10px; outline:none;" oninput="document.getElementById('preview-text').innerText = this.value">
+        <input type="text" id="textInp" placeholder="2. Type your aesthetic quote here..." style="padding:12px; border:1.5px solid #eee; border-radius:10px; outline:none;" oninput="document.getElementById('preview-text').innerText = this.value">
         
-        <button id="saveBtn" style="background:#fff; color:#2d5a27; border:2px solid #2d5a27; padding:10px; border-radius:10px; cursor:pointer; font-weight:bold;">💾 3. Download</button>
+        <button id="saveBtn" style="background:#fff; color:#2d5a27; border:2px solid #2d5a27; padding:12px; border-radius:10px; cursor:pointer; font-weight:bold;">💾 3. Download Design</button>
+    </div>
+
+    <div style="margin-top: 30px; padding: 25px; background: #fdfdfd; border-top: 2px solid #2d5a27; text-align: left; border-radius: 0 0 15px 15px;">
+        <h4 style="color: #000000; font-family: sans-serif; margin-bottom: 15px;">The Ultimate Tool for Aesthetic Pinterest Visuals</h4>
+        <p style="color: #000000; font-size: 15px; line-height: 1.8; font-family: 'Segoe UI', Tahoma, sans-serif;">
+            Visual storytelling is at the heart of Pinterest trends, and our Nature Designer is crafted specifically to help you lead those trends. By combining the serenity of nature photography with the modern elegance of Glassmorphism, this tool allows you to create 'ready-to-pin' content in seconds. 
+            <br><br>
+            Whether you are sharing daily affirmations, poetic verses, or brand messages, the intuitive overlay system ensures your text remains the focal point without obscuring the beauty of the background. Each design is processed to maintain high resolution, ensuring that when you upload your creations, they contribute positively to your total impressions and click-through rates. Transform simple photos into meaningful art that resonates with your audience's search for peace and inspiration.
+        </p>
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script>
