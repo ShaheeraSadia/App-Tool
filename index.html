@@ -285,33 +285,75 @@
     </button>
 
 </div>
-<div id="aesthetic-card-tool" style="max-width: 550px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.06); text-align: center; border: 1px solid #eef2ee;">
+ <div id="aesthetic-card-tool" style="max-width: 550px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.06); text-align: center; border: 1px solid #eef2ee;">
     
-    <h3 style="color: #2d5a27;">Nature Quote Designer</h3>
+    <h3 style="color: #2d5a27;">🌿 Nature Quote Designer</h3>
     
-    <div id="capture-area" style="width: 100%; height: 320px; background: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800') center/cover; border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 5px solid #fff;">
-        <div id="glass-card" style="width: 80%; padding: 20px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.25); color: white;">
-            <p id="card-text" style="margin: 0; font-size: 18px; font-family: serif;">"Your Aesthetic Quote Here"</p>
+    <div id="capture-area" style="width: 100%; height: 320px; background-color: #e8f5e9; background-size: cover; background-position: center; border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 5px solid #fff;">
+        <div id="glass-card" style="width: 80%; padding: 20px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.3); color: white;">
+            <p id="card-text" style="margin: 0; font-size: 18px; font-family: serif; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">"Your Aesthetic Quote Here"</p>
         </div>
     </div>
 
     <div style="margin-top: 20px; text-align: left; display: flex; flex-direction: column; gap: 10px;">
         <input type="file" id="bg-upload" accept="image/*" style="display: none;">
-        <button onclick="document.getElementById('bg-upload').click()" style="background: #2d5a27; color: white; padding: 10px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">
-            Change Background Image
+        <button onclick="document.getElementById('bg-upload').click()" style="background: #2d5a27; color: white; padding: 12px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">
+            📸 1. Upload Your Nature Photo
         </button>
 
-        <textarea id="user-quote" placeholder="Type your quote..." style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ddd;" oninput="document.getElementById('card-text').innerText = this.value"></textarea>
-
-
-       <button class="btn" id="downloadBtn" disabled style="background:#27ae60; color:white;">
-                    <i class="fas fa-download"></i>   Save as Image(Download)
-                </button>
-   <!--     <button id="download-design" style="background: #ffffff; color: #2d5a27; padding: 10px; border: 2px solid #2d5a27; border-radius: 10px; cursor: pointer; font-weight: bold;">
-            Save as Image (Download)
-        </button>-->
+        <textarea id="user-quote" placeholder="2. Type your quote here..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1.5px solid #eee; outline: none;" rows="2" oninput="document.getElementById('card-text').innerText = this.value"></textarea>
+        
+        <button id="download-btn" style="background: #ffffff; color: #2d5a27; padding: 12px; border: 2px solid #2d5a27; border-radius: 10px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+            💾 3. Save as Image
+        </button>
     </div>
 </div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script>
+    // امیج اپ لوڈ کرنے کا فنکشن
+    document.getElementById('bg-upload').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const area = document.getElementById('capture-area');
+                area.style.backgroundImage = `url('${event.target.result}')`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // سیو کرنے کا فنکشن
+    document.getElementById('download-btn').addEventListener('click', function() {
+        const area = document.getElementById('capture-area');
+        const btn = this;
+        
+        btn.innerText = "Processing...";
+        btn.disabled = true;
+
+        html2canvas(area, {
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: null,
+            scale: 2 // بہتر کوالٹی کے لیے
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = 'ToolkitPro-Aesthetic-Design.png';
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+            
+            btn.innerText = "💾 Save as Image";
+            btn.disabled = false;
+        }).catch(err => {
+            console.error("Save error:", err);
+            alert("Could not save image. Please try uploading a different photo first.");
+            btn.innerText = "💾 Save as Image";
+            btn.disabled = false;
+        });
+    });
+</script>
 
  
 
@@ -1291,30 +1333,52 @@
         
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
+  
+
  
- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <script>
-    // 1. Image Upload Logic
+    // امیج اپ لوڈ کرنے کا فنکشن
     document.getElementById('bg-upload').addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function(event) {
-                document.getElementById('capture-area').style.backgroundImage = `url('${event.target.result}')`;
+                const area = document.getElementById('capture-area');
+                area.style.backgroundImage = `url('${event.target.result}')`;
             };
             reader.readAsDataURL(file);
         }
     });
 
-    // 2. Save/Download Logic
-    document.getElementById('download-design').addEventListener('click', function() {
+    // سیو کرنے کا فنکشن
+    document.getElementById('download-btn').addEventListener('click', function() {
         const area = document.getElementById('capture-area');
-        html2canvas(area, { useCORS: true }).then(canvas => {
+        const btn = this;
+        
+        btn.innerText = "Processing...";
+        btn.disabled = true;
+
+        html2canvas(area, {
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: null,
+            scale: 2 // بہتر کوالٹی کے لیے
+        }).then(canvas => {
             const link = document.createElement('a');
             link.download = 'ToolkitPro-Aesthetic-Design.png';
-            link.href = canvas.toDataURL();
+            link.href = canvas.toDataURL("image/png");
             link.click();
+            
+            btn.innerText = "💾 Save as Image";
+            btn.disabled = false;
+        }).catch(err => {
+            console.error("Save error:", err);
+            alert("Could not save image. Please try uploading a different photo first.");
+            btn.innerText = "💾 Save as Image";
+            btn.disabled = false;
         });
     });
 </script>
