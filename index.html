@@ -309,52 +309,6 @@
     </div>
 </div>
 
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
-<script>
-    // امیج اپ لوڈ کرنے کا فنکشن
-    document.getElementById('bg-upload').addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const area = document.getElementById('capture-area');
-                area.style.backgroundImage = `url('${event.target.result}')`;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
-    // سیو کرنے کا فنکشن
-    document.getElementById('download-btn').addEventListener('click', function() {
-        const area = document.getElementById('capture-area');
-        const btn = this;
-        
-        btn.innerText = "Processing...";
-        btn.disabled = true;
-
-        html2canvas(area, {
-            useCORS: true,
-            allowTaint: true,
-            backgroundColor: null,
-            scale: 2 // بہتر کوالٹی کے لیے
-        }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = 'ToolkitPro-Aesthetic-Design.png';
-            link.href = canvas.toDataURL("image/png");
-            link.click();
-            
-            btn.innerText = "💾 Save as Image";
-            btn.disabled = false;
-        }).catch(err => {
-            console.error("Save error:", err);
-            alert("Could not save image. Please try uploading a different photo first.");
-            btn.innerText = "💾 Save as Image";
-            btn.disabled = false;
-        });
-    });
-</script>
-
  
 
      <!--
