@@ -285,7 +285,46 @@
     </button>
 
 </div>
+     <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 30px; background: #fdfdfd; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #e0eadd; font-family: sans-serif;">
+    
+    <h3 style="color: #2d5a27; margin-bottom: 5px;">🌿 Nature Soundscape</h3>
+    <p style="color: #888; font-size: 13px; margin-bottom: 25px;">Real nature sounds for focus and relaxation.</p>
 
+    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <div style="text-align: center;">
+            <button id="rain-btn" onclick="toggleNature('https://assets.mixkit.co/active_storage/sfx/2533/2533-preview.mp3', 'rain-btn')" 
+                    style="width: 65px; height: 65px; background: #e8f5e9; border: 2px solid #c8e6c9; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🌧️
+            </button>
+            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #2d5a27;">Real Rain</p>
+        </div>
+
+        <div style="text-align: center;">
+            <button id="ocean-btn" onclick="toggleNature('https://www.soundjay.com/nature/ocean-wave-1.mp3', 'ocean-btn')" 
+                    style="width: 65px; height: 65px; background: #e3f2fd; border: 2px solid #bbdefb; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🌊
+            </button>
+            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #1565c0;">Ocean</p>
+        </div>
+
+        <div style="text-align: center;">
+            <button id="birds-btn" onclick="toggleNature('https://assets.mixkit.co/active_storage/sfx/2405/2405-preview.mp3', 'birds-btn')" 
+                    style="width: 65px; height: 65px; background: #fff9c4; border: 2px solid #fff176; border-radius: 50%; cursor: pointer; font-size: 24px; transition: 0.3s; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                🐦
+            </button>
+            <p style="margin-top: 8px; font-size: 11px; font-weight: bold; color: #fbc02d;">Birds</p>
+        </div>
+    </div>
+
+    <button onclick="stopAll()" style="margin-top: 25px; background: #f44336; color: white; border: none; padding: 10px 30px; border-radius: 30px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase;">
+        Stop All
+    </button>
+
+    <p id="nature-status" style="margin-top: 15px; font-size: 11px; color: #aaa;">Ready to Relax</p>
+</div>
+
+ 
+<!--
 <div id="nature-tool" style="max-width: 450px; margin: 30px auto; padding: 25px; background: linear-gradient(145deg, #e6f4ea, #ffffff); border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif; border: 1px solid #c3e6cb;">
     
     <h3 style="color: #2d5a27; margin-bottom: 15px;">🌿 Nature Serenity Player</h3>
@@ -309,7 +348,7 @@
         Stop Music
     </button>
 
-    <audio id="rain-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"></audio> </div>
+    <audio id="rain-audio" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"></audio> </div -->
 
 
 
@@ -1255,7 +1294,7 @@
         // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
         qrcode.makeCode("https://app-tool.vercel.app/");
     </script>
-   <script>
+<!--   <script>
     let currentAudio = null;
 
     function playNature(type) {
@@ -1278,8 +1317,53 @@
             currentAudio = null;
         }
     }
-</script>
+</script>-->
+<script>
+    let natureAudio = null;
+    let currentActiveId = null;
 
+    function toggleNature(audioUrl, btnId) {
+        const status = document.getElementById("nature-status");
+        const btn = document.getElementById(btnId);
+
+        if (natureAudio && !natureAudio.paused && currentActiveId === btnId) {
+            stopAll();
+            return;
+        }
+
+        stopAll();
+
+        status.innerText = "Loading Real Sound...";
+        natureAudio = new Audio(audioUrl);
+        natureAudio.loop = true;
+
+        natureAudio.play().then(() => {
+            status.innerText = "Now Playing... 🎵";
+            btn.style.transform = "scale(1.1)";
+            btn.style.boxShadow = "0 0 15px rgba(0,0,0,0.1)";
+            currentActiveId = btnId;
+        }).catch(e => {
+            status.innerText = "Click again to play!";
+        });
+    }
+
+    function stopAll() {
+        if (natureAudio) {
+            natureAudio.pause();
+            natureAudio = null;
+        }
+        const buttons = ['rain-btn', 'ocean-btn', 'birds-btn'];
+        buttons.forEach(id => {
+            const b = document.getElementById(id);
+            if(b) {
+                b.style.transform = "scale(1)";
+                b.style.boxShadow = "none";
+            }
+        });
+        document.getElementById("nature-status").innerText = "Ready to Relax";
+        currentActiveId = null;
+    }
+</script>
           
 </body>       
 </html>
