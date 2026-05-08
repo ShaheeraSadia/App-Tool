@@ -247,14 +247,7 @@
     </div>
 </nav>
  
- 
-            
-     
-                
-                     
-                    
-
-    <header class="tool-header" id="home">
+  <header class="tool-header" id="home">
         <div class="container">
             <h1>Toolkit Pro</h1>
             <p>Advanced image optimization and aesthetic tools for digital creators.</p>
@@ -268,7 +261,7 @@
             <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 <!--QR Code Generator-->
- <div id="qr-tool" style="max-width: 450px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee;">
+ <div id="qr-tool" style="max-width: 900px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee;">
     
     <h2 style="color: #2c3de0;">QR Code Generator</h2>
     <input type="text" id="qr-input" placeholder="https://app-tool.vercel.app/" style="width: 100%; padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; margin-bottom: 20px;">
@@ -285,7 +278,7 @@
     </button>
 
 </div>
-<div id="nature-tool" style="max-width: 450px; margin: auto; padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;">
+<div id="nature-tool" style="max-width: 900px; margin: auto; padding: 25px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;">
     <h3 style="color: #2d5a27;">🌿 Nature Designer</h3>
     
     <div id="capture" style="width: 100%; height: 280px; background: #e8f5e9 center/cover; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 4px solid #fff;">
@@ -327,32 +320,13 @@
         });
     };
 </script>
+<div style="margin-top: 20px; padding: 15px; background: #fdfdfd; border-radius: 12px; border-left: 4px solid #2d5a27; text-align: left; font-size: 14px; color: #555; line-height: 1.6;">
+    <p><strong>Why use this tool?</strong> "Create High-Impact Visuals for Pinterest" > "Elevate your social media presence with our Aesthetic Nature Designer. Specifically crafted for the Pinterest community, this tool allows you to overlay poetic quotes on your favorite nature photos with a modern Glassmorphism effect. Just upload, type, and download your unique designs in HD quality to boost your engagement and impressions."  </p>
+</div>
 
 
-
-
- <!--    
- <div class="card-tool">
-  <h3>🌿 Nature Quote Designer</h3>
-
-  <div id="preview-wrap">
-    <canvas id="design-canvas"></canvas>
-  </div>
-
-  <div class="controls">
-    <input type="file" id="bg-upload" accept="image/*" style="display:none">
-    <button class="btn-upload" onclick="document.getElementById('bg-upload').click()">
-      📸 1. Upload Your Nature Photo
-    </button>
-    <textarea id="user-quote" placeholder="2. Type your quote here..." rows="2"></textarea>
-    <button class="btn-download" onclick="downloadDesign()">
-      💾 3. Download Design
-    </button>
-    <p id="status"></p>
-  </div>
-</div>-->
-
- <!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
+     
+<!-- ✅ IMAGE COMPRESSOR TOOL (FIXED) -->
         <div class="tool-container">
             <div style="text-align: center; margin-bottom: 25px;">
                 <h2><i class="fas fa-file-image"></i> Image Compressor</h2>
@@ -1221,233 +1195,6 @@
             document.getElementById('mainNav').classList.toggle('active');
         });
  </script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-    <script>
-        // کیو آر کوڈ آبجیکٹ کو انیشلائز کریں
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: 180,
-            height: 180,
-            colorDark : "#2c3de0",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-
-        function generateQR() {
-            var input = document.getElementById("qr-input");
-            var downloadBtn = document.getElementById("download-btn");
-
-            if (input.value.trim() === "") {
-                alert("Please enter a link first!");
-                return;
-            }
-
-            qrcode.clear(); 
-            qrcode.makeCode(input.value);
-            
-            // ڈاؤن لوڈ بٹن کو ظاہر کریں
-            downloadBtn.style.display = "block";
-        }
-
-       function downloadQR() {
-    // کیو آر کوڈ کے کینوس یا امیج کو تلاش کریں
-    var qrCanvas = document.querySelector("#qrcode canvas");
-    var qrImage = document.querySelector("#qrcode img");
-    
-    var link = document.createElement("a");
-    link.download = "ToolkitPro-QR.png";
-
-    // اگر لائبریری کینوس استعمال کر رہی ہے
-    if (qrCanvas) {
-        link.href = qrCanvas.toDataURL("image/png");
-        link.click();
-    } 
-    // اگر لائبریری امیج ٹیگ استعمال کر رہی ہے
-    else if (qrImage && qrImage.src) {
-        link.href = qrImage.src;
-        link.click();
-    } 
-    else {
-        alert("Please generate a QR code first!");
-    }
-}
-        
-        // پہلے سے ایک ڈیفالٹ کوڈ دکھانے کے لیے
-        qrcode.makeCode("https://app-tool.vercel.app/");
-  <script>
-  const canvas = document.getElementById('design-canvas');
-  const ctx    = canvas.getContext('2d');
-  const wrap   = document.getElementById('preview-wrap');
-  let bgImage  = null;
-
-  // ── Resize canvas to fill wrapper ──────────────────────────
-  function resizeCanvas() {
-    canvas.width  = wrap.clientWidth;
-    canvas.height = wrap.clientHeight;
-    render();
-  }
-  window.addEventListener('resize', resizeCanvas);
-
-  // ── Draw everything onto canvas ─────────────────────────────
-  function render() {
-    const W = canvas.width;
-    const H = canvas.height;
-    ctx.clearRect(0, 0, W, H);
-
-    // Background
-    if (bgImage) {
-      const scale = Math.max(W / bgImage.width, H / bgImage.height);
-      const sw = bgImage.width  * scale;
-      const sh = bgImage.height * scale;
-      const sx = (W - sw) / 2;
-      const sy = (H - sh) / 2;
-      ctx.drawImage(bgImage, sx, sy, sw, sh);
-      // dark overlay for text readability
-      ctx.fillStyle = 'rgba(0,0,0,0.28)';
-      ctx.fillRect(0, 0, W, H);
-    } else {
-      // default green gradient
-      const grad = ctx.createLinearGradient(0, 0, 0, H);
-      grad.addColorStop(0, '#a5d6a7');
-      grad.addColorStop(1, '#2e7d32');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, W, H);
-    }
-
-    // Glass card (simulated — backdrop-filter not supported in canvas)
-    const cx = W * 0.1;
-    const cy = H * 0.15;
-    const cw = W * 0.8;
-    const ch = H * 0.70;
-    ctx.save();
-    roundRect(ctx, cx, cy, cw, ch, 18);
-    ctx.fillStyle   = 'rgba(255,255,255,0.22)';
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
-    ctx.lineWidth   = 1.5;
-    ctx.stroke();
-    ctx.restore();
-
-    // Quote text
-    const quote = document.getElementById('user-quote').value.trim()
-                  || '"Your Aesthetic Quote Here"';
-
-    ctx.save();
-    ctx.fillStyle    = '#ffffff';
-    ctx.shadowColor  = 'rgba(0,0,0,0.5)';
-    ctx.shadowBlur   = 6;
-    ctx.shadowOffsetY = 2;
-
-    const fontSize = Math.max(14, Math.min(22, cw / (quote.length * 0.52)));
-    ctx.font        = `italic ${fontSize}px Georgia, serif`;
-    ctx.textAlign   = 'center';
-    ctx.textBaseline = 'middle';
-
-    wrapText(ctx, quote, W / 2, H / 2, cw - 44, fontSize * 1.6);
-    ctx.restore();
-  }
-
-  // ── Rounded rectangle path helper ──────────────────────────
-  function roundRect(ctx, x, y, w, h, r) {
-    ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.lineTo(x + w - r, y);
-    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-    ctx.lineTo(x + w, y + h - r);
-    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-    ctx.lineTo(x + r, y + h);
-    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-    ctx.lineTo(x, y + r);
-    ctx.quadraticCurveTo(x, y, x + r, y);
-    ctx.closePath();
-  }
-
-  // ── Multi-line text helper ──────────────────────────────────
-  function wrapText(ctx, text, x, centerY, maxW, lineH) {
-    const words = text.split(' ');
-    const lines = [];
-    let line = '';
-    for (let word of words) {
-      const test = line ? line + ' ' + word : word;
-      if (ctx.measureText(test).width > maxW && line) {
-        lines.push(line);
-        line = word;
-      } else {
-        line = test;
-      }
-    }
-    if (line) lines.push(line);
-
-    const totalH  = lines.length * lineH;
-    let   startY  = centerY - totalH / 2 + lineH / 2;
-    for (let l of lines) {
-      ctx.fillText(l, x, startY);
-      startY += lineH;
-    }
-  }
-
-  // ── Image upload ────────────────────────────────────────────
-  document.getElementById('bg-upload').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    setStatus('Loading image…');
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-      const img = new Image();
-      img.onload = function() {
-        bgImage = img;
-        render();
-        setStatus('✅ Image loaded! Add your quote then download.');
-      };
-      img.onerror = () => setStatus('❌ Could not load image.');
-      img.src = ev.target.result; // base64 — zero CORS issues
-    };
-    reader.readAsDataURL(file);
-  });
-
-  // ── Live quote preview ──────────────────────────────────────
-  document.getElementById('user-quote').addEventListener('input', render);
-
-  // ── Download as high-quality PNG ────────────────────────────
-  function downloadDesign() {
-    const btn = document.querySelector('.btn-download');
-    btn.textContent = 'Generating…';
-
-    // Draw at 2× resolution for crisp output
-    const W = canvas.width;
-    const H = canvas.height;
-
-    const hiCanvas  = document.createElement('canvas');
-    hiCanvas.width  = W * 2;
-    hiCanvas.height = H * 2;
-    const hCtx = hiCanvas.getContext('2d');
-    hCtx.scale(2, 2);
-    hCtx.drawImage(canvas, 0, 0); // copy current frame
-
-    try {
-      const dataUrl = hiCanvas.toDataURL('image/png');
-      const link    = document.createElement('a');
-      link.href     = dataUrl;
-      link.download = 'Nature-Quote-Design.png';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setStatus('✅ Downloaded successfully!');
-    } catch (err) {
-      setStatus('❌ Download failed: ' + err.message);
-    }
-
-    btn.textContent = '💾 3. Download Design';
-    setTimeout(() => setStatus(''), 4000);
-  }
-
-  function setStatus(msg) {
-    document.getElementById('status').textContent = msg;
-  }
-
-  // ── Init ────────────────────────────────────────────────────
-  resizeCanvas();
-</script>
- -->
+ 
 </body>       
 </html>
