@@ -594,6 +594,17 @@
     "btnColor": "#e94560"
   },
   {
+  "id": 3,
+  "name": "Luxury Red Eternal Roses",
+  "category": "gifts",
+  "badge": "Gifts",
+  "image": "images/roses-box.jpg", 
+  "altText": "Premium red eternal roses in a round white gift box with red ribbon",
+  "description": "Exquisite eternal red roses arranged in a premium white box. A perfect aesthetic gift for anniversaries and special moments.",
+  "amazonLink": "https://amzn.to/4tpV4Fr",
+  "btnColor": "#b91c1c"
+},
+  {
     "id": 55,
     "name": "Maitys 44 Pcs Wedding Hair Accessories",
     "category": "jewelry",
