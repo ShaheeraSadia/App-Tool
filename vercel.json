@@ -295,11 +295,18 @@
       "destination": "https://amzn.to/4vXwgqF",
       "permanent": true
     },
+
+   {
+  "source": "/products/wedding-hair-accessories",
+  "destination": "https://amzn.to/4d1eH1I",
+  "permanent": true
+},
     {
       "source": "/products/galaxy-redrose",
       "destination": "https://amzn.to/4cZ27yy",
       "permanent": true
-    }
+    } 
+   
   ],
   "rewrites": [
     {
