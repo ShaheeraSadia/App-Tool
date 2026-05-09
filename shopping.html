@@ -246,41 +246,40 @@
             });
         }
     });
+function displayProducts(products) {
+    const grid = document.getElementById('productsGrid');
+    const countDisplay = document.getElementById('productCount');
+    
+    if(!grid) return;
 
-    function displayProducts(products) {
-        const grid = document.getElementById('productsGrid');
-        const countDisplay = document.getElementById('productCount');
-        
-        if(!grid) return;
-
-        grid.innerHTML = ''; 
-        if(countDisplay) {
-            countDisplay.textContent = `${products.length} Products Found`;
-        }
-
-        // استعمال کریں تاکہ ہر کارڈ صحیح طرح ڈیٹا وصول کرے Template Literals
-        products.forEach(product => {
-            const card = `
-                <div class="product-card" data-category="${product.category}">
-                    <div class="card-img">
-                        <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
-                            ${product.badge}
-                        </span>
-                        <img src="${product.image}" alt="${product.altText || product.name}">
-                    </div>
-                    <div class="card-body">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
-                            <i class="fab fa-amazon"></i> View on Amazon
-                        </a>
-                    </div>
-                </div>
-            `;
-            grid.insertAdjacentHTML('beforeend', card);
-        });
+    grid.innerHTML = ''; 
+    if(countDisplay) {
+        countDisplay.textContent = `${products.length} Products Found`;
     }
 
+    products.forEach(product => {
+        // یہاں بیک ٹِکس (`) کا استعمال لازمی ہے
+        const card = `
+            <div class="product-card" data-category="${product.category}">
+                <div class="card-img">
+                    <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
+                        ${product.badge}
+                    </span>
+                    <img src="${product.image}" alt="${product.altText || product.name}">
+                </div>
+                <div class="card-body">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
+                        <i class="fab fa-amazon"></i> View on Amazon
+                    </a>
+                </div>
+            </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', card);
+    });
+}
+ 
     function filterProducts(category, btn) {
         const buttons = document.querySelectorAll('.filter-btn');
         if(buttons) buttons.forEach(b => b.classList.remove('active'));
