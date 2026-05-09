@@ -604,7 +604,60 @@
     </div>
   </div>
 
-  <!-- ── CONTACT ── -->
+ <!--contact-->
+ <div class="section-hd">
+    <span class="tag" style="background: var(--light-blue); color: var(--primary-blue); padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600;">✉️ Contact</span>
+    <h2 style="font-family: 'Lora', serif; color: var(--text); margin-top: 10px;">Get In Touch</h2>
+    <p style="color: var(--muted);">Have a question, collaboration idea, or feedback? I'd love to hear from you.</p>
+</div>
+
+<div class="contact-wrap" style="background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--light-blue); padding: 36px; max-width: 620px; margin: 0 auto;">
+    <h2 style="font-family: 'Lora', serif; font-size: 22px; color: var(--text); margin-bottom: 6px;">Send a Message</h2>
+    <p style="font-size: 14px; color: var(--muted); margin-bottom: 24px;">Fill out the form below and I'll get back to you as soon as possible.</p>
+
+    <!-- Formspree Integration with correct attributes -->
+    <form action="https://formspree.io/f/xkoyzpvp" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="form-row" style="display: flex; gap: 14px;">
+            <div class="form-group" style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                <label for="fname" style="font-size: 13px; font-weight: 600;">First Name</label>
+                <input type="text" name="first_name" id="fname" placeholder="Your first name" required style="padding: 11px; border-radius: 10px; border: 1.5px solid var(--light-blue); outline: none;" />
+            </div>
+            <div class="form-group" style="flex: 1; display: flex; flex-direction: column; gap: 5px;">
+                <label for="lname" style="font-size: 13px; font-weight: 600;">Last Name</label>
+                <input type="text" name="last_name" id="lname" placeholder="Your last name" style="padding: 11px; border-radius: 10px; border: 1.5px solid var(--light-blue); outline: none;" />
+            </div>
+        </div>
+
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
+            <label for="email" style="font-size: 13px; font-weight: 600;">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="your@email.com" required style="padding: 11px; border-radius: 10px; border: 1.5px solid var(--light-blue); outline: none;" />
+        </div>
+
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
+            <label for="subject" style="font-size: 13px; font-weight: 600;">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="How can I help you?" style="padding: 11px; border-radius: 10px; border: 1.5px solid var(--light-blue); outline: none;" />
+        </div>
+
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 5px;">
+            <label for="msg" style="font-size: 13px; font-weight: 600;">Message</label>
+            <textarea name="message" id="msg" rows="5" placeholder="Write your message here..." required style="padding: 11px; border-radius: 10px; border: 1.5px solid var(--light-blue); outline: none; resize: none;"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" style="background: var(--primary-blue); color: white; padding: 13px; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.3s;">
+            Send Message →
+        </button>
+
+        <!-- Personal Info Section with updated Blue theme -->
+        <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--light-blue); display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Developer:</strong> Shaheera Sadia</div>
+            <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Location:</strong> Mandi Bahauddin, Punjab, Pakistan</div>
+            <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Email:</strong> <a href="mailto:shaheerasadia@gmail.com" style="color:var(--primary-blue); text-decoration: none;">shaheerasadia@gmail.com</a></div>
+            <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">GitHub:</strong> <a href="https://github.com/shaheerasadia" target="_blank" style="color:var(--primary-blue); text-decoration: none;">github.com/shaheerasadia</a></div>
+        </div>
+    </form>
+</div>
+
+  <!-- ── CONTACT 
   <div class="section-hd">
     <span class="tag">✉️ Contact</span>
     <h2>Get In Touch</h2>
@@ -648,7 +701,7 @@
     </div>
   </div>
 </form>
-</div><!-- /page-wrap -->
+</div>   ── -->
 
 <!-- FOOTER -->
 <footer>
