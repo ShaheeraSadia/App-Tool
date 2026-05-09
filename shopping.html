@@ -197,19 +197,30 @@
     </div>
 </footer>
  <script>
-    let allProducts = []; // تمام پروڈکٹس کو اسٹور کرنے کے لیے
+    let allProducts = []; 
 
-    // 1. پروڈکٹس لوڈ کرنا
     document.addEventListener('DOMContentLoaded', () => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => {
                 allProducts = data;
-                displayProducts(allProducts); // شروع میں تمام پروڈکٹس دکھائیں
+                
+                // --- URL Parameter Logic ---
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('id');
+
+                if (productId) {
+                    // اگر URL میں ID ہو تو صرف وہ پروڈکٹ دکھائیں
+                    const singleProduct = allProducts.filter(p => p.id == productId);
+                    displayProducts(singleProduct);
+                } else {
+                    // ورنہ تمام پروڈکٹس دکھائیں
+                    displayProducts(allProducts); 
+                }
             })
             .catch(err => console.error("Error:", err));
 
-        // سرچ بار کی لاجک (یہاں ہونی چاہیے تاکہ یہ ہمیشہ کام کرے)
+        // سرچ بار کی لاجک
         const searchInput = document.getElementById('searchInput');
         if(searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -223,14 +234,13 @@
         }
     });
 
-    // 2. پروڈکٹس دکھانے کا فنکشن
     function displayProducts(products) {
         const grid = document.getElementById('productsGrid');
         const countDisplay = document.getElementById('productCount');
         
-        if(!grid) return; // اگر گرڈ موجود نہ ہو تو واپس جائیں
+        if(!grid) return;
 
-        grid.innerHTML = ''; // پرانا مواد صاف کریں
+        grid.innerHTML = ''; 
         countDisplay.textContent = `${products.length} Products Found`;
 
         products.forEach(product => {
@@ -253,14 +263,11 @@
         });
     }
 
-    // 3. فلٹر کرنے کا فنکشن
     function filterProducts(category, btn) {
-        // بٹن اسٹائل تبدیل کریں
         const buttons = document.querySelectorAll('.filter-btn');
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // فلٹر شدہ ڈیٹا حاصل کریں
         if (category === 'all') {
             displayProducts(allProducts);
         } else {
