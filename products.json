@@ -47,7 +47,7 @@
     "id": 5,
     "name": "925 Sterling Silver Heart Bracelet",
     "category": "jewelry",
-    "badge": "✨ Jewelry",
+    "badge": "Jewelry",
     "image": "/image/51XVK+MGmrL._AC_SY535_.jpg",
     "description": "Heart Birthstone Bracelet — Birthday Anniversary Jewelry Gifts for Her & Wife.",
     "benefits": "A heartfelt gift for birthdays, anniversaries, or Mother's Day. Real 925 sterling silver resists tarnishing for long-lasting shine. Birthstone customization makes it deeply personal and meaningful for any woman in your life.",
@@ -58,7 +58,7 @@
     "id": 6,
     "name": "Rose Heart Necklace",
     "category": "jewelry",
-    "badge": "🌹 Jewelry",
+    "badge": " Jewelry",
     "image": "/image/71D6Gr3kEpL._AC_SY535_.jpg",
     "description": "925 Sterling Silver Initial Necklace — I Love You Gifts for Women Wife Girlfriend.",
     "benefits": "Express love with a personalized initial that she can wear every day. Sterling silver is hypoallergenic and skin-safe. A romantic gift for Valentine's Day, anniversaries, or just because — she will treasure it forever.",
@@ -442,7 +442,7 @@
   {
     "id": 41,
     "name": "Jewelry Set",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry",
     "image": "/image/71ds2SjV+pL._AC_SL1500_.jpg",
     "description": "Thoughtful gift set specially curated for mom.",
@@ -453,7 +453,7 @@
   {
     "id": 42,
     "name": "Preserved Rose Necklace Set",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry",
     "image": "/image/81Ab3F9MZGL._AC_SY535_.jpg",
     "description": "Forever Rose with Music Box & Necklace.",
@@ -464,7 +464,7 @@
   {
     "id": 43,
     "name": "CZ Halo Stud Earrings",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry",
     "image": "/image/81tW7pSRDhL._AC_SY695_.jpg",
     "description": "18K Gold Plated Hypoallergenic Silver.",
@@ -475,7 +475,7 @@
   {
     "id": 44,
     "name": "Silver Cross Necklace",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry",
     "image": "/image/91TMiNh8+NL._AC_SY535_.jpg",
     "description": "Solid 925 Sterling Silver Pendant.",
@@ -508,7 +508,7 @@
   {
     "id": 47,
     "name": "Leafael Infinity Love Birthstone Necklace",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry",
     "image": "/image/motherdaygift._AC_SY535_.jpg",
     "description": "Silver-plated heart pendant with crystal birthstone. Features an adjustable 18\" + 2\" chain, perfect for Mother's Day or anniversaries.",
@@ -519,7 +519,7 @@
   {
     "id": 48,
     "name": "PURSEILVER 4-Piece Rose Gold Set",
-    "category": "jewelry&gift",
+    "category": "jewelry",
     "badge": "Jewelry & Gift",
     "image": "/image/gift._AC_SY535_.jpg",
     "description": "Elegant 4-piece jewelry set including a watch, necklace, earrings, and bracelet. The perfect all-in-one gift for her birthday or anniversary.",
@@ -596,8 +596,8 @@
   {
     "id": 55,
     "name": "Maitys 44 Pcs Wedding Hair Accessories",
-    "category": "Jewelry",
-    "badge": "Prom Must-Have",
+    "category": "jewelry",
+    "badge": "Jewelry",
     "description": "Elegant Faux Pearl & Crystal comb clips for brides and bridesmaids. Perfect for prom hairstyles.",
     "image": "/image/44._SL1500_.jpg",
     "amazonLink": "https://amzn.to/4d1eH1I",
@@ -607,8 +607,8 @@
     "id": 55,
     "name": "Handmade Leaf Crystal Bridal Headpiece",
  
-    "category": "Jewelry",
-    "badge": "Handmade Luxury",
+    "category": "jewelry",
+    "badge": "Jewelry",
     "altText": "Handmade Leaf Crystal Bridal Headpiece for Wedding and Prom Hairstyles",
     "description": "Exquisite Rhinestone wedding headband with leaf crystal design. Perfect for brides and bridesmaids seeking an elegant look.",
     "image": "/image/Leaf Crystal Bridal HeadpiecesAC_SY535_.jpg",
