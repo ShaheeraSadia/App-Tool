@@ -120,7 +120,14 @@
     </div>
 </section>
  
-       
+<div class="products-section">
+    <!-- اس آئی ڈی کو تبدیل نہ کریں کیونکہ جے ایس اسے استعمال کرے گا -->
+    <p class="section-title" id="productCount">Loading Products...</p>
+    
+    <div class="products-grid" id="productsGrid">
+        <!-- جاوا اسکرپٹ یہاں پروڈکٹس لوڈ کرے گا -->
+    </div>
+</div>       
          
   
  
@@ -187,43 +194,62 @@
     </div>
 </footer>
  <script>
+    let allProducts = []; // تمام پروڈکٹس کو اسٹور کرنے کے لیے
+
+    // 1. پروڈکٹس لوڈ کرنا
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('products.json')
+            .then(res => res.json())
+            .then(data => {
+                allProducts = data;
+                displayProducts(allProducts); // شروع میں تمام پروڈکٹس دکھائیں
+            })
+            .catch(err => console.error("Error:", err));
+    });
+
+    // 2. پروڈکٹس دکھانے کا فنکشن
+    function displayProducts(products) {
+        const grid = document.getElementById('productsGrid');
+        const countDisplay = document.getElementById('productCount');
+        
+        grid.innerHTML = ''; // پرانا مواد صاف کریں
+        countDisplay.textContent = `${products.length} Products Found`;
+
+        products.forEach(product => {
+            const card = `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="card-img">
+                        <span class="card-badge">${product.badge}</span>
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="card-body">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
+                            <i class="fab fa-amazon"></i> View on Amazon
+                        </a>
+                    </div>
+                </div>
+            `;
+            grid.innerHTML += card;
+        });
+    }
+
+    // 3. فلٹر کرنے کا فنکشن
     function filterProducts(category, btn) {
-        // 1. Handle Button Styles (Active State)
+        // بٹن اسٹائل تبدیل کریں
         const buttons = document.querySelectorAll('.filter-btn');
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // 2. Filter the Cards
-        const cards = document.querySelectorAll('.product-card');
-        let visibleCount = 0;
-
-        cards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'flex'; // Show card
-                visibleCount++;
-            } else {
-                card.style.display = 'none'; // Hide card
-            }
-        });
-
-        // 3. Update the Product Counter
-        const countDisplay = document.getElementById('productCount');
-        if (countDisplay) {
-            countDisplay.textContent = `${visibleCount} Products Found`;
+        // فلٹر شدہ ڈیٹا حاصل کریں
+        if (category === 'all') {
+            displayProducts(allProducts);
+        } else {
+            const filtered = allProducts.filter(p => p.category === category);
+            displayProducts(filtered);
         }
     }
-
-    // Optional: Smooth scroll for "Back to Top"
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 </script>
 </body>
 </html>
