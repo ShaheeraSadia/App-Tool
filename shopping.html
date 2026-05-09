@@ -129,7 +129,10 @@
     </div>
 </div>       
          
-  
+ <div style="max-width: 600px; margin: 0 auto 30px; padding: 0 20px;">
+    <input type="text" id="searchInput" placeholder="Search products..." 
+           style="width: 100%; padding: 12px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none;">
+</div> 
  
 
 <div class="ad-slot">
@@ -205,6 +208,19 @@
                 displayProducts(allProducts); // شروع میں تمام پروڈکٹس دکھائیں
             })
             .catch(err => console.error("Error:", err));
+
+        // سرچ بار کی لاجک (یہاں ہونی چاہیے تاکہ یہ ہمیشہ کام کرے)
+        const searchInput = document.getElementById('searchInput');
+        if(searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filtered = allProducts.filter(p => 
+                    p.name.toLowerCase().includes(searchTerm) || 
+                    p.description.toLowerCase().includes(searchTerm)
+                );
+                displayProducts(filtered);
+            });
+        }
     });
 
     // 2. پروڈکٹس دکھانے کا فنکشن
@@ -212,6 +228,8 @@
         const grid = document.getElementById('productsGrid');
         const countDisplay = document.getElementById('productCount');
         
+        if(!grid) return; // اگر گرڈ موجود نہ ہو تو واپس جائیں
+
         grid.innerHTML = ''; // پرانا مواد صاف کریں
         countDisplay.textContent = `${products.length} Products Found`;
 
