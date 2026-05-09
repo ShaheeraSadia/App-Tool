@@ -127,7 +127,34 @@
     <div class="products-grid" id="productsGrid">
         <!-- جاوا اسکرپٹ یہاں پروڈکٹس لوڈ کرے گا -->
     </div>
-</div>       
+</div>  
+ <div class="product-card" data-category="${product.category}">
+    <div class="card-img">
+        <!-- پروڈکٹ کا بیج جیسے: Handmade Luxury -->
+        <span class="card-badge" style="background-color: ${product.btnColor || '#c5a48e'}">
+            ${product.badge}
+        </span>
+        
+        <!-- تصویر جس میں آپ کا نیا Alt Text شامل ہے -->
+        <a href="shopping.html?id=${product.id}">
+            <img src="${product.image}" 
+                 alt="${product.altText || product.name}" 
+                 loading="lazy">
+        </a>
+    </div>
+    
+    <div class="card-content">
+        <h3>${product.name}</h3>
+        <p class="product-desc">${product.description}</p>
+        
+        <!-- ایمازون ایفی لیٹ بٹن -->
+        <a href="/products/${product.id}" 
+           class="buy-btn" 
+           style="background-color: ${product.btnColor}">
+           View on Amazon
+        </a>
+    </div>
+</div>
          
  <div style="max-width: 600px; margin: 0 auto 30px; padding: 0 20px;">
     <input type="text" id="searchInput" placeholder="Search products..." 
@@ -248,7 +275,8 @@
                 <div class="product-card" data-category="${product.category}">
                     <div class="card-img">
                         <span class="card-badge">${product.badge}</span>
-                        <img src="${product.image}" alt="${product.name}">
+                       
+                        <img src="${product.image}" alt="${product.altText || product.name}">
                     </div>
                     <div class="card-body">
                         <h3>${product.name}</h3>
@@ -278,3 +306,4 @@
 </script>
 </body>
 </html>
+ 
