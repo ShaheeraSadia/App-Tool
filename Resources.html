@@ -1,277 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources | Toolkit Pro by Shaheera</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources & Creator Guides | Toolkit Pro by Shaheera Sadia</title>
+  <meta name="description" content="Free resources, tips, and guides for digital creators — image optimization, Pinterest marketing, aesthetic design, and curated tools by Shaheera Sadia." />
+  <meta name="keywords" content="image compression tips, Pinterest marketing, aesthetic design tools, digital creator resources, web developer tools, Shaheera Sadia, Toolkit Pro" />
+  <meta name="author" content="Shaheera Sadia" />
+  <meta property="og:title" content="Resources & Creator Guides | Toolkit Pro" />
+  <meta property="og:description" content="Free tips, guides, and curated tools for digital creators by Shaheera Sadia." />
+  <meta property="og:url" content="https://app-tool.vercel.app/Resources.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://app-tool.vercel.app/Resources.html" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+       :root {
             --primary-blue: #2c3de0;
             --accent-blue: #00d2ff;
             --amazon-orange: #FF9900;
             --bg-gray: #f4f7f6;
         }
+ /*   :root {
+      --green: #2d5a27;
+      --green-dark: #1a3d16;
+      --green-light: #e8f5e9;
+      --green-mid: #4a7c42;
+      --accent: #ff6b35;
+      --accent2: #f6d365;
+      --text: #1c1c1e;
+      --muted: #6b7280;
+      --bg: #f8fbf8;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(45,90,39,0.09);
+    }*/
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            background-color: var(--bg-gray);
-            color: #333;
-        }
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e0ede0;
+      padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px; position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 16px rgba(45,90,39,0.06);
+    }
+    .nav-logo { font-family: 'Lora', serif; font-size: 21px; color: var(--green); text-decoration: none; font-weight: 700; letter-spacing: -.3px; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
 
-        /* Navbar matches Toolkit Pro layout */
-        nav {
-            background: linear-gradient(135deg, #2c3de0 0%, #4158d0 100%);
-            padding: 0 20px;
-            height: 64px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 50%, #3d7a35 100%);
+      color: white; text-align: center; padding: 80px 24px 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 18px; backdrop-filter: blur(4px); }
+    .hero h1 { font-family: 'Lora', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 700; margin-bottom: 14px; line-height: 1.2; }
+    .hero h1 span { color: var(--accent2); font-style: italic; }
+    .hero p { font-size: 17px; opacity: .88; max-width: 560px; margin: 0 auto 30px; line-height: 1.75; }
+    .hero-stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: var(--accent2); }
+    .stat-label { font-size: 12px; opacity: .8; letter-spacing: .5px; }
 
-        .logo { font-weight: 800; font-size: 1.3rem; color: white; text-decoration: none; }
-        .logo span { color: var(--accent-blue); }
+    /* ── LAYOUT ── */
+    .page-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+    /* ── SECTION HEADER ── */
+    .section-hd { text-align: center; margin: 60px 0 32px; }
+    .section-hd .tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 10px; }
+    .section-hd h2 { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 34px); color: var(--text); margin-bottom: 10px; }
+    .section-hd p { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto; }
 
-        .nav-links a:hover { opacity: 1; }
+    /* ── AD SLOT ── */
+    .ad-slot {
+      background: #f0f4f0; border: 1.5px dashed #c8d8c8; border-radius: 12px;
+      text-align: center; padding: 28px 20px; color: var(--muted);
+      font-size: 13px; margin: 40px 0;
+    }
 
-        .hero {
-            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+    /* ── RESOURCE CARDS (top 3) ── */
+    .resource-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+    .res-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 28px; box-shadow: var(--shadow);
+      border: 1px solid #e4ede4; transition: transform .25s, box-shadow .25s;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .res-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(45,90,39,0.13); }
+    .res-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .res-card h3 { font-family: 'Lora', serif; font-size: 18px; color: var(--text); }
+    .res-card p { font-size: 14px; color: var(--muted); line-height: 1.7; flex: 1; }
+    .res-btn {
+      display: inline-block; padding: 11px 22px; border-radius: 10px;
+      font-size: 13px; font-weight: 600; text-decoration: none;
+      text-align: center; transition: opacity .2s, transform .15s; margin-top: 4px;
+    }
+    .res-btn:hover { opacity: .88; transform: scale(1.02); }
+    .res-btn.dark { background: #111; color: #fff; }
+    .res-btn.orange { background: #FF9900; color: #111; }
+    .res-btn.green { background: var(--green); color: #fff; }
+    .res-btn.blue { background: #3d72d4; color: #fff; }
 
-        .container {
-            max-width: 1100px;
-            margin: -30px auto 40px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    /* ── ARTICLES GRID ── */
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .article-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow); border: 1px solid #e4ede4;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(45,90,39,0.12); }
+    .article-cover {
+      height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 52px; position: relative;
+    }
+    .article-body { padding: 22px 22px 26px; }
+    .article-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
+    .article-body h3 { font-family: 'Lora', serif; font-size: 17px; color: var(--text); margin-bottom: 10px; line-height: 1.4; }
+    .article-body p { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .read-more { font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+    .read-more:hover { text-decoration: underline; }
 
-        .resource-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: 0.3s;
-            border: 1px solid #eee;
-        }
+    /* ── TIPS SECTION ── */
+    .tips-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #e4ede4; overflow: hidden; }
+    .tips-header { background: linear-gradient(135deg, var(--green) 0%, #3d7a35 100%); color: white; padding: 28px 32px; }
+    .tips-header h2 { font-family: 'Lora', serif; font-size: 22px; margin-bottom: 6px; }
+    .tips-header p { font-size: 14px; opacity: .88; }
+    .tips-list { padding: 0; }
+    .tip-item {
+      display: flex; gap: 18px; padding: 22px 32px; border-bottom: 1px solid #f0f4f0;
+      align-items: flex-start;
+    }
+    .tip-item:last-child { border-bottom: none; }
+    .tip-num { width: 36px; height: 36px; background: var(--green-light); color: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+    .tip-content h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+    .tip-content p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
 
-        .resource-card:hover { transform: translateY(-10px); }
+    /* ── TOOLS SHOWCASE ── */
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .tool-card {
+      background: var(--white); border-radius: var(--radius); padding: 24px;
+      box-shadow: var(--shadow); border: 1px solid #e4ede4;
+      transition: transform .25s; display: flex; flex-direction: column; gap: 12px;
+    }
+    .tool-card:hover { transform: translateY(-4px); }
+    .tool-icon { font-size: 28px; }
+    .tool-card h3 { font-size: 16px; font-weight: 600; color: var(--text); }
+    .tool-card p { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; }
+    .tool-link { font-size: 13px; font-weight: 600; color: var(--green); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+    .tool-link:hover { text-decoration: underline; }
 
-        .resource-card i {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--white); border-radius: var(--radius); padding: 22px 26px; box-shadow: var(--shadow); border: 1px solid #e4ede4; cursor: pointer; }
+    .faq-q { font-size: 15px; font-weight: 600; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .faq-q .arrow { transition: transform .3s; color: var(--green); font-size: 12px; }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s; }
+    .faq-item.open .faq-a { max-height: 300px; padding-top: 12px; }
 
-        .btn-amazon {
-            display: block;
-            background: var(--amazon-orange);
-            color: white;
-            padding: 12px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
+    /* ── ABOUT ── */
+    .about-wrap {
+      background: linear-gradient(135deg, #f0faf0 0%, #e8f5e9 100%);
+      border-radius: var(--radius); padding: 40px 36px;
+      border: 1px solid #c8e0c8; display: flex; gap: 32px; align-items: flex-start;
+    }
+    .about-avatar { width: 80px; height: 80px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+    .about-content h2 { font-family: 'Lora', serif; font-size: 22px; color: var(--green-dark); margin-bottom: 12px; }
+    .about-content p { font-size: 14.5px; color: #3a5a38; line-height: 1.75; margin-bottom: 10px; }
+    .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .badge { background: var(--white); border: 1.5px solid #c8e0c8; border-radius: 8px; padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--green); }
 
-        .btn-amazon:hover { background: #e68a00; }
+    /* ── CONTACT ── */
+    .contact-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #e4ede4; padding: 36px; max-width: 620px; margin: 0 auto; }
+    .contact-wrap h2 { font-family: 'Lora', serif; font-size: 22px; color: var(--text); margin-bottom: 6px; }
+    .contact-wrap p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .form-row { display: flex; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .form-group input, .form-group textarea {
+      padding: 11px 14px; border-radius: 10px;
+      border: 1.5px solid #d4e8d4; font-size: 14px; font-family: 'DM Sans', sans-serif;
+      outline: none; transition: border-color .2s;
+      background: var(--bg);
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--green); }
+    .form-group textarea { resize: none; }
+    .submit-btn {
+      width: 100%; padding: 13px; background: var(--green); color: white;
+      border: none; border-radius: 10px; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: background .2s, transform .15s;
+      font-family: 'DM Sans', sans-serif; margin-top: 8px;
+    }
+    .submit-btn:hover { background: var(--green-dark); transform: scale(1.01); }
 
-        .btn-audible { background: #000; color: #f59e0b; }
-    </style>
+    /* ── FOOTER ── */
+    footer { background: #0f1f0d; color: rgba(255,255,255,.85); padding: 48px 40px 28px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand .logo { font-family: 'Lora', serif; font-size: 20px; color: #a5d6a7; font-weight: 700; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; opacity: .75; line-height: 1.7; }
+    .footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5d6a7; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: #a5d6a7; }
+    .footer-social { display: flex; gap: 12px; margin-top: 10px; }
+    .social-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 16px; text-decoration: none; transition: background .2s; }
+    .social-icon:hover { background: var(--green); color: white; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 16px; }
+      .nav-links { gap: 16px; }
+      .form-row { flex-direction: column; }
+      .about-wrap { flex-direction: column; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-<style>
-    .navbar {
-        background: #ffffff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 5%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .logo { font-size: 20px; font-weight: 700; color: #2c3de0; text-decoration: none; }
-    .nav-links { list-style: none; display: flex; margin: 0; }
-    .nav-links li { margin-left: 20px; }
-    .nav-links a { text-decoration: none; color: #333; font-weight: 500; font-size: 14px; transition: 0.3s; }
-    .nav-links a:hover { color: #2c3de0; }
-    
-    @media (max-width: 600px) {
-        .navbar { padding: 10px 15px; flex-direction: column; }
-        .nav-links { margin-top: 10px; padding: 0; }
-        .nav-links li { margin: 0 10px; }
-        .logo { font-size: 18px; }
-    }
-</style>
 
-<nav class="navbar">
-    <a href="index.html" class="logo">Toolkit<span style="color:#333">Pro</span></a>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Resources.html">Resources</a></li>
-        <li><a href="shopping.html">Shopping</a></li>
-    </ul>
+<!-- NAV -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">Toolkit<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html">Shopping</a></li>
+  </ul>
 </nav>
-   
 
-    <div class="hero">
-        <h1>Exclusive Resources</h1>
-        <p>Curated tools and deals for digital creators</p>
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative; z-index:1;">
+    <span class="hero-tag">✦ Creator Resources</span>
+    <h1>Tools & Guides for <span>Digital Creators</span></h1>
+    <p>Free tips, curated tools, and in-depth guides to help you optimize images, grow on Pinterest, and build a stunning digital presence.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">50.6k</div>
+        <div class="stat-label">Monthly Pinterest Views</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">LinkedIn Impressions</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free Tools</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">25%</div>
+        <div class="stat-label">Search CTR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <!-- ── CURATED DEALS ── -->
+  <div class="section-hd">
+    <span class="tag"> Exclusive Deals</span>
+    <h2>Curated Tools & Deals</h2>
+    <p>Hand-picked resources that every digital creator and developer should know about.</p>
+  </div>
+
+  <div class="resource-cards">
+    <div class="res-card">
+      <div class="res-icon" style="background:#fff3e0;">🎧</div>
+      <h3>Audible Plus — Free 30-Day Trial</h3>
+      <p>Listen to thousands of audiobooks and podcasts while you work. Get <strong>2 free books</strong> and access Audible Originals with your free trial. Perfect for developers who want to keep learning while coding.</p>
+      <ul style="font-size:13px; color:var(--muted); padding-left:18px; line-height:2;">
+        <li>30-day free trial, cancel anytime</li>
+        <li>2 free audiobook credits included</li>
+        <li>Access to Audible Originals & Podcasts</li>
+        <li>Offline listening on any device</li>
+      </ul>
+      <a class="res-btn orange" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank">🎧 Claim Free Trial</a>
     </div>
 
-    <div class="container">
-        <div class="resource-card">
-            <i class="fas fa-headphones"></i>
-            <h3>Audible Plus Trial</h3>
-            <p>Listen to thousands of audiobooks. Start your 30-day free trial and get 2 free books!</p>
-            <a href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" class="btn-amazon btn-audible" target="_blank">Get Free Trial</a>
-        </div>
-
-        <div class="resource-card">
-            <i class="fas fa-utensils"></i>
-            <h3>Home Essentials</h3>
-            <p>Upgrade your lifestyle with our top-rated kitchen gadgets and air fryers.</p>
-            <a href="https://amzn.to/30CJecN" class="btn-amazon" target="_blank">Shop on Amazon</a>
-        </div>
-
-        <div class="resource-card">
-            <i class="fas fa-gem"></i>
-            <h3>Aesthetic Jewelry</h3>
-            <p>Explore beautiful silver necklaces and CZ halo earrings for every occasion.</p>
-            <a href="https://amzn.to/4w0r7y5" class="btn-amazon" style="background: var(--primary-blue);" target="_blank">View Collection</a>
-        </div>
-    </div>
- <!-- Main Resources Container -->
-<div id="resources-section" style="background: #ffffff; padding: 60px 20px; border-top: 1px solid #eee;">
-    <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
-        
-        <!-- 1. About the Developer Card -->
-        <div style="animation: fadeInUp 0.8s ease-out; background: #f8fbff; padding: 40px; border-radius: 20px; border: 1px solid #e1e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-            <h2 style="color: #2c3de0; font-size: 2rem; margin-bottom: 20px; font-weight: 800;">
-                About the Developer & Toolkit Pro
-            </h2>
-            <p style="color: #444; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px;">
-                Hi, I'm <strong>Shaheera Sadia</strong>. I am a Web and Mobile Application Developer from Mandi Bahauddin, Pakistan. specialize in building modern digital tools like <strong>Toolkit Pro</strong>. My mission is to simplify complex digital workflows for creators.
-            </p>
-            <p style="color: #444; line-height: 1.8; font-size: 1.05rem; margin-bottom: 25px;">
-                At <strong>Toolkit Pro</strong>, we focus on providing high-performance utilities such as our <strong>Image Compressor</strong> and <strong>QR Code Generator</strong>. Every tool is designed to process data locally in your browser.
-            </p>
-
-            <!-- Achievements -->
-            <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-                <div class="achievement-badge" style="background: #eef2ff; color: #2c3de0; padding: 10px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; border: 1px solid #d0d7de; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-rocket"></i> 1,000+ LinkedIn Impressions
-                </div>
-                <div class="achievement-badge" style="background: #fff5f5; color: #e60023; padding: 10px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; border: 1px solid #ffdada; display: flex; align-items: center; gap: 8px;">
-                    <i class="fab fa-pinterest"></i> 49k+ Monthly Views
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. Elegant Divider (Centered) -->
-        <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0; opacity: 0.7;">
-            <div style="flex: 1; height: 1px; background: linear-gradient(to right, transparent, #3a4fd4, transparent);"></div>
-            <div style="padding: 0 20px; color: #3a4fd4; font-size: 1.5rem;">
-                <i class="fas fa-envelope-open-text"></i>
-            </div>
-            <div style="flex: 1; height: 1px; background: linear-gradient(to right, transparent, #3a4fd4, transparent);"></div>
-        </div>
-
-        <!-- 3. Contact Form Card -->
-        <div style="background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid #eee; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
-            <h3 style="margin-bottom: 25px; color: #333; font-size: 1.6rem; font-weight: 700;">Get In Touch</h3>
-            <form action="https://formspree.io/f/xkoyzpvp" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <input type="text" name="name" placeholder="Your Name" required style="padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem;">
-                    <input type="email" name="_replyto" placeholder="Your Email" required style="padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem;">
-                </div>
-                <textarea name="message" rows="5" placeholder="How can I help you?" required style="padding: 14px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; resize: none;"></textarea>
-                
-                <input type="text" name="_gotcha" style="display:none">
-                
-                <button type="submit" style="background: #2c3de0; color: white; padding: 16px; border: none; border-radius: 10px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 12px rgba(44, 61, 224, 0.2);">
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-<style>
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .achievement-badge { animation: fadeInUp 0.6s ease-out backwards; }
-    .badge-1 { animation-delay: 0.2s; }
-    .badge-2 { animation-delay: 0.4s; }
-    .badge-3 { animation-delay: 0.6s; }
-</style>
-<footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 50px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
-        
-        <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-            <h3 style="color: #2c3de0; margin-bottom: 15px;">Toolkit<span style="color: #fff;">Pro</span></h3>
-            <p style="font-size: 14px; line-height: 1.6; color: #bbb;">
-                Providing modern web utilities and curated lifestyle resources to simplify your digital workflow. Built with passion by Shaheera Sadia.
-            </p>
-        </div>
-
-        <div style="flex: 1; min-width: 150px; margin-bottom: 20px;">
-            <h4 style="margin-bottom: 15px; border-bottom: 2px solid #2c3de0; display: inline-block;">Quick Links</h4>
-            <ul style="list-style: none; padding: 0; font-size: 14px;">
-                <li style="margin-bottom: 8px;"><a href="index.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Home</a></li>
-                <li style="margin-bottom: 8px;"><a href="Resources.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Resources</a></li>
-                <li style="margin-bottom: 8px;"><a href="shopping.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Shopping Picks</a></li>
-            </ul>
-        </div>
-<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-    <h4 style="margin-bottom: 15px; border-bottom: 2px solid #2c3de0; display: inline-block;">Follow Me</h4>
-    <div style="display: flex; gap: 15px; margin-top: 10px;">
-        
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" style="text-decoration: none; cursor: pointer;">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; filter: grayscale(100%) brightness(200%); transition: 0.3s;" onmouseover="this.style.filter='none'">
-        </a>
-
-        <a href="https://www.pinterest.com/shaheerasadia/" target="_blank" style="text-decoration: none; cursor: pointer;">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest" style="width: 30px; filter: grayscale(100%) brightness(200%); transition: 0.3s;" onmouseover="this.style.filter='none'">
-        </a>
-
-    </div>
-</div>
-        
-        
+    <div class="res-card">
+      <div class="res-icon" style="background:#e8f5e9;"></div>
+      <h3>Home Essentials on Amazon</h3>
+      <p>Upgrade your lifestyle with top-rated kitchen gadgets, air fryers, and home essentials. From dual basket air fryers to premium ovens — everything you need for a modern, efficient home kitchen.</p>
+      <ul style="font-size:13px; color:var(--muted); padding-left:18px; line-height:2;">
+        <li>Family-sized air fryers & dual basket models</li>
+        <li>Premium kitchen ovens with multi-mode cooking</li>
+        <li>Professional pizza pans for crispy results</li>
+        <li>Fast shipping with Amazon Prime</li>
+      </ul>
+      <a class="res-btn green" href="https://app-tool.vercel.app/shopping.html" target="_blank">🛒 Browse Kitchen Picks</a>
     </div>
 
-    <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; font-size: 12px; color: #777;">
-        &copy; 2026 Toolkit Pro | Designed & Developed by **Shaheera Sadia**
+    <div class="res-card">
+      <div class="res-icon" style="background:#e8eaf6;"></div>
+      <h3>Aesthetic Jewelry Collection</h3>
+      <p>Explore beautiful silver necklaces, CZ halo earrings, and rose gold jewelry sets for every occasion. Handpicked pieces that are hypoallergenic, long-lasting, and stunning — without the luxury price tag.</p>
+      <ul style="font-size:13px; color:var(--muted); padding-left:18px; line-height:2;">
+        <li>925 Sterling Silver pieces — tarnish-resistant</li>
+        <li>CZ Halo earrings that sparkle like diamonds</li>
+        <li>Birthstone necklaces for personalized gifting</li>
+        <li>4-piece rose gold sets — perfect all-in-one gifts</li>
+      </ul>
+      <a class="res-btn blue" href="https://app-tool.vercel.app/shopping.html" target="_blank">✨ View Jewelry Collection</a>
     </div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <!-- Replace with your Google AdSense ad unit code -->
+    <p>Advertisement</p>
+  </div>
+
+  <!-- ── ARTICLES / GUIDES ── -->
+  <div class="section-hd">
+    <span class="tag"> Creator Guides</span>
+    <h2>Tips & Guides for Digital Creators</h2>
+    <p>Practical, actionable advice to help you create better content, optimize your workflow, and grow your audience.</p>
+  </div>
+
+  <div class="articles-grid">
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">🗜️</div>
+      <div class="article-body">
+        <span class="article-tag">Image Optimization</span>
+        <h3>How to Compress Images Without Losing Quality</h3>
+        <p>Large images slow down your website and hurt your SEO ranking. Learn how to reduce file sizes by up to 80% while keeping your images sharp and beautiful. We cover the best formats — JPEG, PNG, and WebP — and when to use each one.</p>
+        <p><strong>Key tips covered:</strong> Use WebP format for the web, compress to 70–80% quality for perfect balance, resize images to their display dimensions before uploading, and always strip metadata for smaller files.</p>
+        <a class="read-more" href="https://app-tool.vercel.app/index.html#uploadArea">Try Image Compressor → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);"></div>
+      <div class="article-body">
+        <span class="article-tag">Pinterest Marketing</span>
+        <h3>5 Ways to Grow Your Pinterest to 49k+ Monthly Views</h3>
+        <p>Pinterest is one of the most powerful platforms for driving organic traffic to your site or products. With the right pin design and keyword strategy, you can reach tens of thousands of people every month — even as a beginner.</p>
+        <p><strong>What works:</strong> Post consistently (at least 5 pins/day), use vertical 2:3 ratio images, add text overlays with keywords, pin to group boards, and use Toolkit Pro's Nature Designer to create stunning aesthetic pins.</p>
+        <a class="read-more" href="https://www.pinterest.com/shaheerasadia" target="_blank">Follow on Pinterest → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);"></div>
+      <div class="article-body">
+        <span class="article-tag">Design Tools</span>
+        <h3>How to Extract Color Palettes from Any Image</h3>
+        <p>Color consistency is the secret behind every successful brand and Pinterest aesthetic. Learn how to extract beautiful hex codes from photos, and use them to build a cohesive color palette for your social media, website, or design projects.</p>
+        <p><strong>Pro workflow:</strong> Upload a nature photo or brand image → extract 5–6 dominant colors → apply those hex codes to your Canva templates, website CSS, and social media graphics for a fully consistent look.</p>
+        <a class="read-more" href="https://app-tool.vercel.app/index.html#palette-section">Try Color Extractor → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#fff8e1,#ffecb3);"></div>
+      <div class="article-body">
+        <span class="article-tag">Web Performance</span>
+        <h3>Why Image Optimization Matters for SEO in 2026</h3>
+        <p>Google's Core Web Vitals now directly impact your search ranking. Large, unoptimized images are the #1 cause of slow page loads — which means lower rankings, higher bounce rates, and fewer clicks from search results.</p>
+        <p><strong>The numbers:</strong> A 1-second delay in page load time reduces conversions by 7%. Compressing images to WebP format can cut load time by 30–50%. Pages that load in under 2 seconds rank significantly higher in Google search results.</p>
+        <a class="read-more" href="https://app-tool.vercel.app/index.html#uploadArea">Optimize Your Images → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);"></div>
+      <div class="article-body">
+        <span class="article-tag">Aesthetic Design</span>
+        <h3>Creating Viral Aesthetic Quote Cards for Pinterest</h3>
+        <p>Quote cards and nature visuals are among the most shared content on Pinterest. With the right design approach, a single pin can reach thousands of users and drive consistent traffic to your profile or website every week.</p>
+        <p><strong>Design formula:</strong> Choose a high-quality nature photo → add a semi-transparent overlay → use elegant serif fonts → keep the quote short and powerful → use our Nature Designer tool to create the design in seconds and download it ready to post.</p>
+        <a class="read-more" href="https://app-tool.vercel.app/index.html">Try Nature Designer → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <div class="article-cover" style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb);">🔗</div>
+      <div class="article-body">
+        <span class="article-tag">Developer Tips</span>
+        <h3>QR Codes for Developers: Driving Traffic to Your Apps</h3>
+        <p>QR codes are back — and more powerful than ever. From app store links to portfolio showcases, QR codes bridge the gap between print and digital. Learn how to generate clean, scannable QR codes and use them in your marketing materials.</p>
+        <p><strong>Best use cases:</strong> Link your business card to your portfolio, add QR codes to product packaging, use them in presentations to share live demos, and print them on flyers or banners for events and meetups.</p>
+        <a class="read-more" href="https://app-tool.vercel.app/index.html">Generate QR Code → <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <!-- Replace with your Google AdSense ad unit code -->
+    <p>Advertisement</p>
+  </div>
+
+  <!-- ── IMAGE OPTIMIZATION TIPS ── -->
+  <div class="section-hd">
+    <span class="tag">🗜️ Pro Tips</span>
+    <h2>10 Image Optimization Tips Every Creator Should Know</h2>
+    <p>Actionable tips used by professional web developers and content creators worldwide.</p>
+  </div>
+
+  <div class="tips-wrap">
+    <div class="tips-header">
+      <h2>Master Image Optimization</h2>
+      <p>Follow these tips to make your website faster, your pins more stunning, and your workflow more efficient.</p>
+    </div>
+    <div class="tips-list">
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-content">
+          <h4>Always Use WebP Format for the Web</h4>
+          <p>WebP images are 25–35% smaller than JPEG and PNG while maintaining the same visual quality. Switch to WebP for all your website images and watch your page load speed improve significantly. Toolkit Pro's Image Compressor converts to WebP instantly.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-content">
+          <h4>Compress to 70–80% Quality — Not 100%</h4>
+          <p>The human eye cannot detect quality differences above 75%. Compressing at 70–80% quality reduces file size by 50–70% with no visible loss. There is no reason to upload full-quality images to the web — it only slows you down.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-content">
+          <h4>Resize Before You Compress</h4>
+          <p>If your image displays at 400px wide on screen, never upload it at 2000px wide. Resize your image to the exact display size first, then compress it. This single step can reduce file size by 80% before any compression even happens.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-content">
+          <h4>Use PNG Only for Logos and Icons</h4>
+          <p>PNG is lossless and keeps sharp edges — ideal for logos, icons, and graphics with text. For photos and backgrounds, always use JPEG or WebP. Using PNG for photos unnecessarily triples or quadruples your file size for no benefit.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-content">
+          <h4>Add Descriptive Alt Text to Every Image</h4>
+          <p>Alt text helps Google understand what your image shows, improving your image search ranking. Use descriptive, keyword-rich alt text like "sterling silver heart bracelet gift for her" instead of "image1.jpg". This alone can significantly boost organic traffic.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">6</div>
+        <div class="tip-content">
+          <h4>Use Lazy Loading for Off-Screen Images</h4>
+          <p>Add <code style="background:#f0f4f0; padding:2px 6px; border-radius:4px; font-size:12px;">loading="lazy"</code> to your image tags. This tells the browser to only load images when the user scrolls to them, dramatically improving initial page load speed and your Core Web Vitals score.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">7</div>
+        <div class="tip-content">
+          <h4>Pinterest Images: Always Use 2:3 Ratio (1000×1500px)</h4>
+          <p>Pinterest's algorithm prioritizes vertical pins in the 2:3 aspect ratio. Images sized at 1000×1500 pixels perform best in feeds. Pair this with our Nature Designer tool to create pins that stop the scroll and drive traffic to your profile.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">8</div>
+        <div class="tip-content">
+          <h4>Strip Image Metadata Before Publishing</h4>
+          <p>Photos taken on smartphones contain hidden metadata (GPS location, camera model, date/time) that adds file size without any visual benefit. Toolkit Pro automatically strips this metadata during compression, giving you smaller, privacy-safe images.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">9</div>
+        <div class="tip-content">
+          <h4>Name Your Files with Keywords</h4>
+          <p>Google reads file names as part of SEO. "silver-heart-bracelet-gift-for-her.jpg" ranks far better than "IMG_4892.jpg". Before uploading any image, rename it with descriptive, hyphen-separated keywords that match what your audience searches for.</p>
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">10</div>
+        <div class="tip-content">
+          <h4>Batch Process Images to Save Time</h4>
+          <p>If you manage a blog, e-commerce site, or Pinterest account, you likely need to optimize dozens of images regularly. Use Toolkit Pro to compress images one by one in seconds — or plan your workflow to batch process all images before a publish session.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <!-- Replace with your Google AdSense ad unit code -->
+    <p>Advertisement</p>
+  </div>
+
+  <!-- ── TOOLS SHOWCASE ── -->
+  <div class="section-hd">
+    <span class="tag">🛠️ Our Tools</span>
+    <h2>All Toolkit Pro Features — 100% Free</h2>
+    <p>Every tool is built to run entirely in your browser. No uploads to servers. No accounts needed. Just fast, private, professional results.</p>
+  </div>
+
+  <div class="tools-grid">
+    <div class="tool-card">
+      <div class="tool-icon"></div>
+      <h3>Image Compressor</h3>
+      <p>Reduce image file sizes by up to 80% without visible quality loss. Supports JPEG, PNG, WebP, and GIF. Resize, reformat, and download instantly — all processed in your browser.</p>
+      <a class="tool-link" href="https://app-tool.vercel.app/index.html#uploadArea">Open Tool <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon"></div>
+      <h3>Color Palette Extractor</h3>
+      <p>Upload any image and instantly extract 5–6 dominant colors as copyable HEX codes. Perfect for building brand kits, Pinterest aesthetics, and consistent social media designs.</p>
+      <a class="tool-link" href="https://app-tool.vercel.app/index.html#palette-section">Open Tool <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon"></div>
+      <h3>QR Code Generator</h3>
+      <p>Generate clean, high-precision QR codes from any URL. Download in seconds and use on business cards, presentations, product packaging, or social media profiles.</p>
+      <a class="tool-link" href="https://app-tool.vercel.app/index.html">Open Tool <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon"></div>
+      <h3>Nature Quote Designer</h3>
+      <p>Upload a nature photo, type your quote, and download a stunning aesthetic design card — perfect for Pinterest pins, Instagram stories, and digital wallpapers.</p>
+      <a class="tool-link" href="https://app-tool.vercel.app/index.html">Open Tool <i class="fas fa-external-link-alt" style="font-size:10px;"></i></a>
+    </div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <!-- Replace with your Google AdSense ad unit code -->
+    <p>Advertisement</p>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="section-hd">
+    <span class="tag">FAQ</span>
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know about Toolkit Pro and our free tools.</p>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Is Toolkit Pro completely free to use? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">Yes — every tool on Toolkit Pro is 100% free with no sign-up, no account creation, and no hidden fees. We believe powerful tools should be accessible to every creator, developer, and entrepreneur worldwide.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Are my images stored on your servers? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">No — absolutely not. All image processing (compression, color extraction, design generation) happens entirely in your browser using JavaScript. Your images never leave your device and are never uploaded to any server. Your privacy is fully protected.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">What image formats does the compressor support? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">Toolkit Pro's Image Compressor supports JPEG, PNG, WebP, and GIF formats up to 10MB in size. You can also convert between formats — for example, convert a PNG to WebP for better web performance, or a JPEG to PNG for a transparent background.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How much can I reduce my image file size? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">Depending on the original image and your quality settings, you can typically reduce file sizes by 50–80%. A 5MB JPEG photo can often be brought down to under 500KB with no visible quality loss at 75% compression quality. Converting to WebP can reduce sizes even further.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Do the Amazon affiliate links cost me anything extra? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">No — never. If you purchase a product through one of our Amazon affiliate links, you pay exactly the same price you would on Amazon directly. We simply earn a small commission from Amazon as a referral fee. This helps support Toolkit Pro and keeps all our tools free for everyone.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Can I use Toolkit Pro on mobile devices? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">Yes! Toolkit Pro is fully responsive and works on smartphones, tablets, and desktop computers. All tools are optimized for mobile use — you can compress images, extract colors, and generate QR codes directly from your phone's browser without installing any app.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Who built Toolkit Pro? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
+      <div class="faq-a">Toolkit Pro was designed and developed by Shaheera Sadia, a Web and Mobile Application Developer from Mandi Bahauddin, Punjab, Pakistan. Shaheera specializes in building modern digital tools and has 49k+ monthly views on Pinterest and 1,000+ LinkedIn impressions.</div>
+    </div>
+  </div>
+
+  <!-- AD SLOT -->
+  <div class="ad-slot">
+    <!-- Replace with your Google AdSense ad unit code -->
+    <p>Advertisement</p>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <div class="section-hd">
+    <span class="tag"> About</span>
+    <h2>About the Developer & Toolkit Pro</h2>
+  </div>
+
+  <div class="about-wrap">
+    <div class="about-avatar"></div>
+    <div class="about-content">
+      <h2>Hi, I'm Shaheera Sadia</h2>
+      <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
+      <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: <em>to give every creator access to professional-grade utilities without needing expensive software or technical expertise.</em> Every tool processes data locally in your browser, meaning your files stay private and never touch a server.</p>
+      <p>Beyond development, I am an active Pinterest creator with <strong>49k+ monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe that great design should be accessible, intuitive, and fast — which is the philosophy behind every feature of Toolkit Pro.</p>
+      <div class="about-badges">
+        <span class="badge"> 50.6k+ Monthly Pinterest Views</span>
+        <span class="badge"> 1,000+ LinkedIn Impressions</span>
+        <span class="badge"> 100% Privacy — No Server Uploads</span>
+        <span class="badge"> Mandi Bahauddin, Pakistan</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="section-hd">
+    <span class="tag">Contact</span>
+    <h2>Get In Touch</h2>
+    <p>Have a question, collaboration idea, or feedback? I'd love to hear from you.</p>
+  </div>
+
+  <div class="contact-wrap">
+    <h2>Send a Message</h2>
+    <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Your first name" />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Your last name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="How can I help you?" />
+      </div>
+      <div class="form-group">
+        <label for="msg">Message</label>
+        <textarea id="msg" rows="5" placeholder="Write your message here..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+    </div>
+    <div style="margin-top:20px; padding-top:20px; border-top:1px solid #f0f4f0; display:flex; flex-direction:column; gap:8px;">
+      <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Developer:</strong> Shaheera Sadia</div>
+      <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Location:</strong> Mandi Bahauddin, Punjab, Pakistan</div>
+      <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">Email:</strong> <a href="mailto:shaheerasadia@gmail.com" style="color:var(--green);">shaheerasadia@gmail.com</a></div>
+      <div style="font-size:13px; color:var(--muted);"><strong style="color:var(--text);">GitHub:</strong> <a href="https://github.com/shaheerasadia" target="_blank" style="color:var(--green);">github.com/shaheerasadia</a></div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Providing modern web utilities and curated lifestyle resources to simplify your digital workflow. Built with passion by Shaheera Sadia from Pakistan.</p>
+      <div class="footer-social" style="margin-top:16px;">
+        <a class="social-icon" href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-icon" href="https://www.pinterest.com/shaheerasadia/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+        <a class="social-icon" href="https://github.com/shaheerasadia" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="social-icon" href="mailto:shaheerasadia@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
+        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Our Tools</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Palette Extractor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html">QR Code Generator</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html">Nature Designer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
 </footer>
- 
-   
+
+<script>
+  function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+  }
+
+  function handleSubmit() {
+    const name  = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg   = document.getElementById('msg').value.trim();
+    if (!name || !email || !msg) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+    const mailto = `mailto:shaheerasadia@gmail.com?subject=${encodeURIComponent(document.getElementById('subject').value || 'Toolkit Pro Inquiry')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg)}`;
+    window.location.href = mailto;
+  }
+</script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
