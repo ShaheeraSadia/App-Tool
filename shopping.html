@@ -221,22 +221,19 @@
             .then(data => {
                 allProducts = data;
                 
-                // --- URL Parameter Logic ---
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('id');
 
                 if (productId) {
-                    // اگر URL میں ID ہو تو صرف وہ پروڈکٹ دکھائیں
                     const singleProduct = allProducts.filter(p => p.id == productId);
                     displayProducts(singleProduct);
                 } else {
-                    // ورنہ تمام پروڈکٹس دکھائیں
                     displayProducts(allProducts); 
                 }
             })
-            .catch(err => console.error("Error:", err));
+            .catch(err => console.error("Error loading products:", err));
 
-        // سرچ بار کی لاجک
+        // Search Logic
         const searchInput = document.getElementById('searchInput');
         if(searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -257,14 +254,18 @@
         if(!grid) return;
 
         grid.innerHTML = ''; 
-        countDisplay.textContent = `${products.length} Products Found`;
+        if(countDisplay) {
+            countDisplay.textContent = `${products.length} Products Found`;
+        }
 
+        // استعمال کریں تاکہ ہر کارڈ صحیح طرح ڈیٹا وصول کرے Template Literals
         products.forEach(product => {
             const card = `
                 <div class="product-card" data-category="${product.category}">
                     <div class="card-img">
-                        <span class="card-badge">${product.badge}</span>
-                       
+                        <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
+                            ${product.badge}
+                        </span>
                         <img src="${product.image}" alt="${product.altText || product.name}">
                     </div>
                     <div class="card-body">
@@ -276,14 +277,14 @@
                     </div>
                 </div>
             `;
-            grid.innerHTML += card;
+            grid.insertAdjacentHTML('beforeend', card);
         });
     }
 
     function filterProducts(category, btn) {
         const buttons = document.querySelectorAll('.filter-btn');
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        if(buttons) buttons.forEach(b => b.classList.remove('active'));
+        if(btn) btn.classList.add('active');
 
         if (category === 'all') {
             displayProducts(allProducts);
