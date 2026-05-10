@@ -1053,7 +1053,74 @@
         }
     }
 </script>
- 
+ <script>
+    let allProducts = []; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("Checking products.json..."); // Debugging
+
+        fetch('products.json')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error("JSON file not found at the path 'products.json'");
+                }
+                return res.json();
+            })
+            .then(data => {
+                console.log("Data Loaded Successfully:", data); // یہ لائن چیک کرے گی کہ ڈیٹا آیا یا نہیں
+                allProducts = data; 
+                
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('id');
+
+                if (productId) {
+                    const singleProduct = allProducts.filter(p => p.id == productId);
+                    displayProducts(singleProduct);
+                } else {
+                    displayProducts(allProducts); 
+                }
+            })
+            .catch(err => {
+                console.error("Critical Error:", err.message);
+                document.body.innerHTML += `<div style="color:red; position:fixed; top:0; background:white; z-index:9999;">Error: ${err.message}</div>`;
+            });
+    });
+
+    function displayProducts(products) {
+        const grid = document.getElementById('productsGrid');
+        if(!grid) {
+            console.error("Element with id 'productsGrid' was not found in your HTML!");
+            return;
+        }
+
+        grid.innerHTML = ''; 
+
+        if (products.length === 0) {
+            grid.innerHTML = '<h3>No products found!</h3>';
+            return;
+        }
+
+        products.forEach(product => {
+            // آپ کے مہیا کردہ JSON کے مطابق Keys کا استعمال
+            const card = `
+                <div class="product-card" style="border: 1px solid #ddd; margin: 10px; padding: 10px;">
+                    <div class="card-img">
+                        <img src="${product.image}" alt="${product.name}" style="width:100%; max-height:200px; object-fit:contain;">
+                    </div>
+                    <div class="card-body">
+                        <h4>${product.name}</h4>
+                        <p>${product.description}</p>
+                        <a href="${product.amazonLink}" target="_blank" 
+                           style="background: ${product.btnColor || 'blue'}; color: white; padding: 5px 10px; text-decoration: none; display: inline-block;">
+                           Buy Now
+                        </a>
+                    </div>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', card);
+        });
+    }
+</script>
 </body>
 </html>
  
