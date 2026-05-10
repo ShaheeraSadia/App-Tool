@@ -508,6 +508,17 @@
     <g:condition>new</g:condition>
     <g:brand>VALITIC</g:brand>
   </item>
+
+  <item>
+  <title>Skylight 15-inch Digital Wall Calendar & Chore Chart</title>
+  <link>https://app-tool.vercel.app/shopping.html?id=50</link>
+  <description>Stay organized in 2026 with the Skylight Smart Calendar. Ideal for family schedules and chore tracking.</description>
+  <g:image_link>https://app-tool.vercel.app/image/calender._AC_SL1500_.jpg</g:image_link>
+  <g:price>299.99 USD</g:price>
+  <g:availability>in stock</g:availability>
+  <g:condition>new</g:condition>
+  <g:brand>Skylight</g:brand>
+</item>
 </channel>
 </rss>
 
