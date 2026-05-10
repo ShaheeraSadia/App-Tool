@@ -594,7 +594,7 @@
     "btnColor": "#e94560"
   },
   {
-  "id": 3,
+  "id": 55,
   "name": "Luxury Red Eternal Roses",
   "category": "gifts",
   "badge": "Gifts",
@@ -605,7 +605,7 @@
   "btnColor": "#b91c1c"
 },
   {
-    "id": 55,
+    "id": 56,
     "name": "Maitys 44 Pcs Wedding Hair Accessories",
     "category": "jewelry",
     "badge": "Jewelry",
@@ -613,20 +613,20 @@
     "image": "/image/44._SL1500_.jpg",
     "amazonLink": "https://amzn.to/4d1eH1I",
     "btnColor": "#b1907b"
-},
+}, 
   {
-      "id": 55,
-      "name": "FUTIMELY Boho Retro Stackable Rings Set",
-      "category": "Jewelry",
-      "price_label": "Amazon Find",
-      "description": "Knuckle Joint Finger Ring Sets with Moon and Stars. Trendy statement jewelry for women.",
-      "image_url": "/image/ring 1._AC_SY535_.jpg",
-      "amazon_link": "https://amzn.to/3QWlCk5",
-      "badge": "jewelry",
-      "tag": "Jewelry"
-    },
+    "id": 57,
+    "name": "FUTIMELY Boho Retro Stackable Rings Set",
+    "category": "jewelry",
+    "badge": "Jewelry",
+    "image": "/image/ring 1._AC_SY535_.jpg",
+    "description": "Knuckle Joint Finger Ring Sets with Moon and Stars. Trendy statement jewelry for women.",
+    "benefits": "Perfect for stacking or wearing individually to match your daily boho style.",
+    "amazonLink": "https://amzn.to/3QWlCk5",
+    "btnColor": "linear-gradient(135deg,#e6b980,#eacda3)"
+ }
   {
-    "id": 55,
+    "id": 58,
     "name": "Handmade Leaf Crystal Bridal Headpiece",
  
     "category": "jewelry",
