@@ -1,39 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | ToolKit Pro</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f4f7f6; }
-        .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: #3a7bd5; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #2d3436; margin-top: 30px; }
-        .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #3a7bd5; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Toolkit Pro by Shaheera Sadia</title>
+  <meta name="description" content="Privacy Policy for Toolkit Pro — learn how we protect your data, how we use cookies, and how Google AdSense works on our site." />
+  <meta name="author" content="Shaheera Sadia" />
+  <link rel="canonical" href="https://app-tool.vercel.app/privacy.html" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue:      #2b4fd8;
+      --blue-dark: #1a3199;
+      --blue-mid:  #3d72d4;
+      --blue-light:#e8f0fe;
+      --blue-pale: #f0f4ff;
+      --pink:      #ff6eb4;
+      --text:      #1c1c1e;
+      --muted:     #6b7280;
+      --bg:        #f5f8ff;
+      --white:     #ffffff;
+      --radius:    14px;
+      --shadow:    0 4px 24px rgba(43,79,216,0.09);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+
+    /* NAV */
+    nav {
+      background: var(--white); border-bottom: 1px solid #dde6ff;
+      padding: 0 40px; display: flex; align-items: center;
+      justify-content: space-between; height: 66px;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo span { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo span em { color: var(--pink); font-style: normal; }
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 14px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; }
+
+    /* HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, #00b4db 100%);
+      color: white; padding: 60px 24px 50px; text-align: center;
+    }
+    .page-hero .tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Lora', serif; font-size: clamp(26px,4vw,42px); font-weight: 700; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; opacity: .88; max-width: 480px; margin: 0 auto; }
+
+    /* LAYOUT */
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* AD SLOT */
+    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 28px 20px; color: var(--muted); font-size: 13px; margin: 36px 0; }
+
+    /* LAST UPDATED BADGE */
+    .updated-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 20px; margin-bottom: 32px; }
+
+    /* POLICY SECTIONS */
+    .policy-section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 32px 36px; margin-bottom: 20px; }
+    .policy-section h2 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .policy-section h2 i { font-size: 18px; color: var(--blue); }
+    .policy-section p { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul { font-size: 14.5px; color: var(--muted); padding-left: 22px; line-height: 2.1; margin-top: 8px; }
+    .policy-section a { color: var(--blue); text-decoration: none; }
+    .policy-section a:hover { text-decoration: underline; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box { background: var(--blue-pale); border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: #374a80; line-height: 1.7; }
+    .highlight-box strong { color: var(--blue-dark); }
+
+    /* CONTACT CARD */
+    .contact-card { background: linear-gradient(135deg, var(--blue-pale), var(--blue-light)); border-radius: var(--radius); border: 1px solid #c0d0f8; padding: 28px 32px; text-align: center; margin-top: 32px; }
+    .contact-card h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; }
+    .contact-card p { font-size: 14px; color: #374a80; margin-bottom: 18px; }
+    .contact-btn { display: inline-block; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 11px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; transition: opacity .2s; }
+    .contact-btn:hover { opacity: .88; }
+
+    /* FOOTER */
+    footer { background: linear-gradient(135deg, #0d1b5e, #1a2f8a); color: rgba(255,255,255,.85); padding: 40px 40px 24px; }
+    .footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
+    .footer-brand .logo { font-size: 18px; color: #7dd3fc; font-weight: 700; margin-bottom: 8px; }
+    .footer-brand p { font-size: 12px; opacity: .7; max-width: 260px; line-height: 1.6; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links h4 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 4px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #7dd3fc; }
+    .footer-bottom { max-width: 860px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: 12px; opacity: .6; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .policy-section { padding: 24px 20px; }
+      .footer-inner { flex-direction: column; }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Back to Home</a>
-    <div class="card">
-        <h1>Privacy Policy</h1>
-        <p>Last updated: April 25, 2026</p>
-        
-        <p>At ToolKit Pro, accessible from your Vercel app, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ToolKit Pro and how we use it.</p>
 
-        <h2>Log Files</h2>
-        <p>ToolKit Pro follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, and referring/exit pages.</p>
+<!-- NAV -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span>ToolKit <em>Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  </ul>
+</nav>
 
-        <h2>Cookies and Web Beacons</h2>
-        <p>Like any other website, ToolKit Pro uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+<!-- HERO -->
+<section class="page-hero">
+  <span class="tag">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p>How Toolkit Pro collects, uses, and protects your information — your privacy is our priority.</p>
+</section>
 
-        <h2>Google DoubleClick DART Cookie</h2>
-        <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
+<div class="page-wrap">
 
-        <h2>Data Security</h2>
-        <p>We do not store any images uploaded to our Image Compressor or Color Palette tools on our servers. All processing happens locally in your browser. Your images remain private and are never shared with third parties.</p>
+  <div class="updated-badge"><i class="fas fa-calendar-check"></i> Last Updated: May 9, 2026</div>
 
-        <h2>Contact Us</h2>
-        <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at via our GitHub profile.</p>
+  <!-- AD SLOT -->
+   <div class="ad-slot">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+  <!-- INTRO -->
+  <div class="policy-section">
+    <h2><i class="fas fa-shield-alt"></i> Introduction</h2>
+    <p>At <strong>Toolkit Pro</strong>, accessible from <a href="https://app-tool.vercel.app">https://app-tool.vercel.app</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document explains the types of information that is collected and recorded by Toolkit Pro and how we use it.</p>
+    <p>If you have additional questions or require more information about this Privacy Policy, please do not hesitate to contact us at <a href="mailto:shaheerasadia@gmail.com">shaheerasadia@gmail.com</a>.</p>
+    <div class="highlight-box">
+      <strong> Key Point:</strong> All image processing (compression, color extraction, design generation) happens entirely in your browser. Your images are <strong>never uploaded to our servers</strong> and never shared with third parties.
     </div>
+  </div>
+
+  <!-- LOG FILES -->
+  <div class="policy-section">
+    <h2><i class="fas fa-file-alt"></i> Log Files</h2>
+    <p>Toolkit Pro follows a standard procedure of using log files. These files log visitors when they visit websites. The information collected by log files includes:</p>
+    <ul>
+      <li>Internet Protocol (IP) addresses</li>
+      <li>Browser type and version</li>
+      <li>Internet Service Provider (ISP)</li>
+      <li>Date and time stamp of visits</li>
+      <li>Referring and exit pages</li>
+      <li>Number of clicks and pages viewed</li>
+    </ul>
+    <p style="margin-top:12px;">This information is used for analyzing trends, administering the site, tracking users' movements on the website, and gathering demographic information. This data is <strong>not linked to any personally identifiable information</strong>.</p>
+  </div>
+
+  <!-- COOKIES -->
+  <div class="policy-section">
+    <h2><i class="fas fa-cookie-bite"></i> Cookies and Web Beacons</h2>
+    <p>Like any other website, Toolkit Pro uses cookies. These cookies are used to store information including visitors' preferences and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and other information.</p>
+    <p>For more general information on cookies, please visit <a href="https://www.cookieconsent.com/what-are-cookies/" target="_blank">What Are Cookies</a>.</p>
+    <div class="highlight-box">
+      <strong>Cookie Types We Use:</strong> Strictly necessary cookies (site functionality), analytics cookies (Google Analytics — anonymized), and advertising cookies (Google AdSense). You can disable cookies through your browser settings, though this may affect site functionality.
+    </div>
+  </div>
+
+  <!-- GOOGLE ADSENSE -->
+  <div class="policy-section">
+    <h2><i class="fab fa-google"></i> Google AdSense & Advertising</h2>
+    <p>Toolkit Pro uses <strong>Google AdSense</strong> to display advertisements. Google AdSense is a third-party advertising program that uses cookies to serve ads based on a user's prior visits to our website or other websites. These ads help support Toolkit Pro and keep all our tools completely free.</p>
+    <p>Google's use of the DART cookie enables it to serve ads to our users based on their visit to our site and other sites on the internet. Users may opt out of the use of the DART cookie by visiting the <a href="https://www.google.com/settings/ads" target="_blank">Google Ad and Content Network Privacy Policy</a>.</p>
+    <ul>
+      <li>Google AdSense uses cookies to personalize ads</li>
+      <li>Third-party ad servers or ad networks use cookies to measure advertising effectiveness</li>
+      <li>These third parties have their own privacy policies covering their use of cookies</li>
+      <li>Toolkit Pro has no access to or control over cookies used by third-party advertisers</li>
+    </ul>
+    <p style="margin-top:12px;">For more information about Google's data practices, visit <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>. To opt out of personalized advertising, visit <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a>.</p>
+  </div>
+
+  <!-- THIRD PARTY PRIVACY POLICIES -->
+  <div class="policy-section">
+    <h2><i class="fas fa-external-link-alt"></i> Third-Party Privacy Policies</h2>
+    <p>Toolkit Pro's Privacy Policy does not apply to other advertisers or websites. We advise you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. Their policies cover their practices and instructions about how to opt out of certain options.</p>
+    <p>Third-party services used on Toolkit Pro include:</p>
+    <ul>
+      <li><strong>Google AdSense</strong> — advertising platform (<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Google Analytics</strong> — website analytics (<a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Amazon Associates</strong> — affiliate program (<a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Formspree</strong> — contact form submissions (<a href="https://formspree.io/legal/privacy-policy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Vercel</strong> — website hosting (<a href="https://vercel.com/legal/privacy-policy" target="_blank">Privacy Policy</a>)</li>
+    </ul>
+    <p style="margin-top:12px;">You can choose to disable cookies through your individual browser options. For more detailed information about cookie management with specific web browsers, it can be found on the browsers' respective websites.</p>
+  </div>
+
+  <!-- CCPA / GDPR -->
+  <div class="policy-section">
+    <h2><i class="fas fa-gavel"></i> CCPA & GDPR Privacy Rights</h2>
+    <p><strong>California Consumer Privacy Act (CCPA):</strong> Under the CCPA, California residents have the right to request that a business that collects personal data disclose the categories and specific pieces of personal data it has collected, the right to request deletion of personal data, and the right to opt-out of the sale of personal data. Toolkit Pro does not sell personal data.</p>
+    <p style="margin-top:10px;"><strong>General Data Protection Regulation (GDPR):</strong> If you are located in the European Union, you have the following data protection rights:</p>
+    <ul>
+      <li>The right to access, update, or delete the information we have about you</li>
+      <li>The right of rectification — to have inaccurate data corrected</li>
+      <li>The right to object to processing of your personal data</li>
+      <li>The right of restriction — to request that we restrict the processing of your data</li>
+      <li>The right to data portability</li>
+      <li>The right to withdraw consent at any time</li>
+    </ul>
+    <p style="margin-top:12px;">To exercise any of these rights, please contact us at <a href="mailto:shaheerasadia@gmail.com">shaheerasadia@gmail.com</a>. We will respond to your request within 30 days.</p>
+  </div>
+
+  <!-- DATA SECURITY -->
+  <div class="policy-section">
+    <h2><i class="fas fa-lock"></i> Data Security & Image Processing</h2>
+    <p>We take your data security very seriously. Here is exactly how Toolkit Pro handles your data:</p>
+    <ul>
+      <li><strong>Image Compressor:</strong> All compression happens in your browser via JavaScript. Images are never uploaded to our servers.</li>
+      <li><strong>Color Palette Extractor:</strong> Color extraction is performed entirely client-side. No image data leaves your device.</li>
+      <li><strong>Nature Quote Designer:</strong> Your photo and text are processed locally on your device. The download is generated in your browser.</li>
+      <li><strong>QR Code Generator:</strong> QR codes are generated client-side. The URL you enter is never stored or logged.</li>
+      <li><strong>Contact Form:</strong> Messages submitted via our contact form are processed by Formspree and sent to our email. We do not store form submissions on our servers.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Our Promise:</strong> Your private images and personal information never leave your device when using our tools. We will never sell, rent, or share your personal data with third parties for marketing purposes.
+    </div>
+  </div>
+
+  <!-- CHILDREN'S INFORMATION -->
+  <div class="policy-section">
+    <h2><i class="fas fa-child"></i> Children's Information</h2>
+    <p>Toolkit Pro does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately at <a href="mailto:shaheerasadia@gmail.com">shaheerasadia@gmail.com</a> and we will promptly remove such information from our records.</p>
+    <p>If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take the necessary actions.</p>
+  </div>
+
+  <!-- CHANGES -->
+  <div class="policy-section">
+    <h2><i class="fas fa-sync-alt"></i> Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this document.</p>
+    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page. Continued use of Toolkit Pro after any changes constitutes your acceptance of the new Privacy Policy.</p>
+  </div>
+
+  <!-- AD SLOT -->
+    <div class="ad-slot">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+   
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <h3>Questions About Privacy?</h3>
+    <p>If you have any questions or concerns about this Privacy Policy or how we handle your data, please reach out — we're happy to help.</p>
+    <a href="mailto:shaheerasadia@gmail.com" class="contact-btn"><i class="fas fa-envelope" style="margin-right:6px;"></i>shaheerasadia@gmail.com</a>
+    <div style="margin-top:16px; font-size:13px; color:#374a80;">
+      <strong>Developer:</strong> Shaheera Sadia &nbsp;·&nbsp;
+      <strong>Location:</strong> Mandi Bahauddin, Punjab, Pakistan
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Modern web utilities for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="https://app-tool.vercel.app/index.html">Home</a>
+      <a href="https://app-tool.vercel.app/Resources.html">Resources</a>
+      <a href="https://app-tool.vercel.app/shopping.html">Shopping</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a>
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="mailto:shaheerasadia@gmail.com"><i class="fas fa-envelope" style="margin-right:5px;"></i>Email Us</a>
+      <a href="https://github.com/shaheerasadia" target="_blank"><i class="fab fa-github" style="margin-right:5px;"></i>GitHub</a>
+      <a href="https://www.pinterest.com/shaheerasadia" target="_blank"><i class="fab fa-pinterest-p" style="margin-right:5px;"></i>Pinterest</a>
+      <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank"><i class="fab fa-linkedin-in" style="margin-right:5px;"></i>LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
