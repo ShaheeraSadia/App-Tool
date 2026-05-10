@@ -636,5 +636,16 @@
     "image": "/image/Leaf Crystal Bridal HeadpiecesAC_SY535_.jpg",
     "amazonLink": "https://amzn.to/4eCjyHQ",
     "btnColor": "#c5a48e"
+},
+  {
+  "id": 59,
+  "name": "VALITIC Kojic Acid Dark Spot Remover Soap",
+  "category": "beauty",
+  "badge": "Beauty",
+  "image": "/image/beauty_sope_SL1280_.jpg",
+  "description": "Original Japanese Complex with Vitamin C, Retinol, and Collagen for radiant skin.",
+  "benefits": "Improves skin texture, fades acne marks, and reduces dark spots. Infused with Turmeric, Hyaluronic Acid, and Shea Butter for deep nourishment. Suitable for evening skin tone and daily facial cleansing.",
+  "amazonLink": "https://amzn.to/4nceXhw",
+  "btnColor": "linear-gradient(135deg,#f6d365,#fda085)"
 }
 ]
