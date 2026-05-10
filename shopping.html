@@ -877,11 +877,7 @@
         <a href="https://amzn.to/49khMaz" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e94560,#c0392b);">View on Amazon</a>
       </div>
     </div>
-<!-- جاوا اسکرپٹ اس کاؤنٹ کو اپ ڈیٹ کرے گا -->
-    <p class="section-title" id="productCount">Loading Products...</p>
-    
-    <!-- تمام کارڈز اس گریڈ کے اندر خود بخود بنیں گے -->
-    <div class="products-grid" id="productsGrid"></div>
+ 
   </div><!-- /productsGrid -->
 </div><!-- /products-section -->
 
@@ -959,14 +955,20 @@
         &copy; 2026 Toolkit Pro | Designed & Developed by **Shaheera Sadia**
     </div>
 </footer>
-  <script>
+ <script>
     let allProducts = []; 
 
     document.addEventListener('DOMContentLoaded', () => {
+        // products.json فائل لوڈ کریں
         fetch('products.json')
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error("JSON file not found");
+                return res.json();
+            })
             .then(data => {
-                allProducts = data;
+                allProducts = data; 
+                
+                // URL سے ID چیک کریں (اگر shopping.html پر ہیں)
                 const urlParams = new URLSearchParams(window.location.search);
                 const productId = urlParams.get('id');
 
@@ -977,8 +979,11 @@
                     displayProducts(allProducts); 
                 }
             })
-            .catch(err => console.error("Error loading products:", err));
+            .catch(err => {
+                console.error("Error loading products:", err);
+            });
 
+        // سرچ فنکشن
         const searchInput = document.getElementById('searchInput');
         if(searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -991,46 +996,50 @@
             });
         }
     });
-function displayProducts(products) {
-    const grid = document.getElementById('productsGrid');
-    const countDisplay = document.getElementById('productCount');
-    
-    if(!grid) return;
 
-    grid.innerHTML = ''; // پرانے ڈیٹا کو صاف کریں
-    
-    if(countDisplay) {
-        countDisplay.textContent = `${products.length} Products Found`;
+    function displayProducts(products) {
+        const grid = document.getElementById('productsGrid');
+        const countDisplay = document.getElementById('productCount');
+        
+        if(!grid) return;
+        grid.innerHTML = ''; 
+
+        if(countDisplay) {
+            countDisplay.textContent = `${products.length} Products Found`;
+        }
+
+        products.forEach(product => {
+            // کارڈ کا ڈیزائن
+            const card = `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="card-img">
+                        <span class="card-badge" style="background: ${product.btnColor || '#2c3de0'}">
+                            ${product.badge || 'New'}
+                        </span>
+                        <a href="shopping.html?id=${product.id}">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='image/placeholder.jpg'">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h3>${product.name}</h3>
+                        <p style="font-size: 0.9rem; color: #666; height: 40px; overflow: hidden;">
+                            ${product.description}
+                        </p>
+                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" 
+                           style="background: ${product.btnColor || '#2c3de0'}; 
+                                  display: block; text-align: center; color: white; 
+                                  padding: 10px; border-radius: 8px; text-decoration: none; 
+                                  font-weight: bold; margin-top: 10px;">
+                            <i class="fab fa-amazon"></i> View on Amazon
+                        </a>
+                    </div>
+                </div>
+            `;
+            grid.insertAdjacentHTML('beforeend', card);
+        });
     }
 
-    products.forEach(product => {
-        // یہ وہ "Right Code" ہے جو کارڈ کو صحیح طرح رینڈر کرے گا
-        const card = `
-            <div class="product-card" data-category="${product.category}">
-                <div class="card-img">
-                    <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
-                        ${product.badge}
-                    </span>
-                    <a href="shopping.html?id=${product.id}">
-                        <img src="${product.image}" 
-                             alt="${product.altText || product.name}" 
-                             loading="lazy">
-                    </a>
-                </div>
-                <div class="card-body">
-                    <h3>${product.name}</h3>
-                    <p>${product.description}</p>
-                    <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
-                        <i class="fab fa-amazon"></i> View on Amazon
-                    </a>
-                </div>
-            </div>
-        `;
-        grid.insertAdjacentHTML('beforeend', card);
-    });
-}
-    
-
+    // فلٹر فنکشن (Categories کے لیے)
     function filterProducts(category, btn) {
         const buttons = document.querySelectorAll('.filter-btn');
         if(buttons) buttons.forEach(b => b.classList.remove('active'));
@@ -1039,7 +1048,7 @@ function displayProducts(products) {
         if (category === 'all') {
             displayProducts(allProducts);
         } else {
-            const filtered = allProducts.filter(p => p.category === category);
+            const filtered = allProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
             displayProducts(filtered);
         }
     }
