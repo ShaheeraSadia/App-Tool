@@ -647,5 +647,16 @@
   "benefits": "Improves skin texture, fades acne marks, and reduces dark spots. Infused with Turmeric, Hyaluronic Acid, and Shea Butter for deep nourishment. Suitable for evening skin tone and daily facial cleansing.",
   "amazonLink": "https://amzn.to/4nceXhw",
   "btnColor": "linear-gradient(135deg,#f6d365,#fda085)"
+},
+  {
+  "id": 60,
+  "name": "Skylight 15-inch Digital Wall Calendar",
+  "category": "decor",
+  "badge": "Home",
+  "image": "/image/calender._AC_SL1500_.jpg",
+  "description": "15-inch Smart Touchscreen Wall Planner and Chore Chart for family organization.",
+  "benefits": "Perfect for organizing family schedules and chores in 2026. The large 15-inch interactive display makes it easy for everyone to stay on track. Includes a wall mount for a clean, aesthetic look in your kitchen or hallway.",
+  "amazonLink": "https://amzn.to/4d7FSqi",
+  "btnColor": "linear-gradient(135deg,#764ba2,#667eea)"
 }
 ]
