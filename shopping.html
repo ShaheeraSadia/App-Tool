@@ -955,65 +955,52 @@
         &copy; 2026 Toolkit Pro | Designed & Developed by **Shaheera Sadia**
     </div>
 </footer>
+  
  <script>
-    let allProducts = []; 
+    // اگر یہ ویری ایبل اوپر کہیں پہلے سے ہے تو اسے دوبارہ نہ لکھیں
+    if (typeof allProducts === 'undefined') {
+        var allProducts = []; 
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
-        // products.json فائل لوڈ کریں
         fetch('products.json')
             .then(res => {
                 if (!res.ok) throw new Error("JSON file not found");
                 return res.json();
             })
             .then(data => {
-                allProducts = data; 
-                
-                // URL سے ID چیک کریں (اگر shopping.html پر ہیں)
-                const urlParams = new URLSearchParams(window.location.search);
-                const productId = urlParams.get('id');
-
-                if (productId) {
-                    const singleProduct = allProducts.filter(p => p.id == productId);
-                    displayProducts(singleProduct);
-                } else {
-                    displayProducts(allProducts); 
-                }
+                allProducts = data;
+                renderPage();
             })
             .catch(err => {
-                console.error("Error loading products:", err);
+                console.error("JSON Error:", err);
+                const grid = document.getElementById('productsGrid');
+                if(grid) grid.innerHTML = `<p style="color:red; padding:20px;">JSON Error: ${err.message}. Please check line 628 in products.json</p>`;
             });
-
-        // سرچ فنکشن
-        const searchInput = document.getElementById('searchInput');
-        if(searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = allProducts.filter(p => 
-                    p.name.toLowerCase().includes(searchTerm) || 
-                    p.description.toLowerCase().includes(searchTerm)
-                );
-                displayProducts(filtered);
-            });
-        }
     });
+
+    function renderPage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (productId) {
+            const singleProduct = allProducts.filter(p => p.id == productId);
+            displayProducts(singleProduct);
+        } else {
+            displayProducts(allProducts);
+        }
+    }
 
     function displayProducts(products) {
         const grid = document.getElementById('productsGrid');
-        const countDisplay = document.getElementById('productCount');
-        
         if(!grid) return;
         grid.innerHTML = ''; 
 
-        if(countDisplay) {
-            countDisplay.textContent = `${products.length} Products Found`;
-        }
-
         products.forEach(product => {
-            // کارڈ کا ڈیزائن
             const card = `
-                <div class="product-card" data-category="${product.category}">
+                <div class="product-card">
                     <div class="card-img">
-                        <span class="card-badge" style="background: ${product.btnColor || '#2c3de0'}">
+                        <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
                             ${product.badge || 'New'}
                         </span>
                         <a href="shopping.html?id=${product.id}">
@@ -1022,14 +1009,8 @@
                     </div>
                     <div class="card-body">
                         <h3>${product.name}</h3>
-                        <p style="font-size: 0.9rem; color: #666; height: 40px; overflow: hidden;">
-                            ${product.description}
-                        </p>
-                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" 
-                           style="background: ${product.btnColor || '#2c3de0'}; 
-                                  display: block; text-align: center; color: white; 
-                                  padding: 10px; border-radius: 8px; text-decoration: none; 
-                                  font-weight: bold; margin-top: 10px;">
+                        <p>${product.description}</p>
+                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
                             <i class="fab fa-amazon"></i> View on Amazon
                         </a>
                     </div>
@@ -1038,89 +1019,8 @@
             grid.insertAdjacentHTML('beforeend', card);
         });
     }
-
-    // فلٹر فنکشن (Categories کے لیے)
-    function filterProducts(category, btn) {
-        const buttons = document.querySelectorAll('.filter-btn');
-        if(buttons) buttons.forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active');
-
-        if (category === 'all') {
-            displayProducts(allProducts);
-        } else {
-            const filtered = allProducts.filter(p => p.category.toLowerCase() === category.toLowerCase());
-            displayProducts(filtered);
-        }
-    }
 </script>
- <script>
-    let allProducts = []; 
-
-    document.addEventListener('DOMContentLoaded', () => {
-        console.log("Checking products.json..."); // Debugging
-
-        fetch('products.json')
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("JSON file not found at the path 'products.json'");
-                }
-                return res.json();
-            })
-            .then(data => {
-                console.log("Data Loaded Successfully:", data); // یہ لائن چیک کرے گی کہ ڈیٹا آیا یا نہیں
-                allProducts = data; 
-                
-                const urlParams = new URLSearchParams(window.location.search);
-                const productId = urlParams.get('id');
-
-                if (productId) {
-                    const singleProduct = allProducts.filter(p => p.id == productId);
-                    displayProducts(singleProduct);
-                } else {
-                    displayProducts(allProducts); 
-                }
-            })
-            .catch(err => {
-                console.error("Critical Error:", err.message);
-                document.body.innerHTML += `<div style="color:red; position:fixed; top:0; background:white; z-index:9999;">Error: ${err.message}</div>`;
-            });
-    });
-
-    function displayProducts(products) {
-        const grid = document.getElementById('productsGrid');
-        if(!grid) {
-            console.error("Element with id 'productsGrid' was not found in your HTML!");
-            return;
-        }
-
-        grid.innerHTML = ''; 
-
-        if (products.length === 0) {
-            grid.innerHTML = '<h3>No products found!</h3>';
-            return;
-        }
-
-        products.forEach(product => {
-            // آپ کے مہیا کردہ JSON کے مطابق Keys کا استعمال
-            const card = `
-                <div class="product-card" style="border: 1px solid #ddd; margin: 10px; padding: 10px;">
-                    <div class="card-img">
-                        <img src="${product.image}" alt="${product.name}" style="width:100%; max-height:200px; object-fit:contain;">
-                    </div>
-                    <div class="card-body">
-                        <h4>${product.name}</h4>
-                        <p>${product.description}</p>
-                        <a href="${product.amazonLink}" target="_blank" 
-                           style="background: ${product.btnColor || 'blue'}; color: white; padding: 5px 10px; text-decoration: none; display: inline-block;">
-                           Buy Now
-                        </a>
-                    </div>
-                </div>
-            `;
-            grid.insertAdjacentHTML('beforeend', card);
-        });
-    }
-</script>
+ 
 </body>
 </html>
  
