@@ -1,37 +1,360 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | ToolKit Pro</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #f4f7f6; margin: 0; padding: 40px 20px; }
-        .terms-container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        h1 { color: #3a7bd5; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #2d3436; margin-top: 25px; font-size: 1.2rem; }
-        p { margin-bottom: 15px; text-align: justify; }
-        .back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #3a7bd5; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | Toolkit Pro by Shaheera Sadia</title>
+  <meta name="description" content="Terms of Service for Toolkit Pro — the rules and guidelines for using our free image optimization and design tools." />
+  <meta name="author" content="Shaheera Sadia" />
+  <link rel="canonical" href="https://app-tool.vercel.app/terms.html" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue:      #2b4fd8;
+      --blue-dark: #1a3199;
+      --blue-mid:  #3d72d4;
+      --blue-light:#e8f0fe;
+      --blue-pale: #f0f4ff;
+      --pink:      #ff6eb4;
+      --text:      #1c1c1e;
+      --muted:     #6b7280;
+      --bg:        #f5f8ff;
+      --white:     #ffffff;
+      --radius:    14px;
+      --shadow:    0 4px 24px rgba(43,79,216,0.09);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+
+    /* NAV */
+    nav {
+      background: var(--white); border-bottom: 1px solid #dde6ff;
+      padding: 0 40px; display: flex; align-items: center;
+      justify-content: space-between; height: 66px;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo span { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo span em { color: var(--pink); font-style: normal; }
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 14px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; }
+
+    /* HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, #00b4db 100%);
+      color: white; padding: 60px 24px 50px; text-align: center;
+    }
+    .page-hero .tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Lora', serif; font-size: clamp(26px,4vw,42px); font-weight: 700; margin-bottom: 10px; }
+    .page-hero p { font-size: 15px; opacity: .88; max-width: 480px; margin: 0 auto; }
+
+    /* LAYOUT */
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* AD SLOT */
+    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 28px 20px; color: var(--muted); font-size: 13px; margin: 36px 0; }
+
+    /* BADGE */
+    .updated-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-light); color: var(--blue); font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 20px; margin-bottom: 32px; }
+
+    /* TOC */
+    .toc { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 24px 28px; margin-bottom: 28px; }
+    .toc h3 { font-family: 'Lora', serif; font-size: 16px; color: var(--blue-dark); margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; display: flex; flex-direction: column; gap: 7px; }
+    .toc ol li a { font-size: 14px; color: var(--blue); text-decoration: none; }
+    .toc ol li a:hover { text-decoration: underline; }
+
+    /* SECTIONS */
+    .policy-section { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 32px 36px; margin-bottom: 20px; }
+    .policy-section h2 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .policy-section h2 i { font-size: 18px; color: var(--blue); }
+    .policy-section p { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul, .policy-section ol { font-size: 14.5px; color: var(--muted); padding-left: 22px; line-height: 2.1; margin-top: 8px; }
+    .policy-section a { color: var(--blue); text-decoration: none; }
+    .policy-section a:hover { text-decoration: underline; }
+
+    /* HIGHLIGHT */
+    .highlight-box { background: var(--blue-pale); border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: #374a80; line-height: 1.7; }
+    .highlight-box strong { color: var(--blue-dark); }
+
+    /* AFFILIATE BOX */
+    .affiliate-box { background: #fff8e1; border: 1px solid #ffe082; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: #7c6b00; line-height: 1.7; }
+
+    /* CONTACT CARD */
+    .contact-card { background: linear-gradient(135deg, var(--blue-pale), var(--blue-light)); border-radius: var(--radius); border: 1px solid #c0d0f8; padding: 28px 32px; text-align: center; margin-top: 32px; }
+    .contact-card h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; }
+    .contact-card p { font-size: 14px; color: #374a80; margin-bottom: 18px; }
+    .contact-btn { display: inline-block; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 11px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; transition: opacity .2s; }
+    .contact-btn:hover { opacity: .88; }
+
+    /* FOOTER */
+    footer { background: linear-gradient(135deg, #0d1b5e, #1a2f8a); color: rgba(255,255,255,.85); padding: 40px 40px 24px; }
+    .footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; margin-bottom: 24px; }
+    .footer-brand .logo { font-size: 18px; color: #7dd3fc; font-weight: 700; margin-bottom: 8px; }
+    .footer-brand p { font-size: 12px; opacity: .7; max-width: 260px; line-height: 1.6; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links h4 { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 4px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: #7dd3fc; }
+    .footer-bottom { max-width: 860px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; font-size: 12px; opacity: .6; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .policy-section { padding: 24px 20px; }
+      .footer-inner { flex-direction: column; }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-    <div class="terms-container">
-        <a href="index.html" class="back-link">← Back to Home</a>
-        <h1>Terms of Service</h1>
-        <p><strong>Last Updated: April 25, 2026</strong></p>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By accessing ToolKit Pro, developed by Shaheera Sadia, you agree to comply with these terms. Our tools are provided for creators and developers worldwide.</p>
+<!-- NAV -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span>ToolKit <em>Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  </ul>
+</nav>
 
-        <h2>2. Privacy & Image Data</h2>
-        <p>We prioritize your privacy. Any images uploaded to the <strong>Image Compressor</strong> or <strong>Color Palette Extractor</strong> are processed locally or temporarily. We do not store or share your personal images on our servers.</p>
+<!-- HERO -->
+<section class="page-hero">
+  <span class="tag">📋 Legal</span>
+  <h1>Terms of Service</h1>
+  <p>Please read these terms carefully before using Toolkit Pro and its free tools.</p>
+</section>
 
-        <h2>3. Affiliate Disclosure</h2>
-        <p>Some sections of this site contain affiliate links (e.g., Amazon picks for Home Decor and Beauty). We may earn a small commission if you purchase through these links at no extra cost to you.</p>
+<div class="page-wrap">
 
-        <h2>4. Disclaimer</h2>
-        <p>The tools and content are provided "as is". While we strive for 100% accuracy in our compression and color extraction algorithms, we are not responsible for any technical errors.</p>
+  <div class="updated-badge"><i class="fas fa-calendar-check"></i> Last Updated: May 9, 2026</div>
 
-        <p style="margin-top:40px; font-size: 0.9rem; color: #777;">&copy; 2026 ToolKit Pro | Mandi Bahauddin, Pakistan</p>
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>📋 Table of Contents</h3>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#use">Use of Our Tools</a></li>
+      <li><a href="#privacy">Privacy & Image Data</a></li>
+      <li><a href="#intellectual">Intellectual Property</a></li>
+      <li><a href="#affiliate">Affiliate Disclosure</a></li>
+      <li><a href="#adsense">Google AdSense Advertising</a></li>
+      <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+      <li><a href="#limitation">Limitation of Liability</a></li>
+      <li><a href="#changes">Changes to Terms</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- AD SLOT -->
+    <div class="ad-slot">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+  <!-- 1. ACCEPTANCE -->
+  <div class="policy-section" id="acceptance">
+    <h2><i class="fas fa-handshake"></i> 1. Acceptance of Terms</h2>
+    <p>By accessing or using <strong>Toolkit Pro</strong>, accessible at <a href="https://app-tool.vercel.app">https://app-tool.vercel.app</a> and developed by <strong>Shaheera Sadia</strong>, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to all of these terms, you must not use our website or tools.</p>
+    <p>These terms apply to all visitors, users, and others who access or use Toolkit Pro. Our tools are provided for creators and developers worldwide and are intended for lawful, personal, and commercial use in accordance with these terms.</p>
+    <div class="highlight-box">
+      <strong>Agreement:</strong> Continued use of Toolkit Pro after any changes to these Terms constitutes your acceptance of the updated Terms of Service.
     </div>
+  </div>
+
+  <!-- 2. USE -->
+  <div class="policy-section" id="use">
+    <h2><i class="fas fa-tools"></i> 2. Use of Our Tools</h2>
+    <p>Toolkit Pro grants you a limited, non-exclusive, non-transferable, revocable license to use our tools for personal and commercial purposes. When using Toolkit Pro, you agree to:</p>
+    <ul>
+      <li>Use our tools only for lawful purposes and in accordance with these Terms</li>
+      <li>Not use our tools in any way that violates applicable local, national, or international laws or regulations</li>
+      <li>Not use our tools to process, upload, or distribute illegal, harmful, defamatory, or infringing content</li>
+      <li>Not attempt to decompile, reverse engineer, or disassemble any portion of our tools</li>
+      <li>Not use any automated means to access or scrape our website without prior written permission</li>
+      <li>Not interfere with or disrupt the integrity or performance of the website or its data</li>
+    </ul>
+    <p style="margin-top:12px;">We reserve the right to terminate your access to Toolkit Pro at any time, without notice, for conduct that we believe violates these Terms of Service or is harmful to other users, us, third parties, or the reputation of the site.</p>
+  </div>
+
+  <!-- 3. PRIVACY & IMAGE DATA -->
+  <div class="policy-section" id="privacy">
+    <h2><i class="fas fa-lock"></i> 3. Privacy & Image Data</h2>
+    <p>We prioritize your privacy above all else. Here is exactly how Toolkit Pro handles the content you interact with:</p>
+    <ul>
+      <li><strong>Image Compressor:</strong> All processing happens locally in your browser via JavaScript. Images are never uploaded to our servers.</li>
+      <li><strong>Color Palette Extractor:</strong> Color extraction is performed entirely client-side. No image data leaves your device.</li>
+      <li><strong>Nature Quote Designer:</strong> Your photo and text are processed locally. The downloadable design is generated entirely in your browser.</li>
+      <li><strong>QR Code Generator:</strong> QR codes are generated client-side. The URL you enter is never stored or logged by us.</li>
+    </ul>
+    <p style="margin-top:12px;">Any personal information you provide through our contact form is handled in accordance with our <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a>. We do not sell, rent, or share your personal information with third parties for their marketing purposes.</p>
+  </div>
+
+  <!-- 4. INTELLECTUAL PROPERTY -->
+  <div class="policy-section" id="intellectual">
+    <h2><i class="fas fa-copyright"></i> 4. Intellectual Property</h2>
+    <p>Toolkit Pro and its original content, features, and functionality are and will remain the exclusive property of <strong>Shaheera Sadia</strong>. Our website is protected by applicable copyright, trademark, and other intellectual property laws.</p>
+    <p>You are granted a license to use the tools on Toolkit Pro. This license does not include:</p>
+    <ul>
+      <li>The right to resell or commercially exploit the tools or their source code</li>
+      <li>The right to copy, reproduce, or duplicate any portion of the Toolkit Pro website</li>
+      <li>The right to use any data mining, robots, or similar data gathering methods on our site</li>
+    </ul>
+    <p style="margin-top:12px;">Output created using our tools (compressed images, extracted color palettes, QR codes, designed quote cards) belongs entirely to you. You retain full ownership of any content you create using Toolkit Pro.</p>
+  </div>
+
+  <!-- 5. AFFILIATE -->
+  <div class="policy-section" id="affiliate">
+    <h2><i class="fab fa-amazon"></i> 5. Affiliate Disclosure</h2>
+    <div class="affiliate-box">
+      <strong>Important Disclosure:</strong> Toolkit Pro is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+    </div>
+    <p>Some pages on Toolkit Pro — particularly the Shopping and Resources pages — contain <strong>Amazon affiliate links</strong>. This means:</p>
+    <ul>
+      <li>If you click an affiliate link and make a purchase, we may earn a small commission</li>
+      <li>This commission comes at <strong>no extra cost to you whatsoever</strong> — you pay the same price as you would on Amazon directly</li>
+      <li>Affiliate commissions help support Toolkit Pro and keep all our tools free for everyone</li>
+      <li>We only recommend products that we genuinely believe offer good value</li>
+      <li>Our editorial content and product recommendations are not influenced by affiliate compensation</li>
+    </ul>
+    <p style="margin-top:12px;">This disclosure is made in compliance with the Federal Trade Commission (FTC) guidelines for endorsements and testimonials in advertising.</p>
+  </div>
+
+  <!-- 6. ADSENSE -->
+  <div class="policy-section" id="adsense">
+    <h2><i class="fab fa-google"></i> 6. Google AdSense Advertising</h2>
+    <p>Toolkit Pro uses <strong>Google AdSense</strong> to display advertisements on our website. These advertisements help support the development and maintenance of our free tools.</p>
+    <p>By using Toolkit Pro, you acknowledge and agree that:</p>
+    <ul>
+      <li>Google AdSense may display ads based on your browsing history and interests</li>
+      <li>Google uses cookies (including the DART cookie) to serve ads based on prior website visits</li>
+      <li>You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a></li>
+      <li>Third-party vendors, including Google, use cookies to serve ads on our site</li>
+      <li>Toolkit Pro does not control the content of advertisements served by Google AdSense</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>Ad Policy:</strong> All advertising on Toolkit Pro is served through Google AdSense and complies with Google's Publisher Policies. We do not display ads that promote illegal products, services, or content that violates Google's guidelines.
+    </div>
+  </div>
+
+  <!-- 7. DISCLAIMER -->
+  <div class="policy-section" id="disclaimer">
+    <h2><i class="fas fa-exclamation-triangle"></i> 7. Disclaimer of Warranties</h2>
+    <p>The tools, content, and services on Toolkit Pro are provided on an <strong>"as is"</strong> and <strong>"as available"</strong> basis without any warranties of any kind, either express or implied.</p>
+    <p>Toolkit Pro and Shaheera Sadia expressly disclaim all warranties, including but not limited to:</p>
+    <ul>
+      <li>Implied warranties of merchantability and fitness for a particular purpose</li>
+      <li>Warranties that the website will be uninterrupted, error-free, or free of viruses</li>
+      <li>Warranties that results obtained from using our tools will be accurate or reliable</li>
+    </ul>
+    <p style="margin-top:12px;">While we strive for 100% accuracy in our compression and color extraction algorithms, we cannot guarantee perfect results in all cases. We are not responsible for any technical errors, data loss, or corruption that may occur while using our tools.</p>
+  </div>
+
+  <!-- 8. LIMITATION OF LIABILITY -->
+  <div class="policy-section" id="limitation">
+    <h2><i class="fas fa-balance-scale"></i> 8. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, <strong>Shaheera Sadia</strong> and <strong>Toolkit Pro</strong> shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+    <ul>
+      <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+      <li>Damages resulting from unauthorized access to your data or transmissions</li>
+      <li>Damages resulting from the conduct of any third party on the website</li>
+      <li>Any other matter relating to our tools or services</li>
+    </ul>
+    <p style="margin-top:12px;">In jurisdictions that do not allow the exclusion of certain warranties or limitations of liability, our liability shall be limited to the maximum extent permitted by law.</p>
+  </div>
+
+   <div class="ad-slot">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+  <!-- 9. CHANGES -->
+  <div class="policy-section" id="changes">
+    <h2><i class="fas fa-sync-alt"></i> 9. Changes to These Terms</h2>
+    <p>We reserve the right to modify or replace these Terms of Service at any time at our sole discretion. We will provide notice of significant changes by updating the "Last Updated" date at the top of this page.</p>
+    <p>What constitutes a material change will be determined at our sole discretion. By continuing to access or use Toolkit Pro after any revisions become effective, you agree to be bound by the revised terms.</p>
+    <p>If you do not agree to the new terms, please stop using Toolkit Pro.</p>
+  </div>
+
+  <!-- 10. CONTACT -->
+  <div class="policy-section" id="contact">
+    <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:shaheerasadia@gmail.com">shaheerasadia@gmail.com</a></li>
+      <li><strong>Developer:</strong> Shaheera Sadia</li>
+      <li><strong>Location:</strong> Mandi Bahauddin, Punjab, Pakistan</li>
+      <li><strong>GitHub:</strong> <a href="https://github.com/shaheerasadia" target="_blank">github.com/shaheerasadia</a></li>
+      <li><strong>Website:</strong> <a href="https://app-tool.vercel.app">https://app-tool.vercel.app</a></li>
+    </ul>
+    <p style="margin-top:12px;">We aim to respond to all inquiries within <strong>48 hours</strong> on business days.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="contact-card">
+    <h3>📬 Have Questions About These Terms?</h3>
+    <p>We are happy to clarify anything in our Terms of Service. Reach out directly — we read every message.</p>
+    <a href="mailto:shaheerasadia@gmail.com" class="contact-btn"><i class="fas fa-envelope" style="margin-right:6px;"></i>shaheerasadia@gmail.com</a>
+    <div style="margin-top:16px; font-size:13px; color:#374a80;">
+      <a href="https://app-tool.vercel.app/privacy.html" style="color:var(--blue); text-decoration:none;">← View Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/Resources.html" style="color:var(--blue); text-decoration:none;">Visit Resources Page</a>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Modern web utilities for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="https://app-tool.vercel.app/index.html">Home</a>
+      <a href="https://app-tool.vercel.app/Resources.html">Resources</a>
+      <a href="https://app-tool.vercel.app/shopping.html">Shopping</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a>
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <a href="mailto:shaheerasadia@gmail.com"><i class="fas fa-envelope" style="margin-right:5px;"></i>Email Us</a>
+      <a href="https://github.com/shaheerasadia" target="_blank"><i class="fab fa-github" style="margin-right:5px;"></i>GitHub</a>
+      <a href="https://www.pinterest.com/shaheerasadia" target="_blank"><i class="fab fa-pinterest-p" style="margin-right:5px;"></i>Pinterest</a>
+      <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank"><i class="fab fa-linkedin-in" style="margin-right:5px;"></i>LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
+
+
+
+
+
+
+
+ 
