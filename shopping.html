@@ -956,68 +956,32 @@
         &copy; 2026 Toolkit Pro | Designed & Developed by **Shaheera Sadia**
     </div>
 </footer>
- <script>
-    let allProducts = []; 
-
-    document.addEventListener('DOMContentLoaded', () => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                // ڈیٹا کو سیٹ کریں
-                allProducts = data; 
-                const urlParams = new URLSearchParams(window.location.search);
-                const productId = urlParams.get('id');
-
-                if (productId) {
-                    const singleProduct = allProducts.filter(p => p.id == productId);
-                    displayProducts(singleProduct);
-                } else {
-                    displayProducts(allProducts); 
-                }
-            })
-            .catch(err => console.error("Error loading products:", err));
-
-        const searchInput = document.getElementById('searchInput');
-        if(searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = allProducts.filter(p => 
-                    p.name.toLowerCase().includes(searchTerm) || 
-                    p.description.toLowerCase().includes(searchTerm)
-                );
-                displayProducts(filtered);
-            });
-        }
+  
+<script>
+  function filterProducts(category, btn) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+ 
+    const cards = document.querySelectorAll('.product-card');
+    let visible = 0;
+ 
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category') || '';
+      const match = category === 'all' || cat === category ||
+                    cat.includes(category) || category.includes(cat);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
     });
-
-    function displayProducts(products) {
-        const grid = document.getElementById('productsGrid');
-        if(!grid) return;
-
-        grid.innerHTML = ''; 
-
-        products.forEach(product => {
-            // یہاں JSON کیز (image_url اور amazon_link) کو اپ ڈیٹ کر دیا گیا ہے
-            const card = `
-                <div class="product-card" data-category="${product.category}">
-                    <div class="card-img">
-                        <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
-                            ${product.badge || 'New'}
-                        </span>
-                        <img src="${product.image_url}" alt="${product.name}" onerror="this.src='image/placeholder.jpg'">
-                    </div>
-                    <div class="card-body">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <a href="${product.amazon_link}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
-                            <i class="fab fa-amazon"></i> View on Amazon
-                        </a>
-                    </div>
-                </div>
-            `;
-            grid.insertAdjacentHTML('beforeend', card);
-        });
-    }
+ 
+    // Hide ad slots when filtering (optional: keep them visible)
+    document.querySelectorAll('.ad-slot').forEach(ad => {
+      ad.style.display = category === 'all' ? '' : 'none';
+    });
+ 
+    document.getElementById('productCount').textContent =
+      visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+  }
 </script>
 </body>
 </html>
