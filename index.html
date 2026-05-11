@@ -49,7 +49,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
-  /*   ── NAV ── 
+  <!--   ── NAV ── -->
     nav {
       background: var(--white); border-bottom: 1px solid #dde6ff;
       padding: 0 40px; display: flex; align-items: center;
@@ -72,60 +72,8 @@
       background: var(--white); border: 1px solid #dde6ff;
       border-radius: 12px; padding: 8px; min-width: 210px;
       box-shadow: var(--shadow-md); z-index: 400;
-    }*/>
-    /* ── NAV BASE STYLES ── */
-nav {
-  background: var(--white); border-bottom: 1px solid #dde6ff;
-  padding: 0 40px; display: flex; align-items: center;
-  justify-content: space-between; height: 66px;
-  position: sticky; top: 0; z-index: 300;
-  box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-}
-.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.nav-logo i { color: var(--blue); font-size: 18px; }
-.nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-.nav-logo-text em { color: var(--pink); font-style: normal; }
-.nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--blue); background: var(--blue-pale); }
-
-/* Dropdown */
-.nav-dropdown { position: relative; }
-.dropdown-menu {
-  display: none; position: absolute; top: 110%; left: 0;
-  background: var(--white); border: 1px solid #dde6ff;
-  border-radius: 12px; padding: 8px; min-width: 210px;
-  box-shadow: var(--shadow-md); z-index: 400;
-}
-.nav-dropdown:hover .dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
-
-/* Mobile Menu Toggle */
-.menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.bar { width: 25px; height: 3px; background: var(--blue-dark); transition: 0.3s; border-radius: 2px; }
-
-/* ── MOBILE RESPONSIVENESS ── */
-@media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .menu-toggle { display: flex; }
-  
-  .nav-links {
-    position: absolute; top: 66px; right: -100%; width: 100%; height: calc(100vh - 66px);
-    background: white; flex-direction: column; align-items: flex-start;
-    padding: 20px; transition: 0.4s ease; overflow-y: auto; gap: 10px;
-  }
-  .nav-links.active { right: 0; }
-  .nav-links li { width: 100%; }
-  .nav-links a { display: block; width: 100%; padding: 12px; font-size: 16px; }
-
-  /* Mobile Dropdown adjustment */
-  .nav-dropdown:hover .dropdown-menu { display: none; }
-  .nav-dropdown.active .dropdown-menu { display: flex; position: static; box-shadow: none; width: 100%; background: #f9faff; margin-top: 5px; }
-  
-  /* Animation for Hamburger to X */
-  .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-  .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-}
+    }
+    
 
     /* ── HERO ── */
     .hero {
@@ -350,7 +298,7 @@ nav {
 </head>
 <body>
 
-/*<!-- ── NAV 
+<!-- ── NAV -->
 <nav id="home">
   <a href="/" class="nav-logo">
     <i class="fas fa-toolbox"></i>
@@ -402,55 +350,11 @@ nav {
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
     <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
   </ul>
-</nav>*/
--->
-
-  <nav id="home">
-  <a href="/" class="nav-logo">
-    <i class="fas fa-toolbox"></i>
-    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
-  </a>
-
-  <div class="menu-toggle" id="mobile-menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-  
-  <ul class="nav-links">
-    <li><a href="/" class="active"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
-    <li class="nav-dropdown">
-      <a href="#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a>
-      <div class="dropdown-menu">
-        <a href="#uploadArea"><i class="fas fa-compress-arrows-alt"></i>Image Compressor</a>
-        <a href="#palette-section"><i class="fas fa-palette"></i>Color Palette Extractor</a>
-        <a href="#nature-designer"><i class="fas fa-leaf"></i>Nature Quote Designer</a>
-      </div>
-    </li>
-    
-    <li class="nav-dropdown">
-      <a href="#" class="nav-link" onclick="return false;">
-          <i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i> PDF Tools
-          <i class="fas fa-chevron-down dropdown-arrow"></i>
-      </a>
-      <div class="dropdown-menu">
-          <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i> PDF Compressor</a>
-          <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i> Merge PDF</a>
-          <a href="#" onclick="alert('PDF to Image — Coming Soon!'); return false;"><i class="fas fa-exchange-alt"></i> PDF to Image</a>
-          <a href="#" onclick="alert('Image to PDF — Coming Soon!'); return false;"><i class="fas fa-file-image"></i> Image to PDF</a>
-      </div>
-    </li>
-
-    <li class="nav-dropdown">
-      <a href="#qr-section"><i class="fas fa-qrcode" style="margin-right:4px;font-size:11px;"></i>More Tools</a>
-      <div class="dropdown-menu">
-        <a href="#qr-section"><i class="fas fa-qrcode"></i>QR Code Generator</a>
-      </div>
-    </li>
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
-  </ul>
 </nav>
+
+   
+  
+   
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-inner">
@@ -555,22 +459,7 @@ nav {
       </div>
     </div>
   </div>
-
- <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+ 
 
   <!-- ══════════════════════════════
        TOOL 2: COLOR PALETTE EXTRACTOR
@@ -596,21 +485,7 @@ nav {
     </div>
   </div>
 
-  <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+   
 
   <!-- ══════════════════════════════
        TOOL 3: NATURE QUOTE DESIGNER
@@ -637,21 +512,7 @@ nav {
     </div>
   </div>
 
- <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+ 
   <!-- ══════════════════════════════
        TOOL 4: QR CODE GENERATOR
        ══════════════════════════════ -->
@@ -737,22 +598,7 @@ nav {
       <p>Every tool on Toolkit Pro is 100% free with no subscription, no watermarks, no usage limits, and no credit card required. Free for everyone, forever.</p>
     </div>
   </div>
-
- <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+ 
 
   <!-- ══════════════════════════════
        PINTEREST BANNER
@@ -768,22 +614,7 @@ nav {
       <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="pinterest-btn"><i class="fab fa-pinterest-p"></i>Follow on Pinterest</a>
     </div>
   </div>
-
- <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+ 
   <!-- ══════════════════════════════
        FAQ
        ══════════════════════════════ -->
@@ -857,23 +688,7 @@ nav {
       </div>
     </div>
   </div>
-
-  <!-- ── AD SLOT 9 ── -->
- <div class="ad-container" style="margin: 60px auto; text-align: center; max-width: 728px; padding: 0 20px;">
-    <p style="color: rgba(255,255,255,0.3); font-size: 10px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; font-family: 'DM Sans', sans-serif;">
-        Advertisement
-    </p>
-    
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6309207317896311"
-         data-ad-slot="2485889698"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
+ 
 
   <!-- ══════════════════════════════
        CONTACT
@@ -1207,23 +1022,7 @@ function downloadQR() {
   a.download = 'qr-code-toolkit-pro.png';
   a.click();
 }
-const menuBtn = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.classList.toggle('is-active');
-});
-
-// موبائل پر ڈراپ ڈاؤنز کو کھولنے کے لیے
-document.querySelectorAll('.nav-dropdown > a').forEach(dropdown => {
-    dropdown.addEventListener('click', (e) => {
-        if(window.innerWidth <= 960) {
-            e.preventDefault();
-            dropdown.parentElement.classList.toggle('active');
-        }
-    });
-});
+ 
 // Init
 resizeDesignCanvas();
 </script>
