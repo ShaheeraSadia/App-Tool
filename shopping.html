@@ -1,160 +1,370 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toolkit Pro | Shopping Recommendations</title>
-    <meta name="description" content="Handpicked aesthetic products for your lifestyle — beauty, decor, jewelry & more by Shaheera Sadia.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0c29; color: white; min-height: 100vh; }
-         nav { background: linear-gradient(135deg, #2c3de0 0%, #3a4fd4 40%, #4158d0 100%); padding: 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(44,61,224,0.35); }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 64px; padding: 0 20px; max-width: 1200px; margin: 0 auto; }
-        .logo { font-size: 1.35rem; font-weight: 800; color: white; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: #00d2ff; }
-        .nav-links { display: flex; gap: 10px; align-items: center; }
-        .nav-link { color: rgba(255,255,255,0.88); text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
-        .nav-link:hover { background: rgba(255,255,255,0.15); color: #fff; }
-        .nav-link.active { background: rgba(255,255,255,0.2); }
-        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 70px 20px 60px; text-align: center; position: relative; overflow: hidden; }
-        .hero-badge { display: inline-block; background: rgba(245,87,108,0.15); border: 1px solid rgba(245,87,108,0.4); color: #f5576c; padding: 6px 20px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; background: linear-gradient(135deg, #f5576c, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 500px; margin: 0 auto; }
-        .ad-slot { margin: 30px auto; text-align: center; max-width: 1200px; padding: 0 20px; }
-        .ad-label { color: rgba(255,255,255,0.2); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .filter-section { max-width: 1200px; margin: 40px auto 30px; padding: 0 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        .filter-btn { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); padding: 8px 20px; border-radius: 50px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; }
-        .filter-btn:hover, .filter-btn.active { background: linear-gradient(135deg, #f5576c, #f093fb); border-color: transparent; color: white; }
-        .products-section { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
-        .section-title { font-size: 1.1rem; color: rgba(255,255,255,0.4); margin-bottom: 25px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 25px; }
-        .product-card { background: #1a1a2e; border-radius: 20px; overflow: hidden; border: 1px solid #16213e; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .card-img { height: 210px; overflow: hidden; position: relative; background: #16213e; }
-        .card-img img { width: 100%; height: 100%; object-fit: contain; background: #fff; padding: 8px; transition: transform 0.4s ease; }
-        .product-card:hover .card-img img { transform: scale(1.06); }
-        .card-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.65); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; backdrop-filter: blur(6px); z-index: 2; }
-        .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-        .card-body h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; color: white; line-height: 1.3; }
-        .card-body p { color: #abb2bf; font-size: 0.83rem; line-height: 1.6; margin-bottom: 18px; flex: 1; }
-        .amazon-btn { display: block; text-align: center; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.88rem; color: white; transition: opacity 0.3s; }
-        .amazon-btn:hover { opacity: 0.85; }
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #f5576c, #f093fb); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; box-shadow: 0 4px 20px rgba(245,87,108,0.5); z-index: 999; }
-        footer { background: #0a0a1a; padding: 40px 20px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.07); }
-        .footer-social { display: flex; gap: 15px; justify-content: center; margin-bottom: 20px; }
-        .footer-social a { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
-        .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
-        @media (max-width: 600px) { .hero h1 { font-size: 1.9rem; } .products-grid { grid-template-columns: 1fr; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toolkit Pro | Shopping Recommendations</title>
+  <meta name="description" content="Handpicked aesthetic products for your lifestyle — beauty, decor, jewelry, fashion, kitchen & gifts. Curated by Shaheera Sadia at Toolkit Pro." />
+  <meta name="keywords" content="aesthetic products, beauty gifts, home decor, jewelry, fashion dresses, kitchen gadgets, gifts for her, Shaheera Sadia, Toolkit Pro" />
+  <meta name="author" content="Shaheera Sadia" />
+  <meta property="og:title" content="Toolkit Pro | Shopping Recommendations" />
+  <meta property="og:description" content="Handpicked aesthetic products for your lifestyle — beauty, decor, jewelry & more." />
+  <meta property="og:url" content="https://app-tool.vercel.app/shopping.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://app-tool.vercel.app/shopping.html" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════
+       DESIGN TOKENS — matches index.html exactly
+       ═══════════════════════════════ */
+    :root {
+      --blue:       #2b4fd8;
+      --blue-dark:  #1a3199;
+      --blue-mid:   #3d72d4;
+      --blue-light: #e8f0fe;
+      --blue-pale:  #f0f4ff;
+      --cyan:       #00b4db;
+      --pink:       #ff6eb4;
+      --text:       #1c1c1e;
+      --muted:      #6b7280;
+      --bg:         #f5f8ff;
+      --white:      #ffffff;
+      --radius:     16px;
+      --shadow:     0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:  0 12px 36px rgba(43,79,216,0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* ══════════════════════════════
+       NAV — identical to index.html
+       ══════════════════════════════ */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #dde6ff;
+      padding: 0 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 66px;
+      position: sticky; top: 0; z-index: 300;
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo-text em { color: var(--pink); font-style: normal; }
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted); font-size: 14px;
+      font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
+    .nav-shop {
+      background: linear-gradient(135deg, var(--pink), #ff9a9e) !important;
+      color: white !important; border-radius: 10px !important; font-weight: 600 !important;
+    }
+    .nav-shop:hover { opacity: .88 !important; }
+
+    /* ══════════════════════════════
+       HERO — same gradient as index
+       ══════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--cyan) 100%);
+      color: white; text-align: center; padding: 72px 24px 56px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3); font-size: 11px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase; padding: 5px 18px;
+      border-radius: 20px; margin-bottom: 18px; backdrop-filter: blur(4px);
+    }
+    .hero h1 {
+      font-family: 'Lora', serif; font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700; margin-bottom: 14px; line-height: 1.2;
+    }
+    .hero h1 span { color: #7dd3fc; font-style: italic; }
+    .hero p { font-size: 16px; opacity: .9; max-width: 540px; margin: 0 auto; line-height: 1.75; }
+
+    /* ══════════════════════════════
+       AFFILIATE NOTICE
+       ══════════════════════════════ */
+    .affiliate-notice {
+      background: #fff8e1; border-bottom: 1px solid #ffe082;
+      padding: 10px 24px; text-align: center;
+      font-size: 13px; color: #7c6b00;
+    }
+    .affiliate-notice a { color: #5a4e00; font-weight: 600; text-decoration: underline; }
+
+    /* ══════════════════════════════
+       FILTER BAR
+       ══════════════════════════════ */
+    .filter-section {
+      background: var(--white); border-bottom: 1px solid #dde6ff;
+      padding: 18px 40px; position: sticky; top: 66px; z-index: 200;
+      box-shadow: 0 2px 12px rgba(43,79,216,0.05);
+    }
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .filter-btn {
+      padding: 8px 18px; border-radius: 30px; border: 1.5px solid #c8d8f8;
+      background: var(--white); color: var(--blue-dark); font-size: 13px;
+      font-weight: 500; cursor: pointer; transition: all .2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .filter-btn:hover { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      color: white; border-color: transparent;
+      box-shadow: 0 4px 12px rgba(43,79,216,0.3);
+    }
+
+    /* ══════════════════════════════
+       PAGE WRAP & GRID
+       ══════════════════════════════ */
+    .page-wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px 80px; }
+    .section-title {
+      text-align: center; font-size: 14px; color: var(--muted);
+      padding: 20px 0 8px; font-weight: 500;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+      gap: 24px; margin-top: 8px;
+    }
+
+    /* ══════════════════════════════
+       AD SLOT
+       ══════════════════════════════ */
+    .ad-slot {
+      background: #eef2ff; border: 1.5px dashed #b8c8f8;
+      border-radius: 12px; text-align: center; padding: 28px 20px;
+      color: var(--muted); font-size: 13px;
+      grid-column: 1 / -1; margin: 8px 0;
+    }
+
+    /* ══════════════════════════════
+       PRODUCT CARD
+       ══════════════════════════════ */
+    .product-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow); border: 1px solid #dde6ff;
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+    /* image area */
+    .card-img { position: relative; height: 220px; overflow: hidden; background: var(--blue-pale); }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; display: block; }
+    .product-card:hover .card-img img { transform: scale(1.05); }
+    .card-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      color: white; font-size: 10px; font-weight: 700;
+      padding: 4px 10px; border-radius: 20px; letter-spacing: .5px;
+    }
+
+    /* card body */
+    .card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 9px; }
+    .card-body h3 { font-family: 'Lora', serif; font-size: 15px; color: var(--text); line-height: 1.4; }
+    .card-body .desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .card-body .benefits {
+      font-size: 12.5px; color: #374a80; background: var(--blue-pale);
+      border-left: 3px solid var(--blue); padding: 9px 11px;
+      border-radius: 0 8px 8px 0; line-height: 1.65;
+    }
+    .amazon-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+      color: white; text-decoration: none; padding: 11px 16px;
+      border-radius: 10px; font-size: 13px; font-weight: 600;
+      margin-top: auto; transition: opacity .2s, transform .15s;
+    }
+    .amazon-btn:hover { opacity: .88; transform: translateY(-2px); }
+
+    /* ══════════════════════════════
+       AUDIBLE BANNER (full-width card)
+       ══════════════════════════════ */
+    .audible-banner {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%);
+      color: white; border-radius: var(--radius); padding: 28px 32px;
+      display: flex; align-items: center; gap: 24px;
+      grid-column: 1 / -1; box-shadow: var(--shadow-md);
+    }
+    .audible-banner img { width: 80px; border-radius: 12px; flex-shrink: 0; object-fit: cover; }
+    .audible-banner h3 { font-family: 'Lora', serif; font-size: 20px; margin-bottom: 6px; }
+    .audible-banner p { font-size: 13.5px; opacity: .9; margin-bottom: 14px; line-height: 1.65; max-width: 500px; }
+    .audible-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #FF9900; color: #111; padding: 11px 24px;
+      border-radius: 10px; font-weight: 700; font-size: 14px;
+      text-decoration: none; transition: opacity .2s, transform .15s;
+    }
+    .audible-btn:hover { opacity: .9; transform: translateY(-2px); }
+
+    /* ══════════════════════════════
+       FOOTER — identical to index.html
+       ══════════════════════════════ */
+    footer {
+      background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%);
+      color: rgba(255,255,255,.85); padding: 52px 40px 28px;
+    }
+    .affiliate-footer {
+      max-width: 1280px; margin: 0 auto 28px;
+      background: rgba(255,255,255,.06); border-radius: 8px;
+      padding: 10px 16px; font-size: 12px;
+      color: rgba(255,255,255,.6); text-align: center;
+    }
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 36px;
+    }
+    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .footer-social-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,.08); display: flex; align-items: center;
+      justify-content: center; color: rgba(255,255,255,.8);
+      font-size: 14px; text-decoration: none; transition: background .2s;
+    }
+    .footer-social-btn:hover { background: var(--blue); color: white; }
+    .footer-col h4 {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: #7dd3fc; }
+    .footer-bottom {
+      max-width: 1280px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6;
+    }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════ */
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .filter-section { padding: 14px 16px; top: 66px; }
+      .page-wrap { padding: 0 16px 60px; }
+      .audible-banner { flex-direction: column; text-align: center; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      footer { padding: 40px 20px 24px; }
+    }
+  </style>
 </head>
 <body>
- 
 
- <nav>
-    <div class="nav-content">
-        <a href="index.html" class="logo">Toolkit <span>Pro</span></a>
-        <div class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="Resources.html" class="nav-link">Resources</a>
-            <a href="shopping.html" class="nav-link active">Shopping</a>
-        </div>
-    </div>
+<!-- ══════════════════════════════
+     NAV — same as index.html
+     ══════════════════════════════ -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop active"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  </ul>
 </nav>
 
-<div class="hero" id="top">
-    <div class="hero-badge">✨ Handpicked for You</div>
-    <h1>Aesthetic Shopping Picks</h1>
-    <p>Curated beauty, decor, jewelry & lifestyle products loved by creators</p>
-</div>
-
-<div class="filter-section">
-    <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
-    <button class="filter-btn" onclick="filterProducts('beauty',this)">Beauty</button>
-    <button class="filter-btn" onclick="filterProducts('jewelry',this)">Jewelry</button>
-    <button class="filter-btn" onclick="filterProducts('decor',this)">Decor</button>
-    <button class="filter-btn" onclick="filterProducts('fashion',this)">Fashion</button>
-    <button class="filter-btn" onclick="filterProducts('kitchen',this)">Kitchen</button>
-    
- <button class="filter-btn" onclick="filterProducts('gifts',this)">Gifts</button>
-    <button class="filter-btn" onclick="filterProducts('health',this)">Health</button>
-</div>
- 
-
- 
-<!-- START: Modern Aesthetic Audible Section -->
-<section class="audible-container" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Inter', sans-serif;">
-    
-    <div class="glass-card" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; overflow: hidden; backdrop-filter: blur(10px); transition: transform 0.3s ease;">
-        
-        <!-- Hero Image Area -->
-        <div style="width: 100%; height: 250px; position: relative; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <img src="image/main 4193sswC8QL.jpg" alt="Tech Learning" style="width: 100%; height: 100%; object-fit: contain; padding: 20px;">
-            <div style="position: absolute; top: 20px; left: 20px; background: #ff4e00; color: white; padding: 6px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                 Limited Offer
-            </div>
-        </div>
-
-        <!-- Content Area -->
-        <div style="padding: 40px; text-align: center;">
-            <h2 style="color: #fff; font-size: 2rem; margin-bottom: 15px; font-weight: 800;">Elevate Your Workflow</h2>
-            <p style="color: #b0b0b0; font-size: 1.1rem; line-height: 1.6; max-width: 600px; margin: 0 auto 30px;">
-                Get 30 days of <strong>Audible Premium Plus</strong> for free. Listen to world-class tech books while you build the next big thing.
-            </p>
-            
-            <a href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" 
-               target="_blank" 
-               style="display: inline-block; background: #ff9900; color: #000; padding: 16px 40px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(255, 153, 0, 0.2);">
-                Claim Your Free Month
-            </a>
-        </div>
-    </div>
-
-    <!-- AdSense Contextual Bio (Subtle) -->
-    <div style="margin-top: 40px; text-align: center; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 30px;">
-        <p style="color: rgba(255,255,255,0.4); font-size: 0.9rem; line-height: 1.8; max-width: 800px; margin: 0 auto; font-style: italic;">
-            As a <strong>Web and Mobile Application Developer</strong> based in Pakistan, I believe continuous learning is the key to mastering front-end innovation. I recommend <strong>Audible</strong> because it turns routine coding sessions into productive learning experiences, keeping you sharp in the global digital landscape.
-        </p>
-    </div>
+<!-- ══════════════════════════════
+     HERO
+     ══════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">✨ Handpicked for You</span>
+    <h1>Aesthetic <span>Shopping Picks</span></h1>
+    <p>Curated beauty, decor, jewelry and lifestyle products loved by creators — hand-selected by Shaheera Sadia.</p>
+  </div>
 </section>
- 
- 
- <!-- PRODUCTS -->
-<div class="products-section">
-  <p class="section-title" id="productCount">52 Products Found</p>
+
+<!-- AFFILIATE NOTICE -->
+<div class="affiliate-notice">
+  📢 <strong>Disclosure:</strong> This page contains Amazon affiliate links. If you purchase through our links, we earn a small commission at <strong>no extra cost to you</strong>. <a href="https://app-tool.vercel.app/terms.html">Learn more</a>
+</div>
+
+<!-- ══════════════════════════════
+     FILTER BAR
+     ══════════════════════════════ -->
+<div class="filter-section">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProducts('all',this)">🛍️ All</button>
+    <button class="filter-btn" onclick="filterProducts('beauty',this)">💄 Beauty</button>
+    <button class="filter-btn" onclick="filterProducts('jewelry',this)">💎 Jewelry</button>
+    <button class="filter-btn" onclick="filterProducts('decor',this)">🏠 Decor</button>
+    <button class="filter-btn" onclick="filterProducts('fashion',this)">👗 Fashion</button>
+    <button class="filter-btn" onclick="filterProducts('kitchen',this)">🍳 Kitchen</button>
+    <button class="filter-btn" onclick="filterProducts('gifts',this)">🎁 Gifts</button>
+    <button class="filter-btn" onclick="filterProducts('health',this)">💪 Health</button>
+    <button class="filter-btn" onclick="filterProducts('tech',this)">📱 Tech</button>
+    <button class="filter-btn" onclick="filterProducts('bags',this)">👜 Bags</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     PRODUCTS
+     ══════════════════════════════ -->
+<div class="page-wrap">
+  <p class="section-title" id="productCount">54 Products Found</p>
+
   <div class="products-grid" id="productsGrid">
 
     <!-- AUDIBLE BANNER -->
     <div class="audible-banner" data-category="all">
-      <img src="image/main 4193sswC8QL.jpg" alt="Audible" onerror="this.style.display='none'">
+      <img src="/image/main 4193sswC8QL.jpg" alt="Audible Premium Plus" onerror="this.style.display='none'">
       <div>
         <h3>🎧 Elevate Your Workflow</h3>
         <p>Get 30 days of <strong>Audible Premium Plus</strong> for free. Listen to world-class tech books while you build the next big thing.</p>
-        <a class="audible-btn" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank">Claim Your Free Month →</a>
+        <a class="audible-btn" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank"><i class="fab fa-amazon"></i> Claim Your Free Month →</a>
       </div>
+    </div>
+
+    <!-- AD SLOT 1 -->
+    <div class="ad-slot">
+      <!-- Google AdSense — replace with your <ins class="adsbygoogle"> tag -->
+      <p>Advertisement</p>
     </div>
 
     <!-- 1 Motorola razr+ -->
     <div class="product-card" data-category="tech">
-      <div class="card-img"><span class="card-badge">Mobile</span>
+      <div class="card-img"><span class="card-badge">📱 Mobile</span>
         <img src="/image/61k5imDfesL._AC_SL1500_.jpg" alt="Motorola razr+ 2023" loading="lazy"></div>
       <div class="card-body">
         <h3>Motorola razr+ | 2023</h3>
-        <p>Unlocked Magenta edition with 8/256GB storage and a high-resolution 32MP camera. Stylish and powerful.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Perfect for on-the-go professionals who want a compact foldable design without sacrificing camera quality. The 32MP camera captures stunning photos, while 256GB storage keeps all your media safe.</p>
-        <a href="https://amzn.to/4ncN8pw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff00ff,#764ba2);"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Unlocked Magenta edition with 8/256GB storage and a high-resolution 32MP camera. Stylish and powerful.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Perfect for on-the-go professionals wanting a compact foldable design without sacrificing camera quality. The 32MP camera captures stunning photos while 256GB keeps all your media safe.</p>
+        <a href="https://amzn.to/4ncN8pw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#6a0dad,#9b30d9);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 2 Samsung Galaxy S26 Ultra -->
     <div class="product-card" data-category="tech">
-      <div class="card-img"><span class="card-badge">Mobile</span>
+      <div class="card-img"><span class="card-badge">📱 Mobile</span>
         <img src="/image/61fh21u3DJL._AC_SX679_.jpg" alt="Samsung Galaxy S26 Ultra" loading="lazy"></div>
       <div class="card-body">
         <h3>Samsung Galaxy S26 Ultra</h3>
-        <p>The 2026 flagship featuring 512GB storage, Galaxy AI, Privacy Display, and Super Fast Charging 3.0.</p>
+        <p class="desc">The 2026 flagship featuring 512GB storage, Galaxy AI, Privacy Display, and Super Fast Charging 3.0.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Ideal for power users and creators. Galaxy AI boosts productivity, Privacy Display protects sensitive data in public, and Super Fast Charging 3.0 means less time plugged in.</p>
         <a href="https://amzn.to/48CCdzw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#2d3436,#636e72);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
@@ -162,51 +372,47 @@
 
     <!-- 3 Samsung Galaxy S26 Ultra Unlocked -->
     <div class="product-card" data-category="tech">
-      <div class="card-img"><span class="card-badge">Mobile</span>
+      <div class="card-img"><span class="card-badge">📱 Mobile</span>
         <img src="/image/61nlAsBRMxL._AC_SL1500_.jpg" alt="Samsung Galaxy S26 Ultra Unlocked" loading="lazy"></div>
       <div class="card-body">
         <h3>Samsung Galaxy S26 Ultra (Unlocked)</h3>
-        <p>512GB Galaxy AI flagship. Unlocked with 1-year US warranty. Works on any carrier worldwide.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Great for travelers and frequent switchers. Works with any carrier worldwide. 1-year warranty gives peace of mind, and 512GB means you never delete a photo or app again.</p>
-        <a href="https://amzn.to/48CCdzw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#2d3436,#636e72);"><i class="fab fa-amazon"></i>Shop Now</a>
+        <p class="desc">512GB Galaxy AI flagship. Unlocked with 1-year US warranty. Works on any carrier worldwide.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Great for travelers and frequent switchers. Works with any carrier worldwide. 1-year warranty gives peace of mind and 512GB means you never delete a photo again.</p>
+        <a href="https://amzn.to/48CCdzw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#2d3436,#636e72);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
- <div class="ad-slot">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
     <!-- 4 Stylish Hand Bag -->
     <div class="product-card" data-category="bags">
-      <div class="card-img"><span class="card-badge">Bags</span>
+      <div class="card-img"><span class="card-badge">👜 Bags</span>
         <img src="/image/71UsdSvfv1L._AC_SY695_.jpg" alt="Stylish Hand Bag" loading="lazy"></div>
       <div class="card-body">
         <h3>Stylish Hand Bag</h3>
-        <p>Elegant and spacious handbag perfect for any occasion.</p>
+        <p class="desc">Elegant and spacious handbag perfect for any occasion.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Spacious interior fits daily must-haves. Transitions effortlessly from work meetings to weekend outings — a versatile wardrobe staple for every woman.</p>
-        <a href="https://amzn.to/4w9Vgv8" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">Shop Now</a>
+        <a href="https://amzn.to/4w9Vgv8" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">View on Amazon</a>
       </div>
     </div>
 
     <!-- 5 Heart Bracelet -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge"> Jewelry</span>
+      <div class="card-img"><span class="card-badge">✨ Jewelry</span>
         <img src="/image/51XVK+MGmrL._AC_SY535_.jpg" alt="925 Sterling Silver Heart Bracelet" loading="lazy"></div>
       <div class="card-body">
         <h3>925 Sterling Silver Heart Bracelet</h3>
-        <p>Heart Birthstone Bracelet — Birthday Anniversary Jewelry Gifts for Her & Wife.</p>
+        <p class="desc">Heart Birthstone Bracelet — Birthday Anniversary Jewelry Gifts for Her & Wife.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Real 925 sterling silver resists tarnishing for lasting shine. Birthstone customization makes it deeply personal — a heartfelt gift for birthdays, anniversaries, or Mother's Day.</p>
-        <a href="https://amzn.to/4cZNoDr" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#96fbc4,#38f9d7); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/4cZNoDr" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 6 Rose Heart Necklace -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">🌹 Jewelry</span>
         <img src="/image/71D6Gr3kEpL._AC_SY535_.jpg" alt="Rose Heart Necklace" loading="lazy"></div>
       <div class="card-body">
         <h3>Rose Heart Necklace</h3>
-        <p>925 Sterling Silver Initial Necklace — I Love You Gifts for Women, Wife, Girlfriend.</p>
+        <p class="desc">925 Sterling Silver Initial Necklace — I Love You Gifts for Women, Wife, Girlfriend.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Hypoallergenic and skin-safe. A romantic personalized gift for Valentine's Day, anniversaries, or just because — she will treasure it forever.</p>
         <a href="https://amzn.to/3RheSx9" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
@@ -214,35 +420,35 @@
 
     <!-- 7 Canvas Tote -->
     <div class="product-card" data-category="bags">
-      <div class="card-img"><span class="card-badge">Bags</span>
+      <div class="card-img"><span class="card-badge">👜 Bags</span>
         <img src="/image/81beUeUN5UL._AC_SX679_.jpg" alt="ZHMO Canvas Tote Bag" loading="lazy"></div>
       <div class="card-body">
         <h3>ZHMO Canvas Tote Bag</h3>
-        <p>Women's Crossbody Work Laptop Tote — Large Handbag for Travel, Nurse, Teacher.</p>
+        <p class="desc">Women's Crossbody Work Laptop Tote — Large Handbag for Travel, Nurse, Teacher.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Fits a 15" laptop, notebooks, and daily essentials. Durable canvas handles heavy loads without strain. Ideal for nurses, teachers, students, and travelers.</p>
-        <a href="https://amzn.to/4nf1VjC" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/4nf1VjC" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 8 Graduation Gift -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Gifts</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/812nsGOcg8L._AC_SL1500_.jpg" alt="2026 Graduation Gift Basket" loading="lazy"></div>
       <div class="card-body">
         <h3>2026 Graduation Gift Basket</h3>
-        <p>Cool College Graduation Gifts Basket. Best Master Degree Grad Gift Box.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Celebrate a major milestone with a thoughtfully curated gift box. Packed with fun, useful items that make the grad feel truly special — great for college or master's graduates.</p>
+        <p class="desc">Cool College Graduation Gifts Basket. Best Master Degree Grad Gift Box.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Celebrate a major milestone with a thoughtfully curated gift box. Packed with fun, useful items that make the grad feel truly special.</p>
         <a href="https://amzn.to/3P5DLLw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#764ba2,#667eea);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 9 Monogram Tote -->
     <div class="product-card" data-category="bags">
-      <div class="card-img"><span class="card-badge">Bags</span>
+      <div class="card-img"><span class="card-badge">👜 Bags</span>
         <img src="/image/81A95t27eyL._AC_SL1500_.jpg" alt="Personalized Canvas Tote" loading="lazy"></div>
       <div class="card-body">
         <h3>Personalized Initial Canvas Tote</h3>
-        <p>Monogrammed Beach Tote Bag with Zipper — Birthday Gifts for Mom, Sister, Teacher.</p>
+        <p class="desc">Monogrammed Beach Tote Bag with Zipper — Birthday Gifts for Mom, Sister, Teacher.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Zippered closure keeps belongings secure at the beach, gym, or market. Strong canvas withstands daily use while the custom monogram adds a chic, personal feel.</p>
         <a href="https://amzn.to/4uu76P6" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff758c,#ff7eb3);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
@@ -250,245 +456,242 @@
 
     <!-- 10 Mom Necklace -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/51u2l8w07LL._AC_SY535_.jpg" alt="Mom Necklace" loading="lazy"></div>
       <div class="card-body">
         <h3>Mom Necklace</h3>
-        <p>Elegant personalized gift for a special mother. Show your love with a timeless piece.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lightweight and comfortable for daily wear. Perfect for Mother's Day, her birthday, or Christmas — a constant reminder of your bond she can wear every day.</p>
-        <a href="https://amzn.to/4vXHYSb" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#764ba2,#667eea);"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Elegant personalized gift for a special mother. Show your love with a timeless piece.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lightweight and comfortable for daily wear. Perfect for Mother's Day, her birthday, or Christmas — a constant reminder of your bond.</p>
+        <a href="https://amzn.to/4vXHYSb" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 2 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 11 Philips Sonicare 4100 -->
     <div class="product-card" data-category="health">
-      <div class="card-img"><span class="card-badge">Health</span>
+      <div class="card-img"><span class="card-badge">💪 Health</span>
         <img src="/image/71dHzkdskBL._AC_SL1500_.jpg" alt="Philips Sonicare 4100" loading="lazy"></div>
       <div class="card-body">
         <h3>Philips Sonicare 4100 Electric Toothbrush</h3>
-        <p>Sonic Toothbrush with Pressure Sensor, Two Intensity Settings, Smartimer & Quadpacer.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Removes up to 7× more plaque than a manual brush. Pressure sensor protects gums from overbrushing. Smartimer ensures the dentist-recommended 2 minute brush every time.</p>
-        <a href="https://amzn.to/4tZWBTF" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Sonic Toothbrush with Pressure Sensor, Two Intensity Settings, Smartimer & Quadpacer.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Removes up to 7× more plaque than a manual brush. Pressure sensor protects gums. Smartimer ensures the dentist-recommended 2-minute brush every time.</p>
+        <a href="https://amzn.to/4tZWBTF" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 12 Philips Sonicare 9500 -->
     <div class="product-card" data-category="health">
-      <div class="card-img"><span class="card-badge">Health</span>
+      <div class="card-img"><span class="card-badge">💪 Health</span>
         <img src="/image/71eMC4oyIGL._AC_SX679_.jpg" alt="Philips Sonicare DiamondClean 9500" loading="lazy"></div>
       <div class="card-body">
         <h3>Philips Sonicare DiamondClean 9500</h3>
-        <p>Smart Sonic Toothbrush with App, 15 Brushing Settings, USB Charging, Travel Case.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> App tracks brushing habits for personalized feedback. 15 settings target whitening, gum care, and sensitivity. USB charging and travel case make it perfect for frequent travelers.</p>
+        <p class="desc">Smart Sonic Toothbrush with App, 15 Brushing Settings, USB Charging, Travel Case.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> App tracks brushing habits for personalized feedback. 15 settings target whitening, gum care, and sensitivity. USB charging and travel case — perfect for frequent travelers.</p>
         <a href="https://amzn.to/4eZ59W3" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#2d3436,#636e72);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
-    <!-- 13 Sunscreen SPF 70 -->
+    <!-- 13 Sunscreen -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/71GGSK0ZvmL._SL1500_.jpg" alt="Neutrogena Sunscreen SPF 70" loading="lazy"></div>
       <div class="card-body">
         <h3>Neutrogena Ultra Sheer Sunscreen SPF 70</h3>
-        <p>Dry-Touch, Water Resistant 80 Min, Oil-Free, Non-Comedogenic, Matte Finish, 3 Fl Oz.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Shields skin from UVA/UVB rays for 80 minutes in water. Oil-free formula won't clog pores — ideal for acne-prone skin. Matte finish sits beautifully under makeup.</p>
-        <a href="https://amzn.to/4u0PEl6" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Dry-Touch, Water Resistant 80 Min, Oil-Free, Non-Comedogenic, Matte Finish, 3 Fl Oz.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Shields skin from UVA/UVB rays for 80 minutes. Oil-free formula won't clog pores — ideal for acne-prone skin. Matte finish sits beautifully under makeup.</p>
+        <a href="https://amzn.to/4u0PEl6" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 14 Anti-Aging Moisturizer -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/71e5ZBe+CLL._SL1500_.jpg" alt="Anti-Aging Face Moisturizer" loading="lazy"></div>
       <div class="card-body">
         <h3>Anti-Aging Face Moisturizer</h3>
-        <p>With Retinol, Collagen & Hyaluronic Acid. Firming & Hydrating Day & Night Cream.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Retinol reduces fine lines and wrinkles. Hyaluronic acid locks in moisture for a youthful glow. Collagen firms and tightens skin. Suitable for both day and night use.</p>
-        <a href="https://amzn.to/497AXEA" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#667eea,#764ba2);"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">With Retinol, Collagen & Hyaluronic Acid. Firming & Hydrating Day & Night Cream.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Retinol reduces fine lines and wrinkles. Hyaluronic acid locks in moisture for a youthful glow. Collagen firms and tightens skin. Suitable for day and night use.</p>
+        <a href="https://amzn.to/497AXEA" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 15 Clear Cups -->
     <div class="product-card" data-category="kitchen">
-      <div class="card-img"><span class="card-badge">Kitchen</span>
+      <div class="card-img"><span class="card-badge">🍳 Kitchen</span>
         <img src="/image/71BiLAr._AC_SL1500_.jpg" alt="100 Pack Clear Cups with Lids and Straws" loading="lazy"></div>
       <div class="card-body">
         <h3>100 Pack Clear Cups with Lids & Straws</h3>
-        <p>16 oz food-safe iced coffee cups. Perfect for smoothies and cold drinks.</p>
+        <p class="desc">16 oz food-safe iced coffee cups. Perfect for smoothies and cold drinks.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> BPA-free and food-safe. Great for home parties, cafes, or meal prepping. Matching lids and straws eliminate spills. Buy in bulk and save for events and everyday use.</p>
-        <a href="https://amzn.to/3OHFAOV" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/3OHFAOV" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 16 Massage Gun -->
     <div class="product-card" data-category="health">
-      <div class="card-img"><span class="card-badge">Health</span>
+      <div class="card-img"><span class="card-badge">💪 Health</span>
         <img src="/image/715vteUmXJL._AC_SL1500_.jpg" alt="AERLANG Massage Gun with Heat" loading="lazy"></div>
       <div class="card-body">
         <h3>AERLANG Massage Gun with Heat</h3>
-        <p>Deep Tissue Back & Neck Massager for Pain Relief. 7 Heads & Silent Motor.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Heat therapy + percussive massage melts muscle tension. 7 heads target different muscle groups. Silent motor lets you use it while watching TV — ideal for athletes and desk workers.</p>
+        <p class="desc">Deep Tissue Back & Neck Massager for Pain Relief. 7 Heads & Silent Motor.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Heat therapy + percussive massage melts muscle tension. 7 heads target different muscle groups. Silent motor lets you use it while watching TV.</p>
         <a href="https://amzn.to/429rKYH" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f5576c,#f093fb);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 17 Princess Bed Canopy Black -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/7105CYwWsyL._AC_SL1500_.jpg" alt="VETHIN Princess Bed Canopy" loading="lazy"></div>
       <div class="card-body">
         <h3>VETHIN Princess Bed Canopy</h3>
-        <p>Double-layer black drape netting with 4 openings. Cozy aesthetic bedroom retreat.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Transforms any bedroom into a dreamy space. Double-layer netting adds privacy and a luxurious feel. 4 openings give easy access. Great for teens, adults, and aesthetic bedroom lovers.</p>
+        <p class="desc">Double-layer black drape netting with 4 openings. Cozy aesthetic bedroom retreat.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Transforms any bedroom into a dreamy space. Double-layer netting adds privacy and a luxurious feel. 4 openings give easy access. Great for teens and adults.</p>
         <a href="https://amzn.to/42Rd2FQ" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#2c3e50,#000000);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 18 Luxury White Canopy -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/71FzQjP00OL._AC_SL1500_.jpg" alt="Luxury Ruffle Tassel Canopy" loading="lazy"></div>
       <div class="card-body">
         <h3>Luxury Ruffle Tassel Canopy</h3>
-        <p>Elegant 4-corner white netting with ruffle tassel details for a dreamy bedroom.</p>
+        <p class="desc">Elegant 4-corner white netting with ruffle tassel details for a dreamy bedroom.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Ruffle and tassel details create a fairy-tale bedroom look. Soft white netting diffuses light beautifully. Easy ceiling installation. Perfect for guest rooms and girls' bedrooms.</p>
-        <a href="https://amzn.to/4tdYryX" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e6b980,#eacda3); color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/4tdYryX" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e6b980,#eacda3);color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 3 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
-    <!-- 19 3-Opening Princess Bed Net -->
+    <!-- 19 3-Opening Bed Net -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/71Yh+9dlisS._AC_SL1500_.jpg" alt="3-Opening Princess Bed Net" loading="lazy"></div>
       <div class="card-body">
         <h3>3-Opening Princess Bed Net</h3>
-        <p>4-corner canopy with unique 3-side opening. Fits Full, Queen, or King beds.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> 3-sided opening gives easy access from multiple angles. Adds instant luxury and drama to any bedroom without heavy furniture — a budget-friendly room transformation.</p>
+        <p class="desc">4-corner canopy with unique 3-side opening. Fits Full, Queen, or King beds.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> 3-sided opening gives easy access from multiple angles. Adds instant luxury and drama to any bedroom without heavy furniture.</p>
         <a href="https://amzn.to/49u42Kq" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 20 HelloBaby Monitor -->
     <div class="product-card" data-category="health">
-      <div class="card-img"><span class="card-badge">Nursery</span>
+      <div class="card-img"><span class="card-badge">👶 Nursery</span>
         <img src="/image/71kUNoSReuL._AC_SL1500_.jpg" alt="HelloBaby 5 inch Video Baby Monitor" loading="lazy"></div>
       <div class="card-body">
         <h3>HelloBaby 5" Video Baby Monitor</h3>
-        <p>No-WiFi secure monitor with 30-hour battery, Pan-Tilt-Zoom, night vision & 2-way talk.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> No WiFi means no hacking risk. 30-hour battery lasts all night. Pan-Tilt-Zoom sees every corner. Night vision works in complete darkness. 2-way talk soothes baby remotely.</p>
-        <a href="https://amzn.to/4f7Mrvs" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb); color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">No-WiFi secure monitor with 30-hour battery, Pan-Tilt-Zoom, night vision & 2-way talk.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> No WiFi means no hacking risk. 30-hour battery lasts all night. Pan-Tilt-Zoom sees every corner. Night vision works in complete darkness.</p>
+        <a href="https://amzn.to/4f7Mrvs" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 21 Solar Fence Lights -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Outdoor</span>
+      <div class="card-img"><span class="card-badge">🌿 Outdoor</span>
         <img src="/image/81St52EP-VL._AC_SL1500_.jpg" alt="Color Changing Solar Fence Lights" loading="lazy"></div>
       <div class="card-body">
         <h3>Color Changing Solar Fence Lights</h3>
-        <p>4-Pack waterproof LED lamps with 7 colorful modes. 1-minute installation.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Solar-powered — zero electricity cost, no wiring needed. Waterproof for all weather. 7 color modes for any occasion. Installs in just 1 minute on any fence or railing.</p>
+        <p class="desc">4-Pack waterproof LED lamps with 7 colorful modes. 1-minute installation.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Solar-powered — zero electricity cost, no wiring needed. Waterproof for all weather. 7 color modes for any occasion. Installs in just 1 minute.</p>
         <a href="https://amzn.to/4euYQtg" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#00dbde,#fc00ff);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 22 Solar Plant Stand Lamps -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/815XjJ6UCxL._AC_SX679_.jpg" alt="MXwcy Solar Plant Stand Lamps" loading="lazy"></div>
       <div class="card-body">
         <h3>MXwcy Solar Plant Stand Lamps (2-Pack)</h3>
-        <p>Industrial solar floor lamps with LED Edison bulbs and integrated plant stands.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Two-in-one: stylish lamp AND planter stand. Solar charging, no electricity bill. Edison bulbs give warm vintage glow. Weather-resistant for all seasons.</p>
+        <p class="desc">Industrial solar floor lamps with LED Edison bulbs and integrated plant stands.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Two-in-one: stylish lamp AND planter stand. Solar charging means no electricity bill. Edison bulbs give a warm vintage glow. Weather-resistant for all seasons.</p>
         <a href="https://amzn.to/4whcHKk" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#3d3393,#2b76b9);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 23 Fake Vines with Lights -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/81wA0lfV3rL._AC_SL1500_.jpg" alt="Aesthetic Fake Vines with Lights" loading="lazy"></div>
       <div class="card-body">
         <h3>Aesthetic Fake Vines with Lights</h3>
-        <p>12-pack artificial ivy garlands with LED fairy lights for bedroom wall decor.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> No watering — stays lush forever. Built-in fairy lights create a warm magical glow. 12-pack covers large wall areas. Perfect for dorm rooms and boho bedroom aesthetics.</p>
-        <a href="https://amzn.to/3Qy8CAY" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#11998e,#38ef7d); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">12-pack artificial ivy garlands with LED fairy lights for bedroom wall decor.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> No watering — stays lush forever. Built-in fairy lights create a warm magical glow. 12-pack covers large wall areas. Perfect for dorm rooms and boho aesthetics.</p>
+        <a href="https://amzn.to/3Qy8CAY" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#11998e,#38ef7d);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 24 Solar Watering Can Lights -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/81gar2Xft8L._AC_SL1500_.jpg" alt="Solar Watering Can Lights" loading="lazy"></div>
       <div class="card-body">
         <h3>Solar Watering Can Lights</h3>
-        <p>Retro metal hanging solar lights with waterproof LED strands for outdoor decor.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Stunning conversation piece and light source. Retro design adds garden charm. Auto on/off at dusk and dawn saves energy effortlessly. Fully weather-resistant.</p>
-        <a href="https://amzn.to/3P5TkTt" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Retro metal hanging solar lights with waterproof LED strands for outdoor decor.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Stunning conversation piece and light source. Retro design adds garden charm. Auto on/off at dusk and dawn. Fully weather-resistant.</p>
+        <a href="https://amzn.to/3P5TkTt" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 25 Skin Care Essential -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/813Ch8hTL5L._SL1500_.jpg" alt="Skin Care Essential" loading="lazy"></div>
       <div class="card-body">
         <h3>Skin Care Essential</h3>
-        <p>Premium skin care formula for radiant, healthy skin all skin types.</p>
+        <p class="desc">Premium skin care formula for radiant, healthy skin for all skin types.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Nourishes and hydrates from within, leaving a natural radiant glow. Targets dullness, uneven tone, and dryness. Use morning or evening for best results.</p>
-        <a href="https://amzn.to/4tyrsq2" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#667eea,#764ba2);">View on Amazon</a>
+        <a href="https://amzn.to/4tyrsq2" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));">View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 4 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 26 Aesthetic Lamp -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/51ZakvjGM0L._MCnd_AC_.jpg" alt="Aesthetic Vintage Lamp" loading="lazy"></div>
       <div class="card-body">
         <h3>Aesthetic Lamp</h3>
-        <p>Vintage style lamp that adds warm cozy ambiance to any room.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Warm-toned lighting reduces eye strain for reading or studying. Vintage design complements boho, retro, and minimalist aesthetics. Great alternative to harsh overhead lighting.</p>
-        <a href="https://amzn.to/4ugr3sv" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085); color:#222;">View on Amazon</a>
+        <p class="desc">Vintage style lamp that adds warm cozy ambiance to any room.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Warm-toned lighting reduces eye strain for reading or studying. Vintage design complements boho, retro, and minimalist aesthetics.</p>
+        <a href="https://amzn.to/4ugr3sv" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#222;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 27 Premium Kitchen Oven -->
     <div class="product-card" data-category="kitchen">
-      <div class="card-img"><span class="card-badge">Kitchen</span>
+      <div class="card-img"><span class="card-badge">🍳 Kitchen</span>
         <img src="/image/81cXjL3ZV5L._AC_SL1500_.jpg" alt="Premium Kitchen Oven" loading="lazy"></div>
       <div class="card-body">
         <h3>Premium Kitchen Oven</h3>
-        <p>Large capacity oven with multiple cooking modes for family meals.</p>
+        <p class="desc">Large capacity oven with multiple cooking modes for family meals.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Bake, broil, toast and more in one unit. Large capacity handles family-size meals. Energy-efficient with fast heat-up. Saves counter space versus a full oven.</p>
-        <a href="https://amzn.to/423rVEI" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/423rVEI" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7);color:#111;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 28 Pizza Pan Set -->
     <div class="product-card" data-category="kitchen">
-      <div class="card-img"><span class="card-badge">Kitchen</span>
+      <div class="card-img"><span class="card-badge">🍳 Kitchen</span>
         <img src="/image/81hRhU9ivML._AC_SL1500_.jpg" alt="Pizza Pan Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Pizza Pan Set</h3>
-        <p>Professional pizza pan for crispy, restaurant-quality results at home.</p>
+        <p class="desc">Professional pizza pan for crispy, restaurant-quality results at home.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Perforated design circulates heat evenly for crispy crusts. Non-stick coating makes cleanup effortless. Also great for cookies, flatbreads, and roasted vegetables.</p>
         <a href="https://amzn.to/49aXqjZ" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff758c,#ff7eb3);">View on Amazon</a>
       </div>
@@ -496,11 +699,11 @@
 
     <!-- 29 Mother's Day Gift -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Gifts</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/81KM+G4hdLL._SL1500_.jpg" alt="Mother's Day Special Gift" loading="lazy"></div>
       <div class="card-body">
         <h3>Mother's Day Special Gift</h3>
-        <p>Heartfelt gift for the special mother in your life.</p>
+        <p class="desc">Heartfelt gift for the special mother in your life.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Thoughtfully chosen items make her feel truly appreciated and pampered. Perfect for Mother's Day, her birthday, or any occasion you want to make unforgettable.</p>
         <a href="https://amzn.to/3PamQaP" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">View on Amazon</a>
       </div>
@@ -508,53 +711,52 @@
 
     <!-- 30 Elegant Fashion Dress -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Fashion</span>
+      <div class="card-img"><span class="card-badge">👗 Fashion</span>
         <img src="/image/710Dg+hpuzL._AC_SY741_.jpg" alt="Elegant Fashion Dress" loading="lazy"></div>
       <div class="card-body">
         <h3>Elegant Fashion Dress</h3>
-        <p>Stunning dress perfect for weddings, galas, and formal occasions.</p>
+        <p class="desc">Stunning dress perfect for weddings, galas, and formal occasions.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Flattering silhouette for all body types. High-quality fabric resists wrinkles. Commands attention from weddings to dinner parties — a wardrobe investment that pays off every wear.</p>
-        <a href="https://amzn.to/3OAOY6S" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb); color:#333;">View on Amazon</a>
+        <a href="https://amzn.to/3OAOY6S" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);color:#333;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 31 Gales Luxury Candle -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Decor</span>
+      <div class="card-img"><span class="card-badge">🏠 Decor</span>
         <img src="/image/71kzVAhhkTL._AC_SL1500_.jpg" alt="Gales Luxury Candle" loading="lazy"></div>
       <div class="card-body">
         <h3>Gales Luxury Candle</h3>
-        <p>Premium scented candle for a calming, luxurious fragrance experience.</p>
+        <p class="desc">Premium scented candle for a calming, luxurious fragrance experience.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Calming scent reduces stress after a long day. Long burn time means weeks of enjoyment. Doubles as elegant home decor — perfect self-care treat or thoughtful gift.</p>
-        <a href="https://amzn.to/4w5w2hw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/4w5w2hw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#222;">View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 5 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 32 Advanced Skin Care -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/71hafv7+FPL._SL1500_.jpg" alt="Advanced Skin Care" loading="lazy"></div>
       <div class="card-body">
         <h3>Advanced Skin Care</h3>
-        <p>Deep nourishing formula for glowing, healthy skin.</p>
+        <p class="desc">Deep nourishing formula for glowing, healthy skin.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Penetrates deep layers to repair, restore, and brighten. Targets dark spots, dehydration, and uneven texture. Suitable for all skin types including sensitive skin.</p>
-        <a href="https://amzn.to/4cKXQi0" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#96fbc4,#38f9d7); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/4cKXQi0" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#96fbc4,#38f9d7);color:#111;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 33 Mom Gift Set -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Gifts</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/71ds2SjV+pL._AC_SL1500_.jpg" alt="Mom Gift Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Mom Gift Set</h3>
-        <p>Thoughtful gift set specially curated for mom.</p>
+        <p class="desc">Thoughtful gift set specially curated for mom.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Everything mom loves in one beautiful box. Curated to make her feel special and valued. Saves the guesswork of gift-giving — ideal for Mother's Day, birthdays, or holidays.</p>
         <a href="https://amzn.to/4w0L3Rx" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">View on Amazon</a>
       </div>
@@ -562,89 +764,88 @@
 
     <!-- 34 Family Sized Airfryer -->
     <div class="product-card" data-category="kitchen">
-      <div class="card-img"><span class="card-badge">Kitchen</span>
+      <div class="card-img"><span class="card-badge">🍳 Kitchen</span>
         <img src="/image/81OYPgiKaGL._AC_SL1500_.jpg" alt="Family Sized Airfryer" loading="lazy"></div>
       <div class="card-body">
         <h3>Family Sized Airfryer</h3>
-        <p>Large capacity cooker for healthy, crispy family meals.</p>
+        <p class="desc">Large capacity cooker for healthy, crispy family meals.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Up to 85% less oil than traditional frying. Large capacity feeds the whole family in one batch. Faster than a conventional oven and much easier to clean.</p>
-        <a href="https://amzn.to/3OCJecN" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/3OCJecN" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#43e97b,#38f9d7);color:#111;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 35 Dual Basket Airfryer -->
     <div class="product-card" data-category="kitchen">
-      <div class="card-img"><span class="card-badge">Kitchen</span>
+      <div class="card-img"><span class="card-badge">🍳 Kitchen</span>
         <img src="/image/71XlesWSKRL._AC_SL1500_.jpg" alt="Dual Basket Airfryer" loading="lazy"></div>
       <div class="card-body">
         <h3>Dual Basket Airfryer</h3>
-        <p>Cook two dishes at once with this 12QT dual-basket fryer.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Two independent baskets, two temperatures simultaneously — cuts meal prep time in half. 12QT capacity perfect for large families. Sync finish ensures both dishes are ready together.</p>
-        <a href="https://amzn.to/4cTUBVP" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#fa709a,#fee140); color:#222;">View on Amazon</a>
+        <p class="desc">Cook two dishes at once with this 12QT dual-basket fryer.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Two independent baskets, two temperatures simultaneously — cuts meal prep time in half. 12QT capacity perfect for large families. Sync finish ensures both dishes ready together.</p>
+        <a href="https://amzn.to/4cTUBVP" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#fa709a,#fee140);color:#222;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 36 Almond Milk & Honey -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/81OF5JWMThL._SL1500_.jpg" alt="Almond Milk and Honey Gift Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Almond Milk & Honey Gift Set</h3>
-        <p>9 Pc nourishing holiday gift set for full-body skin care.</p>
+        <p class="desc">9 Pc nourishing holiday gift set for full-body skin care.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Complete head-to-toe pampering in one set. Almond milk softens dry skin, honey locks in moisture. 9 pieces from body lotion to scrub — a luxurious gift anyone will love.</p>
-        <a href="https://amzn.to/4tHhPWd" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/4tHhPWd" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f6d365,#fda085);color:#222;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 37 Laptop Table -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Home</span>
+      <div class="card-img"><span class="card-badge">🏠 Home</span>
         <img src="/image/81Xq8hCqDhL._AC_SL1500_.jpg" alt="Ergonomic Laptop Table" loading="lazy"></div>
       <div class="card-body">
         <h3>Laptop Table</h3>
-        <p>Ergonomic portable table for comfortable work from home use.</p>
+        <p class="desc">Ergonomic portable table for comfortable work from home use.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Work from bed, sofa, or floor without straining your back. Adjustable height and angle. Lightweight and foldable for easy storage. Also great for breakfast in bed or reading.</p>
-        <a href="https://amzn.to/4mXjB2R" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe); color:#222;">View on Amazon</a>
+        <a href="https://amzn.to/4mXjB2R" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;">View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 6 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 38 Floral Maxi Dress -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Fashion</span>
+      <div class="card-img"><span class="card-badge">👗 Fashion</span>
         <img src="/image/71HkhVu9R1L._AC_SY741_.jpg" alt="Floral Maxi Dress" loading="lazy"></div>
       <div class="card-body">
         <h3>Floral Maxi Dress</h3>
-        <p>Elegant summer fashion for a breezy, aesthetic look.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lightweight breathable fabric keeps you cool and stylish. Versatile floral print dresses up or down. Flattering maxi length suits all body types — perfect for beach days, brunches, and vacations.</p>
-        <a href="https://amzn.to/426S3P3" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#333;">View on Amazon</a>
+        <p class="desc">Elegant summer fashion for a breezy, aesthetic look.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lightweight breathable fabric keeps you cool and stylish. Versatile floral print dresses up or down. Flattering maxi length suits all body types — perfect for beach days and vacations.</p>
+        <a href="https://amzn.to/426S3P3" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);color:#333;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 39 Galaxy Rose Gift -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Gifts</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/81avDeLCnqL._AC_SL1500_.jpg" alt="Galaxy Rose Crystal Gift" loading="lazy"></div>
       <div class="card-body">
         <h3>Galaxy Rose Gift</h3>
-        <p>Enchanting crystal rose for wife & girlfriend — lasts forever.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Unlike real flowers, this crystal rose lasts forever — a permanent symbol of love. Stunning galaxy effect makes it a beautiful display piece. Unique romantic gift for Valentine's Day or anniversaries.</p>
+        <p class="desc">Enchanting crystal rose for wife & girlfriend — lasts forever.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Unlike real flowers, this crystal rose lasts forever — a permanent symbol of love. Galaxy effect makes it a stunning display piece. Unique romantic gift for Valentine's Day or anniversaries.</p>
         <a href="https://amzn.to/4cZ27yy" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">View on Amazon</a>
       </div>
     </div>
 
     <!-- 40 Halter Prom Dress -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Fashion</span>
+      <div class="card-img"><span class="card-badge">👗 Fashion</span>
         <img src="/image/81wWz110yUL._AC_SX569_.jpg" alt="Halter Prom Dress" loading="lazy"></div>
       <div class="card-body">
         <h3>Halter Prom Dress</h3>
-        <p>Formal Floral Lace Bridesmaid Dress for prom, weddings, and galas.</p>
+        <p class="desc">Formal Floral Lace Bridesmaid Dress for prom, weddings, and galas.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Halter neckline flatters the neck and shoulders. Floral lace adds timeless elegance. Available in multiple sizes for a confident, flattering fit on any body type.</p>
         <a href="https://amzn.to/4t6tywp" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff758c,#ff7eb3);">View on Amazon</a>
       </div>
@@ -652,11 +853,11 @@
 
     <!-- 41 Jewelry Set -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/71ds2SjV+pL._AC_SL1500_.jpg" alt="Jewelry Gift Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Jewelry Set</h3>
-        <p>Complete coordinated jewelry gift set — perfect for mom.</p>
+        <p class="desc">Complete coordinated jewelry gift set — perfect for mom.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Complete collection in one gift — no mixing and matching needed. Coordinated pieces create an effortless look. Makes gifting easy and impressive. Perfect for any age or style.</p>
         <a href="https://amzn.to/4w0L3Rx" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f093fb,#f5576c);">View on Amazon</a>
       </div>
@@ -664,11 +865,11 @@
 
     <!-- 42 Preserved Rose Necklace Set -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Jewelry & Gift</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/81Ab3F9MZGL._AC_SY535_.jpg" alt="Preserved Rose Necklace Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Preserved Rose Necklace Set</h3>
-        <p>Forever Rose with Music Box & Necklace — a luxury romantic gift.</p>
+        <p class="desc">Forever Rose with Music Box & Necklace — a luxury romantic gift.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Real preserved rose that never wilts — symbolizing eternal love. Music box adds a magical emotional touch. Complete luxury gift experience for anniversaries or Valentine's Day.</p>
         <a href="https://amzn.to/49khMaz" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e94560,#c0392b);">View on Amazon</a>
       </div>
@@ -676,95 +877,93 @@
 
     <!-- 43 CZ Halo Stud Earrings -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/81tW7pSRDhL._AC_SY695_.jpg" alt="CZ Halo Stud Earrings" loading="lazy"></div>
       <div class="card-body">
         <h3>CZ Halo Stud Earrings</h3>
-        <p>18K Gold Plated Hypoallergenic Sterling Silver — sparkles like real diamonds.</p>
+        <p class="desc">18K Gold Plated Hypoallergenic Sterling Silver — sparkles like real diamonds.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Hypoallergenic — safe for sensitive ears all day. CZ halo sparkles like real diamonds at a fraction of the cost. 18K gold plating resists tarnishing. Wear casually or dress up for occasions.</p>
-        <a href="https://amzn.to/4w0r7y5" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb); color:#333;">View on Amazon</a>
+        <a href="https://amzn.to/4w0r7y5" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;">View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 7 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 44 Silver Cross Necklace -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/91TMiNh8+NL._AC_SY535_.jpg" alt="Silver Cross Necklace" loading="lazy"></div>
       <div class="card-body">
         <h3>Silver Cross Necklace</h3>
-        <p>Solid 925 Sterling Silver Cross Pendant for Men & Women.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Solid 925 sterling silver never tarnishes or fades. Meaningful faith jewelry for personal use or as a gift for christenings, confirmations, and religious milestones.</p>
+        <p class="desc">Solid 925 Sterling Silver Cross Pendant for Men & Women.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Solid 925 sterling silver never tarnishes or fades. Meaningful faith jewelry for personal use or as a heartfelt gift for christenings, confirmations, and religious milestones.</p>
         <a href="https://amzn.to/4cOboec" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#8e9eab,#636e72);">View on Amazon</a>
       </div>
     </div>
 
     <!-- 45 Hair Tools Travel Bag -->
     <div class="product-card" data-category="bags">
-      <div class="card-img"><span class="card-badge">Bags</span>
+      <div class="card-img"><span class="card-badge">👜 Bags</span>
         <img src="/image/81cHsy3zblL._AC_SL1500_.jpg" alt="Hair Tools Travel Bag" loading="lazy"></div>
       <div class="card-body">
         <h3>Hair Tools Travel Bag</h3>
-        <p>Heat-resistant travel bag for curling irons and straighteners.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Heat-resistant lining lets you pack your tools immediately after use. Protects your bag from heat damage. Keeps all styling tools organized. A must-have travel companion for styling on the go.</p>
+        <p class="desc">Heat-resistant travel bag for curling irons and straighteners.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Heat-resistant lining lets you pack tools immediately after use. Protects your bag from heat damage. Keeps all styling tools organized. A must-have travel companion for styling on the go.</p>
         <a href="https://amzn.to/4taEbyk" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#f5576c,#f093fb);">View on Amazon</a>
       </div>
     </div>
 
     <!-- 46 5 in 1 Hot Air Styler -->
     <div class="product-card" data-category="beauty">
-      <div class="card-img"><span class="card-badge">Beauty</span>
+      <div class="card-img"><span class="card-badge">💄 Beauty</span>
         <img src="/image/71vBKGKggQL._SL1500_.jpg" alt="5 in 1 Hot Air Styler" loading="lazy"></div>
       <div class="card-body">
         <h3>5 in 1 Hot Air Styler</h3>
-        <p>Blowout Brush Hair Dryer Set — replaces 5 separate tools.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Replaces 5 tools — saves money, space, and time. Dries and styles simultaneously for a salon-quality blowout. Interchangeable heads for curling, straightening, and volumizing.</p>
-        <a href="https://amzn.to/3RgDupL" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe); color:#222;">View on Amazon</a>
+        <p class="desc">Blowout Brush Hair Dryer Set — replaces 5 separate styling tools.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Replaces 5 tools — saves money, space, and time. Dries and styles simultaneously for a salon-quality blowout at home. Interchangeable heads for curling, straightening, and volumizing.</p>
+        <a href="https://amzn.to/3RgDupL" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;">View on Amazon</a>
       </div>
     </div>
 
     <!-- 47 Leafael Infinity Love Necklace -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/motherdaygift._AC_SY535_.jpg" alt="Leafael Infinity Love Birthstone Necklace" loading="lazy"></div>
       <div class="card-body">
         <h3>Leafael Infinity Love Birthstone Necklace</h3>
-        <p>Silver-plated heart pendant with crystal birthstone. Adjustable 18"+2" chain.</p>
+        <p class="desc">Silver-plated heart pendant with crystal birthstone. Adjustable 18"+2" chain.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Infinity symbol represents endless love. Birthstone adds a deeply personal touch. Adjustable chain ensures a perfect fit. Lightweight and elegant for daily wear.</p>
-        <a href="https://amzn.to/4wkEWYw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff9a9e,#fecfef); color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/4wkEWYw" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#ff9a9e,#fecfef);color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 48 PURSEILVER 4-Piece Rose Gold Set -->
     <div class="product-card" data-category="jewelry">
-      <div class="card-img"><span class="card-badge">Jewelry & Gift</span>
+      <div class="card-img"><span class="card-badge">💎 Jewelry</span>
         <img src="/image/gift._AC_SY535_.jpg" alt="PURSEILVER 4-Piece Rose Gold Jewelry Set" loading="lazy"></div>
       <div class="card-body">
         <h3>PURSEILVER 4-Piece Rose Gold Set</h3>
-        <p>Watch, necklace, earrings & bracelet — perfect all-in-one gift for her.</p>
+        <p class="desc">Watch, necklace, earrings & bracelet — perfect all-in-one gift for her.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Four stunning pieces in one box — a complete look from wrist to neck. Rose gold is universally flattering. Eliminates the hassle of finding matching jewelry. Looks far more expensive than it is.</p>
-        <a href="https://amzn.to/3RbFxvn" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e6b980,#eacda3); color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <a href="https://amzn.to/3RbFxvn" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e6b980,#eacda3);color:#333;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
-    <!-- AD SLOT -->
+    <!-- AD SLOT 8 -->
     <div class="ad-slot">
-      <!-- Google AdSense Ad Unit -->
       <p>Advertisement</p>
     </div>
 
     <!-- 49 BeryLove Sequin Cocktail Dress -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Fashion</span>
+      <div class="card-img"><span class="card-badge">👗 Fashion</span>
         <img src="/image/blaskdress_PT0_SX1464_V1___.jpg" alt="BeryLove Sequin Formal Cocktail Dress" loading="lazy"></div>
       <div class="card-body">
         <h3>BeryLove Sequin Formal Cocktail Dress</h3>
-        <p>High-low bridesmaid and prom dress featuring sequin lace and romantic silhouette.</p>
+        <p class="desc">High-low bridesmaid and prom dress featuring sequin lace and romantic silhouette.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> Sequins catch the light beautifully — you'll stand out at any formal event. High-low hem adds modern flair. Lace overlay adds texture and elegance. Great for prom, galas, and cocktail parties.</p>
         <a href="https://amzn.to/4dvzomk" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#232526,#414345);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
@@ -772,35 +971,35 @@
 
     <!-- 50 BeryLove Formal Lace Prom Dress -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Fashion</span>
+      <div class="card-img"><span class="card-badge">👗 Fashion</span>
         <img src="/image/dress4._AC_SX569_.jpg" alt="BeryLove Formal Lace Prom Dress" loading="lazy"></div>
       <div class="card-body">
         <h3>BeryLove Formal Lace Prom Dress</h3>
-        <p>2026 wedding guest dress with lace bodice, cocktail slit, and flowing silhouette.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lace bodice creates an ultra-feminine look. Cocktail slit adds a flirty touch while keeping movement comfortable. Flowing silhouette is flattering and comfortable for long events.</p>
-        <a href="https://amzn.to/4wgd87w" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#667eea,#764ba2);"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">2026 wedding guest dress with lace bodice, cocktail slit, and flowing silhouette.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Lace bodice creates an ultra-feminine look. Cocktail slit adds a flirty touch while keeping movement comfortable. Flowy silhouette is flattering and comfortable for long events.</p>
+        <a href="https://amzn.to/4wgd87w" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 51 Black Balloon Arch Kit -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Event Decor</span>
+      <div class="card-img"><span class="card-badge">🎉 Event Decor</span>
         <img src="/image/event_AC_SL1500_.jpg" alt="RUBFAC Black Balloon Arch Kit" loading="lazy"></div>
       <div class="card-body">
         <h3>RUBFAC Black Balloon Arch Kit (129pcs)</h3>
-        <p>Professional garland kit — 5" to 18" balloon sizes for graduations and parties.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> 129 balloons create a professional arch without hiring a decorator. Sleek black works for any theme. Easy DIY setup saves event decoration costs. Reusable tape and ties included.</p>
+        <p class="desc">Professional garland kit — 5" to 18" balloon sizes for graduations and parties.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> 129 balloons create a professional arch without hiring a decorator. Sleek black palette works for any theme. Easy DIY setup saves event decoration costs. Reusable tape and ties included.</p>
         <a href="https://amzn.to/4tX5kGl" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#000000,#434343);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
     <!-- 52 Amico LED Recessed Lights -->
     <div class="product-card" data-category="decor">
-      <div class="card-img"><span class="card-badge">Home Lighting</span>
+      <div class="card-img"><span class="card-badge">💡 Lighting</span>
         <img src="/image/lights._AC_SL1500_.jpg" alt="Amico 6 Inch Ultra-Thin LED Recessed Lights" loading="lazy"></div>
       <div class="card-body">
         <h3>Amico 6" Ultra-Thin LED Recessed Lights</h3>
-        <p>24-Pack dimmable canless downlights with 5 color temperature options.</p>
+        <p class="desc">24-Pack dimmable canless downlights with 5 color temperature options.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> 5 color temps from warm cozy to bright daylight. Dimmable for any ambiance. Canless slim design — sleek and modern. Energy-efficient LEDs slash electricity costs significantly.</p>
         <a href="https://amzn.to/4dedDq4" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#00c6ff,#0072ff);"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
@@ -808,154 +1007,93 @@
 
     <!-- 53 Windproof Umbrella -->
     <div class="product-card" data-category="fashion">
-      <div class="card-img"><span class="card-badge">Accessories</span>
+      <div class="card-img"><span class="card-badge">☂️ Accessories</span>
         <img src="/image/sun&rain._AC_SL1500_.jpg" alt="SIEPASA Inverted Windproof Umbrella" loading="lazy"></div>
       <div class="card-body">
         <h3>SIEPASA Inverted Windproof Umbrella</h3>
-        <p>Upside-down folding design with C-shape handle. Windproof and UV-protective.</p>
-        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Inverted design keeps wet surfaces inside — you and your car stay dry. C-shape handle is hands-free for groceries or opening doors. Vented canopy won't flip inside-out in wind. UV protection doubles as sun shade.</p>
-        <a href="https://amzn.to/4wgWRiI" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe); color:#222;"><i class="fab fa-amazon"></i> View on Amazon</a>
+        <p class="desc">Upside-down folding design with C-shape handle. Windproof and UV-protective.</p>
+        <p class="benefits">✅ <strong>Uses & Benefits:</strong> Inverted design keeps wet surfaces inside — you and your car stay dry. C-shape handle is hands-free for groceries or opening doors. Vented canopy won't flip in wind. UV protection doubles as sun shade.</p>
+        <a href="https://amzn.to/4wgWRiI" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#4facfe,#00f2fe);color:#111;"><i class="fab fa-amazon"></i> View on Amazon</a>
       </div>
     </div>
 
-<!--54  Roses 27 Preserved Red Roses -->
-   
-   <div class="product-card" style="max-width: 400px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; font-family: 'Poppins', sans-serif; background: #fff;">
-    <div class="product-image" style="position: relative;">
-        <img src="https://m.media-amazon.com/images/I/81P8jC6L-XL._AC_SL1500_.jpg" 
-             alt="Perfectione Roses 27 Preserved Red Roses in White Box" 
-             style="width: 100%; display: block;">
-        <span style="position: absolute; top: 15px; left: 15px; background: #ff4d4d; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">Mother's Day Pick</span>
-    </div>
-    
-    <div class="product-info" style="padding: 20px;">
-        <h3 style="margin: 0 0 10px; color: #333; font-size: 1.2rem;">Perfectione Roses: 27 Preserved Eternal Roses</h3>
-        <p style="color: #666; font-size: 0.9rem; line-height: 1.5;">Luxurious real roses that last a year. Hand-picked and preserved at peak beauty. Perfect for birthdays, anniversaries, and special moments.</p>
-        
-        <div class="pricing" style="margin: 15px 0; display: flex; align-items: center; gap: 10px;">
-            <span style="font-size: 1.4rem; font-weight: bold; color: #2d5a27;">Shop Now</span>
-        </div>
-
-        <a href="https://amzn.to/4tpV4Fr" 
-           target="_blank" 
-           style="display: block; text-align: center; background: #2c3de0; color: #fff; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; transition: 0.3s;">
-           View on Amazon
-        </a>
-        <p style="font-size: 10px; color: #999; text-align: center; margin-top: 10px;">As an Amazon Associate, I earn from qualifying purchases.</p>
-    </div>
-</div> 
-
-
-   <!--55 Ring
-   <div class="product-card"  data-category="jewelry">
-    <div class="product-badge">Jewelr</div>
-    <div class="product-image">
-        <img src="images/ring 1._AC_SY535_.jpg" alt="FUTIMELY Boho Retro Stackable Rings">
-    </div>
-    <div class="product-info">
-        <span class="product-category">Jewelry & Accessories</span>
-        <h3 class="product-title">FUTIMELY Boho Retro Stackable Rings Sets for Women</h3>
-        <p class="product-desc">Knuckle Joint Finger Ring Sets with Moon and Stars. Perfect preppy statement jewelry for a trendy look.</p>
-        
-        <div class="product-price-row">
-            <span class="price-label">   View on Amazon  </span>
-            <a href="https://amzn.to/3QWlCk5" target="_blank" class="buy-btn">
-                View on Amazon <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-    </div>
-</div>-->
-
-    <!-- 55 Preserved Rose Gift Set -->
+    <!-- 54 Preserved Rose Gift Set -->
     <div class="product-card" data-category="gifts">
-      <div class="card-img"><span class="card-badge">Gifts</span>
+      <div class="card-img"><span class="card-badge">🎁 Gifts</span>
         <img src="/image/81Ab3F9MZGL._AC_SY535_.jpg" alt="Preserved Rose Gift Set" loading="lazy"></div>
       <div class="card-body">
         <h3>Preserved Rose Gift Set</h3>
-        <p>Forever Rose with Music Box & Necklace — the ultimate romantic gift.</p>
+        <p class="desc">Forever Rose with Music Box & Necklace — the ultimate romantic gift.</p>
         <p class="benefits">✅ <strong>Uses & Benefits:</strong> A real rose preserved to last forever — no watering, no wilting. Music box and necklace deliver an unforgettable emotional experience. The ultimate gift for anniversaries or Valentine's Day.</p>
         <a href="https://amzn.to/49khMaz" target="_blank" class="amazon-btn" style="background:linear-gradient(135deg,#e94560,#c0392b);">View on Amazon</a>
       </div>
     </div>
- 
+
+    <!-- FINAL AD SLOT -->
+    <div class="ad-slot">
+      <p>Advertisement</p>
+    </div>
+
   </div><!-- /productsGrid -->
-</div><!-- /products-section -->
+</div><!-- /page-wrap -->
 
-    
-    
-         
- <div style="max-width: 600px; margin: 0 auto 30px; padding: 0 20px;">
-    <input type="text" id="searchInput" placeholder="Search products..." 
-           style="width: 100%; padding: 12px 20px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white; outline: none;">
-</div> 
- 
-
-<div class="ad-slot">
-    <p class="ad-label"></p>
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="4465934207" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-   <div style="background: #fdfdfd; padding: 30px; border-radius: 15px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            <h3 style="margin-bottom: 20px; color: #333;">Get In Touch</h3>
-            <form action="https://formspree.io/f/xkoyzpvp" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                <input type="email" name="_replyto" placeholder="Your Email" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
-                <textarea name="message" rows="4" placeholder="How can I help you?" required style="padding: 12px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
-                
-                <input type="text" name="_gotcha" style="display:none">
-                
-                <button type="submit" style="background: #007bff; color: white; padding: 14px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;">
-                    Send Message
-                </button>
-            </form>
-        </div>
-
- 
-<footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 50px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto;">
-        
-        <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-            <h3 style="color: #2c3de0; margin-bottom: 15px;">Toolkit<span style="color: #fff;">Pro</span></h3>
-            <p style="font-size: 14px; line-height: 1.6; color: #bbb;">
-                Providing modern web utilities and curated lifestyle resources to simplify your digital workflow. Built with passion by Shaheera Sadia.
-            </p>
-        </div>
-
-        <div style="flex: 1; min-width: 150px; margin-bottom: 20px;">
-            <h4 style="margin-bottom: 15px; border-bottom: 2px solid #2c3de0; display: inline-block;">Quick Links</h4>
-            <ul style="list-style: none; padding: 0; font-size: 14px;">
-             
-              <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-               <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a> &nbsp;·&nbsp;
- 
-                <li style="margin-bottom: 8px;"><a href="index.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Home</a></li>
-                <li style="margin-bottom: 8px;"><a href="Resources.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Resources</a></li>
-                <li style="margin-bottom: 8px;"><a href="shopping.html" style="color: #bbb; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#fff'">Shopping Picks</a></li>
-            </ul>
-        </div>
-<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-    <h4 style="margin-bottom: 15px; border-bottom: 2px solid #2c3de0; display: inline-block;">Follow Me</h4>
-    <div style="display: flex; gap: 15px; margin-top: 10px;">
-        
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" style="text-decoration: none; cursor: pointer;">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 30px; filter: grayscale(100%) brightness(200%); transition: 0.3s;" onmouseover="this.style.filter='none'">
-        </a>
-
-        <a href="https://www.pinterest.com/shaheerasadia/" target="_blank" style="text-decoration: none; cursor: pointer;">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145808.png" alt="Pinterest" style="width: 30px; filter: grayscale(100%) brightness(200%); transition: 0.3s;" onmouseover="this.style.filter='none'">
-        </a>
-
+<!-- ══════════════════════════════
+     FOOTER — identical to index.html
+     ══════════════════════════════ -->
+<footer>
+  <div class="affiliate-footer">
+    📢 This page contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. This helps keep all Toolkit Pro tools free for everyone.
+  </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="footer-social-btn"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
-</div>
-        
-         
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      </ul>
     </div>
-
-    <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; font-size: 12px; color: #777;">
-        &copy; 2026 Toolkit Pro | Designed & Developed by **Shaheera Sadia**
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      </ul>
     </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
+        <li><a href="mailto:shaheerasadia@gmail.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
 </footer>
-  
+ 
+
+
  <script>
     // اگر یہ ویری ایبل اوپر کہیں پہلے سے ہے تو اسے دوبارہ نہ لکھیں
     if (typeof allProducts === 'undefined') {
@@ -1023,4 +1161,15 @@
  
 </body>
 </html>
+ 
+
+
+
+
+
+
+
+ 
+
+  
  
