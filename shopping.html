@@ -1112,7 +1112,13 @@
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
+// Show/hide ad slots and banner only on "all"
+    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
+    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
 
+    document.getElementById('productCount').textContent =
+      visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+  }
     // اگر یہ ویری ایبل اوپر کہیں پہلے سے ہے تو اسے دوبارہ نہ لکھیں
     if (typeof allProducts === 'undefined') {
         var allProducts = []; 
