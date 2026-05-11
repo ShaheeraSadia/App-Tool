@@ -109,11 +109,11 @@ nav {
   .menu-toggle { display: flex; }
   
   .nav-links {
-    position: absolute; top: 66px; left: -100%; width: 100%; height: calc(100vh - 66px);
+    position: absolute; top: 66px; right: -100%; width: 100%; height: calc(100vh - 66px);
     background: white; flex-direction: column; align-items: flex-start;
     padding: 20px; transition: 0.4s ease; overflow-y: auto; gap: 10px;
   }
-  .nav-links.active { left: 0; }
+  .nav-links.active { right: 0; }
   .nav-links li { width: 100%; }
   .nav-links a { display: block; width: 100%; padding: 12px; font-size: 16px; }
 
@@ -350,7 +350,7 @@ nav {
 </head>
 <body>
 
-<!-- ── NAV ── -->
+/*<!-- ── NAV 
 <nav id="home">
   <a href="/" class="nav-logo">
     <i class="fas fa-toolbox"></i>
@@ -372,7 +372,7 @@ nav {
       </div>
     </li>
    
-            <!-- PDF Tools Dropdown -->
+             PDF Tools Dropdown 
         <li class="nav-dropdown">
     <a href="#" class="nav-link" onclick="return false;">
         <i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i> PDF Tools
@@ -402,8 +402,55 @@ nav {
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
     <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
   </ul>
-</nav>
+</nav>*/
+-->
 
+  <nav id="home">
+  <a href="/" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  
+  <ul class="nav-links">
+    <li><a href="/" class="active"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li class="nav-dropdown">
+      <a href="#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a>
+      <div class="dropdown-menu">
+        <a href="#uploadArea"><i class="fas fa-compress-arrows-alt"></i>Image Compressor</a>
+        <a href="#palette-section"><i class="fas fa-palette"></i>Color Palette Extractor</a>
+        <a href="#nature-designer"><i class="fas fa-leaf"></i>Nature Quote Designer</a>
+      </div>
+    </li>
+    
+    <li class="nav-dropdown">
+      <a href="#" class="nav-link" onclick="return false;">
+          <i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i> PDF Tools
+          <i class="fas fa-chevron-down dropdown-arrow"></i>
+      </a>
+      <div class="dropdown-menu">
+          <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i> PDF Compressor</a>
+          <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i> Merge PDF</a>
+          <a href="#" onclick="alert('PDF to Image — Coming Soon!'); return false;"><i class="fas fa-exchange-alt"></i> PDF to Image</a>
+          <a href="#" onclick="alert('Image to PDF — Coming Soon!'); return false;"><i class="fas fa-file-image"></i> Image to PDF</a>
+      </div>
+    </li>
+
+    <li class="nav-dropdown">
+      <a href="#qr-section"><i class="fas fa-qrcode" style="margin-right:4px;font-size:11px;"></i>More Tools</a>
+      <div class="dropdown-menu">
+        <a href="#qr-section"><i class="fas fa-qrcode"></i>QR Code Generator</a>
+      </div>
+    </li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  </ul>
+</nav>
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-inner">
