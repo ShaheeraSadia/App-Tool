@@ -1091,35 +1091,34 @@
     </span>
   </div>
 </footer>
- 
+<script>
+    // ── FILTER FUNCTION ──────────────────────────────────────────
+    function filterProducts(category, btn) {
+        // ایکٹو بٹن کا اسٹائل تبدیل کریں
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
+        const cards = document.querySelectorAll('#productsGrid .product-card');
+        let visible = 0;
 
- <script>
-     // ── FILTER ───────────────────────────────────────────────────
-  function filterProducts(category, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+        cards.forEach(card => {
+            // کارڈ سے کیٹیگری حاصل کریں
+            const cat = (card.getAttribute('data-category') || '').toLowerCase();
+            const show = category === 'all' || cat === category;
+            
+            // کارڈ دکھائیں یا چھپائیں
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
 
-    const cards = document.querySelectorAll('#productsGrid .product-card');
-    const ads   = document.querySelectorAll('#productsGrid .ad-slot');
-    const banner= document.querySelectorAll('#productsGrid .audible-banner');
+        // رزلٹ کاؤنٹ اپ ڈیٹ کریں
+        const countEl = document.getElementById('productCount');
+        if (countEl) {
+            countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+        }
+    }
 
-    let visible = 0;
-
-    cards.forEach(card => {
-      const cat = (card.getAttribute('data-category') || '').toLowerCase();
-      const show = category === 'all' || cat === category;
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-// Show/hide ad slots and banner only on "all"
-    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
-    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
-
-    document.getElementById('productCount').textContent =
-      visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
-  }
-    // اگر یہ ویری ایبل اوپر کہیں پہلے سے ہے تو اسے دوبارہ نہ لکھیں
+    // ── DATA LOADING & RENDERING ──────────────────────────────────
     if (typeof allProducts === 'undefined') {
         var allProducts = []; 
     }
@@ -1136,8 +1135,6 @@
             })
             .catch(err => {
                 console.error("JSON Error:", err);
-                const grid = document.getElementById('productsGrid');
-                if(grid) grid.innerHTML = `<p style="color:red; padding:20px;">JSON Error: ${err.message}. Please check line 628 in products.json</p>`;
             });
     });
 
@@ -1159,8 +1156,9 @@
         grid.innerHTML = ''; 
 
         products.forEach(product => {
+            // اہم تبدیلی: یہاں 'data-category' شامل کیا گیا ہے
             const card = `
-                <div class="product-card">
+                <div class="product-card" data-category="${product.category || 'all'}">
                     <div class="card-img">
                         <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
                             ${product.badge || 'New'}
@@ -1180,8 +1178,16 @@
             `;
             grid.insertAdjacentHTML('beforeend', card);
         });
+
+        // ابتدائی کاؤنٹ
+        const countEl = document.getElementById('productCount');
+        if(countEl) countEl.textContent = products.length + ' Products Found';
     }
 </script>
+
+
+  
+
  
 </body>
 </html>
