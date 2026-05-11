@@ -79,6 +79,19 @@
     .dropdown-menu a i { font-size: 13px; color: var(--blue); width: 16px; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     .nav-shop:hover { opacity: .88 !important; background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; }
+    /* موبائل مینو ڈیزائن */
+@media screen and (max-width: 960px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        background: #ffffff;
+    }
 
     /* ── HERO ── */
     .hero {
