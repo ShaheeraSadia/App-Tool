@@ -67,6 +67,34 @@
       color: white !important; border-radius: 10px !important; font-weight: 600 !important;
     }
     .nav-shop:hover { opacity: .88 !important; }
+    /* --- New Mobile Menu Styles --- */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+.menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); transition: 0.3s; border-radius: 2px; }
+
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  .menu-toggle { display: flex; }
+  
+  .nav-links {
+    position: fixed; top: 66px; left: -100%; width: 80%; height: 100vh;
+    background: var(--white); flex-direction: column; align-items: flex-start;
+    padding: 30px 20px; transition: 0.4s ease; box-shadow: 10px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000; gap: 15px;
+  }
+  
+  .nav-links.active { left: 0; }
+  .nav-links li { width: 100%; }
+  .nav-links a { font-size: 16px; padding: 12px; display: block; border-bottom: 1px solid var(--blue-pale); }
+  
+  /* Dropdown Adjustments for Mobile */
+  .nav-dropdown:hover .dropdown-menu { display: none; }
+  .nav-dropdown.show-mobile .dropdown-menu { display: flex; position: static; box-shadow: none; width: 100%; border: none; background: var(--blue-pale); margin-top: 5px; }
+
+  /* Hamburger to X Animation */
+  .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
 
     /* ══════════════════════════════
        HERO — same gradient as index
@@ -268,11 +296,7 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       footer { padding: 40px 20px 24px; }
     }
-    /*mobile*/
-        @keyframes popIn {
-            from { opacity: 0; transform: scale(0.6) translateY(10px); }
-            to   { opacity: 1; transform: scale(1) translateY(0); }
-        }
+     
   </style>
 </head>
 <body>
@@ -1172,10 +1196,40 @@
         const countEl = document.getElementById('productCount');
         if(countEl) countEl.textContent = products.length + ' Products Found';
     }
-//mobile
-   document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
-        });
+
+  //mobile
+ const menuBtn = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+
+  // مینو کھولنے اور بند کرنے کے لیے
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuBtn.classList.toggle('is-active');
+  });
+
+  // موبائل پر ڈراپ ڈاؤن لنکس کو ہینڈل کرنے کے لیے
+  document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 960) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('show-mobile');
+      }
+    });
+  });
+// عام لنک پر کلک کرنے کے بعد مینیو بند کریں
+document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuBtn.classList.remove('is-active');
+  });
+});
+  // مینو کے باہر کلک کرنے پر بند ہو جائے
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('active');
+      menuBtn.classList.remove('is-active');
+    }
+  });
 </script>
 
 
