@@ -671,16 +671,17 @@
     "tags": ["Jewelry", "Aesthetic", "Boho Style", "Snake Ring"]
   },
   {
-    "id": 62,
-    "name": "wedding-hair-comb-pins-set",
-    "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
-    "category": "jewelry",
-    "badge": "Jewelry",
-    "image": "/image/white6._SL1500_.jpg",
-    "price": "Check Price on Amazon",
-    "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers. Includes 5 pieces of combs and pins in silver plating, perfect for brides, bridesmaids, and women.",
-    "amazonLink": "https://amzn.to/4fax59x",
-    "tags": ["Accessories", "Wedding", "Bridal", "Aesthetic", "Silver Jewelry"]
+        "id": 62,
+        "name": "wedding-hair-comb-pins-set",
+        "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
+        "category": "jewelry",
+        "badge": "Jewelry",
+        "image": "/image/white6._SL1500_.jpg",
+        "price": "Check Price on Amazon",
+        "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers.",
+        "amazonLink": "https://amzn.to/4fax59x",
+        "btnColor": "#c5a48e",
+        "tags": ["Bridal", "Wedding", "Silver"] 
   }
 ]
 
