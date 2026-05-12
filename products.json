@@ -594,16 +594,16 @@
     "btnColor": "#e94560"
   },
   {
-  "id": 55,
-  "name": "Luxury Red Eternal Roses",
-  "category": "gifts",
-  "badge": "Gifts",
-  "image": "/image/red rose._AC_SL1500_.jpg", 
-  "altText": "Premium red eternal roses in a round white gift box with red ribbon",
-  "description": "Exquisite eternal red roses arranged in a premium white box. A perfect aesthetic gift for anniversaries and special moments.",
-  "amazonLink": "https://amzn.to/4tpV4Fr",
-  "btnColor": "#b91c1c"
-},
+    "id": 55,
+    "name": "Luxury Red Eternal Roses",
+    "category": "gifts",
+    "badge": "Gifts",
+    "image": "/image/red rose._AC_SL1500_.jpg",
+    "altText": "Premium red eternal roses in a round white gift box with red ribbon",
+    "description": "Exquisite eternal red roses arranged in a premium white box. A perfect aesthetic gift for anniversaries and special moments.",
+    "amazonLink": "https://amzn.to/4tpV4Fr",
+    "btnColor": "#b91c1c"
+  },
   {
     "id": 56,
     "name": "Maitys 44 Pcs Wedding Hair Accessories",
@@ -613,7 +613,7 @@
     "image": "/image/44._SL1500_.jpg",
     "amazonLink": "https://amzn.to/4d1eH1I",
     "btnColor": "#b1907b"
-}, 
+  },
   {
     "id": 57,
     "name": "FUTIMELY Boho Retro Stackable Rings Set",
@@ -624,11 +624,10 @@
     "benefits": "Perfect for stacking or wearing individually to match your daily boho style.",
     "amazonLink": "https://amzn.to/3QWlCk5",
     "btnColor": "linear-gradient(135deg,#e6b980,#eacda3)"
- },
+  },
   {
     "id": 58,
     "name": "Handmade Leaf Crystal Bridal Headpiece",
- 
     "category": "jewelry",
     "badge": "Jewelry",
     "altText": "Handmade Leaf Crystal Bridal Headpiece for Wedding and Prom Hairstyles",
@@ -636,51 +635,52 @@
     "image": "/image/Leaf Crystal Bridal HeadpiecesAC_SY535_.jpg",
     "amazonLink": "https://amzn.to/4eCjyHQ",
     "btnColor": "#c5a48e"
-},
+  },
   {
-  "id": 59,
-  "name": "VALITIC Kojic Acid Dark Spot Remover Soap",
-  "category": "beauty",
-  "badge": "Beauty",
-  "image": "/image/beauty sope_SL1280_.jpg",
-  "description": "Original Japanese Complex with Vitamin C, Retinol, and Collagen for radiant skin.",
-  "benefits": "Improves skin texture, fades acne marks, and reduces dark spots. Infused with Turmeric, Hyaluronic Acid, and Shea Butter for deep nourishment. Suitable for evening skin tone and daily facial cleansing.",
-  "amazonLink": "https://amzn.to/4nceXhw",
-  "btnColor": "linear-gradient(135deg,#f6d365,#fda085)"
-},
+    "id": 59,
+    "name": "VALITIC Kojic Acid Dark Spot Remover Soap",
+    "category": "beauty",
+    "badge": "Beauty",
+    "image": "/image/beauty sope_SL1280_.jpg",
+    "description": "Original Japanese Complex with Vitamin C, Retinol, and Collagen for radiant skin.",
+    "benefits": "Improves skin texture, fades acne marks, and reduces dark spots. Infused with Turmeric, Hyaluronic Acid, and Shea Butter for deep nourishment. Suitable for evening skin tone and daily facial cleansing.",
+    "amazonLink": "https://amzn.to/4nceXhw",
+    "btnColor": "linear-gradient(135deg,#f6d365,#fda085)"
+  },
   {
-  "id": 60,
-  "name": "Skylight 15-inch Digital Wall Calendar",
-  "category": "decor",
-  "badge": "Home",
-  "image": "/image/calender._AC_SL1500_.jpg",
-  "description": "15-inch Smart Touchscreen Wall Planner and Chore Chart for family organization.",
-  "benefits": "Perfect for organizing family schedules and chores in 2026. The large 15-inch interactive display makes it easy for everyone to stay on track. Includes a wall mount for a clean, aesthetic look in your kitchen or hallway.",
-  "amazonLink": "https://amzn.to/4d7FSqi",
-  "btnColor": "linear-gradient(135deg,#764ba2,#667eea)"
-},
+    "id": 60,
+    "name": "Skylight 15-inch Digital Wall Calendar",
+    "category": "decor",
+    "badge": "Home",
+    "image": "/image/calender._AC_SL1500_.jpg",
+    "description": "15-inch Smart Touchscreen Wall Planner and Chore Chart for family organization.",
+    "benefits": "Perfect for organizing family schedules and chores in 2026. The large 15-inch interactive display makes it easy for everyone to stay on track. Includes a wall mount for a clean, aesthetic look in your kitchen or hallway.",
+    "amazonLink": "https://amzn.to/4d7FSqi",
+    "btnColor": "linear-gradient(135deg,#764ba2,#667eea)"
+  },
   {
-  "id" :61,
-  "name":  "green-gemstone-ring-set",
-  "title": "Green Gemstone & Snake Ring Set",
-  "category": "jewelry",
-  "badge": "Jewelry"
-  "image": "/image/ring green._AC_SY535_.jpg",
-  "price": "Check Price on Amazon",
-  "description": "Bohemian style Green Gemstone Ring Set for Women. Features Emerald Crystal Heart and Gothic Punk Snake designs in gold plating. Perfect for knuckle finger stacking.",
-  "amazonLink": "https://amzn.to/4u4Af3w",
-  "tags": ["Jewelry", "Aesthetic", "Boho Style", "Snake Ring"]
-},
+    "id": 61,
+    "name": "green-gemstone-ring-set",
+    "title": "Green Gemstone & Snake Ring Set",
+    "category": "jewelry",
+    "badge": "Jewelry",
+    "image": "/image/ring green._AC_SY535_.jpg",
+    "price": "Check Price on Amazon",
+    "description": "Bohemian style Green Gemstone Ring Set for Women. Features Emerald Crystal Heart and Gothic Punk Snake designs in gold plating. Perfect for knuckle finger stacking.",
+    "amazonLink": "https://amzn.to/4u4Af3w",
+    "tags": ["Jewelry", "Aesthetic", "Boho Style", "Snake Ring"]
+  },
   {
-  "id": 62,
-  "name": "wedding-hair-comb-pins-set",
-  "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
-  "category": "jewelry",
-  "badge": "Jewelry",
-  "image": "/image/white6 ._SL1500_.jpg",
-  "price": "Check Price on Amazon",
-  "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers. Includes 5 pieces of combs and pins in silver plating, perfect for brides, bridesmaids, and women.",
-  "amazonLink": "https://amzn.to/4fax59x",
-  "tags": ["Accessories", "Wedding", "Bridal", "Aesthetic", "Silver Jewelry"]
-}
+    "id": 62,
+    "name": "wedding-hair-comb-pins-set",
+    "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
+    "category": "jewelry",
+    "badge": "Jewelry",
+    "image": "/image/white6._SL1500_.jpg",
+    "price": "Check Price on Amazon",
+    "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers. Includes 5 pieces of combs and pins in silver plating, perfect for brides, bridesmaids, and women.",
+    "amazonLink": "https://amzn.to/4fax59x",
+    "tags": ["Accessories", "Wedding", "Bridal", "Aesthetic", "Silver Jewelry"]
+  }
+]
 ]
