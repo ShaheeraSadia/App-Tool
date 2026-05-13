@@ -718,7 +718,7 @@
     "price": "Check Price on Amazon",
     "category": "Decor",
     "amazon_link": "https://amzn.to/49Ke3Dr",
-    "btnColor": "#c5a48e"
+    "btnColor": "#c5a48e",
     "tags": ["Blue Tree", "Abstract Art", "Large Wall Decor", "Watercolour"]
   },
     {
@@ -729,7 +729,7 @@
     "price": "Check Price on Amazon",
     "category": "Jewelry",
     "amazon_link": "https://amzn.to/3PfqeBl",
-    "btnColor": "linear-gradient(135deg,#e6b980,#eacda3)"   
+    "btnColor": "linear-gradient(135deg,#e6b980,#eacda3)",   
     "tags": ["Bridal Hair Accessories", "Wedding Jewelry", "Silver Hair Clip", "JAKAWIN"]
   },
     {
@@ -740,7 +740,7 @@
     "price": "$39.99",
     "category": "Health",
     "amazon_link": "https://amzn.to/4tlHYJ8",
-    "btnColor": "linear-gradient(135deg,#4facfe,#00f2fe)"
+    "btnColor": "linear-gradient(135deg,#4facfe,#00f2fe)",
     "tags": ["Massager", "Gifts for Mom", "Self Care", "Health Gadgets"]
   }
 ]
