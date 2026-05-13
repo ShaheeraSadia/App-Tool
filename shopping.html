@@ -296,7 +296,8 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       footer { padding: 40px 20px 24px; }
     }
-     
+    /*banner*/
+     .full-width-banner { grid-column: 1 / -1; }
   </style>
 </head>
 <body>
@@ -1135,37 +1136,37 @@
     </span>
   </div>
 </footer>
-<script>
+ 
 
- 
- 
+
+
+  <script>
     // ── FILTER FUNCTION ──────────────────────────────────────────
     function filterProducts(category, btn) {
         // ایکٹو بٹن کا اسٹائل تبدیل کریں
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-       btn.classList.add('active');
+        btn.classList.add('active');
 
         const cards = document.querySelectorAll('#productsGrid .product-card');
-       let visible = 0;
+        const specialBanners = document.querySelectorAll('.full-width-banner'); // بینر سلیکٹر
+        let visible = 0;
 
-       cards.forEach(card => {
-            // کارڈ سے کیٹیگری حاصل کریں
-           const cat = (card.getAttribute('data-category') || '').toLowerCase();
-           const show = category === 'all' || cat === category;
+        // بینر اور ایڈز کو صرف 'all' کیٹیگری پر دکھائیں
+        specialBanners.forEach(b => b.style.display = category === 'all' ? 'block' : 'none');
+
+        cards.forEach(card => {
+            const cat = (card.getAttribute('data-category') || '').toLowerCase();
+            const show = category === 'all' || cat === category;
             
-            // کارڈ دکھائیں یا چھپائیں
-          card.style.display = show ? '' : 'none';
-           if (show) visible++;
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
         });
 
-        // رزلٹ کاؤنٹ اپ ڈیٹ کریں
-       const countEl = document.getElementById('productCount');
-       if (countEl) {
-         countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
-       }
-   }
-
-  
+        const countEl = document.getElementById('productCount');
+        if (countEl) {
+            countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+        }
+    }
 
     // ── DATA LOADING & RENDERING ──────────────────────────────────
     if (typeof allProducts === 'undefined') {
@@ -1205,73 +1206,86 @@
         grid.innerHTML = ''; 
 
         products.forEach(product => {
-            // اہم تبدیلی: یہاں 'data-category' شامل کیا گیا ہے
-            const card = `
-                <div class="product-card" data-category="${product.category || 'all'}">
-                    <div class="card-img">
-                        <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
-                            ${product.badge || 'New'}
-                        </span>
-                        <a href="shopping.html?id=${product.id}">
-                            <img src="${product.image}" alt="${product.name}" onerror="this.src='image/placeholder.jpg'">
-                        </a>
+            // اگر یہ آڈیبل آفر ہے تو اسے بینر کے طور پر رینڈر کریں
+            if (product.name === "audible-premium-plus-offer") {
+                const bannerHTML = `
+                    <div class="full-width-banner" data-category="all">
+                        <div class="banner-inner">
+                            <img src="${product.image}" alt="Audible" onerror="this.src='image/placeholder.jpg'">
+                            <div class="banner-content">
+                                <h3>🎧 ${product.title}</h3>
+                                <p>${product.description}</p>
+                                <a href="${product.amazonLink}" target="_blank" class="banner-btn">
+                                    <i class="fab fa-amazon"></i> Claim Your Free Month →
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
-                            <i class="fab fa-amazon"></i> View on Amazon
-                        </a>
+                `;
+                grid.insertAdjacentHTML('beforeend', bannerHTML);
+            } else {
+                // عام پروڈکٹ کارڈ
+                const cardHTML = `
+                    <div class="product-card" data-category="${product.category || 'all'}">
+                        <div class="card-img">
+                            <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
+                                ${product.badge || 'New'}
+                            </span>
+                            <a href="shopping.html?id=${product.id}">
+                                <img src="${product.image}" alt="${product.name}" onerror="this.src='image/placeholder.jpg'">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
+                                <i class="fab fa-amazon"></i> View on Amazon
+                            </a>
+                        </div>
                     </div>
-                </div>
-            `;
-            grid.insertAdjacentHTML('beforeend', card);
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            }
         });
 
-        // ابتدائی کاؤنٹ
         const countEl = document.getElementById('productCount');
         if(countEl) countEl.textContent = products.length + ' Products Found';
     }
- // Show/hide ad slots and banner only on "all"
-    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
-    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
-  //mobile
- const menuBtn = document.getElementById('mobile-menu');
-  const navLinks = document.getElementById('nav-links');
 
-  // مینو کھولنے اور بند کرنے کے لیے
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.classList.toggle('is-active');
-  });
+    // ── MOBILE MENU LOGIC ──────────────────────────────────────────
+    const menuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
 
-  // موبائل پر ڈراپ ڈاؤن لنکس کو ہینڈل کرنے کے لیے
-  document.querySelectorAll('.nav-dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 960) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('show-mobile');
-      }
-    });
-  });
-// عام لنک پر کلک کرنے کے بعد مینیو بند کریں
-document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    menuBtn.classList.remove('is-active');
-  });
-});
-  // مینو کے باہر کلک کرنے پر بند ہو جائے
-  document.addEventListener('click', (e) => {
-    if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('active');
-      menuBtn.classList.remove('is-active');
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('is-active');
+        });
+
+        document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 960) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('show-mobile');
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('is-active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('is-active');
+            }
+        });
     }
-  });
 </script>
-
-
-  
 
  
 </body>
