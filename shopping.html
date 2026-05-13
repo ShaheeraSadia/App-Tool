@@ -371,27 +371,15 @@
  
 <div class="page-wrap">
   <p class="section-title" id="productCount">54 Products Found</p>
-<!-- بینر اب گریڈ سے باہر ہے تاکہ JS اسے ڈیلیٹ نہ کرے -->
-    <div id="specialAudibleBanner" class="audible-banner-hero">
-        <div class="banner-flex">
-            <img src="/image/main-4193sswC8QL.jpg" alt="Audible Premium Plus" onerror="this.src='https://via.placeholder.com/150'">
-            <div class="banner-details">
-                <h3>🎧 Elevate Your Workflow</h3>
-                <p>Get 30 days of <strong>Audible Premium Plus</strong> for free.</p>
-                <a class="audible-btn" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank">
-                    <i class="fab fa-amazon"></i> Claim Your Free Month →
-                </a>
-            </div>
-        </div>
-    </div>
+ 
   <div class="products-grid" id="productsGrid">
-<!-- AUDIBLE BANNER 
+<!-- AUDIBLE BANNER -->
     <div class="audible-banner" data-category="all">
       <img src="/image/main 4193sswC8QL.jpg" alt="Audible Premium Plus" onerror="this.style.display='none'">
       <div>
         <h3>🎧 Elevate Your Workflow</h3>
         <p>Get 30 days of <strong>Audible Premium Plus</strong> for free. Listen to world-class tech books while you build the next big thing.</p>
-        <a class="audible-btn" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank"><i class="fab fa-amazon"></i> Claim Your Free Month →</a>-->
+        <a class="audible-btn" href="https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20" target="_blank"><i class="fab fa-amazon"></i> Claim Your Free Month →</a>
      
       </div>
     </div>
@@ -1149,61 +1137,33 @@
 </footer>
 <script>
 
-function filterProducts(category, btn) {
-    // ایکٹو بٹن کا اسٹائل تبدیل کریں
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const cards = document.querySelectorAll('#productsGrid .product-card');
-    let visible = 0;
-
-    // بینر کو ہینڈل کریں
-    const specialBanner = document.getElementById('specialAudibleBanner');
-    if (specialBanner) {
-        // بینر صرف تب نظر آئے گا جب 'all' سلیکٹ ہو
-        specialBanner.style.display = (category === 'all') ? 'block' : 'none';
-    }
-
-    cards.forEach(card => {
-        const cat = (card.getAttribute('data-category') || '').toLowerCase();
-        const show = category === 'all' || cat === category;
-        
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-    });
-
-    const countEl = document.getElementById('productCount');
-    if (countEl) {
-        countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
-    }
-}
  
  
     // ── FILTER FUNCTION ──────────────────────────────────────────
-  //  function filterProducts(category, btn) {
+    function filterProducts(category, btn) {
         // ایکٹو بٹن کا اسٹائل تبدیل کریں
-     //   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      //  btn.classList.add('active');
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+       btn.classList.add('active');
 
-      //  const cards = document.querySelectorAll('#productsGrid .product-card');
-     //   let visible = 0;
+        const cards = document.querySelectorAll('#productsGrid .product-card');
+       let visible = 0;
 
-    //    cards.forEach(card => {
+       cards.forEach(card => {
             // کارڈ سے کیٹیگری حاصل کریں
-        //    const cat = (card.getAttribute('data-category') || '').toLowerCase();
-        //    const show = category === 'all' || cat === category;
+           const cat = (card.getAttribute('data-category') || '').toLowerCase();
+           const show = category === 'all' || cat === category;
             
             // کارڈ دکھائیں یا چھپائیں
-        //    card.style.display = show ? '' : 'none';
-       //     if (show) visible++;
-      //  });
+          card.style.display = show ? '' : 'none';
+           if (show) visible++;
+        });
 
         // رزلٹ کاؤنٹ اپ ڈیٹ کریں
-   //    const countEl = document.getElementById('productCount');
-  //      if (countEl) {
- //           countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
-   //     }
-//    }
+       const countEl = document.getElementById('productCount');
+       if (countEl) {
+         countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+       }
+   }
 
   
 
