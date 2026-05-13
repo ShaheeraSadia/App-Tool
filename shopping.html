@@ -661,74 +661,157 @@
   </div>
 </footer>
 
-<script>
-  // ── FILTER ──────────────────────────────────────────────────────
-  function filterProducts(category, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  <script>
+    // ── FILTER FUNCTION ──────────────────────────────────────────
+    function filterProducts(category, btn) {
+        // ایکٹو بٹن کا اسٹائل تبدیل کریں
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-    const cards = document.querySelectorAll('#productsGrid .product-card');
-    const ads   = document.querySelectorAll('#productsGrid .ad-slot');
-    const banner= document.getElementById('audibleBanner');
-    let visible = 0;
+        const cards = document.querySelectorAll('#productsGrid .product-card');
+        const specialBanners = document.querySelectorAll('.full-width-banner'); // بینر سلیکٹر
+        let visible = 0;
 
-    cards.forEach(card => {
-      const cat  = (card.getAttribute('data-category') || '').toLowerCase();
-      const show = category === 'all' || cat === category;
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
+        // بینر اور ایڈز کو صرف 'all' کیٹیگری پر دکھائیں
+        specialBanners.forEach(b => b.style.display = category === 'all' ? 'block' : 'none');
 
-    // Show banner and ads only on "All"
-    if (banner) banner.style.display = category === 'all' ? '' : 'none';
-    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
+        cards.forEach(card => {
+            const cat = (card.getAttribute('data-category') || '').toLowerCase();
+            const show = category === 'all' || cat === category;
+            
+            card.style.display = show ? '' : 'none';
+            if (show) visible++;
+        });
 
-    document.getElementById('productCount').textContent =
-      visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
-  }
-
-  // ── MOBILE MENU ──────────────────────────────────────────────────
-  const menuBtn  = document.getElementById('mobile-menu');
-  const navLinks = document.getElementById('nav-links');
-
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.classList.toggle('is-active');
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      menuBtn.classList.remove('is-active');
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('active');
-      menuBtn.classList.remove('is-active');
+        const countEl = document.getElementById('productCount');
+        if (countEl) {
+            countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
+        }
     }
-  });
+
+    // ── DATA LOADING & RENDERING ──────────────────────────────────
+    if (typeof allProducts === 'undefined') {
+        var allProducts = []; 
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('products.json')
+            .then(res => {
+                if (!res.ok) throw new Error("JSON file not found");
+                return res.json();
+            })
+            .then(data => {
+                allProducts = data;
+                renderPage();
+            })
+            .catch(err => {
+                console.error("JSON Error:", err);
+            });
+    });
+
+    function renderPage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (productId) {
+            const singleProduct = allProducts.filter(p => p.id == productId);
+            displayProducts(singleProduct);
+        } else {
+            displayProducts(allProducts);
+        }
+    }
+
+    function displayProducts(products) {
+        const grid = document.getElementById('productsGrid');
+        if(!grid) return;
+        grid.innerHTML = ''; 
+
+        products.forEach(product => {
+            // اگر یہ آڈیبل آفر ہے تو اسے بینر کے طور پر رینڈر کریں
+            if (product.name === "audible-premium-plus-offer") {
+                const bannerHTML = `
+                    <div class="full-width-banner" data-category="all">
+                        <div class="banner-inner">
+                            <img src="${product.image}" alt="Audible" onerror="this.src='image/placeholder.jpg'">
+                            <div class="banner-content">
+                                <h3>🎧 ${product.title}</h3>
+                                <p>${product.description}</p>
+                                <a href="${product.amazonLink}" target="_blank" class="banner-btn">
+                                    <i class="fab fa-amazon"></i> Claim Your Free Month →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', bannerHTML);
+            }  else {
+                // عام پروڈکٹ کارڈ
+                const cardHTML = `
+                    <div class="product-card" data-category="${product.category || 'all'}">
+                        <div class="card-img">
+                            <span class="card-badge" style="background: ${product.btnColor || '#c5a48e'}">
+                                ${product.badge || 'New'}
+                            </span>
+                            <a href="shopping.html?id=${product.id}">
+                                <img src="${product.image}" alt="${product.name}" onerror="this.src='image/placeholder.jpg'">
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3>${product.name}</h3>
+                            <p>${product.description}</p>
+                            <a href="${product.amazonLink}" target="_blank" class="amazon-btn" style="background: ${product.btnColor}">
+                                <i class="fab fa-amazon"></i> View on Amazon
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            }
+        });
+
+        const countEl = document.getElementById('productCount');
+        if(countEl) countEl.textContent = products.length + ' Products Found';
+    }
+ 
+    // ── MOBILE MENU LOGIC ──────────────────────────────────────────
+    const menuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('is-active');
+        });
+
+        document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 960) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('show-mobile');
+                }
+            });
+        });
+
+        document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('is-active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('is-active');
+            }
+        });
+    }
 </script>
+
+ 
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  
