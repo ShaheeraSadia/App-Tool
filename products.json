@@ -1,4 +1,18 @@
 [
+   {
+  "id": 66,
+  "name": "audible-premium-plus-offer",
+  "title": "Audible Premium Plus Free Trial",
+  "category": "all",
+  "badge": "Special Offer",
+  "image": "/image/main 4193sswC8QL.jpg",
+  "price": "Free for 30 Days",
+  "description": "🎧 Elevate Your Workflow. Get 30 days of Audible Premium Plus for free. Listen to world-class tech and business books while you build the next big project.",
+  "amazonLink": "https://www.amazon.com/hz/audible/mlp/membership/premiumplus?tag=withsadia200d-20",
+  "btnColor": "#f1912d",
+  "isBanner": true,
+  "tags": ["Books", "Tech", "Productivity", "Freebie"]
+},
   {
     "id": 1,
     "name": "Motorola razr+ | 2023",
