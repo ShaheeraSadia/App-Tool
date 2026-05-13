@@ -708,6 +708,16 @@
     "badge": "Home Decor",
     "amazon_link": "https://amzn.to/4dmlstE",
     "tags": ["Red Flowers", "Wall Art", "Modern Decor", "Canvas Print"]
+  },
+    {
+    "id": 2,
+    "title": "Blue Tree Wall Paintings Canvas Art",
+    "description": "Large farmhouse abstract watercolour blue tree artwork. Perfect for living room, bedroom, or office wall decor. Ready to hang, 20x40 inches.",
+    "image": "image/BlueTreeWall._AC_SL1500_.jpg",
+    "price": "Check Price on Amazon",
+    "category": "Decor",
+    "amazon_link": "https://amzn.to/49Ke3Dr",
+    "tags": ["Blue Tree", "Abstract Art", "Large Wall Decor", "Watercolour"]
   }
 ]
 
