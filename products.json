@@ -682,6 +682,19 @@
         "amazonLink": "https://amzn.to/4fax59x",
         "btnColor": "#c5a48e",
         "tags": ["Bridal", "Wedding", "Silver"] 
-  }
+  },
+  {
+  "id": 63,
+  "name": "solar-garden-moon-lights",
+  "title": "Solar Garden Hanging Moon Lights",
+  "category": "decor",
+  "badge": "Home Decor",
+  "image": "/image/moon._AC_SL1500_.jpg",
+  "price": "Check Price on Amazon",
+  "description": "Unique Solar-powered Metal Moon Lanterns for outdoor decoration. Features an aesthetic crescent moon design with warm LED lights, perfect for garden, patio, or as a thoughtful gardening gift.",
+  "amazonLink": "https://amzn.to/4dj5YXy",
+  "btnColor": "linear-gradient(135deg, #1e3a8a, #3b82f6)",
+  "tags": ["Decor", "Outdoor", "Aesthetic", "Eco-Friendly"]
+}
 ]
 
