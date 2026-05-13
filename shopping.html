@@ -224,7 +224,7 @@
     /* ══════════════════════════════
        AUDIBLE BANNER (full-width card)
        ══════════════════════════════ */
-   /* .audible-banner {
+    .audible-banner {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%);
       color: white; border-radius: var(--radius); padding: 28px 32px;
       display: flex; align-items: center; gap: 24px;
@@ -239,7 +239,7 @@
       border-radius: 10px; font-weight: 700; font-size: 14px;
       text-decoration: none; transition: opacity .2s, transform .15s;
     }
-    .audible-btn:hover { opacity: .9; transform: translateY(-2px); }*/
+    .audible-btn:hover { opacity: .9; transform: translateY(-2px); }
 
     /* ══════════════════════════════
        FOOTER — identical to index.html
@@ -300,76 +300,9 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       footer { padding: 40px 20px 24px; }
     }
+     /*banner*/
+     .full-width-banner { grid-column: 1 / -1; }
     
-    
-    /* Banner*/
- /* ══════════════════════════════
-   AUDIBLE BANNER (full-width card)
-   ══════════════════════════════ */
-.audible-banner {
-    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%);
-    color: white; 
-    border-radius: var(--radius); 
-    padding: 24px 30px; /* تھوڑا کم کیا تاکہ جگہ کم گھیرے */
-    display: flex; 
-    align-items: center; 
-    gap: 24px;
-    grid-column: 1 / -1 !important; /* یہ لازمی ہے تاکہ پورا کالم کور ہو */
-    box-shadow: var(--shadow-md);
-    margin: 20px 0;
-    overflow: hidden;
-}
-
-.audible-banner img { 
-    width: 100px; /* سائز تھوڑا بڑھایا تاکہ واضح ہو */
-    height: auto;
-    border-radius: 12px; 
-    flex-shrink: 0; 
-    object-fit: contain; 
-    background: white; 
-    padding: 5px; 
-}
-
-.audible-banner h3 { 
-    font-family: 'Lora', serif; 
-    font-size: 20px; 
-    margin-bottom: 6px; 
-}
-
-.audible-banner p { 
-    font-size: 14px; 
-    opacity: .95; 
-    margin-bottom: 14px; 
-    line-height: 1.5; 
-    max-width: 600px; /* ٹیکسٹ کو بہت زیادہ پھیلنے سے روکنے کے لیے */
-}
-
-.audible-btn {
-    display: inline-flex; 
-    align-items: center; 
-    gap: 8px;
-    background: #FF9900; 
-    color: #111 !important; /* رنگ کو کالا رکھنے کے لیے */
-    padding: 10px 20px;
-    border-radius: 10px; 
-    font-weight: 700; 
-    font-size: 14px;
-    text-decoration: none; 
-    transition: opacity .2s, transform .15s;
-    white-space: nowrap; /* ٹیکسٹ کو دو لائنوں میں جانے سے روکے گا */
-}
-
-/* موبائل کے لیے رسپانسیو ایڈجسٹمنٹ */
-@media (max-width: 768px) {
-    .audible-banner {
-        flex-direction: column; /* موبائل پر تصویر اور ٹیکسٹ اوپر نیچے ہوں گے */
-        text-align: center;
-        padding: 20px;
-    }
-    .audible-banner p {
-        max-width: 100%;
-    }
-}
   </style>
 </head>
 <body>
