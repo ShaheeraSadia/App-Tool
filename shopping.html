@@ -300,9 +300,33 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       footer { padding: 40px 20px 24px; }
     }
-     /*banner*/
-     .full-width-banner { grid-column: 1 / -1; }
-    
+  
+    /* بینر کو پوری چوڑائی دینے کے لیے */
+.full-width-banner {
+    grid-column: 1 / -1 !important; /* یہ لائن بینر کو پورے گریڈ پر پھیلا دے گی */
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+}
+
+/* بینر کا اندرونی ڈیزائن (image_48bfad.jpg کے مطابق) */
+.banner-inner {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+}
+
+/* موبائل کے لیے سیٹنگز */
+@media (max-width: 768px) {
+    .banner-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
   </style>
 </head>
 <body>
