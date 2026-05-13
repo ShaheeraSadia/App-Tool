@@ -1296,7 +1296,8 @@
                     </div>
                 `;
                 grid.insertAdjacentHTML('beforeend', bannerHTML);
-            }*/// displayProducts فنکشن کے اندر اس حصے کو بدلیں
+            }*/
+          // displayProducts فنکشن کے اندر اس حصے کو بدلیں
 if (product.name === "audible-premium-plus-offer") {
     const bannerHTML = `
         <div class="full-width-banner" data-category="all">
@@ -1341,7 +1342,10 @@ if (product.name === "audible-premium-plus-offer") {
         const countEl = document.getElementById('productCount');
         if(countEl) countEl.textContent = products.length + ' Products Found';
     }
-
+// اس لائن کو 'filterProducts' فنکشن کے آخر میں اپ ڈیٹ کریں
+if (countEl) {
+    countEl.textContent = visible + (visible === 1 ? ' Product' : ' Products') + ' Found';
+}
     // ── MOBILE MENU LOGIC ──────────────────────────────────────────
     const menuBtn = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
