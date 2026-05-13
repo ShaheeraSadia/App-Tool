@@ -224,7 +224,34 @@
     cursor: pointer; 
     transition: transform 0.2s, opacity 0.2s; 
 }
+.contact-header-center {
+    text-align: center; /* تمام ٹیکسٹ کو سینٹر کرنے کے لیے */
+    margin-bottom: 50px; /* نیچے والے کارڈز سے فاصلہ */
+    padding: 0 20px;
+}
 
+.contact-header-center .sub-tag {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.contact-header-center h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.contact-header-center p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 600px; /* پیراگراف کی چوڑائی محدود کرنے سے وہ سینٹر میں بہتر لگتا ہے */
+    margin: 0 auto; /* پیراگراف کو افقی طور پر سینٹر کرنے کے لیے */
+    line-height: 1.6;
+}
 .contact-submit:hover { 
     opacity: 0.9; 
     transform: translateY(-2px); /* تھوڑا اوپر اٹھنے کا اثر */
