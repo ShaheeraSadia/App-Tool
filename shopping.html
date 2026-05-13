@@ -1138,17 +1138,7 @@
 <script>
 
 
-  products.forEach(product => {
-    // چیک کریں کہ کیا یہ بینر ہے
-    const isBannerClass = product.isBanner ? 'audible-special-card' : '';
-    
-    //const card = `
-       // <div class="product-card ${isBannerClass}" data-category="${product.category}">
-       //     <!-- باقی کارڈ کا کوڈ یہاں آئے گا -->
-      //  </div>
-  //  `;
-    // ...
-});
+ 
  
     // ── FILTER FUNCTION ──────────────────────────────────────────
     function filterProducts(category, btn) {
@@ -1175,6 +1165,10 @@
             countEl.textContent = visible + ' Product' + (visible !== 1 ? 's' : '') + ' Found';
         }
     }
+
+  // Show/hide ad slots and banner only on "all"
+    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
+    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
 
     // ── DATA LOADING & RENDERING ──────────────────────────────────
     if (typeof allProducts === 'undefined') {
