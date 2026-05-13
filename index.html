@@ -802,9 +802,9 @@ function renderDesign() {
     dCtx.fillStyle=g; dCtx.fillRect(0,0,W,H);
   }
   const cx=W*.1,cy=H*.15,cw=W*.8,ch=H*.7;
-  dCtx.save(); dCtx.beginPath(); dCtx.roundRect(cx,cy,cw,ch,18);
-  dCtx.fillStyle='rgba(255,255,255,0.18)'; dCtx.fill();
-  dCtx.strokeStyle='rgba(255,255,255,0.45)'; dCtx.lineWidth=1.5; dCtx.stroke(); dCtx.restore();
+  //dCtx.save(); dCtx.beginPath(); dCtx.roundRect(cx,cy,cw,ch,18);
+  //dCtx.fillStyle='rgba(255,255,255,0.18)'; dCtx.fill();
+  //dCtx.strokeStyle='rgba(255,255,255,0.45)'; dCtx.lineWidth=1.5; dCtx.stroke(); dCtx.restore();
   const quote = document.getElementById('designQuote').value.trim() || '"Your Aesthetic Quote Here"';
   dCtx.save();
   dCtx.fillStyle='#fff'; dCtx.shadowColor='rgba(0,0,0,0.5)'; dCtx.shadowBlur=6; dCtx.shadowOffsetY=2;
