@@ -219,51 +219,7 @@
 
 
 
-
-    /* مین بینر کنٹینر */
-.audible-hero-banner {
-    width: 100%;
-    max-height: 300px; /* لیپ ٹاپ پر اونچائی کو محدود کریں */
-    min-height: 200px;
-    background: #fdf6e3; /* تصویر کے بیک گراؤنڈ سے ملتا جلتا رنگ */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-/* تصویر کی سیٹنگز */
-.audible-hero-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* تصویر کو کٹنے سے بچائے گا اور باکس میں فٹ کرے گا */
-    object-position: center;
-}
-
-/* ٹیکسٹ اوورلے (اگر تصویر کے اوپر ٹیکسٹ ہے) */
-.banner-overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    max-width: 40%;
-}
-
-/* موبائل کے لیے تبدیلیاں (Responsive) */
-@media (max-width: 768px) {
-    .audible-hero-banner {
-        max-height: 150px; /* موبائل پر مزید چھوٹا کریں */
-        margin-bottom: 10px;
-    }
-    
-    .banner-overlay-text {
-        left: 5%;
-        max-width: 90%;
-        text-align: center;
-    }
-}
+ 
 
     /* ══════════════════════════════
        AUDIBLE BANNER (full-width card)
@@ -345,7 +301,52 @@
       footer { padding: 40px 20px 24px; }
     }
     /*banner*/
-     .half-width-banner { grid-column: 1 / -1; }
+     .full-width-banner { grid-column: 1 / -1; }
+    
+    /* Banner*/
+.audible-hero-banner {
+    width: 100%;
+    max-height: 300px; /* لیپ ٹاپ پر اونچائی کو محدود کریں */
+    min-height: 200px;
+    background: #fdf6e3; /* تصویر کے بیک گراؤنڈ سے ملتا جلتا رنگ */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* تصویر کی سیٹنگز */
+.audible-hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* تصویر کو کٹنے سے بچائے گا اور باکس میں فٹ کرے گا */
+    object-position: center;
+}
+
+/* ٹیکسٹ اوورلے (اگر تصویر کے اوپر ٹیکسٹ ہے) */
+.banner-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 40%;
+}
+
+/* موبائل کے لیے تبدیلیاں (Responsive) */
+@media (max-width: 768px) {
+    .audible-hero-banner {
+        max-height: 150px; /* موبائل پر مزید چھوٹا کریں */
+        margin-bottom: 10px;
+    }
+    
+    .banner-overlay-text {
+        left: 5%;
+        max-width: 90%;
+        text-align: center;
+    }
+}
   </style>
 </head>
 <body>
