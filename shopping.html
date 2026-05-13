@@ -1166,9 +1166,7 @@
         }
     }
 
-  // Show/hide ad slots and banner only on "all"
-    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
-    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
+  
 
     // ── DATA LOADING & RENDERING ──────────────────────────────────
     if (typeof allProducts === 'undefined') {
@@ -1235,7 +1233,9 @@
         const countEl = document.getElementById('productCount');
         if(countEl) countEl.textContent = products.length + ' Products Found';
     }
-
+ // Show/hide ad slots and banner only on "all"
+    ads.forEach(ad => ad.style.display = category === 'all' ? '' : 'none');
+    banner.forEach(b => b.style.display = category === 'all' ? '' : 'none');
   //mobile
  const menuBtn = document.getElementById('mobile-menu');
   const navLinks = document.getElementById('nav-links');
