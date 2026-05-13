@@ -1,15 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<!--<head>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toolkit Pro | Image Compressor, QR Code Generator & Design Tools</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311"
-     crossorigin="anonymous"></script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+
   <meta name="description" content="Free image compressor, QR code generator, color palette extractor and nature quote designer — all browser-based, 100% private. Built by Shaheera Sadia." />
   <meta name="keywords" content="image compressor, QR code generator, color palette extractor, nature quote designer, free tools, Shaheera Sadia, Toolkit Pro" />
   <meta name="author" content="Shaheera Sadia" />
   <meta name="google-site-verification" content="CFuxyempwhS14mhML8YBmmSZ2v-rp79dd3jdQSqY-Ow" />
+  <meta name="p:domain_verify" content="6f5f88df2183753c9debe2b7ed349572" />
   <meta property="og:title" content="Toolkit Pro | Image Compressor & Design Tools" />
   <meta property="og:description" content="Free browser-based tools for digital creators — compress images, generate QR codes, extract color palettes, and design aesthetic quote cards." />
   <meta property="og:url" content="https://app-tool.vercel.app/" />
@@ -18,49 +21,17 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Toolkit Pro | Image Compressor & Design Tools" />
   <meta name="twitter:description" content="Free browser-based tools for digital creators." />
-  <meta name="p:domain_verify" content="6f5f88df2183753c9debe2b7ed349572" />
   <link rel="canonical" href="https://app-tool.vercel.app/" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- QR Code Library -->
- <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>-->
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- برانڈ نیم اب مکمل طور پر Toolkit Pro ہے -->
-  <title>Toolkit Pro | Online Image Compressor, QR Generator & Design Tools</title>
-  
-  <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Toolkit Pro offers free browser-based tools for digital creators. Compress images without losing quality, generate QR codes, and extract color palettes instantly." />
-  <meta name="keywords" content="Toolkit Pro, image compressor, QR code generator, color palette extractor, Shaheera Sadia, web tools Pakistan" />
-  <meta name="author" content="Shaheera Sadia" />
-  
-  <!-- Pinterest & Google Verification -->
-  <meta name="google-site-verification" content="CFuxyempwhS14mhML8YBmmSZ2v-rp79dd3jdQSqY-Ow" />
-  <meta name="p:domain_verify" content="6f5f88df2183753c9debe2b7ed349572" />
-  
-  <!-- Social Media (Open Graph) -->
-  <meta property="og:title" content="Toolkit Pro | Free Tools for Creators" />
-  <meta property="og:description" content="All-in-one suite for image optimization, QR codes, and aesthetic design tools." />
-  <meta property="og:url" content="https://app-tool.vercel.app/" />
-  <meta property="og:image" content="https://app-tool.vercel.app/og-image.jpg" />
-  <meta property="og:type" content="website" />
-  
-  <link rel="canonical" href="https://app-tool.vercel.app/" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  
-  <!-- Libraries -->
+
+  <!-- QR Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
-    /* ═══════════════════════════════════════
-       SHARED DESIGN TOKENS — same on all pages
-       ═══════════════════════════════════════ */
+    /* ═══════════════════════════════
+       DESIGN TOKENS — same on all pages
+       ═══════════════════════════════ */
     :root {
       --blue:       #2b4fd8;
       --blue-dark:  #1a3199;
@@ -96,59 +67,40 @@
     .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
     .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--blue); background: var(--blue-pale); }
+    /* Dropdown */
     .nav-dropdown { position: relative; }
     .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
     .nav-dropdown > a::after { content: '▾'; font-size: 10px; }
-    .dropdown-menu {
-      display: none; position: absolute; top: 110%; left: 0;
-      background: var(--white); border: 1px solid #dde6ff;
-      border-radius: 12px; padding: 8px; min-width: 210px;
-      box-shadow: var(--shadow-md); z-index: 400;
-    }
+    .dropdown-menu { display: none; position: absolute; top: 110%; left: 0; background: var(--white); border: 1px solid #dde6ff; border-radius: 12px; padding: 8px; min-width: 210px; box-shadow: var(--shadow-md); z-index: 400; }
     .nav-dropdown:hover .dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
     .dropdown-menu a { font-size: 13px; color: var(--text); padding: 9px 14px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .dropdown-menu a:hover { background: var(--blue-pale); color: var(--blue); }
     .dropdown-menu a i { font-size: 13px; color: var(--blue); width: 16px; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-    .nav-shop:hover { opacity: .88 !important; background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; }
-/* --- New Mobile Menu Styles --- */
-.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
-.menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); transition: 0.3s; border-radius: 2px; }
+    .nav-shop:hover { opacity: .88 !important; }
+    /* Mobile menu */
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+    .menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; }
+    @media (max-width: 960px) {
+      .menu-toggle { display: flex; }
+      .nav-links { position: fixed; top: 66px; left: -100%; width: 80%; height: 100vh; background: var(--white); flex-direction: column; align-items: flex-start; padding: 30px 20px; transition: .4s ease; box-shadow: 10px 0 15px rgba(0,0,0,0.1); z-index: 1000; gap: 12px; }
+      .nav-links.active { left: 0; }
+      .nav-links li { width: 100%; }
+      .nav-links a { font-size: 16px; padding: 12px; display: block; border-bottom: 1px solid var(--blue-pale); }
+      .nav-dropdown:hover .dropdown-menu { display: none; }
+      .nav-dropdown.show-mobile .dropdown-menu { display: flex; position: static; box-shadow: none; width: 100%; border: none; background: var(--blue-pale); margin-top: 5px; }
+      .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+      .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
 
-@media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .menu-toggle { display: flex; }
-  
-  .nav-links {
-    position: fixed; top: 66px; left: -100%; width: 80%; height: 100vh;
-    background: var(--white); flex-direction: column; align-items: flex-start;
-    padding: 30px 20px; transition: 0.4s ease; box-shadow: 10px 0 15px rgba(0,0,0,0.1);
-    z-index: 1000; gap: 15px;
-  }
-  
-  .nav-links.active { left: 0; }
-  .nav-links li { width: 100%; }
-  .nav-links a { font-size: 16px; padding: 12px; display: block; border-bottom: 1px solid var(--blue-pale); }
-  
-  /* Dropdown Adjustments for Mobile */
-  .nav-dropdown:hover .dropdown-menu { display: none; }
-  .nav-dropdown.show-mobile .dropdown-menu { display: flex; position: static; box-shadow: none; width: 100%; border: none; background: var(--blue-pale); margin-top: 5px; }
-
-  /* Hamburger to X Animation */
-  .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-  .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-}
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--cyan) 100%);
       color: white; text-align: center; padding: 90px 24px 70px;
       position: relative; overflow: hidden;
     }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     .hero-inner { position: relative; z-index: 1; }
     .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 18px; border-radius: 20px; margin-bottom: 20px; backdrop-filter: blur(4px); }
     .hero h1 { font-family: 'Lora', serif; font-size: clamp(32px,5vw,54px); font-weight: 700; margin-bottom: 16px; line-height: 1.15; }
@@ -164,23 +116,22 @@
     .stat-num { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: #7dd3fc; }
     .stat-label { font-size: 12px; opacity: .8; letter-spacing: .5px; }
 
-    /* ── TOOL CARDS NAV ── */
+    /* ── TOOLS TAB NAV ── */
     .tools-nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40px; display: flex; gap: 4px; overflow-x: auto; }
     .tools-nav a { display: flex; align-items: center; gap: 7px; padding: 16px 18px; font-size: 13px; font-weight: 600; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; }
     .tools-nav a:hover, .tools-nav a.active { color: var(--blue); border-bottom-color: var(--blue); }
 
-    /* ── SECTION LAYOUT ── */
-    .page-wrap { max-width: 1100px; margin: 10 auto; padding: 0 24px 80px; }
+    /* ── LAYOUT ── */
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
     .section-hd { text-align: center; margin: 60px 0 32px; }
     .section-hd .tag { display: inline-block; background: var(--blue-light); color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
     .section-hd h2 { font-family: 'Lora', serif; font-size: clamp(22px,3vw,34px); color: var(--text); margin-bottom: 10px; }
     .section-hd p { font-size: 15px; color: var(--muted); max-width: 520px; margin: 0 auto; }
 
     /* ── AD SLOT ── */
-    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 30px 20px; color: var(--muted); font-size: 10px; margin: 44px 0; }
-    .ad-slot p { font-size: 10px; }
+    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 10px 20px; color: var(--muted); font-size: 13px; margin: 44px 0; min-height: 100px; }
 
-    /* ── TOOL SECTION WRAPPER ── */
+    /* ── TOOL WRAPPER ── */
     .tool-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; overflow: hidden; margin-bottom: 40px; }
     .tool-header { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%); color: white; padding: 28px 36px; display: flex; align-items: center; gap: 16px; }
     .tool-header-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
@@ -188,45 +139,14 @@
     .tool-header p { font-size: 14px; opacity: .88; }
     .tool-body { padding: 32px 36px; }
 
-    /* ── QR CODE TOOL ── */
-    .qr-input-row { display: flex; gap: 12px; margin-bottom: 20px; }
-    .qr-input { flex: 1; padding: 13px 16px; border: 1.5px solid #c8d8f8; border-radius: 12px; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
-    .qr-input:focus { border-color: var(--blue); }
-    .qr-btn { padding: 13px 24px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; white-space: nowrap; transition: opacity .2s; }
-    .qr-btn:hover { opacity: .88; }
-    .qr-output { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
-    .qr-canvas-wrap { background: var(--bg); border: 1.5px solid #dde6ff; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: center; min-width: 200px; min-height: 200px; }
-    #qrcode canvas, #qrcode img { border-radius: 8px; }
-    .qr-info { flex: 1; min-width: 220px; }
-    .qr-info h3 { font-family: 'Lora', serif; font-size: 18px; color: var(--blue-dark); margin-bottom: 12px; }
-    .qr-info p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
-    .qr-download { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: opacity .2s; }
-    .qr-download:hover { opacity: .88; }
-
-    /* ── NATURE DESIGNER ── */
-    #preview-wrap { width: 100%; height: 300px; border-radius: 18px; overflow: hidden; position: relative; background: linear-gradient(135deg, #1a3199, #2b4fd8); border: 3px solid #dde6ff; box-shadow: var(--shadow); }
-    #design-canvas { width: 100%; height: 100%; display: block; }
-    .designer-controls { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
-    .designer-btn { padding: 13px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all .2s; font-family: 'DM Sans', sans-serif; text-align: center; }
-    .designer-btn.upload { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; }
-    .designer-btn.download { background: var(--white); color: var(--blue); border: 2px solid var(--blue); }
-    .designer-btn:hover { opacity: .88; transform: translateY(-1px); }
-    .designer-textarea { padding: 12px 14px; border-radius: 12px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'Lora', serif; resize: none; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
-    .designer-textarea:focus { border-color: var(--blue); }
-    .designer-status { font-size: 13px; color: var(--muted); text-align: center; min-height: 18px; }
-
     /* ── IMAGE COMPRESSOR ── */
-    .upload-area {
-      border: 2.5px dashed #b8c8f8; border-radius: var(--radius);
-      padding: 48px 24px; text-align: center; cursor: pointer;
-      transition: all .25s; background: var(--blue-pale); margin-bottom: 24px;
-    }
+    .upload-area { border: 2.5px dashed #b8c8f8; border-radius: var(--radius); padding: 48px 24px; text-align: center; cursor: pointer; transition: all .25s; background: var(--blue-pale); margin-bottom: 24px; }
     .upload-area:hover, .upload-area.drag-over { border-color: var(--blue); background: var(--blue-light); }
     .upload-icon { font-size: 48px; margin-bottom: 12px; }
     .upload-area h3 { font-size: 17px; font-weight: 600; color: var(--blue-dark); margin-bottom: 6px; }
     .upload-area p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
     .select-btn { display: inline-block; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 10px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
-    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 24px; }
+    .controls-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px; margin-bottom: 24px; }
     .control-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     .control-group input[type="range"] { width: 100%; accent-color: var(--blue); }
     .format-btns { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -260,13 +180,48 @@
     .copy-all-btn { padding: 10px 22px; background: var(--blue-light); color: var(--blue); border: 1.5px solid #b8c8f8; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .2s; }
     .copy-all-btn:hover { background: var(--blue); color: white; }
 
-    /* ── FEATURES GRID ── */
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    /* ── NATURE DESIGNER ── */
+    #preview-wrap { width: 100%; height: 300px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg, #1a3199, #2b4fd8); border: 3px solid #dde6ff; box-shadow: var(--shadow); }
+    #design-canvas { width: 100%; height: 100%; display: block; }
+    .designer-controls { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+    .designer-btn { padding: 13px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; transition: all .2s; font-family: 'DM Sans', sans-serif; text-align: center; }
+    .designer-btn.upload { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; }
+    .designer-btn.download { background: var(--white); color: var(--blue); border: 2px solid var(--blue); }
+    .designer-btn:hover { opacity: .88; transform: translateY(-1px); }
+    .designer-textarea { padding: 12px 14px; border-radius: 12px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'Lora', serif; resize: none; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
+    .designer-textarea:focus { border-color: var(--blue); }
+    .designer-status { font-size: 13px; color: var(--muted); text-align: center; min-height: 18px; }
+
+    /* ── QR CODE ── */
+    .qr-input-row { display: flex; gap: 12px; margin-bottom: 20px; }
+    .qr-input { flex: 1; padding: 13px 16px; border: 1.5px solid #c8d8f8; border-radius: 12px; font-size: 15px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
+    .qr-input:focus { border-color: var(--blue); }
+    .qr-btn { padding: 13px 24px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; white-space: nowrap; transition: opacity .2s; }
+    .qr-btn:hover { opacity: .88; }
+    .qr-output { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
+    .qr-canvas-wrap { background: var(--bg); border: 1.5px solid #dde6ff; border-radius: 16px; padding: 24px; display: flex; align-items: center; justify-content: center; min-width: 200px; min-height: 200px; }
+    .qr-info { flex: 1; min-width: 220px; }
+    .qr-info h3 { font-family: 'Lora', serif; font-size: 18px; color: var(--blue-dark); margin-bottom: 12px; }
+    .qr-info p { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .qr-download { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: opacity .2s; }
+    .qr-download:hover { opacity: .88; }
+
+    /* ── FEATURES ── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
     .feature-card { background: var(--white); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); border: 1px solid #dde6ff; transition: transform .25s, box-shadow .25s; }
     .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
     .feature-icon { width: 54px; height: 54px; background: var(--blue-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
     .feature-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     .feature-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ── PINTEREST BANNER ── */
+    .pinterest-banner { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%); border-radius: var(--radius); padding: 36px; color: white; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; box-shadow: var(--shadow-md); }
+    .pinterest-num { font-family: 'Lora', serif; font-size: 52px; font-weight: 700; color: #7dd3fc; line-height: 1; }
+    .pinterest-sub { font-size: 13px; opacity: .8; letter-spacing: .5px; text-transform: uppercase; margin-top: 4px; }
+    .pinterest-text h3 { font-family: 'Lora', serif; font-size: 22px; margin-bottom: 8px; }
+    .pinterest-text p { font-size: 14px; opacity: .88; max-width: 420px; line-height: 1.7; }
+    .pinterest-btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--blue-dark); padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; margin-top: 16px; transition: all .2s; }
+    .pinterest-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
 
     /* ── FAQ ── */
     .faq-list { display: flex; flex-direction: column; gap: 14px; }
@@ -310,22 +265,9 @@
     .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 16px; text-decoration: none; transition: all .2s; }
     .social-btn:hover { background: var(--blue); color: white; }
 
-    /* ── PINTEREST BANNER ── */
-    .pinterest-banner {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%);
-      border-radius: var(--radius); padding: 36px; color: white;
-      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
-      box-shadow: var(--shadow-md);
-    }
-    .pinterest-num { font-family: 'Lora', serif; font-size: 52px; font-weight: 700; color: #7dd3fc; line-height: 1; }
-    .pinterest-sub { font-size: 13px; opacity: .8; letter-spacing: .5px; text-transform: uppercase; margin-top: 4px; }
-    .pinterest-text h3 { font-family: 'Lora', serif; font-size: 22px; margin-bottom: 8px; }
-    .pinterest-text p { font-size: 14px; opacity: .88; max-width: 420px; line-height: 1.7; }
-    .pinterest-btn { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--blue-dark); padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; margin-top: 16px; transition: all .2s; }
-    .pinterest-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-
-    /* ── FOOTER ── */
+    /* ── FOOTER (same on all pages) ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
+    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
     .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
     .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
@@ -339,73 +281,23 @@
     .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
     .footer-bottom a { color: inherit; text-decoration: none; }
     .footer-bottom a:hover { text-decoration: underline; }
-    .affiliate-note { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
 
-    @media (max-width: 900px) {
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-      .preview-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 0 16px; }
-      .tools-nav { padding: 0 16px; }
-      .hero h1 { font-size: 28px; }
-      .tool-body { padding: 20px; }
-      .tool-header { padding: 20px; }
-      .qr-input-row { flex-direction: column; }
-      .about-wrap { flex-direction: column; }
-      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .pinterest-banner { flex-direction: column; }
-    }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
   </style>
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Toolkit Pro",
-  "url": "https://app-tool.vercel.app/",
-  "description": "A comprehensive suite of free browser-based tools including Image Compressor, QR Code Generator, and Color Palette Extractor.",
-  "applicationCategory": "DesignApplication, MultimediaApplication",
-  "operatingSystem": "All",
-  "author": {
-    "@type": "Person",
-    "name": "Shaheera Sadia",
-    "jobTitle": "Web and Mobile App Developer",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mandi Bahauddin",
-      "addressRegion": "Punjab",
-      "addressCountry": "PK"
-    }
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "featureList": [
-    "High-quality Image Compression",
-    "Custom QR Code Generation",
-    "Color Palette Extraction from Images",
-    "Aesthetic Quote Card Designer"
-  ]
-}
-</script>
 </head>
 <body>
-    <nav id="home">
+
+<!-- ══ NAV ══ -->
+<nav id="home">
   <a href="/" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-
   <div class="menu-toggle" id="mobile-menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </div>
-
   <ul class="nav-links" id="nav-links">
     <li><a href="/" class="active"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
     <li class="nav-dropdown">
@@ -416,18 +308,13 @@
         <a href="#nature-designer"><i class="fas fa-leaf"></i>Nature Quote Designer</a>
       </div>
     </li>
-    
     <li class="nav-dropdown">
-      <a href="#" class="nav-link" onclick="return false;">
-          <i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i> PDF Tools
-          <i class="fas fa-chevron-down dropdown-arrow"></i>
-      </a>
+      <a href="#"><i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i>PDF Tools</a>
       <div class="dropdown-menu">
-          <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i> PDF Compressor</a>
-          <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i> Merge PDF</a>
+        <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i>PDF Compressor</a>
+        <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i>Merge PDF</a>
       </div>
     </li>
-
     <li class="nav-dropdown">
       <a href="#qr-section"><i class="fas fa-qrcode" style="margin-right:4px;font-size:11px;"></i>More Tools</a>
       <div class="dropdown-menu">
@@ -439,9 +326,7 @@
   </ul>
 </nav>
 
- 
-
-<!-- ── HERO ── -->
+<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-inner">
     <span class="hero-tag"> 100% Free Browser Tools</span>
@@ -452,7 +337,7 @@
       <a href="#qr-section" class="btn-outline"><i class="fas fa-qrcode" style="margin-right:7px;"></i>Generate QR Code</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">56.6k</div><div class="stat-label">Pinterest Monthly Views</div></div>
+      <div class="stat"><div class="stat-num">53.6k</div><div class="stat-label">Pinterest Monthly Views</div></div>
       <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">LinkedIn Impressions</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free & Private</div></div>
       <div class="stat"><div class="stat-num">66.7%</div><div class="stat-label">Search CTR</div></div>
@@ -460,7 +345,7 @@
   </div>
 </section>
 
-<!-- ── TOOLS NAV ── -->
+<!-- ══ TOOLS TAB NAV ══ -->
 <div class="tools-nav">
   <a href="#uploadArea" class="active"><i class="fas fa-compress-arrows-alt" style="margin-right:6px;"></i>Image Compressor</a>
   <a href="#palette-section"><i class="fas fa-palette" style="margin-right:6px;"></i>Color Extractor</a>
@@ -468,17 +353,38 @@
   <a href="#qr-section"><i class="fas fa-qrcode" style="margin-right:6px;"></i>QR Generator</a>
 </div>
 
+<div class="page-wrap">
 
- <!--google-->
-        <div class="ad-slot">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
- 
+  <!-- ══ AD SLOT 1 ══ -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-  <!-- ══════════════════════════════
-       TOOL 1: IMAGE COMPRESSOR
-       ══════════════════════════════ -->
+<!-- ══ TOOL 1: NATURE QUOTE DESIGNER ══ -->
+  <div class="tool-wrap" id="nature-designer">
+    <div class="tool-header">
+      <div class="tool-header-icon"></div>
+      <div>
+        <h2>Nature Quote Designer</h2>
+        <p>Create stunning aesthetic quote cards for Pinterest, Instagram, and digital wallpapers</p>
+      </div>
+    </div>
+    <div class="tool-body">
+      <div id="preview-wrap"><canvas id="design-canvas"></canvas></div>
+      <div class="designer-controls">
+        <input type="file" id="designBgInput" accept="image/*" style="display:none" />
+        <button class="designer-btn upload" onclick="document.getElementById('designBgInput').click()"> 1. Upload Your Nature Photo</button>
+        <textarea class="designer-textarea" id="designQuote" placeholder="2. Type your quote here..." rows="2"></textarea>
+        <button class="designer-btn download" onclick="downloadDesign()">3. Download Design</button>
+        <p class="designer-status" id="designStatus"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ══ TOOL 2: IMAGE COMPRESSOR ══ -->
   <div class="tool-wrap" id="uploadArea">
     <div class="tool-header">
       <div class="tool-header-icon"></div>
@@ -492,10 +398,9 @@
       <div class="upload-area" id="uploadArea2" onclick="document.getElementById('imgInput').click()">
         <div class="upload-icon">🖼️</div>
         <h3>Drag & Drop your image here</h3>
-        <p>or click to browse (JPG, PNG, WebP — max 10MB)</p>
+        <p>or click to browse — JPG, PNG, WebP, GIF (max 10MB)</p>
         <button class="select-btn" type="button">Select Image</button>
       </div>
-
       <div class="controls-grid">
         <div class="control-group">
           <label>Compression Quality: <strong id="qualityVal">70%</strong></label>
@@ -515,18 +420,16 @@
           </div>
         </div>
       </div>
-
       <button class="compress-btn" onclick="compressImage()"><i class="fas fa-magic" style="margin-right:8px;"></i>Compress Image</button>
-
       <div class="preview-grid">
         <div class="preview-box">
           <h4> Original Image</h4>
-          <img id="origPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'%3E%3Crect width='400' height='220' fill='%23f0f4ff'/%3E%3Ctext x='200' y='115' text-anchor='middle' font-family='Arial' font-size='14' fill='%23a0b0d0'%3ENo Image Selected%3C/text%3E%3C/svg%3E" alt="Original" />
+          <img id="origPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'%3E%3Crect width='400' height='220' fill='%23f0f4ff'/%3E%3Ctext x='200' y='115' text-anchor='middle' font-family='Arial' font-size='14' fill='%23a0b0d0'%3ENo Image Selected%3C/text%3E%3C/svg%3E" alt="Original preview" />
           <div class="preview-meta" id="origMeta">Size: — &nbsp;|&nbsp; Dimensions: —</div>
         </div>
         <div class="preview-box">
           <h4>✅ Compressed Image</h4>
-          <img id="compPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'%3E%3Crect width='400' height='220' fill='%23f0f4ff'/%3E%3Ctext x='200' y='115' text-anchor='middle' font-family='Arial' font-size='14' fill='%23a0b0d0'%3ECompressed Preview%3C/text%3E%3C/svg%3E" alt="Compressed" />
+          <img id="compPreview" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='220' viewBox='0 0 400 220'%3E%3Crect width='400' height='220' fill='%23f0f4ff'/%3E%3Ctext x='200' y='115' text-anchor='middle' font-family='Arial' font-size='14' fill='%23a0b0d0'%3ECompressed Preview%3C/text%3E%3C/svg%3E" alt="Compressed preview" />
           <div class="preview-meta" id="compMeta">Size: — &nbsp;|&nbsp; Reduction: —</div>
         </div>
       </div>
@@ -538,9 +441,8 @@
   </div>
 
    
-  <!-- ══════════════════════════════
-       TOOL 2: COLOR PALETTE EXTRACTOR
-       ══════════════════════════════ -->
+
+  <!-- ══ TOOL 3: COLOR EXTRACTOR ══ -->
   <div class="tool-wrap" id="palette-section">
     <div class="tool-header">
       <div class="tool-header-icon"></div>
@@ -554,44 +456,20 @@
       <div class="palette-drop" onclick="document.getElementById('paletteInput').click()">
         <i class="fas fa-image"></i>
         <p>Drop your image here — supports JPG, PNG, WebP, GIF</p>
-        <button class="palette-choose" type="button">Choose Image</button>
+        <button class="palette-choose" type="button"> Choose Image</button>
       </div>
       <img id="palette-preview" alt="Preview" />
       <div class="colors-grid" id="colorsGrid"></div>
       <button class="copy-all-btn" id="copyAllBtn" onclick="copyAllHex()" style="display:none"><i class="fas fa-copy" style="margin-right:6px;"></i>Copy All HEX Codes</button>
     </div>
   </div>
- 
-  <!-- ══════════════════════════════
-       TOOL 3: NATURE QUOTE DESIGNER
-       ══════════════════════════════ -->
-  <div class="tool-wrap" id="nature-designer">
-    <div class="tool-header">
-      <div class="tool-header-icon"></div>
-      <div>
-        <h2>Nature Quote Designer</h2>
-        <p>Create stunning aesthetic quote cards for Pinterest, Instagram, and digital wallpapers</p>
-      </div>
-    </div>
-    <div class="tool-body">
-      <div id="preview-wrap">
-        <canvas id="design-canvas"></canvas>
-      </div>
-      <div class="designer-controls">
-        <input type="file" id="designBgInput" accept="image/*" style="display:none" />
-        <button class="designer-btn upload" onclick="document.getElementById('designBgInput').click()"> 1. Upload Your Nature Photo</button>
-        <textarea class="designer-textarea" id="designQuote" placeholder="2. Type your quote here..." rows="2"></textarea>
-        <button class="designer-btn download" onclick="downloadDesign()"> 3. Download Design</button>
-        <p class="designer-status" id="designStatus"></p>
-      </div>
-    </div>
+<!-- ══ AD SLOT 4 ══ -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
-  
-
-  <!-- ══════════════════════════════
-       TOOL 4: QR CODE GENERATOR
-       ══════════════════════════════ -->
+  <!-- ══ TOOL 4: QR CODE GENERATOR ══ -->
   <div class="tool-wrap" id="qr-section">
     <div class="tool-header">
       <div class="tool-header-icon"></div>
@@ -617,63 +495,25 @@
     </div>
   </div>
 
-   
- <!--google-->
-        <div class="ad-slot">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
- 
-
-  <!-- ══════════════════════════════
-       FEATURES
-       ══════════════════════════════ -->
+  <!-- ══ WHY TOOLKIT PRO ══ -->
   <div class="section-hd">
-    <span class="tag"> Why Toolkit Pro</span>
+    <span class="tag">Why Toolkit Pro</span>
     <h2>Why Use Toolkit Pro for Your Creative Projects?</h2>
     <p>Toolkit Pro is designed to bridge the gap between high-quality imagery and web performance.</p>
   </div>
-
   <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>Efficient Image Compression</h3>
-      <p>Reduce file sizes by up to 80% without losing quality. Perfect for SEO, faster page loads, and better Pinterest pin performance. Supports JPEG, PNG, WebP, and GIF.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>Instant Color Palette Tool</h3>
-      <p>Extract beautiful HEX codes from any image instantly to maintain your brand's aesthetic consistency across Pinterest, Canva, social media, and your website.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>100% Private & Secure</h3>
-      <p>All tools process data locally in your browser. Your images and files never leave your device and are never uploaded to any server — guaranteed.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>Lightning Fast</h3>
-      <p>No server round-trips. No waiting. Results are instant because everything runs in your browser with modern JavaScript. No sign-up or account required.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>Works on Any Device</h3>
-      <p>Fully responsive — works perfectly on smartphones, tablets, and desktop computers. Access all Toolkit Pro tools from any device, anywhere, anytime.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon"></div>
-      <h3>Completely Free</h3>
-      <p>Every tool on Toolkit Pro is 100% free with no subscription, no watermarks, no usage limits, and no credit card required. Free for everyone, forever.</p>
-    </div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Efficient Image Compression</h3><p>Reduce file sizes by up to 80% without losing quality. Perfect for SEO, faster page loads, and better Pinterest pin performance. Supports JPEG, PNG, WebP, and GIF.</p></div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Instant Color Palette Tool</h3><p>Extract beautiful HEX codes from any image instantly to maintain your brand's aesthetic consistency across Pinterest, Canva, social media, and your website.</p></div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>100% Private & Secure</h3><p>All tools process data locally in your browser. Your images and files never leave your device and are never uploaded to any server — guaranteed.</p></div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Lightning Fast</h3><p>No server round-trips. No waiting. Results are instant because everything runs in your browser with modern JavaScript. No sign-up or account required.</p></div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Works on Any Device</h3><p>Fully responsive — works perfectly on smartphones, tablets, and desktop computers. Access all Toolkit Pro tools from any device, anywhere, anytime.</p></div>
+    <div class="feature-card"><div class="feature-icon"></div><h3>Completely Free</h3><p>Every tool on Toolkit Pro is 100% free with no subscription, no watermarks, no usage limits, and no credit card required. Free for everyone, forever.</p></div>
   </div>
- 
 
-  <!-- ══════════════════════════════
-       PINTEREST BANNER
-       ══════════════════════════════ -->
-  <div class="pinterest-banner">
+  <!-- ══ PINTEREST BANNER ══ -->
+  <div class="pinterest-banner" style="margin-top:48px;">
     <div>
-      <div class="pinterest-num">53.6k</div>
+      <div class="pinterest-num">58.6k</div>
       <div class="pinterest-sub">Monthly Pinterest Views</div>
     </div>
     <div class="pinterest-text">
@@ -684,80 +524,60 @@
   </div>
 
    
-
-  <!-- ══════════════════════════════
-       FAQ
-       ══════════════════════════════ -->
+  <!-- ══ FAQ ══ -->
   <div class="section-hd">
-    <span class="tag"> FAQ</span>
+    <span class="tag">FAQ</span>
     <h2>Frequently Asked Questions</h2>
     <p>Everything you need to know about Toolkit Pro and our free tools.</p>
   </div>
-
   <div class="faq-list">
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Is Toolkit Pro free to use? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a">Yes — all tools on Toolkit Pro are 100% free with no sign-up, no account, and no hidden fees. We support the site through Google AdSense advertising and Amazon affiliate links.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Are my images uploaded to your servers? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a">No — never. All image processing (compression, color extraction, design generation) happens entirely in your browser using JavaScript. Your images never leave your device and are never uploaded to any server. Your privacy is fully protected.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">What image formats does the compressor support? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a">Toolkit Pro's Image Compressor supports JPEG, PNG, WebP, and GIF formats up to 10MB in size. You can also convert between formats — convert PNG to WebP for smaller files, or JPEG to PNG for transparency support.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">How does the image compressor work? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a">Our tool uses lossless and lossy compression methods via the browser's Canvas API to strip unnecessary metadata and optimize pixel data. You can control quality (10–100%), resize scale, and output format to get exactly the result you need.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">Can I use Toolkit Pro on mobile? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div>
-      <div class="faq-a">Yes! Toolkit Pro is fully responsive and works on smartphones, tablets, and desktop computers. All tools are optimized for mobile use — compress images, extract colors, and generate QR codes directly from your phone's browser.</div>
-    </div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is Toolkit Pro free to use? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">Yes — all tools on Toolkit Pro are 100% free with no sign-up, no account, and no hidden fees. We support the site through Google AdSense advertising and Amazon affiliate links.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Are my images uploaded to your servers? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">No — never. All image processing (compression, color extraction, design generation) happens entirely in your browser using JavaScript. Your images never leave your device and are never uploaded to any server. Your privacy is fully protected.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What image formats does the compressor support? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">Toolkit Pro's Image Compressor supports JPEG, PNG, WebP, and GIF formats up to 10MB in size. You can also convert between formats — convert PNG to WebP for smaller files, or JPEG to PNG for transparency support.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How does the image compressor work? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">Our tool uses lossy and lossless compression via the browser's Canvas API to strip unnecessary metadata and optimize pixel data. You can control quality (10–100%), resize scale, and output format to get exactly the result you need.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Can I use Toolkit Pro on mobile? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">Yes! Toolkit Pro is fully responsive and works on smartphones, tablets, and desktop computers. All tools are optimized for mobile use — compress images, extract colors, and generate QR codes directly from your phone's browser.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Do the Amazon affiliate links cost me anything? <span class="arrow"><i class="fas fa-chevron-down"></i></span></div><div class="faq-a">No — never. If you purchase through our Amazon affiliate links, you pay exactly the same price as on Amazon directly. We earn a small referral commission from Amazon which helps keep all our tools free for everyone.</div></div>
   </div>
-  
-  <!-- ══════════════════════════════
-       ABOUT
-       ══════════════════════════════ -->
+
+  <!-- ══ AD SLOT 7 ══ -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
   <div class="section-hd">
     <span class="tag"> About</span>
     <h2>About the Developer & Toolkit Pro</h2>
   </div>
-
   <div class="about-wrap">
     <div class="about-avatar"></div>
     <div class="about-content">
       <h2>Hi, I'm Shaheera Sadia</h2>
       <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
       <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>.</p>
-      <p>Beyond development, I am an active Pinterest creator with <strong>50k+ monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
+      <p>Beyond development, I am an active Pinterest creator with <strong>58.6k+ monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
       <div class="about-badges">
-        <span class="badge"> 53.6k Pinterest Views/Month</span>
-        <span class="badge"> 1,000+ LinkedIn Impressions</span>
-        <span class="badge"> 100% Private — No Server Uploads</span>
+        <span class="badge"> 58.6k Pinterest Views/Month</span>
+        <span class="badge">1,000+ LinkedIn Impressions</span>
+        <span class="badge">100% Private — No Server Uploads</span>
         <span class="badge"> Mandi Bahauddin, Pakistan</span>
-        <span class="badge"> 66.7% Search CTR</span>
+        <span class="badge">66.7% Search CTR</span>
       </div>
     </div>
   </div>
 
-  
-
-  <!-- ══════════════════════════════
-       CONTACT
-       ══════════════════════════════ -->
+  <!-- ══ CONTACT ══ -->
   <div class="section-hd">
     <span class="tag"> Contact</span>
     <h2>Get In Touch</h2>
     <p>Have a question, collaboration idea, or feedback? I'd love to hear from you.</p>
   </div>
-
   <div class="contact-grid">
     <div class="contact-form-wrap">
       <h3>Send a Message</h3>
       <form action="https://formspree.io/f/xkoyzpvp" method="POST">
-        <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Shaheera Sadia" required /></div>
+        <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Your full name" required /></div>
         <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required /></div>
         <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="How can I help you?" /></div>
         <div class="form-group"><label>Message</label><textarea name="message" rows="4" placeholder="Write your message here..." required></textarea></div>
@@ -784,19 +604,12 @@
     </div>
   </div>
 
-</div>
- <!-- /page-wrap -->
- 
- <!--google-->
-        <div class="ad-slot">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
- 
-<!-- ── FOOTER ── -->
+</div><!-- /page-wrap -->
+
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="affiliate-note">
-     This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
+  <div class="affiliate-footer">
+    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
   </div>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -846,48 +659,34 @@
   </div>
 </footer>
 
-<!-- ════════════════════════════════════════
-     JAVASCRIPT — ALL TOOLS
-     ════════════════════════════════════════ -->
+<!-- ══ JAVASCRIPT ══ -->
 <script>
-// ── FAQ ──────────────────────────────────
+// ── FAQ ──
 function toggleFaq(el) {
   const open = el.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
   if (!open) el.classList.add('open');
 }
 
-// ── IMAGE COMPRESSOR ─────────────────────
+// ── IMAGE COMPRESSOR ──
 let origFile = null, compBlob = null, outputFormat = 'original';
 
 document.getElementById('imgInput').addEventListener('change', function(e) {
-  origFile = e.target.files[0];
-  if (!origFile) return;
+  origFile = e.target.files[0]; if (!origFile) return;
   const url = URL.createObjectURL(origFile);
   document.getElementById('origPreview').src = url;
-  document.getElementById('origMeta').textContent =
-    'Size: ' + (origFile.size/1024).toFixed(1) + ' KB  |  Loading dims...';
   const img = new Image();
-  img.onload = () => {
-    document.getElementById('origMeta').textContent =
-      'Size: ' + (origFile.size/1024).toFixed(1) + ' KB  |  ' + img.naturalWidth + '×' + img.naturalHeight + 'px';
-  };
+  img.onload = () => { document.getElementById('origMeta').textContent = 'Size: ' + (origFile.size/1024).toFixed(1) + ' KB  |  ' + img.naturalWidth + '×' + img.naturalHeight + 'px'; };
   img.src = url;
 });
 
-// Drag & drop
-const ua = document.getElementById('uploadArea2');
-ua.addEventListener('dragover', e => { e.preventDefault(); ua.classList.add('drag-over'); });
-ua.addEventListener('dragleave', () => ua.classList.remove('drag-over'));
-ua.addEventListener('drop', e => {
-  e.preventDefault(); ua.classList.remove('drag-over');
+const ua2 = document.getElementById('uploadArea2');
+ua2.addEventListener('dragover', e => { e.preventDefault(); ua2.classList.add('drag-over'); });
+ua2.addEventListener('dragleave', () => ua2.classList.remove('drag-over'));
+ua2.addEventListener('drop', e => {
+  e.preventDefault(); ua2.classList.remove('drag-over');
   const f = e.dataTransfer.files[0];
-  if (f && f.type.startsWith('image/')) {
-    origFile = f;
-    const url = URL.createObjectURL(f);
-    document.getElementById('origPreview').src = url;
-    document.getElementById('origMeta').textContent = 'Size: ' + (f.size/1024).toFixed(1) + ' KB';
-  }
+  if (f && f.type.startsWith('image/')) { origFile = f; document.getElementById('origPreview').src = URL.createObjectURL(f); document.getElementById('origMeta').textContent = 'Size: ' + (f.size/1024).toFixed(1) + ' KB'; }
 });
 
 function setFormat(fmt, btn) {
@@ -902,22 +701,18 @@ function compressImage() {
   const scale   = parseInt(document.getElementById('scaleSlider').value) / 100;
   const img = new Image();
   img.onload = () => {
-    const w = Math.round(img.naturalWidth * scale);
-    const h = Math.round(img.naturalHeight * scale);
     const c = document.createElement('canvas');
-    c.width = w; c.height = h;
-    c.getContext('2d').drawImage(img, 0, 0, w, h);
+    c.width = Math.round(img.naturalWidth * scale); c.height = Math.round(img.naturalHeight * scale);
+    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
     let mime = origFile.type;
     if (outputFormat === 'jpeg') mime = 'image/jpeg';
     else if (outputFormat === 'png') mime = 'image/png';
     else if (outputFormat === 'webp') mime = 'image/webp';
     c.toBlob(blob => {
       compBlob = blob;
-      const url = URL.createObjectURL(blob);
-      document.getElementById('compPreview').src = url;
-      const reduction = (((origFile.size - blob.size) / origFile.size) * 100).toFixed(1);
-      document.getElementById('compMeta').textContent =
-        'Size: ' + (blob.size/1024).toFixed(1) + ' KB  |  Reduced by ' + reduction + '%';
+      document.getElementById('compPreview').src = URL.createObjectURL(blob);
+      const red = (((origFile.size - blob.size) / origFile.size) * 100).toFixed(1);
+      document.getElementById('compMeta').textContent = 'Size: ' + (blob.size/1024).toFixed(1) + ' KB  |  Reduced by ' + red + '%';
       document.getElementById('dlBtn').disabled = false;
     }, mime, quality);
   };
@@ -926,10 +721,9 @@ function compressImage() {
 
 function downloadCompressed() {
   if (!compBlob) return;
-  const ext = compBlob.type.split('/')[1] || 'jpg';
   const a = document.createElement('a');
   a.href = URL.createObjectURL(compBlob);
-  a.download = 'compressed-toolkit-pro.' + ext;
+  a.download = 'compressed-toolkit-pro.' + (compBlob.type.split('/')[1] || 'jpg');
   a.click();
 }
 
@@ -944,37 +738,30 @@ function resetCompressor() {
   document.getElementById('dlBtn').disabled = true;
 }
 
-// ── COLOR EXTRACTOR ──────────────────────
+// ── COLOR EXTRACTOR ──
 function extractColors(input) {
-  const file = input.files[0];
-  if (!file) return;
+  const file = input.files[0]; if (!file) return;
   const reader = new FileReader();
   reader.onload = ev => {
     const img = new Image();
     img.onload = () => {
       const prev = document.getElementById('palette-preview');
-      prev.src = ev.target.result;
-      prev.style.display = 'block';
-      const c = document.createElement('canvas');
-      c.width = 80; c.height = 80;
+      prev.src = ev.target.result; prev.style.display = 'block';
+      const c = document.createElement('canvas'); c.width = 80; c.height = 80;
       c.getContext('2d').drawImage(img, 0, 0, 80, 80);
-      const data = c.getContext('2d').getImageData(0, 0, 80, 80).data;
+      const data = c.getContext('2d').getImageData(0,0,80,80).data;
       const colorMap = {};
       for (let i = 0; i < data.length; i += 4) {
-        const r = Math.round(data[i]/32)*32;
-        const g = Math.round(data[i+1]/32)*32;
-        const b = Math.round(data[i+2]/32)*32;
-        const k = r+','+g+','+b;
-        colorMap[k] = (colorMap[k]||0) + 1;
+        const r = Math.round(data[i]/32)*32, g = Math.round(data[i+1]/32)*32, b = Math.round(data[i+2]/32)*32;
+        const k = r+','+g+','+b; colorMap[k] = (colorMap[k]||0) + 1;
       }
       const sorted = Object.entries(colorMap).sort((a,b) => b[1]-a[1]).slice(0,8);
-      const grid = document.getElementById('colorsGrid');
-      grid.innerHTML = '';
+      const grid = document.getElementById('colorsGrid'); grid.innerHTML = '';
       sorted.forEach(([rgb]) => {
         const [r,g,b] = rgb.split(',').map(Number);
         const hex = '#'+[r,g,b].map(v=>v.toString(16).padStart(2,'0')).join('').toUpperCase();
         const sw = document.createElement('div'); sw.className = 'color-swatch';
-        sw.onclick = () => { navigator.clipboard.writeText(hex); sw.querySelector('span').textContent = 'Copied!'; setTimeout(()=>sw.querySelector('span').textContent=hex,1500); };
+        sw.onclick = () => { navigator.clipboard.writeText(hex); sw.querySelector('span').textContent='Copied!'; setTimeout(()=>sw.querySelector('span').textContent=hex,1500); };
         sw.innerHTML = `<div class="color-swatch-block" style="background:${hex};"></div><span>${hex}</span>`;
         grid.appendChild(sw);
       });
@@ -992,57 +779,43 @@ function copyAllHex() {
   setTimeout(()=>{ document.getElementById('copyAllBtn').innerHTML='<i class="fas fa-copy" style="margin-right:6px;"></i>Copy All HEX Codes'; },2000);
 }
 
-// ── NATURE DESIGNER ──────────────────────
+// ── NATURE DESIGNER ──
 const dCanvas = document.getElementById('design-canvas');
-const dCtx    = dCanvas.getContext('2d');
-const dWrap   = document.getElementById('preview-wrap');
+const dCtx = dCanvas.getContext('2d');
+const dWrap = document.getElementById('preview-wrap');
 let bgImg = null;
 
 function resizeDesignCanvas() {
-  dCanvas.width  = dWrap.clientWidth;
-  dCanvas.height = dWrap.clientHeight;
-  renderDesign();
+  dCanvas.width = dWrap.clientWidth; dCanvas.height = dWrap.clientHeight; renderDesign();
 }
 
 function renderDesign() {
   const W = dCanvas.width, H = dCanvas.height;
-  dCtx.clearRect(0, 0, W, H);
+  dCtx.clearRect(0,0,W,H);
   if (bgImg) {
     const sc = Math.max(W/bgImg.width, H/bgImg.height);
-    dCtx.drawImage(bgImg, (W-bgImg.width*sc)/2, (H-bgImg.height*sc)/2, bgImg.width*sc, bgImg.height*sc);
-    dCtx.fillStyle = 'rgba(0,0,0,0.28)'; dCtx.fillRect(0,0,W,H);
+    dCtx.drawImage(bgImg,(W-bgImg.width*sc)/2,(H-bgImg.height*sc)/2,bgImg.width*sc,bgImg.height*sc);
+    dCtx.fillStyle='rgba(0,0,0,0.28)'; dCtx.fillRect(0,0,W,H);
   } else {
     const g = dCtx.createLinearGradient(0,0,W,H);
     g.addColorStop(0,'#1a3199'); g.addColorStop(1,'#00b4db');
-    dCtx.fillStyle = g; dCtx.fillRect(0,0,W,H);
+    dCtx.fillStyle=g; dCtx.fillRect(0,0,W,H);
   }
-  // glass card
   const cx=W*.1,cy=H*.15,cw=W*.8,ch=H*.7;
-  dCtx.save();
-  dCtx.beginPath();
-  dCtx.roundRect(cx,cy,cw,ch,18);
-  dCtx.fillStyle='rgba(255,255,255,0.18)';
-  dCtx.fill();
-  dCtx.strokeStyle='rgba(255,255,255,0.45)';
-  dCtx.lineWidth=1.5; dCtx.stroke();
-  dCtx.restore();
-  // text
+  dCtx.save(); dCtx.beginPath(); dCtx.roundRect(cx,cy,cw,ch,18);
+  dCtx.fillStyle='rgba(255,255,255,0.18)'; dCtx.fill();
+  dCtx.strokeStyle='rgba(255,255,255,0.45)'; dCtx.lineWidth=1.5; dCtx.stroke(); dCtx.restore();
   const quote = document.getElementById('designQuote').value.trim() || '"Your Aesthetic Quote Here"';
   dCtx.save();
   dCtx.fillStyle='#fff'; dCtx.shadowColor='rgba(0,0,0,0.5)'; dCtx.shadowBlur=6; dCtx.shadowOffsetY=2;
-  const fs = Math.max(14, Math.min(22, cw/(quote.length*0.52)));
-  dCtx.font=`italic ${fs}px 'Lora',Georgia,serif`;
-  dCtx.textAlign='center'; dCtx.textBaseline='middle';
-  wrapDesignText(dCtx, quote, W/2, H/2, cw-44, fs*1.6);
-  dCtx.restore();
-}
-
-function wrapDesignText(ctx,text,x,cy,maxW,lineH){
-  const words=text.split(' '), lines=[]; let line='';
-  for(const w of words){ const t=line?line+' '+w:w; if(ctx.measureText(t).width>maxW&&line){lines.push(line);line=w;}else line=t; }
+  const fs = Math.max(14,Math.min(22,cw/(quote.length*0.52)));
+  dCtx.font=`italic ${fs}px 'Lora',Georgia,serif`; dCtx.textAlign='center'; dCtx.textBaseline='middle';
+  const words=quote.split(' '),lines=[]; let line='';
+  for(const w of words){ const t=line?line+' '+w:w; if(dCtx.measureText(t).width>cw-44&&line){lines.push(line);line=w;}else line=t; }
   if(line) lines.push(line);
-  let y=cy-(lines.length*lineH)/2+lineH/2;
-  for(const l of lines){ ctx.fillText(l,x,y); y+=lineH; }
+  let y=H/2-(lines.length*(fs*1.6))/2+fs*0.8;
+  for(const l of lines){ dCtx.fillText(l,W/2,y); y+=fs*1.6; }
+  dCtx.restore();
 }
 
 document.getElementById('designBgInput').addEventListener('change', e=>{
@@ -1055,8 +828,7 @@ document.getElementById('designQuote').addEventListener('input', renderDesign);
 window.addEventListener('resize', resizeDesignCanvas);
 
 function downloadDesign() {
-  const W=dCanvas.width, H=dCanvas.height;
-  const hi=document.createElement('canvas'); hi.width=W*2; hi.height=H*2;
+  const hi=document.createElement('canvas'); hi.width=dCanvas.width*2; hi.height=dCanvas.height*2;
   const hCtx=hi.getContext('2d'); hCtx.scale(2,2); hCtx.drawImage(dCanvas,0,0);
   try {
     const a=document.createElement('a'); a.href=hi.toDataURL('image/png'); a.download='nature-quote-toolkit-pro.png'; a.click();
@@ -1064,65 +836,80 @@ function downloadDesign() {
   } catch(e){ document.getElementById('designStatus').textContent='❌ Error: '+e.message; }
 }
 
-// ── QR CODE ──────────────────────────────
+// ── QR CODE ──
 let qrInstance = null;
 function generateQR() {
   const url = document.getElementById('qrInput').value.trim();
   if (!url) { alert('Please enter a URL first.'); return; }
-  const wrap = document.getElementById('qrcode');
-  wrap.innerHTML = '';
-  qrInstance = new QRCode(wrap, { text: url, width: 180, height: 180, colorDark:'#1a3199', colorLight:'#ffffff', correctLevel: QRCode.CorrectLevel.H });
+  document.getElementById('qrcode').innerHTML = '';
+  qrInstance = new QRCode(document.getElementById('qrcode'), { text: url, width: 180, height: 180, colorDark:'#1a3199', colorLight:'#ffffff', correctLevel: QRCode.CorrectLevel.H });
   document.getElementById('qrDlBtn').disabled = false;
 }
 
 function downloadQR() {
   const canvas = document.querySelector('#qrcode canvas');
   if (!canvas) { alert('Generate a QR code first.'); return; }
-  const a = document.createElement('a');
-  a.href = canvas.toDataURL('image/png');
-  a.download = 'qr-code-toolkit-pro.png';
-  a.click();
+  const a = document.createElement('a'); a.href = canvas.toDataURL('image/png'); a.download = 'qr-code-toolkit-pro.png'; a.click();
 }
 
-// Init
-resizeDesignCanvas();
+// ── MOBILE MENU ──
+const menuBtn = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
 
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuBtn.classList.toggle('is-active');
+});
 
- 
-  const menuBtn = document.getElementById('mobile-menu');
-  const navLinks = document.getElementById('nav-links');
-
-  // مینو کھولنے اور بند کرنے کے لیے
-  menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuBtn.classList.toggle('is-active');
+document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 960) {
+      e.preventDefault();
+      link.parentElement.classList.toggle('show-mobile');
+    }
   });
+});
 
-  // موبائل پر ڈراپ ڈاؤن لنکس کو ہینڈل کرنے کے لیے
-  document.querySelectorAll('.nav-dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 960) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('show-mobile');
-      }
-    });
-  });
-// عام لنک پر کلک کرنے کے بعد مینیو بند کریں
 document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
     menuBtn.classList.remove('is-active');
   });
 });
-  // مینو کے باہر کلک کرنے پر بند ہو جائے
-  document.addEventListener('click', (e) => {
-    if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('active');
-      menuBtn.classList.remove('is-active');
-    }
-  });
+
+document.addEventListener('click', e => {
+  if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+    menuBtn.classList.remove('is-active');
+  }
+});
+
+// ── INIT ──
+resizeDesignCanvas();
 </script>
- 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
