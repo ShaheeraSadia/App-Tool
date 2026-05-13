@@ -86,13 +86,34 @@
 
     /* AFFILIATE BOX */
     .affiliate-box { background: #fff8e1; border: 1px solid #ffe082; border-radius: 10px; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: #7c6b00; line-height: 1.7; }
-
-    /* CONTACT CARD */
+ /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .contact-form-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 28px; }
+    .contact-form-wrap h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .form-group input, .form-group textarea { padding: 11px 14px; border-radius: 10px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: var(--bg); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: none; }
+    .contact-submit { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity .2s; }
+    .contact-submit:hover { opacity: .9; }
+    .contact-info-wrap { display: flex; flex-direction: column; gap: 16px; }
+    .contact-info-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 20px 24px; }
+    .contact-info-card h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); margin-bottom: 12px; }
+    .info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-row i { color: var(--blue); width: 18px; font-size: 14px; }
+    .info-row a { color: var(--blue); text-decoration: none; }
+    .info-row a:hover { text-decoration: underline; }
+    .social-row { display: flex; gap: 10px; }
+    .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 16px; text-decoration: none; transition: all .2s; }
+    .social-btn:hover { background: var(--blue); color: white; }
+    /* CONTACT CARD 
     .contact-card { background: linear-gradient(135deg, var(--blue-pale), var(--blue-light)); border-radius: var(--radius); border: 1px solid #c0d0f8; padding: 28px 32px; text-align: center; margin-top: 32px; }
     .contact-card h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 10px; }
     .contact-card p { font-size: 14px; color: #374a80; margin-bottom: 18px; }
     .contact-btn { display: inline-block; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; padding: 11px 28px; border-radius: 10px; text-decoration: none; font-size: 14px; font-weight: 600; transition: opacity .2s; }
-    .contact-btn:hover { opacity: .88; }
+    .contact-btn:hover { opacity: .88; }*/
 
     /* FOOTER */
     footer { background: linear-gradient(135deg, #0d1b5e, #1a2f8a); color: rgba(255,255,255,.85); padding: 40px 40px 24px; }
@@ -288,7 +309,45 @@
     <p>If you do not agree to the new terms, please stop using Toolkit Pro.</p>
   </div>
 
-  <!-- 10. CONTACT -->
+  <!-- ══ CONTACT ══ -->
+  <div class="section-hd">
+    <span class="tag"> Contact</span>
+    <h2>Get In Touch</h2>
+    <p>Have a question, collaboration idea, or feedback? I'd love to hear from you.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-form-wrap">
+      <h3>Send a Message</h3>
+      <form action="https://formspree.io/f/xkoyzpvp" method="POST">
+        <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Your full name" required /></div>
+        <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required /></div>
+        <div class="form-group"><label>Subject</label><input type="text" name="subject" placeholder="How can I help you?" /></div>
+        <div class="form-group"><label>Message</label><textarea name="message" rows="4" placeholder="Write your message here..." required></textarea></div>
+        <button type="submit" class="contact-submit"><i class="fas fa-paper-plane" style="margin-right:7px;"></i>Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info-wrap">
+      <div class="contact-info-card">
+        <h4>Contact Info</h4>
+        <div class="info-row"><i class="fas fa-user"></i><span>Shaheera Sadia</span></div>
+        <div class="info-row"><i class="fas fa-map-marker-alt"></i><span>Mandi Bahauddin, Punjab, Pakistan</span></div>
+        <div class="info-row"><i class="fas fa-envelope"></i><a href="mailto:shaheerasadia@gmail.com">shaheerasadia@gmail.com</a></div>
+        <div class="info-row"><i class="fab fa-github"></i><a href="https://github.com/shaheerasadia" target="_blank">github.com/shaheerasadia</a></div>
+      </div>
+      <div class="contact-info-card">
+        <h4>Follow Me</h4>
+        <div class="social-row">
+          <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="social-btn"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/shaheerasadia" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+          <a href="mailto:shaheerasadia@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+  <!-- 10. CONTACT 
   <div class="policy-section" id="contact">
     <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
     <p>If you have any questions about these Terms of Service, please contact us:</p>
@@ -301,10 +360,10 @@
     </ul>
     <p style="margin-top:12px;">We aim to respond to all inquiries within <strong>48 hours</strong> on business days.</p>
   </div>
-
+-->
   <!-- CTA -->
   <div class="contact-card">
-    <h3>📬 Have Questions About These Terms?</h3>
+    <h3> Have Questions About These Terms?</h3>
     <p>We are happy to clarify anything in our Terms of Service. Reach out directly — we read every message.</p>
     <a href="mailto:shaheerasadia@gmail.com" class="contact-btn"><i class="fas fa-envelope" style="margin-right:6px;"></i>shaheerasadia@gmail.com</a>
     <div style="margin-top:16px; font-size:13px; color:#374a80;">
