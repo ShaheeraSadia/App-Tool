@@ -671,20 +671,7 @@
     "amazonLink": "https://amzn.to/4u4Af3w",
     "tags": ["Jewelry", "Aesthetic", "Boho Style", "Snake Ring"]
   },
-  {
-        "id": 62,
-        "name": "wedding-hair-comb-pins-set",
-        "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
-        "category": "jewelry",
-        "badge": "Jewelry",
-        "image": "/image/white6._SL1500_.jpg",
-        "price": "Check Price on Amazon",
-        "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers.",
-        "amazonLink": "https://amzn.to/4fax59x",
-        "btnColor": "#c5a48e",
-        "tags": ["Bridal", "Wedding", "Silver"] 
-  },
-  {
+{
   "id": 63,
   "name": "solar-garden-moon-lights",
   "title": "Solar Garden Hanging Moon Lights",
@@ -696,6 +683,20 @@
   "amazonLink": "https://amzn.to/4dj5YXy",
   "btnColor": "linear-gradient(135deg, #1e3a8a, #3b82f6)",
   "tags": ["Decor", "Outdoor", "Aesthetic", "Eco-Friendly"]
+},
+    {
+    "id": 62,
+    "name": "wedding-hair-comb-pins-set",
+    "title": "5 Pieces Wedding Hair Comb & Bridal Pins",
+    "category": "jewelry",
+    "badge": "Jewelry",
+    "image": "/image/white6._SL1500_.jpg", 
+    "isBanner": false,
+    "price": "Check Price on Amazon",
+    "description": "Premium Wedding Hair Accessories featuring Crystal Pearls and Rhinestone Flowers.",
+    "amazonLink": "https://amzn.to/4fax59x",
+    "btnColor": "#c5a48e",
+    "tags": ["Bridal", "Wedding", "Silver"] 
 }
 ]
 
