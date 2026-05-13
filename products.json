@@ -697,6 +697,16 @@
     "amazonLink": "https://amzn.to/4fax59x",
     "btnColor": "#c5a48e",
     "tags": ["Bridal", "Wedding", "Silver"] 
-}
+},
+    {
+    "id": 63,
+    "title": "Red Flowers 3 Piece Canvas Wall Art",
+    "description": "Modern Eiffel Tower and umbrella themed wall decor. Features black and white bicycle landscape with vibrant red flowers. Perfect for living room, bedroom, or office decorations.",
+    "image": "Red Wall Art_AC_SL1000_.jpg",
+    "price": "Check Price on Amazon",
+    "category": "Home Decor",
+    "amazon_link": "https://amzn.to/4dmlstE",
+    "tags": ["Red Flowers", "Wall Art", "Modern Decor", "Canvas Print"]
+  }
 ]
 
