@@ -700,43 +700,47 @@
 },
     {
     "id": 64,
-    "title": "Red Flowers 3 Piece Canvas Wall Art",
+    "name": "Red Flowers 3 Piece Canvas Wall Art",
     "description": "Modern Eiffel Tower and umbrella themed wall decor. Features black and white bicycle landscape with vibrant red flowers. Perfect for living room, bedroom, or office decorations.",
     "image": "/image/WallArt_AC_SL1000_.jpg",
     "price": "Check Price on Amazon",
     "category": "Decor",
     "badge": "Home Decor",
+    "btnColor": "#c5a48e",
     "amazon_link": "https://amzn.to/4dmlstE",
     "tags": ["Red Flowers", "Wall Art", "Modern Decor", "Canvas Print"]
   },
     {
-    "id": 2,
+    "id": 65,
     "title": "Blue Tree Wall Paintings Canvas Art",
     "description": "Large farmhouse abstract watercolour blue tree artwork. Perfect for living room, bedroom, or office wall decor. Ready to hang, 20x40 inches.",
     "image": "image/BlueTreeWall._AC_SL1500_.jpg",
     "price": "Check Price on Amazon",
     "category": "Decor",
     "amazon_link": "https://amzn.to/49Ke3Dr",
+    "btnColor": "#c5a48e"
     "tags": ["Blue Tree", "Abstract Art", "Large Wall Decor", "Watercolour"]
   },
     {
-    "id": 3,
+    "id": 66,
     "title": "JAKAWIN Bridal Hair Comb Rhinestone Headpiece",
     "description": "Elegant wedding hair accessories featuring silver rhinestone headpiece. Perfect silver hair clip for brides and women for weddings and special occasions from JAKAWIN Store.",
     "image": "image/BridalHairComb._SL1050_.jpg",
     "price": "Check Price on Amazon",
     "category": "Jewelry",
     "amazon_link": "https://amzn.to/3PfqeBl",
+    "btnColor": "linear-gradient(135deg,#e6b980,#eacda3)"   
     "tags": ["Bridal Hair Accessories", "Wedding Jewelry", "Silver Hair Clip", "JAKAWIN"]
   },
     {
-    "id": 4,
+    "id": 67,
     "title": "Mo Cuishle Shiatsu Back Shoulder and Neck Massager",
     "description": "Electric deep tissue 4D kneading massage with heat. A perfect gift for parents, spouses, or yourself. Features advanced Shiatsu technology for muscle relief and relaxation.",
     "image": "image/pain_AC_SL1200_.jpg",
     "price": "$39.99",
     "category": "Health",
     "amazon_link": "https://amzn.to/4tlHYJ8",
+    "btnColor": "linear-gradient(135deg,#4facfe,#00f2fe)"
     "tags": ["Massager", "Gifts for Mom", "Self Care", "Health Gadgets"]
   }
 ]
