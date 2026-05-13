@@ -1280,7 +1280,7 @@
 
         products.forEach(product => {
             // اگر یہ آڈیبل آفر ہے تو اسے بینر کے طور پر رینڈر کریں
-           /* if (product.name === "audible-premium-plus-offer") {
+            if (product.name === "audible-premium-plus-offer") {
                 const bannerHTML = `
                     <div class="full-width-banner" data-category="all">
                         <div class="banner-inner">
@@ -1296,25 +1296,7 @@
                     </div>
                 `;
                 grid.insertAdjacentHTML('beforeend', bannerHTML);
-            }*/
-          // displayProducts فنکشن کے اندر اس حصے کو بدلیں
-if (product.name === "audible-premium-plus-offer") {
-    const bannerHTML = `
-        <div class="full-width-banner" data-category="all">
-            <div class="banner-inner">
-                <img src="${product.image}" alt="Audible" onerror="this.src='image/placeholder.jpg'">
-                <div class="banner-content">
-                    <h3>🎧 ${product.title}</h3>
-                    <p>${product.description}</p>
-                    <a href="${product.amazonLink}" target="_blank" class="banner-btn">
-                        <i class="fab fa-amazon"></i> Claim Your Free Month →
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
-    grid.insertAdjacentHTML('beforeend', bannerHTML);
-} else {
+            }  else {
                 // عام پروڈکٹ کارڈ
                 const cardHTML = `
                     <div class="product-card" data-category="${product.category || 'all'}">
@@ -1342,10 +1324,7 @@ if (product.name === "audible-premium-plus-offer") {
         const countEl = document.getElementById('productCount');
         if(countEl) countEl.textContent = products.length + ' Products Found';
     }
-// اس لائن کو 'filterProducts' فنکشن کے آخر میں اپ ڈیٹ کریں
-if (countEl) {
-    countEl.textContent = visible + (visible === 1 ? ' Product' : ' Products') + ' Found';
-}
+ 
     // ── MOBILE MENU LOGIC ──────────────────────────────────────────
     const menuBtn = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
