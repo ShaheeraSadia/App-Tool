@@ -1,112 +1,204 @@
-<!-- AFFILIATE DISCLOSURE PAGE -->
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Affiliate Disclosure | Toolkit Pro</title>
-
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#020617;
-      color:#f8fafc;
-      margin:0;
-      padding:0;
-      line-height:1.8;
+    /* ── VARIABLES ── */
+    :root {
+      --blue: #3b82f6;
+      --blue-dark: #1e3a8a;
+      --blue-mid: #2563eb;
+      --blue-pale: #eff6ff;
+      --blue-light: #dbeafe;
+      --pink: #ec4899;
+      --white: #ffffff;
+      --bg: #0f172a;
+      --card-bg: #111827;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --radius: 20px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:60px 20px;
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
     }
 
-    .card{
-      background:#111827;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #dde6ff;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      position: sticky;
+      top: 0;
+      z-index: 300;
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
     }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo-text em { color: var(--pink); font-style: normal; }
+    
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; font-weight: 600 !important; }
 
-    h1{
-      font-size:42px;
-      color:#60a5fa;
-      margin-bottom:20px;
-    }
+    /* ── CONTENT ── */
+    .container { max-width: 900px; margin: auto; padding: 60px 20px; }
+    .card { background: var(--card-bg); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.05); }
+    h1 { font-size: 36px; margin-bottom: 20px; color: #60a5fa; }
+    h2 { margin-top: 30px; color: #facc15; font-size: 22px; }
+    p { color: #d1d5db; margin-bottom: 16px; }
 
-    h2{
-      margin-top:35px;
-      color:#facc15;
-    }
+    /* ── CONTACT SECTION ── */
+    .section-hd { text-align: center; margin: 60px 0 40px 0; }
+    .tag { background: var(--blue-pale); color: var(--blue); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px; }
+    .contact-form-wrap { background: var(--white); border-radius: var(--radius); padding: 28px; color: #333; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-group label { font-size: 13px; font-weight: 600; }
+    .form-group input, .form-group textarea { padding: 11px; border-radius: 10px; border: 1.5px solid #c8d8f8; outline: none; }
+    .contact-submit { width: 100%; padding: 13px; background: var(--blue-dark); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; }
 
-    p{
-      color:#d1d5db;
-    }
+    .contact-info-card { background: var(--white); border-radius: var(--radius); padding: 24px; color: #333; margin-bottom: 20px; }
+    .info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 12px; }
+    .social-row { display: flex; gap: 10px; }
+    .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); text-decoration: none; }
 
-    a{
-      color:#38bdf8;
-      text-decoration:none;
+    /* ── FOOTER ── */
+    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.8); padding: 50px 20px 20px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 22px; color: #7dd3fc; font-weight: 700; margin-bottom: 12px; }
+    .footer-col h4 { color: #7dd3fc; font-size: 12px; text-transform: uppercase; margin-bottom: 15px; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul a { color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none; }
+    .footer-bottom { max-width: 1100px; margin: 30px auto 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; }
+
+    @media (max-width: 800px) {
+      .contact-grid, .footer-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="card">
+<!-- NAVIGATION -->
+<nav>
+  <a href="/" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop</a></li>
+  </ul>
+</nav>
 
-      <h1>Affiliate Disclosure</h1>
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="card">
+    <h1>Affiliate Disclosure</h1>
+    <p>Toolkit Pro participates in affiliate marketing programs, which means we may earn commissions on purchases made through our links.</p>
 
-      <p>
-        Toolkit Pro participates in affiliate marketing programs,
-        which means we may earn commissions on purchases made through our links.
-      </p>
+    <h2>Amazon Affiliate Disclosure</h2>
+    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
 
-      <h2>Amazon Affiliate Disclosure</h2>
+    <h2>How Affiliate Links Work</h2>
+    <p>When you click an affiliate link and purchase a product, we may receive a small commission at no extra cost to you.</p>
 
-      <p>
-        As an Amazon Associate, we earn from qualifying purchases.
-      </p>
+    <h2>Why We Use Affiliate Links</h2>
+    <p>Affiliate commissions help support the maintenance, development, and hosting costs of <strong>Toolkit Pro</strong>.</p>
 
-      <h2>How Affiliate Links Work</h2>
+    <h2>Honest Recommendations</h2>
+    <p>We aim to recommend useful and relevant products only. However, users should always do their own research before purchasing.</p>
+  </div>
+</div>
 
-      <p>
-        When you click an affiliate link and purchase a product,
-        we may receive a small commission at no extra cost to you.
-      </p>
+<!-- CONTACT SECTION -->
+<div class="section-hd">
+  <span class="tag">Contact</span>
+  <h2>Get In Touch</h2>
+  <p>Built with passion by <strong>Shaheera Sadia</strong> from Mandi Bahauddin, Pakistan.</p>
+</div>
 
-      <h2>Why We Use Affiliate Links</h2>
+<div class="contact-grid">
+  <div class="contact-form-wrap">
+    <h3>Send a Message</h3>
+    <form action="https://formspree.io/f/xkoyzpvp" method="POST">
+      <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
+      <div class="form-group"><label>Email</label><input type="email" name="email" required /></div>
+      <div class="form-group"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
+      <button type="submit" class="contact-submit">Send Message</button>
+    </form>
+  </div>
 
-      <p>
-        Affiliate commissions help support the maintenance,
-        development, and hosting costs of Toolkit Pro.
-      </p>
-
-      <h2>Honest Recommendations</h2>
-
-      <p>
-        We aim to recommend useful and relevant products only.
-        However, users should always do their own research before purchasing.
-      </p>
-
-      <h2>Third-Party Websites</h2>
-
-      <p>
-        We are not responsible for the content, policies,
-        or practices of third-party websites linked from our platform.
-      </p>
-
-      <h2>Contact</h2>
-
-      <p>
-        If you have any questions regarding this disclosure,
-        please contact us through our contact page.
-      </p>
-
+  <div class="contact-info-wrap">
+    <div class="contact-info-card">
+      <h4>Contact Info</h4>
+      <div class="info-row"><i class="fas fa-user"></i><span>Shaheera Sadia</span></div>
+      <div class="info-row"><i class="fas fa-map-marker-alt"></i><span>Mandi Bahauddin, Pakistan</span></div>
+    </div>
+    <div class="contact-info-card">
+      <h4>Follow Me</h4>
+      <div class="social-row">
+        <a href="https://www.pinterest.com/shaheerasadia" class="social-btn"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free tools for digital creators. Developed in Mandi Bahauddin.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="#">Image Compressor</a></li>
+        <li><a href="#">QR Generator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://github.com/shaheerasadia">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Shaheera Sadia</span>
+    <span><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></span>
+  </div>
+</footer>
 
 </body>
 </html>
