@@ -1,5 +1,21 @@
 [
-    
+   {
+  "id": "solar-firefly-lights-001",
+  "title": "Flumy Solar Garden Lights Outdoor - 6 Pack Firefly Lights",
+  "description": "Transform your garden into a magical wonderland with these 48 LED solar firefly lights. Waterproof and easy to install, they create a warm white glow that mimics dancing fireflies. Perfect for yard, patio, and pathway decor.",
+  "price": "Check Price on Amazon",
+  "currency": "USD",
+  "image": "/image/light._AC_SL1500_.jpg",
+  "product_url": "https://amzn.to/42XvXie",
+  "category": "Decor",
+  "brand": "Flumy",
+  "features": [
+    "48 High-brightness LEDs",
+    "Solar Powered & Energy Saving",
+    "IP65 Waterproof Rating",
+    "Swaying firefly effect"
+  ]
+}, 
   {
     "id": 1,
     "name": "Motorola razr+ | 2023",
