@@ -544,27 +544,29 @@
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
-<!-- ── BLOG / RESOURCES SECTION ── -->
+ 
+  <!-- ── BLOG / RESOURCES SECTION ── -->
 <section id="resources" class="resources-section" style="padding: 80px 20px; background: #0f172a;">
   <div style="max-width: 1100px; margin: 0 auto;">
     <h2 style="text-align: center; color: #7dd3fc; margin-bottom: 40px; font-size: 32px;">Latest Resources & Guides</h2>
     
+    <!-- Grid container -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
       
       <!-- Blog Card 1: Image Compression -->
       <div class="blog-card" style="background: #1e293b; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;">
-        <img src="/image/blog1.jpg" alt="Compression Guide" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="image/blog1.jpg" alt="Compression Guide" style="width: 100%; height: 200px; object-fit: cover;">
         <div style="padding: 20px;">
           <span style="color: #ec4899; font-size: 12px; font-weight: bold; text-transform: uppercase;">Optimization</span>
           <h3 style="color: white; margin: 10px 0;">How to Compress Images Without Losing Quality</h3>
           <p style="color: #94a3b8; font-size: 14px;">Learn the best techniques to keep your images sharp while reducing file size for 2026 web standards.</p>
-          <a href="Blog/how-to-compress-images.html" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-weight: bold;">Read More →</a>
+          <a href="Blog/how-to-compress-images-without-losing-quality.html" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-weight: bold;">Read More →</a>
         </div>
       </div>
 
       <!-- Blog Card 2: Image Formats -->
       <div class="blog-card" style="background: #1e293b; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;">
-        <img src="/image/blog2.jpg"  alt="Formats Comparison" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="image/blog2.jpg" alt="Formats Comparison" style="width: 100%; height: 200px; object-fit: cover;">
         <div style="padding: 20px;">
           <span style="color: #ec4899; font-size: 12px; font-weight: bold; text-transform: uppercase;">Design Essentials</span>
           <h3 style="color: white; margin: 10px 0;">PNG vs JPG vs WebP: Which Format is Best?</h3>
@@ -572,10 +574,10 @@
           <a href="Blog/png-vs-jpg-vs-webp.html" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-weight: bold;">Read More →</a>
         </div>
       </div>
- 
-      <!-- Blog Card 3: QR Codes (New) -->
+
+      <!-- Blog Card 3: QR Codes -->
       <div class="blog-card" style="background: #1e293b; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;">
-        <img src="/image/blog3.jpg" alt="QR Code Guide" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="image/blog3.jpg" alt="QR Code Guide" style="width: 100%; height: 200px; object-fit: cover;">
         <div style="padding: 20px;">
           <span style="color: #ec4899; font-size: 12px; font-weight: bold; text-transform: uppercase;">Technology</span>
           <h3 style="color: white; margin: 10px 0;">How QR Codes Work Explained Simply</h3>
@@ -583,9 +585,10 @@
           <a href="Blog/how-qr-codes-work.html" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-weight: bold;">Read More →</a>
         </div>
       </div>
-<!-- Blog Card 4: Social Media Sizes -->
+
+      <!-- Blog Card 4: Social Media Sizes -->
       <div class="blog-card" style="background: #1e293b; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;">
-        <img src="/image/blog4.jpg" alt="Social Media Guide" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="image/blog4.jpg" alt="Social Media Guide" style="width: 100%; height: 200px; object-fit: cover;">
         <div style="padding: 20px;">
           <span style="color: #ec4899; font-size: 12px; font-weight: bold; text-transform: uppercase;">Social Media</span>
           <h3 style="color: white; margin: 10px 0;">Best Image Size for Social Media in 2026</h3>
@@ -596,7 +599,7 @@
 
       <!-- Blog Card 5: Website Speed -->
       <div class="blog-card" style="background: #1e293b; border-radius: 15px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;">
-        <img src="/image/blog5.jpg" alt="Website Speed" style="width: 100%; height: 200px; object-fit: cover;">
+        <img src="image/blog5.jpg" alt="Website Speed" style="width: 100%; height: 200px; object-fit: cover;">
         <div style="padding: 20px;">
           <span style="color: #ec4899; font-size: 12px; font-weight: bold; text-transform: uppercase;">Performance</span>
           <h3 style="color: white; margin: 10px 0;">How to Speed Up Website Images</h3>
@@ -604,17 +607,24 @@
           <a href="Blog/how-to-speed-up-website-images.html" style="display: inline-block; margin-top: 15px; color: #3b82f6; text-decoration: none; font-weight: bold;">Read More →</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <style>
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
   .blog-card:hover {
     transform: translateY(-10px);
     border-color: #3b82f6 !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
 </style>
+ 
   <!-- ══ ABOUT ══ -->
   <div class="section-hd">
     <span class="tag"> About</span>
