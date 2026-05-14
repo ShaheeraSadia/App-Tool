@@ -18,6 +18,25 @@
     "Swaying firefly effect"
   ]
 }, 
+   {
+  "id": "repotting-mat-39x31",
+  "title": "Large Repotting Mat for Indoor Plants - 39.5\" X 31.5\"",
+  "description": "Keep your indoor gardening mess-free with this large, waterproof repotting mat. Perfect for transplanting, potting, and dirt control. Portable and easy to clean, it makes an ideal gift for plant lovers.",
+  "price": "Check Price on Amazon",
+  "currency": "USD",
+  "image": "/image/green._AC_SL1500_.jpg",
+  "product_url": "https://amzn.to/4u39VH0",
+  "category": "Gardening Tools",
+  "brand": "Onlysuki",
+ "btnColor": "linear-gradient(135deg,#96fbc4,#f9f586)",
+  "dimensions": "39.5\" x 31.5\"",
+  "features": [
+    "Waterproof and Leak-proof",
+    "Snap-button corners for dirt control",
+    "Easy to fold and store",
+    "Durable PE material"
+  ]
+},
   {
     "id": 1,
     "name": "Motorola razr+ | 2023",
