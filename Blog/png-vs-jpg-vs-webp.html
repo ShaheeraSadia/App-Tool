@@ -15,6 +15,51 @@
       --muted: #94a3b8; --white: #ffffff;
       --blue-pale: #eff6ff; --blue-light: #dbeafe;
     }
+    /* ── MOBILE OPTIMIZATIONS ── */
+    @media (max-width: 768px) {
+        .blog-container {
+            margin: 30px auto; /* Reduced margin for mobile */
+        }
+        
+        .blog-header h1 {
+            font-size: 28px; /* Smaller font for mobile screens */
+            padding: 0 10px;
+        }
+
+        .featured-image {
+            height: 250px; /* Shorter image height on mobile */
+            border-radius: 12px;
+        }
+
+        .content-section {
+            padding: 25px 20px; /* Less padding so text isn't too narrow */
+            border-radius: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 16px; /* Slightly smaller text for readability */
+        }
+
+        /* Make the table scrollable horizontally on small screens */
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .tool-cta {
+            padding: 20px;
+        }
+        
+        .tool-cta h3 {
+            font-size: 20px;
+        }
+    }
 
     body {
       font-family: 'DM Sans', Arial, sans-serif;
