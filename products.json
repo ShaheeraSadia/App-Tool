@@ -8,6 +8,8 @@
   "image": "/image/light._AC_SL1500_.jpg",
   "product_url": "https://amzn.to/42XvXie",
   "category": "Decor",
+  "btnColor": "linear-gradient(135deg,#2c3e50,#000000)",
+
   "brand": "Flumy",
   "features": [
     "48 High-brightness LEDs",
