@@ -10,6 +10,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
+   /* ── MOBILE OPTIMIZATIONS ── */
+    @media (max-width: 768px) {
+        .blog-container {
+            margin: 30px auto; /* Reduced margin for mobile */
+        }
+        
+        .blog-header h1 {
+            font-size: 28px; /* Smaller font for mobile screens */
+            padding: 0 10px;
+        }
+
+        .featured-image {
+            height: 250px; /* Shorter image height on mobile */
+            border-radius: 12px;
+        }
+
+        .content-section {
+            padding: 25px 20px; /* Less padding so text isn't too narrow */
+            border-radius: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 16px; /* Slightly smaller text for readability */
+        }
+
+        /* Make the table scrollable horizontally on small screens */
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .tool-cta {
+            padding: 20px;
+        }
+        
+        .tool-cta h3 {
+            font-size: 20px;
+        }
+    }
     :root {
       --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
       --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
@@ -141,7 +186,7 @@
     <p class="meta-info">Published on: May 14, 2026 | By Shaheera Sadia</p>
   </header>
 
-  <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Image Compression Guide" class="featured-image">
+  <img src="/image/blog1.jpg" alt="Image Compression Guide" class="featured-image">
    <div class="content-section">
     <p>In the digital landscape of 2026, website speed is no longer just a luxury—it is a necessity. Large, unoptimized image files are the primary reason for slow-loading pages, which directly leads to poor user retention and lower search engine rankings.</p>
 
