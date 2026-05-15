@@ -1,5 +1,22 @@
 [
    {
+  "id": "fullstar-mandoline-slicer-6in1",
+  "title": "Fullstar 6-in-1 Mandoline Slicer & Vegetable Chopper",
+  "description": "The ultimate kitchen gadget for effortless meal prep. This 6-in-1 slicer and cutter handles onions, potatoes, and veggies with ease. Includes a convenient food container to keep your kitchen tidy. A must-have home essential for fast and safe slicing.",
+  "price": "19.79",
+  "currency": "USD",
+  "image_url": "https://m.media-amazon.com/images/I/81+2+D7Z2kL._AC_SL1500_.jpg",
+  "product_url": "https://amzn.to/4tHZGqx",
+  "category": "Kitchen Gadgets",
+  "brand": "Fullstar",
+  "features": [
+    "6 Interchangeable Blades",
+    "Non-Slip Base Container",
+    "Safety Finger Guard Included",
+    "Dishwasher Safe Components"
+  ]
+},
+   {
   "id": "mehomeli-compact-vacuum-sealer-01",
   "title": "Mehomeli Compact Handheld Vacuum Sealer for Food",
   "description": "Powerful, portable, and wireless handheld vacuum sealer machine. Keeps food fresh up to 6X longer. Includes 30 reusable vacuum bags. Easy-clean design perfect for meal prep and kitchen organization.",
