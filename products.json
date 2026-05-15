@@ -18,6 +18,24 @@
   ]
 },
    {
+  "id": "luenx-aviator-polarized-01",
+  "title": "LUENX Polarized Aviator Sunglasses - UV400 Protection",
+  "description": "Stylish and functional aviator sunglasses for men and women. Featuring polarized lenses with UV400 protection, these shades are perfect for driving, outdoor activities, and everyday style. High-quality metal frame with a comfortable fit.",
+  "price": "14.74",
+  "currency": "USD",
+  "image": "/image/blue.jpg",
+  "product_url": "https://amzn.to/4dKFuzu",
+  "category": "Fashion Accessories",
+  "brand": "LUENX",
+  "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
+  "features": [
+    "Polarized Lens",
+    "100% UV400 Protection",
+    "Antioxidant Metal Frame",
+    "Skin-friendly Nose Pads"
+  ]
+},
+   {
   "id": "bridal-hair-comb-blue-004",
   "title": "4 Pieces Bridal Flower Wedding Hair Comb - Blue Rhinestones",
   "description": "Elegant 4-piece set featuring crystal floral hair pins and rhinestone combs. Designed for brides and bridesmaids, these blue-themed floral accessories add a touch of sophistication to any wedding hairstyle.",
@@ -34,6 +52,24 @@
     "Handmade crystal and rhinestone detail",
     "Elegant floral design",
     "Secure grip for various hair types"
+  ]
+},
+   {
+  "id": "rjdbbd-crystal-evening-bag",
+  "title": "Elegant Crystal Evening Handbag - Glitter Clutch",
+  "description": "Make a statement with this elegant crystal-encrusted evening handbag. Featuring a glittery top handle and a small square silhouette, it functions perfectly as a clutch or a wedding shoulder bag. Ideal for formal events, weddings, and parties.",
+  "price": "28.99",
+  "currency": "USD",
+  "image_url": "/image/blackhandbag.jpg",
+  "product_url": "https://amzn.to/4uvRHyd",
+  "category": "bage",
+  "brand": "RJDBBD",
+ "btnColor": "linear-gradient(135deg,#ff00ff,#764ba2)",
+  "features": [
+    "Glitter Top Handle",
+    "Sparkling Crystal Exterior",
+    "Detachable Shoulder Strap",
+    "Secure Clasp Closure"
   ]
 },
    {
