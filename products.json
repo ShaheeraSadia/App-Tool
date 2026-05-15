@@ -1,5 +1,23 @@
 [
    {
+  "id": "luenx-aviator-polarized-01",
+  "title": "LUENX Polarized Aviator Sunglasses - UV400 Protection",
+  "description": "Stylish and functional aviator sunglasses for men and women. Featuring polarized lenses with UV400 protection, these shades are perfect for driving, outdoor activities, and everyday style. High-quality metal frame with a comfortable fit.",
+  "price": "14.74",
+  "currency": "USD",
+  "image": "/image/black.jpg",
+  "product_url": "https://amzn.to/4dKFuzu",
+  "category": "Fashion Accessories",
+  "brand": "LUENX",
+  "btnColor": "linear-gradient(135deg,#2d3436,#636e72)",
+  "features": [
+    "Polarized Lens",
+    "100% UV400 Protection",
+    "Antioxidant Metal Frame",
+    "Skin-friendly Nose Pads"
+  ]
+},
+   {
   "id": "bridal-hair-comb-blue-004",
   "title": "4 Pieces Bridal Flower Wedding Hair Comb - Blue Rhinestones",
   "description": "Elegant 4-piece set featuring crystal floral hair pins and rhinestone combs. Designed for brides and bridesmaids, these blue-themed floral accessories add a touch of sophistication to any wedding hairstyle.",
