@@ -5,10 +5,11 @@
   "description": "The ultimate kitchen gadget for effortless meal prep. This 6-in-1 slicer and cutter handles onions, potatoes, and veggies with ease. Includes a convenient food container to keep your kitchen tidy. A must-have home essential for fast and safe slicing.",
   "price": "19.79",
   "currency": "USD",
-  "image_url": "/image/kitchen2.jpg",
+  "image": "/image/kitchen2.jpg",
   "product_url": "https://amzn.to/4tHZGqx",
   "category": "Kitchen Gadgets",
   "brand": "Fullstar",
+  "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
   "features": [
     "6 Interchangeable Blades",
     "Non-Slip Base Container",
