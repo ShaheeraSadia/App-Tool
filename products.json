@@ -1,5 +1,23 @@
 [
    {
+  "id": "mehomeli-compact-vacuum-sealer-01",
+  "title": "Mehomeli Compact Handheld Vacuum Sealer for Food",
+  "description": "Powerful, portable, and wireless handheld vacuum sealer machine. Keeps food fresh up to 6X longer. Includes 30 reusable vacuum bags. Easy-clean design perfect for meal prep and kitchen organization.",
+  "price": "35.99",
+  "currency": "USD",
+  "image_url": "/image/kitchen.jpg",
+  "product_url": "https://amzn.to/4ujuUFI",
+  "category": "Kitchen",
+  "brand": "Mehomeli",
+      "btnColor": "linear-gradient(135deg,#667eea,#764ba2)",
+  "features": [
+    "Wireless & Portable",
+    "30 Reusable Vacuum Bags Included",
+    "Easy-Clean Silicone Nozzle",
+    "One-Touch Operation"
+  ]
+},
+   {
   "id": "luenx-aviator-polarized-01",
   "title": "LUENX Polarized Aviator Sunglasses - UV400 Protection",
   "description": "Stylish and functional aviator sunglasses for men and women. Featuring polarized lenses with UV400 protection, these shades are perfect for driving, outdoor activities, and everyday style. High-quality metal frame with a comfortable fit.",
