@@ -3,32 +3,57 @@
 
    <url>
       <loc>https://app-tool.vercel.app/</loc>
-      <lastmod>2026-05-04</lastmod>
+      <lastmod>2026-05-05</lastmod>
       <priority>1.00</priority>
    </url>
 
    <url>
       <loc>https://app-tool.vercel.app/shopping.html</loc>
-      <lastmod>2026-05-04</lastmod>
+      <lastmod>2026-05-06</lastmod>
       <priority>0.95</priority>
    </url>
 
    <url>
       <loc>https://app-tool.vercel.app/privacy.html</loc>
-      <lastmod>2026-05-04</lastmod>
+      <lastmod>2026-05-07</lastmod>
       <priority>0.50</priority>
    </url>
 
    <url>
       <loc>https://app-tool.vercel.app/terms.html</loc>
-      <lastmod>2026-05-04</lastmod>
+      <lastmod>2026-05-08</lastmod>
       <priority>0.50</priority>
    </url>
 
    <url>
     <loc>https://app-tool.vercel.app/resources.html</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <priority>0.80</priority>
       
 </url>
+    <url>
+      <loc>https://app-tool.vercel.app/blog/how-to-compress-images.html</loc>
+      <lastmod>2026-05-11</lastmod>
+      <priority>0.85</priority>
+   </url>
+
+   <url>
+      <loc>https://app-tool.vercel.app/blog/best-image-size-for-social-media.html</loc>
+      <lastmod>2026-05-12</lastmod>
+      <priority>0.85</priority>
+   </url>
+
+   <url>
+      <loc>https://app-tool.vercel.app/blog/how-qr-codes-work.html</loc>
+      <lastmod>2026-05-13</lastmod>
+      <priority>0.85</priority>
+   </url>
+
+   <url>
+      <loc>https://app-tool.vercel.app/blog/how-to-speed-up-website-image.html</loc>
+      <lastmod>2026-05-15</lastmod>
+      <priority>0.85</priority>
+   </url>
 </urlset> 
+
+ 
