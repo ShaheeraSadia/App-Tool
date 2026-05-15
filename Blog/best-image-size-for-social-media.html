@@ -106,7 +106,44 @@
       padding: 12px 25px; border-radius: 10px; text-decoration: none;
       font-weight: 700; margin-top: 15px; transition: 0.3s;
     }
+.size-table-container {
+    overflow-x: auto;
+    margin: 30px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.size-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e293b;
+    color: #f8fafc;
+    font-size: 15px;
+}
+
+.size-table th {
+    background: #7000cc;
+    color: white;
+    text-align: left;
+    padding: 15px;
+}
+
+.size-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.size-table tr:hover {
+    background: rgba(112, 0, 204, 0.1);
+}
+
+.ratio-badge {
+    background: #3b82f6;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
     /* ── FOOTER (same on all pages) ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
     .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
@@ -153,7 +190,55 @@
     <p style="color: var(--muted);">The ultimate developer's guide to optimizing visual content for speed.</p>
      <img src="../image/blog4.jpg" alt=" Best Image Size for Social Media" class="featured-image">
   </header>
+<h2>Quick Reference: 2026 Social Media Cheat Sheet</h2>
+<p>To save you time, I've compiled the most important dimensions for the platforms that drive the most traffic. Use these to ensure your designs look sharp on every screen.</p>
 
+<div class="size-table-container">
+    <table class="size-table">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>Content Type</th>
+                <th>Recommended Size</th>
+                <th>Aspect Ratio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Pinterest</strong></td>
+                <td>Standard Pin</td>
+                <td>1000 x 1500 px</td>
+                <td><span class="ratio-badge">2:3</span></td>
+            </tr>
+            <tr>
+                <td><strong>Instagram</strong></td>
+                <td>Post (Portrait)</td>
+                <td>1080 x 1350 px</td>
+                <td><span class="ratio-badge">4:5</span></td>
+            </tr>
+            <tr>
+                <td><strong>LinkedIn</strong></td>
+                <td>shared Image</td>
+                <td>1200 x 627 px</td>
+                <td><span class="ratio-badge">1.91:1</span></td>
+            </tr>
+            <tr>
+                <td><strong>Instagram</strong></td>
+                <td>Reels / Stories</td>
+                <td>1080 x 1920 px</td>
+                <td><span class="ratio-badge">9:16</span></td>
+            </tr>
+            <tr>
+                <td><strong>YouTube</strong></td>
+                <td>Thumbnail</td>
+                <td>1280 x 720 px</td>
+                <td><span class="ratio-badge">16:9</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p><em>Note: If your original images are larger than these sizes, remember to use the <a href="../index.html" style="color: #facc15;">Toolkit Pro Compressor</a> to keep the file size small without losing this crisp resolution.</em></p>
   <div class="content-section">
     <p>In 2026, a slow website is a dead website. Users expect pages to load in under two seconds, and images are often the biggest culprit behind slow load times. As a developer, I've seen how unoptimized images can ruin even the best-designed sites.</p>
 
