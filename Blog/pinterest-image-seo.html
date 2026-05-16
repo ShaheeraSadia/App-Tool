@@ -9,205 +9,204 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        :root {
-      --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
-      --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
-      --muted: #94a3b8; --white: #ffffff;
-      --blue-pale: #eff6ff; --blue-light: #dbeafe;
-/* ── NAV ── */
+  
+<style>
+    :root {
+        --primary: #7000cc;
+        --bg-dark: #0f172a;
+        --card-bg: #1e293b;
+        --text-light: #f8fafc;
+        --accent: #facc15;
+    }
+
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        line-height: 1.8;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+    }
+
+    /* ── FIXED NAV: Now using matching dark-theme variables ── */
     nav {
-      background: var(--white); border-bottom: 1px solid #dde6ff;
-      padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
-      position: sticky; top: 0; z-index: 300;
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+        background: var(--card-bg); 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 0 40px; 
+        display: flex; 
+        align-items: center;
+        justify-content: space-between; 
+        height: 66px;
+        position: sticky; 
+        top: 0; 
+        z-index: 300;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
     .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
+    .nav-logo i { color: var(--accent); font-size: 18px; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: white; }
+    .nav-logo-text em { color: var(--accent); font-style: normal; }
     
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin:0; padding:0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: #94a3b8; font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: white; background: rgba(255, 255, 255, 0.05); }
+    .nav-links a.active { color: white; background: var(--primary); font-weight: 600; }
+    .nav-shop { background: linear-gradient(135deg, var(--primary), #3b82f6) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
 
     .mobile-btn {
-        display: none; background: var(--blue-dark); border: none;
-        color: white; width: 40px; height: 40px; border-radius: 8px;
-        cursor: pointer; font-size: 1.2rem;
+        display: none; 
+        background: transparent; 
+        border: none;
+        color: white; 
+        width: 40px; 
+        height: 40px; 
+        border-radius: 8px;
+        cursor: pointer; 
+        font-size: 1.2rem;
     }
 
+    /* ── LAYOUT ELEMENTS ── */
+    .blog-wrapper {
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+
+    .post-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .post-header h1 {
+        font-size: 2.8rem;
+        color: white;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .post-meta {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .featured-img {
+        width: 100%;
+        height: 450px;
+        background: linear-gradient(135deg, #7000cc, #3b82f6);
+        border-radius: 24px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        color: white;
+        object-fit: cover;
+    }
+
+    .article-content h2 {
+        color: var(--accent);
+        margin-top: 40px;
+        font-size: 1.8rem;
+    }
+
+    .article-content p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #cbd5e1;
+    }
+
+    .highlight-box {
+        background: rgba(112, 0, 204, 0.1);
+        border-left: 4px solid var(--primary);
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+    }
+
+    .checklist {
+        list-style: none;
+        padding: 0;
+        background: var(--card-bg);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .checklist li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .checklist i {
+        color: #22c55e;
+        margin-right: 15px;
+    }
+
+    .cta-section {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px;
+        background: var(--card-bg);
+        border-radius: 24px;
+    }
+
+    .btn-main {
+        background: var(--primary);
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    .btn-main:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(112, 0, 204, 0.3);
+    }
+
+    /* ── CONSOLIDATED MOBILE RESPONSIVENESS ── */
     @media (max-width: 768px) {
         nav { padding: 0 20px; }
         .mobile-btn { display: block; }
         .nav-links {
-            display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: white;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: none; 
+            flex-direction: column; 
+            position: absolute;
+            top: 66px; 
+            left: 0; 
+            width: 100%; 
+            background: var(--card-bg);
+            padding: 20px 0; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             z-index: 1000;
         }
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; text-align: center; }
-        .nav-links a { display: block; padding: 12px; }
-    }
-
-         /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
-        .blog-container {
-            margin: 30px auto; /* Reduced margin for mobile */
-        }
+        .nav-links a { display: block; padding: 12px; color: var(--text-light); }
         
-        .blog-header h1 {
-            font-size: 28px; /* Smaller font for mobile screens */
-            padding: 0 10px;
-        }
-
-        .featured-image {
-            height: 250px; /* Shorter image height on mobile */
-            border-radius: 12px;
-        }
-
-        .content-section {
-            padding: 25px 20px; /* Less padding so text isn't too narrow */
-            border-radius: 15px;
-        }
-
-        h2 {
-            font-size: 22px;
-            margin-top: 25px;
-        }
-
-        p, li {
-            font-size: 16px; /* Slightly smaller text for readability */
-        }
-
-        /* Make the table scrollable horizontally on small screens */
+        .blog-wrapper { margin: 30px auto; }
+        .post-header h1 { font-size: 24px; padding: 0 10px; }
+        
+        /* Fixed class name from .featured-image to match .featured-img */
+        .featured-img { height: 250px; border-radius: 12px; margin-bottom: 24px; }
+        
+        .article-content h2 { font-size: 20px; margin-top: 25px; }
+        .article-content p, .checklist li { font-size: 16px; }
+        
         table {
             display: block;
             overflow-x: auto;
             white-space: nowrap;
         }
-
-        .tool-cta {
-            padding: 20px;
-        }
-        
-        .tool-cta h3 {
-            font-size: 20px;
-        }
     }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.8;
-            font-family: 'Inter', sans-serif;
-        }
+ 
 
-        .blog-wrapper {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
 
-        .post-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .post-header h1 {
-            font-size: 2.8rem;
-            color: white;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .post-meta {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .featured-img {
-            width: 100%;
-            height: 450px;
-            background: linear-gradient(135deg, #7000cc, #3b82f6);
-            border-radius: 24px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-        }
-
-        .article-content h2 {
-            color: var(--accent);
-            margin-top: 40px;
-            font-size: 1.8rem;
-        }
-
-        .article-content p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #cbd5e1;
-        }
-
-        .highlight-box {
-            background: rgba(112, 0, 204, 0.1);
-            border-left: 4px solid var(--primary);
-            padding: 25px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-
-        .checklist {
-            list-style: none;
-            padding: 0;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .checklist li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .checklist i {
-            color: #22c55e;
-            margin-right: 15px;
-        }
-
-        .cta-section {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--card-bg);
-            border-radius: 24px;
-        }
-
-        .btn-main {
-            background: var(--primary);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(112, 0, 204, 0.3);
-        }
         
     /* ── FOOTER ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 20px 28px; }
