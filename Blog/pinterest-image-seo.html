@@ -8,28 +8,35 @@
     
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  
 <style>
-    :root {
-        --primary: #7000cc;
-        --bg-dark: #0f172a;
-        --card-bg: #1e293b;
-        --text-light: #f8fafc;
-        --accent: #facc15;
-    }
+ :root {
+    --primary: #7000cc;
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-light: #f8fafc;
+    --accent: #facc15;
+    
+    /* ── یہ نئے ویری ایبلز ایڈ کیے ہیں تاکہ نیو بار بالکل صحیح رینڈر ہو ── */
+    --white: #ffffff;
+    --blue: #2563eb;
+    --blue-dark: #1e3a8a;
+    --blue-light: #eff6ff;
+    --blue-pale: #f0fdf4; /* ہوور ایفیکٹ کے لیے */
+    --pink: #db2777;
+    --muted: #64748b;
+}
 
-    body {
-        background-color: var(--bg-dark);
-        color: var(--text-light);
-        line-height: 1.8;
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-    }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
 
-     /* ── NAV ── */
+/* ── NAV (FIXED & RESPONSIVE) ── */
 nav {
-  background: var(--white);
+  background: var(--white) !important; /* سفید رنگ برقرار رکھنے کے لیے */
   border-bottom: 1px solid #dde6ff;
   padding: 0 40px;
   display: flex;
@@ -37,14 +44,15 @@ nav {
   justify-content: space-between;
   height: 66px;
   
-  /* ان تین لائنز نے اوورلیپ اور چوڑائی کا مسئلہ حل کیا ہے */
+  /* ان چار لائنز سے نیو بار پوری اسکرین پر فکسڈ رہے گا اور ٹوٹے گا نہیں */
   position: fixed; 
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  box-sizing: border-box; /* پیڈنگ کو چوڑائی سے باہر جانے سے روکنے کے لیے */
+  box-sizing: border-box; 
   
-  z-index: 1000; /* تاکہ نیو بار ہمیشہ امیجز کے اوپر رہے */
+  z-index: 9999; /* تاکہ یہ ہمیشہ ہر چیز کے اوپر رہے */
   box-shadow: 0 2px 16px rgba(43,79,216,0.07);
 }
 
@@ -55,34 +63,64 @@ nav {
 
 .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-.nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+.nav-links a:hover { color: var(--blue); background: #f1f5f9; }
 .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
 .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
 
 .mobile-btn {
-    display: none; background: var(--blue-dark); border: none;
-    color: white; width: 40px; height: 40px; border-radius: 8px;
-    cursor: pointer; font-size: 1.2rem;
+    display: none; 
+    background: var(--blue-dark); 
+    border: none;
+    color: white; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 8px;
+    cursor: pointer; 
+    font-size: 1.2rem;
 }
 
-/* ── MOBILE OPTIMIZATIONS ── */
+/* ── LAYOUT ELEMENTS ── */
+.blog-wrapper {
+    max-width: 900px;
+    margin: 120px auto 80px; /* ٹاپ مارجن 80px سے بڑھا کر 120px کر دیا تاکہ ہیڈنگ نیو بار کے پیچھے نہ چھپے */
+    padding: 0 20px;
+}
+
+/* ── CONSOLIDATED MOBILE RESPONSIVENESS ── */
 @media (max-width: 768px) {
-    nav { 
-      padding: 0 20px; 
-    }
+    nav { padding: 0 20px; }
     .mobile-btn { display: block; }
     .nav-links {
-        display: none; flex-direction: column; position: absolute;
-        top: 66px; left: 0; width: 100%; background: white;
-        padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 66px; 
+        left: 0; 
+        width: 100%; 
+        background: var(--white); /* موبائل مینو کا بیک گراؤنڈ وائٹ رکھا تاکہ لنکس نظر آئیں */
+        padding: 20px 0; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         z-index: 1000;
-        box-sizing: border-box; /* موبائل مینو کو اسکرین سے باہر جانے سے روکے گا */
+        box-sizing: border-box; 
     }
     .nav-links.active { display: flex; }
     .nav-links li { width: 100%; text-align: center; }
-    .nav-links a { display: block; padding: 12px; }
-}
+    .nav-links a { display: block; padding: 12px; color: var(--muted); }
     
+    .blog-wrapper { margin: 100px auto 30px; } /* موبائل پر بھی مارجن بیلنس رکھنے کے لیے */
+    .post-header h1 { font-size: 24px; padding: 0 10px; }
+    
+    .featured-img { height: 250px; border-radius: 12px; margin-bottom: 24px; }
+    
+    .article-content h2 { font-size: 20px; margin-top: 25px; }
+    .article-content p, .checklist li { font-size: 16px; }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
 
     /* ── LAYOUT ELEMENTS ── */
     .blog-wrapper {
