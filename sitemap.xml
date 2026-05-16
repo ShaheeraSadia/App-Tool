@@ -48,7 +48,20 @@
       <lastmod>2026-05-13</lastmod>
       <priority>0.85</priority>
    </url>
+<url>
+    <loc>https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/pinterest-image-seo.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+   
    <url>
       <loc>https://app-tool.vercel.app/blog/how-to-speed-up-website-image.html</loc>
       <lastmod>2026-05-15</lastmod>
