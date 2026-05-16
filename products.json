@@ -1,4 +1,61 @@
 [
+   
+  {
+    "id": "peteast-splash-pad-dog-pool",
+    "title": "Peteast Splash Pad for Dogs & Kids (67in)",
+    "description": "Keep your furry friends and kids cool this summer with the Peteast Splash Pad. This 67-inch outdoor water play mat features a 0.58 mm thickened, durable, and anti-slip design, making it the perfect backyard sprinkler toy for large dogs and family fun.",
+    "price": "24.99",
+    "currency": "USD",
+    "image": "/image/padfordog.jpg",
+    "amazonLink": "https://amzn.to/4uikV3m",
+    "category": "Outdoor Play",
+    "brand": "Peteast",
+    "btnColor": "linear-gradient(132deg, #0284c7, #0369a1)",
+    "features": [
+      "0.58 mm Thickened Durable Material",
+      "Anti-Slip Surface for Added Safety",
+      "Large 67-inch Size for Big Dogs & Kids",
+      "Easy to Connect to Standard Garden Hose"
+    ]
+  },
+  {
+    "id": "qpau-inflatable-swimming-pool-seats",
+    "title": "QPAU Inflatable Swimming Pool with Seats and Backrests",
+    "description": "Relax in style with the QPAU full-sized family inflatable swimming pool. Measuring 80\" x 80\", it features 2 built-in seats and comfortable backrests, making it the ultimate backyard or garden oasis for kids and adults during hot summer days.",
+    "price": "53.99",
+    "currency": "USD",
+    "image": "/image/pool2seats.jpg",
+    "amazonLink": "https://amzn.to/3RKV3P1",
+    "category": "Outdoor Play",
+    "brand": "QPAU",
+    "btnColor": "linear-gradient(132deg, #0ea5e9, #1d4ed8)",
+    "features": [
+      "Comfortable 2 Seats & Backrests",
+      "Large 80\" x 80\" Full-Sized Family Pool",
+      "Durable & Clear Blue Modern Design",
+      "Quick and Easy to Inflate and Deflate"
+    ]
+  },
+  {
+    "id": "kissdream-7pc-jumbo-dinosaur-toys",
+    "title": "Kissdream 7-Piece Jumbo Realistic Dinosaur Toys Set",
+    "description": "Unleash a prehistoric adventure with the Kissdream 7-piece jumbo dinosaur set. Made from soft, durable, and safe non-toxic rubber, these giant, hand-drawn dinosaurs (including T-Rex and Triceratops) are perfect educational gifts for kids aged 3-5.",
+    "price": "28.99",
+    "currency": "USD",
+    "image": "/image/kidstoys.jpg",
+    "amazonLink": "https://amzn.to/4tEPCi2",
+    "category": "Toys & Gifts",
+    "brand": "Kissdream",
+    "brand": "Kissdream",
+    "btnColor": "linear-gradient(132deg, #15803d, #1e293b)",
+    "features": [
+      "7 Jumbo-Sized Realistic Dinosaurs",
+      "Soft & Safe Non-Toxic Rubber Material",
+      "Hand-Drawn Details and Lifelike Movements",
+      "Perfect Birthday and Party Favor Gift"
+    ]
+  },
+
    {
   "id": "fullstar-mandoline-slicer-6in1",
   "title": "Fullstar 6-in-1 Mandoline Slicer & Vegetable Chopper",
