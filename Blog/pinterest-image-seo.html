@@ -206,10 +206,13 @@
         <p>By Shaheera Sadia — Full Stack Developer & Pinterest Strategist</p>
     </div>
 
-    <div class="featured-img">
-        <i class="fab fa-pinterest"></i>
+   <div class="featured-img" style="position: relative; overflow: hidden; background: none;">
+    <img src="image/blog4.jpg" alt="Pinterest Image SEO Guide - Toolkit Pro" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;">
+    
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(112, 0, 204, 0.3); z-index: 2; display: flex; align-items: center; justify-content: center;">
+        <i class="fab fa-pinterest" style="font-size: 5rem; color: white; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));"></i>
     </div>
-
+</div>
     <div class="article-content">
         <p>In 2026, Pinterest is more than just a place for inspiration; it is a <strong>visual search engine</strong>. As a developer building tools like <a href="../index.html" style="color:var(--accent);">Toolkit Pro</a>, I’ve realized that the same logic we use for Google SEO applies to Pinterest. If your technical data is correct, the algorithm will reward you with viral reach.</p>
 
@@ -230,15 +233,20 @@
 
         <h2>4. Automation & Alt Text</h2>
         <p>Accessibility is key. Use the <strong>Alt Text</strong> field to describe your pin in detail. Don't just list keywords; describe the visual. "A minimalist white desk setup with a laptop showing a React code editor and a green plant" is much better than "tech setup."</p>
-
-        <div class="cta-section">
-            <h2>Ready to optimize your pins?</h2>
-            <p>Use our free browser-based tools to compress, resize, and design viral pins today.</p>
-           <a class="read-more" href="https://www.pinterest.com/shaheerasadia" target="_blank">Follow on Pinterest <i class="fas fa-arrow-right" style="font-size:10px;"></i></a>
- 
-            <a href="https://app-tool.vercel.app/index.html" class="btn-main">Go to Image Compressor →</a>
-        </div>
-
+ <div class="cta-section">
+    <h2>Ready to optimize your pins?</h2>
+    <p>Use our free browser-based tools to compress, resize, and design viral pins today.</p>
+    
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="btn-main" style="background: #e60023; color: white;">
+            <i class="fab fa-pinterest" style="margin-right: 8px;"></i> Follow on Pinterest
+        </a>
+        
+        <a href="https://app-tool.vercel.app/index.html" class="btn-main">
+            Go to Image Compressor &rarr;
+        </a>
+    </div>
+</div>
         <h2 style="margin-top:60px;">Pinterest SEO Checklist</h2>
         <ul class="checklist">
             <li><i class="fas fa-check-circle"></i> Aspect ratio set to 2:3 (1000x1500px).</li>
