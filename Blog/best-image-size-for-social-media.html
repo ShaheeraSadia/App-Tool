@@ -208,7 +208,7 @@
     <span style="color: var(--pink); font-weight: 700; text-transform: uppercase;">Web Performance</span>
     <h1> How to Best Image Size for Social Media</h1>
     <p style="color: var(--muted);">The ultimate developer's guide to optimizing visual content for speed.</p>
-     <img src="../image/blog4.jpg" alt=" Best Image Size for Social Media" class="featured-image">
+     <img src="../image/blog5.jpg" alt=" Best Image Size for Social Media" class="featured-image">
   </header>
 <h2>Quick Reference: 2026 Social Media Cheat Sheet</h2>
 <p>To save you time, I've compiled the most important dimensions for the platforms that drive the most traffic. Use these to ensure your designs look sharp on every screen.</p>
@@ -348,6 +348,15 @@
   </div>
 </footer>
  
-
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  mobileBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+  });
+</script>
 </body>
 </html>
