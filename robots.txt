@@ -1,8 +1,4 @@
  User-agent: *
-
 Allow: /
-Allow: /index.html
-
-# Disallow: /admin/
 
 Sitemap: https://app-tool.vercel.app/sitemap.xml
