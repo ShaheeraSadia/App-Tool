@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Extract Color Palettes from Any Image for Web Design | Toolkit Pro</title>
+    <meta name="description" content="Master color consistency across your brand. Learn how to extract hex color palettes from images, understand modern color theory, and build cohesive UI designs.">
+    <meta name="keywords" content="Color Palette Extractor, Get Hex Codes from Image, Web Design Colors, UI/UX Branding, Image Color Picker, Toolkit Pro">
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #7000cc;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --accent: #facc15;
+            --muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        nav {
+            background: var(--card-bg); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0 40px; 
+            display: flex; 
+            align-items: center;
+            justify-content: space-between; 
+            height: 66px;
+            position: sticky; 
+            top: 0; 
+            z-index: 300;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .nav-logo i { color: var(--accent); font-size: 18px; }
+        .nav-logo-text { font-size: 20px; font-weight: 700; color: white; }
+        .nav-logo-text em { color: var(--accent); font-style: normal; }
+        
+        .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
+        .nav-links a { text-decoration: none; color: #94a3b8; font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+        .nav-links a:hover { color: white; background: rgba(255, 255, 255, 0.05); }
+        .nav-links a.active { color: white; background: var(--primary); font-weight: 600; }
+        .nav-shop { background: linear-gradient(135deg, var(--primary), #3b82f6) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+
+        .mobile-btn {
+            display: none; background: transparent; border: none;
+            color: white; width: 40px; height: 40px; border-radius: 8px;
+            cursor: pointer; font-size: 1.2rem;
+        }
+
+        /* Content Styles */
+        .blog-wrapper { max-width: 900px; margin: 80px auto; padding: 0 20px; }
+        .post-header { text-align: center; margin-bottom: 50px; }
+        .post-header h1 { font-size: 2.8rem; color: white; line-height: 1.2; margin-bottom: 20px; }
+        .post-meta { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .featured-img {
+            width: 100%; height: 450px; border-radius: 24px; margin-bottom: 40px;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .featured-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .article-content h2 { color: var(--accent); margin-top: 45px; font-size: 1.9rem; border-left: 4px solid var(--primary); padding-left: 15px; }
+        .article-content h3 { color: #38bdf8; margin-top: 30px; font-size: 1.4rem; }
+        .article-content p { margin-bottom: 22px; font-size: 1.1rem; color: #cbd5e1; }
+        .article-content ul, .article-content ol { color: #cbd5e1; margin-bottom: 25px; padding-left: 25px; }
+        .article-content li { margin-bottom: 10px; font-size: 1.05rem; }
+        
+        .highlight-box { background: rgba(112, 0, 204, 0.1); border-left: 4px solid var(--primary); padding: 25px; border-radius: 12px; margin: 30px 0; color: #e2e8f0; }
+        
+        /* Table Optimization */
+        .table-container { overflow-x: auto; margin: 35px 0; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); }
+        table th, table td { padding: 16px; text-align: left; font-size: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        table th { background: #1e1b4b; color: #7dd3fc; font-weight: 600; }
+        
+        /* Interactive Palette Showcase for Content Depth */
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 25px 0; }
+        .color-block { height: 80px; border-radius: 8px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; font-size: 12px; font-family: monospace; font-weight: bold; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+
+        pre { background: #070a13; padding: 20px; border-radius: 10px; color: #38bdf8; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); font-family: monospace; }
+        code { background: rgba(112, 0, 204, 0.2); color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+
+        .checklist { list-style: none; padding: 30px; background: var(--card-bg); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .checklist li { margin-bottom: 15px; display: flex; align-items: center; }
+        .checklist i { color: #22c55e; margin-right: 15px; font-size: 1.2rem; }
+
+        .cta-section { text-align: center; margin-top: 60px; padding: 45px; background: linear-gradient(135deg, #1e1b4b, #0f172a); border-radius: 24px; border: 1px solid rgba(112, 0, 204, 0.2); }
+        .btn-main { background: var(--primary); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(112, 0, 204, 0.4); }
+
+        /* Footer Styles */
+        footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 20px 28px; margin-top: 80px; }
+        .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 15px; font-size: 13px; color: rgba(255,255,255,.7); text-align: center; margin: 0 auto 28px; max-width: 1100px; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+        .footer-brand .logo { font-size: 24px; color: #7dd3fc; font-weight: 700; margin-bottom: 12px; }
+        .footer-brand p { font-size: 14px; opacity: .8; line-height: 1.6; }
+        .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+        .footer-social-btn { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
+        .footer-social-btn:hover { background: #3b82f6; transform: translateY(-3px); }
+        
+        .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #7dd3fc; margin-bottom: 20px; letter-spacing: 1px; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: 0.2s; }
+        .footer-col a:hover { color: white; padding-left: 5px; }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; font-size: 13px; opacity: 0.8; flex-wrap: wrap; gap: 15px; }
+        .footer-bottom a { color: #7dd3fc; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .mobile-btn { display: block; }
+            .nav-links {
+                display: none; flex-direction: column; position: absolute;
+                top: 66px; left: 0; width: 100%; background: var(--card-bg);
+                padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; text-align: center; }
+            .nav-links a { display: block; padding: 12px; color: var(--text-light); }
+            .blog-wrapper { margin: 30px auto; }
+            .post-header h1 { font-size: 26px; padding: 0 10px; }
+            .featured-img { height: 250px; border-radius: 12px; margin-bottom: 24px; }
+            .article-content h2 { font-size: 22px; margin-top: 25px; }
+            .article-content p, .checklist li { font-size: 16px; }
+            .palette-grid { grid-template-columns: repeat(3, 1fr); }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+        @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
+  </a>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
+  </ul>
+  <button class="mobile-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<div class="blog-wrapper">
+    <div class="post-header">
+        <div class="post-meta">UI/UX Design • May 2026</div>
+        <h1>How to Extract Color Palettes from Any Image for Web Design</h1>
+        <p>By Shaheera Sadia — Full Stack Developer & UI Designer</p>
+        <div class="featured-img">
+            <img src="../image/color-palette-blog.jpg" alt="Extracting dominant color palettes and hex codes from digital graphics">
+        </div>
+    </div>
+ 
+    <div class="article-content">
+        <p>Color consistency is the invisible thread that binds a premium user interface together. When visitors land on your web app, social feed, or digital storefront, they process the visual hierarchy within milliseconds. Relying on random color pickers often results in a disconnected interface. Instead, pulling hex codes directly from natural source images allows you to inherit sophisticated, balanced color harmonies automatically.</p>
+
+        <p>Whether you are designing Pinterest graphics to trigger viral impressions or fine-tuning a dark-mode dashboard framework, starting with an image-extracted palette ensures seamless aesthetic styling. Let's dive deep into the technical process of picking dominant colors and transforming them into a production-ready UI kit.</p>
+
+        <h2>1. The Science of Dominant vs. Accent Colors</h2>
+        <p>A professional design layout doesn't distribute colors evenly. It follows structural distribution ratios to ensure high readability and visual comfort. Designers refer to this framework as the <strong>60-30-10 Design Principle</strong>:</p>
+        
+        <ul>
+            <li><strong>60% Dominant Color:</strong> The overarching backdrop canvas tone (typically clean dark slates or crisp light neutrals).</li>
+            <li><strong>30% Secondary Structure:</strong> Used for layout containers, component surfaces, and text fields to establish baseline clarity.</li>
+            <li><strong>10% Vibrant Accent:</strong> Reserved strictly for primary call-to-actions (CTAs), focus indicators, and key milestones.</li>
+        </ul>
+
+        <p>When you drop a brand reference asset into a canvas processor, the system clusters pixel arrays to identify structural background swatches along with high-contrast accent pixels suitable for interactive component state styles.</p>
+
+        <h2>2. Understanding Color Harmonies</h2>
+        <p>Different color relationships evoke specific emotional feedback loops. When selecting your core target image, prioritize layouts structured around verified mathematical wheel paths:</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Harmony Type</th>
+                        <th>Wheel Layout Mechanism</th>
+                        <th>Best Used For</th>
+                        <th>Visual Psychological Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Monochromatic</strong></td>
+                        <td>Varying shades of a singular base tone</td>
+                        <td>Minimalist Dashboards</td>
+                        <td>Ultra clean, focused, professional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Analogous</strong></td>
+                        <td>3 adjacent values sitting side-by-side</td>
+                        <td>Lifestyle & Blog Feeds</td>
+                        <td>Highly relaxing, natural, comforting</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complementary</strong></td>
+                        <td>Direct structural opposites (180° axis)</td>
+                        <td>Conversion Focused CTAs</td>
+                        <td>High energy, striking contrast, bold</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>3. Sample Extracted Palette Archetype</h2>
+        <p>Below is a standard asset color profile pulled directly from a premium nature asset array, mapping out precise functional hex layout designations:</p>
+
+        <div class="palette-grid">
+            <div class="color-block" style="background: #0f172a;">#0F172A<br>Base BG</div>
+            <div class="color-block" style="background: #1e293b;">#1E293B<br>Surface Card</div>
+            <div class="color-block" style="background: #7000cc;">#7000CC<br>Primary</div>
+            <div class="color-block" style="background: #38bdf8;">#38BDF8<br>Secondary</div>
+            <div class="color-block" style="background: #facc15; color:#000;">#FACC15<br>Accent CTA</div>
+        </div>
+
+        <h2>4. Implementing Hex Tokens in CSS Frameworks</h2>
+        <p>Once you extract your hex strings, transfer them directly into your global root stylesheets. This centralized approach allows you to update your product's entire color theme globally with just a few code edits:</p>
+
+        <pre><code>:root {
+    --bg-main: #0f172a;       /* 60% Dominant Backdrop */
+    --card-surface: #1e293b;  /* 30% Structural Container */
+    --brand-action: #7000cc;  /* 10% Interactive Accent */
+    --text-primary: #f8fafc;  /* Readable Typography Element */
+}
+
+.custom-button {
+    background-color: var(--brand-action);
+    color: var(--text-primary);
+    transition: background 0.3s ease;
+}</code></pre>
+
+        <div class="highlight-box">
+            <strong>Pro Workflow Tip:</strong> Always run your extracted accent and text hex combinations through a Web Content Accessibility Guidelines (WCAG) checker to confirm that your color contrast ratio is at least 4.5:1, ensuring clear readability for everyone.
+        </div>
+
+        <div class="cta-section">
+            <h2>Extract High-Fidelity Palettes Instantly</h2>
+            <p>Skip the guesswork. Drop your brand imagery or product photos directly into our secure, browser-based extraction engine to retrieve a clean grid of dominant hex codes instantly.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+                <a href="https://app-tool.vercel.app/index.html#palette-section" class="btn-main">Launch Color Extractor &rarr;</a>
+            </div>
+        </div>
+
+        <h2 style="margin-top:60px;">Your Color Workflow Checklist</h2>
+        <ul class="checklist">
+            <li><i class="fas fa-check-circle"></i> Upload your source image to extract 5–6 matching dominant hex codes.</li>
+            <li><i class="fas fa-check-circle"></i> Assign colors using the 60-30-10 distribution layout rule.</li>
+            <li><i class="fas fa-check-circle"></i> Verify contrast ratios to meet essential accessibility requirements.</li>
+            <li><i class="fas fa-check-circle"></i> Map hex variables directly to CSS <code>:root</code> tokens for clean maintenance.</li>
+            <li><i class="fas fa-check-circle"></i> Apply matching accent color choices to your Pinterest templates to boost brand consistency.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+  <div class="affiliate-footer">
+    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
+  </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="Pinterest ID"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
+        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+  }
+</script>
+</body>
+</html>
