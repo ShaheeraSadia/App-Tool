@@ -11,53 +11,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
+     
         :root {
-            --primary: #7000cc;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --accent: #facc15;
-            --muted: #94a3b8;
-        }
+    --primary: #7000cc;
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-light: #f8fafc;
+    --accent: #facc15;
+    
+    /* ── Navbar Colors ── */
+    --white: #ffffff;
+    --blue: #2563eb;
+    --blue-dark: #1e3a8a;
+    --blue-light: #eff6ff;
+    --pink: #db2777;
+    --muted: #64748b;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.8;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-        }
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
 
-        nav {
-            background: var(--card-bg); 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 0 40px; 
-            display: flex; 
-            align-items: center;
-            justify-content: space-between; 
-            height: 66px;
-            position: sticky; 
-            top: 0; 
-            z-index: 300;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .nav-logo i { color: var(--accent); font-size: 18px; }
-        .nav-logo-text { font-size: 20px; font-weight: 700; color: white; }
-        .nav-logo-text em { color: var(--accent); font-style: normal; }
-        
-        .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
-        .nav-links a { text-decoration: none; color: #94a3b8; font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-        .nav-links a:hover { color: white; background: rgba(255, 255, 255, 0.05); }
-        .nav-links a.active { color: white; background: var(--primary); font-weight: 600; }
-        .nav-shop { background: linear-gradient(135deg, var(--primary), #3b82f6) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+/* ── NAV (FIXED & RESPONSIVE) ── */
+nav {
+  background: var(--white) !important; 
+  border-bottom: 1px solid #dde6ff;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box; 
+  z-index: 9999; 
+  box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+}
 
-        .mobile-btn {
-            display: none; background: transparent; border: none;
-            color: white; width: 40px; height: 40px; border-radius: 8px;
-            cursor: pointer; font-size: 1.2rem;
-        }
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo i { color: var(--blue); font-size: 18px; }
+.nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+.nav-logo-text em { color: var(--pink); font-style: normal; }
 
+.nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+.nav-links a:hover { color: var(--blue); background: #f1f5f9; }
+.nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
+.nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+
+.mobile-btn {
+    display: none; 
+    background: var(--blue-dark); 
+    border: none;
+    color: white; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 8px;
+    cursor: pointer; 
+    font-size: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}////
         .blog-wrapper { max-width: 900px; margin: 80px auto; padding: 0 20px; }
         .post-header { text-align: center; margin-bottom: 50px; }
         .post-header h1 { font-size: 2.8rem; color: white; line-height: 1.2; margin-bottom: 20px; }
@@ -155,7 +176,7 @@
         <h1>How to Create Viral Aesthetic Quote Cards for Pinterest</h1>
         <p>By Shaheera Sadia — Full Stack Developer & Content Strategist</p>
         <div class="featured-img">
-            <img src="../image/quote-card-blog.jpg" alt="Aesthetic typography design quote card for Pinterest viral growth">
+            <img src="../image/nature.jpg" alt="Aesthetic typography design quote card for Pinterest viral growth">
         </div>
     </div>
  
