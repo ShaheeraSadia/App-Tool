@@ -1,31 +1,31 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How to Speed Up Website Images | Toolkit Pro Blog</title>
-  <meta name="description" content="Master the art of image optimization. Learn how to speed up your website using WebP, lazy loading, and professional compression techniques.">
+  <title>How to Speed Up Website Images (2026 Guide) | Toolkit Pro Blog</title>
+  <meta name="description" content="Master the art of image optimization. Learn how to speed up your website using WebP, lazy loading, responsive layouts, and professional compression techniques.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
     /* ── MOBILE OPTIMIZATIONS ── */
     @media (max-width: 768px) {
         .blog-container {
-            margin: 30px auto; /* Reduced margin for mobile */
+            margin: 30px auto;
         }
         
         .blog-header h1 {
-            font-size: 28px; /* Smaller font for mobile screens */
+            font-size: 28px;
             padding: 0 10px;
         }
 
         .featured-image {
-            height: 250px; /* Shorter image height on mobile */
+            height: 250px;
             border-radius: 12px;
         }
 
         .content-section {
-            padding: 25px 20px; /* Less padding so text isn't too narrow */
+            padding: 25px 20px;
             border-radius: 15px;
         }
 
@@ -35,13 +35,18 @@
         }
 
         p, li {
-            font-size: 16px; /* Slightly smaller text for readability */
+            font-size: 16px;
         }
 
         /* Make the table scrollable horizontally on small screens */
-        table {
-            display: block;
+        .table-container {
             overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+        table {
+            display: table;
+            width: 100%;
             white-space: nowrap;
         }
 
@@ -117,6 +122,10 @@
     h2 { color: #facc15; margin-top: 35px; border-left: 4px solid var(--blue); padding-left: 15px; }
     p { color: #cbd5e1; font-size: 17px; margin-bottom: 20px; }
     
+    code { background: #0f172a; color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-family: Courier, monospace; font-size: 15px; }
+    pre { background: #0f172a; padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); }
+    pre code { color: #38bdf8; padding: 0; background: transparent; }
+
     .tool-cta {
       background: linear-gradient(135deg, #1e3a8a, #3b82f6);
       padding: 30px; border-radius: 15px; text-align: center; margin: 40px 0;
@@ -133,7 +142,7 @@
     table th, table td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
     table th { background: var(--blue-dark); color: #7dd3fc; }
 
- /* ── FOOTER (same on all pages) ── */
+    /* ── FOOTER ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
     .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
@@ -143,7 +152,7 @@
     .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
     .footer-social-btn:hover { background: var(--blue); color: white; }
     .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; padding: 0; }
     .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
     .footer-col ul a:hover { color: #7dd3fc; }
     .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
@@ -151,13 +160,8 @@
     .footer-bottom a:hover { text-decoration: underline; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
-
-   
-    .btn-send { background: var(--pink); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; transition: 0.3s; }
-    .social-icons a { color: white; font-size: 20px; margin-right: 15px; transition: 0.3s; }
-    .social-icons a:hover { color: #7dd3fc; }
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { nav { padding: 0 16px; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
@@ -165,11 +169,11 @@
 <nav>
   <a href="../index.html" class="nav-logo">
     <i class="fas fa-toolbox" style="color: var(--blue);"></i>
-    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
   </a>
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#resources">Resources</a></li>
+    <li><a href="../Resources.html" class="active">Resources</a></li>
     <li><a href="../shopping.html">Shop</a></li>
   </ul>
 </nav>
@@ -178,8 +182,7 @@
     <header>
         <h1>How to Speed Up Website Images</h1>
         <div class="meta-info">Published May 2026 • By Shaheera Sadia</div>
-        <!-- Reference to your high-aesthetic nature imagery preference -->
-        <img src="../image/blog6.jpg" alt="Fast loading website concept" class="featured-image">
+        <img src="../image/blog6.jpg" alt="Fast loading website concept with high aesthetic nature elements" class="featured-image">
     </header>
 
     <div class="content-section">
@@ -188,8 +191,48 @@
         <h2>The Core Problem: Bloated Media</h2>
         <p>Images often account for over 60% of a website's total weight. High-resolution photos, while beautiful, can slow down your site if not handled correctly. The goal is to achieve the smallest file size possible while maintaining the visual quality of your nature and floral designs.</p>
 
-        <h2>Step 1: Adopt Modern Formats (WebP)</h2>
+        <h2>Understanding the Core Performance Metrics</h2>
+        <p>When Google crawls your website, it heavily scores page layout metrics via <strong>Core Web Vitals</strong>. Unoptimized images directly degrade two key performance pillars:</p>
+        <ul>
+            <li><strong>Largest Contentful Paint (LCP):</strong> Measures how long it takes for the main content or hero image area of a webpage to fully render on screen. Huge files delay this completely.</li>
+            <li><strong>Cumulative Layout Shift (CLS):</strong> If your images do not explicitly state width and height dimensions in the HTML, the text elements will unpleasantly bounce around while loading, causing a poor user experience.</li>
+        </ul>
+
+        <h2>Step 1: Adopt Modern Formats (WebP & AVIF)</h2>
         <p>The first step is moving away from traditional JPEGs and PNGs. <strong>WebP</strong> offers superior lossless and lossy compression. By converting your gallery to WebP, you can save significant bandwidth without sacrificing the "Golden Hour" aesthetic of your photography.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Average Reduction</th>
+                        <th>Transparency Support</th>
+                        <th>Best Used For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>JPEG</strong></td>
+                        <td>Baseline (0%)</td>
+                        <td>No</td>
+                        <td>Legacy browsers only</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WebP</strong></td>
+                        <td>30% – 35% smaller</td>
+                        <td>Yes</td>
+                        <td>Standard web design graphics</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AVIF</strong></td>
+                        <td>50% – 60% smaller</td>
+                        <td>Yes</td>
+                        <td>Ultra high-efficiency hero banners</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <div class="tool-cta">
             <h3>Ready to Optimize Your Gallery?</h3>
@@ -197,23 +240,31 @@
             <a href="../index.html#uploadArea" class="btn-cta">Go to Image Compressor</a>
         </div>
 
-        <h2>Step 2: Implement Lazy Loading</h2>
-        <p>Lazy loading ensures that images are only downloaded when they are about to appear on the user's screen. This saves data for your mobile users and makes the initial page load feel instantaneous.</p>
+        <h2>Step 2: Implement Native Lazy Loading</h2>
+        <p>Lazy loading ensures that images are only downloaded when they are about to appear on the user's screen. This saves critical data for mobile users and makes the initial page setup load instantaneously.</p>
+        <p>Modern browsers natively support this. All you have to do is apply the loading attribute to your element structures like this:</p>
+        <pre><code>&lt;img src="nature-bloom.jpg" loading="lazy" alt="Beautiful white floral arrangement"&gt;</code></pre>
 
-        <h2>Step 3: Serve Responsive Images</h2>
-        <p>Never send a 4000px wide desktop image to a mobile phone. Using the <code>srcset</code> attribute allows the browser to choose the perfect size for the user's device, significantly reducing mobile load times.</p>
+        <h2>Step 3: Serve Responsive Images with Srcset</h2>
+        <p>Never send a 4000px wide desktop image to a small mobile phone. Using the <code>srcset</code> attribute allows the browser to dynamically choose the perfect media asset path based on the specific dimensional constraints of the user's viewport.</p>
+        <pre><code>&lt;img src="flower-small.jpg" 
+     srcset="flower-small.jpg 480w, flower-medium.jpg 800w, flower-large.jpg 1200w" 
+     sizes="(max-width: 600px) 480px, 800px" 
+     alt="Optimized responsive nature layout"&gt;</code></pre>
 
         <h2>Frequently Asked Questions (FAQ)</h2>
-        <p><strong>Q: Does image compression hurt SEO?</strong><br>
-        A: No! In fact, it helps. Faster sites rank higher in Google search results because they provide a better user experience.</p>
+        <p><strong>Q: Does image compression hurt organic SEO scores?</strong><br>
+        A: No! In fact, it dramatically improves it. Faster sites score higher in Google search indexes because they keep mobile bounce rates extremely low.</p>
         
-        <p><strong>Q: Should I use PNG or WebP?</strong><br>
-        A: Use WebP whenever possible. Only use PNG if you specifically need a transparent background for logos or graphics.</p>
+        <p><strong>Q: Should I use PNG or WebP for my logos?</strong><br>
+        A: Use WebP whenever possible. Only fall back to standard PNG pipelines if you require ultra-sharp transparent vector elements that legacy systems can't parse.</p>
+
+        <p><strong>Q: What is the optimal file weight for standard blog graphics?</strong><br>
+        A: For wide header hero canvases, aim for sizes below 150KB. Smaller inline graphics or contextual thumbnails should be kept under 30KB to guarantee crisp, lightning-fast loads.</p>
     </div>
 </article>
 
- <!-- ══ FOOTER ══ -->
-<footer>
+ <footer>
   <div class="affiliate-footer">
     This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
   </div>
@@ -232,10 +283,10 @@
     <div class="footer-col">
       <h4>Tools</h4>
       <ul>
-        <li><a href="#uploadArea">Image Compressor</a></li>
-        <li><a href="#palette-section">Color Extractor</a></li>
-        <li><a href="#nature-designer">Nature Designer</a></li>
-        <li><a href="#qr-section">QR Generator</a></li>
+        <li><a href="../index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="../index.html#palette-section">Color Extractor</a></li>
+        <li><a href="../index.html#nature-designer">Nature Designer</a></li>
+        <li><a href="../index.html#qr-section">QR Generator</a></li>
       </ul>
     </div>
 
@@ -246,8 +297,8 @@
         <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
         <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
         <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
-        <li><a href="/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+        <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
       </ul>
     </div>
 
@@ -266,20 +317,25 @@
     <div class="footer-bottom-links">
       <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> · 
       <a href="https://app-tool.vercel.app/terms.html">Terms</a> · 
-      <a href="/cookie-policy.html">Cookies</a> · 
-      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> · 
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Disclosure</a>
     </div>
   </div>
 </footer>
+
 <script>
+  // Quick Fix for Mobile Menu Trigger Selector
   const mobileBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.getElementById('navMenu');
-  mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileBtn.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
-  });
+  
+  if(mobileBtn && navMenu) {
+      mobileBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+      });
+  }
 </script>
 </body>
 </html>
