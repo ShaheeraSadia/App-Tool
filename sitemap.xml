@@ -1,97 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-   <url>
-      <loc>https://app-tool.vercel.app/</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>1.00</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/shopping.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.95</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Resources.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/resources.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.80</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/shopping.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/privacy.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.50</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/privacy.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/terms.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.50</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/terms.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/Blog/creating-viral-aesthetic-quote-cards.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/how-to-compress-images.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/Blog/how-to-extract-color-palette.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/Blog/pinterest-image-seo.html</loc>
-      <lastmod>2026-05-17</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/how-qr-codes-work.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html</loc>
-      <lastmod>2026-05-16</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/blog/how-to-compress-images.html</loc>
-      <lastmod>2026-05-11</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/pinterest-image-seo.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/blog/best-image-size-for-social-media.html</loc>
-      <lastmod>2026-05-12</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/how-to-speed-up-website-image.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <url>
-      <loc>https://app-tool.vercel.app/blog/how-qr-codes-work.html</loc>
-      <lastmod>2026-05-13</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
-   
-   <url>
-      <loc>https://app-tool.vercel.app/blog/how-to-speed-up-website-image.html</loc>
-      <lastmod>2026-05-15</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.85</priority>
-   </url>
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
+
+
+
+
+
+
+
+
+
+
+
 
  
