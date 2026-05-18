@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -19,7 +19,7 @@
       --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
       --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
       --muted: #94a3b8; --white: #ffffff;
-      --blue-pale: rgba(59, 130, 246, 0.1); --blue-light: rgba(125, 211, 252, 0.2);
+      --blue-pale: rgba(59, 130, 246, 0.08); --blue-text: #2563eb;
     }
 
     body {
@@ -28,35 +28,47 @@
       margin: 0; padding: 0; line-height: 1.8;
     }
 
-    /* ── NAVIGATION BAR ── */
+    /* ── NEW BRANDED NAVIGATION BAR (MATCHES SCREENSHOT - NO YELLOW) ── */
     nav {
-      background: #1e293b; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: #ffffff; border-bottom: 1px solid #e2e8f0;
       padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
+      justify-content: space-between; height: 70px;
       position: sticky; top: 0; z-index: 300;
       box-sizing: border-box;
     }
     .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: #facc15; font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: white; }
-    .nav-logo-text em { color: #facc15; font-style: normal; }
+    .nav-logo i { color: var(--blue-text); font-size: 20px; }
+    .nav-logo-text { font-size: 22px; font-weight: 700; color: #1e3a8a; }
+    .nav-logo-text em { color: var(--pink); font-style: normal; font-weight: 500; }
     
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: white; background: var(--blue-pale); }
-    .nav-links a.active { color: white; background: var(--blue-light); font-weight: 600; border-bottom: 2px solid #7dd3fc; border-radius: 9px 9px 0 0; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+    .nav-links { display: flex; gap: 6px; list-style: none; align-items: center; margin: 0; padding: 0; }
+    .nav-links li { position: relative; }
+    .nav-links a { text-decoration: none; color: #475569; font-size: 15px; font-weight: 500; padding: 9px 15px; border-radius: 10px; transition: all .2s; display: flex; align-items: center; gap: 6px; }
+    .nav-links a:hover { color: var(--blue-text); background: var(--blue-pale); }
+    
+    /* Active State Matching User Image (Light Blue Background, Rich Blue Text) */
+    .nav-links a.active { color: var(--blue-text); background: var(--blue-pale); font-weight: 600; }
+    
+    /* Shop Button */
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff758c) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2); }
+    .nav-shop:hover { transform: translateY(-1px); opacity: 0.95; }
+
+    /* Dropdown Menus Setup */
+    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: white; min-width: 180px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-radius: 12px; border: 1px solid #e2e8f0; padding: 8px 0; list-style: none; }
+    .dropdown-content a { color: #334155; padding: 10px 16px; border-radius: 0; font-size: 14px; }
+    .dropdown-content a:hover { background: var(--blue-pale); color: var(--blue-text); }
+    .nav-links li:hover .dropdown-content { display: block; }
 
     .mobile-btn {
-        display: none; background: var(--blue-dark); border: none;
-        color: white; width: 40px; height: 40px; border-radius: 8px;
+        display: none; background: var(--blue-pale); border: none;
+        color: var(--blue-text); width: 42px; height: 42px; border-radius: 8px;
         cursor: pointer; font-size: 1.2rem;
     }
 
     /* ── BLOG LAYOUT ── */
     .blog-container { max-width: 850px; margin: 60px auto; padding: 0 20px; box-sizing: border-box; }
     .blog-header { text-align: center; margin-bottom: 40px; }
-    .blog-header h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: #facc15; line-height: 1.3; font-weight: 700; margin: 15px 0 0 0; }
+    .blog-header h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: #38bdf8; line-height: 1.3; font-weight: 700; margin: 15px 0 0 0; }
     .meta-info { color: var(--muted); font-size: 14px; margin-top: 10px; }
     .meta-info span { display: inline-flex; align-items: center; gap: 5px; }
 
@@ -64,46 +76,32 @@
     .content-section { background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; }
     
     h2 { font-family: 'Lora', serif; color: #38bdf8; margin-top: 40px; margin-bottom: 15px; border-left: 4px solid var(--pink); padding-left: 15px; font-weight: 700; }
-    h3 { font-family: 'Lora', serif; color: #7dd3fc; margin-top: 30px; font-weight: 600; }
     p { color: #cbd5e1; font-size: 16.5px; margin-bottom: 25px; text-align: justify; }
     ul, ol { color: #cbd5e1; font-size: 16px; margin-bottom: 25px; padding-left: 20px; }
     li { margin-bottom: 10px; }
     
     .insight-box {
-      background: rgba(250, 204, 21, 0.05); border-left: 4px solid #facc15; padding: 22px; border-radius: 0 12px 12px 0; margin: 35px 0; border-top: 1px solid rgba(250,204,21,0.03); border-right: 1px solid rgba(250,204,21,0.03); border-bottom: 1px solid rgba(250,204,21,0.03);
+      background: rgba(59, 130, 246, 0.05); border-left: 4px solid var(--blue); padding: 22px; border-radius: 0 12px 12px 0; margin: 35px 0; border: 1px solid rgba(59, 130, 246, 0.1); border-left: 4px solid var(--blue);
     }
-    .btn-cta {
-      display: inline-block; background: var(--pink); color: white;
-      padding: 12px 25px; border-radius: 10px; text-decoration: none;
-      font-weight: 700; margin-top: 15px; transition: 0.3s; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
-    }
-    .btn-cta:hover { transform: scale(1.05); }
+    .insight-box strong { color: #60a5fa !important; }
 
     .social-links-list { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; flex-wrap: wrap; font-size: 14px; }
     .social-links-list a { color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
     .social-links-list a:hover { color: #7dd3fc; }
 
-    /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         nav { padding: 0 20px; }
         .mobile-btn { display: block; }
         .nav-links {
             display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: #1e293b;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
+            top: 70px; left: 0; width: 100%; background: white;
+            padding: 20px 0; z-index: 1000; border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
         .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; text-align: center; margin-bottom: 10px; }
-        .nav-links a { display: block; padding: 12px; }
-        .nav-links a.active { border-bottom: none; background: var(--blue-light); }
-
-        .blog-container { margin: 30px auto; }
-        .blog-header h1 { font-size: 26px; padding: 0 10px; }
-        .featured-image { height: 220px; border-radius: 12px; }
-        .content-section { padding: 25px 20px; border-radius: 15px; }
-        h2 { font-size: 22px; margin-top: 25px; }
-        p, li { font-size: 15.5px; }
+        .nav-links li { width: 100%; text-align: center; }
+        .nav-links a { display: block; padding: 12px; border-radius: 0; }
+        .dropdown-content { position: relative; top: 0; width: 100%; box-shadow: none; border: none; background: #f8fafc; }
     }
   </style>
 </head>
@@ -122,9 +120,29 @@
 
   <ul class="nav-links" id="navMenu">
     <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="../index.html#uploadArea">Image Tools</a></li>
-    <li><a href="../resources.html" class="active">Resources</a></li>
-    <li><a href="../shopping.html" class="nav-shop">Shop Now</a></li>
+    <li>
+      <a href="../index.html#uploadArea"><i class="far fa-image"></i> Image Tools <i class="fas fa-caret-down" style="font-size: 11px; margin-left: 2px;"></i></a>
+      <ul class="dropdown-content">
+        <li><a href="../index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="../index.html#palette-section">Color Extractor</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="../index.html#pdf-section"><i class="far fa-file-pdf"></i> PDF Tools <i class="fas fa-caret-down" style="font-size: 11px; margin-left: 2px;"></i></a>
+      <ul class="dropdown-content">
+        <li><a href="../index.html#pdf-section">Merge PDF</a></li>
+        <li><a href="../index.html#pdf-section">PDF to JPG</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="../index.html#more-tools"><i class="fas fa-th-large"></i> More Tools <i class="fas fa-caret-down" style="font-size: 11px; margin-left: 2px;"></i></a>
+      <ul class="dropdown-content">
+        <li><a href="../index.html#qr-section">QR Generator</a></li>
+        <li><a href="../index.html#nature-designer">Nature Designer</a></li>
+      </ul>
+    </li>
+    <li><a href="../resources.html" class="active"><i class="far fa-bookmark"></i> Resources</a></li>
+    <li><a href="../shopping.html" class="nav-shop"><i class="fas fa-shopping-bag"></i> Shop</a></li>
   </ul>
 </nav>
 
@@ -156,7 +174,7 @@
     </ul>
 
     <div class="insight-box">
-      <strong style="color: #facc15; display: block; margin-bottom: 6px; font-size: 15px;"><i class="fas fa-exclamation-triangle"></i> Amazon compliance Rule:</strong>
+      <strong style="display: block; margin-bottom: 6px; font-size: 15px;"><i class="fas fa-exclamation-triangle"></i> Amazon compliance Rule:</strong>
       Never use affiliate links inside private channels like newsletters, emails, eBooks, or PDF files. Amazon’s web crawlers require clear, publicly trackable webpage parameters to verify exactly where your referral traffic originates.
     </div>
 
@@ -176,7 +194,7 @@
     <p>Succeeding with affiliate frameworks is a steady accumulation of high-quality content assets. By pairing useful browser-based digital toolsets with well-researched, educational resource blogs, you establish a multi-layered asset ecosystem that attracts traffic and builds reliable revenue loops over time.</p>
 
     <div class="author-card" style="background: #1e293b; padding: 30px; border-radius: 16px; margin-top: 70px; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-      <div style="background: rgba(250, 204, 21, 0.1); border: 1px dashed rgba(250, 204, 21, 0.3); border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #facc15;">
+      <div style="background: rgba(59, 130, 246, 0.1); border: 1px dashed rgba(59, 130, 246, 0.3); border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #60a5fa;">
         <i class="fas fa-chart-line"></i>
       </div>
       <div style="flex: 1; min-width: 250px;">
@@ -190,6 +208,7 @@
 </article>
 
 <div style="clear: both; width: 100%; display: block;"></div>
+
 <footer style="background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 20px 28px; box-sizing: border-box; position: relative; z-index: 10;">
   <div class="affiliate-footer">
     This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
@@ -227,10 +246,10 @@
     <div class="footer-col">
       <h4>Connect</h4>
       <ul class="social-links-list" style="flex-direction: column; gap: 12px; margin: 0;">
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest" style="color: #e60023; width: 16px;"></i> Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" style="color: #0077b5; width: 16px;"></i> LinkedIn</a></li>
-        <li><a href="https://github.com/shaheerasadia" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" style="color: #ffffff; width: 16px;"></i> GitHub</a></li>
-        <li><a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"><i class="fas fa-envelope" style="color: #ea4335; width: 16px;"></i> Email Office</a></li>
+        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"  width: 16px;"></i> Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"  width: 16px;"></i> LinkedIn</a></li>
+        <li><a href="https://github.com/shaheerasadia" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"  width: 16px;"></i> GitHub</a></li>
+        <li><a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"><i class="fas fa-envelope"  width: 16px;"></i> Email Office</a></li>
       </ul>
     </div>
   </div>
@@ -260,7 +279,6 @@
       }
   });
 
-  // Close menu when clicking outside
   document.addEventListener('click', (e) => {
       if (!mobileBtn.contains(e.target) && !navMenu.contains(e.target)) {
           navMenu.classList.remove('active');
