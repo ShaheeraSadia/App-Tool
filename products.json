@@ -9,7 +9,7 @@
   "unit_price": "$2.40/count",
   "rating": 4.3,
   "reviews_count": 647,
-  "amazomLink": "https://amzn.to/43eQM91",
+  "amazonLink": "https://amzn.to/43eQM91",
   "image": "/image/pinkflower.jpg",
   "category": "Decor",
   "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
