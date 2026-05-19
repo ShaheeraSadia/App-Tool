@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Tool — Free Online Drawing & Painting Tool | Toolkit Pro</title>
+  <meta name="description" content="Free browser-based art tool. Draw, paint, and create digital artwork — pen, brush, spray, shapes, fill bucket, eraser. Download your art as PNG. No upload needed." />
+  <meta name="keywords" content="online art tool, free drawing tool, digital painting, browser drawing, art maker, Toolkit Pro, Shaheera Sadia" />
+  <meta name="author" content="Shaheera Sadia" />
+  <meta property="og:title" content="Art Tool — Free Online Drawing & Painting | Toolkit Pro" />
+  <meta property="og:description" content="Free browser-based art and drawing tool. Create digital paintings and download as PNG." />
+  <meta property="og:url" content="https://app-tool.vercel.app/art-tool.html" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://app-tool.vercel.app/art-tool.html" />
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --blue:       #2b4fd8;
+      --blue-dark:  #1a3199;
+      --blue-mid:   #3d72d4;
+      --blue-light: #e8f0fe;
+      --blue-pale:  #f0f4ff;
+      --cyan:       #00b4db;
+      --pink:       #ff6eb4;
+      --text:       #1c1c1e;
+      --muted:      #6b7280;
+      --bg:         #f5f8ff;
+      --white:      #ffffff;
+      --radius:     16px;
+      --shadow:     0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:  0 12px 36px rgba(43,79,216,0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white); border-bottom: 1px solid #dde6ff;
+      padding: 0 40px; display: flex; align-items: center;
+      justify-content: space-between; height: 66px;
+      position: sticky; top: 0; z-index: 300;
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo-text em { color: var(--pink); font-style: normal; }
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+    
+    /* Mobile Menu */
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+    .menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; }
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .menu-toggle { display: flex; }
+      .nav-links { position: fixed; top: 66px; left: -100%; width: 80%; height: 100vh; background: var(--white); flex-direction: column; align-items: flex-start; padding: 30px 20px; transition: .4s ease; box-shadow: 10px 0 15px rgba(0,0,0,0.1); z-index: 1000; gap: 12px; }
+      .nav-links.active { left: 0; }
+      .nav-links li { width: 100%; }
+      .nav-links a { font-size: 16px; padding: 12px; display: block; border-bottom: 1px solid var(--blue-pale); }
+      .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+      .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--cyan) 100%);
+      color: white; text-align: center; padding: 56px 24px 44px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 18px; border-radius: 20px; margin-bottom: 16px; backdrop-filter: blur(4px); }
+    .hero h1 { font-family: 'Lora', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; margin-bottom: 10px; }
+    .hero h1 span { color: #7dd3fc; font-style: italic; }
+    .hero p { font-size: 16px; opacity: .9; max-width: 520px; margin: 0 auto; line-height: 1.75; }
+
+    /* ── LAYOUT ── */
+    .page-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+
+    /* ── AD SLOT ── */
+    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 10px 20px; color: var(--muted); font-size: 13px; margin: 32px 0; min-height: 100px; }
+
+    /* ── ART STUDIO ── */
+    .studio { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; overflow: hidden; }
+    .studio-header { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, var(--cyan) 100%); color: white; padding: 20px 28px; display: flex; align-items: center; gap: 14px; }
+    .studio-header i { font-size: 28px; width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .studio-header h2 { font-family: 'Lora', serif; font-size: 20px; margin-bottom: 3px; }
+    .studio-header p { font-size: 13.5px; opacity: .88; }
+    .studio-body { padding: 20px 24px 24px; }
+
+    /* TOOLBAR */
+    .toolbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px 14px; background: var(--blue-pale); border-radius: 12px; border: 1px solid #dde6ff; margin-bottom: 10px; }
+    .tool-group { display: flex; gap: 4px; align-items: center; }
+    .sep { width: 1px; height: 26px; background: #c8d8f8; margin: 0 6px; }
+    .tb { width: 34px; height: 34px; border-radius: 9px; border: 1.5px solid #c8d8f8; background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--blue-dark); transition: all .15s; }
+    .tb:hover { background: var(--blue-light); border-color: var(--blue); }
+    .tb.active { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border-color: transparent; }
+    .sz-label { font-size: 12px; color: var(--muted); white-space: nowrap; }
+    input[type=range] { width: 80px; accent-color: var(--blue); }
+    input[type=color] { width: 34px; height: 34px; border: 1.5px solid #c8d8f8; border-radius: 9px; cursor: pointer; padding: 2px; background: var(--white); }
+    .size-out { font-size: 12px; font-weight: 600; min-width: 22px; color: var(--muted); }
+
+    /* COLOR SWATCHES */
+    .swatches-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; padding: 8px 14px; background: var(--blue-pale); border-radius: 12px; border: 1px solid #dde6ff; margin-bottom: 10px; }
+    .swatch { width: 26px; height: 26px; border-radius: 7px; cursor: pointer; border: 2px solid transparent; transition: border-color .1s; flex-shrink: 0; }
+    .swatch:hover, .swatch.active { border-color: var(--blue); }
+
+    /* CANVAS */
+    .canvas-wrap { border-radius: 12px; border: 1.5px solid #dde6ff; overflow: hidden; background: #fff; cursor: crosshair; }
+    canvas { display: block; touch-action: none; width: 100%; height: auto; }
+
+    /* BOTTOM BAR */
+    .bottom-bar { display: flex; gap: 8px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+    .action-btn { padding: 9px 18px; border-radius: 10px; border: 1.5px solid #c8d8f8; background: var(--white); font-size: 13.5px; font-weight: 600; color: var(--blue-dark); cursor: pointer; display: flex; align-items: center; gap: 7px; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+    .action-btn:hover { background: var(--blue-light); border-color: var(--blue); }
+    .action-btn.primary { background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border-color: transparent; }
+    .action-btn.danger { background: #fff0f3; color: #c0392b; border-color: #f8c6cc; }
+    .action-btn.danger:hover { background: #fce4e8; }
+    .coord-info { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+    /* HOW TO USE */
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 28px; }
+    .how-card { background: var(--blue-pale); border-radius: 12px; border: 1px solid #dde6ff; padding: 18px; }
+    .how-icon { font-size: 22px; margin-bottom: 10px; color: var(--blue); }
+    .how-card h3 { font-size: 14px; font-weight: 600; color: var(--blue-dark); margin-bottom: 6px; }
+    .how-card p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── FOOTER ── */
+    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
+    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
+    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
+    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+    .footer-social-btn:hover { background: var(--blue); color: white; }
+    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: #7dd3fc; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .footer-bottom a { color: inherit; text-decoration: none; }
+
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { nav { padding: 0 16px; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } footer { padding: 40px 20px 24px; } .studio-body { padding: 14px 16px 18px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html" class="active"><i class="fas fa-paint-brush" style="margin-right:4px;font-size:11px;"></i>Art Tool</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">🎨 Free Art Tool</span>
+    <h1>Digital <span>Art Studio</span></h1>
+    <p>Draw, paint, and create beautiful digital artwork in your browser — 100% free, no upload needed, download as PNG instantly.</p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="studio">
+    <div class="studio-header">
+      <i class="fas fa-palette"></i>
+      <div>
+        <h2>Art Studio</h2>
+        <p>Pen · Brush · Spray · Shapes · Fill · Eraser · Undo/Redo · Download PNG</p>
+      </div>
+    </div>
+    <div class="studio-body">
+
+      <div class="toolbar">
+        <div class="tool-group">
+          <button class="tb active" title="Pen" onclick="setTool('pen',this)"><i class="fas fa-pen"></i></button>
+          <button class="tb" title="Brush" onclick="setTool('brush',this)"><i class="fas fa-paint-brush"></i></button>
+          <button class="tb" title="Spray" onclick="setTool('spray',this)"><i class="fas fa-spray-can"></i></button>
+          <button class="tb" title="Marker" onclick="setTool('marker',this)"><i class="fas fa-marker"></i></button>
+        </div>
+        <div class="sep"></div>
+        <div class="tool-group">
+          <button class="tb" title="Line" onclick="setTool('line',this)"><i class="fas fa-minus"></i></button>
+          <button class="tb" title="Rectangle" onclick="setTool('rect',this)"><i class="far fa-square"></i></button>
+          <button class="tb" title="Circle" onclick="setTool('circle',this)"><i class="far fa-circle"></i></button>
+          <button class="tb" title="Triangle" onclick="setTool('triangle',this)"><i class="fas fa-play" style="transform:rotate(-90deg);"></i></button>
+        </div>
+        <div class="sep"></div>
+        <div class="tool-group">
+          <button class="tb" title="Fill Bucket" onclick="setTool('fill',this)"><i class="fas fa-fill-drip"></i></button>
+          <button class="tb" title="Eraser" onclick="setTool('eraser',this)"><i class="fas fa-eraser"></i></button>
+        </div>
+        <div class="sep"></div>
+        <span class="sz-label">Size</span>
+        <input type="range" id="sizeSlider" min="1" max="60" value="6" oninput="updateSize(this.value)">
+        <span class="size-out" id="sizeOut">6</span>
+        <div class="sep"></div>
+        <span class="sz-label">Opacity</span>
+        <input type="range" id="opacSlider" min="5" max="100" value="100" oninput="updateOpac(this.value)">
+        <span class="size-out" id="opacOut">100%</span>
+        <div class="sep"></div>
+        <input type="color" id="colorPicker" value="#2b4fd8" title="Pick color" oninput="setColor(this.value)">
+      </div>
+
+      <div class="swatches-row" id="swatches"></div>
+
+      <div class="canvas-wrap">
+        <canvas id="artCanvas"></canvas>
+      </div>
+
+      <div class="bottom-bar">
+        <button class="action-btn" onclick="undo()"><i class="fas fa-undo"></i> Undo</button>
+        <button class="action-btn" onclick="redo()"><i class="fas fa-redo"></i> Redo</button>
+        <button class="action-btn danger" onclick="clearCanvas()"><i class="fas fa-trash"></i> Clear</button>
+        <button class="action-btn" onclick="fillBg()"><i class="fas fa-fill"></i> Fill BG</button>
+        <button class="action-btn primary" onclick="downloadArt()"><i class="fas fa-download"></i> Download PNG</button>
+        <span class="coord-info" id="coordInfo">x: 0 · y: 0</span>
+      </div>
+
+    </div></div><div style="margin-top:36px">
+    <h2 style="font-family:'Lora',serif;font-size:22px;color:var(--blue-dark);margin-bottom:6px;">How to Use the Art Tool</h2>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:4px;">A complete guide to every tool and feature in the Toolkit Pro Art Studio.</p>
+    <div class="how-grid">
+      <div class="how-card"><div class="how-icon"><i class="fas fa-pen"></i></div><h3>Pen & Brush</h3><p>Pen gives clean thin lines. Brush creates wide, soft strokes. Marker adds semi-transparent bold lines. Adjust size and opacity for different effects.</p></div>
+      <div class="how-card"><div class="how-icon"><i class="fas fa-spray-can"></i></div><h3>Spray Paint</h3><p>Creates a soft airbrush effect. Hold the mouse still for concentrated spray, or sweep quickly for a light mist. Great for shading and gradients.</p></div>
+      <div class="how-card"><div class="how-icon"><i class="far fa-square"></i></div><h3>Shapes</h3><p>Draw lines, rectangles, circles, and triangles by clicking and dragging. The shape previews as you drag and is finalized when you release.</p></div>
+      <div class="how-card"><div class="how-icon"><i class="fas fa-fill-drip"></i></div><h3>Fill Bucket</h3><p>Click any area to flood-fill it with your selected color. Works like a paint bucket — fills the connected region with the same color instantly.</p></div>
+      <div class="how-card"><div class="how-icon"><i class="fas fa-eraser"></i></div><h3>Eraser</h3><p>Erase any part of your drawing. Adjust size to erase precisely or broadly. The eraser removes pixels and perfectly restores the white canvas.</p></div>
+      <div class="how-card"><div class="how-icon"><i class="fas fa-download"></i></div><h3>Download PNG</h3><p>Save your artwork as a high-quality PNG file. The download includes the white background — ready to share on social media, Pinterest, or print.</p></div>
+    </div>
+  </div>
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+</div><footer>
+  <div class="affiliate-footer">
+    📢 This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.
+  </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="footer-social-btn"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+        <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping</a></li>
+        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
+        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
+        <li><a href="mailto:shaheerasadia@gmail.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+const canvas = document.getElementById('artCanvas');
+const ctx = canvas.getContext('2d');
+const COLORS = ['#2b4fd8','#1a3199','#ff6eb4','#00b4db','#e94560','#11998e','#f6d365','#fd79a8','#6c5ce7','#00cec9','#fdcb6e','#e17055','#55efc4','#0984e3','#a29bfe','#fab1a0','#ff7675','#74b9ff','#00b894','#d63031','#2d3436','#636e72','#b2bec3','#ffffff','#000000'];
+
+let tool='pen', color='#2b4fd8', size=6, opacity=1;
+let drawing=false, startX=0, startY=0, snapshot=null;
+let undoStack=[], redoStack=[];
+
+function initCanvas() {
+  canvas.width = canvas.offsetWidth || 1040;
+  canvas.height = Math.min(520, Math.round(canvas.width * 0.5));
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+window.addEventListener('resize', () => {
+  const saved = canvas.toDataURL();
+  initCanvas();
+  const img = new Image();
+  img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  img.src = saved;
+});
+
+initCanvas();
+
+function hex2rgba(hex, alpha) {
+  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function saveState() {
+  undoStack.push(canvas.toDataURL());
+  if(undoStack.length > 40) undoStack.shift();
+  redoStack = [];
+}
+
+function undo() {
+  if(!undoStack.length) return;
+  redoStack.push(canvas.toDataURL());
+  const img = new Image(); img.src = undoStack.pop();
+  img.onload = () => { ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(img,0,0); }
+}
+
+function redo() {
+  if(!redoStack.length) return;
+  undoStack.push(canvas.toDataURL());
+  const img = new Image(); img.src = redoStack.pop();
+  img.onload = () => { ctx.clearRect(0,0,canvas.width,canvas.height); ctx.drawImage(img,0,0); }
+}
+
+function getPos(e) {
+  const r = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / r.width;
+  const scaleY = canvas.height / r.height;
+  const src = e.touches ? e.touches[0] : e;
+  return { x: Math.round((src.clientX - r.left) * scaleX), y: Math.round((src.clientY - r.top) * scaleY) };
+}
+
+function floodFill(x, y, fillHex) {
+  const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const d = imgData.data;
+  const idx = (y * canvas.width + x) * 4;
+  const tR=d[idx], tG=d[idx+1], tB=d[idx+2], tA=d[idx+3];
+  const fR=parseInt(fillHex.slice(1,3),16), fG=parseInt(fillHex.slice(3,5),16), fB=parseInt(fillHex.slice(5,7),16);
+  if(tR===fR && tG===fG && tB===fB) return;
+  const stack = [[x,y]];
+  const visited = new Uint8Array(canvas.width * canvas.height);
+  while(stack.length) {
+    const [cx,cy] = stack.pop();
+    if(cx<0||cx>=canvas.width||cy<0||cy>=canvas.height) continue;
+    const vi = cy*canvas.width+cx;
+    if(visited[vi]) continue;
+    const i = vi*4;
+    if(d[i]!==tR||d[i+1]!==tG||d[i+2]!==tB||d[i+3]!==tA) continue;
+    visited[vi]=1;
+    d[i]=fR; d[i+1]=fG; d[i+2]=fB; d[i+3]=Math.round(opacity*255);
+    stack.push([cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]);
+  }
+  ctx.putImageData(imgData,0,0);
+}
+
+function startDraw(e) {
+  e.preventDefault();
+  const p = getPos(e);
+  if(tool==='fill') { saveState(); floodFill(p.x,p.y,color); return; }
+  saveState();
+  drawing = true; startX = p.x; startY = p.y;
+  snapshot = ctx.getImageData(0,0,canvas.width,canvas.height);
+  ctx.beginPath();
+  ctx.moveTo(p.x,p.y);
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ctx.globalCompositeOperation = 'source-over'; // Eraser bug fix core logic
+  
+  if(tool==='pen') { ctx.strokeStyle=hex2rgba(color,opacity); ctx.lineWidth=size; }
+  else if(tool==='brush') { ctx.strokeStyle=hex2rgba(color,opacity*0.85); ctx.lineWidth=size*2.2; }
+  else if(tool==='marker') { ctx.strokeStyle=hex2rgba(color,0.45); ctx.lineWidth=size*1.8; }
+  else if(tool==='eraser') { ctx.strokeStyle='#ffffff'; ctx.lineWidth=size*2; }
+}
+
+function draw(e) {
+  e.preventDefault();
+  const p = getPos(e);
+  document.getElementById('coordInfo').textContent = `x: ${p.x} · y: ${p.y}`;
+  if(!drawing) return;
+
+  if(tool==='pen'||tool==='brush'||tool==='marker'||tool==='eraser') {
+    ctx.lineTo(p.x,p.y); ctx.stroke();
+  } else if(tool==='spray') {
+    const density=25, r=size*2.5;
+    ctx.fillStyle=hex2rgba(color,opacity*0.5);
+    for(let i=0;i<density;i++) {
+      const angle=Math.random()*Math.PI*2, dist=Math.random()*r;
+      ctx.beginPath(); ctx.arc(p.x+Math.cos(angle)*dist, p.y+Math.sin(angle)*dist, 0.9,0,Math.PI*2); ctx.fill();
+    }
+  } else if(['line','rect','circle','triangle'].includes(tool)) {
+    ctx.putImageData(snapshot,0,0);
+    ctx.strokeStyle=hex2rgba(color,opacity); ctx.lineWidth=size; ctx.lineCap='round';
+    ctx.beginPath();
+    if(tool==='line') { ctx.moveTo(startX,startY); ctx.lineTo(p.x,p.y); }
+    else if(tool==='rect') { ctx.rect(startX,startY,p.x-startX,p.y-startY); }
+    else if(tool==='circle') {
+      const rx=Math.abs(p.x-startX)/2, ry=Math.abs(p.y-startY)/2;
+      ctx.ellipse((startX+p.x)/2,(startY+p.y)/2,Math.max(rx,1),Math.max(ry,1),0,0,Math.PI*2);
+    } else if(tool==='triangle') {
+      ctx.moveTo(startX+(p.x-startX)/2, startY);
+      ctx.lineTo(p.x,p.y); ctx.lineTo(startX,p.y); ctx.closePath();
+    }
+    ctx.stroke();
+  }
+}
+
+function stopDraw(e) {
+  if(!drawing) return;
+  drawing=false; snapshot=null;
+}
+
+canvas.addEventListener('mousedown',startDraw);
+canvas.addEventListener('mousemove',draw);
+canvas.addEventListener('mouseup',stopDraw);
+canvas.addEventListener('mouseleave',stopDraw);
+canvas.addEventListener('touchstart',startDraw,{passive:false});
+canvas.addEventListener('touchmove',draw,{passive:false});
+canvas.addEventListener('touchend',stopDraw);
+
+function setTool(t,btn) {
+  tool=t;
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setColor(c) {
+  color=c;
+  document.getElementById('colorPicker').value=c;
+  document.querySelectorAll('.swatch').forEach(s=>s.classList.toggle('active',s.dataset.color===c));
+}
+
+function updateSize(v) { size=parseInt(v); document.getElementById('sizeOut').textContent=v; }
+function updateOpac(v) { opacity=parseInt(v)/100; document.getElementById('opacOut').textContent=v+'%'; }
+
+function clearCanvas() {
+  saveState();
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,canvas.width,canvas.height);
+}
+
+function fillBg() {
+  saveState();
+  ctx.fillStyle=color; ctx.fillRect(0,0,canvas.width,canvas.height);
+}
+
+function downloadArt() {
+  const tmp=document.createElement('canvas');
+  tmp.width=canvas.width; tmp.height=canvas.height;
+  const tc=tmp.getContext('2d');
+  tc.fillStyle='#ffffff'; tc.fillRect(0,0,tmp.width,tmp.height);
+  tc.drawImage(canvas,0,0);
+  const a=document.createElement('a');
+  a.download='toolkit-pro-art.png';
+  a.href=tmp.toDataURL('image/png'); a.click();
+}
+
+// Build swatches
+const sw = document.getElementById('swatches');
+COLORS.forEach(c => {
+  const d=document.createElement('div');
+  d.className='swatch'+(c===color?' active':'');
+  d.dataset.color=c; d.style.background=c; d.title=c;
+  if(c==='#ffffff') d.style.outline='1.5px solid #c8d8f8';
+  d.onclick=()=>setColor(c);
+  sw.appendChild(d);
+});
+
+// Mobile menu
+const menuBtn=document.getElementById('mobile-menu');
+const navLinks=document.getElementById('nav-links');
+menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
+document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
+</script>
+
+</body>
+</html>
