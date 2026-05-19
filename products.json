@@ -1,5 +1,75 @@
 [
    {
+  "id": "howeemo-bento-lunch-box-kids-soup-thermos-black",
+  "title": "Howeemo Bento Lunch Box for Kids with 17oz Soup Thermos & Insulated Water Bottle Set",
+  "description": "The ultimate all-in-one lunch solution for kids heading to school. This complete leak-proof set features a 3-compartment bento food container, a 17oz vacuum-insulated soup thermos, an insulated tumbler water bottle, a matching lunch bag, and an included ice pack to keep meals fresh and perfectly temperature-controlled all day.",
+  "price": 35.98,
+  "original_price": 37.99,
+  "discount_percentage": 5,
+  "unit_price": "$35.98/count",
+  "rating": 4.3,
+  "reviews_count": 600,
+  "amazonLink": "https://amzn.to/3PwIAha",
+  "image": "/image/LunchBox.jpg",
+  "category": "Kitchen & Dining",
+  "btnColor": "linear-gradient(132deg, #1e1e24, #0f0f12)",
+  "tags": [
+    "kids bento box",
+    "soup thermos",
+    "insulated water bottle",
+    "school lunch box",
+    "leak-proof container",
+    "lunch box with ice pack"
+  ],
+  "specs": {
+    "package_includes": "3-Compartment Bento Box, 17oz Soup Thermos, Insulated Tumbler, Insulated Lunch Bag, Ice Pack",
+    "color": "Black",
+    "material": "Food-grade safe plastic and insulated stainless steel components",
+    "capacity": "4.4 Pounds",
+    "number_of_compartments": "3",
+    "usage": "Perfect for school kids, picnics, and hot/cold meal prep storage"
+  },
+  "availability": "In Stock",
+  "delivery_info": "Standard shipping options available",
+  "seller": "Howeemo",
+  "fulfilled_by": "Amazon"
+},
+   {
+  "id": "bentoheaven-premium-bento-box-steel-my-heart",
+  "title": "Bentoheaven Premium Bento Box Adult Lunch Box with Compartments for Women & Men",
+  "description": "Upgrade your lunch experience with this premium Japanese-style Bento Lunch Box set. Featuring multiple leakproof compartments, it comes complete with utensils, chopsticks, and a dedicated dip container. Perfect for adults and kids alike, it is microwavable, durable, and styled in an elegant 'Steel My Heart' aesthetic.",
+  "price": 23.78,
+  "original_price": 34.99,
+  "discount_percentage": 32,
+  "unit_price": "$23.78/count",
+  "rating": 4.5,
+  "reviews_count": 12421,
+  "amazonLink": "https://amzn.to/3PwIAha",
+  "image": "/image/kitchen1.jpg",
+  "category": "Kitchen",
+  "btnColor": "linear-gradient(132deg, #374151, #1f2937)",
+  "tags": [
+    "bento box",
+    "lunch box",
+    "japanese lunch box",
+    "leakproof bento",
+    "microwavable lunch box",
+    "meal prep container"
+  ],
+  "specs": {
+    "package_includes": "Bento Box, Set of Utensils, Chopsticks, Dip Container",
+    "target_audience": "Adults & Kids (Women & Men)",
+    "color_style": "Steel My Heart",
+    "features": "Compartments for portion control, Leakproof design",
+    "safety": "Microwavable and food-safe materials",
+    "usage": "Office, School, Travel, and Meal Prep friendly"
+  },
+  "availability": "In Stock",
+  "delivery_info": "Ends in 13 hours (Limited Time Deal)",
+  "seller": "Bentoheaven",
+  "fulfilled_by": "Amazon"
+},
+   {
   "id": "alotiki-10pcs-purple-wisteria-garland",
   "title": "Alotiki Wisteria Artificial Flowers Garland, 10Pcs 60ft Silk Fake Purple Hanging Wisteria",
   "description": "Create stunning hanging displays with this 10-pack of artificial purple wisteria flower garlands, totaling 60ft. Made with premium silk petals and flexible wire-reinforced stems, these individually packaged hanging vines are perfect for wedding arches, home gardens, party backdrops, and indoor/outdoor floral decor.",
