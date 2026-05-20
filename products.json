@@ -1,5 +1,32 @@
 [
    {
+  "id": "68",
+  "title": "Bamworld Plant Stand with Grow Light - Boho Plant Shelf for Multiple Pots",
+  "amazonLink": "https://amzn.to/4dmPQpg",
+  "description": "Elevate your indoor gardening with this large Bamworld plant shelf featuring built-in warm grow lights. Crafted in a cozy brown finish, this durable tiered plant holder is perfect for organizing multiple pots in your living room, patio, or boho home decor setup.",
+  "pubDate": "2026-05-20T00:00:00+05:00",
+  "image": "https://app-tool.vercel.app/image/Bamworldplant.jpg",
+  "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
+  "price": {
+    "original": 44.99,
+    "sale": 35.99,
+    "currency": "USD",
+    "discount_percentage": 20
+  },
+  "brand": "Bamworld",
+  "color": "Brown",
+  "light_type": "Warm Light",
+  "availability": "in stock",
+  "condition": "new",
+  "category": "Home & Garden > Lawn & Garden > Gardening > Plant Stands",
+  "tags": [
+    "plant stand with light",
+    "boho home decor",
+    "indoor plant shelf",
+    "gardening holder"
+  ]
+},
+   {
   "id": "howeemo-bento-lunch-box-kids-soup-thermos-black",
   "title": "Howeemo Bento Lunch Box for Kids with 17oz Soup Thermos & Insulated Water Bottle Set",
   "description": "The ultimate all-in-one lunch solution for kids heading to school. This complete leak-proof set features a 3-compartment bento food container, a 17oz vacuum-insulated soup thermos, an insulated tumbler water bottle, a matching lunch bag, and an included ice pack to keep meals fresh and perfectly temperature-controlled all day.",
