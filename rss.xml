@@ -1,484 +1,527 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:media="http://search.yahoo.com/mrss/">
+
 <channel>
-  <title>ToolKit Pro | Developed by Shaheera Sadia</title>
+  <title>ToolKit Pro | Free Design Tools &amp; Aesthetic Picks by Shaheera Sadia</title>
   <link>https://app-tool.vercel.app</link>
-  <description>Professional image optimization tools and aesthetic design resources.</description>
+  <description>Free browser-based image tools, aesthetic lifestyle products, and digital creator guides. Built by Shaheera Sadia from Pakistan.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 09 May 2026 00:00:00 +0500</lastBuildDate>
-  <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>Wed, 20 May 2026 00:00:00 +0500</lastBuildDate>
+  <atom:link href="https://app-tool.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
 
-  <!-- 1. Formal Dress -->
+  <!-- ══════════════════════════════
+       BLOG ARTICLES (for Pinterest pins)
+       ══════════════════════════════ -->
+
   <item>
-    <title>Wedtrend Women's Formal Dress - Long Prom &amp; Bridesmaid Dress</title>
-    <link>https://app-tool.vercel.app/products/formal-prom-dress</link>
-    <description>Elegant floral lace halter neck dress, perfect for weddings and formal events.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>How to Compress Images Without Losing Quality — Free Tool</title>
+    <link>https://app-tool.vercel.app/Blog/how-to-compress-images.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/how-to-compress-images.html</guid>
+    <description>Learn how to reduce image file sizes by up to 80% without visible quality loss. Covers WebP, JPEG, and PNG formats with step-by-step tips for web performance and Pinterest growth. Try our free browser-based image compressor.</description>
+    <enclosure url="https://app-tool.vercel.app/image/61k5imDfesL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/61k5imDfesL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 2. CZ Earrings -->
   <item>
-    <title>MILACOLATO CZ Halo Stud Earrings - 18K Gold Plated</title>
-    <link>https://app-tool.vercel.app/products/cz-halo-earrings</link>
-    <description>Hypoallergenic brilliant simulated diamond earrings for sensitive ears.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>PNG vs JPG vs WebP — Which Image Format Should You Use?</title>
+    <link>https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html</guid>
+    <description>A complete comparison of PNG, JPEG, and WebP image formats. Find out which format is best for your website, social media, and digital projects in 2026. Save bandwidth and improve load speed.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71e5ZBe+CLL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71e5ZBe+CLL._SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 3. Cross Necklace -->
   <item>
-    <title>MILACOLATO Sterling Silver Cross Necklace for Men &amp; Women</title>
-    <link>https://app-tool.vercel.app/products/silver-cross-necklace</link>
-    <description>Solid 925 sterling silver chain with a durable beveled edge cross pendant.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>How QR Codes Work — A Simple Guide for Digital Creators</title>
+    <link>https://app-tool.vercel.app/Blog/how-qr-codes-work.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/how-qr-codes-work.html</guid>
+    <description>Understand how QR codes work, how to generate them for free in your browser, and the best ways to use QR codes in your marketing, business cards, and social media campaigns.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81beUeUN5UL._AC_SX679_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81beUeUN5UL._AC_SX679_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 4. Family Sized Airfryer -->
   <item>
-    <title>Family Sized Airfryer Cooker - Large Capacity 3-Layer</title>
-    <link>https://app-tool.vercel.app/products/family-airfryer</link>
-    <description>Cook healthy meals for the whole family with this versatile 3-layer air fryer cooker.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>Best Image Sizes for Social Media in 2026 — Complete Guide</title>
+    <link>https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html</guid>
+    <description>The complete 2026 guide to optimal image dimensions for Pinterest, Instagram, Facebook, Twitter, and YouTube. Stop uploading the wrong sizes and get more reach and engagement.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71GGSK0ZvmL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71GGSK0ZvmL._SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 5. Dual Air Fryer -->
   <item>
-    <title>Dual Air Fryer - Double Basket Efficiency</title>
-    <link>https://app-tool.vercel.app/products/dual-air-fryer</link>
-    <description>Save time with double baskets. Perfect for cooking multiple dishes at once.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>Pinterest Image SEO — How to Get More Views on Pinterest in 2026</title>
+    <link>https://app-tool.vercel.app/Blog/pinterest-image-seo.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/pinterest-image-seo.html</guid>
+    <description>Learn the Pinterest SEO strategies that helped grow our account to 62.9k monthly views. Covers pin design, keywords, board optimization, and scheduling tips for creators.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81avDeLCnqL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81avDeLCnqL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 6. Rose Spa Basket -->
   <item>
-    <title>Luxury Rose Spa Gift Basket - 8 Pcs Bath Set</title>
-    <link>https://app-tool.vercel.app/products/rose-spa-basket</link>
-    <description>Indulge in a relaxing home spa experience with this premium rose-scented bath set.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>How to Speed Up Your Website with Image Optimization</title>
+    <link>https://app-tool.vercel.app/Blog/how-to-speed-up-website-image.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/how-to-speed-up-website-image.html</guid>
+    <description>Images are the number 1 cause of slow websites. Learn how to optimize images for Core Web Vitals, improve Google PageSpeed scores, and boost your SEO rankings in 2026.</description>
+    <enclosure url="https://app-tool.vercel.app/image/813Ch8hTL5L._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/813Ch8hTL5L._SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 7. Beauty & Beast Rose -->
   <item>
-    <title>Enchanting Beauty and The Beast Rose - LED Glass Dome</title>
-    <link>https://app-tool.vercel.app/products/beauty-beast-rose</link>
-    <description>A magical preserved red rose with LED lights, the perfect romantic gift that lasts forever.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>How to Extract Color Palettes from Any Image — Free Tool</title>
+    <link>https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html</guid>
+    <description>Learn how to extract beautiful HEX color codes from any image using Toolkit Pro. Build cohesive brand palettes for Pinterest, Canva, and your website in seconds — no software needed.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71kzVAhhkTL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71kzVAhhkTL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 8. Galaxy Red Rose -->
   <item>
-    <title>Galaxy Red Rose - Aesthetic Crystal Decor</title>
-    <link>https://app-tool.vercel.app/products/galaxy-redrose</link>
-    <description>Beautiful crystal rose with butterfly accent. A stunning eternal gift for Mom or loved ones.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>How to Create Viral Aesthetic Quote Cards for Pinterest</title>
+    <link>https://app-tool.vercel.app/Blog/How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html</guid>
+    <description>Step-by-step guide to designing aesthetic quote cards that go viral on Pinterest. Learn the design formula for pins that stop the scroll and drive thousands of views to your profile.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81wA0lfV3rL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81wA0lfV3rL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 9. Mom Necklace -->
   <item>
-    <title>Mom Necklace - Elegant Jewelry Gift</title>
-    <link>https://app-tool.vercel.app/products/mom-necklace</link>
-    <description>Show your love with this elegant personalized necklace designed for mothers.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
+    <title>Why Image Optimization Matters for SEO in 2026</title>
+    <link>https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html</link>
+    <guid isPermaLink="true">https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html</guid>
+    <description>Discover why image optimization is now a critical ranking factor in 2026. Google Core Web Vitals, page speed, and alt text all directly impact your search rankings and traffic.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71hafv7+FPL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71hafv7+FPL._SL1500_.jpg" medium="image" type="image/jpeg"/>
+    <pubDate>Wed, 14 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 10. Industrial Lamp -->
-  <item>
-    <title>Minimalist Industrial Table Lamp - Aesthetic Decor</title>
-    <link>https://app-tool.vercel.app/products/industrial-lamp</link>
-    <description>Vintage-style industrial lamp with a cozy sunset glow. Perfect for bedside tables.</description>
-    <pubDate>Thu, 30 Apr 2026 13:00:00 +0500</pubDate>
-  </item>
+  <!-- ══════════════════════════════
+       SHOPPING PRODUCTS
+       All links point to YOUR domain (required by Pinterest)
+       ══════════════════════════════ -->
 
-  <!-- 11. Floral Maxi Dress -->
   <item>
-    <title>Elegant Floral Maxi Dress - Summer Fashion</title>
-    <link>https://app-tool.vercel.app/products/floral-maxi-dress</link>
-    <description>Aesthetic and comfortable floral dress for a breezy summer look.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 12. Skin Care Gift Set -->
-  <item>
-    <title>Premium Skin Care Gift Set - Sakura Essence Kit</title>
-    <link>https://app-tool.vercel.app/products/skin-care-gift-set</link>
-    <description>Luxurious skincare essentials set for a glowing and healthy skin routine.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 13. Honey Almond Gift Set -->
-  <item>
-    <title>Honey Almond Bath &amp; Body Gift Set</title>
-    <link>https://app-tool.vercel.app/products/honey-almond-gift</link>
-    <description>Nourishing honey and almond scented spa set for a sweet self-care experience.</description>
-    <pubDate>Sun, 03 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 14. Motorola razr+ -->
-  <item>
-    <title>Motorola razr+ 2023 - Unlocked Foldable Phone 8/256GB</title>
-    <link>https://app-tool.vercel.app/products/motorola-razr-plus</link>
-    <description>Unlocked Magenta edition with 8/256GB storage and a high-resolution 32MP camera. Stylish and powerful foldable smartphone.</description>
+    <title>Motorola razr+ 2023 — Unlocked Foldable Smartphone 8/256GB</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/motorola-razr-plus</guid>
+    <description>Unlocked Magenta foldable phone with 8/256GB storage and 32MP camera. Compact, powerful, and stylish. Shop this and more aesthetic tech picks on Toolkit Pro.</description>
+    <enclosure url="https://app-tool.vercel.app/image/61k5imDfesL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/61k5imDfesL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 15. Samsung Galaxy S26 Ultra -->
   <item>
-    <title>Samsung Galaxy S26 Ultra - 512GB Flagship 2026</title>
-    <link>https://app-tool.vercel.app/products/samsung-galaxy-s26-ultra</link>
-    <description>The 2026 flagship featuring 512GB storage, Galaxy AI, Privacy Display, and Super Fast Charging 3.0. Unlocked with a 1-year US warranty.</description>
+    <title>Samsung Galaxy S26 Ultra — 512GB AI Flagship 2026</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/samsung-galaxy-s26-ultra</guid>
+    <description>The 2026 flagship with 512GB storage, Galaxy AI, Privacy Display, and Super Fast Charging 3.0. Ideal for creators and power users.</description>
+    <enclosure url="https://app-tool.vercel.app/image/61fh21u3DJL._AC_SX679_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/61fh21u3DJL._AC_SX679_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 16. Stylish Hand Bag -->
   <item>
-    <title>Stylish Hand Bag - Elegant &amp; Spacious</title>
-    <link>https://app-tool.vercel.app/products/stylish-hand-bag</link>
-    <description>Elegant and spacious handbag perfect for any occasion. Transitions effortlessly from work to weekend.</description>
+    <title>925 Sterling Silver Heart Birthstone Bracelet — Gift for Her</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/heart-birthstone-bracelet</guid>
+    <description>Beautiful 925 sterling silver heart bracelet with personalized birthstone. A heartfelt gift for birthdays, anniversaries, or Mother's Day.</description>
+    <enclosure url="https://app-tool.vercel.app/image/51XVK+MGmrL._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/51XVK+MGmrL._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 17. Heart Birthstone Bracelet -->
   <item>
-    <title>925 Sterling Silver Heart Birthstone Bracelet - Gift for Her</title>
-    <link>https://app-tool.vercel.app/products/heart-birthstone-bracelet</link>
-    <description>Heart Birthstone Bracelet — Birthday Anniversary Jewelry Gifts for Her and Wife. Real 925 sterling silver for long-lasting shine.</description>
+    <title>Rose Heart Initial Necklace — 925 Sterling Silver Gift</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/rose-heart-necklace</guid>
+    <description>925 Sterling Silver Initial Necklace — romantic gift for Women, Wife, and Girlfriend. Hypoallergenic and skin-safe for daily wear.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71D6Gr3kEpL._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71D6Gr3kEpL._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 18. Rose Heart Necklace -->
   <item>
-    <title>Rose Heart Initial Necklace - 925 Sterling Silver Gift</title>
-    <link>https://app-tool.vercel.app/products/rose-heart-necklace</link>
-    <description>925 Sterling Silver Initial Necklace — I Love You Gifts for Women, Wife, and Girlfriend. Hypoallergenic and skin-safe.</description>
+    <title>ZHMO Canvas Tote Bag — Women's Crossbody Laptop Work Bag</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/canvas-tote-bag</guid>
+    <description>Large crossbody tote that fits a 15-inch laptop. Durable canvas for nurses, teachers, students, and travelers. Stylish and practical.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81beUeUN5UL._AC_SX679_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81beUeUN5UL._AC_SX679_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 19. ZHMO Canvas Tote Bag -->
   <item>
-    <title>ZHMO Canvas Tote Bag - Women's Crossbody Work Laptop Tote</title>
-    <link>https://app-tool.vercel.app/products/canvas-tote-bag</link>
-    <description>Women's Crossbody Work Laptop Tote — Large Handbag for Travel, Nurse, and Teacher. Fits a 15-inch laptop with ease.</description>
+    <title>2026 Graduation Gift Basket — College and Master Degree Gift</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/graduation-gift-basket</guid>
+    <description>Cool college graduation gifts basket. Best Master Degree Grad Gift Box packed with fun and memorable items to celebrate a major milestone.</description>
+    <enclosure url="https://app-tool.vercel.app/image/812nsGOcg8L._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/812nsGOcg8L._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 20. Graduation Gift Basket -->
   <item>
-    <title>2026 Graduation Gift Basket - College &amp; Master Degree</title>
-    <link>https://app-tool.vercel.app/products/graduation-gift-basket</link>
-    <description>Cool College Graduation Gifts Basket. Best Master Degree Grad Gift Box packed with fun and memorable items.</description>
+    <title>Personalized Monogram Canvas Tote Bag — Beach Bag with Zipper</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/monogram-canvas-tote</guid>
+    <description>Monogrammed canvas tote with zipper. A chic personalized gift for Mom, Sister, or Teacher. Strong, reusable, and stylish for the beach or gym.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81A95t27eyL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81A95t27eyL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 21. Monogram Canvas Tote -->
   <item>
-    <title>Personalized Initial Canvas Tote Bag - Monogrammed Beach Bag</title>
-    <link>https://app-tool.vercel.app/products/monogram-canvas-tote</link>
-    <description>Monogrammed Beach Tote Bag with Zipper — Birthday Gifts for Mom, Sister, and Teacher. Strong canvas with custom monogram.</description>
+    <title>Philips Sonicare 4100 Electric Toothbrush — Pressure Sensor</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/philips-sonicare-4100</guid>
+    <description>Removes up to 7x more plaque than a manual brush. Pressure sensor protects gums. Smartimer ensures the dentist-recommended 2-minute brush every time.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71dHzkdskBL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71dHzkdskBL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 22. Philips Sonicare 4100 -->
   <item>
-    <title>Philips Sonicare 4100 Electric Toothbrush - Pressure Sensor</title>
-    <link>https://app-tool.vercel.app/products/philips-sonicare-4100</link>
-    <description>Sonic Toothbrush with Pressure Sensor, Two Intensity Settings, Smartimer and Quadpacer. Removes up to 7x more plaque than manual.</description>
+    <title>Philips Sonicare DiamondClean 9500 — Smart App Toothbrush</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/philips-sonicare-9500</guid>
+    <description>Smart toothbrush with app connectivity, 15 brushing settings, USB charging, and travel case. Professional-level clean from home.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71eMC4oyIGL._AC_SX679_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71eMC4oyIGL._AC_SX679_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 23. Philips Sonicare 9500 -->
   <item>
-    <title>Philips Sonicare DiamondClean 9500 - Smart App Toothbrush</title>
-    <link>https://app-tool.vercel.app/products/philips-sonicare-9500</link>
-    <description>Smart Sonic Toothbrush with App, 15 Brushing Settings, USB Charging, and Travel Case. Professional clean at home.</description>
+    <title>Neutrogena Ultra Sheer Sunscreen SPF 70 — Oil-Free Matte Finish</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/neutrogena-sunscreen-spf70</guid>
+    <description>Water resistant 80 min, dry-touch, oil-free, non-comedogenic matte finish sunscreen. Ideal for acne-prone and sensitive skin under makeup.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71GGSK0ZvmL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71GGSK0ZvmL._SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 24. Neutrogena Sunscreen SPF 70 -->
   <item>
-    <title>Neutrogena Ultra Sheer Sunscreen SPF 70 - Oil-Free Matte</title>
-    <link>https://app-tool.vercel.app/products/neutrogena-sunscreen-spf70</link>
-    <description>Dry-Touch Water Resistant 80 Min, Oil-Free, Non-Comedogenic, Matte Finish, 3 Fl Oz. Ideal for acne-prone and sensitive skin.</description>
+    <title>Anti-Aging Face Moisturizer — Retinol Collagen Hyaluronic Acid Cream</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/anti-aging-moisturizer</guid>
+    <description>Firming and hydrating day and night cream with Retinol, Collagen, and Hyaluronic Acid. Reduces fine lines, wrinkles, and improves skin elasticity.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71e5ZBe+CLL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71e5ZBe+CLL._SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 25. Anti-Aging Moisturizer -->
   <item>
-    <title>Anti-Aging Face Moisturizer - Retinol Collagen Hyaluronic Acid</title>
-    <link>https://app-tool.vercel.app/products/anti-aging-moisturizer</link>
-    <description>Firming and Hydrating Day and Night Cream with Retinol, Collagen, and Hyaluronic Acid. Reduces fine lines and wrinkles.</description>
+    <title>AERLANG Massage Gun with Heat — Deep Tissue Pain Relief</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/aerlang-massage-gun</guid>
+    <description>Deep tissue massager with heat therapy for back and neck pain relief. 7 interchangeable heads and a silent motor for at-home recovery.</description>
+    <enclosure url="https://app-tool.vercel.app/image/715vteUmXJL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/715vteUmXJL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 26. Clear Cups with Lids -->
   <item>
-    <title>100 Pack 16oz Clear Cups with Lids &amp; Straws - Iced Coffee Cups</title>
-    <link>https://app-tool.vercel.app/products/clear-cups-lids-straws</link>
-    <description>16 oz sturdy food-safe iced coffee cups. Perfect disposable smoothie cups for cold drinks, parties, and cafes.</description>
+    <title>VETHIN Princess Bed Canopy — Double Layer Black Drape Netting</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/princess-bed-canopy-black</guid>
+    <description>Aesthetic double-layer black bed canopy with 4 openings. Creates a cozy dreamy bedroom retreat for teens and adults alike.</description>
+    <enclosure url="https://app-tool.vercel.app/image/7105CYwWsyL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/7105CYwWsyL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 27. AERLANG Massage Gun -->
   <item>
-    <title>AERLANG Massage Gun with Heat - Deep Tissue Pain Relief</title>
-    <link>https://app-tool.vercel.app/products/aerlang-massage-gun</link>
-    <description>Deep Tissue Back and Neck Massager for Pain Relief. 7 Heads and Silent Motor with heat therapy for muscle recovery.</description>
+    <title>Luxury Ruffle Tassel Bed Canopy — 4-Corner White Netting</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/luxury-ruffle-canopy</guid>
+    <description>Elegant white 4-corner bed canopy with ruffle and tassel details. Creates a fairy-tale dreamy bedroom atmosphere. Easy ceiling installation.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71FzQjP00OL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71FzQjP00OL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 28. Princess Bed Canopy Black -->
   <item>
-    <title>VETHIN Princess Bed Canopy - Double Layer Black Drape Netting</title>
-    <link>https://app-tool.vercel.app/products/princess-bed-canopy-black</link>
-    <description>Double-layer black drape netting with 4 openings. Perfect for creating a cozy, aesthetic bedroom retreat for teens and adults.</description>
+    <title>Color Changing Solar Fence Lights — 4-Pack Waterproof LED</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/solar-fence-lights</guid>
+    <description>Solar-powered waterproof LED fence lights with 7 color modes. Zero electricity cost, no wiring, 1-minute install for decks, stairs, and pools.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81St52EP-VL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81St52EP-VL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 29. Luxury Ruffle Canopy -->
   <item>
-    <title>Luxury Ruffle Tassel Canopy - 4-Corner White Bedroom Netting</title>
-    <link>https://app-tool.vercel.app/products/luxury-ruffle-canopy</link>
-    <description>Elegant 4-corner post white netting with ruffle tassel details. Creates a dreamy, cozy atmosphere for any bedroom.</description>
+    <title>Aesthetic Fake Vines with LED Fairy Lights — 12-Pack Bedroom Decor</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/aesthetic-fake-vines-lights</guid>
+    <description>12-pack artificial ivy garlands with built-in LED fairy lights. No watering needed — stays lush forever. Perfect for dorm rooms and boho aesthetics.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81wA0lfV3rL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81wA0lfV3rL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 30. 3-Opening Princess Bed Net -->
   <item>
-    <title>3-Opening Princess Bed Net - 4-Corner Canopy for Queen King Full</title>
-    <link>https://app-tool.vercel.app/products/3-opening-princess-bed-net</link>
-    <description>Elegant 4-corner canopy curtains with a unique 3-side opening design. Fits Full, Queen, and King beds for a luxurious bedroom look.</description>
+    <title>Solar Watering Can Lights — Retro Metal Hanging Outdoor Decor</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/solar-watering-can-lights</guid>
+    <description>Retro metal hanging solar lights with waterproof LED strands. Auto on/off at dusk and dawn. Stunning conversation piece for porches and gardens.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81gar2Xft8L._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81gar2Xft8L._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 31. HelloBaby Video Monitor -->
   <item>
-    <title>HelloBaby 5 Inch Video Baby Monitor - No WiFi 30-Hour Battery</title>
-    <link>https://app-tool.vercel.app/products/hellobaby-video-monitor</link>
-    <description>No-WiFi secure monitor with 30-hour battery, Pan-Tilt-Zoom camera, infrared night vision, and 2-way talk for complete baby safety.</description>
+    <title>Aesthetic Vintage Table Lamp — Warm Cozy Ambiance Decor</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/aesthetic-lamp</guid>
+    <description>Vintage style lamp that adds warm cozy ambiance to any room. Reduces eye strain and complements boho, retro, and minimalist interior aesthetics.</description>
+    <enclosure url="https://app-tool.vercel.app/image/51ZakvjGM0L._MCnd_AC_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/51ZakvjGM0L._MCnd_AC_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 32. Solar Fence Lights -->
   <item>
-    <title>Color Changing Solar Fence Lights - 4-Pack Waterproof LED</title>
-    <link>https://app-tool.vercel.app/products/solar-fence-lights</link>
-    <description>4-Pack waterproof LED lamps with 7 colorful modes. Easy 1-minute installation for decks, stairs, and pools. Zero electricity cost.</description>
+    <title>Family Sized Air Fryer — Large Capacity 3-Layer Healthy Cooking</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/family-airfryer</guid>
+    <description>Cook healthy meals for the whole family with 85% less oil. Large 3-layer capacity feeds everyone in one batch. Faster than a conventional oven.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81OYPgiKaGL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81OYPgiKaGL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 33. Solar Plant Stand Lamps -->
   <item>
-    <title>MXwcy Solar Plant Stand Lamps 2-Pack - Industrial LED Edison</title>
-    <link>https://app-tool.vercel.app/products/solar-plant-stand-lamps</link>
-    <description>Industrial-style solar floor lamps with LED Edison bulbs and integrated plant stands. Perfect for porches, yards, and driveways.</description>
+    <title>Dual Basket Air Fryer — 12QT Double Basket Efficiency</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/dual-air-fryer</guid>
+    <description>Two independent baskets cook at two temperatures simultaneously — cuts meal prep time in half. 12QT capacity perfect for large families.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71XlesWSKRL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71XlesWSKRL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 34. Aesthetic Fake Vines with Lights -->
   <item>
-    <title>Aesthetic Fake Vines with LED Fairy Lights - 12-Pack Bedroom Decor</title>
-    <link>https://app-tool.vercel.app/products/aesthetic-fake-vines-lights</link>
-    <description>12-pack of artificial ivy garlands paired with LED fairy lights. Perfect for bedroom wall decor and creating a cozy boho atmosphere.</description>
+    <title>Almond Milk and Honey Bath Body Gift Set — 9 Piece Holiday Set</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/honey-almond-gift</guid>
+    <description>Complete 9-piece nourishing spa set with almond milk and honey scents. Head-to-toe pampering — the perfect self-care or holiday gift for her.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81OF5JWMThL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81OF5JWMThL._SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 35. Solar Watering Can Lights -->
   <item>
-    <title>Solar Watering Can Lights - Retro Metal Hanging Outdoor Decor</title>
-    <link>https://app-tool.vercel.app/products/solar-watering-can-lights</link>
-    <description>Large retro metal hanging solar lights with waterproof LED strands. Beautiful outdoor decoration for porches, lawns, and patios.</description>
+    <title>Elegant Floral Maxi Dress — Summer Aesthetic Fashion</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/floral-maxi-dress</guid>
+    <description>Lightweight breathable floral maxi dress for a breezy summer look. Flattering on all body types — perfect for beach days and vacations.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71HkhVu9R1L._AC_SY741_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71HkhVu9R1L._AC_SY741_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 36. Skin Care Essential -->
   <item>
-    <title>Skin Care Essential - Premium Radiant Healthy Skin Formula</title>
-    <link>https://app-tool.vercel.app/products/skin-care-essential</link>
-    <description>Premium skin care formula for radiant healthy skin. Targets dullness, uneven tone, and dryness for all skin types.</description>
+    <title>Galaxy Rose Gift — Enchanting Crystal Rose for Wife and Girlfriend</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/galaxy-rose-gift</guid>
+    <description>Crystal rose that lasts forever — a permanent symbol of love. Galaxy effect makes it a stunning display piece. Unique gift for Valentine's Day or anniversaries.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81avDeLCnqL._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81avDeLCnqL._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 37. Aesthetic Lamp -->
   <item>
-    <title>Aesthetic Vintage Table Lamp - Warm Cozy Ambiance Decor</title>
-    <link>https://app-tool.vercel.app/products/aesthetic-lamp</link>
-    <description>Vintage style lamp that adds warm cozy ambiance. Reduces eye strain and complements boho, retro, and minimalist aesthetics.</description>
+    <title>Preserved Rose Necklace Set — Forever Rose with Music Box</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/preserved-rose-necklace-set</guid>
+    <description>Real preserved rose that never wilts, paired with a music box and necklace. The ultimate luxury romantic gift for anniversaries and Valentine's Day.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81Ab3F9MZGL._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81Ab3F9MZGL._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 38. Premium Kitchen Oven -->
   <item>
-    <title>Premium Kitchen Oven - Large Capacity Multi-Mode Cooking</title>
-    <link>https://app-tool.vercel.app/products/premium-kitchen-oven</link>
-    <description>Large capacity oven with multiple cooking modes including bake, broil, and toast. Energy-efficient and fast-heating for family meals.</description>
+    <title>CZ Halo Stud Earrings — 18K Gold Plated Hypoallergenic Sterling Silver</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/cz-halo-earrings</guid>
+    <description>Hypoallergenic CZ halo earrings that sparkle like real diamonds. 18K gold plating resists tarnishing. Safe for sensitive ears and perfect for daily wear.</description>
+    <enclosure url="https://app-tool.vercel.app/image/81tW7pSRDhL._AC_SY695_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/81tW7pSRDhL._AC_SY695_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 39. Pizza Pan Set -->
   <item>
-    <title>Professional Pizza Pan Set - Crispy Crust Non-Stick</title>
-    <link>https://app-tool.vercel.app/products/pizza-pan-set</link>
-    <description>Professional pizza pan for crispy results at home. Perforated design with non-stick coating for restaurant-quality pizza every time.</description>
+    <title>925 Sterling Silver Cross Necklace — For Men and Women</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/silver-cross-necklace</guid>
+    <description>Solid 925 sterling silver cross pendant that never tarnishes or fades. Meaningful faith jewelry for personal wear or as a heartfelt religious gift.</description>
+    <enclosure url="https://app-tool.vercel.app/image/91TMiNh8+NL._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/91TMiNh8+NL._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 40. Mother's Day Special Gift -->
   <item>
-    <title>Mother's Day Special Gift - Heartfelt Pamper Set for Mom</title>
-    <link>https://app-tool.vercel.app/products/mothers-day-special-gift</link>
-    <description>Heartfelt gift for the special mother in your life. Thoughtfully chosen items to make her feel truly appreciated and pampered.</description>
+    <title>5 in 1 Hot Air Styler — Blowout Brush Hair Dryer Set</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/5-in-1-hot-air-styler</guid>
+    <description>Replaces 5 styling tools in one. Salon-quality blowout at home with interchangeable heads for curling, straightening, and volumizing.</description>
+    <enclosure url="https://app-tool.vercel.app/image/71vBKGKggQL._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/71vBKGKggQL._SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 41. Elegant Fashion Dress -->
   <item>
-    <title>Elegant Fashion Dress - Formal Occasion Wear for Women</title>
-    <link>https://app-tool.vercel.app/products/elegant-fashion-dress</link>
-    <description>Stunning dress perfect for any formal occasion. Flattering silhouette with wrinkle-resistant fabric for weddings, galas, and dinner parties.</description>
+    <title>Leafael Infinity Love Birthstone Necklace — Mother's Day Gift</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/infinity-love-birthstone-necklace</guid>
+    <description>Silver-plated heart pendant with crystal birthstone on an adjustable chain. Infinity symbol of endless love — perfect for Mother's Day or anniversaries.</description>
+    <enclosure url="https://app-tool.vercel.app/image/motherdaygift._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/motherdaygift._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 42. Gales Luxury Candle -->
   <item>
-    <title>Gales Luxury Scented Candle - Premium Aromatherapy Home Decor</title>
-    <link>https://app-tool.vercel.app/products/gales-luxury-candle</link>
-    <description>Premium scented candle for a calming fragrance. Long burn time and elegant design make it perfect for relaxation and as a thoughtful gift.</description>
+    <title>PURSEILVER 4-Piece Rose Gold Jewelry Set — Watch Necklace Earrings Bracelet</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/purseilver-4-piece-rose-gold-set</guid>
+    <description>Complete 4-piece rose gold jewelry set — watch, necklace, earrings, and bracelet. The perfect all-in-one gift for her birthday or anniversary.</description>
+    <enclosure url="https://app-tool.vercel.app/image/gift._AC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/gift._AC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 43. Advanced Skin Care -->
   <item>
-    <title>Advanced Skin Care - Deep Nourishing Glowing Formula</title>
-    <link>https://app-tool.vercel.app/products/advanced-skin-care</link>
-    <description>Deep nourishing formula for glowing healthy skin. Targets dark spots, dehydration, and uneven texture for all skin types including sensitive.</description>
+    <title>BeryLove Sequin Formal Cocktail Dress — High-Low Bridesmaid Gown</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/berylove-sequin-cocktail-dress</guid>
+    <description>Elegant high-low bridesmaid dress with sequin lace and romantic silhouette. Perfect for formal weddings, proms, galas, and cocktail parties.</description>
+    <enclosure url="https://app-tool.vercel.app/image/blaskdress_PT0_SX1464_V1___.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/blaskdress_PT0_SX1464_V1___.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 44. Mom Gift Set -->
   <item>
-    <title>Mom Gift Set - Curated Pamper Box for Mother</title>
-    <link>https://app-tool.vercel.app/products/mom-gift-set</link>
-    <description>Thoughtful gift set specially curated for mom. Everything she loves in one beautiful box — ideal for Mother's Day, birthdays, or holidays.</description>
+    <title>BeryLove Formal Lace Prom Dress — 2026 Wedding Guest Dress</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/berylove-formal-lace-prom-dress</guid>
+    <description>2026 wedding guest dress with lace bodice, cocktail-length slit, and flowing romantic silhouette. Perfect for proms, formal dinners, and wedding receptions.</description>
+    <enclosure url="https://app-tool.vercel.app/image/dress4._AC_SX569_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/dress4._AC_SX569_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 45. Laptop Table -->
   <item>
-    <title>Ergonomic Laptop Table - Portable Foldable Work From Home Desk</title>
-    <link>https://app-tool.vercel.app/products/laptop-table</link>
-    <description>Ergonomic portable table for work from home. Adjustable height and angle with lightweight foldable design for bed, sofa, or floor use.</description>
+    <title>RUBFAC Black Balloon Arch Kit 129pcs — Graduation Party Decor</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/black-balloon-arch-kit</guid>
+    <description>Professional balloon arch kit with 129 balloons in sizes from 5 to 18 inches. Ideal for graduations, birthday parties, and casino theme events.</description>
+    <enclosure url="https://app-tool.vercel.app/image/event_AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/event_AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 46. Galaxy Rose Gift -->
   <item>
-    <title>Galaxy Rose Gift - Enchanting Crystal Rose for Wife &amp; Girlfriend</title>
-    <link>https://app-tool.vercel.app/products/galaxy-rose-gift</link>
-    <description>Enchanting crystal rose for wife and girlfriend. Lasts forever as a permanent symbol of love — perfect for anniversaries and Valentine's Day.</description>
+    <title>Amico 6 Inch Ultra-Thin LED Recessed Lights — 24-Pack Dimmable</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/amico-led-recessed-lights</guid>
+    <description>24-pack dimmable canless LED downlights with 5 color temperature options. Slim modern design slashes electricity costs significantly.</description>
+    <enclosure url="https://app-tool.vercel.app/image/lights._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/lights._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 47. Halter Prom Dress -->
   <item>
-    <title>Halter Prom Dress - Formal Floral Lace Bridesmaid Gown</title>
-    <link>https://app-tool.vercel.app/products/halter-prom-dress</link>
-    <description>Formal Floral Lace Bridesmaid Dress with halter neckline. Suitable for prom, weddings, and formal galas in multiple sizes.</description>
+    <title>Alotiki Pink Wisteria Artificial Flower Garland — 10 Pcs 60ft Hanging Vines</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/alotiki-pink-wisteria-garland</guid>
+    <description>10-pack silk pink wisteria garlands totaling 60ft. Perfect for wedding arches, garden patios, party backdrops, and indoor floral aesthetics.</description>
+    <enclosure url="https://app-tool.vercel.app/image/pinkflower.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/pinkflower.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 48. Jewelry Set -->
   <item>
-    <title>Jewelry Set - Complete Coordinated Gift Set for Mom</title>
-    <link>https://app-tool.vercel.app/products/jewelry-set</link>
-    <description>Thoughtful jewelry gift set specially curated for mom. Coordinated pieces for an effortlessly put-together look, perfect for any age or style.</description>
+    <title>Artificial Pink Rose Garland — 8 Pcs 65.6ft Wedding Flower Vines</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/pink-rose-garland</guid>
+    <description>8-pack artificial pink rose garlands totaling 65.6ft. Each garland has over 45 realistic silk roses in light and dark pink tones for weddings and home decor.</description>
+    <enclosure url="https://app-tool.vercel.app/image/flower1.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/flower1.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 49. Preserved Rose Necklace Set -->
   <item>
-    <title>Preserved Rose Necklace Set - Forever Rose with Music Box</title>
-    <link>https://app-tool.vercel.app/products/preserved-rose-necklace-set</link>
-    <description>Forever Rose with Music Box and Necklace. A real preserved rose that never wilts — the ultimate romantic gift for anniversaries and Valentine's Day.</description>
+    <title>Alotiki Purple Wisteria Artificial Flower Garland — 10 Pcs 60ft Hanging Vines</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/alotiki-purple-wisteria-garland</guid>
+    <description>10-pack premium silk purple wisteria garlands totaling 60ft. Wire-reinforced stems for wedding arches, home gardens, and party backdrops.</description>
+    <enclosure url="https://app-tool.vercel.app/image/pinkflower.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/pinkflower.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 50. Hair Tools Travel Bag -->
   <item>
-    <title>Hair Tools Travel Bag - Heat Insulated Curling Iron Organizer</title>
-    <link>https://app-tool.vercel.app/products/hair-tools-travel-bag</link>
-    <description>Heat-resistant travel bag for curling irons and straighteners. Pack immediately after use without waiting to cool down. Keep styling tools organized on the go.</description>
+    <title>Maitys 44 Pcs Wedding Hair Accessories — Elegant Bridal Style Set</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/wedding-hair-accessories</guid>
+    <description>44-piece elegant wedding hair accessories set. Ideal for Prom 2026, brides, and bridesmaids. A complete styling collection in one box.</description>
+    <enclosure url="https://app-tool.vercel.app/image/44._SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/44._SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 51. 5 in 1 Hot Air Styler -->
   <item>
-    <title>5 in 1 Hot Air Styler - Blowout Brush Hair Dryer Set</title>
-    <link>https://app-tool.vercel.app/products/5-in-1-hot-air-styler</link>
-    <description>Blowout Brush Hair Dryer Set that replaces 5 styling tools. Salon-quality blowout at home with interchangeable heads for curl, straighten, and volumize.</description>
+    <title>Handmade Leaf Crystal Bridal Headpiece — Luxury Wedding Accessory</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/leaf-crystal-bridal-headpiece</guid>
+    <description>Handmade leaf crystal bridal headband with stunning rhinestone finish. Elevate your wedding or prom style with this luxury aesthetic accessory.</description>
+    <enclosure url="https://app-tool.vercel.app/image/Leaf%20Crystal%20Bridal%20HeadpiecesAC_SY535_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/Leaf%20Crystal%20Bridal%20HeadpiecesAC_SY535_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 52. Leafael Infinity Love Birthstone Necklace -->
   <item>
-    <title>Leafael Infinity Love Birthstone Necklace - Mother's Day Gift</title>
-    <link>https://app-tool.vercel.app/products/infinity-love-birthstone-necklace</link>
-    <description>Silver-plated heart pendant with crystal birthstone and adjustable 18 plus 2 inch chain. Perfect for Mother's Day or anniversaries with a personal touch.</description>
+    <title>VALITIC Kojic Acid Dark Spot Remover Soap — Vitamin C and Retinol</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/valitic-kojic-acid-soap</guid>
+    <description>Fade acne marks and improve skin texture with VALITIC Kojic Acid Soap. Infused with Vitamin C and Retinol for brighter, clearer skin with regular use.</description>
+    <enclosure url="https://app-tool.vercel.app/image/beauty_sope_SL1280_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/beauty_sope_SL1280_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 53. PURSEILVER 4-Piece Rose Gold Set -->
   <item>
-    <title>PURSEILVER 4-Piece Rose Gold Jewelry Set - Watch Necklace Earrings Bracelet</title>
-    <link>https://app-tool.vercel.app/products/purseilver-4-piece-rose-gold-set</link>
-    <description>Elegant 4-piece jewelry set including a watch, necklace, earrings, and bracelet. The perfect all-in-one gift for her birthday or anniversary.</description>
+    <title>FUTIMELY Boho Retro Stackable Rings Set — Celestial Moon and Star Design</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/boho-stackable-rings-set</guid>
+    <description>Celestial moon and star stackable rings in a trendy boho-retro layered style. Elevate your aesthetic with this affordable jewelry set.</description>
+    <enclosure url="https://app-tool.vercel.app/image/rings_set.png" length="0" type="image/png"/>
+    <media:content url="https://app-tool.vercel.app/image/rings_set.png" medium="image" type="image/png"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
-  <!-- 54. BeryLove Sequin Cocktail Dress -->
   <item>
-    <title>BeryLove Sequin Formal Cocktail Dress - High-Low Bridesmaid Gown</title>
-    <link>https://app-tool.vercel.app/products/berylove-sequin-cocktail-dress</link>
-    <description>Elegant high-low bridesmaid and prom dress featuring sequin lace and a romantic silhouette. Perfect for formal wedding guests and cocktail parties.</description>
-    <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 55. BeryLove Formal Lace Prom Dress -->
-  <item>
-    <title>BeryLove Formal Lace Prom Dress - 2026 Wedding Guest Dress</title>
-    <link>https://app-tool.vercel.app/products/berylove-formal-lace-prom-dress</link>
-    <description>Elegant 2026 wedding guest dress featuring a lace bodice, cocktail-length slit, and a flowing romantic silhouette for proms and formal dinners.</description>
-    <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 56. Black Balloon Arch Kit -->
-  <item>
-    <title>RUBFAC Black Balloon Arch Kit 129pcs - Graduation Party Decor</title>
-    <link>https://app-tool.vercel.app/products/black-balloon-arch-kit</link>
-    <description>Professional-grade garland kit with multiple balloon sizes from 5 to 18 inches. Ideal for graduations, casino themes, and sleek birthday celebrations.</description>
-    <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 57. Amico LED Recessed Lights -->
-  <item>
-    <title>Amico 6 Inch Ultra-Thin LED Recessed Lights - 24-Pack Dimmable</title>
-    <link>https://app-tool.vercel.app/products/amico-led-recessed-lights</link>
-    <description>24-Pack of dimmable canless wafer downlights with 5CCT color options. Includes junction boxes for easy slim-fit ceiling installation.</description>
-    <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 58. SIEPASA Windproof Umbrella -->
-  <item>
-    <title>SIEPASA Inverted Windproof Umbrella - Hands-Free C-Handle UV Protection</title>
-    <link>https://app-tool.vercel.app/products/siepasa-windproof-umbrella</link>
-    <description>Innovative upside-down folding design with a C-shape handle for hands-free use. Double-layer vented canopy that is windproof and UV-protective.</description>
-    <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
-  </item>
-
-  <!-- 59. Preserved Rose Gift Set -->
-  <item>
-    <title>Preserved Rose Gift Set - Forever Rose with Music Box &amp; Necklace</title>
-    <link>https://app-tool.vercel.app/products/preserved-rose-gift-set</link>
-    <description>A real rose preserved to last forever. Combined with a music box and necklace for an unforgettable romantic gift on anniversaries or Valentine's Day.</description>
+    <title>Skylight 15-inch Digital Wall Calendar and Family Chore Chart</title>
+    <link>https://app-tool.vercel.app/shopping.html</link>
+    <guid isPermaLink="false">https://app-tool.vercel.app/products/skylight-digital-calendar</guid>
+    <description>Stay organized in 2026 with the Skylight Smart Calendar. Beautiful 15-inch touchscreen display for family schedules, reminders, and chore tracking.</description>
+    <enclosure url="https://app-tool.vercel.app/image/calender._AC_SL1500_.jpg" length="0" type="image/jpeg"/>
+    <media:content url="https://app-tool.vercel.app/image/calender._AC_SL1500_.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 09 May 2026 00:00:00 +0500</pubDate>
   </item>
 
 </channel>
 </rss>
+
+
+ 
