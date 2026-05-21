@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-     body { background-color: #0f172a; color: #cbd5e1; font-family: 'DM Sans', sans-serif; margin: 0; padding: 0; line-height: 1.8; }
+    body { background-color: #0f172a; color: #cbd5e1; font-family: 'DM Sans', sans-serif; margin: 0; padding: 0; line-height: 1.8; }
     .main-container { max-width: 850px; margin: 0 auto; padding: 60px 20px 100px 20px; box-sizing: border-box; }
     .back-btn { color: #7dd3fc; text-decoration: none; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 25px; transition: color 0.2s; }
     .back-btn:hover { color: #38bdf8; }
@@ -30,7 +30,7 @@
     .social-links-list a { color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
     .social-links-list a:hover { color: #7dd3fc; }
   
-      :root {
+    :root {
       --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
       --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
       --muted: #94a3b8; --white: #ffffff;
@@ -68,6 +68,15 @@
         cursor: pointer; font-size: 1.2rem;
     }
 
+    /* AdSense Container styling */
+    .adsense-inline-container {
+        margin: 35px auto;
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
     @media (max-width: 768px) {
         nav { padding: 0 20px; }
         .mobile-btn { display: block; }
@@ -79,10 +88,10 @@
         }
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; text-align: center; }
-        .nav-links a { display: block; padding: 12px; }
+        .nav-links a { display: block; padding: 12px; color: var(--muted); }
     }
  
-    /* ── FOOTER (same on all pages) ── */
+    /* ── FOOTER ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
     .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
@@ -92,7 +101,7 @@
     .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
     .footer-social-btn:hover { background: var(--blue); color: white; }
     .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; padding: 0; margin: 0; }
     .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
     .footer-col ul a:hover { color: #7dd3fc; }
     .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
@@ -100,9 +109,8 @@
     .footer-bottom a:hover { text-decoration: underline; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
- 
+    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
@@ -112,7 +120,7 @@
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
   
-  <button id="mobileMenuBtn" class="mobile-btn">
+  <button id="mobileMenuBtn" class="mobile-btn" aria-label="Toggle Navigation">
     <i class="fas fa-bars"></i>
   </button>
 
@@ -145,11 +153,35 @@
       Consuming clean, Vitamin-rich whole foods creates a sustainable cellular base for skin brightness. It operates far more effectively over time than relying solely on superficial topical chemical serums or complex overnight artificial beauty formulas.
     </div>
 
+    <div class="adsense-inline-container">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="2983746510"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <h2>2. Boosting Natural Collagen Synthesis via Vitamin C Pools</h2>
     <p>Collagen is the primary structural protein layer responsible for keeping skin looking firm, taut, and perfectly youthful. Sweet potatoes are saturated with bioavailable Vitamin C, which immediately acts as an enzyme ignition trigger for your body’s internal collagen manufacturing loop. Consistently supplying your body with this nutrient minimizes micro-fatigue marks and dehydration shadows that often develop during long nights of designing workspace layouts and maintaining code assets.</p>
 
     <h2>3. Regulating Sebum and Reducing Inflammatory Stress</h2>
     <p>Beyond standard vitamin structures, sweet potatoes contain critical mineral complexes including magnesium and potassium. These minerals help regulate your body’s internal stress hormones while maintaining a healthy fluid balance across skin cell barriers. This cellular regulation minimizes excessive sebum oil generation, helping to prevent unexpected stress acne breakouts while you focus heavily on deploying complex web applications.</p>
+
+    <div class="adsense-inline-container">
+        <ins class="adsbygoogle"
+             style="display:block;"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="8374651029"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <h2>Conclusion & Wellness Disclaimer</h2>
     <p>Integrating raw, whole-food nutrition into your everyday lifestyle routine provides deep, long-term aesthetic rewards that artificial skin products simply cannot match. For more structural creator toolkits, strategic visibility updates, and balanced lifestyle optimization workflows, keep checking back and exploring our free web utility workspace applications.</p>
@@ -169,7 +201,7 @@
 
   <div style="clear: both; width: 100%; display: block; block-size: auto;"></div>
 
-     <footer>
+  <footer>
   <div class="affiliate-footer">
     This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
   </div>
@@ -182,7 +214,6 @@
         <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
         <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
-      
       </div>
     </div>
     
@@ -210,29 +241,28 @@
     
     <div class="footer-col">
       <h4>Connect</h4>
-          <ul>
-  <li>
-    <a href="https://www.pinterest.com/shaheerasadia" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-pinterest" style="margin-right: 8px;"></i>Pinterest
-    </a>
-  </li>
-  <li>
-    <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-linkedin" style="margin-right: 8px;"></i>LinkedIn
-    </a>
-  </li>
-  <li>
-    <a href="https://github.com/shaheerasadia" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-github" style="margin-right: 8px;"></i>GitHub
-    </a>
-  </li>
-  
-  <li>
-    <a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">
-      <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email
-    </a>
-  </li>
-</ul>
+      <ul>
+        <li>
+          <a href="https://www.pinterest.com/shaheerasadia" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-pinterest" style="margin-right: 8px;"></i>Pinterest
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin" style="margin-right: 8px;"></i>LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/shaheerasadia" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" style="margin-right: 8px;"></i>GitHub
+          </a>
+        </li>
+        <li>
+          <a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">
+            <i class="fas fa-envelope" style="margin-right: 8px;"></i>Email
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   
@@ -257,9 +287,9 @@
       navMenu.classList.toggle('active');
       const icon = mobileBtn.querySelector('i');
       if (navMenu.classList.contains('active')) {
-          icon.classList.replace('fa-bars', 'fa-times');
+          icon.classList.replace('fa-bars', 'fa-xmark');
       } else {
-          icon.classList.replace('fa-times', 'fa-bars');
+          icon.classList.replace('fa-xmark', 'fa-bars');
       }
   });
 
@@ -268,7 +298,7 @@
       if (!mobileBtn.contains(e.target) && !navMenu.contains(e.target)) {
           navMenu.classList.remove('active');
           const icon = mobileBtn.querySelector('i');
-          icon.classList.replace('fa-times', 'fa-bars');
+          icon.classList.replace('fa-xmark', 'fa-bars');
       }
   });
 </script>
