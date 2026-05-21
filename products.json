@@ -9,7 +9,7 @@
   "reviewCount": 157,
   "price": 29.99,
   "currency": "USD",
-  "amazoneLink": "https://amzn.to/4nDLpcZ",
+  "amazonLink": "https://amzn.to/4nDLpcZ",
   "image": "https://app-tool.vercel.app/image/4cupcaeeier.jpg",
     "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
   "specifications": {
@@ -37,7 +37,7 @@
    {
   "id": "69",
   "title": "NEHAJUNXI 63\" Tall Indoor Plant Stand with 4 Grow Lights",
-  "link": "https://amzn.to/42H0bWT",
+  "amazonLink": "https://amzn.to/42H0bWT",
   "description": "Maximize your corner spaces with this 63-inch tall NEHAJUNXI plant shelf featuring 4 built-in grow lights. This 8-tiered rustic brown corner flower stand provides optimal lighting and display space for multiple indoor plants on your patio, living room, or balcony.",
   "pubDate": "2026-05-20T00:00:00+05:00",
   "image": "https://app-tool.vercel.app/image/nehajunxlplant.jpg",
