@@ -1,5 +1,39 @@
  
 [
+ {
+  "id": "k-organik-life-4-cup-carrier",
+  "title": "4 Cup Carrier Tray (50-Pack), No-Spill, No-Mess Disposable Holder",
+  "description": "Biodegradable, Eco-Friendly for Delivery of Hot or Cold Drinks, Ideal To Go Carrier for Car Food Delivery.",
+  "brand": "K ORGANIK LIFE",
+  "rating": 4.6,
+  "reviewCount": 157,
+  "price": 29.99,
+  "currency": "USD",
+  "amazoneLink": "https://amzn.to/4nDLpcZ",
+  "image": "https://app-tool.vercel.app/image/4cupcarrier.jpg",
+    "btnColor": "linear-gradient(132deg,#2d3416,#616e72)",
+  "specifications": {
+    "specificUses": "Automobiles",
+    "material": "Paper Pulp Fiber",
+    "specialFeatures": [
+      "Disposable",
+      "Eco-friendly",
+      "Stackable"
+    ],
+    "color": "White",
+    "finishType": "Unfinished",
+    "mountingType": "Tabletop Mount",
+    "dimensions": "8.75\"D x 8.75\"W x 1.75\"H",
+    "weight": "2.34 Kilograms",
+    "numberOfCompartments": 4,
+    "packSize": "50-Pack"
+  },
+  "shipping": {
+    "note": "Shipping & Import Charges to Pakistan apply"
+  },
+  "availability": "100+ bought in past month",
+  "category": "Shopping Picks"
+},
    {
   "id": "69",
   "title": "NEHAJUNXI 63\" Tall Indoor Plant Stand with 4 Grow Lights",
