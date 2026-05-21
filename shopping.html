@@ -180,7 +180,7 @@
     .card-body .benefits { font-size: 12.5px; color: #374a80; background: var(--blue-pale); border-left: 3px solid var(--blue); padding: 9px 11px; border-radius: 0 8px 8px 0; line-height: 1.65; }
     .amazon-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; color: white; text-decoration: none; padding: 11px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; margin-top: auto; transition: opacity .2s, transform .15s; }
     .amazon-btn:hover { opacity: .88; transform: translateY(-2px); }
- /* ── CONTACT ── */
+ /* ── CONTACT ── 
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
     .contact-form-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 28px; }
     .contact-form-wrap h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 20px; }
@@ -197,7 +197,9 @@
     .social-row { display: flex; gap: 10px; }
     .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); text-decoration: none; transition: all .2s; }
     .social-btn:hover { background: var(--blue); color: white; }
-    /* ── CONTACT HEADER CENTRALIZATION ── */
+
+    
+     ── CONTACT HEADER CENTRALIZATION ── 
 .section-hd {
     text-align: center;
     margin-bottom: 40px;
@@ -234,8 +236,29 @@
     max-width: 580px;
     margin: 0 auto;
     line-height: 1.6;
-}
-
+}*/
+/* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .contact-form-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 28px; }
+    .contact-form-wrap h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--blue-dark); margin-bottom: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
+    .form-group input, .form-group textarea { padding: 11px 14px; border-radius: 10px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: var(--bg); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { resize: none; }
+    .contact-submit { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity .2s; }
+    .contact-submit:hover { opacity: .9; }
+    .contact-info-wrap { display: flex; flex-direction: column; gap: 16px; }
+    .contact-info-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 20px 24px; }
+    .contact-info-card h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); margin-bottom: 12px; }
+    .info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-row i { color: var(--blue); width: 18px; font-size: 14px; }
+    .info-row a { color: var(--blue); text-decoration: none; }
+    .info-row a:hover { text-decoration: underline; }
+    .social-row { display: flex; gap: 10px; }
+    .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); font-size: 16px; text-decoration: none; transition: all .2s; }
+    .social-btn:hover { background: var(--blue); color: white; }
 /* موبائل کے لیے بہتری */
 @media (max-width: 768px) {
     .contact-grid {
