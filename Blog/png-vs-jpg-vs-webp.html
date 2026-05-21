@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PNG vs JPG vs WebP vs AVIF: Which Format is Best for SEO? | Toolkit Pro</title>
  
-  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-
 
   <meta name="description" content="PNG vs JPG vs WebP vs AVIF: Which image format should you choose? Explore the comprehensive breakdown to maximize page speed and dominate Core Web Vitals.">
   <meta name="keywords" content="PNG vs JPG, WebP Benefits, AVIF vs WebP, Image Formats for Web, SEO Images, Core Web Vitals, Toolkit Pro">
@@ -20,57 +18,7 @@
       --muted: #94a3b8; --white: #ffffff;
       --blue-pale: #eff6ff; --blue-light: #dbeafe;
     }
-    /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
-        .blog-container {
-            margin: 30px auto;
-        }
-        
-        .blog-header h1 {
-            font-size: 28px;
-            padding: 0 10px;
-        }
-
-        .featured-image {
-            height: 250px;
-            border-radius: 12px;
-        }
-
-        .content-section {
-            padding: 25px 20px;
-            border-radius: 15px;
-        }
-
-        h2 {
-            font-size: 22px;
-            margin-top: 25px;
-        }
-
-        p, li {
-            font-size: 16px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 25px 0;
-            border-radius: 10px;
-        }
-
-        table {
-            display: table;
-            width: 100%;
-            white-space: nowrap;
-        }
-
-        .tool-cta {
-            padding: 20px;
-        }
-        
-        .tool-cta h3 {
-            font-size: 20px;
-        }
-    }
-
+    
     body {
       font-family: 'DM Sans', Arial, sans-serif;
       background: var(--bg); color: var(--text);
@@ -102,31 +50,20 @@
         cursor: pointer; font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-        nav { padding: 0 20px; }
-        .mobile-btn { display: block; }
-        .nav-links {
-            display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: white;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; text-align: center; }
-    }
-
     /* ── CONTENT ── */
     .blog-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
     .blog-header { text-align: center; margin-bottom: 40px; }
-    .blog-header h1 { font-size: 42px; color: #38bdf8; line-height: 1.2; }
+    .blog-header h1 { font-size: 42px; color: #38bdf8; line-height: 1.2; margin: 15px 0; }
+    .featured-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 16px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
     
     .content-section { background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
     h2 { color: #facc15; margin-top: 35px; border-left: 4px solid var(--blue); padding-left: 15px; }
     h3 { color: #38bdf8; margin-top: 25px; }
-    p { color: #cbd5e1; }
+    p { color: #cbd5e1; text-align: justify; }
     ul, ol { color: #cbd5e1; padding-left: 20px; }
     li { margin-bottom: 8px; }
     
-    .table-container { margin: 25px 0; border-radius: 10px; overflow: hidden; }
+    .table-container { margin: 25px 0; border-radius: 10px; overflow-hidden; }
     table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); }
     table th, table td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 15px; }
     table th { background: var(--blue-dark); color: #7dd3fc; }
@@ -135,17 +72,13 @@
     code { background: #0f172a; color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 14px; }
     pre { background: #0f172a; padding: 15px; border-radius: 8px; color: #7dd3fc; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); font-family: monospace; }
 
-    .tool-cta {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      padding: 30px; border-radius: 15px; text-align: center; margin: 40px 0;
+    /* AdSense Slot Wrapper */
+    .adsense-wrapper {
+      margin: 35px auto;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
     }
-    .tool-cta h3 { margin-top: 0; color: white; }
-    .btn-cta {
-      display: inline-block; background: var(--pink); color: white;
-      padding: 12px 25px; border-radius: 10px; text-decoration: none;
-      font-weight: 700; margin-top: 15px; transition: 0.3s;
-    }
-    .btn-cta:hover { transform: scale(1.05); }
 
     /* ── FOOTER ── */
     footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
@@ -164,6 +97,29 @@
     .footer-bottom a { color: inherit; text-decoration: none; }
     .footer-bottom a:hover { text-decoration: underline; }
 
+    /* ── MOBILE OPTIMIZATIONS ── */
+    @media (max-width: 768px) {
+        nav { padding: 0 20px; }
+        .mobile-btn { display: block; }
+        .nav-links {
+            display: none; flex-direction: column; position: absolute;
+            top: 66px; left: 0; width: 100%; background: white;
+            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; text-align: center; }
+        .nav-links a { display: block; padding: 12px; color: var(--muted); }
+        
+        .blog-container { margin: 30px auto; }
+        .blog-header h1 { font-size: 28px; padding: 0 10px; }
+        .featured-image { height: 250px; border-radius: 12px; }
+        .content-section { padding: 25px 20px; border-radius: 15px; }
+        h2 { font-size: 22px; margin-top: 25px; }
+        p, li { font-size: 16px; }
+        .table-container { overflow-x: auto; margin: 25px 0; border-radius: 10px; }
+        table { display: table; width: 100%; white-space: nowrap; }
+    }
+
     @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
@@ -176,7 +132,7 @@
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">Toolkit <em>Pro</em></span>
   </a>
-  <button id="mobileMenuBtn" class="mobile-btn"><i class="fas fa-bars"></i></button>
+  <button id="mobileMenuBtn" class="mobile-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
   <ul class="nav-links" id="navMenu">
     <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
     <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
@@ -202,6 +158,18 @@
         <li><strong>Lossy Compression:</strong> Intelligently drops mathematical detail blocks that are minor enough to slip past human perceptual vision limits. This structural stripping slashes raw file size down dramatically. However, repeatedly editing and saving a lossy format compiles compounding visual artifacts known as generation loss.</li>
         <li><strong>Lossless Compression:</strong> Completely maps and retains every individual pixel point code pattern without any degradation. Visual clarity remains structurally pristine, but asset byte sizes grow heavy, making large files dangerous to global loading timelines.</li>
     </ul>
+
+    <div class="adsense-wrapper">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="2983746510"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <h2>1. JPG (Joint Photographic Experts Group)</h2>
     <p>JPG stands as the reliable historical cornerstone for digital camera photography systems. Utilizing highly adjustable lossy encoding engines, it balances intricate, real-world texture data against aggressive byte reduction goals.</p>
@@ -295,6 +263,18 @@
         </table>
     </div>
 
+    <div class="adsense-wrapper">
+        <ins class="adsbygoogle"
+             style="display:block;"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="8374651029"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <h2>Advanced Implementation: Multi-Format Server Fallbacks</h2>
     <p>To preserve cross-browser performance standards like a senior systems engineer, use the HTML5 <code>&lt;picture&gt;</code> element architecture. This method feeds elite AVIF data down to modern engines, while safely dropping back to standard formats for legacy environments:</p>
     
@@ -311,7 +291,7 @@
   RewriteEngine On
   RewriteCond %{HTTP_ACCEPT} image/webp
   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-  RewriteRule ^(.*)\.(jmp|jpeg|png)$ $1.webp [T=image/webp,E=existing:1,L]
+  RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1.webp [T=image/webp,E=existing:1,L]
 &lt;/IfModule&gt;</code></pre>
 
     <h2>Conclusion: The Architecture Blueprint</h2>
@@ -386,11 +366,16 @@
     mobileBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         const icon = mobileBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
+        
+        // Use clean token swapping logic to handle mobile menu icons smoothly
+        if (navMenu.classList.contains('active')) {
+            icon.classList.replace('fa-bars', 'fa-xmark');
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
     });
   }
 </script>
 
 </body>
-</html>
+</html> 
