@@ -9,9 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-
 
   <style>
     :root {
@@ -137,6 +135,17 @@
 
     .blog-content strong {
       color: var(--blue-dark);
+    }
+
+    /* Ad Slot Wrapper Container Styling */
+    .blog-ad-container {
+        margin: 35px auto;
+        text-align: center;
+        clear: both;
+        min-height: 90px;
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: var(--radius);
+        padding: 12px 0;
     }
 
     /* Feature Highlight Block */
@@ -266,6 +275,18 @@
         <li><strong>Lightweight & Fast:</strong> Optimized to run smoothly in any modern web browser without lagging.</li>
       </ul>
 
+      <div class="blog-ad-container">
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="2485889698"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <h2>Powerful Features at Your Fingertips</h2>
       <p>Despite its minimalist and clean interface, the studio comes packed with all the essential tools you need to create beautiful sketches or abstract digital art:</p>
       
@@ -284,6 +305,18 @@
         <li><strong>For Developers & UI Designers:</strong> Need to map out an application's layout? Use the canvas as a quick digital whiteboard to sketch wireframes and component hierarchies on the fly.</li>
         <li><strong>For Casual Doodlers:</strong> Destress after a long coding or writing session by turning a blank canvas into a colorful display of abstract fluid art.</li>
       </ol>
+
+      <div class="blog-ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6309207317896311"
+             data-ad-slot="2485889698"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
 
       <div class="cta-block">
         <h3>Ready to Paint Your Next Masterpiece?</h3>
@@ -399,19 +432,22 @@
 
   mobileMenuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('show');
+    const icon = mobileMenuBtn.querySelector('i');
+    if (navMenu.classList.contains('show')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+    }
+  });
+
+  // Global click alignment to close mobile menu
+  document.addEventListener('click', (e) => {
+      if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('show');
+          mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      }
   });
 </script>
 
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
- 
+</html> 
