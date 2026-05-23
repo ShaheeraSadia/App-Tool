@@ -92,8 +92,24 @@
     .dropdown-menu a { font-size: 13px; color: var(--text); padding: 9px 14px; border-radius: 8px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .dropdown-menu a:hover { background: var(--blue-pale); color: var(--blue); }
     .dropdown-menu a i { font-size: 13px; color: var(--blue); width: 16px; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-    .nav-shop:hover { opacity: .88 !important; }
+   /* .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+    .nav-shop:hover { opacity: .88 !important; }*/
+    .nav-shop { 
+    background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; 
+    color: white !important; 
+    border-radius: 10px !important; 
+    font-weight: 600 !important; 
+    display: flex !important;           /* یہاں سے کنٹرول ہوگا */
+    align-items: center !important;     /* آئیکن اور ٹیکسٹ کو ایک لائن میں رکھے گا */
+    gap: 6px !important;                /* آئیکن اور ٹیکسٹ کے درمیان تھوڑی جگہ */
+    padding: 7px 14px !important; 
+    text-decoration: none !important;
+}
+
+/* اگر آئیکن کا سائز بڑا ہے تو اسے تھوڑا چھوٹا کریں */
+.nav-shop i {
+    font-size: 14px !important;
+}
     /* Mobile menu */
     .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
     .menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; }
@@ -385,7 +401,13 @@
     </li>
  
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+ <!--   <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>-->
+    <li>
+  <a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">
+    <i class="fas fa-shopping-bag" style="font-size: 11px;"></i> 
+    <span>Shop</span>
+  </a>
+</li>
   </ul>
 </nav>
 
