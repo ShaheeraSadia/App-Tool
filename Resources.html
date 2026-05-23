@@ -249,22 +249,21 @@
 <body>
  
 <!-- NAV -->
-<nav>
+ <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-   
-      <button id="mobileMenuBtn" class="mobile-btn">
-    <i class="fas fa-bars"></i>
-</button>
 
- 
-  <ul class="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html" class="active"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  <button id="mobileMenuBtn" class="mobile-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;"></i>Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html" class="active"><i class="fas fa-book" style="margin-right:4px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;"></i>Shop</a></li>
   </ul>
 </nav>
 
@@ -821,74 +820,14 @@
   </div>
 </footer>
  
-<script>
+ <script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
 
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navMenu = document.getElementById('navMenu');
-
-/* Toggle Mobile Menu */
-
-mobileMenuBtn.addEventListener('click', (e) => {
-
-  e.stopPropagation();
-
-  navMenu.classList.toggle('show');
-
-  const icon = mobileMenuBtn.querySelector('i');
-
-  if (navMenu.classList.contains('show')) {
-
-    icon.classList.remove('fa-bars');
-    icon.classList.add('fa-times');
-
-  } else {
-
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-
-  }
-
-});
-
-/* Close Menu When Clicking Outside */
-
-document.addEventListener('click', (e) => {
-
-  if (
-    !mobileMenuBtn.contains(e.target) &&
-    !navMenu.contains(e.target)
-  ) {
-
-    navMenu.classList.remove('show');
-
-    const icon = mobileMenuBtn.querySelector('i');
-
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-
-  }
-
-});
-
-/* Close Menu After Clicking Link */
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-
-  link.addEventListener('click', () => {
-
-    navMenu.classList.remove('show');
-
-    const icon = mobileMenuBtn.querySelector('i');
-
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-
+  mobileBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
-
-});
-
 </script>
-Get smarter respo
 </body>
 </html>
 
