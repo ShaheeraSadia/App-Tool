@@ -230,6 +230,44 @@
     .designer-textarea { padding: 12px 14px; border-radius: 12px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'Lora', serif; resize: none; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
     .designer-textarea:focus { border-color: var(--blue); }
     .designer-status { font-size: 13px; color: var(--muted); text-align: center; min-height: 18px; }
+    /* nature image*/
+    .tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+}
+
+.card-icon {
+    font-size: 32px;
+    color: var(--cyan);
+    margin-bottom: 20px;
+}
+
+.tool-card h3 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.tool-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    color: var(--pink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
 
     /* ── QR CODE ── */
     .qr-input-row { display: flex; gap: 12px; margin-bottom: 20px; }
@@ -489,8 +527,7 @@
       </div>
     </div>
   </div>
-  <li><a href="https://app-tool.vercel.app/nature-gallery.html" class="active"><i class="fas fa-leaf" style="margin-right:4px;font-size:11px"></i>Gallery</a></li>
-
+ 
   <div class="tool-wrap" id="palette-section">
     <div class="tool-header">
       <div>
@@ -511,6 +548,12 @@
     </div>
   </div>
 
+  <div class="tool-card">
+    <div class="card-icon"><i class="fas fa-leaf"></i></div>
+    <h3>Nature & AI Gallery</h3>
+    <p>Browse and download thousands of stunning nature photos and AI-generated artwork for free.</p>
+    <a href="https://app-tool.vercel.app/nature-gallery.html" class="card-link">Explore Gallery →</a>
+</div>
   
   <div class="tool-wrap" id="qr-section">
     <div class="tool-header">
