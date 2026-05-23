@@ -6,7 +6,9 @@
 
 <title>Best Free Nature Photos & AI Art in 2026 | Toolkit Pro Blog</title>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <meta name="description"
 content="Discover the best free nature photography and AI-generated artwork in 2026. Learn where to download aesthetic wallpapers, creative visuals, and high-resolution images for free."/>
@@ -25,15 +27,15 @@ href="https://app-tool.vercel.app/nature-blog.html"/>
 
 :root{
 --bg:#0f1117;
---card:#175f7;
+--card:#161b22;
 --muted:#9aa0aa;
 --blue:#2b4fd8;
 --cyan:#00b4db;
 --pink:#ff6eb4;
 --border:rgba(255,255,255,.08);
+--text:#f5f5f5;
 }
-1923;
---text:#f5f
+
 *{
 margin:0;
 padding:0;
@@ -45,6 +47,7 @@ font-family:'DM Sans',sans-serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.8;
+overflow-x:hidden;
 }
 
 a{
@@ -64,15 +67,15 @@ margin:auto;
 padding:30px 20px 80px;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 height:70px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 30px;
-background:rgba(0,0,0,.5);
+padding:0 24px;
+background:rgba(0,0,0,.55);
 backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
 position:sticky;
@@ -80,28 +83,55 @@ top:0;
 z-index:999;
 }
 
-.logo{
+.nav-logo{
+display:flex;
+align-items:center;
+gap:10px;
+color:#fff;
 font-size:22px;
 font-weight:700;
-color:#fff;
 }
 
-.logo span{
+.nav-logo em{
 color:var(--pink);
+font-style:normal;
 }
 
 .nav-links{
 display:flex;
-gap:20px;
+align-items:center;
+gap:18px;
+list-style:none;
+}
+
+.nav-links li{
+list-style:none;
 }
 
 .nav-links a{
-color:rgba(255,255,255,.7);
+color:rgba(255,255,255,.75);
 font-size:14px;
+transition:.3s;
 }
 
-.nav-links a:hover{
+.nav-links a:hover,
+.nav-links .active{
 color:#fff;
+}
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+
+.bar{
+width:25px;
+height:3px;
+background:#fff;
+border-radius:4px;
+transition:.3s;
 }
 
 /* HERO */
@@ -112,23 +142,6 @@ text-align:center;
 background:
 linear-gradient(135deg,#111827 0%,#16213e 60%,#0f3460 100%);
 }
-  
-      
-
-        .mobile-btn {
-            display: none; 
-            background: var(--blue-dark); 
-            border: none;
-            color: white; 
-            width: 40px; 
-            height: 40px; 
-            border-radius: 8px;
-            cursor: pointer; 
-            font-size: 1.2rem;
-            align-items: center;
-            justify-content: center;
-        }
-
 
 .hero h1{
 font-family:'Lora',serif;
@@ -156,12 +169,6 @@ display:grid;
 grid-template-columns:2fr 340px;
 gap:40px;
 margin-top:50px;
-}
-
-@media(max-width:900px){
-.blog-layout{
-grid-template-columns:1fr;
-}
 }
 
 /* ARTICLE */
@@ -242,6 +249,7 @@ list-style:none;
 display:flex;
 flex-direction:column;
 gap:12px;
+padding-left:0;
 }
 
 .widget ul a{
@@ -279,42 +287,216 @@ font-weight:700;
 
 /* ADS */
 
-.ad-box{
-margin:30px 0;
-padding:25px;
-border:2px dashed rgba(255,255,255,.12);
-text-align:center;
-border-radius:16px;
-color:rgba(255,255,255,.4);
+.ad-slot{
+display:block;
+width:100%;
+min-height:250px;
+margin:20px auto;
+overflow:hidden;
 }
-.ad-slot {
-    display: block;
-    width: 100%;
-    min-height: 250px; /* یہ آپ نے پہلے بھی رکھا ہے، یہ ٹھیک ہے */
-    margin: 20px auto;
-    overflow: hidden;
-}
+
 /* FOOTER */
 
- 
-    /* ── FOOTER ── */
-    footer{background:linear-gradient(135deg,#060810 0%,#0d1017 100%);color:rgba(255,255,255,.7);padding:52px 40px 28px;border-top:1px solid rgba(255,255,255,.06)}
-    .aff-foot{background:rgba(255,255,255,.04);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.4);text-align:center;margin-bottom:28px;max-width:1200px;margin-left:auto;margin-right:auto}
-    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
-    .footer-brand .logo{font-size:20px;color:var(--cyan);font-weight:700;margin-bottom:10px}
-    .footer-brand p{font-size:13px;opacity:.6;line-height:1.7;max-width:230px}
-    .footer-social{display:flex;gap:10px;margin-top:16px}
-    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:14px;text-decoration:none;transition:background .2s}
-    .fsb:hover{background:var(--blue);color:white}
-    .footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px}
-    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .footer-col ul a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
-    .footer-col ul a:hover{color:var(--cyan)}
-    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.4}
-    .footer-bottom a{color:inherit;text-decoration:none}
-    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
-  
+footer{
+background:linear-gradient(135deg,#060810 0%,#0d1017 100%);
+color:rgba(255,255,255,.7);
+padding:52px 40px 28px;
+border-top:1px solid rgba(255,255,255,.06);
+margin-top:60px;
+}
+
+.aff-foot{
+background:rgba(255,255,255,.04);
+border-radius:8px;
+padding:10px 16px;
+font-size:12px;
+color:rgba(255,255,255,.4);
+text-align:center;
+margin-bottom:28px;
+max-width:1200px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.footer-inner{
+max-width:1200px;
+margin:0 auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
+margin-bottom:36px;
+}
+
+.footer-brand .logo{
+font-size:20px;
+color:var(--cyan);
+font-weight:700;
+margin-bottom:10px;
+}
+
+.footer-brand p{
+font-size:13px;
+opacity:.6;
+line-height:1.7;
+max-width:230px;
+}
+
+.footer-social{
+display:flex;
+gap:10px;
+margin-top:16px;
+}
+
+.fsb{
+width:36px;
+height:36px;
+border-radius:8px;
+background:rgba(255,255,255,.06);
+display:flex;
+align-items:center;
+justify-content:center;
+color:rgba(255,255,255,.6);
+font-size:14px;
+transition:background .2s;
+}
+
+.fsb:hover{
+background:var(--blue);
+color:white;
+}
+
+.footer-col h4{
+font-size:12px;
+font-weight:700;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:var(--cyan);
+margin-bottom:16px;
+}
+
+.footer-col ul{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:9px;
+padding-left:0;
+}
+
+.footer-col ul a{
+font-size:13px;
+color:rgba(255,255,255,.5);
+transition:color .2s;
+}
+
+.footer-col ul a:hover{
+color:var(--cyan);
+}
+
+.footer-bottom{
+max-width:1200px;
+margin:0 auto;
+border-top:1px solid rgba(255,255,255,.06);
+padding-top:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:10px;
+font-size:12px;
+opacity:.4;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.blog-layout{
+grid-template-columns:1fr;
+}
+
+.footer-inner{
+grid-template-columns:1fr 1fr;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#111827;
+flex-direction:column;
+align-items:flex-start;
+padding:20px;
+display:none;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu-toggle{
+display:flex;
+}
+
+.article{
+padding:24px;
+}
+
+.hero{
+padding:70px 20px 50px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.article h2{
+font-size:28px;
+}
+
+.article h3{
+font-size:22px;
+}
+}
+
+@media(max-width:640px){
+
+footer{
+padding:40px 20px 24px;
+}
+
+.footer-inner{
+grid-template-columns:1fr;
+gap:24px;
+}
+
+.footer-bottom{
+flex-direction:column;
+text-align:center;
+}
+
+.author-box{
+flex-direction:column;
+text-align:center;
+}
+
+.article{
+padding:20px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+nav{
+padding:0 18px;
+}
+}
 
 </style>
 </head>
@@ -322,68 +504,82 @@ color:rgba(255,255,255,.4);
 <body>
 
 <nav>
-  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
-    <i class="fas fa-toolbox"></i>
-    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
-  </a>
-  <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px"></i>Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice</a></li>
-    <li><a href="https://app-tool.vercel.app/nature-gallery.html" class="active"><i class="fas fa-leaf" style="margin-right:4px;font-size:11px"></i>Gallery</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px"></i>Shop</a></li>
-  </ul>
+
+<a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+<i class="fas fa-toolbox"></i>
+<span class="nav-logo-text">ToolKit <em>Pro</em></span>
+</a>
+
+<div class="menu-toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+
+<ul class="nav-links" id="nav-links">
+
+<li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+
+<li><a href="https://app-tool.vercel.app/index.html#uploadArea">Tools</a></li>
+
+<li><a href="https://app-tool.vercel.app/art-tool.html">Art</a></li>
+
+<li><a href="https://app-tool.vercel.app/voice-studio.html">Voice</a></li>
+
+<li><a href="https://app-tool.vercel.app/nature-gallery.html" class="active">Gallery</a></li>
+
+<li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+
+<li><a href="https://app-tool.vercel.app/shopping.html">Shop</a></li>
+
+</ul>
+
 </nav>
 
 <section class="hero">
+
 <h1>Free Nature Photos & <span>AI Artwork</span></h1>
 
 <p>
 Explore stunning free nature photography and AI-generated art for creative projects, wallpapers, blogs, YouTube thumbnails, and modern digital design inspiration.
 </p>
+
 </section>
 
- 
-<div class="ad-slot" style="min-height: 250px; background: rgba(0,0,0,0.02); margin: 20px auto; clear: both;">
-  <ins class="adsbygoogle" 
-       style="display:block" 
-       data-ad-client="ca-pub-6309207317896311" 
-       data-ad-slot="2485889698" 
-       data-ad-format="auto" 
-       data-full-width-responsive="true">
-  </ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+<div class="ad-slot">
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-6309207317896311"
+data-ad-slot="2485889698"
+data-ad-format="auto"
+data-full-width-responsive="true">
+</ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 </div>
+
 <div class="container">
 
 <div class="blog-layout">
 
-<!-- ARTICLE -->
 <article class="article">
 
 <div class="featured-img">
-<img src="https://picsum.photos/id/1018/1200/700"
-alt="Beautiful Nature Landscape">
+<img src="https://picsum.photos/id/1018/1200/700" alt="Beautiful Nature Landscape">
 </div>
 
 <p>
-Nature photography and AI-generated artwork are becoming essential tools for designers, bloggers, marketers, and content creators worldwide. High-quality visuals improve engagement, increase user retention, and help websites rank better in search engines.
+Nature photography and AI-generated artwork are becoming essential tools for designers, bloggers, marketers, and content creators worldwide.
 </p>
-
-<p>
-At Toolkit Pro, we created a free gallery that combines breathtaking natural landscapes with futuristic AI-generated visuals. The goal is simple: provide free creative resources for everyone.
-</p>
- 
 
 <h2>Why Free Images Matter in Modern Design</h2>
 
 <p>
-Visual content has become one of the most important parts of the internet. Websites with quality imagery perform better across social media, blogs, and search engine rankings.
+Visual content has become one of the most important parts of the internet.
 </p>
 
 <ul>
@@ -395,111 +591,44 @@ Visual content has become one of the most important parts of the internet. Websi
 </ul>
 
 <div class="quote">
-“Great design starts with powerful visuals. Free creative resources help small creators compete globally.”
+“Great design starts with powerful visuals.”
 </div>
 
 <h2>AI Art is Changing Creative Industries</h2>
 
 <p>
-Artificial intelligence is transforming digital creativity faster than ever before. AI-generated images can create dreamlike environments, futuristic landscapes, and artistic compositions impossible with traditional photography.
+Artificial intelligence is transforming digital creativity faster than ever before.
 </p>
-
-<p>
-In 2026, AI artwork is used for:
-</p>
-
-<ul>
-<li>YouTube thumbnails</li>
-<li>Website hero sections</li>
-<li>Social media posts</li>
-<li>Game concepts</li>
-<li>Wallpaper design</li>
-<li>Marketing campaigns</li>
-</ul>
 
 <div class="featured-img">
-<img src="https://picsum.photos/id/1040/1200/700"
-alt="AI Inspired Nature">
+<img src="https://picsum.photos/id/1040/1200/700" alt="AI Inspired Nature">
 </div>
-
-<h2>Best Categories of Nature Photography</h2>
-
-<h3>1. Mountain Landscapes</h3>
-
-<p>
-Mountain photography creates feelings of freedom, adventure, and peace. These images are ideal for travel blogs and inspirational websites.
-</p>
-
-<h3>2. Forest Photography</h3>
-
-<p>
-Forest visuals are calming and cinematic. They work perfectly for wellness brands and environmental projects.
-</p>
-
-<h3>3. Ocean & Coastal Images</h3>
-
-<p>
-Ocean photography remains one of the most downloaded image categories online because of its relaxing atmosphere and modern aesthetic.
-</p>
-
- <div class="ad-slot" style="min-height: 250px; background: rgba(0,0,0,0.02); margin: 20px auto; clear: both;">
-  <ins class="adsbygoogle" 
-       style="display:block" 
-       data-ad-client="ca-pub-6309207317896311" 
-       data-ad-slot="2485889698" 
-       data-ad-format="auto" 
-       data-full-width-responsive="true">
-  </ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
-
-<h2>How Toolkit Pro Helps Creators</h2>
-
-<p>
-Toolkit Pro is designed for creators who need free browser-based tools and creative assets without expensive subscriptions.
-</p>
-
-<p>
-Our platform includes:
-</p>
-
- <ul class="nav-links">
-    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-leaf"></i> Free Image Gallery</a></li>
-    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette"></i> AI Art Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone"></i> Voice Studio</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-compress"></i> Image Optimization Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book"></i> Creative Resources</a></li>
-</ul>
 
 <h2>Final Thoughts</h2>
 
 <p>
-The future of digital creativity combines human imagination with artificial intelligence. By offering free high-quality visuals, Toolkit Pro supports students, freelancers, creators, and small businesses worldwide.
-</p>
-
-<p>
-Whether you need wallpapers, social graphics, blog images, or artistic inspiration, free nature photography and AI-generated art continue to shape the internet in exciting new ways.
+The future of digital creativity combines human imagination with artificial intelligence.
 </p>
 
 <div class="author-box">
+
 <div class="author-avatar">S</div>
 
 <div>
 <h3>Shaheera Sadia</h3>
 <p>
-Developer, designer, and creator of Toolkit Pro. Passionate about building free tools and creative resources for everyone.
+Developer, designer, and creator of Toolkit Pro.
 </p>
 </div>
+
 </div>
 
 </article>
 
-<!-- SIDEBAR -->
 <aside class="sidebar">
 
 <div class="widget">
+
 <h4>Popular Articles</h4>
 
 <ul>
@@ -509,28 +638,30 @@ Developer, designer, and creator of Toolkit Pro. Passionate about building free 
 <li><a href="#">Free Tools for Creators</a></li>
 <li><a href="#">Nature Photography Tips</a></li>
 </ul>
+
 </div>
 
 <div class="widget">
+
 <h4>Explore Toolkit Pro</h4>
-<div class="widget">
-    <h4>Explore Toolkit Pro</h4>
-    <ul>
-        <li><a href="https://app-tool.vercel.app/nature-gallery.html"><strong>Visit Nature Gallery</strong></a></li>
-        <li><a href="https://app-tool.vercel.app/art-tool.html">AI Art Studio</a></li>
-        <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-    </ul>
+
+<ul>
+<li><a href="https://app-tool.vercel.app/nature-gallery.html">Visit Nature Gallery</a></li>
+<li><a href="https://app-tool.vercel.app/art-tool.html">AI Art Studio</a></li>
+<li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+<li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+</ul>
+
 </div>
- 
- 
 
 <div class="widget">
+
 <h4>SEO Tips</h4>
 
 <p style="color:rgba(255,255,255,.7);font-size:14px;">
 Posting consistent blog content with unique text and internal links helps websites get approved by Google AdSense faster.
 </p>
+
 </div>
 
 </aside>
@@ -539,58 +670,109 @@ Posting consistent blog content with unique text and internal links helps websit
 
 </div>
 
- <!-- FOOTER -->
 <footer>
-  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">ToolkitPro</div>
-      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
-        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-    <div class="footer-col"><h4>Tools</h4><ul>
-      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
-      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
-      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
-      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Pages</h4><ul>
-      <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
-      <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-      <li><a href="https://app-tool.vercel.app/shopping.html">Shopping</a></li>
-      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Connect</h4><ul>
-      <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-      <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
-      <li><a href="mailto:shaheerasadia@gmail.com">Email Us</a></li>
-    </ul></div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
-    <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
-  </div>
+
+<div class="aff-foot">
+This site contains Amazon affiliate links.
+</div>
+
+<div class="footer-inner">
+
+<div class="footer-brand">
+
+<div class="logo">ToolkitPro</div>
+
+<p>
+Free browser-based tools for digital creators.
+</p>
+
+<div class="footer-social">
+
+<a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb">
+<i class="fab fa-pinterest-p"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb">
+<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="https://github.com/shaheerasadia" target="_blank" class="fsb">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="mailto:shaheerasadia@gmail.com" class="fsb">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Tools</h4>
+
+<ul>
+<li><a href="#">Image Compressor</a></li>
+<li><a href="#">Art Studio</a></li>
+<li><a href="#">Voice Studio</a></li>
+<li><a href="#">Nature Gallery</a></li>
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Pages</h4>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Resources</a></li>
+<li><a href="#">Shopping</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Connect</h4>
+
+<ul>
+<li><a href="#">Pinterest</a></li>
+<li><a href="#">LinkedIn</a></li>
+<li><a href="#">GitHub</a></li>
+<li><a href="#">Email Us</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<span>
+© 2026 Toolkit Pro | Developed by Shaheera Sadia
+</span>
+
+<span>
+Privacy Policy · Terms of Service
+</span>
+
+</div>
+
 </footer>
 
 <script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-  
-  if (mobileBtn && navMenu) {
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-    });
-  }
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+mobileMenu.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+
 </script>
+
 </body>
 </html>
