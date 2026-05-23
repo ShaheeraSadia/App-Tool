@@ -786,25 +786,20 @@
     <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
   </div>
 </footer>
-
-<script>
-  // ── MOBILE MENU ──
   
-
-function toggleFaq(el){
-  const open=el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!open) el.classList.add('open');
-}
-  const menuBtn=document.getElementById('mobile-menu');
-const navLinks=document.getElementById('nav-links');
-menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
-
-//const mb=document.getElementById('mobile-menu'),nl=document.getElementById('nav-links');
-//mb.addEventListener('click',()=>{nl.classList.toggle('active');mb.classList.toggle('is-active');});
-//document.addEventListener('click',e=>{if(!mb.contains(e.target)&&!nl.contains(e.target)){nl.classList.remove('active');mb.classList.remove('is-active');}});
- 
+<script>
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (mobileBtn && navMenu) {
+    mobileBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+  }
 </script>
+ 
 </body>
 </html>
