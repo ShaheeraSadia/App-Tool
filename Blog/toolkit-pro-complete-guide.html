@@ -32,13 +32,55 @@
       --shadow:0 4px 24px rgba(43,79,216,0.09);
       --shadow-md:0 12px 36px rgba(43,79,216,0.15);
     }
+/* 1. Nav کو relative پوزیشن دیں */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid #dde6ff;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+  position: relative; /* یہ لائن شامل کریں */
+}
 
+/* 2. Mobile Responsive میں یہ تبدیلیاں کریں */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .mobile-btn { display: block; }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 66px; /* نیو بار کے بالکل نیچے */
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    z-index: 999;
+  }
+  
+  .nav-links.active { 
+    display: flex !important; 
+  }
+  
+  /* اس بات کو یقینی بنائیں کہ باڈی میں کوئی اوور فلو نہ ہو */
+  body {
+    overflow-x: hidden;
+  }
+}
 
-    
+ /*   
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.8; }
 
-    /* ── NAV ── */
+     ── NAV ── 
     nav {
       background: var(--white);
       border-bottom: 1px solid #dde6ff;
@@ -75,7 +117,7 @@
       font-size: 1.2rem;
     }
 
-    /* ── Mobile Responsive ── */
+     ── Mobile Responsive ── 
     @media (max-width: 768px) {
       .mobile-btn { display: block; }
       .nav-links {
@@ -93,7 +135,7 @@
       .nav-links.active { display: flex; }
       .nav-links li { width: 100%; margin: 5px 0; }
       .nav-links a { display: inline-block; padding: 12px 20px; }
-    }
+    }*/
   /*
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -399,7 +441,21 @@
     <i class="fas fa-bars"></i>
   </button>
 </nav>
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
 
+    mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // مینیو کے کسی بھی لنک پر کلک کرنے پر مینیو بند ہو جائے
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
  
 <!-- HERO -->
 <section class="article-hero">
