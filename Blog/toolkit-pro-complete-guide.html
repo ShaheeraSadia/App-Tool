@@ -24,6 +24,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* سائیڈ پر اوورلیپ روکنے کے لیے */
+    width: 100%;
+}
      :root {
       --blue:       #2b4fd8;
       --blue-dark:  #1a3199;
@@ -90,7 +96,40 @@
 .nav-shop span {
     font-size: 12px;
 }
-    /* Mobile menu */
+
+    @media (max-width: 960px) {
+    .menu-toggle { display: flex; }
+    
+    /* نیویگیشن لنکس کا سٹائل درست کریں */
+    .nav-links { 
+        position: fixed; 
+        top: 66px; 
+        left: -100%; 
+        width: 100%; /* 80% کی بجائے 100% کریں تاکہ اوورلیپ کا مسئلہ نہ ہو */
+        height: calc(100vh - 66px); 
+        background: var(--white); 
+        flex-direction: column; 
+        align-items: center; /* مرکز میں لانے کے لیے */
+        padding: 30px 0; 
+        transition: .4s ease; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+        z-index: 1000; 
+        gap: 20px; 
+        overflow-y: auto; /* اگر مینیو لمبا ہو تو سکول ہو سکے */
+    }
+    
+    .nav-links.active { left: 0; }
+    
+    /* لنکس کو سائیڈ پر پھیلنے سے روکنے کے لیے */
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { font-size: 18px; padding: 15px; display: block; border-bottom: 1px solid var(--blue-pale); }
+    
+    /* مینیو ٹوگل کے لیے */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+    /* Mobile menu 
     .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
     .menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; }
     @media (max-width: 960px) {
@@ -104,7 +143,7 @@
       .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
       .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    }
+    }*/
 
 
     
