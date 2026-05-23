@@ -301,28 +301,40 @@
     .footer-col ul a:hover{color:#7dd3fc}
     .footer-bottom{max-width:1120px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
     .footer-bottom a{color:inherit;text-decoration:none}
-    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
-    @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
+    
+        @media (max-width: 768px) {
+            .nav-links { background: var(--card-bg) !important; }
+            .blog-wrapper { margin: 30px auto; }
+            .post-header h1 { font-size: 26px; padding: 0 10px; }
+            .featured-img { height: 250px; border-radius: 12px; margin-bottom: 24px; }
+            .article-content h2 { font-size: 22px; margin-top: 25px; }
+            .article-content p, .checklist li { font-size: 16px; }
+            table { display: block; overflow-x: auto; white-space: nowrap; }
+        }
+        @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+    
+  /*  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}*/
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-  <nav>
+ <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
-    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
   </a>
-  <div class="menu-toggle" id="mobile-menu">
-    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-  </div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/art-tool.html" class="active"><i class="fas fa-paint-brush" style="margin-right:4px;font-size:11px;"></i>Art Tool</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+  <ul class="nav-links" id="navMenu">
+    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
   </ul>
+  <button class="mobile-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+    <i class="fas fa-bars"></i>
+  </button>
 </nav>
 
 <!-- HERO -->
