@@ -54,31 +54,10 @@
  
 
    
-
-     /* ── NAV ── */
-    nav{background:rgba(15,17,23,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300}
-    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-    .nav-logo i{color:var(--cyan);font-size:18px}
-    .nav-logo-text{font-size:20px;font-weight:700;color:#fff}
-    .nav-logo-text em{color:var(--pink);font-style:normal}
-    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:rgba(255,255,255,.7);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s}
-    .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.1)}
-    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
-    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001}
-    .menu-toggle .bar{width:25px;height:3px;background:#fff;border-radius:2px;transition:.3s}
-    @media(max-width:960px){
-      nav{padding:0 20px}.menu-toggle{display:flex}
-      .nav-links{position:fixed;top:66px;left:-100%;width:80%;height:100vh;background:#0f1117;flex-direction:column;align-items:flex-start;padding:30px 20px;transition:.4s ease;box-shadow:10px 0 30px rgba(0,0,0,.5);z-index:1000;gap:12px}
-      .nav-links.active{left:0}.nav-links li{width:100%}
-      .nav-links a{font-size:16px;padding:12px;display:block;border-bottom:1px solid rgba(255,255,255,.08)}
-      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
-      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    }
+ 
 
 
-    /* ── NAV (identical to index.html) ── 
+    /* ── NAV (identical to index.html) ── */
     nav {
       background: var(--white); border-bottom: 1px solid #dde6ff;
       padding: 0 40px; display: flex; align-items: center;
@@ -95,10 +74,10 @@
     .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
     .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-    .nav-shop:hover { opacity: .88 !important; }*/
+    .nav-shop:hover { opacity: .88 !important; }
 
 
-      /* MOBILE MENU 
+      /* MOBILE MENU */
     .mobile-btn { display: none; background: var(--blue-dark); border: none; color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer; }
     
     @media (max-width: 768px) {
@@ -108,8 +87,8 @@
         width: 100%; background: var(--white); padding: 20px; border-bottom: 1px solid #eee;
       }
       .nav-links.active { display: flex; }
-    }*/
-    /* ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں 
+    }
+    /* ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں */
 .mobile-btn {
     display: none;
     background: none;
@@ -146,7 +125,7 @@
         border-bottom: 1px solid rgba(255,255,255,0.1);
         width: 100%;
     }
-}*/
+}
 
  
 
