@@ -118,7 +118,7 @@
             font-size: 1.2rem;
         }
 
-        @media (max-width: 768px) {
+    /*    @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .mobile-btn { display: block; }
             .nav-links {
@@ -138,8 +138,22 @@
             .nav-links a { display: block; padding: 12px; color: var(--muted); }
             .nav-links a:hover { background: var(--blue-pale); color: var(--blue); }
         }
-
-
+*/
+/* یہ کوڈ اپنی موجودہ <style> ٹیگ میں شامل کریں */
+@media (max-width: 768px) {
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        width: 100%;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+}
     /* ── HERO ── */
     .article-hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--cyan) 100%);color:white;padding:60px 24px 52px;position:relative;overflow:hidden}
     .article-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
@@ -331,12 +345,26 @@
     <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
     <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
     <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
-  </ul>
+</ul>
   <button class="mobile-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
     <i class="fas fa-bars"></i>
   </button>
 </nav>
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
 
+    mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // مینیو کے کسی لنک پر کلک کرنے پر مینیو بند ہو جائے
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
 <!-- HERO -->
 <section class="article-hero">
   <div class="hero-inner">
@@ -867,26 +895,7 @@
   </div>
 </footer>
  
-
-  //<script>
-  // ── MOBILE MENU ──
-  
-
-function toggleFaq(el){
-  const open=el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!open) el.classList.add('open');
-}
-  const menuBtn=document.getElementById('mobile-menu');
-const navLinks=document.getElementById('nav-links');
-menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
-
-//const mb=document.getElementById('mobile-menu'),nl=document.getElementById('nav-links');
-//mb.addEventListener('click',()=>{nl.classList.toggle('active');mb.classList.toggle('is-active');});
-//document.addEventListener('click',e=>{if(!mb.contains(e.target)&&!nl.contains(e.target)){nl.classList.remove('active');mb.classList.remove('is-active');}});
  
-</script>
 </body>
 </html>
 
@@ -897,22 +906,4 @@ document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.
 
 
 
-//<script>
-  // ── MOBILE MENU ──
   
-
-function toggleFaq(el){
-  const open=el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!open) el.classList.add('open');
-}
-  const menuBtn=document.getElementById('mobile-menu');
-const navLinks=document.getElementById('nav-links');
-menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
-
-//const mb=document.getElementById('mobile-menu'),nl=document.getElementById('nav-links');
-//mb.addEventListener('click',()=>{nl.classList.toggle('active');mb.classList.toggle('is-active');});
-//document.addEventListener('click',e=>{if(!mb.contains(e.target)&&!nl.contains(e.target)){nl.classList.remove('active');mb.classList.remove('is-active');}});
- 
-</script>
