@@ -47,12 +47,10 @@
       --shadow:     0 4px 24px rgba(43,79,216,0.09);
       --shadow-md:  0 12px 36px rgba(43,79,216,0.15);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
- 
- 
     /* ── NAV ── */
     nav {
       background: var(--white); border-bottom: 1px solid #dde6ff;
@@ -114,6 +112,7 @@
       .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     }
+
    
 
     .hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; text-align: center; padding: 80px 20px; }
@@ -871,8 +870,7 @@ document.addEventListener('click', e => {
   }
 });
 
-// ── INIT ──
-resizeDesignCanvas(); 
+ 
 </script>
 </body>
 </html>
