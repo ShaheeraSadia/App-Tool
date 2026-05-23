@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Voice Studio — Record, Design & Share | Toolkit Pro</title>
+  <meta name="description" content="Free Canva-style voice studio. Record your voice, pick a beautiful card template, add background music, and download or share your voice card. 100% browser-based."/>
+  <meta name="keywords" content="voice recorder, voice card designer, background music recorder, voice studio, Toolkit Pro, Shaheera Sadia"/>
+  <meta name="author" content="Shaheera Sadia"/>
+  <link rel="canonical" href="https://app-tool.vercel.app/voice-studio.html"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/ffmpeg.wasm@0.11.6/dist/ffmpeg.min.js"></script>
+  <style>
+    :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+      --bg:#f5f8ff;--white:#ffffff;--radius:16px;
+      --shadow:0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:0 12px 36px rgba(43,79,216,0.15);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+    /* NAV */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
+    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001}
+    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s}
+    @media(max-width:960px){
+      nav{padding:0 20px}.menu-toggle{display:flex}
+      .nav-links{position:fixed;top:66px;left:-100%;width:80%;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:30px 20px;transition:.4s ease;box-shadow:10px 0 15px rgba(0,0,0,.1);z-index:1000;gap:12px}
+      .nav-links.active{left:0}.nav-links li{width:100%}
+      .nav-links a{font-size:16px;padding:12px;display:block;border-bottom:1px solid var(--blue-pale)}
+      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
+      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 50%,var(--cyan) 100%);color:white;text-align:center;padding:56px 24px 44px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hero-inner{position:relative;z-index:1}
+    .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:16px;backdrop-filter:blur(4px)}
+    .hero h1{font-family:'Lora',serif;font-size:clamp(28px,4vw,44px);font-weight:700;margin-bottom:10px}
+    .hero h1 span{color:#7dd3fc;font-style:italic}
+    .hero p{font-size:16px;opacity:.9;max-width:540px;margin:0 auto;line-height:1.75}
+
+    /* LAYOUT */
+    .page-wrap{max-width:1200px;margin:0 auto;padding:28px 24px 80px}
+    .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px 20px;color:var(--muted);font-size:13px;margin:28px 0;min-height:90px}
+
+    /* STUDIO LAYOUT — 3 columns */
+    .studio-layout{display:grid;grid-template-columns:260px 1fr 260px;gap:20px;align-items:start}
+    @media(max-width:1100px){.studio-layout{grid-template-columns:1fr 1fr}}
+    @media(max-width:700px){.studio-layout{grid-template-columns:1fr}}
+
+    /* PANEL */
+    .panel{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden}
+    .panel-hd{padding:14px 18px;border-bottom:1px solid #dde6ff;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--blue-dark)}
+    .panel-hd i{color:var(--blue);font-size:16px}
+    .panel-body{padding:14px 18px}
+
+    /* TEMPLATES */
+    .tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .tpl-card{border-radius:10px;cursor:pointer;overflow:hidden;aspect-ratio:3/4;position:relative;border:2px solid transparent;transition:border-color .2s,transform .2s}
+    .tpl-card:hover{transform:scale(1.03)}
+    .tpl-card.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(43,79,216,.25)}
+    .tpl-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center;position:relative}
+    .tpl-label{font-size:10px;font-weight:700;color:white;text-shadow:0 1px 3px rgba(0,0,0,.5);margin-top:6px;letter-spacing:.5px;text-transform:uppercase}
+
+    /* DRAG LAYERS */
+    .drag-elements{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+    .drag-el{padding:9px 12px;background:var(--blue-pale);border:1.5px solid #dde6ff;border-radius:9px;font-size:13px;font-weight:500;color:var(--blue-dark);cursor:grab;display:flex;align-items:center;gap:8px;transition:background .15s,border-color .15s;user-select:none}
+    .drag-el:hover{background:var(--blue-light);border-color:var(--blue)}
+    .drag-el i{font-size:14px;color:var(--blue)}
+    .drag-el:active{cursor:grabbing;background:var(--blue-light)}
+
+    /* CANVAS AREA */
+    .canvas-panel{display:flex;flex-direction:column;gap:12px}
+    .canvas-wrap{border-radius:var(--radius);overflow:hidden;background:#1a1a2e;position:relative;aspect-ratio:3/4;max-width:380px;margin:0 auto;width:100%;box-shadow:var(--shadow-md);cursor:default}
+    .canvas-wrap canvas{position:absolute;inset:0;width:100%;height:100%}
+    .canvas-elements{position:absolute;inset:0;pointer-events:none}
+    .dropped-el{position:absolute;pointer-events:all;cursor:move;user-select:none;touch-action:none}
+    .dropped-el:focus{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+    .dropped-el.selected-el{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+    .del-btn{position:absolute;top:-10px;right:-10px;width:20px;height:20px;border-radius:50%;background:#e74c3c;color:white;border:none;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;z-index:10}
+
+    /* RECORD CONTROLS */
+    .rec-controls{background:var(--white);border-radius:var(--radius);border:1px solid #dde6ff;box-shadow:var(--shadow);padding:16px 20px}
+    .rec-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .badge-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px}
+    .bp-rec{background:#fce4e8;color:#c0392b}
+    .bp-idle{background:var(--blue-light);color:var(--blue-dark)}
+    .bp-ready{background:#e8f5e9;color:#2e7d32}
+    .dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+    .dot-pulse{animation:pulse 1s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+    .vis-bar{height:60px;background:var(--blue-pale);border-radius:10px;border:1px solid #dde6ff;overflow:hidden;position:relative;margin-bottom:10px}
+    .vis-bar canvas{display:block;width:100%;height:100%}
+    .btn{padding:8px 16px;border-radius:9px;border:1.5px solid #c8d8f8;background:var(--white);font-size:13px;font-weight:600;color:var(--blue-dark);cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;transition:all .2s}
+    .btn:hover{background:var(--blue-light);border-color:var(--blue)}
+    .btn:active{transform:scale(.97)}
+    .btn:disabled{opacity:.4;pointer-events:none}
+    .btn.primary{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;border-color:transparent}
+    .btn.danger{background:#fce4e8;color:#c0392b;border-color:#f5b7c0}
+    .btn.success{background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7}
+
+    /* BG MUSIC */
+    .bg-tracks{display:flex;flex-direction:column;gap:7px}
+    .track-item{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:9px;border:1.5px solid #dde6ff;background:var(--blue-pale);cursor:pointer;transition:all .15s}
+    .track-item:hover{background:var(--blue-light);border-color:var(--blue)}
+    .track-item.active-track{border-color:var(--blue);background:var(--blue-light)}
+    .track-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;color:white}
+    .track-info{flex:1;min-width:0}
+    .track-name{font-size:13px;font-weight:600;color:var(--blue-dark)}
+    .track-desc{font-size:11px;color:var(--muted)}
+    .track-vol{display:flex;align-items:center;gap:5px;margin-top:6px}
+    .track-vol input{width:80px;accent-color:var(--blue)}
+    .track-vol span{font-size:11px;color:var(--muted);min-width:28px}
+
+    /* EXPORT */
+    .export-wrap{display:flex;gap:8px;flex-wrap:wrap}
+
+    /* RECORDINGS LIST */
+    .rec-list{display:flex;flex-direction:column;gap:6px;max-height:220px;overflow-y:auto}
+    .rec-item{background:var(--blue-pale);border:1px solid #dde6ff;border-radius:9px;padding:9px 12px;display:flex;align-items:center;gap:8px}
+    .rec-item-info{flex:1;min-width:0}
+    .rec-item-name{font-size:13px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rec-item-meta{font-size:11px;color:var(--muted)}
+    .ic-btn{width:28px;height:28px;border-radius:7px;border:1px solid #dde6ff;background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;transition:all .15s;flex-shrink:0}
+    .ic-btn:hover{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
+    .ic-btn.del:hover{background:#fce4e8;color:#c0392b;border-color:#f5b7c0}
+    .empty-sm{text-align:center;padding:16px;color:var(--muted);font-size:13px}
+
+    /* TEXT ELEMENTS ON CANVAS */
+    .canvas-text{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:white;text-shadow:0 1px 3px rgba(0,0,0,.6);min-width:60px;min-height:20px;padding:4px 6px;border-radius:4px;cursor:move;display:inline-block;white-space:nowrap}
+    .canvas-emoji{font-size:32px;display:inline-block;cursor:move;line-height:1}
+    .canvas-wave{display:inline-block;cursor:move}
+
+    /* SECTION HEADER */
+    .sec-hd{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;margin-top:14px;display:flex;align-items:center;gap:5px}
+    .sec-hd:first-child{margin-top:0}
+
+    /* DIVIDER */
+    .div{height:1px;background:#dde6ff;margin:12px 0}
+
+    /* FOOTER */
+    footer{background:linear-gradient(135deg,#0d1b5e 0%,#1a2f8a 100%);color:rgba(255,255,255,.85);padding:52px 40px 28px}
+    .aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1200px;margin-left:auto;margin-right:auto}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .footer-brand .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+    .footer-brand p{font-size:13px;opacity:.72;line-height:1.7;max-width:230px}
+    .footer-social{display:flex;gap:10px;margin-top:16px}
+    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
+    .fsb:hover{background:var(--blue);color:white}
+    .footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .footer-col ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+    .footer-col ul a:hover{color:#7dd3fc}
+    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
+    .footer-bottom a{color:inherit;text-decoration:none}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
+ 
+ /* Uploaded Images */
+
+.dropped-el img{
+  cursor:move;
+  transition:.3s;
+}
+
+.dropped-el img:hover{
+  transform:scale(1.03);
+}
+
+/* Cinematic Glow */
+
+.canvas-wrap{
+  animation: glow 6s infinite alternate;
+}
+
+@keyframes glow{
+
+  from{
+    box-shadow:
+    0 0 20px rgba(0,180,255,.2);
+  }
+
+  to{
+    box-shadow:
+    0 0 50px rgba(255,100,180,.35);
+  }
+
+}
+ 
+ </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px"></i>Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art Tool</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px"></i>Shop</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">🎙️ Free Voice Card Studio</span>
+    <h1>Voice <span>Card Studio</span></h1>
+    <p>Record your voice, pick a beautiful template, drag elements onto your card, add background music, and download your masterpiece — all free, all private.</p>
+  </div>
+</section>
+
+<div class="page-wrap">
+
+  <!-- AD SLOT 1 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="studio-layout">
+
+    <!-- ═══ LEFT PANEL ═══ -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- TEMPLATES -->
+      <div class="panel">
+        <div class="panel-hd"><i class="fas fa-th-large"></i> Templates</div>
+        <div class="panel-body">
+          <div class="tpl-grid" id="tplGrid"></div>
+        </div>
+      </div>
+
+      <!-- DRAG ELEMENTS -->
+      <div class="panel">
+        <div class="panel-hd"><i class="fas fa-hand-paper"></i> Drag Elements</div>
+        <div class="panel-body">
+          <div class="sec-hd"><i class="fas fa-font"></i> Text</div>
+          <div class="drag-elements">
+            <div class="drag-el" draggable="true" data-type="text" data-val="Your Title Here" data-size="20" data-weight="700"><i class="fas fa-heading"></i> Title Text</div>
+            <div class="drag-el" draggable="true" data-type="text" data-val="Add a subtitle..." data-size="14" data-weight="400"><i class="fas fa-align-left"></i> Subtitle Text</div>
+            <div class="drag-el" draggable="true" data-type="text" data-val="📅 Date & Time" data-size="13" data-weight="500"><i class="fas fa-calendar"></i> Date / Info</div>
+          </div>
+          <div class="sec-hd" style="margin-top:12px"><i class="fas fa-smile"></i> Stickers</div>
+          <div class="drag-elements">
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="🎙️"><i class="fas fa-microphone"></i> Mic</div>
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="🎵"><i class="fas fa-music"></i> Music Note</div>
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="❤️"><i class="fas fa-heart"></i> Heart</div>
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="⭐"><i class="fas fa-star"></i> Star</div>
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="🌊"><i class="fas fa-water"></i> Wave</div>
+            <div class="drag-el" draggable="true" data-type="emoji" data-val="🔥"><i class="fas fa-fire"></i> Fire</div>
+          </div>
+          <div class="sec-hd" style="margin-top:12px"><i class="fas fa-chart-bar"></i> Shapes</div>
+          <div class="drag-elements">
+            <div class="drag-el" draggable="true" data-type="wave"><i class="fas fa-wave-square"></i> Waveform Bar</div>
+            <div class="drag-el" draggable="true" data-type="circle"><i class="fas fa-circle"></i> Glow Circle</div>
+            <div class="drag-el" draggable="true" data-type="line"><i class="fas fa-minus"></i> Divider Line</div>
+          </div>
+       </div>
+     
+    <!-- IMAGE UPLOAD -->
+<div class="panel">
+  <div class="panel-hd">
+    <i class="fas fa-image"></i> Images
+  </div>
+
+  <div class="panel-body">
+
+    <input type="file"
+           id="imgUpload"
+           accept="image/*"
+           style="margin-bottom:12px">
+
+    <button class="btn primary"
+            onclick="addUploadedImage()">
+      <i class="fas fa-upload"></i>
+      Add To Canvas
+    </button>
+
+  </div>
+</div>
+    
+    </div>
+
+    </div>
+
+    <!-- ═══ CENTER — CANVAS ═══ -->
+    <div class="canvas-panel">
+
+      <!-- RECORD CONTROLS -->
+      <div class="rec-controls">
+        <div class="vis-bar"><canvas id="visCanvas"></canvas></div>
+        <div class="rec-row">
+          <span class="badge-pill bp-idle" id="statusBadge"><span class="dot" id="statusDot"></span><span id="statusText">Ready</span></span>
+          <button class="btn primary" id="btnRec" onclick="toggleRecord()"><i class="fas fa-microphone" id="btnRecIcon"></i><span id="btnRecLabel">Record</span></button>
+          <button class="btn" id="btnPause" onclick="togglePause()" disabled><i class="fas fa-pause" id="pauseIcon"></i><span id="btnPauseLabel">Pause</span></button>
+          <button class="btn danger" id="btnStop" onclick="stopRecord()" disabled><i class="fas fa-stop"></i> Stop</button>
+          <span style="font-size:13px;font-weight:700;color:var(--blue-dark);margin-left:auto" id="recTimer">0:00</span>
+        </div>
+        <!-- Saved recordings -->
+        <div class="sec-hd"><i class="fas fa-list"></i> Saved Recordings</div>
+        <div class="rec-list" id="recList">
+          <div class="empty-sm"><i class="fas fa-microphone-slash" style="display:block;font-size:20px;margin-bottom:6px;opacity:.4"></i>No recordings yet</div>
+        </div>
+      </div>
+
+      <!-- CANVAS -->
+      <div class="canvas-wrap" id="canvasWrap">
+        <canvas id="bgCanvas"></canvas>
+        <div class="canvas-elements" id="canvasElements"></div>
+      </div>
+
+      <!-- EXPORT -->
+      <div class="rec-controls" style="padding:14px 18px">
+        <div class="sec-hd"><i class="fas fa-download"></i> Export</div>
+        <div class="export-wrap">
+          <button class="btn primary" onclick="downloadCard()"><i class="fas fa-image"></i> Download Card (PNG)</button>
+       
+       <button class="btn success" onclick="clearElements()"><i class="fas fa-redo"></i> Clear Canvas</button>
+       <button class="btn primary"
+        onclick="exportVideo()">
+  <i class="fas fa-film"></i>
+  Export Video MP4
+</button>
+    
+    </div>
+      </div>
+
+    </div>
+
+    <!-- ═══ RIGHT PANEL ═══ -->
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- BACKGROUND MUSIC -->
+      <div class="panel">
+        <div class="panel-hd"><i class="fas fa-music"></i> Background Music</div>
+        <div class="panel-body">
+          <div class="sec-hd"><i class="fas fa-headphones"></i> Pick a Track</div>
+          <div class="bg-tracks" id="bgTracks"></div>
+          <div class="div"></div>
+          <div class="track-vol" id="globalVolRow" style="display:flex;align-items:center;gap:8px">
+            <i class="fas fa-volume-up" style="color:var(--blue);font-size:14px"></i>
+            <span style="font-size:12px;color:var(--muted);flex:1">Music Volume</span>
+            <input type="range" min="0" max="1" step="0.05" value="0.4" id="bgVolSlider" style="width:80px" oninput="setBgVol(this.value)">
+            <span id="bgVolOut" style="font-size:12px;color:var(--muted);min-width:28px">40%</span>
+          </div>
+          <div class="div"></div>
+          <div class="sec-hd"><i class="fas fa-sliders-h"></i> Voice Volume</div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <i class="fas fa-microphone" style="color:var(--blue);font-size:14px"></i>
+            <input type="range" min="0" max="2" step="0.05" value="1" id="voiceVol" style="flex:1" oninput="setVoiceVol(this.value)">
+            <span id="voiceVolOut" style="font-size:12px;color:var(--muted);min-width:28px">100%</span>
+          </div>
+          <div class="div"></div>
+          <div class="sec-hd"><i class="fas fa-tachometer-alt"></i> Playback Speed</div>
+          <div style="display:flex;gap:4px;flex-wrap:wrap">
+            <button class="btn" style="padding:4px 10px;font-size:12px" onclick="setSpeed(0.75,this)">0.75×</button>
+            <button class="btn primary" style="padding:4px 10px;font-size:12px" onclick="setSpeed(1,this)">1×</button>
+            <button class="btn" style="padding:4px 10px;font-size:12px" onclick="setSpeed(1.25,this)">1.25×</button>
+            <button class="btn" style="padding:4px 10px;font-size:12px" onclick="setSpeed(1.5,this)">1.5×</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD TEXT STYLE -->
+      <div class="panel">
+        <div class="panel-hd"><i class="fas fa-palette"></i> Card Style</div>
+        <div class="panel-body">
+          <div class="sec-hd">Text Color</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+            <div style="width:24px;height:24px;border-radius:6px;background:#ffffff;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#ffffff')" title="White"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#7dd3fc;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#7dd3fc')" title="Sky"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#fda085;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#fda085')" title="Peach"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#a29bfe;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#a29bfe')" title="Lavender"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#55efc4;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#55efc4')" title="Mint"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#fdcb6e;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#fdcb6e')" title="Gold"></div>
+            <div style="width:24px;height:24px;border-radius:6px;background:#fd79a8;border:2px solid #dde6ff;cursor:pointer" onclick="setTextColor('#fd79a8')" title="Pink"></div>
+            <input type="color" value="#ffffff" id="customColor" onchange="setTextColor(this.value)" style="width:24px;height:24px;border:2px solid #dde6ff;border-radius:6px;cursor:pointer;padding:1px" title="Custom color">
+          </div>
+          <div class="sec-hd">Font Size</div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <input type="range" min="10" max="48" value="18" id="fontSizeSlider" style="flex:1" oninput="setFontSize(this.value)">
+            <span id="fontSizeOut" style="font-size:12px;color:var(--muted);min-width:28px">18px</span>
+          </div>
+          <div class="sec-hd" style="margin-top:10px">Instructions</div>
+          <p style="font-size:12px;color:var(--muted);line-height:1.6">
+            • Drag elements from the left onto the card<br>
+            • Click an element to select it<br>
+            • Double-click text to edit it<br>
+            • Drag to reposition anywhere<br>
+            • Click ✕ button to delete element
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /studio-layout -->
+
+  <!-- AD SLOT 2 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="aff-foot">📢 This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+      <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+      <li><a href="https://app-tool.vercel.app/shopping.html">Shopping</a></li>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Connect</h4><ul>
+      <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
+      <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
+      <li><a href="mailto:shaheerasadia@gmail.com">Email Us</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════
+   TEMPLATES
+════════════════════════════════════════ */
+const TEMPLATES = [
+  {name:'Night Vibes', bg:['#0f0c29','#302b63','#24243e'], accent:'#a29bfe'},
+  {name:'Sunset', bg:['#f7971e','#ffd200','#c94b4b'], accent:'#fdcb6e'},
+  {name:'Ocean', bg:['#0099f7','#f11712','#0a3d62'], accent:'#7dd3fc'},
+  {name:'Forest', bg:['#134e5e','#71b280','#1a1a2e'], accent:'#55efc4'},
+  {name:'Rose Gold', bg:['#e96c8a','#f9a8c9','#b5451b'], accent:'#fd79a8'},
+  {name:'Midnight', bg:['#1a1a2e','#16213e','#0f3460'], accent:'#7dd3fc'},
+  {name:'Lavender', bg:['#7f7fd5','#86a8e7','#91eae4'], accent:'#a29bfe'},
+  {name:'Ember', bg:['#d31027','#ea384d','#1c1c1c'], accent:'#fda085'},
+];
+
+let currentTemplate = TEMPLATES[0];
+
+function buildTemplates(){
+  const grid = document.getElementById('tplGrid');
+  TEMPLATES.forEach((t,i)=>{
+    const card = document.createElement('div');
+    card.className='tpl-card'+(i===0?' selected':'');
+    card.onclick=()=>selectTemplate(t,card);
+    const inner = document.createElement('div');
+    inner.className='tpl-inner';
+    inner.style.background=`linear-gradient(145deg,${t.bg[0]},${t.bg[1]},${t.bg[2]})`;
+    inner.innerHTML=`
+      <div style="width:40px;height:40px;border-radius:50%;border:3px solid ${t.accent};display:flex;align-items:center;justify-content:center;margin-bottom:6px">
+        <i class="fas fa-microphone" style="color:${t.accent};font-size:16px"></i>
+      </div>
+      <div style="width:60%;height:3px;background:${t.accent};border-radius:2px;margin-bottom:4px"></div>
+      <div style="width:40%;height:2px;background:${t.accent};opacity:.5;border-radius:2px"></div>
+      <div class="tpl-label">${t.name}</div>`;
+    card.appendChild(inner);
+    grid.appendChild(card);
+  });
+}
+buildTemplates();
+
+function selectTemplate(t, card){
+  currentTemplate = t;
+  document.querySelectorAll('.tpl-card').forEach(c=>c.classList.remove('selected'));
+  card.classList.add('selected');
+  drawBackground();
+}
+
+/* ════════════════════════════════════════
+   CANVAS BACKGROUND
+════════════════════════════════════════ */
+const bgCanvas = document.getElementById('bgCanvas');
+const bgCtx = bgCanvas.getContext('2d');
+
+function resizeBgCanvas(){
+  const wrap = document.getElementById('canvasWrap');
+  bgCanvas.width = wrap.offsetWidth;
+  bgCanvas.height = wrap.offsetHeight;
+  drawBackground();
+}
+
+function drawBackground(){
+  const W=bgCanvas.width, H=bgCanvas.height;
+  const t=currentTemplate;
+  const grad=bgCtx.createLinearGradient(0,0,W,H);
+  grad.addColorStop(0,t.bg[0]);
+  grad.addColorStop(0.5,t.bg[1]);
+  grad.addColorStop(1,t.bg[2]);
+  bgCtx.fillStyle=grad;
+  bgCtx.fillRect(0,0,W,H);
+  // Decorative rings
+  bgCtx.strokeStyle=t.accent;
+  bgCtx.globalAlpha=0.15;
+  bgCtx.lineWidth=60;
+  bgCtx.beginPath();
+  bgCtx.arc(W/2,H/2,H*0.45,0,Math.PI*2);
+  bgCtx.stroke();
+  bgCtx.lineWidth=30;
+  bgCtx.globalAlpha=0.08;
+  bgCtx.beginPath();
+  bgCtx.arc(W/2,H/2,H*0.35,0,Math.PI*2);
+  bgCtx.stroke();
+  bgCtx.globalAlpha=1;
+  // Center mic icon area
+  bgCtx.fillStyle=t.accent;
+  bgCtx.globalAlpha=0.12;
+  bgCtx.beginPath();
+  bgCtx.arc(W/2,H*0.38,50,0,Math.PI*2);
+  bgCtx.fill();
+  bgCtx.globalAlpha=1;
+}
+
+window.addEventListener('resize',()=>{ resizeBgCanvas(); });
+setTimeout(resizeBgCanvas,100);
+
+/* ════════════════════════════════════════
+   DRAG & DROP ONTO CANVAS
+════════════════════════════════════════ */
+let dragData=null;
+let textColor='#ffffff';
+let fontSize=18;
+let voiceVolume=1;
+let playbackSpeed=1;
+let selectedEl=null;
+
+document.querySelectorAll('.drag-el').forEach(el=>{
+  el.addEventListener('dragstart',e=>{
+    dragData={
+      type:el.dataset.type,
+      val:el.dataset.val,
+      size:el.dataset.size||fontSize,
+      weight:el.dataset.weight||'500'
+    };
+    e.dataTransfer.effectAllowed='copy';
+  });
+});
+
+const wrap = document.getElementById('canvasWrap');
+wrap.addEventListener('dragover',e=>e.preventDefault());
+wrap.addEventListener('drop',e=>{
+  e.preventDefault();
+  if(!dragData)return;
+  const r=wrap.getBoundingClientRect();
+  const x=e.clientX-r.left;
+  const y=e.clientY-r.top;
+  addElement(dragData.type,dragData.val,x,y,dragData.size,dragData.weight);
+  dragData=null;
+});
+
+function addElement(type,val,x,y,size,weight){
+  const container=document.getElementById('canvasElements');
+  const el=document.createElement('div');
+  el.className='dropped-el';
+  el.style.left=(x-20)+'px';
+  el.style.top=(y-15)+'px';
+  el.tabIndex=0;
+
+  const del=document.createElement('button');
+  del.className='del-btn';
+  del.innerHTML='✕';
+  del.title='Remove element';
+  del.onclick=(ev)=>{ev.stopPropagation();el.remove();};
+
+  if(type==='text'){
+    const span=document.createElement('span');
+    span.className='canvas-text';
+    span.style.color=textColor;
+    span.style.fontSize=(parseInt(size)||fontSize)+'px';
+    span.style.fontWeight=weight||'500';
+    span.textContent=val;
+    span.contentEditable='false';
+    span.ondblclick=()=>{
+      span.contentEditable='true';span.focus();
+      const s=window.getSelection(),r2=document.createRange();
+      r2.selectNodeContents(span);s.removeAllRanges();s.addRange(r2);
+    };
+    span.onblur=()=>{ span.contentEditable='false'; };
+    el.appendChild(del);
+    el.appendChild(span);
+  } else if(type==='emoji'){
+    const span=document.createElement('span');
+    span.className='canvas-emoji';
+    span.textContent=val;
+    el.appendChild(del);
+    el.appendChild(span);
+  } else if(type==='wave'){
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('width','120');svg.setAttribute('height','36');
+    svg.style.display='block';
+    const bars=[8,14,22,18,28,22,14,10,20,26,18,12,24,20,16,10,22,28,14,8];
+    bars.forEach((h,i)=>{
+      const r=document.createElementNS('http://www.w3.org/2000/svg','rect');
+      r.setAttribute('x',i*6);r.setAttribute('y',(36-h)/2);r.setAttribute('width',4);r.setAttribute('height',h);r.setAttribute('rx',2);
+      r.setAttribute('fill',currentTemplate.accent);
+      svg.appendChild(r);
+    });
+    el.appendChild(del);el.appendChild(svg);
+  } else if(type==='circle'){
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('width','60');svg.setAttribute('height','60');
+    const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',30);c.setAttribute('cy',30);c.setAttribute('r',28);
+    c.setAttribute('fill','none');c.setAttribute('stroke',currentTemplate.accent);c.setAttribute('stroke-width',2);c.setAttribute('opacity','0.6');
+    svg.appendChild(c);
+    const c2=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c2.setAttribute('cx',30);c2.setAttribute('cy',30);c2.setAttribute('r',20);
+    c2.setAttribute('fill',currentTemplate.accent);c2.setAttribute('opacity','0.12');
+    svg.appendChild(c2);
+    el.appendChild(del);el.appendChild(svg);
+  } else if(type==='line'){
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('width','100');svg.setAttribute('height','8');
+    const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+    ln.setAttribute('x1',0);ln.setAttribute('y1',4);ln.setAttribute('x2',100);ln.setAttribute('y2',4);
+    ln.setAttribute('stroke',currentTemplate.accent);ln.setAttribute('stroke-width',2);ln.setAttribute('opacity','0.7');
+    svg.appendChild(ln);
+    el.appendChild(del);el.appendChild(svg);
+  }
+
+  makeDraggable(el, wrap);
+  el.addEventListener('click',e2=>{
+    e2.stopPropagation();
+    document.querySelectorAll('.dropped-el').forEach(d=>d.classList.remove('selected-el'));
+    el.classList.add('selected-el');
+    selectedEl=el;
+  });
+  container.appendChild(el);
+}
+
+function makeDraggable(el, parent){
+  let ox=0,oy=0,sx=0,sy=0,dragging=false;
+  el.addEventListener('mousedown',e=>{
+    if(e.target.classList.contains('del-btn'))return;
+    if(e.target.contentEditable==='true')return;
+    dragging=true; sx=e.clientX; sy=e.clientY;
+    ox=parseInt(el.style.left)||0; oy=parseInt(el.style.top)||0;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove',e=>{
+    if(!dragging)return;
+    const r=parent.getBoundingClientRect();
+    let nx=ox+(e.clientX-sx), ny=oy+(e.clientY-sy);
+    nx=Math.max(0,Math.min(nx,r.width-10));
+    ny=Math.max(0,Math.min(ny,r.height-10));
+    el.style.left=nx+'px'; el.style.top=ny+'px';
+  });
+  document.addEventListener('mouseup',()=>{dragging=false;});
+  // Touch
+  el.addEventListener('touchstart',e=>{
+    if(e.target.classList.contains('del-btn'))return;
+    const t=e.touches[0]; dragging=true; sx=t.clientX; sy=t.clientY;
+    ox=parseInt(el.style.left)||0; oy=parseInt(el.style.top)||0;
+  },{passive:true});
+  document.addEventListener('touchmove',e=>{
+    if(!dragging)return;
+    const t=e.touches[0];
+    const r=parent.getBoundingClientRect();
+    let nx=ox+(t.clientX-sx), ny=oy+(t.clientY-sy);
+    nx=Math.max(0,Math.min(nx,r.width-10));
+    ny=Math.max(0,Math.min(ny,r.height-10));
+    el.style.left=nx+'px'; el.style.top=ny+'px';
+  },{passive:true});
+  document.addEventListener('touchend',()=>{dragging=false;});
+}
+
+document.getElementById('canvasWrap').addEventListener('click',()=>{
+  document.querySelectorAll('.dropped-el').forEach(d=>d.classList.remove('selected-el'));
+  selectedEl=null;
+});
+
+function setTextColor(c){
+  textColor=c;
+  if(selectedEl){
+    const span=selectedEl.querySelector('.canvas-text');
+    if(span) span.style.color=c;
+  }
+}
+
+function setFontSize(v){
+  fontSize=parseInt(v);
+  document.getElementById('fontSizeOut').textContent=v+'px';
+  if(selectedEl){
+    const span=selectedEl.querySelector('.canvas-text');
+    if(span) span.style.fontSize=v+'px';
+  }
+}
+
+function clearElements(){
+  document.getElementById('canvasElements').innerHTML='';
+  drawBackground();
+}
+
+/* ════════════════════════════════════════
+   BACKGROUND MUSIC — Web Audio synthesis
+════════════════════════════════════════ */
+const TRACKS = [
+  {name:'Chill Waves',desc:'Calm ambient tones',color:'#0099f7',icon:'fa-water',mood:'ambient'},
+  {name:'Soft Piano',desc:'Gentle melodic notes',color:'#a29bfe',icon:'fa-music',mood:'piano'},
+  {name:'Nature Rain',desc:'Peaceful rain sounds',color:'#55efc4',icon:'fa-cloud-rain',mood:'rain'},
+  {name:'Lofi Beat',desc:'Mellow rhythm groove',color:'#fdcb6e',icon:'fa-drum',mood:'lofi'},
+  {name:'Epic Rise',desc:'Dramatic build-up',color:'#e17055',icon:'fa-fire',mood:'epic'},
+  {name:'No Music',desc:'Record in silence',color:'#636e72',icon:'fa-volume-mute',mood:'none'},
+];
+
+let bgAudioCtx=null, bgNodes=[], bgGain=null, currentMood='none', bgVol=0.4;
+
+function buildTracks(){
+  const container=document.getElementById('bgTracks');
+  TRACKS.forEach(t=>{
+    const item=document.createElement('div');
+    item.className='track-item';
+    item.id='track-'+t.mood;
+    item.onclick=()=>selectTrack(t.mood,item);
+    item.innerHTML=`
+      <div class="track-icon" style="background:${t.color}">
+        <i class="fas ${t.icon}"></i>
+      </div>
+      <div class="track-info">
+        <div class="track-name">${t.name}</div>
+        <div class="track-desc">${t.desc}</div>
+      </div>
+      <i class="fas fa-play" style="font-size:12px;color:var(--muted)"></i>`;
+    container.appendChild(item);
+  });
+}
+buildTracks();
+
+function selectTrack(mood, item){
+  stopBgMusic();
+  document.querySelectorAll('.track-item').forEach(t=>t.classList.remove('active-track'));
+  item.classList.add('active-track');
+  currentMood=mood;
+  if(mood!=='none') playBgMusic(mood);
+}
+
+function stopBgMusic(){
+  if(bgNodes.length){bgNodes.forEach(n=>{try{n.stop();}catch(e){}});bgNodes=[];}
+  if(bgAudioCtx){bgAudioCtx.close();bgAudioCtx=null;}
+}
+
+function setBgVol(v){
+  bgVol=parseFloat(v);
+  document.getElementById('bgVolOut').textContent=Math.round(v*100)+'%';
+  if(bgGain) bgGain.gain.value=bgVol;
+}
+
+function setVoiceVol(v){
+  voiceVolume=parseFloat(v);
+  document.getElementById('voiceVolOut').textContent=Math.round(v*100)+'%';
+  if(currentAudio) currentAudio.volume=Math.min(1,voiceVolume);
+}
+
+function setSpeed(s,btn){
+  playbackSpeed=s;
+  document.querySelectorAll('.rec-controls .btn[onclick^="setSpeed"]').forEach(b=>b.classList.remove('primary'));
+  btn.classList.add('primary');
+  if(currentAudio) currentAudio.playbackRate=s;
+}
+
+function playBgMusic(mood){
+  bgAudioCtx=new(window.AudioContext||window.webkitAudioContext)();
+  bgGain=bgAudioCtx.createGain();
+  bgGain.gain.value=bgVol;
+  bgGain.connect(bgAudioCtx.destination);
+
+  if(mood==='ambient'){
+    createAmbient(bgAudioCtx,bgGain);
+  } else if(mood==='piano'){
+    createPiano(bgAudioCtx,bgGain);
+  } else if(mood==='rain'){
+    createRain(bgAudioCtx,bgGain);
+  } else if(mood==='lofi'){
+    createLofi(bgAudioCtx,bgGain);
+  } else if(mood==='epic'){
+    createEpic(bgAudioCtx,bgGain);
+  }
+}
+
+function createOsc(ctx,type,freq,gain,dest,start,dur){
+  const osc=ctx.createOscillator();
+  const g=ctx.createGain();
+  osc.type=type; osc.frequency.value=freq;
+  g.gain.setValueAtTime(0,start);
+  g.gain.linearRampToValueAtTime(gain,start+0.5);
+  g.gain.linearRampToValueAtTime(0,start+dur-0.3);
+  osc.connect(g); g.connect(dest);
+  osc.start(start); osc.stop(start+dur);
+  bgNodes.push(osc);
+}
+
+function createAmbient(ctx,dest){
+  const freqs=[130,196,261,329,392,523];
+  const loop=()=>{
+    if(!bgAudioCtx) return;
+    const now=ctx.currentTime;
+    freqs.forEach((f,i)=>{
+      createOsc(ctx,'sine',f,0.04,dest,now+i*0.8,6);
+      createOsc(ctx,'sine',f*2,0.02,dest,now+i*0.8+3,6);
+    });
+    bgNodes.push({stop:()=>{},_t:setTimeout(loop,5000)});
+  };
+  loop();
+}
+
+function createPiano(ctx,dest){
+  const melody=[261,293,329,349,392,440,392,349,329,293];
+  let t=ctx.currentTime;
+  const play=()=>{
+    if(!bgAudioCtx) return;
+    melody.forEach((f,i)=>{
+      createOsc(ctx,'triangle',f,0.06,dest,t+i*0.4,0.5);
+      createOsc(ctx,'sine',f,0.03,dest,t+i*0.4,0.8);
+    });
+    t+=melody.length*0.4+1;
+    bgNodes.push({stop:()=>{},_t:setTimeout(play,melody.length*400+1000)});
+  };
+  play();
+}
+
+function createRain(ctx,dest){
+  const makeRain=()=>{
+    if(!bgAudioCtx) return;
+    const buf=ctx.createBuffer(1,ctx.sampleRate*0.1,ctx.sampleRate);
+    const data=buf.getChannelData(0);
+    for(let i=0;i<data.length;i++) data[i]=(Math.random()*2-1)*0.3;
+    const src=ctx.createBufferSource();
+    const filt=ctx.createBiquadFilter();
+    filt.type='lowpass'; filt.frequency.value=800;
+    src.buffer=buf; src.connect(filt); filt.connect(dest);
+    src.start(); src.stop(ctx.currentTime+0.1);
+    bgNodes.push(src);
+    const delay=Math.random()*80+20;
+    bgNodes.push({stop:()=>{},_t:setTimeout(makeRain,delay)});
+  };
+  // Continuous noise
+  const bufLen=ctx.sampleRate*2;
+  const noiseBuf=ctx.createBuffer(1,bufLen,ctx.sampleRate);
+  const nd=noiseBuf.getChannelData(0);
+  for(let i=0;i<bufLen;i++) nd[i]=(Math.random()*2-1)*0.15;
+  const noiseLoop=()=>{
+    if(!bgAudioCtx) return;
+    const ns=ctx.createBufferSource();
+    const nf=ctx.createBiquadFilter(); nf.type='bandpass'; nf.frequency.value=2000; nf.Q.value=0.5;
+    ns.buffer=noiseBuf; ns.connect(nf); nf.connect(dest); ns.start(); ns.stop(ctx.currentTime+2);
+    bgNodes.push(ns);
+    bgNodes.push({stop:()=>{},_t:setTimeout(noiseLoop,1900)});
+  };
+  noiseLoop(); makeRain();
+}
+
+function createLofi(ctx,dest){
+  const chord1=[130,163,196,245]; const chord2=[109,138,163,220];
+  let t=ctx.currentTime;
+  const play=()=>{
+    if(!bgAudioCtx) return;
+    chord1.forEach(f=>createOsc(ctx,'sawtooth',f,0.015,dest,t,1.8));
+    chord2.forEach(f=>createOsc(ctx,'sawtooth',f,0.015,dest,t+2,1.8));
+    // kick
+    [0,0.5,1,1.5,2,2.5,3,3.5].forEach(offset=>{
+      const k=ctx.createOscillator();
+      const kg=ctx.createGain();
+      k.frequency.setValueAtTime(150,t+offset);
+      k.frequency.linearRampToValueAtTime(50,t+offset+0.15);
+      kg.gain.setValueAtTime(0.3,t+offset);
+      kg.gain.linearRampToValueAtTime(0,t+offset+0.15);
+      k.connect(kg); kg.connect(dest);
+      k.start(t+offset); k.stop(t+offset+0.2);
+      bgNodes.push(k);
+    });
+    t+=4;
+    bgNodes.push({stop:()=>{},_t:setTimeout(play,4000)});
+  };
+  play();
+}
+
+function createEpic(ctx,dest){
+  const steps=[110,123,130,146,164,174,196,220];
+  let t=ctx.currentTime;
+  const play=()=>{
+    if(!bgAudioCtx) return;
+    steps.forEach((f,i)=>{
+      createOsc(ctx,'sawtooth',f,0.04,dest,t+i*0.5,0.6);
+      createOsc(ctx,'square',f/2,0.02,dest,t+i*0.5,0.8);
+    });
+    t+=steps.length*0.5+1;
+    bgNodes.push({stop:()=>{},_t:setTimeout(play,steps.length*500+1000)});
+  };
+  play();
+}
+
+/* ════════════════════════════════════════
+   VOICE RECORDING
+════════════════════════════════════════ */
+let mediaRecorder=null, audioChunks=[], recordings=[];
+let currentAudio=null, timerInterval=null, seconds=0, isPaused=false;
+let analyser=null, animFrame=null, micCtx=null;
+
+const visCanvas=document.getElementById('visCanvas');
+const vctx=visCanvas.getContext('2d');
+
+function initVis(){
+  visCanvas.width=visCanvas.parentElement.offsetWidth;
+  visCanvas.height=visCanvas.parentElement.offsetHeight||60;
+  drawVisIdle();
+}
+initVis();
+window.addEventListener('resize',initVis);
+
+function setStatus(type,text){
+  const b=document.getElementById('statusBadge');
+  const d=document.getElementById('statusDot');
+  b.className='badge-pill bp-'+type;
+  d.className='dot'+(type==='rec'?' dot-pulse':'');
+  document.getElementById('statusText').textContent=text;
+}
+
+async function toggleRecord(){
+  if(mediaRecorder&&mediaRecorder.state!=='inactive'){stopRecord();return;}
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    micCtx=new(window.AudioContext||window.webkitAudioContext)();
+    analyser=micCtx.createAnalyser(); analyser.fftSize=256;
+    micCtx.createMediaStreamSource(stream).connect(analyser);
+    drawWaveform();
+    audioChunks=[];
+    mediaRecorder=new MediaRecorder(stream);
+    mediaRecorder.ondataavailable=e=>{if(e.data.size>0)audioChunks.push(e.data);};
+    mediaRecorder.onstop=saveRecording;
+    mediaRecorder.start(100);
+    isPaused=false; seconds=0; updateTimer();
+    timerInterval=setInterval(()=>{if(!isPaused){seconds++;updateTimer();}},1000);
+    setStatus('rec','Recording...');
+    document.getElementById('btnRec').disabled=true;
+    document.getElementById('btnStop').disabled=false;
+    document.getElementById('btnPause').disabled=false;
+  }catch(e){
+    alert('Microphone access denied. Please allow microphone in browser settings.');
+  }
+}
+
+function togglePause(){
+  if(!mediaRecorder)return;
+  if(mediaRecorder.state==='recording'){
+    mediaRecorder.pause(); isPaused=true;
+    setStatus('idle','Paused');
+    document.getElementById('pauseIcon').className='fas fa-play';
+    document.getElementById('btnPauseLabel').textContent='Resume';
+  } else if(mediaRecorder.state==='paused'){
+    mediaRecorder.resume(); isPaused=false;
+    setStatus('rec','Recording...');
+    document.getElementById('pauseIcon').className='fas fa-pause';
+    document.getElementById('btnPauseLabel').textContent='Pause';
+  }
+}
+
+function stopRecord(){
+  if(!mediaRecorder)return;
+  mediaRecorder.stop();
+  mediaRecorder.stream.getTracks().forEach(t=>t.stop());
+  clearInterval(timerInterval);
+  cancelAnimationFrame(animFrame);
+  if(micCtx){micCtx.close();micCtx=null;} analyser=null;
+  setStatus('ready','Saved');
+  document.getElementById('btnRec').disabled=false;
+  document.getElementById('btnStop').disabled=true;
+  document.getElementById('btnPause').disabled=true;
+  document.getElementById('pauseIcon').className='fas fa-pause';
+  document.getElementById('btnPauseLabel').textContent='Pause';
+  drawVisIdle();
+}
+
+function saveRecording(){
+  const blob=new Blob(audioChunks,{type:'audio/webm'});
+  const url=URL.createObjectURL(blob);
+  recordings.push({url,blob,dur:seconds,name:'Recording '+(recordings.length+1),ts:new Date().toLocaleTimeString()});
+  updateTimer(); renderRecList();
+}
+
+function updateTimer(){
+  const m=Math.floor(seconds/60),s=seconds%60;
+  document.getElementById('recTimer').textContent=m+':'+(s<10?'0':'')+s;
+}
+
+function formatDur(s){return s>=60?Math.floor(s/60)+'m '+(s%60)+'s':s+'s';}
+
+function renderRecList(){
+  const list=document.getElementById('recList');
+  if(!recordings.length){
+    list.innerHTML='<div class="empty-sm"><i class="fas fa-microphone-slash" style="display:block;font-size:20px;margin-bottom:6px;opacity:.4"></i>No recordings yet</div>';
+    return;
+  }
+  list.innerHTML=recordings.map((r,i)=>`
+  <div class="rec-item">
+    <div class="rec-item-info">
+      <div class="rec-item-name">${r.name}</div>
+      <div class="rec-item-meta">${r.ts} · ${formatDur(r.dur)}</div>
+    </div>
+    <button class="ic-btn" onclick="playRec(${i})" title="Play"><i class="fas fa-play"></i></button>
+    <button class="ic-btn" onclick="downloadRec(${i})" title="Download"><i class="fas fa-download"></i></button>
+    <button class="ic-btn del" onclick="deleteRec(${i})" title="Delete"><i class="fas fa-trash"></i></button>
+  </div>`).join('');
+}
+
+function playRec(i){
+  if(currentAudio){currentAudio.pause();currentAudio=null;}
+  const a=new Audio(recordings[i].url);
+  a.playbackRate=playbackSpeed;
+  a.volume=Math.min(1,voiceVolume);
+  a.play();
+  currentAudio=a;
+  setStatus('ready','Playing: '+recordings[i].name);
+  a.onended=()=>{setStatus('ready','Ready');currentAudio=null;};
+}
+
+function downloadRec(i){
+  const a=document.createElement('a');
+  a.href=recordings[i].url;
+  a.download=recordings[i].name.replace(/\s+/g,'-').toLowerCase()+'.webm';
+  a.click();
+}
+
+function deleteRec(i){
+  if(currentAudio){currentAudio.pause();currentAudio=null;}
+  URL.revokeObjectURL(recordings[i].url);
+  recordings.splice(i,1);
+  renderRecList();
+}
+
+function drawWaveform(){
+  if(!analyser)return;
+  const W=visCanvas.width,H=visCanvas.height;
+  const buf=new Uint8Array(analyser.frequencyBinCount);
+  function loop(){
+    animFrame=requestAnimationFrame(loop);
+    analyser.getByteTimeDomainData(buf);
+    vctx.clearRect(0,0,W,H);
+    vctx.strokeStyle=currentTemplate.accent||'#2b4fd8';
+    vctx.lineWidth=2; vctx.beginPath();
+    const sl=W/buf.length;
+    for(let i=0;i<buf.length;i++){
+      const y=(buf[i]/128-1)*(H*0.42)+H/2;
+      i===0?vctx.moveTo(i*sl,y):vctx.lineTo(i*sl,y);
+    }
+    vctx.stroke();
+  }
+  loop();
+}
+
+function drawVisIdle(){
+  const W=visCanvas.width,H=visCanvas.height;
+  vctx.clearRect(0,0,W,H);
+  vctx.strokeStyle='#dde6ff'; vctx.lineWidth=1.5;
+  vctx.beginPath(); vctx.moveTo(0,H/2); vctx.lineTo(W,H/2); vctx.stroke();
+}
+
+/* ════════════════════════════════════════
+   DOWNLOAD CARD AS PNG
+════════════════════════════════════════ */
+function downloadCard(){
+  const wrap=document.getElementById('canvasWrap');
+  const W=bgCanvas.width, H=bgCanvas.height;
+  const out=document.createElement('canvas');
+  out.width=W; out.height=H;
+  const ctx=out.getContext('2d');
+  // Draw background
+  ctx.drawImage(bgCanvas,0,0);
+  // Draw dropped elements
+  const elements=document.querySelectorAll('#canvasElements .dropped-el');
+  const promises=[];
+  elements.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    const wrapRect=wrap.getBoundingClientRect();
+    const x=rect.left-wrapRect.left;
+    const y=rect.top-wrapRect.top;
+    const span=el.querySelector('.canvas-text');
+    const emoji=el.querySelector('.canvas-emoji');
+    const svg=el.querySelector('svg');
+    if(span){
+      ctx.font=`${span.style.fontWeight||'500'} ${span.style.fontSize||'18px'} 'DM Sans',sans-serif`;
+      ctx.fillStyle=span.style.color||'#ffffff';
+      ctx.shadowColor='rgba(0,0,0,.5)'; ctx.shadowBlur=4; ctx.shadowOffsetY=1;
+      ctx.fillText(span.textContent,x+6,y+parseInt(span.style.fontSize||18)+4);
+      ctx.shadowBlur=0; ctx.shadowOffsetY=0;
+    } else if(emoji){
+      ctx.font='32px serif';
+      ctx.fillText(emoji.textContent,x,y+32);
+    } else if(svg){
+      const p=new Promise(res=>{
+        const s=new XMLSerializer().serializeToString(svg);
+        const img=new Image();
+        img.onload=()=>{ctx.drawImage(img,x,y);res();};
+        img.src='data:image/svg+xml;base64,'+btoa(unescape(encodeURIComponent(s)));
+      });
+      promises.push(p);
+    }
+  });
+  Promise.all(promises).then(()=>{
+    const a=document.createElement('a');
+    a.download='voice-card-toolkit-pro.png';
+    a.href=out.toDataURL('image/png');
+    a.click();
+  });
+}
+/////
+/*═══════════════════════════════════
+  IMAGE DRAG & DROP
+═══════════════════════════════════*/
+
+let uploadedImage = null;
+
+document.getElementById("imgUpload")
+.addEventListener("change", function(e){
+
+  const file = e.target.files[0];
+
+  if(!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(event){
+    uploadedImage = event.target.result;
+  };
+
+  reader.readAsDataURL(file);
+
+});
+
+function addUploadedImage(){
+
+  if(!uploadedImage){
+    alert("Upload image first");
+    return;
+  }
+
+  const container =
+  document.getElementById("canvasElements");
+
+  const el = document.createElement("div");
+
+  el.className = "dropped-el";
+
+  el.style.left = "100px";
+  el.style.top = "120px";
+
+  const img = document.createElement("img");
+
+  img.src = uploadedImage;
+
+  img.style.width = "140px";
+  img.style.height = "140px";
+  img.style.objectFit = "cover";
+  img.style.borderRadius = "18px";
+  img.style.boxShadow =
+  "0 10px 25px rgba(0,0,0,.35)";
+
+  const del = document.createElement("button");
+
+  del.className = "del-btn";
+  del.innerHTML = "✕";
+
+  del.onclick = () => el.remove();
+
+  el.appendChild(del);
+  el.appendChild(img);
+
+  makeDraggable(el, wrap);
+
+  container.appendChild(el);
+
+}
+
+/*═══════════════════════════════════
+  VIDEO EXPORT
+═══════════════════════════════════*/
+
+async function exportVideo(){
+
+  const wrap =
+  document.getElementById("canvasWrap");
+
+  alert("Rendering cinematic video...");
+
+  const stream =
+  wrap.captureStream(30);
+
+  let audioStream = null;
+
+  if(currentAudio){
+
+    const audioCtx =
+    new AudioContext();
+
+    const dest =
+    audioCtx.createMediaStreamDestination();
+
+    const source =
+    audioCtx.createMediaElementSource(currentAudio);
+
+    source.connect(dest);
+    source.connect(audioCtx.destination);
+
+    audioStream = dest.stream;
+
+  }
+
+  const combined =
+  new MediaStream();
+
+  stream.getTracks().forEach(track=>{
+    combined.addTrack(track);
+  });
+
+  if(audioStream){
+
+    audioStream.getAudioTracks()
+    .forEach(track=>{
+      combined.addTrack(track);
+    });
+
+  }
+
+  const recorder =
+  new MediaRecorder(combined,{
+    mimeType:"video/webm"
+  });
+
+  let chunks = [];
+
+  recorder.ondataavailable = e=>{
+    if(e.data.size > 0){
+      chunks.push(e.data);
+    }
+  };
+
+  recorder.onstop = ()=>{
+
+    const blob =
+    new Blob(chunks,{
+      type:"video/webm"
+    });
+
+    const url =
+    URL.createObjectURL(blob);
+
+    const a =
+    document.createElement("a");
+
+    a.href = url;
+
+    a.download =
+    "voice-studio-video.webm";
+
+    a.click();
+
+  };
+
+  recorder.start();
+
+  if(currentAudio){
+
+    currentAudio.currentTime = 0;
+    currentAudio.play();
+
+  }
+
+  // cinematic animation
+  let zoom = 1;
+
+  const anim = setInterval(()=>{
+
+    zoom += 0.002;
+
+    wrap.style.transform =
+    `scale(${zoom})`;
+
+  },30);
+
+  setTimeout(()=>{
+
+    clearInterval(anim);
+
+    wrap.style.transform = "scale(1)";
+
+    recorder.stop();
+
+  },10000);
+
+}
+
+
+
+/* ════════════════════════════════════════
+   MOBILE MENU
+════════════════════════════════════════ */
+const menuBtn=document.getElementById('mobile-menu');
+const navLinks=document.getElementById('nav-links');
+menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
+document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
+</script>
+
+</body>
+</html>
