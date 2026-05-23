@@ -853,15 +853,43 @@
   </div>
 </footer>
  
- <script>
-function toggleFaq(el){
-  const open=el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
-  if(!open) el.classList.add('open');
-}
-const mb=document.getElementById('mobile-menu'),nl=document.getElementById('nav-links');
-mb.addEventListener('click',()=>{nl.classList.toggle('active');mb.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!mb.contains(e.target)&&!nl.contains(e.target)){nl.classList.remove('active');mb.classList.remove('is-active');}});
+ 
+<script>
+
+  // ── MOBILE MENU ──
+const menuBtn = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuBtn.classList.toggle('is-active');
+});
+
+document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 960) {
+      e.preventDefault();
+      link.parentElement.classList.toggle('show-mobile');
+    }
+  });
+});
+
+document.querySelectorAll('.nav-links a:not(.nav-dropdown > a)').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuBtn.classList.remove('is-active');
+  });
+});
+
+document.addEventListener('click', e => {
+  if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+    menuBtn.classList.remove('is-active');
+  }
+});
+
+// ── INIT ──
+resizeDesignCanvas();
 </script>
 </body>
 </html>
