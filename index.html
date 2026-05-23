@@ -94,21 +94,25 @@
     .dropdown-menu a i { font-size: 13px; color: var(--blue); width: 16px; }
    /* .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     .nav-shop:hover { opacity: .88 !important; }*/
-    .nav-shop { 
+   .nav-shop { 
     background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; 
     color: white !important; 
-    border-radius: 10px !important; 
+    border-radius: 8px !important; 
     font-weight: 600 !important; 
-    display: flex !important;           /* یہاں سے کنٹرول ہوگا */
-    align-items: center !important;     /* آئیکن اور ٹیکسٹ کو ایک لائن میں رکھے گا */
-    gap: 6px !important;                /* آئیکن اور ٹیکسٹ کے درمیان تھوڑی جگہ */
-    padding: 7px 14px !important; 
+    
+    /* یہ لائنیں اہم ہیں */
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    gap: 6px !important; 
+    
+    padding: 6px 12px !important; 
     text-decoration: none !important;
 }
 
-/* اگر آئیکن کا سائز بڑا ہے تو اسے تھوڑا چھوٹا کریں */
-.nav-shop i {
-    font-size: 14px !important;
+/* یہ یقینی بنائے گا کہ آئیکن اور ٹیکسٹ ایک ساتھ صحیح نظر آئیں */
+.nav-shop span {
+    font-size: 12px;
 }
     /* Mobile menu */
     .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
