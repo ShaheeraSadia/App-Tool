@@ -913,29 +913,75 @@
     </span>
   </div>
 </footer>
+ 
 <script>
-  // Mobile Menu Toggle Javascript
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
 
-  mobileMenuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navMenu = document.getElementById('navMenu');
+
+/* Toggle Mobile Menu */
+
+mobileMenuBtn.addEventListener('click', (e) => {
+
+  e.stopPropagation();
+
+  navMenu.classList.toggle('show');
+
+  const icon = mobileMenuBtn.querySelector('i');
+
+  if (navMenu.classList.contains('show')) {
+
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+
+  } else {
+
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+
+  }
+
+});
+
+/* Close Menu When Clicking Outside */
+
+document.addEventListener('click', (e) => {
+
+  if (
+    !mobileMenuBtn.contains(e.target) &&
+    !navMenu.contains(e.target)
+  ) {
+
+    navMenu.classList.remove('show');
+
     const icon = mobileMenuBtn.querySelector('i');
-    if (navMenu.classList.contains('show')) {
-        icon.classList.replace('fa-bars', 'fa-times');
-    } else {
-        icon.classList.replace('fa-times', 'fa-bars');
-    }
+
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+
+  }
+
+});
+
+/* Close Menu After Clicking Link */
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    navMenu.classList.remove('show');
+
+    const icon = mobileMenuBtn.querySelector('i');
+
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+
   });
 
-  // Global click alignment to close mobile menu
-  document.addEventListener('click', (e) => {
-      if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('show');
-          mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-      }
-  });
+});
+
 </script>
+Get smarter respo
 </body>
 </html>
 
