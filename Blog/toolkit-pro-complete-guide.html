@@ -400,21 +400,7 @@
   </button>
 </nav>
 
-<script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // مینیو کے کسی بھی لنک پر کلک کرنے پر مینیو بند ہو جائے
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
+ 
 <!-- HERO -->
 <section class="article-hero">
   <div class="hero-inner">
