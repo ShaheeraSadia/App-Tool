@@ -74,7 +74,56 @@
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     .nav-shop:hover { opacity: .88 !important; }
 
-    /* MOBILE MENU */
+    .mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--blue-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 0 16px;
+    }
+
+    .mobile-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+    /* MOBILE MENU 
     .mobile-btn {
         display: none; background: var(--blue); border: none; color: white;
         padding: 8px 12px; border-radius: 8px; font-size: 1.2rem; cursor: pointer;
@@ -91,7 +140,7 @@
         .nav-links.active { display: flex; }
         .nav-links li a { color: white !important; padding: 15px 25px; display: block; }
         .nav-links li a:hover { background: rgba(255,255,255,0.1); }
-    }
+    }*/
  
 
 
@@ -821,11 +870,45 @@
 </footer>
  
  <script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navLinks = document.getElementById('navLinks');
+  // FAQ Toggle
+  function toggleFaq(el) {
+    const open = el.classList.contains('open');
 
-  mobileBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('open');
+    });
+
+    if (!open) {
+      el.classList.add('open');
+    }
+  }
+
+  // Mobile Menu
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('mainNav');
+
+    if (mobileBtn && navMenu) {
+
+      mobileBtn.addEventListener('click', function () {
+
+        navMenu.classList.toggle('active');
+
+        const icon = mobileBtn.querySelector('i');
+
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+
+      });
+
+    }
+
   });
 </script>
 </body>
