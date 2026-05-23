@@ -51,8 +51,51 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
+ /* ── NAV (FIXED & RESPONSIVE) ── */
+    nav {
+      background: var(--white) !important; 
+      border-bottom: 1px solid #dde6ff;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      position: fixed; 
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      box-sizing: border-box; 
+      z-index: 9999; 
+      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    }
 
-     /* ── NAV ── */
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-size: 18px; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo-text em { color: var(--pink); font-style: normal; }
+
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
+    .nav-links a:hover { color: var(--blue); background: #f1f5f9; }
+    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+
+    .mobile-btn {
+        display: none; 
+        background: var(--blue-dark); 
+        border: none;
+        color: white; 
+        width: 40px; 
+        height: 40px; 
+        border-radius: 8px;
+        cursor: pointer; 
+        font-size: 1.2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+     /* ── NAV ── 
     nav{background:rgba(15,17,23,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--cyan);font-size:18px}
@@ -72,7 +115,7 @@
       .menu-toggle.is-active .bar:nth-child(2){opacity:0}
       .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    }
+    }*/
 
 
     /* ── NAV (identical to index.html) ── 
@@ -870,48 +913,27 @@
     </span>
   </div>
 </footer>
-
- 
 <script>
-  // FAQ Toggle
-  function toggleFaq(el) {
-    const open = el.classList.contains('open');
+  // Mobile Menu Toggle Javascript
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
 
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.classList.remove('open');
-    });
-
-    if (!open) {
-      el.classList.add('open');
+  mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    const icon = mobileMenuBtn.querySelector('i');
+    if (navMenu.classList.contains('show')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+        icon.classList.replace('fa-times', 'fa-bars');
     }
-  }
+  });
 
-  // Mobile Menu
-  document.addEventListener('DOMContentLoaded', function () {
-
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('mainNav');
-
-    if (mobileBtn && navMenu) {
-
-      mobileBtn.addEventListener('click', function () {
-
-        navMenu.classList.toggle('active');
-
-        const icon = mobileBtn.querySelector('i');
-
-        if (navMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-
-      });
-
-    }
-
+  // Global click alignment to close mobile menu
+  document.addEventListener('click', (e) => {
+      if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('show');
+          mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      }
   });
 </script>
 </body>
