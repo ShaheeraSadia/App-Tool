@@ -69,7 +69,20 @@
     .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     .nav-shop:hover { opacity: .88 !important; }
-    /* ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں */
+
+
+      /* MOBILE MENU */
+    .mobile-btn { display: none; background: var(--blue-dark); border: none; color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer; }
+    
+    @media (max-width: 768px) {
+      .mobile-btn { display: block; }
+      .nav-links { 
+        display: none; flex-direction: column; position: absolute; top: 66px; left: 0; 
+        width: 100%; background: var(--white); padding: 20px; border-bottom: 1px solid #eee;
+      }
+      .nav-links.active { display: flex; }
+    }
+    /* ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں 
 .mobile-btn {
     display: none;
     background: none;
@@ -81,11 +94,11 @@
 
 @media (max-width: 768px) {
     .mobile-btn {
-        display: block; /* موبائل پر ظاہر کریں */
+        display: block;  موبائل پر ظاہر کریں 
     }
 
     .nav-links {
-        display: none; /*پہلے سے چھپا ہوا ہو*/ 
+        display: none; پہلے سے چھپا ہوا ہو
         flex-direction: column;
         position: absolute;
         top: 64px;
@@ -98,7 +111,7 @@
     }
 
     .nav-links.active {
-        display: flex; /* کلک کرنے پر نظر آئے گا */
+        display: flex;  کلک کرنے پر نظر آئے گا  
     }
 
     .nav-item {
@@ -106,7 +119,7 @@
         border-bottom: 1px solid rgba(255,255,255,0.1);
         width: 100%;
     }
-}
+}*/
 
  
 
