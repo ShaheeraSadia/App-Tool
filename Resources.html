@@ -51,7 +51,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
 
-    /* ── NAV (identical to index.html) ── */
+    /* ── NAV (identical to index.html) ── 
     nav {
       background: var(--white); border-bottom: 1px solid #dde6ff;
       padding: 0 40px; display: flex; align-items: center;
@@ -69,7 +69,7 @@
     .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     .nav-shop:hover { opacity: .88 !important; }
-    /* ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں */
+     ڈیسک ٹاپ کے لیے مینیو بٹن چھپائیں 
 .mobile-btn {
     display: none;
     background: none;
@@ -81,11 +81,11 @@
 
 @media (max-width: 768px) {
     .mobile-btn {
-        display: block; /* موبائل پر ظاہر کریں */
+        display: block;  موبائل پر ظاہر کریں 
     }
 
     .nav-links {
-        display: none; /* پہلے سے چھپا ہوا ہو */
+        display: none; پہلے سے چھپا ہوا ہو 
         flex-direction: column;
         position: absolute;
         top: 64px;
@@ -107,7 +107,37 @@
         width: 100%;
     }
 }
+*/
 
+    /* NAV */
+    nav {
+      background: var(--white); border-bottom: 1px solid #dde6ff;
+      padding: 0 40px; display: flex; align-items: center;
+      justify-content: space-between; height: 66px;
+      position: sticky; top: 0; z-index: 300;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
+    .nav-logo-text em { color: var(--pink); font-style: normal; }
+    
+    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); padding: 7px 13px; border-radius: 9px; }
+    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; font-weight: 600 !important; }
+
+    /* MOBILE MENU */
+    .mobile-btn { display: none; background: var(--blue-dark); border: none; color: white; padding: 10px 15px; border-radius: 8px; cursor: pointer; }
+    
+    @media (max-width: 768px) {
+      .mobile-btn { display: block; }
+      .nav-links { 
+        display: none; flex-direction: column; position: absolute; top: 66px; left: 0; 
+        width: 100%; background: var(--white); padding: 20px; border-bottom: 1px solid #eee;
+      }
+      .nav-links.active { display: flex; }
+    }
+
+    .hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; text-align: center; padding: 80px 20px; }
+    .page-wrap { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, var(--cyan) 100%);
