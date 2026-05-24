@@ -55,11 +55,6 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
 .article-body { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 36px 40px; }
 .article-body h2 { color: var(--blue-dark); margin: 40px 0 14px; border-left: 4px solid var(--blue); padding-left: 14px; }
 .article-body p { margin-bottom: 20px; }
-
-/* ── SIDEBAR ── 
-.sidebar { display: flex; flex-direction: column; gap: 18px; }
-.sb-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; border: 1px solid #dde6ff; }
-.sb-hd { background: var(--blue-dark); color: white; padding: 10px; margin-bottom: 10px; border-radius: 8px; font-weight: 700; }*/
  
      /* ══════════════════════════════
        HERO
@@ -82,12 +77,7 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
     .article-meta span{display:flex;align-items:center;gap:5px}
  
 
-    /* ══════════════════════════════
-       ARTICLE BODY
-    ══════════════════════════════ 
-    .article-body{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;padding:36px 40px}
-    @media(max-width:640px){.article-body{padding:20px 16px;border-radius:12px}}*/
-
+     
     /* Typography */
     .article-body p{font-size:15.5px;color:#2c2c2e;line-height:1.9;margin-bottom:20px}
     .article-body h2{font-family:'Lora',serif;font-size:clamp(20px,3vw,26px);color:var(--blue-dark);margin:40px 0 14px;font-weight:700;line-height:1.3;border-left:4px solid var(--blue);padding-left:14px}
@@ -223,6 +213,37 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
       .footer-inner{grid-template-columns:1fr;gap:20px}
       .footer-bottom{flex-direction:column;text-align:center}
     }
+    @media (max-width: 900px) {
+  .nav-links {
+    display: none; /* موبائل پر مینو چھپا دیں */
+    position: absolute;
+    top: 66px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 20px;
+  }
+  .nav-links.active {
+    display: flex; /* کلک کرنے پر دکھائیں */
+  }
+  .menu-toggle {
+    display: block; /* ہیمبرگر بٹن دکھائیں */
+  }
+}
+    /* ── موبائل کے لیے اصلاحات ── */
+@media (max-width: 900px) {
+  .content-layout { 
+    grid-template-columns: 1fr !important; /* موبائل پر سائیڈ بار نیچے چلی جائے گی */
+    width: 95% !important; 
+    padding: 20px 10px !important;
+  }
+  
+  /* تصویروں اور ٹیبل کو اسکرین سے باہر نکلنے سے روکنے کے لیے */
+  img, .comp-table, .ad-slot {
+    max-width: 100% !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -721,41 +742,20 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
 /* ════════════════════════════════
    MOBILE MENU — clean, no crash
 ════════════════════════════════ */
-const menuBtn    = document.getElementById('mobile-menu');
-const navLinks   = document.getElementById('nav-links');
-const navOverlay = document.getElementById('navOverlay');
+ <script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
 
-function openMenu(){
-  navLinks.classList.add('active');
-  navOverlay.classList.add('active');
-  menuBtn.classList.add('is-active');
-  menuBtn.setAttribute('aria-expanded','true');
-}
-function closeMenu(){
-  navLinks.classList.remove('active');
-  navOverlay.classList.remove('active');
-  menuBtn.classList.remove('is-active');
-  menuBtn.setAttribute('aria-expanded','false');
-}
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // CSS میں اس کے لیے کلاس بنائیں
+    menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+  });
 
-menuBtn.addEventListener('click', e => {
-  e.stopPropagation();
-  navLinks.classList.contains('active') ? closeMenu() : openMenu();
-});
-
-/* Close when overlay (dark area) is tapped */
-navOverlay.addEventListener('click', closeMenu);
-
-/* Close when a nav link is tapped */
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', closeMenu);
-});
-
-/* Close on Escape key */
-document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') closeMenu();
-});
-
+  // FAQ Toggle Function
+  function toggleFaq(element) {
+    element.classList.toggle('open');
+  }
+</script>
 /* ════════════════
    FAQ accordion
 ════════════════ */
