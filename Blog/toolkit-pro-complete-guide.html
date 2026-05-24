@@ -684,65 +684,41 @@ nav{
  /* =================================================
    RESET + GLOBAL FIX
 ================================================= */
-
-*,
-*::before,
-*::after{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* 1. باکس سائزنگ کو گلوبل رکھیں (یہ سب سے اہم ہے) */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-html{
-  width:100%;
-  overflow-x:hidden;
-  scroll-behavior:smooth;
+/* 2. ایچ ٹی ایم ایل اور باڈی کے لیے کنٹرول */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* یہ دائیں طرف کا اضافی خالی حصہ چھپا دے گا */
 }
 
-/* =================================================
-   BODY FIX
-================================================= */
-
-body{
-
-  font-family:'DM Sans',sans-serif;
-
-  background:var(--bg);
-
-  color:var(--text);
-
-  width:100%;
-
-  max-width:100%;
-
-  overflow-x:hidden;
-
-  margin:0 auto;
-
-  line-height:1.7;
-
-  /* SPACE FOR FIXED NAVBAR */
-  padding-top:72px;
+/* 3. کنٹینرز کے لیے بہتر طریقہ */
+.container, .content-layout, .article-body, .footer-inner {
+  width: 92%;           /* 100% کے بجائے 92% دیں تاکہ سائیڈوں پر کچھ جگہ رہے */
+  max-width: 1100px;    /* زیادہ سے زیادہ حد متعین کریں */
+  margin: 0 auto;       /* یہ ہمیشہ کنٹینٹ کو بیچ میں رکھے گا */
 }
 
-/* =================================================
-   CENTER PAGE CONTENT
-================================================= */
-
-main,
-section,
-.container,
-.content-layout,
-.article-body,
-.footer-inner{
-
-  width:100%;
-
-  margin-left:auto;
-
-  margin-right:auto;
+/* 4. موبائل کے لیے خاص طور پر */
+@media(max-width: 768px) {
+  body {
+    padding-top: 64px;
+  }
+  
+  /* موبائل پر کنٹینر کو اسکرین کی چوڑائی کے ساتھ فٹ کریں */
+  .container, .content-layout, .article-body {
+    width: 95%; /* موبائل پر تھوڑی زیادہ جگہ دیں */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-
+ 
 /* =================================================
    PREVENT OVERFLOW
 ================================================= */
