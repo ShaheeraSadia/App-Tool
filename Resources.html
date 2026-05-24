@@ -31,169 +31,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --blue:       #2b4fd8;
-      --blue-dark:  #1a3199;
-      --blue-mid:   #3d72d4;
-      --blue-light: #e8f0fe;
-      --blue-pale:  #f0f4ff;
-      --cyan:       #00b4db;
-      --pink:       #ff6eb4;
-      --text:       #1c1c1e;
-      --muted:      #6b7280;
-      --bg:         #f5f8ff;
-      --white:      #ffffff;
-      --radius:     16px;
-      --shadow:     0 4px 24px rgba(43,79,216,0.09);
-      --shadow-md:  0 12px 36px rgba(43,79,216,0.15);
+    :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+      --bg:#f5f8ff;--white:#ffffff;--radius:16px;
+      --shadow:0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:0 12px 36px rgba(43,79,216,0.15);
     }
-      
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-    /* ── NAV ── */
- /* ── NAV ڈیسک ٹاپ کے لیے ── */
-nav {
-  background: var(--white);
-  border-bottom: 1px solid #dde6ff;
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 66px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
 
-.nav-links { 
-  display: flex; /* یہ لائن ڈیسک ٹاپ کے لیے لازمی ہے */
-  gap: 4px; 
-  list-style: none; 
-  align-items: center; 
-}
-
-.menu-toggle { 
-  display: none; /* ڈیسک ٹاپ پر بٹن نہیں دکھے گا */
-  flex-direction: column; 
-  cursor: pointer; 
-  gap: 5px; 
-}
-
-/* ── موبائل کے لیے میڈیا کیوری ── */
-@media (max-width: 960px) {
-  .menu-toggle { display: flex; } /* موبائل پر بٹن شو ہو جائے گا */
-  
-  .nav-links { 
-    position: fixed; 
-    top: 66px; 
-    left: -100%; 
-    width: 100%; 
-    height: calc(100vh - 66px); 
-    background: var(--white); 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 40px 20px; 
-    transition: 0.3s ease-in-out; 
-    z-index: 999; 
-    gap: 20px; 
-    overflow-y: auto;
-  }
-  
-  .nav-links.active { left: 0; }
-  .nav-links li { width: 100%; text-align: center; }
-  .nav-links a { display: block; width: 100%; }
-}
-
-    /* ── NAV ── 
-    nav {
-      background: var(--white); border-bottom: 1px solid #dde6ff;
-      padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
-      position: sticky; top: 0; z-index: 300;
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+    /* NAV */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
+    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001}
+    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s}
+    @media(max-width:960px){
+      nav{padding:0 20px}.menu-toggle{display:flex}
+      .nav-links{position:fixed;top:66px;left:-100%;width:80%;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:30px 20px;transition:.4s ease;box-shadow:10px 0 15px rgba(0,0,0,.1);z-index:1000;gap:12px}
+      .nav-links.active{left:0}.nav-links li{width:100%}
+      .nav-links a{font-size:16px;padding:12px;display:block;border-bottom:1px solid var(--blue-pale)}
+      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
+      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-    
-    @media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .menu-toggle { display: flex; }
-  
-  .nav-links { 
-    position: fixed; 
-    top: 66px; 
-    left: -100%;  
-    height: calc(100vh - 66px); 
-    background: var(--white); 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 40px 20px; 
-    transition: 0.3s ease-in-out; 
-    box-shadow: none; 
-    z-index: 1000; 
-    gap: 20px; 
-    overflow-y: auto; 
-  }
-  
-  .nav-links.active { left: 0; }
-  
-  .nav-links li { width: 100%; text-align: center; }
-  .nav-links a { 
-    font-size: 18px; 
-    padding: 15px; 
-    display: block; 
-    border-bottom: 1px solid var(--blue-pale); 
-    width: 100%;
-  }/*
-  
-  /* اس کو یقینی بنائیں کہ اوورلیپ نہ ہو 
-  body.menu-open {
-    overflow: hidden; 
-  }
-}
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
+ 
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.item {
-  flex: 1 1 100%;
-  max-width: 100%;
-}
-
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .item {
-    width: 100%;
-  }
-}
-*/
     .hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; text-align: center; padding: 80px 20px; }
     .page-wrap { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     /* ── HERO ── */
@@ -918,13 +791,24 @@ iframe {
   
 // ── MOBILE MENU ──
  
- const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
+ 
+    const mb = document.getElementById('mobile-menu');
+    const nl = document.getElementById('nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
-});
+    if (mb && nl) {
+        mb.addEventListener('click', () => {
+            nl.classList.toggle('active');
+            mb.classList.toggle('is-active');
+        });
+
+        document.addEventListener('click', e => {
+            if (!mb.contains(e.target) && !nl.contains(e.target)) {
+                nl.classList.remove('active');
+                mb.classList.remove('is-active');
+            }
+        });
+    }
+ 
  
 </script>
 </body>
