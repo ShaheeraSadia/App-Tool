@@ -97,24 +97,21 @@
       .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     }
-
-      /* ══════════════════════════════
+ 
+    /* ══════════════════════════════
        LAYOUT
     ══════════════════════════════ */
- 
+    .content-layout{
+      max-width:1100px;margin:0 auto;
+      padding:36px 24px 80px;
+      display:grid;grid-template-columns:1fr 300px;gap:32px;
+      align-items:start;
+    }
+    @media(max-width:900px){
+      .content-layout{grid-template-columns:1fr;padding:24px 16px 60px}
+    }
 
-
-  .content-layout {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 36px 24px 80px;
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-}
-
-.article-body { flex: 3; }
-.sidebar { flex: 1; min-width: 300px; }
+   
      /* ══════════════════════════════
        HERO
     ══════════════════════════════ */
@@ -213,19 +210,7 @@
     /* Ad slot */
     .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px;color:var(--muted);font-size:13px;margin:28px 0;min-height:90px;display:flex;align-items:center;justify-content:center;width:100%;overflow:hidden}
     .ad-slot ins{width:100%}
-
-
-
-
-
-
-
-
-
   
-
-     
-     
     /* ══════════════════════════════
        SIDEBAR
     ══════════════════════════════ */
