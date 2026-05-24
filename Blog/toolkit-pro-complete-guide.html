@@ -137,14 +137,7 @@ nav{
   background:var(--blue-light);
   color:var(--blue);
 }
-
-    nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-  background: #fff;
-}
+ 
 /* SHOP BTN */
 
 .nav-shop{
@@ -388,27 +381,37 @@ nav{
     
     @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
-   
-  /* =========================
-   GLOBAL MOBILE FIXES
-========================= */
-
-html,
-body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden;
-}
-
-/* Prevent all elements from overflowing */
+   /* =================================================
+   RESET + GLOBAL FIX
+================================================= */
 
 *,
 *::before,
 *::after{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
 }
 
-/* Images & media */
+html{
+  scroll-behavior:smooth;
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  width:100%;
+  overflow-x:hidden;
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+
+  /* IMPORTANT */
+  padding-top:72px;
+}
+
+/* Prevent overflow */
 
 img,
 video,
@@ -420,26 +423,199 @@ svg{
   display:block;
 }
 
-/* Fix sections */
+/* =================================================
+   FIXED NAVBAR
+================================================= */
 
-section,
-div,
-nav,
-header,
-footer{
-  max-width:100%;
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 24px;
+
+  background:rgba(255,255,255,.96);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid #dde6ff;
+
+  z-index:99999;
+
+  box-shadow:0 4px 18px rgba(0,0,0,.05);
 }
 
-/* =========================
-   NAVBAR MOBILE FIX
-========================= */
+/* Logo */
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  flex-shrink:0;
+}
+
+.nav-logo i{
+  color:var(--blue);
+  font-size:20px;
+}
+
+.nav-logo-text{
+  font-size:22px;
+  font-weight:700;
+  color:var(--blue-dark);
+}
+
+.nav-logo-text em{
+  color:var(--pink);
+  font-style:normal;
+}
+
+/* =================================================
+   NAV LINKS
+================================================= */
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.nav-links li{
+  position:relative;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+
+  padding:10px 14px;
+
+  border-radius:10px;
+
+  font-size:14px;
+  font-weight:600;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  transition:.25s ease;
+
+  white-space:nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+  background:var(--blue-light);
+  color:var(--blue);
+}
+
+/* Shop Button */
+
+.nav-shop{
+  background:linear-gradient(135deg,var(--pink),#ff9fb5)!important;
+  color:#fff!important;
+}
+
+/* =================================================
+   DROPDOWN
+================================================= */
+
+.nav-dropdown > a::after{
+  content:'▾';
+  font-size:10px;
+  margin-left:4px;
+}
+
+.dropdown-menu{
+  position:absolute;
+
+  top:115%;
+  left:0;
+
+  min-width:220px;
+
+  background:#fff;
+
+  border:1px solid #dde6ff;
+
+  border-radius:14px;
+
+  padding:8px;
+
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(10px);
+
+  transition:.25s ease;
+
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+  z-index:999;
+}
+
+.nav-dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-menu a{
+  padding:11px 14px;
+  border-radius:10px;
+}
+
+.dropdown-menu a:hover{
+  background:var(--blue-light);
+}
+
+/* =================================================
+   MOBILE MENU BUTTON
+================================================= */
+
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:100001;
+}
+
+.menu-toggle .bar{
+  width:26px;
+  height:3px;
+  background:var(--blue-dark);
+  border-radius:10px;
+  transition:.3s;
+}
+
+/* =================================================
+   MOBILE RESPONSIVE
+================================================= */
 
 @media(max-width:960px){
 
+  body{
+    padding-top:64px;
+  }
+
   nav{
-    width:100%;
-    padding:0 16px;
     height:64px;
+    padding:0 16px;
   }
 
   .nav-logo-text{
@@ -448,19 +624,21 @@ footer{
 
   .menu-toggle{
     display:flex;
-    z-index:1001;
   }
+
+  /* MOBILE MENU */
 
   .nav-links{
     position:fixed;
+
     top:64px;
     left:-100%;
+
     width:100%;
     height:calc(100vh - 64px);
 
     background:#fff;
 
-    display:flex;
     flex-direction:column;
     align-items:flex-start;
 
@@ -469,9 +647,9 @@ footer{
     overflow-y:auto;
     overflow-x:hidden;
 
-    transition:.3s ease;
+    transition:.35s ease;
 
-    z-index:1000;
+    z-index:99998;
   }
 
   .nav-links.active{
@@ -484,157 +662,144 @@ footer{
 
   .nav-links a{
     width:100%;
-    padding:14px 16px;
+    padding:15px 16px;
     font-size:16px;
+    border-radius:12px;
   }
 
-  /* Dropdown */
+  /* MOBILE DROPDOWN */
 
   .dropdown-menu{
     position:relative;
+
+    top:0;
+    left:0;
+
     width:100%;
     min-width:100%;
+
+    margin-top:8px;
 
     display:none;
 
     opacity:1;
     visibility:visible;
+
     transform:none;
 
-    margin-top:8px;
+    border:none;
 
     box-shadow:none;
-    border:none;
+
     background:var(--blue-pale);
   }
 
   .nav-dropdown.open .dropdown-menu{
     display:flex;
-    flex-direction:column;
   }
 
 }
 
-/* =========================
-   HERO MOBILE FIX
-========================= */
+/* =================================================
+   ARTICLE LAYOUT FIX
+================================================= */
 
-@media(max-width:768px){
+.content-layout{
+  width:100%;
+  max-width:1100px;
 
-  .hero{
-    padding:70px 18px 60px;
-    text-align:center;
-  }
+  margin:auto;
 
-  .hero-content{
-    width:100%;
-    max-width:100%;
-  }
+  padding:40px 20px 80px;
 
-  .hero h1{
-    font-size:34px;
-    line-height:1.25;
-    word-break:break-word;
-  }
+  display:grid;
 
-  .hero p{
-    font-size:15px;
-    line-height:1.7;
-  }
+  grid-template-columns:1fr 320px;
 
-  .hero-btns{
-    flex-direction:column;
-    align-items:center;
-    width:100%;
-  }
+  gap:32px;
+}
 
-  .hero-btn{
-    width:100%;
-    max-width:280px;
-    justify-content:center;
-    text-align:center;
+@media(max-width:900px){
+
+  .content-layout{
+    grid-template-columns:1fr;
+    padding:30px 16px 60px;
   }
 
 }
 
-/* =========================
-   GRID FIX
-========================= */
+/* =================================================
+   ARTICLE BODY FIX
+================================================= */
 
-@media(max-width:768px){
-
-  .tools-grid,
-  .footer-inner{
-    grid-template-columns:1fr !important;
-  }
-
-  .tool-card{
-    width:100%;
-    padding:22px;
-  }
-
-}
-
-/* =========================
-   CTA FIX
-========================= */
-
-@media(max-width:768px){
-
-  .cta{
-    padding:40px 20px;
-    border-radius:20px;
-  }
-
-  .cta h2{
-    font-size:28px;
-    line-height:1.3;
-  }
-
-}
-
-/* =========================
-   FOOTER FIX
-========================= */
-
-@media(max-width:768px){
-
-  footer{
-    padding:50px 18px 24px;
-  }
-
-  .footer-inner{
-    gap:30px;
-  }
-
-  .footer-bottom{
-    text-align:center;
-    font-size:13px;
-  }
-
-}
-
-/* =========================
-   EXTRA OVERFLOW FIXES
-========================= */
-
-.container,
-.hero-content,
-.section-title,
-.tool-card,
-.cta,
-.footer-inner{
+.article-body{
   width:100%;
   max-width:100%;
+
+  background:#fff;
+
+  border-radius:18px;
+
+  padding:40px 32px;
+
+  overflow:hidden;
 }
 
-/* Long text fix */
+@media(max-width:640px){
 
-h1,h2,h3,h4,p,a,span{
+  .article-body{
+    padding:24px 18px;
+  }
+
+}
+
+/* =================================================
+   FOOTER FIX
+================================================= */
+
+footer{
+  width:100%;
+  overflow:hidden;
+}
+
+.footer-inner{
+  width:100%;
+  max-width:1120px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:2fr 1fr 1fr 1fr;
+
+  gap:40px;
+}
+
+@media(max-width:900px){
+
+  .footer-inner{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .footer-inner{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =================================================
+   TEXT OVERFLOW FIX
+================================================= */
+
+h1,h2,h3,h4,p,a,span,li{
   overflow-wrap:break-word;
   word-wrap:break-word;
 }
-   
+  
 </style>
 </head>
 <body>
