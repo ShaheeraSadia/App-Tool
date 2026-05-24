@@ -52,6 +52,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
     /* ── NAV ── */
+ /* ── NAV ڈیسک ٹاپ کے لیے ── */
 nav {
   background: var(--white);
   border-bottom: 1px solid #dde6ff;
@@ -62,13 +63,27 @@ nav {
   height: 66px;
   position: sticky;
   top: 0;
-  z-index: 1000; /* اسے بڑھا کر 1000 کر دیں */
+  z-index: 1000;
   box-shadow: 0 2px 16px rgba(43,79,216,0.07);
 }
 
-/* ── Mobile Responsive Fix ── */
+.nav-links { 
+  display: flex; /* یہ لائن ڈیسک ٹاپ کے لیے لازمی ہے */
+  gap: 4px; 
+  list-style: none; 
+  align-items: center; 
+}
+
+.menu-toggle { 
+  display: none; /* ڈیسک ٹاپ پر بٹن نہیں دکھے گا */
+  flex-direction: column; 
+  cursor: pointer; 
+  gap: 5px; 
+}
+
+/* ── موبائل کے لیے میڈیا کیوری ── */
 @media (max-width: 960px) {
-  nav { padding: 0 20px; }
+  .menu-toggle { display: flex; } /* موبائل پر بٹن شو ہو جائے گا */
   
   .nav-links { 
     position: fixed; 
@@ -81,19 +96,14 @@ nav {
     align-items: center; 
     padding: 40px 20px; 
     transition: 0.3s ease-in-out; 
-    z-index: 999; /* یہ nav سے چھوٹا ہونا چاہیے تاکہ nav ہمیشہ اوپر رہے */
+    z-index: 999; 
     gap: 20px; 
     overflow-y: auto;
-    display: flex; /* یہ یقینی بنائیں کہ یہ ہمیشہ display میں ہو تاکہ ٹرانزیشن کام کرے */
   }
   
   .nav-links.active { left: 0; }
-  
-  /* باڈی کا اوور فلو کنٹرول */
-  body.menu-open {
-    overflow: hidden;
-    height: 100vh;
-  }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a { display: block; width: 100%; }
 }
 
     /* ── NAV ── 
@@ -908,19 +918,12 @@ iframe {
   
 // ── MOBILE MENU ──
  
-
-   const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+ const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
 
 menuToggle.addEventListener('click', () => {
-    // مینیو کھلنے کے لیے کلاس ٹوگل کریں
     navLinks.classList.toggle('active');
-    
-    // پوری باڈی کو فکس کرنے کے لیے کلاس ٹوگل کریں (یہ اوورلیپ روکتی ہے)
     document.body.classList.toggle('menu-open');
-    
-    // مینیو آئیکن کی اینیمیشن کے لیے
-    menuToggle.classList.toggle('is-active');
 });
  
 </script>
