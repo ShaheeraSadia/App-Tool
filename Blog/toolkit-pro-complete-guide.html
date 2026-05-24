@@ -734,7 +734,7 @@ nav{
 
 .article-body{
   width:100%;
-  max-width:800%;
+  max-width:100%;
 
   background:#fff;
 
@@ -789,6 +789,32 @@ footer{
     grid-template-columns:1fr;
   }
 
+}
+    @media (max-width: 768px) {
+  /* تمام کنٹینٹ کو بائیں طرف الائن کرنے کے لیے */
+  .article-body, 
+  .content-layout, 
+  .article-body p, 
+  .article-body li {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* کنٹینر کو مرکز میں رکھنے کے لیے */
+  .content-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  /* اگر کوئی مخصوص بلاک دائیں طرف جا رہا ہے تو اسے ٹھیک کرنے کے لیے */
+  .article-body {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }
 
 /* =================================================
