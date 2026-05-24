@@ -699,7 +699,6 @@ nav{
   }
 
 }
-
 /* =================================================
    ARTICLE LAYOUT FIX
 ================================================= */
@@ -708,22 +707,30 @@ nav{
   width:100%;
   max-width:1100px;
 
-  margin:auto;
+  margin:0 auto;
 
-  padding:40px 20px 80px;
+  padding:40px 20px 20px;
 
   display:grid;
 
   grid-template-columns:1fr 320px;
 
   gap:32px;
+
+  align-items:start;
 }
+
+/* MOBILE */
 
 @media(max-width:900px){
 
   .content-layout{
+
     grid-template-columns:1fr;
+
     padding:30px 16px 20px;
+
+    gap:20px;
   }
 
 }
@@ -733,7 +740,9 @@ nav{
 ================================================= */
 
 .article-body{
+
   width:100%;
+
   max-width:100%;
 
   background:#fff;
@@ -743,12 +752,16 @@ nav{
   padding:40px 32px;
 
   overflow:hidden;
+
+  box-sizing:border-box;
 }
 
 @media(max-width:640px){
 
   .article-body{
+
     padding:24px 18px;
+
   }
 
 }
@@ -758,15 +771,19 @@ nav{
 ================================================= */
 
 footer{
+
   width:100%;
+
   overflow:hidden;
 }
 
 .footer-inner{
+
   width:100%;
+
   max-width:1120px;
 
-  margin:auto;
+  margin:0 auto;
 
   display:grid;
 
@@ -778,7 +795,9 @@ footer{
 @media(max-width:900px){
 
   .footer-inner{
+
     grid-template-columns:1fr 1fr;
+
   }
 
 }
@@ -786,35 +805,50 @@ footer{
 @media(max-width:640px){
 
   .footer-inner{
+
     grid-template-columns:1fr;
+
+    gap:24px;
   }
 
 }
-    @media (max-width: 768px) {
-  /* تمام کنٹینٹ کو بائیں طرف الائن کرنے کے لیے */
-  .article-body, 
-  .content-layout, 
-  .article-body p, 
-  .article-body li {
-    text-align: center !important;
-    margin-left:10 !important;
-    margin-right: 10 !important;
+
+/* =================================================
+   MOBILE OVERFLOW FIX
+================================================= */
+
+@media(max-width:768px){
+
+  .content-layout{
+
+    width:100%;
+
+    padding-left:14px;
+
+    padding-right:14px;
   }
 
-  /* کنٹینر کو مرکز میں رکھنے کے لیے */
-  .content-layout {
-    display: flex !important;
-    flex-direction:column !important;
-    align-items: center !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+  .article-body{
+
+    width:100%;
+
+    margin:0 auto;
+
+    text-align:left;
+
+    overflow:hidden;
   }
 
-  /* اگر کوئی مخصوص بلاک دائیں طرف جا رہا ہے تو اسے ٹھیک کرنے کے لیے */
-  .article-body {
-    width: 100% !important;
-    box-sizing: border-box !important;
+  .article-body p,
+  .article-body li,
+  .article-body h1,
+  .article-body h2,
+  .article-body h3,
+  .article-body h4{
+
+    text-align:left;
   }
+
 }
 
 /* =================================================
@@ -822,9 +856,22 @@ footer{
 ================================================= */
 
 h1,h2,h3,h4,p,a,span,li{
+
   overflow-wrap:break-word;
+
   word-wrap:break-word;
 }
+
+/* Prevent horizontal scroll */
+
+html,
+body{
+
+  overflow-x:hidden;
+
+  width:100%;
+}
+ 
   
 </style>
 </head>
