@@ -23,7 +23,7 @@
   {
     "id": "71",
     "title": "MissNina Floral Silky Kimono Long Robe",
-    "amazonLink": "https://amzn.to/42ObFrF",
+    "amazonLink": "https://amzn.to/4dt6VOk",
     "description": "Women's long silky kimono robe with beautiful floral patterns. Ideal for loungewear and relaxation.",
     "pubDate": "2026-05-24T12:00:00+05:00",
     "image": "https://app-tool.vercel.app/image/bride.jpg",
@@ -46,7 +46,7 @@
     "amazonLink": "https://amzn.to/3RDRjij",
     "description": "Luxury lightweight kimono bathrobe for women with convenient pockets and floral trim. High-quality silk satin finish.",
     "pubDate": "2026-05-24T12:00:00+05:00",
-    "image": "https://app-tool.vercel.app/image/silksatin.jpg",
+    "image": "https://app-tool.vercel.app/image/silk.pg.jpg",
     "btnColor": "linear-gradient(135deg, #1a3199, #3d72d4)",
     "price": {
       "original": 35.99,
@@ -66,10 +66,10 @@
   {
     "id": "73",
     "title": "MissNina Floral Silky Kimono Robe (Variation)",
-    "amazonLink": "https://amzn.to/4nVP1XZ",
+    "amazonLink": "https://amzn.to/42ObFrF",
     "description": "Premium women's floral patterned silky kimono robe. Lightweight design perfect for comfortable sleepwear and daily loungewear.",
     "pubDate": "2026-05-24T12:05:00+05:00",
-    "image": "https://app-tool.vercel.app/image/sleepwear.jpg",
+    "image": "https://app-tool.vercel.app/image/womenfloral.jpg",
     "btnColor": "linear-gradient(135deg, #ff6eb4, #ff9a9e)",
     "price": {
       "original": 19.99,
