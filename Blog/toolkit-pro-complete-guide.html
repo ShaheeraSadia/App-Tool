@@ -22,107 +22,87 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
-    /* ── TOKENS ── */
-    :root{
-      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
-      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
-      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
-      --bg:#f5f8ff;--white:#ffffff;--radius:16px;
-      --shadow:0 4px 24px rgba(43,79,216,0.09);
-      --shadow-md:0 12px 36px rgba(43,79,216,0.15);
-    }
+  /* ── TOKENS ── */
+:root {
+  --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+  --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+  --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+  --bg:#f5f8ff;--white:#ffffff;--radius:16px;
+  --shadow:0 4px 24px rgba(43,79,216,0.09);
+  --shadow-md:0 12px 36px rgba(43,79,216,0.15);
+}
 
-    /* ── RESET ── */
-    *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.8;
-      overflow-x: hidden;
-      margin: 0;         /* اس بات کو یقینی بنائیں */
-      padding: 0;
-    }
+/* ── RESET ── */
+*, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
-    /* ══════════════════════════════
-       NAV
-    ══════════════════════════════ */
-    nav{
-      background:var(--white);border-bottom:1px solid #dde6ff;
-      padding:0 40px;display:flex;align-items:center;
-      justify-content:space-between;height:66px;
-      position:sticky;top:0;z-index:9999;width:100%;
-      box-shadow:0 2px 16px rgba(43,79,216,0.07);
-    }
-    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
-    .nav-logo i{color:var(--blue);font-size:18px}
-    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
-    .nav-logo-text em{color:var(--pink);font-style:normal}
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  padding-top: 66px; /* نیو بار کے لیے جگہ */
+}
 
-    /* Desktop links */
-    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;white-space:nowrap}
-    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
-    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
-    .nav-shop:hover{opacity:.9!important}
+/* ══════════════════════════════
+   FIXED NAVBAR
+══════════════════════════════ */
+nav{
+  background:var(--white);border-bottom:1px solid #dde6ff;
+  padding:0 40px;display:flex;align-items:center;
+  justify-content:space-between;height:66px;
+  position:fixed;top:0;left:0;z-index:9999;width:100%;
+  box-shadow:0 2px 16px rgba(43,79,216,0.07);
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.nav-logo i{color:var(--blue);font-size:18px}
+.nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+.nav-logo-text em{color:var(--pink);font-style:normal}
 
-    /* Hamburger — HIDDEN on desktop */
-    .menu-toggle{
-      display:none;flex-direction:column;justify-content:center;
-      cursor:pointer;gap:5px;z-index:10001;flex-shrink:0;
-      background:none;border:none;padding:4px;
-    }
-    .menu-toggle .bar{
-      display:block;width:25px;height:3px;
-      background:var(--blue-dark);border-radius:2px;transition:.3s;
-    }
+/* Desktop links */
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
+.nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
+.nav-shop:hover{opacity:.9!important}
 
-    /* ── MOBILE NAV ── */
-    @media(max-width:960px){
-      nav{padding:0 16px}
+/* Hamburger */
+.menu-toggle{display:none;flex-direction:column;justify-content:center;cursor:pointer;gap:5px;z-index:10001;background:none;border:none;padding:4px}
+.menu-toggle .bar{display:block;width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s}
 
-      /* Show hamburger */
-      .menu-toggle{display:flex}
+/* ── MOBILE NAV ── */
+@media(max-width:960px){
+  nav{padding:0 16px}
+  .menu-toggle{display:flex}
+  .nav-links{position:fixed;top:66px;left:-100%;width:75%;max-width:300px;height:calc(100vh - 66px);background:var(--white);flex-direction:column;align-items:flex-start;padding:20px 0;transition:left .35s ease;box-shadow:4px 0 20px rgba(0,0,0,0.12);z-index:10000;overflow-y:auto}
+  .nav-links.active{left:0}
+  .nav-links li{width:100%}
+  .nav-links a{padding:14px 24px;display:block;border-bottom:1px solid #eef2ff}
+}
 
-      /* Hide desktop links, slide in from left */
-      .nav-links{
-        position:fixed;top:66px;left:-100%;
-        width:75%;max-width:300px;height:calc(100vh - 66px);
-        background:var(--white);flex-direction:column;
-        align-items:flex-start;padding:20px 0;
-        transition:left .35s ease;
-        box-shadow:4px 0 20px rgba(0,0,0,0.12);
-        z-index:10000;gap:0;overflow-y:auto;
-      }
-      .nav-links.active{left:0}
-      .nav-links li{width:100%}
-      .nav-links a{
-        font-size:15px;padding:14px 24px;display:block;
-        border-bottom:1px solid #eef2ff;border-radius:0;
-        color:var(--text);font-weight:500;
-      }
-      .nav-links a:hover,.nav-links a.active{
-        background:var(--blue-pale);color:var(--blue)
-      }
-      .nav-shop{
-        margin:12px 24px 0!important;border-radius:10px!important;
-        text-align:center!important;
-      }
+/* ══════════════════════════════
+   LAYOUT (CENTERED)
+══════════════════════════════ */
+.content-layout {
+  max-width: 1100px;
+  width: 95%;
+  margin: 0 auto; 
+  padding: 36px 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
 
-      /* Hamburger X animation */
-      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
-      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:900px){
+  .content-layout { grid-template-columns: 1fr; width: 95%; padding: 24px 0 60px; }
+}
 
-      /* Overlay when menu is open */
-      .nav-overlay{
-        display:none;position:fixed;inset:0;top:66px;
-        background:rgba(0,0,0,.35);z-index:9998;
-      }
-      .nav-overlay.active{display:block}
-    }
+/* باقی تمام پرانا کوڈ یہاں موجود رہے گا (میں نے اسے ہٹایا نہیں ہے، آپ اپنے فائل میں اسے نیچے ویسے ہی رہنے دیں) */
+/* (Hero, Article Body, Stats, FAQ, Footer etc remain same) */
 
     /* ══════════════════════════════
        HERO
@@ -143,29 +123,7 @@
     .article-hero h1{font-family:'Lora',serif;font-size:clamp(24px,4vw,44px);font-weight:700;line-height:1.25;margin-bottom:14px}
     .article-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;opacity:.85}
     .article-meta span{display:flex;align-items:center;gap:5px}
-
-    
- /* ══════════════════════════════
-       LAYOUT (فکسڈ)
-    ══════════════════════════════ */
-    .content-layout {
-      max-width: 1100px;
-      width: 95%;        /* یہ اسکرین کے کناروں سے کنٹینٹ کو دور رکھے گا */
-      margin: 0 auto;    /* یہ اہم ہے: یہ پورے بلاک کو مرکز میں لاتا ہے */
-      padding: 36px 0 80px;
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 32px;
-      align-items: start;
-    }
-    
-    @media(max-width:900px){
-      .content-layout {
-        grid-template-columns: 1fr;
-        padding: 24px 16px 60px;
-        width: 100%;     /* موبائل پر پوری چوڑائی */
-      }
-    }
+ 
 
     /* ══════════════════════════════
        ARTICLE BODY
