@@ -84,7 +84,43 @@
       .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     }
+/* Prevent elements from overlapping on mobile */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.item {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+  }
+}
 
     .hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; text-align: center; padding: 80px 20px; }
     .page-wrap { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
