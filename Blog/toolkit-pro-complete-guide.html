@@ -213,9 +213,31 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
       .footer-inner{grid-template-columns:1fr;gap:20px}
       .footer-bottom{flex-direction:column;text-align:center}
     }
-    @media (max-width: 900px) {
+
+
+    /* موبائل پر ہیمبرگر مینو دکھانے کے لیے */
+.menu-toggle {
+  display: none; /* ڈیسک ٹاپ پر چھپا رہے */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.menu-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--blue-dark);
+}
+
+@media (max-width: 900px) {
+  /* ہیمبرگر بٹن دکھائیں */
+  .menu-toggle { display: block; }
+
+  /* مینو کو موبائل پر سٹائل کریں */
   .nav-links {
-    display: none; /* موبائل پر مینو چھپا دیں */
+    display: none; 
     position: absolute;
     top: 66px;
     left: 0;
@@ -223,25 +245,15 @@ nav { background: var(--white); border-bottom: 1px solid #dde6ff; padding: 0 40p
     background: var(--white);
     flex-direction: column;
     padding: 20px;
+    border-bottom: 2px solid var(--blue-light);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
-  .nav-links.active {
-    display: flex; /* کلک کرنے پر دکھائیں */
-  }
-  .menu-toggle {
-    display: block; /* ہیمبرگر بٹن دکھائیں */
-  }
-}
-    /* ── موبائل کے لیے اصلاحات ── */
-@media (max-width: 900px) {
+  .nav-links.active { display: flex !important; }
+
+  /* مین لے آؤٹ */
   .content-layout { 
-    grid-template-columns: 1fr !important; /* موبائل پر سائیڈ بار نیچے چلی جائے گی */
-    width: 95% !important; 
-    padding: 20px 10px !important;
-  }
-  
-  /* تصویروں اور ٹیبل کو اسکرین سے باہر نکلنے سے روکنے کے لیے */
-  img, .comp-table, .ad-slot {
-    max-width: 100% !important;
+    grid-template-columns: 1fr !important; 
+    padding: 20px 15px !important;
   }
 }
   </style>
