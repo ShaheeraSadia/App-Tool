@@ -391,23 +391,7 @@ html{
   width:100%;
   overflow-x:hidden;
 }
-
- body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-* {
-  box-sizing: border-box;
-}
-
-  /* IMPORTANT */
-  padding-top:72px;
-}
+ 
 
 /* Prevent overflow */
 
@@ -697,7 +681,97 @@ nav{
   }
 
 }
- 
+ /* =================================================
+   RESET + GLOBAL FIX
+================================================= */
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* =================================================
+   BODY FIX
+================================================= */
+
+body{
+
+  font-family:'DM Sans',sans-serif;
+
+  background:var(--bg);
+
+  color:var(--text);
+
+  width:100%;
+
+  max-width:100%;
+
+  overflow-x:hidden;
+
+  margin:0 auto;
+
+  line-height:1.7;
+
+  /* SPACE FOR FIXED NAVBAR */
+  padding-top:72px;
+}
+
+/* =================================================
+   CENTER PAGE CONTENT
+================================================= */
+
+main,
+section,
+.container,
+.content-layout,
+.article-body,
+.footer-inner{
+
+  width:100%;
+
+  margin-left:auto;
+
+  margin-right:auto;
+}
+
+/* =================================================
+   PREVENT OVERFLOW
+================================================= */
+
+img,
+video,
+iframe,
+canvas,
+svg{
+
+  max-width:100%;
+
+  height:auto;
+
+  display:block;
+}
+
+/* =================================================
+   MOBILE FIX
+================================================= */
+
+@media(max-width:768px){
+
+  body{
+
+    padding-top:64px;
+  }
+
+}
   
 </style>
 </head>
