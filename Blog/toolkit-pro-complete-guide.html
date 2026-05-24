@@ -339,25 +339,20 @@ nav {
 <div class="nav-overlay" id="navOverlay"></div>
 
 <!-- NAV -->
-<nav>
+  <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-
-  <!-- Hamburger button -->
-  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px"></i>Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/Blog/toolkit-pro-complete-guide.html" class="active"><i class="fas fa-newspaper" style="margin-right:4px;font-size:11px"></i>Blog</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px"></i>Shop</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html" class="active"><i class="fas fa-paint-brush" style="margin-right:4px;font-size:11px;"></i>Art Tool</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
   </ul>
 </nav>
 
@@ -817,28 +812,23 @@ nav {
 /* ════════════════════════════════
    MOBILE MENU — clean, no crash
 ════════════════════════════════ */
-const menuBtn    = document.getElementById('mobile-menu');
-const navLinks   = document.getElementById('nav-links');
-const navOverlay = document.getElementById('navOverlay');
+  
+    const mb = document.getElementById('mobile-menu');
+    const nl = document.getElementById('nav-links');
 
-function openMenu(){
-  navLinks.classList.add('active');
-  navOverlay.classList.add('active');
-  menuBtn.classList.add('is-active');
-  menuBtn.setAttribute('aria-expanded','true');
-}
-function closeMenu(){
-  navLinks.classList.remove('active');
-  navOverlay.classList.remove('active');
-  menuBtn.classList.remove('is-active');
-  menuBtn.setAttribute('aria-expanded','false');
-}
+    if (mb && nl) {
+        mb.addEventListener('click', () => {
+            nl.classList.toggle('active');
+            mb.classList.toggle('is-active');
+        });
 
-menuBtn.addEventListener('click', e => {
-  e.stopPropagation();
-  navLinks.classList.contains('active') ? closeMenu() : openMenu();
-});
-
+        document.addEventListener('click', e => {
+            if (!mb.contains(e.target) && !nl.contains(e.target)) {
+                nl.classList.remove('active');
+                mb.classList.remove('is-active');
+            }
+        });
+    }
 /* Close when overlay (dark area) is tapped */
 navOverlay.addEventListener('click', closeMenu);
 
