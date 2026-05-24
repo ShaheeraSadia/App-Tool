@@ -51,8 +51,52 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-
     /* ── NAV ── */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid #dde6ff;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* اسے بڑھا کر 1000 کر دیں */
+  box-shadow: 0 2px 16px rgba(43,79,216,0.07);
+}
+
+/* ── Mobile Responsive Fix ── */
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  
+  .nav-links { 
+    position: fixed; 
+    top: 66px; 
+    left: -100%; 
+    width: 100%; 
+    height: calc(100vh - 66px); 
+    background: var(--white); 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 40px 20px; 
+    transition: 0.3s ease-in-out; 
+    z-index: 999; /* یہ nav سے چھوٹا ہونا چاہیے تاکہ nav ہمیشہ اوپر رہے */
+    gap: 20px; 
+    overflow-y: auto;
+    display: flex; /* یہ یقینی بنائیں کہ یہ ہمیشہ display میں ہو تاکہ ٹرانزیشن کام کرے */
+  }
+  
+  .nav-links.active { left: 0; }
+  
+  /* باڈی کا اوور فلو کنٹرول */
+  body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+    /* ── NAV ── 
     nav {
       background: var(--white); border-bottom: 1px solid #dde6ff;
       padding: 0 40px; display: flex; align-items: center;
@@ -70,23 +114,41 @@
     .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
     .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
     
-    /* Mobile Menu */
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
-    .menu-toggle .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; }
     @media (max-width: 960px) {
-      nav { padding: 0 20px; }
-      .menu-toggle { display: flex; }
-      .nav-links { position: fixed; top: 66px; left: -100%; width: 80%; height: 100vh; background: var(--white); flex-direction: column; align-items: flex-start; padding: 30px 20px; transition: .4s ease; box-shadow: 10px 0 15px rgba(0,0,0,0.1); z-index: 1000; gap: 12px; }
-      .nav-links.active { left: 0; }
-      .nav-links li { width: 100%; }
-      .nav-links a { font-size: 16px; padding: 12px; display: block; border-bottom: 1px solid var(--blue-pale); }
-      .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
-      .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    }
-/* Prevent elements from overlapping on mobile */
-* {
-  box-sizing: border-box;
+  nav { padding: 0 20px; }
+  .menu-toggle { display: flex; }
+  
+  .nav-links { 
+    position: fixed; 
+    top: 66px; 
+    left: -100%;  
+    height: calc(100vh - 66px); 
+    background: var(--white); 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 40px 20px; 
+    transition: 0.3s ease-in-out; 
+    box-shadow: none; 
+    z-index: 1000; 
+    gap: 20px; 
+    overflow-y: auto; 
+  }
+  
+  .nav-links.active { left: 0; }
+  
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a { 
+    font-size: 18px; 
+    padding: 15px; 
+    display: block; 
+    border-bottom: 1px solid var(--blue-pale); 
+    width: 100%;
+  }/*
+  
+  /* اس کو یقینی بنائیں کہ اوورلیپ نہ ہو 
+  body.menu-open {
+    overflow: hidden; 
+  }
 }
 
 body {
@@ -121,7 +183,7 @@ iframe {
     width: 100%;
   }
 }
-
+*/
     .hero { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); color: white; text-align: center; padding: 80px 20px; }
     .page-wrap { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     /* ── HERO ── */
