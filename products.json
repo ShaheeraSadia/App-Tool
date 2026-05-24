@@ -1,4 +1,39 @@
 [
+  {
+  "id": "75",
+  "title": "MissNina Women's Floral Silky Kimono Robe",
+  "amazonLink": "https://amzn.to/4nVP1XZ",
+  "description": "Experience comfort with this premium silky kimono robe. Featuring a sophisticated floral pattern and lightweight satin fabric, this piece is perfect for loungewear, getting ready for weddings, or relaxing at home.",
+  "pubDate": "2026-05-24T12:25:00+05:00",
+  "image": "https://app-tool.vercel.app/image/womenfloral.jpg",
+  "btnColor": "linear-gradient(135deg, #ff6eb4, #ff9a9e)",
+  "price": {
+    "original": 19.99,
+    "sale": 13.52,
+    "currency": "USD",
+    "discount_percentage": 32
+  },
+  "brand": "MissNina",
+  "color": "Floral-Multi",
+  "dimensions": {
+    "length": "Long",
+    "material": "Satin/Silk blend"
+  },
+  "features": [
+    "Floral Pattern Print",
+    "Lightweight Silky Fabric",
+    "Versatile Loungewear Style"
+  ],
+  "availability": "in stock",
+  "condition": "new",
+  "category": "Fashion",
+  "tags": [
+    "floral kimono",
+    "silky robe",
+    "loungewear",
+    "women's sleepwear"
+  ]
+},
 
   {
     "id": "70",
