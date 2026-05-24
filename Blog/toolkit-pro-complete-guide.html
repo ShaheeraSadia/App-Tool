@@ -447,6 +447,101 @@ canvas {
     overflow-x: auto;
   }
 }
+    /* FIX RIGHT SIDE OVERFLOW ON MOBILE */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* PREVENT ELEMENTS FROM GOING OUTSIDE SCREEN */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* FIX GRID + FLEX OVERFLOW */
+.content-layout,
+.footer-inner,
+.article-body,
+.sidebar,
+.tool-showcase,
+.comp-table,
+.stats-row,
+.author-box,
+.cta-box,
+.sb-card {
+  min-width: 0;
+}
+
+/* FIX TABLE OVERFLOW */
+.comp-table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* FIX MOBILE */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  nav {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .content-layout {
+    grid-template-columns: 1fr !important;
+    padding: 20px 12px 50px !important;
+    gap: 20px;
+  }
+
+  .article-body,
+  .sidebar,
+  .sb-card,
+  .cta-box,
+  .author-box,
+  .tool-showcase,
+  .tool-showcase-body,
+  .tool-showcase-hd {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+
+  .article-body {
+    padding: 20px 16px !important;
+  }
+
+  .article-body h1,
+  .article-body h2,
+  .article-body h3 {
+    word-break: break-word;
+  }
+
+  .article-body p,
+  .article-body li,
+  .article-body a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  img,
+  iframe,
+  video,
+  canvas {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
