@@ -35,8 +35,16 @@
     /* ── RESET ── */
     *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
     html { scroll-behavior: smooth; overflow-x: hidden; }
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
-    img,video,iframe,canvas,table{max-width:100%;height:auto}
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
+      margin: 0;         /* اس بات کو یقینی بنائیں */
+      padding: 0;
+    }
 
     /* ══════════════════════════════
        NAV
@@ -136,27 +144,26 @@
     .article-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;opacity:.85}
     .article-meta span{display:flex;align-items:center;gap:5px}
 
-    /* ══════════════════════════════
-       LAYOUT
+    
+ /* ══════════════════════════════
+       LAYOUT (فکسڈ)
     ══════════════════════════════ */
-    /* ══════════════════════════════
-       LAYOUT (یہ حصہ بدل دیں)
-    ══════════════════════════════ */
-    .content-layout{
-      max-width:1100px;
-      margin:0 auto;
-      padding:36px 24px 80px;
-      display:grid;
-      grid-template-columns:1fr 300px;
-      gap:32px;
-      align-items:start;
-      width: 100%; /* یہ لائن بہت ضروری ہے */
+    .content-layout {
+      max-width: 1100px;
+      width: 95%;        /* یہ اسکرین کے کناروں سے کنٹینٹ کو دور رکھے گا */
+      margin: 0 auto;    /* یہ اہم ہے: یہ پورے بلاک کو مرکز میں لاتا ہے */
+      padding: 36px 0 80px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 32px;
+      align-items: start;
     }
+    
     @media(max-width:900px){
-      .content-layout{
-        grid-template-columns:1fr;
-        padding:24px 16px 60px;
-        width: 100%; /* یہ بھی ضروری ہے */
+      .content-layout {
+        grid-template-columns: 1fr;
+        padding: 24px 16px 60px;
+        width: 100%;     /* موبائل پر پوری چوڑائی */
       }
     }
 
