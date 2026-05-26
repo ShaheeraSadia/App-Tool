@@ -296,112 +296,55 @@
   }
 }
  
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-img,
-video,
-iframe,
-canvas {
-  max-width: 100%;
-  height: auto;
-}
-
-/* KEEP NAVBAR VISIBLE */
-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-  background: #fff;
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
-  }
-
-  nav {
-    padding: 0 15px;
-  }
-
-  .hero {
-    padding: 60px 15px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .hero-stats,
-  .form-row,
-  .about-wrap,
-  .tip-item,
-  .footer-bottom {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .content-layout,
-  .resource-cards,
-  .articles-grid,
-  .tools-grid,
-  .footer-inner {
-    display: grid;
-    grid-template-columns: 1fr !important;
-  }
-
-  .contact-wrap,
-  .tips-header,
-  .tip-item,
-  .about-wrap,
-  .tool-card,
-  .res-card,
-  .article-body {
-    padding: 20px;
-  }
-
-  .nav-links {
-    width: 100%;
-    overflow-y: auto;
-  }
-
-  .stat {
-    width: 100%;
-    text-align: center;
-  }
-}
+ 
   </style>
 </head>
 <body>
 
 <!-- NAV -->
   
-<nav>
-  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+ <!-- NAV OVERLAY (closes menu when tapping outside) -->
+ <nav id="home">
+  <a href="/" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px"></i>Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html" class="active"><i class="fas fa-book" style="margin-right:4px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px"></i>Shop</a></li>
+    <li><a href="/" class="active"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li class="nav-dropdown">
+      <a href="#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a>
+      <div class="dropdown-menu">
+        <a href="#uploadArea"><i class="fas fa-compress-arrows-alt"></i>Image Compressor</a>
+        <a href="#palette-section"><i class="fas fa-palette"></i>Color Palette Extractor</a>
+        <a href="#nature-designer"><i class="fas fa-leaf"></i>Nature Quote Designer</a>
+      </div>
+    </li>
+  
+    <li class="nav-dropdown">
+      <a href="#"><i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i>PDF Tools</a>
+      <div class="dropdown-menu">
+        <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i>PDF Compressor</a>
+        <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i>Merge PDF</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="#qr-section"><i class="fas fa-qrcode" style="margin-right:4px;font-size:11px;"></i>More Tools</a>
+      <div class="dropdown-menu">
+        <a href="#qr-section"><i class="fas fa-qrcode"></i>QR Code Generator</a>
+      </div>
+    </li>
+ 
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
+ <!--   <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>-->
+    <li>
+  <a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">
+    <i class="fas fa-shopping-bag" style="font-size: 11px;"></i> 
+    <span>Shop</span>
+  </a>
+</li>
   </ul>
 </nav>
 
