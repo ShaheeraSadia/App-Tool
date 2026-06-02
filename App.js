@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  
+import Navbar from './Navbar'; // نیوی گیشن بار کا امپورٹ
 import Resources from './Resources';
-import ShoppingPage from './ShoppingPage,
+import ShoppingPage from './ShoppingPage'; // کوما (,) ہٹا کر سیمی کولن فکس کر دیا گیا ہے
 import ToolkitPro from './ToolkitPro'; 
+import TermsAndConditions from './TermsAndConditions';
 
 function App() {
   return (
@@ -12,10 +14,12 @@ function App() {
         {/* نیوی گیشن بار */}
         <Navbar />
 
+        {/* تمام راؤٹس کا مین کنٹینر */}
         <Routes>
-          {/* ہوم پیج راؤٹ */}
+          
+          {/* 1. ہوم پیج راؤٹ */}
           <Route path="/" element={
-            <div className="p-10 bg-white shadow-lg rounded-3xl text-center border border-dashed max-w-4xl mx-auto mt-10">
+            <div className="p-10 bg-white shadow-lg rounded-3xl text-center border border-dashed max-w-4xl mx-auto mt-10 mb-10">
               <h2 className="text-2xl font-bold text-gray-800">Image Compressor is Active Below</h2>
               <div className="mt-8">
                 <ToolkitPro />
@@ -29,15 +33,55 @@ function App() {
             </div>
           } />
 
-          {/* شاپنگ پیج راؤٹ */}
+          {/* 2. شاپنگ پیج راؤٹ */}
           <Route path="/shopping" element={<ShoppingPage />} />
 
-          {/* ریسورسز پیج راؤٹ - یہ لائن سب سے اہم ہے */}
+          {/* 3. ریسورسز پیج راؤٹ */}
           <Route path="/resources" element={<Resources />} />
+
+          {/* 4. ٹرمز اینڈ کنڈیشنز پیج راؤٹ (اب یہ بالکل صحیح جگہ پر ہے) */}
+          <Route path="/terms" element={<TermsAndConditions />} />
+
         </Routes>
       </div>
     </Router>
   );
 }
 
-export default App; 
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
