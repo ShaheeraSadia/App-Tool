@@ -5,7 +5,7 @@ import Navbar from './Navbar'; // نیوی گیشن بار کا امپورٹ
 import Resources from './Resources';
 import ShoppingPage from './ShoppingPage'; // کوما (,) ہٹا کر سیمی کولن فکس کر دیا گیا ہے
 import ToolkitPro from './ToolkitPro'; 
-import TermsAndConditions from './TermsAndConditions';
+ 
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
               
               {/* Pinterest Stats Banner */}
               <div className="w-full bg-red-600 text-white p-6 rounded-2xl mt-8">
-                <h3 className="text-3xl font-bold">32k+</h3>
+                <h3 className="text-3xl font-bold">97.5k</h3>
                 <p className="text-lg">Monthly Views on Pinterest</p>
               </div>
             </div>
@@ -39,8 +39,7 @@ function App() {
           {/* 3. ریسورسز پیج راؤٹ */}
           <Route path="/resources" element={<Resources />} />
 
-          {/* 4. ٹرمز اینڈ کنڈیشنز پیج راؤٹ (اب یہ بالکل صحیح جگہ پر ہے) */}
-          <Route path="/terms" element={<TermsAndConditions />} />
+          
 
         </Routes>
       </div>
