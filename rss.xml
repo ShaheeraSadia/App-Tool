@@ -109,7 +109,7 @@
        SHOPPING PRODUCTS
        All links point to YOUR domain (required by Pinterest)
        ══════════════════════════════ -->
-<!--
+ 
   <item>
     <title>Motorola razr+ 2023 — Unlocked Foldable Smartphone 8/256GB</title>
     <link>https://app-tool.vercel.app/shopping.html</link>
@@ -579,7 +579,7 @@
     <enclosure url="https://app-tool.vercel.app/image/silksatin.jpg" length="0" type="image/jpeg"/>
     <media:content url="https://app-tool.vercel.app/image/silksatin.jpg" medium="image" type="image/jpeg"/>
     <pubDate>Sun, 24 May 2026 12:05:00 +0500</pubDate>
-  </item>-->
+  </item> 
 </channel>
 </rss>
 
