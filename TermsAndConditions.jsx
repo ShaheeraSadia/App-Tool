@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const TermsAndConditions = () => {
+const TermsAndConditions = () => 
   // جب پیج لوڈ ہو تو یہ اسکرول کو سب سے اوپر لے جائے گا
   useEffect(() => {
     window.scrollTo(0, 0);
