@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        :root {
+      /*  :root {
             --primary: #7000cc;
             --bg-dark: #0f172a;
             --card-bg: #1e293b;
             --text-light: #f8fafc;
             --accent: #facc15;
             
-            /* ── Navbar Colors ── */
+            ── Navbar Colors ── 
             --white: #ffffff;
             --blue: #2563eb;
             --blue-dark: #1e3a8a;
@@ -35,8 +35,26 @@
             line-height: 1.8;
             font-family: 'Inter', sans-serif;
             margin: 0;
-        }
-
+        }*/
+    :root {
+      --blue:       #2b4fd8;
+      --blue-dark:  #1a3199;
+      --blue-mid:   #3d72d4;
+      --blue-light: #e8f0fe;
+      --blue-pale:  #f0f4ff;
+      --cyan:       #00b4db;
+      --pink:       #ff6eb4;
+      --text:       #1c1c1e;
+      --muted:      #6b7280;
+      --bg:         #f5f8ff;
+      --white:      #ffffff;
+      --radius:     16px;
+      --shadow:     0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:  0 12px 36px rgba(43,79,216,0.15);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
         /* ── NAV (FIXED & RESPONSIVE) ── */
         nav {
             background: var(--white) !important; 
