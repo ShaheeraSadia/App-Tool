@@ -185,6 +185,30 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       footer { padding: 40px 20px 24px; }
     }
+    a {
+    overflow-wrap: break-word;
+}
+
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
+
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
   </style>
 </head>
 <body>
