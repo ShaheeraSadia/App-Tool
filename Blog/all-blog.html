@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blog — Creator Guides & Digital Tips | Toolkit Pro by Shaheera Sadia</title>
+  <meta name="description" content="Free in-depth guides for digital creators — image optimization, Pinterest SEO, QR codes, color palettes, voice studio, art tools, and more. Written by Shaheera Sadia."/>
+  <meta name="keywords" content="image optimization blog, Pinterest SEO tips, free creator guides, digital creator blog, Toolkit Pro blog, Shaheera Sadia, web performance tips, aesthetic design guides"/>
+  <meta name="author" content="Shaheera Sadia"/>
+  <meta property="og:title" content="Blog — Creator Guides & Digital Tips | Toolkit Pro"/>
+  <meta property="og:description" content="Free in-depth guides for digital creators by Shaheera Sadia — image optimization, Pinterest SEO, voice tools, art tools and more."/>
+  <meta property="og:url" content="https://app-tool.vercel.app/Blog/allblog.html"/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://app-tool.vercel.app/Blog/allblog.html"/>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+  <!-- Pinterest Pixel -->
+  <script>
+    !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load','2613241474269');pintrk('page');
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+      --bg:#f5f8ff;--white:#ffffff;--radius:16px;
+      --shadow:0 4px 24px rgba(43,79,216,0.09);
+      --shadow-md:0 12px 36px rgba(43,79,216,0.15);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+    /* ── NAV ── */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
+    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001;background:none;border:none;padding:4px}
+    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .menu-toggle{display:flex}
+      .nav-links{position:fixed;top:66px;left:-100%;width:82%;max-width:320px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nav-links.active{left:0}
+      .nav-links li{width:100%}
+      .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
+      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--cyan) 100%);color:white;padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+    .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:18px;backdrop-filter:blur(4px)}
+    .hero h1{font-family:'Lora',serif;font-size:clamp(28px,5vw,48px);font-weight:700;margin-bottom:12px;line-height:1.2}
+    .hero h1 span{color:#7dd3fc;font-style:italic}
+    .hero p{font-size:16px;opacity:.9;max-width:500px;margin:0 auto 28px;line-height:1.75}
+    .hero-search{display:flex;gap:0;max-width:480px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+    .hero-search input{flex:1;padding:14px 18px;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;min-width:0}
+    .hero-search input::placeholder{color:var(--muted)}
+    .hero-search button{padding:12px 20px;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;border:none;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap}
+    .hero-search button:hover{opacity:.9}
+
+    /* ── FILTER TABS ── */
+    .filter-bar{background:var(--white);border-bottom:1px solid #dde6ff;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .filter-bar::-webkit-scrollbar{display:none}
+    .filter-inner{display:flex;align-items:center;gap:0;padding:0 24px;min-width:max-content;max-width:1200px;margin:0 auto}
+    .filter-tab{padding:14px 16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;font-family:'DM Sans',sans-serif;white-space:nowrap;transition:all .2s}
+    .filter-tab:hover{color:var(--blue)}
+    .filter-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+    /* ── PAGE WRAP ── */
+    .page-wrap{max-width:1200px;margin:0 auto;padding:36px 20px 80px}
+    @media(max-width:640px){.page-wrap{padding:24px 14px 60px}}
+
+    /* ── AD SLOT ── */
+    .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px 16px;color:var(--muted);font-size:13px;margin:32px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+
+    /* ── SECTION HEAD ── */
+    .sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+    .sec-head h2{font-family:'Lora',serif;font-size:22px;color:var(--text);font-weight:700}
+    .sec-head span{font-size:13px;color:var(--muted)}
+
+    /* ── FEATURED (large top card) ── */
+    .featured-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-md);border:1px solid #dde6ff;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:36px;transition:transform .3s,box-shadow .3s}
+    .featured-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(43,79,216,.18)}
+    .featured-img{min-height:280px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative}
+    .featured-body{padding:32px 36px;display:flex;flex-direction:column;justify-content:center}
+    .featured-badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+    .featured-body h2{font-family:'Lora',serif;font-size:clamp(20px,2.5vw,26px);color:var(--text);margin-bottom:12px;line-height:1.3}
+    .featured-body p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:20px}
+    .featured-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:18px}
+    .featured-meta span{display:flex;align-items:center;gap:5px}
+    .read-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:11px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;width:fit-content}
+    .read-btn:hover{opacity:.88;transform:translateY(-2px)}
+    @media(max-width:700px){.featured-card{grid-template-columns:1fr}.featured-img{min-height:160px;font-size:56px}.featured-body{padding:22px 20px}}
+
+    /* ── BLOG GRID ── */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    @media(max-width:960px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+
+    /* ── BLOG CARD ── */
+    .blog-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+    .blog-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+    .blog-card-cover{height:140px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;flex-shrink:0}
+    .blog-card-badge{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.9);backdrop-filter:blur(4px);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+    .blog-card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+    .blog-card-body h3{font-family:'Lora',serif;font-size:16px;color:var(--text);margin-bottom:8px;line-height:1.4}
+    .blog-card-body p{font-size:13.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:14px}
+    .blog-meta{display:flex;gap:12px;font-size:11.5px;color:var(--muted);margin-bottom:12px;flex-wrap:wrap}
+    .blog-meta span{display:flex;align-items:center;gap:4px}
+    .blog-read{font-size:13px;font-weight:700;color:var(--blue);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-top:auto}
+    .blog-read:hover{text-decoration:underline}
+    .blog-card.hidden{display:none}
+
+    /* ── NEWSLETTER ── */
+    .newsletter{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:var(--radius);padding:40px 36px;text-align:center;color:white;margin:40px 0}
+    .newsletter h3{font-family:'Lora',serif;font-size:24px;margin-bottom:10px}
+    .newsletter p{font-size:14.5px;opacity:.9;margin-bottom:24px;line-height:1.65;max-width:480px;margin-left:auto;margin-right:auto}
+    .nl-form{display:flex;gap:0;max-width:420px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:10px;overflow:hidden}
+    .nl-form input{flex:1;padding:13px 16px;border:none;background:transparent;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;min-width:0}
+    .nl-form button{padding:12px 20px;background:var(--pink);color:white;border:none;font-size:13.5px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap}
+    @media(max-width:480px){.newsletter{padding:28px 20px}.nl-form{flex-direction:column;border-radius:10px;overflow:visible;background:none;gap:8px}.nl-form input{border-radius:10px;background:rgba(255,255,255,.95);padding:13px 16px}.nl-form button{border-radius:10px;padding:13px}}
+
+    /* ── CATEGORIES ── */
+    .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:36px}
+    .cat-card{background:var(--white);border-radius:12px;padding:18px 14px;text-align:center;border:1.5px solid #dde6ff;cursor:pointer;transition:all .2s;text-decoration:none}
+    .cat-card:hover,.cat-card.active-cat{border-color:var(--blue);background:var(--blue-pale)}
+    .cat-icon{font-size:24px;margin-bottom:8px;display:block}
+    .cat-name{font-size:13px;font-weight:700;color:var(--text)}
+    .cat-count{font-size:11px;color:var(--muted);margin-top:3px}
+
+    /* ── EMPTY STATE ── */
+    .empty-state{text-align:center;padding:64px 20px;color:var(--muted)}
+    .empty-state i{font-size:44px;display:block;margin-bottom:14px;opacity:.35}
+    .empty-state p{font-size:15px}
+
+    /* ── TAGS ── */
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+    .tag-pill{background:var(--blue-pale);color:var(--blue);font-size:12px;font-weight:600;padding:5px 13px;border-radius:20px;cursor:pointer;border:1.5px solid #dde6ff;transition:all .2s}
+    .tag-pill:hover{background:var(--blue);color:white;border-color:var(--blue)}
+
+    /* ── LOAD MORE ── */
+    .load-wrap{text-align:center;margin:36px 0}
+    .load-btn{padding:13px 36px;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;border:none;border-radius:11px;font-size:14.5px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+    .load-btn:hover{opacity:.9;transform:translateY(-2px)}
+
+    /* ── AUTHOR STRIP ── */
+    .author-strip{background:var(--blue-pale);border-radius:var(--radius);border:1px solid #c0d0f8;padding:24px 28px;display:flex;gap:18px;align-items:center;margin:40px 0;flex-wrap:wrap}
+    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .author-strip-info h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:3px}
+    .author-strip-info p{font-size:13.5px;color:#374a80;line-height:1.6}
+
+    /* ── FOOTER ── */
+    footer{background:linear-gradient(135deg,#0d1b5e 0%,#1a2f8a 100%);color:rgba(255,255,255,.85);padding:52px 40px 28px}
+    .aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1200px;margin-left:auto;margin-right:auto}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .footer-brand .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+    .footer-brand p{font-size:13px;opacity:.72;line-height:1.7;max-width:230px}
+    .footer-social{display:flex;gap:10px;margin-top:16px}
+    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
+    .fsb:hover{background:var(--blue);color:white}
+    .footer-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .footer-col ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+    .footer-col ul a:hover{color:#7dd3fc}
+    .footer-bottom{max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
+    .footer-bottom a{color:inherit;text-decoration:none}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){footer{padding:40px 20px 24px}.footer-inner{grid-template-columns:1fr;gap:24px}.footer-bottom{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
+    <li><a href="https://app-tool.vercel.app/Blog/allblog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag"> Creator Blog</span>
+    <h1>Tips & Guides for <span>Digital Creators</span></h1>
+    <p>In-depth tutorials on image optimization, Pinterest SEO, voice tools, art design, and everything a modern digital creator needs to know.</p>
+    <div class="hero-search">
+      <input type="text" id="searchInput" placeholder="Search articles — compression, Pinterest, QR codes..." oninput="handleSearch(this.value)"/>
+      <button onclick="handleSearch(document.getElementById('searchInput').value)"><i class="fas fa-search"></i> Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-tab active" onclick="filterPosts('all',this)">All Posts</button>
+    <button class="filter-tab" onclick="filterPosts('image',this)"> Image Optimization</button>
+    <button class="filter-tab" onclick="filterPosts('pinterest',this)"> Pinterest</button>
+    <button class="filter-tab" onclick="filterPosts('design',this)"> Design</button>
+    <button class="filter-tab" onclick="filterPosts('tools',this)"> Tools</button>
+    <button class="filter-tab" onclick="filterPosts('seo',this)">SEO</button>
+    <button class="filter-tab" onclick="filterPosts('voice',this)"> Voice</button>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- AD SLOT 1 — TOP -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- FEATURED ARTICLE -->
+  <div class="sec-head">
+    <h2>Featured Article</h2>
+  </div>
+
+  <a href="https://app-tool.vercel.app/Blog/toolkit-pro-complete-guide.html" class="featured-card" style="text-decoration:none">
+    <div class="featured-img" style="background:linear-gradient(135deg,#1a3199,#2b4fd8,#00b4db)">🛠️</div>
+    <div class="featured-body">
+      <span class="featured-badge"> Complete Guide</span>
+      <h2>Toolkit Pro Review 2026 — Every Free Tool Explained in One Complete Guide</h2>
+      <p>A thorough walkthrough of all 8 free tools on Toolkit Pro — Image Compressor, Color Extractor, QR Generator, Nature Designer, Art Studio, Voice Studio, Nature Gallery, and Shopping Picks. Learn what each tool does, who it is for, and how to get the most from it.</p>
+      <div class="featured-meta">
+        <span><i class="fas fa-user"></i> Shaheera Sadia</span>
+        <span><i class="fas fa-calendar"></i> May 23, 2026</span>
+        <span><i class="fas fa-clock"></i> 12 min read</span>
+      </div>
+      <span class="read-btn"><i class="fas fa-book-open"></i> Read Full Guide</span>
+    </div>
+  </a>
+
+  <!-- CATEGORIES -->
+  <div class="sec-head">
+    <h2>Browse by Category</h2>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterPosts('image', null)" data-cat="image">
+       
+      <div class="cat-name">Image Optimization</div>
+      <div class="cat-count">4 articles</div>
+    </div>
+    <div class="cat-card" onclick="filterPosts('pinterest', null)" data-cat="pinterest">
+      
+      <div class="cat-name">Pinterest SEO</div>
+      <div class="cat-count">2 articles</div>
+    </div>
+    <div class="cat-card" onclick="filterPosts('design', null)" data-cat="design">
+       
+      <div class="cat-name">Design Tips</div>
+      <div class="cat-count">2 articles</div>
+    </div>
+    <div class="cat-card" onclick="filterPosts('tools', null)" data-cat="tools">
+       
+      <div class="cat-name">Tools & Guides</div>
+      <div class="cat-count">2 articles</div>
+    </div>
+    <div class="cat-card" onclick="filterPosts('seo', null)" data-cat="seo">
+      
+      <div class="cat-name">SEO & Performance</div>
+      <div class="cat-count">2 articles</div>
+    </div>
+    <div class="cat-card" onclick="filterPosts('voice', null)" data-cat="voice">
+       
+      <div class="cat-name">Voice Studio</div>
+      <div class="cat-count">1 article</div>
+    </div>
+  </div>
+
+  <!-- ALL BLOG POSTS -->
+  <div class="sec-head">
+    <h2 id="gridTitle">All Articles</h2>
+    <span id="gridCount">11 articles</span>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+
+    <!-- 1 -->
+    <div class="blog-card" data-cat="image" data-title="how to compress images without losing quality">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">
+        
+        <span class="blog-card-badge">Image Optimization</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 6 min</span>
+        </div>
+        <h3>How to Compress Images Without Losing Quality</h3>
+        <p>Reduce file sizes by up to 80% without visible quality loss. Covers WebP, JPEG, and PNG formats with step-by-step tips for faster websites and better Pinterest performance.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="blog-card" data-cat="image" data-title="png vs jpg vs webp which image format should you use">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">
+        
+        <span class="blog-card-badge">Image Optimization</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min</span>
+        </div>
+        <h3>PNG vs JPG vs WebP — Which Image Format Should You Use?</h3>
+        <p>A complete comparison of the three most popular image formats. Find out which is best for your website, social media posts, and digital projects in 2026.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="blog-card" data-cat="tools" data-title="how qr codes work simple guide digital creators">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb)">
+        
+        <span class="blog-card-badge">Tools Guide</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min</span>
+        </div>
+        <h3>How QR Codes Work — A Simple Guide for Digital Creators</h3>
+        <p>Understand how QR codes work, how to generate them free in your browser, and the best ways to use QR codes in marketing, business cards, and social media campaigns.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- AD SLOT INLINE — after 3 cards -->
+    <div class="blog-card" style="grid-column:1/-1;padding:0;background:transparent;border:none;box-shadow:none" data-cat="ad">
+      <div class="ad-slot" style="margin:0;width:100%">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="blog-card" data-cat="seo pinterest" data-title="best image sizes social media 2026 complete guide">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">
+        
+        <span class="blog-card-badge">SEO & Social</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 6 min</span>
+        </div>
+        <h3>Best Image Sizes for Social Media in 2026 — Complete Guide</h3>
+        <p>The complete 2026 guide to optimal image dimensions for Pinterest, Instagram, Facebook, Twitter, and YouTube. Stop uploading the wrong sizes and get more reach.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="blog-card" data-cat="pinterest seo" data-title="pinterest image seo how to get more views">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#fce4ec,#e91e63,#c2185b)" style="background:linear-gradient(135deg,#fce4ec,#f48fb1)">
+        
+        <span class="blog-card-badge">Pinterest SEO</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 7 min</span>
+        </div>
+        <h3>Pinterest Image SEO — How to Get More Views on Pinterest</h3>
+        <p>Learn the Pinterest SEO strategies that grew our account to 87.6k monthly views. Covers pin design, keywords, board optimisation, and scheduling tips for creators.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="blog-card" data-cat="seo image" data-title="how to speed up website image optimization">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#fff8e1,#ffecb3)">
+        
+        <span class="blog-card-badge">Web Performance</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 6 min</span>
+        </div>
+        <h3>How to Speed Up Your Website with Image Optimization</h3>
+        <p>Images are the #1 cause of slow websites. Learn how to optimize for Core Web Vitals, improve Google PageSpeed scores, and boost your SEO rankings in 2026.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/how-to-speed-up-website-image.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- AD SLOT INLINE — after 6 cards -->
+    <div class="blog-card" style="grid-column:1/-1;padding:0;background:transparent;border:none;box-shadow:none" data-cat="ad">
+      <div class="ad-slot" style="margin:0;width:100%">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="blog-card" data-cat="design tools" data-title="how to extract color palettes from any image">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#ede7f6,#d1c4e9)">
+        
+        <span class="blog-card-badge">Design Tools</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min</span>
+        </div>
+        <h3>How to Extract Color Palettes from Any Image</h3>
+        <p>Learn how to extract beautiful HEX colour codes from any image using Toolkit Pro. Build cohesive brand palettes for Pinterest, Canva, and your website in seconds.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="blog-card" data-cat="design pinterest" data-title="how to create viral aesthetic quote cards for pinterest">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">
+        
+        <span class="blog-card-badge">Aesthetic Design</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 6 min</span>
+        </div>
+        <h3>How to Create Viral Aesthetic Quote Cards for Pinterest</h3>
+        <p>Step-by-step guide to designing aesthetic quote cards that go viral on Pinterest. Learn the design formula for pins that stop the scroll and drive thousands of views.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="blog-card" data-cat="seo image" data-title="why image optimization matters for seo 2026">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e8f5e9,#a5d6a7)">
+        
+        <span class="blog-card-badge">SEO</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min</span>
+        </div>
+        <h3>Why Image Optimization Matters for SEO in 2026</h3>
+        <p>Discover why image optimisation is now a critical Google ranking factor. Core Web Vitals, page speed, and alt text directly impact your search rankings and traffic.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- AD SLOT INLINE — after 9 cards -->
+    <div class="blog-card" style="grid-column:1/-1;padding:0;background:transparent;border:none;box-shadow:none" data-cat="ad">
+      <div class="ad-slot" style="margin:0;width:100%">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="blog-card" data-cat="voice tools" data-title="how to record your voice online free voice studio guide 2026">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e8eaf6,#9fa8da)">
+        
+        <span class="blog-card-badge">Voice Studio</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 20, 2026</span>
+          <span><i class="fas fa-clock"></i> 8 min</span>
+        </div>
+        <h3>How to Record Your Voice Online for Free — Complete Voice Studio Guide 2026</h3>
+        <p>Complete guide to recording your voice in the browser for free. Record, design cards, add background music, and download — all private, no server uploads.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/how-to-record-voice-online-free.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="blog-card" data-cat="tools" data-title="toolkit pro review 2026 all free tools explained">
+      <div class="blog-card-cover" style="background:linear-gradient(135deg,#e3f2fd,#90caf9)">
+        
+        <span class="blog-card-badge">App Review</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> May 23, 2026</span>
+          <span><i class="fas fa-clock"></i> 12 min</span>
+        </div>
+        <h3>Toolkit Pro Review 2026 — All 8 Free Tools Explained</h3>
+        <p>In-depth review of every tool on Toolkit Pro — Image Compressor, Art Studio, Voice Studio, Nature Gallery, QR Generator, Color Extractor, and more.</p>
+        <a class="blog-read" href="https://app-tool.vercel.app/Blog/toolkit-pro-complete-guide.html">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+      </div>
+    </div>
+
+  </div><!-- /blog-grid -->
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState" style="display:none">
+    <i class="fas fa-search"></i>
+    <p>No articles found for your search.<br>Try a different keyword or browse all articles.</p>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <h3> Get New Guides in Your Inbox</h3>
+    <p>New articles published every week — image tips, Pinterest strategies, design guides, and creator resources. Join free.</p>
+    <form class="nl-form" action="https://formspree.io/f/xkoyzpvp" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required/>
+      <button type="submit">Subscribe Free</button>
+    </form>
+  </div>
+
+  <!-- AD SLOT BOTTOM -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-strip">
+   <!--<div class="author-ava"></div>-->
+    <div class="author-strip-info">
+      <h4>Written by Shaheera Sadia</h4>
+      p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
+    <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>.</p>
+    <p>Beyond development, I am an active Pinterest creator with <strong>87.6k+ monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
+    <div class="about-badges">
+      <span class="badge">87.6k Pinterest Views/Month</span>
+      <span class="badge">1,000+ LinkedIn Impressions</span>
+      <span class="badge">100% Private — No Server Uploads</span>
+      <span class="badge">Mandi Bahauddin, Pakistan</span>
+      <span class="badge">33.3% Search CTR</span>
+       </div>
+  </div>
+  </div>
+  <!-- TAG CLOUD -->
+  <div class="sec-head"><h2> Popular Tags</h2></div>
+  <div class="tag-cloud">
+    <span class="tag-pill" onclick="handleSearch('image compression')">Image Compression</span>
+    <span class="tag-pill" onclick="handleSearch('webp')">WebP Format</span>
+    <span class="tag-pill" onclick="handleSearch('pinterest')">Pinterest SEO</span>
+    <span class="tag-pill" onclick="handleSearch('qr code')">QR Codes</span>
+    <span class="tag-pill" onclick="handleSearch('color palette')">Color Palettes</span>
+    <span class="tag-pill" onclick="handleSearch('voice')">Voice Recording</span>
+    <span class="tag-pill" onclick="handleSearch('seo')">SEO Tips</span>
+    <span class="tag-pill" onclick="handleSearch('design')">Aesthetic Design</span>
+    <span class="tag-pill" onclick="handleSearch('art')">Art Studio</span>
+    <span class="tag-pill" onclick="handleSearch('social media')">Social Media</span>
+    <span class="tag-pill" onclick="handleSearch('web performance')">Web Performance</span>
+    <span class="tag-pill" onclick="handleSearch('free tools')">Free Tools</span>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="aff-foot"> This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="footer-social">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html">QR Codes Guide</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-record-voice-online-free.html">Voice Studio Guide</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/toolkit-pro-complete-guide.html">App Overview</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Pages</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
+      <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
+      <li><a href="https://app-tool.vercel.app/shopping.html">Shopping</a></li>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
+    <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script>
+/* ── MOBILE MENU ── */
+const menuBtn = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuBtn.classList.toggle('is-active');
+});
+document.addEventListener('click', e => {
+  if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+    navLinks.classList.remove('active');
+    menuBtn.classList.remove('is-active');
+  }
+});
+
+/* ── FILTER ── */
+function filterPosts(cat, btn) {
+  // Update active tab
+  if (btn) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  // Update active category card
+  document.querySelectorAll('.cat-card').forEach(c => {
+    c.classList.toggle('active-cat', c.dataset.cat === cat);
+  });
+
+  const cards = document.querySelectorAll('#blogGrid .blog-card');
+  let visible = 0;
+  cards.forEach(card => {
+    if (card.dataset.cat === 'ad') {
+      card.style.display = cat === 'all' ? '' : 'none';
+      return;
+    }
+    const cardCats = card.dataset.cat || '';
+    const show = cat === 'all' || cardCats.includes(cat);
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('gridTitle').textContent = cat === 'all' ? 'All Articles' : ` ${cat.charAt(0).toUpperCase()+cat.slice(1)} Articles`;
+  document.getElementById('gridCount').textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+  document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('searchInput').value = '';
+}
+
+/* ── SEARCH ── */
+function handleSearch(q) {
+  q = q.toLowerCase().trim();
+  // Reset filter tabs
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.filter-tab').classList.add('active');
+
+  const cards = document.querySelectorAll('#blogGrid .blog-card');
+  let visible = 0;
+  cards.forEach(card => {
+    if (card.dataset.cat === 'ad') { card.style.display = q ? 'none' : ''; return; }
+    if (!q) { card.classList.remove('hidden'); visible++; return; }
+    const title = card.dataset.title || '';
+    const text = card.innerText.toLowerCase();
+    const show = title.includes(q) || text.includes(q);
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('gridTitle').textContent = q ? `🔍 Results for "${q}"` : ' All Articles';
+  document.getElementById('gridCount').textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+  document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
