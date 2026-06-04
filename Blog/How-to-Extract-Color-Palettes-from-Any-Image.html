@@ -1,393 +1,821 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Extract Color Palettes from Any Image for Web Design | Toolkit Pro</title>
-    <meta name="description" content="Master color consistency across your brand. Learn how to extract hex color palettes from images, understand modern color theory, and build cohesive UI designs.">
-    <meta name="keywords" content="Color Palette Extractor, Get Hex Codes from Image, Web Design Colors, UI/UX Branding, Image Color Picker, Toolkit Pro">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>How to Extract Color Palettes from Any Image — Free Tool Guide 2026 | Toolkit Pro</title>
+  <meta name="description" content="Learn how to extract beautiful color palettes and HEX codes from any image for free. Easy step-by-step guide for designers, bloggers, and Pinterest creators. No software needed."/>
+  <meta name="keywords" content="extract color palette from image, get hex codes from photo, color palette extractor free, brand color palette, Pinterest color palette, web design colors, Toolkit Pro, Shaheera Sadia"/>
+  <meta name="author" content="Shaheera Sadia"/>
+  <meta property="og:title" content="How to Extract Color Palettes from Any Image — Free Tool Guide 2026"/>
+  <meta property="og:description" content="Easy guide to getting HEX color codes from any photo for your brand, website, and Pinterest designs. Free tool, no account needed."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html"/>
+  <meta property="og:image" content="https://app-tool.vercel.app/image/color.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html"/>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+      --bg:#f5f8ff;--white:#ffffff;--radius:14px;
+      --shadow:0 4px 24px rgba(43,79,216,.09);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+
+    /* ── NAV ── */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+
+    /* ── HERO ── */
+    .hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan));color:white;padding:60px 24px 52px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hi{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .bc{font-size:13px;opacity:.75;margin-bottom:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .bc a{color:rgba(255,255,255,.85);text-decoration:none}
+    .bc a:hover{color:white;text-decoration:underline}
+    .cp{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+    .hero h1{font-family:'Lora',serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:14px}
+    .am{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;opacity:.85}
+    .am span{display:flex;align-items:center;gap:5px}
+
+    /* ── LAYOUT ── */
+    .layout{max-width:1060px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
+    @media(max-width:860px){.layout{grid-template-columns:1fr;padding:24px 14px 60px}}
+
+    /* ── ARTICLE ── */
+    .article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;padding:40px 44px}
+    @media(max-width:640px){.article{padding:24px 18px}}
+    .article img{width:100%;height:auto;border-radius:12px;margin:24px 0;box-shadow:var(--shadow)}
+    .article p{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:22px}
+    .article h2{font-family:'Lora',serif;font-size:26px;color:var(--blue-dark);margin:44px 0 16px;font-weight:700;border-left:4px solid var(--blue);padding-left:14px;line-height:1.3}
+    .article h3{font-family:'Lora',serif;font-size:20px;color:var(--text);margin:28px 0 12px;font-weight:600}
+    .article ul,.article ol{padding-left:24px;margin-bottom:22px}
+    .article li{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:10px}
+    .article strong{color:var(--text);font-weight:700}
+    .article a{color:var(--blue);text-decoration:none;font-weight:500}
+    .article a:hover{text-decoration:underline}
+
+    /* ── BLOCKS ── */
+    .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px 16px;color:var(--muted);font-size:13px;margin:36px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+    .hl{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#374a80;line-height:1.75}
+    .hl strong{color:var(--blue-dark)}
+    .tip{background:#e8f5e9;border-left:4px solid #4caf50;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#1b5e20;line-height:1.75}
+    .tip strong{color:#1b5e20}
+    .warn{background:#fff8e1;border-left:4px solid #ffc107;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#7c6b00;line-height:1.75}
+
+    /* ── TABLE ── */
+    .tbl{width:100%;border-collapse:collapse;margin:24px 0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .tbl th{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 16px;font-size:14px;font-weight:600;text-align:left}
+    .tbl td{padding:12px 16px;font-size:14.5px;color:var(--text);border-bottom:1px solid #eef2ff;background:var(--white)}
+    .tbl tr:nth-child(even) td{background:var(--blue-pale)}
+    .tbl tr:last-child td{border-bottom:none}
+    @media(max-width:600px){.tbl{display:block;overflow-x:auto}}
+
+    /* ── STEP LIST ── */
+    .step-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+    .step{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--white);border:1.5px solid #dde6ff;border-radius:12px}
+    .sn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .sb h4{font-size:15px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
+    .sb p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
+
+    /* ── COLOR SWATCHES ── */
+    .palette-demo{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+    .swatch-box{border-radius:12px;padding:14px 18px;flex:1;min-width:100px;text-align:center;box-shadow:var(--shadow)}
+    .swatch-hex{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;margin-top:8px}
+    .swatch-role{font-size:11px;margin-top:3px;opacity:.75}
+
+    /* ── USE CASES ── */
+    .use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+    .use-card{background:var(--blue-pale);border-radius:12px;padding:18px;border:1.5px solid #dde6ff;text-align:center}
+    .use-card i{font-size:26px;color:var(--blue);margin-bottom:10px;display:block}
+    .use-card h4{font-size:14.5px;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
+    .use-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+
+    /* ── FAQ ── */
+    .faq-item{border:1.5px solid #dde6ff;border-radius:12px;margin-bottom:10px;overflow:hidden}
+    .faq-q{padding:16px 20px;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--white);user-select:none}
+    .faq-q:hover{background:var(--blue-pale)}
+    .faq-q i{color:var(--blue);font-size:12px;transition:transform .3s;flex-shrink:0}
+    .faq-item.open .faq-q i{transform:rotate(180deg)}
+    .faq-a{padding:0 20px;font-size:15px;color:#374a80;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;background:var(--blue-pale)}
+    .faq-item.open .faq-a{max-height:400px;padding:16px 20px}
+
+    /* ── CTA ── */
+    .cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;border-radius:var(--radius);padding:30px 34px;text-align:center;margin:36px 0}
+    .cta h3{font-family:'Lora',serif;font-size:22px;margin-bottom:10px}
+    .cta p{font-size:15px;opacity:.9;margin-bottom:20px;line-height:1.65;max-width:500px;margin-left:auto;margin-right:auto}
+    .cta a{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue-dark);padding:12px 26px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .2s}
+    .cta a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+    /* ── TAGS ── */
+    .tag-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+    .tag{background:var(--blue-light);color:var(--blue);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:20px;text-decoration:none}
+    .tag:hover{background:var(--blue);color:white}
+
+    /* ── AUTHOR ── */
+    .author-box{background:var(--blue-pale);border-radius:var(--radius);border:1px solid #c0d0f8;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
+    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .author-info h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
+    .author-info p{font-size:13.5px;color:#374a80;line-height:1.65}
+
+    /* ── SIDEBAR ── */
+    .sidebar{display:flex;flex-direction:column;gap:18px}
+    .sb-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden}
+    .sb-hd{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 17px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:7px}
+    .sb-body{padding:14px 16px}
+    .toc-ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+    .toc-ul a{font-size:13px;color:var(--blue);text-decoration:none;display:flex;align-items:flex-start;gap:5px;padding:4px 0;border-bottom:1px solid #eef2ff;line-height:1.5}
+    .toc-ul a i{font-size:9px;margin-top:5px;flex-shrink:0;opacity:.6}
+    .toc-ul a:hover{color:var(--blue-dark)}
+    .rel-list{display:flex;flex-direction:column;gap:8px}
+    .rel-item{display:flex;gap:9px;align-items:flex-start;text-decoration:none;padding:7px 0;border-bottom:1px solid #eef2ff}
+    .rel-item:last-child{border-bottom:none}
+    .rel-icon{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:13px;flex-shrink:0}
+    .rel-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+    .rel-title:hover{color:var(--blue)}
+    .sb-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:var(--radius);padding:18px;text-align:center;color:white}
+    .sb-cta h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
+    .sb-cta p{font-size:12.5px;opacity:.9;margin-bottom:13px;line-height:1.55}
+    .sb-cta a{display:inline-flex;align-items:center;gap:6px;background:white;color:var(--blue-dark);padding:9px 17px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+
+    /* ── FOOTER ── */
+    footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255,.85);padding:52px 40px 28px}
+    .aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1060px;margin-left:auto;margin-right:auto}
+    .fi{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .fi .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+    .fi>div>p{font-size:13px;opacity:.72;line-height:1.7;max-width:220px}
+    .fsoc{display:flex;gap:10px;margin-top:14px}
+    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
+    .fsb:hover{background:var(--blue);color:white}
+    .fc h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:14px}
+    .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .fc ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+    .fc ul a:hover{color:#7dd3fc}
+    .fb{max-width:1060px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
+    .fb a{color:inherit;text-decoration:none}
+    @media(max-width:800px){.fi{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){footer{padding:36px 18px 22px}.fi{grid-template-columns:1fr;gap:20px}.fb{flex-direction:column;text-align:center}}
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+img,
+table,
+iframe {
+    max-width: 80%;
+}
 
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+a {
+    overflow-wrap: break-word;
+}
 
-    <style>
-        :root {
-            --primary: #7000cc;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --accent: #facc15;
-            
-            /* ── Navbar Colors ── */
-            --white: #ffffff;
-            --blue: #2563eb;
-            --blue-dark: #1e3a8a;
-            --blue-light: #eff6ff;
-            --pink: #db2777;
-            --muted: #64748b;
-        }
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.8;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-        }
-
-        /* ── NAV (FIXED & RESPONSIVE) ── */
-        nav {
-            background: var(--white) !important; 
-            border-bottom: 1px solid #dde6ff;
-            padding: 0 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 66px;
-            position: fixed; 
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            box-sizing: border-box; 
-            z-index: 9999; 
-            box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-        }
-
-        .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .nav-logo i { color: var(--blue); font-size: 18px; }
-        .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-        .nav-logo-text em { color: var(--pink); font-style: normal; }
-
-        .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
-        .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-        .nav-links a:hover { color: var(--blue); background: #f1f5f9; }
-        .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-        .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-
-        .mobile-btn {
-            display: none; 
-            background: var(--blue-dark); 
-            border: none;
-            color: white; 
-            width: 40px; 
-            height: 40px; 
-            border-radius: 8px;
-            cursor: pointer; 
-            font-size: 1.2rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Content Styles */
-        .blog-wrapper { max-width: 900px; margin: 80px auto; padding: 0 20px; }
-        .post-header { text-align: center; margin-bottom: 50px; }
-        .post-header h1 { font-size: 2.8rem; color: white; line-height: 1.2; margin-bottom: 20px; }
-        .post-meta { color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        .featured-img {
-            width: 100%; height: 450px; border-radius: 24px; margin-bottom: 40px;
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-        }
-        .featured-img img { width: 100%; height: 100%; object-fit: cover; }
-
-        .article-content h2 { color: var(--accent); margin-top: 45px; font-size: 1.9rem; border-left: 4px solid var(--primary); padding-left: 15px; }
-        .article-content h3 { color: #38bdf8; margin-top: 30px; font-size: 1.4rem; }
-        .article-content p { margin-bottom: 22px; font-size: 1.1rem; color: #cbd5e1; }
-        .article-content ul, .article-content ol { color: #cbd5e1; margin-bottom: 25px; padding-left: 25px; }
-        .article-content li { margin-bottom: 10px; font-size: 1.05rem; }
-        
-        .highlight-box { background: rgba(112, 0, 204, 0.1); border-left: 4px solid var(--primary); padding: 25px; border-radius: 12px; margin: 30px 0; color: #e2e8f0; }
-        
-        /* Table Optimization */
-        .table-container { overflow-x: auto; margin: 35px 0; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.02); }
-        table th, table td { padding: 16px; text-align: left; font-size: 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        table th { background: #1e1b4b; color: #7dd3fc; font-weight: 600; }
-        
-        /* Interactive Palette Showcase for Content Depth */
-        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 25px 0; }
-        .color-block { height: 80px; border-radius: 8px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; font-size: 12px; font-family: monospace; font-weight: bold; color: white; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
-
-        pre { background: #070a13; padding: 20px; border-radius: 10px; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); font-family: monospace; }
-        code { background: rgba(112, 0, 204, 0.2); color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
-        pre code { background: transparent; color: #38bdf8; padding: 0; border-radius: 0; font-size: inherit; }
-
-        .checklist { list-style: none; padding: 30px; background: var(--card-bg); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .checklist li { margin-bottom: 15px; display: flex; align-items: center; }
-        .checklist i { color: #22c55e; margin-right: 15px; font-size: 1.2rem; }
-
-        .cta-section { text-align: center; margin-top: 60px; padding: 45px; background: linear-gradient(135deg, #1e1b4b, #0f172a); border-radius: 24px; border: 1px solid rgba(112, 0, 204, 0.2); }
-        .btn-main { background: var(--primary); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(112, 0, 204, 0.4); }
-
-        /* Inline Content Ad Placement Styling */
-        .adsense-article-container {
-            margin: 35px auto;
-            padding: 10px 0;
-            text-align: center;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        /* Footer Styles */
-        footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 20px 28px; margin-top: 80px; }
-        .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 15px; font-size: 13px; color: rgba(255,255,255,.7); text-align: center; margin: 0 auto 28px; max-width: 1100px; }
-        .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-        .footer-brand .logo { font-size: 24px; color: #7dd3fc; font-weight: 700; margin-bottom: 12px; }
-        .footer-brand p { font-size: 14px; opacity: .8; line-height: 1.6; }
-        .footer-social { display: flex; gap: 12px; margin-top: 20px; }
-        .footer-social-btn { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
-        .footer-social-btn:hover { background: #3b82f6; transform: translateY(-3px); }
-        
-        .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #7dd3fc; margin-bottom: 20px; letter-spacing: 1px; }
-        .footer-col ul { list-style: none; padding: 0; margin: 0; }
-        .footer-col li { margin-bottom: 12px; }
-        .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: 0.2s; }
-        .footer-col a:hover { color: white; padding-left: 5px; }
-        .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; font-size: 13px; opacity: 0.8; flex-wrap: wrap; gap: 15px; }
-        .footer-bottom a { color: #7dd3fc; text-decoration: none; }
-
-        @media (max-width: 768px) {
-            nav { padding: 0 20px; }
-            .mobile-btn { display: block; }
-            .nav-links {
-                display: none; flex-direction: column; position: absolute;
-                top: 66px; left: 0; width: 100%; background: var(--card-bg);
-                padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 1000;
-            }
-            .nav-links.active { display: flex; }
-            .nav-links li { width: 100%; text-align: center; }
-            .nav-links a { display: block; padding: 12px; color: var(--text-light); }
-            .blog-wrapper { margin: 30px auto; }
-            .post-header h1 { font-size: 26px; padding: 0 10px; }
-            .featured-img { height: 250px; border-radius: 12px; margin-bottom: 24px; }
-            .article-content h2 { font-size: 22px; margin-top: 25px; }
-            .article-content p, .checklist li { font-size: 16px; }
-            .palette-grid { grid-template-columns: repeat(3, 1fr); }
-            table { display: block; overflow-x: auto; white-space: nowrap; }
-        }
-        @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
-    </style>
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+html,
+body {
+    position: relative;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+  </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
-    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <ul class="nav-links" id="navMenu">
-    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
-  </ul>
-  <button class="mobile-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
-    <i class="fas fa-bars"></i>
+  <button class="mob" id="mob" onclick="document.getElementById('nl').classList.toggle('open');this.classList.toggle('x')" aria-label="Menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </button>
+  <ul class="nl" id="nl">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
+    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+  </ul>
 </nav>
+<script>
+document.addEventListener("click",function(e){
+  var n=document.getElementById("nl"),b=document.getElementById("mob");
+  if(n&&b&&!b.contains(e.target)&&!n.contains(e.target)){n.classList.remove("open");b.classList.remove("x");}
+});
+</script>
 
-<div class="blog-wrapper">
-    <div class="post-header">
-        <div class="post-meta">UI/UX Design • May 2026</div>
-        <h1>How to Extract Color Palettes from Any Image for Web Design</h1>
-        <p>By Shaheera Sadia — Full Stack Developer & UI Designer</p>
-        <div class="featured-img">
-            <img src="../image/color.jpg" alt="Extracting dominant color palettes and hex codes from digital graphics">
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hi">
+    <div class="bc">
+      <a href="https://app-tool.vercel.app/index.html">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
+      <a href="https://app-tool.vercel.app/Blog/all-blog.html">Blog</a>
+      <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
+      <span>Color Palette Guide</span>
     </div>
+    <span class="cp"> Design Tools</span>
+    <h1>How to Extract Color Palettes from Any Image — Free Tool Guide 2026</h1>
+    <div class="am">
+      <span><i class="fas fa-user"></i> Shaheera Sadia</span>
+      <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+      <span><i class="fas fa-clock"></i> 10 min read</span>
+      <span><i class="fas fa-eye"></i> 4,390 views</span>
+    </div>
+  </div>
+</section>
 
-    <div class="adsense-article-container">
-        <ins class="adsbygoogle"
-             style="display:block; text-align:center;"
-             data-ad-layout="in-article"
-             data-ad-format="fluid"
-             data-ad-client="ca-pub-6309207317896311"
-             data-ad-slot="1245678901"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<!-- MAIN LAYOUT -->
+<div class="layout">
+<main>
+<article class="article">
+
+<img src="https://app-tool.vercel.app/image/color.jpg" alt="Extracting beautiful color palettes and HEX codes from images for web design and Pinterest branding 2026" loading="eager"/>
+
+<p>Have you ever looked at a beautiful photo and thought — I wish my website or social media could look exactly like those colors? Maybe it was a sunset photo with gorgeous warm oranges and pinks, or a forest image with deep, calming greens. Those colors together just feel right, and you want to use them everywhere in your designs.</p>
+
+<p>The great news is you can do exactly that. There is a way to pull the exact colors out of any photo and get their color codes — called HEX codes — so you can use those precise colors in your website, Canva designs, Pinterest pins, or anywhere else.</p>
+
+<p>In this guide, I will explain what a color palette is, why having one matters for your brand, and how to extract one from any photo in just a few seconds using a completely free tool. No design experience needed. No paid software required.</p>
+
+<div class="hl"><strong>What you will learn:</strong> What HEX color codes are and why they matter, why color consistency grows your brand, how to extract a palette from any image for free, where to use your extracted colors, and a complete step-by-step workflow for creators and designers.</div>
+
+<!-- AD SLOT 1 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>What Is a Color Palette and Why Does It Matter?</h2>
+
+<p>A color palette is simply a small collection of colors that work well together. Instead of picking colors randomly every time you design something, you choose 4–6 colors that look great together and then use those same colors every time.</p>
+
+<p>Think about big brands you recognize instantly. Coca-Cola uses red and white. Spotify uses black and bright green. Instagram uses gradient purples and pinks. You know these brands partly because of their colors — even before you read any text.</p>
+
+<p>The same principle applies to your personal brand, blog, Pinterest account, or small business. When all your pins, posts, and website pages use the same colors, people start to recognize your content immediately. Your feed looks professional, polished, and intentional. And that consistency builds trust with your audience.</p>
+
+<p>Research from the University of Loyola Maryland shows that consistent color use increases brand recognition by up to 80%. That is huge. And it all starts with picking a good set of colors and sticking to them.</p>
+
+<h3>What Is a HEX Code?</h3>
+
+<p>A HEX code is a 6-character code that represents an exact color. Every color on a screen has its own unique HEX code. For example:</p>
+
+<ul>
+  <li><strong>#FF0000</strong> — pure red</li>
+  <li><strong>#0000FF</strong> — pure blue</li>
+  <li><strong>#FFFFFF</strong> — white</li>
+  <li><strong>#000000</strong> — pure black</li>
+</ul>
+
+<p>HEX codes are used in web design (CSS), Canva, Figma, Adobe tools, and almost every design application. When you have the exact HEX code of a color, you can reproduce that exact color anywhere — on your website, in a Canva template, in a banner, in an Instagram graphic. No guessing, no trying to match by eye.</p>
+
+<p>When you extract a color palette from a photo, you are getting the HEX codes of that photo's most dominant colors. Then you can use those exact colors consistently across your entire brand.</p>
+
+<!-- AD SLOT 2 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>Why Extract Colors from a Photo Instead of Just Picking Them?</h2>
+
+<p>You might be wondering — why not just choose any colors you like? Why extract them from a photo?</p>
+
+<p>The answer is that nature and professional photography naturally produce colors that look beautiful together. A photographer does not randomly choose what to include in a shot. They capture real light, real scenes, and real color relationships that our eyes naturally find pleasing.</p>
+
+<p>When you extract a palette from a beautiful nature photo, you are inheriting that natural color harmony. The colors already look great together because they existed together in the real world. This is why designers often start projects by finding an inspirational image and pulling colors from it — it is a shortcut to a beautiful, balanced palette.</p>
+
+<p>On top of that, extracting colors from your own brand photos — your product shots, your nature backgrounds, your lifestyle images — means your color palette is directly connected to your visual content. Everything ties together naturally.</p>
+
+<h2>How to Extract a Color Palette Using Toolkit Pro — Step by Step</h2>
+
+<p>Toolkit Pro has a free <a href="https://app-tool.vercel.app/index.html#palette-section">Color Palette Extractor</a> built right into the homepage. It extracts up to 8 dominant HEX color codes from any image in under 3 seconds. Here is exactly how to use it:</p>
+
+<div class="step-list">
+  <div class="step">
+    <div class="sn">1</div>
+    <div class="sb">
+      <h4>Open the Color Palette Extractor</h4>
+      <p>Go to <a href="https://app-tool.vercel.app/index.html#palette-section">app-tool.vercel.app</a> and scroll down to the Color Palette Extractor section. It is completely free — no account, no sign-up needed.</p>
     </div>
+  </div>
+  <div class="step">
+    <div class="sn">2</div>
+    <div class="sb">
+      <h4>Upload your chosen image</h4>
+      <p>Click the upload button or drag and drop any image — a nature photo, product shot, brand photo, or any picture whose colors inspire you. The image is processed entirely in your browser and never uploaded to any server.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">3</div>
+    <div class="sb">
+      <h4>View your extracted color palette</h4>
+      <p>In less than 3 seconds, you will see up to 8 color swatches appear — each one showing a dominant color from your image. These represent the most important colors in your photo.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">4</div>
+    <div class="sb">
+      <h4>Click any swatch to copy its HEX code</h4>
+      <p>Click on any color swatch and the HEX code copies to your clipboard automatically. You can also click "Copy All" to copy the entire palette at once.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">5</div>
+    <div class="sb">
+      <h4>Paste your colors wherever you need them</h4>
+      <p>Paste those HEX codes into Canva, your website CSS, Figma, Adobe tools, Pinterest templates — anywhere that accepts color codes. Your colors will match perfectly every time.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tip"><strong> Best image types to use:</strong> Nature photography (sunsets, forests, oceans, flowers) tends to give the most beautiful and balanced palettes. Product photography also works very well. Avoid images that are mostly one single color — they will give a boring palette with little variety.</div>
+
+<!-- AD SLOT 3 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>Understanding What You Get — Reading Your Color Palette</h2>
+
+<p>After you extract a palette, you will have 5–8 HEX codes. But not all of these colors should be used equally in your designs. Here is a simple way to think about how to assign roles to your palette colors:</p>
+
+<h3>The 60-30-10 Color Rule</h3>
+
+<p>Professional designers use a simple guideline called the 60-30-10 rule to make sure their color palettes look balanced rather than overwhelming:</p>
+
+<ul>
+  <li><strong>60% — Your main background color:</strong> This is the color that takes up most of the space. Usually a neutral tone — light, soft, or white. Use it for page backgrounds, large sections, and content areas.</li>
+  <li><strong>30% — Your secondary color:</strong> This supports the main color and creates variety. Use it for cards, sidebars, headers, and mid-level design elements.</li>
+  <li><strong>10% — Your accent color:</strong> This is the color that stands out and grabs attention. Use it sparingly — for buttons, links, highlights, borders, and the most important elements you want people to notice.</li>
+</ul>
+
+<p>Here is an example of how a forest sunset photo might produce a palette and how to assign those roles:</p>
+
+<div class="palette-demo">
+  <div class="swatch-box" style="background:#2D5016;color:white">
+    <div class="swatch-hex">#2D5016</div>
+    <div class="swatch-role">Secondary (30%)</div>
+  </div>
+  <div class="swatch-box" style="background:#F5F0E8;color:#333">
+    <div class="swatch-hex">#F5F0E8</div>
+    <div class="swatch-role">Main BG (60%)</div>
+  </div>
+  <div class="swatch-box" style="background:#E07B39;color:white">
+    <div class="swatch-hex">#E07B39</div>
+    <div class="swatch-role">Accent (10%)</div>
+  </div>
+  <div class="swatch-box" style="background:#8FAF6E;color:white">
+    <div class="swatch-hex">#8FAF6E</div>
+    <div class="swatch-role">Supporting</div>
+  </div>
+  <div class="swatch-box" style="background:#C4956A;color:white">
+    <div class="swatch-hex">#C4956A</div>
+    <div class="swatch-role">Supporting</div>
+  </div>
+</div>
+
+<p>These five colors all came from one nature photo. They naturally look beautiful together because they existed together in the real world. Using them consistently across your brand creates an instant sense of cohesion and professionalism.</p>
+
+<h2>Where to Use Your Extracted Color Palette</h2>
+
+<p>Once you have your HEX codes, the possibilities are wide. Here are all the places where using a consistent color palette makes a real difference:</p>
+
+<div class="use-grid">
+  <div class="use-card">
+    <i class="fab fa-pinterest"></i>
+    <h4>Pinterest Pins</h4>
+    <p>Apply your palette colors to pin backgrounds, text overlays, and borders. When all your pins use the same palette, your Pinterest profile looks stunning and grows faster.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-globe"></i>
+    <h4>Website CSS</h4>
+    <p>Paste your HEX codes into CSS variables and apply them across your whole website. Consistent colors make sites look professional and trustworthy.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-pencil-alt"></i>
+    <h4>Canva Designs</h4>
+    <p>Add your colors to Canva's brand kit. Every template you use will automatically offer your brand colors as the first option.</p>
+  </div>
+  <div class="use-card">
+    <i class="fab fa-instagram"></i>
+    <h4>Instagram Feed</h4>
+    <p>Apply the same palette to all your Instagram posts. A cohesive feed color story attracts followers and gets more profile visits.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-envelope"></i>
+    <h4>Email Newsletters</h4>
+    <p>Use consistent colors in your email header, buttons, and accent elements. Brand recognition in emails improves open rates over time.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-shopping-bag"></i>
+    <h4>Product Packaging</h4>
+    <p>Extract colors from your product photography and apply them to your labels, packaging, and product pages for a unified brand look.</p>
+  </div>
+</div>
+
+<!-- AD SLOT 4 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>Choosing the Right Photo for Your Brand Palette</h2>
+
+<p>The photo you choose to extract from matters a lot. Different types of images produce very different palettes, and some palettes are better suited to certain brands and audiences. Here is a guide to choosing the right source image:</p>
+
+<table class="tbl">
+  <thead>
+    <tr>
+      <th>Image Type</th>
+      <th>Typical Colors Produced</th>
+      <th>Best For</th>
+      <th>Pinterest Niche</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Sunset / Golden Hour</strong></td>
+      <td>Warm oranges, golds, soft pinks</td>
+      <td>Lifestyle, wellness, motivation</td>
+      <td>Morning routines, inspiration</td>
+    </tr>
+    <tr>
+      <td><strong>Forest / Woodland</strong></td>
+      <td>Deep greens, earthy browns, sage</td>
+      <td>Eco brands, mindfulness, nature</td>
+      <td>Wellness, sustainability</td>
+    </tr>
+    <tr>
+      <td><strong>Ocean / Beach</strong></td>
+      <td>Blues, teals, sandy neutrals</td>
+      <td>Travel, freedom, clean brands</td>
+      <td>Travel, lifestyle, self-care</td>
+    </tr>
+    <tr>
+      <td><strong>Flowers / Garden</strong></td>
+      <td>Pinks, purples, lavenders, greens</td>
+      <td>Beauty, fashion, feminine brands</td>
+      <td>Beauty, home decor, gifts</td>
+    </tr>
+    <tr>
+      <td><strong>Minimalist / White Studio</strong></td>
+      <td>Whites, light grays, single accent</td>
+      <td>Clean professional brands</td>
+      <td>Business, productivity, tech</td>
+    </tr>
+    <tr>
+      <td><strong>Food Photography</strong></td>
+      <td>Warm neutrals, food tones</td>
+      <td>Food blogs, recipe sites</td>
+      <td>Cooking, recipes, lifestyle</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You do not have to use your own photos. Toolkit Pro's free <a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a> has over 120 stunning high-resolution nature photos you can download and use as source images for your palette extraction.</p>
+
+<h2>How to Use Your Palette in Canva — Beginner Tutorial</h2>
+
+<p>Canva is one of the most popular free design tools, and it has a great feature called Brand Kit where you can save your HEX colors. Once saved, those colors appear first whenever you choose a color in any Canva design. Here is how to set it up:</p>
+
+<div class="step-list">
+  <div class="step">
+    <div class="sn">1</div>
+    <div class="sb">
+      <h4>Extract your palette from Toolkit Pro</h4>
+      <p>Upload your chosen photo and copy all HEX codes using the "Copy All" button.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">2</div>
+    <div class="sb">
+      <h4>Open Canva and go to Brand Kit</h4>
+      <p>In the left panel, click "Brand" or go to your Brand Kit. Click "Add a color" under Brand colors.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">3</div>
+    <div class="sb">
+      <h4>Paste each HEX code</h4>
+      <p>Click the HEX field and paste each color code you copied from Toolkit Pro. Click the + button to add each one. Repeat for all 5–6 palette colors.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">4</div>
+    <div class="sb">
+      <h4>Your brand colors appear in every design</h4>
+      <p>Now every time you open a Canva design and pick a color, your brand palette appears at the top. Designing consistently is now effortless.</p>
+    </div>
+  </div>
+</div>
+
+<div class="warn"><strong> Common mistake to avoid:</strong> Many beginners extract colors and then use ALL of them equally in every design. This makes designs look busy and chaotic. Stick to the 60-30-10 rule — one main color, one secondary, one accent. Save the other extracted colors for variety across different posts, not for use all at once in a single design.</div>
+
+<h2>How to Use Your Palette in CSS for Your Website</h2>
+
+<p>If you have a website, the best way to use your brand colors is to define them as CSS variables. This means you only need to set your colors in one place, and they apply everywhere across your whole site. Here is how simple it is:</p>
+
+<div style="background:var(--blue-pale);border-radius:10px;padding:18px 20px;margin:20px 0;font-family:monospace;font-size:14px;color:var(--blue-dark);line-height:2;border:1.5px solid #c0d0f8;overflow-x:auto">
+  <strong style="color:var(--blue)">:root</strong> {<br>
+  &nbsp;&nbsp;<strong style="color:#374a80">--color-main</strong>: #F5F0E8;&nbsp;&nbsp;&nbsp;<em style="color:var(--muted);font-style:normal">/* 60% — main background */</em><br>
+  &nbsp;&nbsp;<strong style="color:#374a80">--color-secondary</strong>: #2D5016;&nbsp;&nbsp;<em style="color:var(--muted);font-style:normal">/* 30% — headers and cards */</em><br>
+  &nbsp;&nbsp;<strong style="color:#374a80">--color-accent</strong>: #E07B39;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:var(--muted);font-style:normal">/* 10% — buttons and links */</em><br>
+  &nbsp;&nbsp;<strong style="color:#374a80">--color-text</strong>: #1c1c1e;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:var(--muted);font-style:normal">/* body text */</em><br>
+  }
+</div>
+
+<p>Once these variables are set, you use them anywhere in your CSS like this:</p>
+
+<div style="background:var(--blue-pale);border-radius:10px;padding:16px 20px;margin:20px 0;font-family:monospace;font-size:14px;color:var(--blue-dark);line-height:2;border:1.5px solid #c0d0f8;overflow-x:auto">
+  <strong style="color:var(--blue)">body</strong> { background: var(--color-main); }<br>
+  <strong style="color:var(--blue)">h1, h2</strong> { color: var(--color-secondary); }<br>
+  <strong style="color:var(--blue)">.btn</strong> { background: var(--color-accent); color: white; }<br>
+  <strong style="color:var(--blue)">a</strong> { color: var(--color-accent); }
+</div>
+
+<p>This approach means if you ever want to update your brand colors later, you just change the HEX codes in one place and the change applies across your whole website instantly.</p>
+
+<!-- AD SLOT 5 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>Building a Pinterest Aesthetic with Color Extraction</h2>
+
+<p>Pinterest rewards visual consistency more than almost any other platform. Accounts that have a clear, recognizable color aesthetic grow significantly faster than accounts that post randomly with no visual cohesion.</p>
+
+<p>Here is the workflow I use to maintain a consistent Pinterest aesthetic using Toolkit Pro's Color Palette Extractor:</p>
+
+<ol>
+  <li><strong>Choose 1 or 2 "signature" photos</strong> — Pick 1 or 2 nature photos that perfectly represent the feeling and mood of your brand. These become your visual anchors.</li>
+  <li><strong>Extract the palette from those photos</strong> — Upload them to Toolkit Pro's Color Extractor and save the HEX codes.</li>
+  <li><strong>Apply those colors to all your pin designs</strong> — Use those exact colors for text overlays, background tints, borders, and graphic elements across every pin you create.</li>
+  <li><strong>Test consistency</strong> — Open your Pinterest profile page and look at your recent pins together. Do they look like they belong together? If yes, your aesthetic is working. If not, some pins are using different colors — fix those.</li>
+</ol>
+
+<p>This is exactly the workflow behind the Pinterest account that grew to 87.6k monthly views. Every pin uses colors extracted from the same small set of nature photos. The result is a profile that looks beautiful at a glance and builds a recognizable brand identity over time.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">What types of images give the best color palettes? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Nature photography consistently produces the most beautiful and balanced color palettes because natural light and scenes contain harmonious color relationships. Sunsets, forests, oceans, flower fields, and mountains all produce gorgeous palettes. Avoid images that are mostly one single color — they will produce a boring palette with little variety. Also avoid images with very harsh artificial lighting, which can produce unnatural color readings.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Can I use the extracted colors on my website and products commercially? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Yes, absolutely. Colors themselves cannot be copyrighted. The extracted HEX color codes are free for you to use for any personal or commercial purpose — on your website, in products, in marketing materials, or anywhere else. Just make sure you have the right to use the source photo itself (use free stock photos or your own photography).</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">How many colors should I use in my brand palette? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Most successful brands use 3–5 colors consistently. The 60-30-10 rule suggests three main roles: a dominant background color, a secondary structural color, and one accent/highlight color. The extractor may give you 6–8 colors — choose your 3–5 favorites and use those consistently. Trying to use all 8 colors equally in every design tends to make things look chaotic and unprofessional.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Is my image stored or uploaded anywhere when I use the Color Extractor? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">No — never. Toolkit Pro's Color Palette Extractor processes everything entirely in your browser using JavaScript. Your image never leaves your device and is never uploaded to any server. This means your photos are completely private. It also means the tool works even if your internet connection is slow, because no data is being sent back and forth to a server.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">What is the difference between HEX, RGB, and HSL color formats? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">They are just different ways of writing the same color. HEX codes like #FF6B35 are the most widely used in web design and design tools. RGB (like rgb(255, 107, 53)) is also common in CSS. HSL (hue, saturation, lightness) is useful for making systematic color adjustments. For most creators and designers, HEX codes are the most practical format — they are accepted everywhere and easy to copy-paste. Toolkit Pro outputs HEX codes, which you can use directly in Canva, CSS, Figma, and most other tools.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">How do I know if two colors from my palette go well together? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Colors extracted from the same photo almost always work well together because they existed in the same real-world scene. That is actually the biggest benefit of palette extraction versus picking random colors — natural color harmony is built in. If you want to check contrast specifically (important for text readability), you can test any two HEX codes on WebAIM Contrast Checker (webaim.org/resources/contrastchecker). For text on a background, aim for a contrast ratio of at least 4.5:1.</div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h3> Extract Your Color Palette Right Now — Free</h3>
+  <p>Upload any photo and get up to 8 HEX color codes in seconds. No account, no server upload, 100% private and free — straight in your browser.</p>
+  <a href="https://app-tool.vercel.app/index.html#palette-section"><i class="fas fa-palette"></i> Open Free Color Extractor</a>
+</div>
+
+<!-- TAGS -->
+<div class="tag-wrap">
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#ColorPalette</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#HEXCodes</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#BrandDesign</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#PinterestAesthetic</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#WebDesign</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#CanvaDesign</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#ColorTheory</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#DigitalCreator</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#FreeDesignTools</a>
+</div>
+
+<!-- AUTHOR -->
+<div class="author-box">
  
-    <div class="article-content">
-        <p>Color consistency is the invisible thread that binds a premium user interface together. When visitors land on your web app, social feed, or digital storefront, they process the visual hierarchy within milliseconds. Relying on random color pickers often results in a disconnected interface. Instead, pulling hex codes directly from natural source images allows you to inherit sophisticated, balanced color harmonies automatically.</p>
+  <div class="author-info">
+    <h4>Written by Shaheera Sadia</h4>
+     <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
+      
+      <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. My mission is to bridge the gap between technical efficiency and aesthetic design, helping digital entrepreneurs grow their online presence with ease.</p>
+      
+      <p>Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>. Beyond development, I am an active Pinterest creator with <strong>87.6k monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
 
-        <p>Whether you are designing Pinterest graphics to trigger viral impressions or fine-tuning a dark-mode dashboard framework, starting with an image-extracted palette ensures seamless aesthetic styling. Let's dive deep into the technical process of picking dominant colors and transforming them into a production-ready UI kit.</p>
-
-        <h2>1. The Science of Dominant vs. Accent Colors</h2>
-        <p>A professional design layout doesn't distribute colors evenly. It follows structural distribution ratios to ensure high readability and visual comfort. Designers refer to this framework as the <strong>60-30-10 Design Principle</strong>:</p>
-        
-        <ul>
-            <li><strong>60% Dominant Color:</strong> The overarching backdrop canvas tone (typically clean dark slates or crisp light neutrals).</li>
-            <li><strong>30% Secondary Structure:</strong> Used for layout containers, component surfaces, and text fields to establish baseline clarity.</li>
-            <li><strong>10% Vibrant Accent:</strong> Reserved strictly for primary call-to-actions (CTAs), focus indicators, and key milestones.</li>
-        </ul>
-
-        <p>When you drop a brand reference asset into a canvas processor, the system clusters pixel arrays to identify structural background swatches along with high-contrast accent pixels suitable for interactive component state styles.</p>
-
-        <h2>2. Understanding Color Harmonies</h2>
-        <p>Different color relationships evoke specific emotional feedback loops. When selecting your core target image, prioritize layouts structured around verified mathematical wheel paths:</p>
-
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Harmony Type</th>
-                        <th>Wheel Layout Mechanism</th>
-                        <th>Best Used For</th>
-                        <th>Visual Psychological Impact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Monochromatic</strong></td>
-                        <td>Varying shades of a singular base tone</td>
-                        <td>Minimalist Dashboards</td>
-                        <td>Ultra clean, focused, professional</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Analogous</strong></td>
-                        <td>3 adjacent values sitting side-by-side</td>
-                        <td>Lifestyle & Blog Feeds</td>
-                        <td>Highly relaxing, natural, comforting</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Complementary</strong></td>
-                        <td>Direct structural opposites (180° axis)</td>
-                        <td>Conversion Focused CTAs</td>
-                        <td>High energy, striking contrast, bold</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2>3. Sample Extracted Palette Archetype</h2>
-        <p>Below is a standard asset color profile pulled directly from a premium nature asset array, mapping out precise functional hex layout designations:</p>
-
-        <div class="palette-grid">
-            <div class="color-block" style="background: #0f172a;">#0F172A<br>Base BG</div>
-            <div class="color-block" style="background: #1e293b;">#1E293B<br>Surface Card</div>
-            <div class="color-block" style="background: #7000cc;">#7000CC<br>Primary</div>
-            <div class="color-block" style="background: #38bdf8;">#38BDF8<br>Secondary</div>
-            <div class="color-block" style="background: #facc15; color:#000;">#FACC15<br>Accent CTA</div>
-        </div>
-
-        <h2>4. Implementing Hex Tokens in CSS Frameworks</h2>
-        <p>Once you extract your hex strings, transfer them directly into your global root stylesheets. This centralized approach allows you to update your product's entire color theme globally with just a few code edits:</p>
-
-        <pre><code>:root {
-    --bg-main: #0f172a;       /* 60% Dominant Backdrop */
-    --card-surface: #1e293b;  /* 30% Structural Container */
-    --brand-action: #7000cc;  /* 10% Interactive Accent */
-    --text-primary: #f8fafc;  /* Readable Typography Element */
-}
-
-.custom-button {
-    background-color: var(--brand-action);
-    color: var(--text-primary);
-    transition: background 0.3s ease;
-}</code></pre>
-
-        <div class="highlight-box">
-            <strong>Pro Workflow Tip:</strong> Always run your extracted accent and text hex combinations through a Web Content Accessibility Guidelines (WCAG) checker to confirm that your color contrast ratio is at least 4.5:1, ensuring clear readability for everyone.
-        </div>
-
-        <div class="adsense-article-container">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-6309207317896311"
-                 data-ad-slot="9876543210"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
-        <div class="cta-section">
-            <h2>Extract High-Fidelity Palettes Instantly</h2>
-            <p>Skip the guesswork. Drop your brand imagery or product photos directly into our secure, browser-based extraction engine to retrieve a clean grid of dominant hex codes instantly.</p>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
-                <a href="https://app-tool.vercel.app/index.html#palette-section" class="btn-main">Launch Color Extractor &rarr;</a>
-            </div>
-        </div>
-
-        <h2 style="margin-top:60px;">Your Color Workflow Checklist</h2>
-        <ul class="checklist">
-            <li><i class="fas fa-check-circle"></i> Upload your source image to extract 5–6 matching dominant hex codes.</li>
-            <li><i class="fas fa-check-circle"></i> Assign colors using the 60-30-10 distribution layout rule.</li>
-            <li><i class="fas fa-check-circle"></i> Verify contrast ratios to meet essential accessibility requirements.</li>
-            <li><i class="fas fa-check-circle"></i> Map hex variables directly to CSS <code>:root</code> tokens for clean maintenance.</li>
-            <li><i class="fas fa-check-circle"></i> Apply matching accent color choices to your Pinterest templates to boost brand consistency.</li>
-        </ul>
+      <div class="about-badges">
+        <span class="badge"> 87.6k Pinterest Views/Month</span>
+        <span class="badge"> 1,000+ LinkedIn Impressions</span>
+        <span class="badge"> 100% Private — No Server Uploads</span>
+        <span class="badge"> Mandi Bahauddin, Pakistan</span>
+        <span class="badge"> 33.3% Search CTR</span>
     </div>
 </div>
 
-<footer>
-  <div class="affiliate-footer">
-    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
+</article>
+</main>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-cta">
+    <h4>Free Color Palette Extractor</h4>
+    <p>Get HEX codes from any image in seconds. No account, no upload, 100% free and private.</p>
+    <a href="https://app-tool.vercel.app/index.html#palette-section"><i class="fas fa-palette"></i> Open Free Tool</a>
   </div>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">ToolkitPro</div>
-      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="Pinterest ID"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="GitHub Repository"><i class="fab fa-github"></i></a>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-list"></i> Table of Contents</div>
+    <div class="sb-body">
+      <ul class="toc-ul">
+        <li><a href="#"><i class="fas fa-chevron-right"></i> What Is a Color Palette?</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> What Is a HEX Code?</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Why Extract from a Photo?</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Step-by-Step Extraction Guide</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> The 60-30-10 Color Rule</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Where to Use Your Palette</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> How to Use in Canva</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> How to Use in CSS</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Pinterest Aesthetic Workflow</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="min-height:250px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-newspaper"></i> Related Articles</div>
+    <div class="sb-body">
+      <div class="rel-list">
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html">
+          <div class="rel-icon"><i class="fas fa-leaf"></i></div>
+          <div class="rel-title">How to Create Viral Aesthetic Quote Cards for Pinterest</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">
+          <div class="rel-icon"><i class="fab fa-pinterest"></i></div>
+          <div class="rel-title">Pinterest Image SEO — Get 87k Monthly Views</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">
+          <div class="rel-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+          <div class="rel-title">How to Compress Images Without Losing Quality</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">
+          <div class="rel-icon"><i class="fas fa-images"></i></div>
+          <div class="rel-title">Best Image Sizes for Social Media 2026</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html">
+          <div class="rel-icon"><i class="fas fa-search"></i></div>
+          <div class="rel-title">Why Image Optimization Matters for SEO</div>
+        </a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
-        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-      </ul>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-tools"></i> All Free Tools</div>
+    <div class="sb-body">
+      <div class="rel-list">
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#uploadArea"><div class="rel-icon"><i class="fas fa-compress-arrows-alt"></i></div><div class="rel-title">Image Compressor</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#palette-section"><div class="rel-icon"><i class="fas fa-palette"></i></div><div class="rel-title">Color Palette Extractor</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#nature-designer"><div class="rel-icon"><i class="fas fa-leaf"></i></div><div class="rel-title">Nature Quote Designer</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#qr-section"><div class="rel-icon"><i class="fas fa-qrcode"></i></div><div class="rel-title">QR Code Generator</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/art-tool.html"><div class="rel-icon"><i class="fas fa-paint-brush"></i></div><div class="rel-title">Art Studio</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/voice-studio.html"><div class="rel-icon"><i class="fas fa-microphone"></i></div><div class="rel-title">Voice Studio</div></a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
+
+  <div class="ad-slot" style="min-height:250px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="aff-foot"> This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="fsoc">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="fc"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+    </ul></div>
+    <div class="fc"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html">QR Codes Guide</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
+  </div>
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
-      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
     </span>
   </div>
 </footer>
 
-<script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-  
-  if (mobileBtn && navMenu) {
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-    });
-  }
-</script>
 </body>
 </html>
+
+
+
+
+
+
+
+ 
