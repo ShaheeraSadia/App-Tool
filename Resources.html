@@ -175,23 +175,7 @@
     .about-content p { font-size: 14.5px; color: #374a80; line-height: 1.75; margin-bottom: 10px; }
     .about-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
     .badge { background: var(--white); border: 1.5px solid #b8c8f8; border-radius: 8px; padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--blue); }
-
-    /* ── CONTACT ── 
-    .contact-wrap { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 36px; max-width: 640px; margin: 0 auto; }
-    .contact-wrap h2 { font-family: 'Lora', serif; font-size: 22px; color: var(--text); margin-bottom: 6px; }
-    .contact-wrap > p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-    .form-row { display: flex; gap: 14px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; flex: 1; }
-    .form-group label { font-size: 13px; font-weight: 600; color: var(--text); }
-    .form-group input, .form-group textarea { padding: 11px 14px; border-radius: 10px; border: 1.5px solid #c8d8f8; font-size: 14px; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color .2s; background: var(--bg); color: var(--text); }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--blue); }
-    .form-group textarea { resize: none; }
-    .submit-btn { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid)); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity .2s, transform .15s; margin-top: 8px; }
-    .submit-btn:hover { opacity: .9; transform: translateY(-1px); }
-    .contact-info { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eef2ff; display: flex; flex-direction: column; gap: 8px; }
-    .contact-info div { font-size: 13px; color: var(--muted); }
-    .contact-info a { color: var(--blue); text-decoration: none; }
-    .contact-info a:hover { text-decoration: underline; }*/
+ 
  
      
     /* ── CONTACT ── */
@@ -337,10 +321,9 @@ nav {
   </style>
 </head>
 <body>
- 
-<!-- NAV -->
- <nav>
-  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+ <!-- ══ NAV ══ -->
+<nav id="home">
+  <a href="/" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
@@ -348,13 +331,41 @@ nav {
     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a></li>
+    <li><a href="/" class="active"><i class="fas fa-home" style="margin-right:4px;font-size:11px;"></i>Home</a></li>
+    <li class="nav-dropdown">
+      <a href="#uploadArea"><i class="fas fa-image" style="margin-right:4px;font-size:11px;"></i>Image Tools</a>
+      <div class="dropdown-menu">
+        <a href="#uploadArea"><i class="fas fa-compress-arrows-alt"></i>Image Compressor</a>
+        <a href="#palette-section"><i class="fas fa-palette"></i>Color Palette Extractor</a>
+        <a href="#nature-designer"><i class="fas fa-leaf"></i>Nature Quote Designer</a>
+         <a href="#qr-section"><i class="fas fa-qrcode"></i>QR Code Generator</a>
+      </div>
+    </li>
+   <li class="nav-dropdown">
+      <a href="#"><i class="fas fa-file-pdf" style="margin-right:4px;font-size:11px;"></i>PDF Tools</a>
+      <div class="dropdown-menu">
+        <a href="#" onclick="alert('PDF Compressor — Coming Soon!'); return false;"><i class="fas fa-file-archive"></i>PDF Compressor</a>
+        <a href="#" onclick="alert('PDF Merger — Coming Soon!'); return false;"><i class="fas fa-object-group"></i>Merge PDF</a>
+      </div>
+    </li>
+     
+ <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
+ 
+    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+  
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-book" style="margin-right:4px;font-size:11px;"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/art-tool.html" class="active"><i class="fas fa-paint-brush" style="margin-right:4px;font-size:11px;"></i>Art Tool</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>
+ <!--   <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:4px;font-size:11px;"></i>Shop</a></li>-->
+    <li>
+  <a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">
+    <i class="fas fa-shopping-bag" style="font-size: 11px;"></i> 
+    <span>Shop</span>
+  </a>
+</li>
   </ul>
 </nav>
+
+ 
 
 <!-- HERO -->
 <section class="hero">
