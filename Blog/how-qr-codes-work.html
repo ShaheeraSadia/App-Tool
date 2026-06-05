@@ -1,373 +1,786 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How QR Codes Work Explained Simply | Toolkit Pro</title>
-  <meta name="description" content="How do QR codes work? Understand the technology behind the squares, the difference between Static and Dynamic QR codes, and why they are essential in 2026.">
-  <meta name="keywords" content="How QR Codes Work, Static vs Dynamic QR, QR Code Technology, QR Generator Guide, Digital Marketing Tools">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>How QR Codes Work — A Simple Complete Guide for Digital Creators 2026 | Toolkit Pro</title>
+  <meta name="description" content="Learn how QR codes work in simple easy words. This complete guide explains what QR codes are, how to scan them, how to create them free, and the best ways to use them for your business, blog, or social media."/>
+  <meta name="keywords" content="how QR codes work, what is a QR code, free QR code generator, QR code for business, QR code for social media, create QR code free, Toolkit Pro QR generator, Shaheera Sadia"/>
+  <meta name="author" content="Shaheera Sadia"/>
+  <meta property="og:title" content="How QR Codes Work — A Simple Complete Guide for Digital Creators 2026"/>
+  <meta property="og:description" content="Everything you need to know about QR codes explained in simple words. What they are, how they work, how to make one free, and the best ways to use them."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://app-tool.vercel.app/Blog/how-qr-codes-work.html"/>
+  <meta property="og:image" content="https://app-tool.vercel.app/image/blog3.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html"/>
+
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
   <style>
-    :root {
-      --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
-      --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
-      --muted: #94a3b8; --white: #ffffff;
-      --blue-pale: #eff6ff; --blue-light: #dbeafe;
-      --accent: #facc15;
+    :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
+      --bg:#f5f8ff;--white:#fff;--radius:14px;
+      --shadow:0 4px 24px rgba(43,79,216,.09);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+
+    /* NAV */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
 
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-      margin: 0; padding: 0; line-height: 1.8;
-    }
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan));color:white;padding:60px 24px 52px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hi{position:relative;z-index:1;max-width:800px;margin:0 auto}
+    .bc{font-size:13px;opacity:.75;margin-bottom:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .bc a{color:rgba(255,255,255,.85);text-decoration:none}
+    .bc a:hover{color:white;text-decoration:underline}
+    .cp{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+    .hero h1{font-family:'Lora',serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:14px}
+    .am{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;opacity:.85}
+    .am span{display:flex;align-items:center;gap:5px}
 
-    /* ── NAV ── */
-    nav {
-      background: var(--white); border-bottom: 1px solid #dde6ff;
-      padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
-      position: fixed; top: 0; left: 0; right: 0; width: 100%;
-      box-sizing: border-box; z-index: 9999;
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
-    
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin:0; padding:0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+    /* LAYOUT */
+    .layout{max-width:1060px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
+    @media(max-width:860px){.layout{grid-template-columns:1fr;padding:24px 14px 60px}}
 
-    .mobile-btn {
-        display: none; background: var(--blue-dark); border: none;
-        color: white; width: 40px; height: 40px; border-radius: 8px;
-        cursor: pointer; font-size: 1.2rem; align-items: center; justify-content: center;
-    }
+    /* ARTICLE */
+    .article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;padding:40px 44px}
+    @media(max-width:640px){.article{padding:24px 18px}}
+    .article img{width:100%;height:auto;border-radius:12px;margin:24px 0;box-shadow:var(--shadow)}
+    .article p{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:22px}
+    .article h2{font-family:'Lora',serif;font-size:26px;color:var(--blue-dark);margin:44px 0 16px;font-weight:700;border-left:4px solid var(--blue);padding-left:14px;line-height:1.3}
+    .article h3{font-family:'Lora',serif;font-size:20px;color:var(--text);margin:28px 0 12px;font-weight:600}
+    .article h4{font-size:16.5px;font-weight:700;color:var(--blue-dark);margin:18px 0 8px}
+    .article ul,.article ol{padding-left:24px;margin-bottom:22px}
+    .article li{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:10px}
+    .article strong{color:var(--text);font-weight:700}
+    .article a{color:var(--blue);text-decoration:none;font-weight:500}
+    .article a:hover{text-decoration:underline}
 
-    /* ── CONTENT ── */
-    .blog-container { max-width: 850px; margin: 120px auto 60px; padding: 0 20px; }
-    .blog-header { text-align: center; margin-bottom: 40px; }
-    .blog-header h1 { font-size: 42px; color: #38bdf8; line-height: 1.2; margin-bottom: 15px; }
-    
-    .content-section { background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); }
-    h2 { color: var(--accent); margin-top: 40px; border-left: 4px solid var(--blue); padding-left: 15px; font-size: 24px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 5px; }
-    p { color: #cbd5e1; font-size: 17px; margin-bottom: 20px; }
-    ul { margin-bottom: 25px; padding-left: 20px; }
-    li { margin-bottom: 10px; color: #cbd5e1; font-size: 16px; }
+    /* BLOCKS */
+    .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px 16px;color:var(--muted);font-size:13px;margin:36px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+    .hl{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#374a80;line-height:1.75}
+    .hl strong{color:var(--blue-dark)}
+    .tip{background:#e8f5e9;border-left:4px solid #4caf50;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#1b5e20;line-height:1.75}
+    .tip strong{color:#1b5e20}
+    .warn{background:#fff8e1;border-left:4px solid #ffc107;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#7c6b00;line-height:1.75}
 
-    .qr-infographic {
-      background: #0f172a; padding: 30px; border-radius: 15px;
-      margin: 30px 0; text-align: center; border: 1px solid rgba(59, 130, 246, 0.3);
-    }
+    /* TABLE */
+    .tbl{width:100%;border-collapse:collapse;margin:24px 0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+    .tbl th{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 16px;font-size:14px;font-weight:600;text-align:left}
+    .tbl td{padding:12px 16px;font-size:14.5px;color:var(--text);border-bottom:1px solid #eef2ff;background:var(--white)}
+    .tbl tr:nth-child(even) td{background:var(--blue-pale)}
+    .tbl tr:last-child td{border-bottom:none}
+    @media(max-width:600px){.tbl{display:block;overflow-x:auto}}
 
-    /* Comparison Table Styling */
-    .table-container { overflow-x: auto; margin: 30px 0; }
-    table { width: 100%; border-collapse: collapse; background: #0f172a; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-    th, td { padding: 14px 18px; text-align: left; font-size: 15px; }
-    th { background-color: var(--blue-dark); color: white; font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; }
-    td { color: #cbd5e1; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    tr:last-child td { border-bottom: none; }
+    /* STEP LIST */
+    .step-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+    .step{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--white);border:1.5px solid #dde6ff;border-radius:12px}
+    .sn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .sb h4{font-size:15px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
+    .sb p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
 
-    /* Ad Slot Specific Container Styling */
-    .blog-ad-container {
-        margin: 35px auto;
-        text-align: center;
-        clear: both;
-        min-height: 90px;
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 12px;
-        padding: 8px 0;
-    }
+    /* USE CASE GRID */
+    .use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:20px 0}
+    .use-card{background:var(--blue-pale);border-radius:12px;padding:18px;border:1.5px solid #dde6ff}
+    .use-card i{font-size:22px;color:var(--blue);margin-bottom:10px;display:block}
+    .use-card h4{font-size:14.5px;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
+    .use-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
 
-    .tool-cta {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      padding: 35px; border-radius: 15px; text-align: center; margin: 40px 0;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .tool-cta h3 { margin-top: 0; color: white; font-size: 24px; }
-    .btn-cta {
-      display: inline-block; background: var(--pink); color: white;
-      padding: 14px 30px; border-radius: 50px; text-decoration: none;
-      font-weight: 700; margin-top: 15px; transition: 0.3s;
-      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.4);
-    }
-    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6); }
+    /* ANATOMY VISUAL */
+    .anatomy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0}
+    .anatomy-item{background:var(--white);border:1.5px solid #dde6ff;border-radius:12px;padding:16px}
+    .anatomy-item .num{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin-bottom:10px}
+    .anatomy-item h4{font-size:14px;font-weight:700;color:var(--blue-dark);margin-bottom:5px}
+    .anatomy-item p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
 
-    .featured-image { width: 100%; height: auto; max-height: 400px; border-radius: 20px; object-fit: cover; margin-top: 20px; }
+    /* FAQ */
+    .faq-item{border:1.5px solid #dde6ff;border-radius:12px;margin-bottom:10px;overflow:hidden}
+    .faq-q{padding:16px 20px;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--white);user-select:none}
+    .faq-q:hover{background:var(--blue-pale)}
+    .faq-q i{color:var(--blue);font-size:12px;transition:transform .3s;flex-shrink:0}
+    .faq-item.open .faq-q i{transform:rotate(180deg)}
+    .faq-a{padding:0 20px;font-size:15px;color:#374a80;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;background:var(--blue-pale)}
+    .faq-item.open .faq-a{max-height:400px;padding:16px 20px}
 
-    /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
-        nav { padding: 0 20px; }
-        .mobile-btn { display: flex; }
-        .nav-links {
-            display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: white;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            z-index: 1000; box-sizing: border-box;
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; text-align: center; }
-        .nav-links a { display: block; padding: 12px; color: var(--muted); }
-        .nav-links a:hover { background: #f1f5f9; }
+    /* CTA */
+    .cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;border-radius:var(--radius);padding:30px 34px;text-align:center;margin:36px 0}
+    .cta h3{font-family:'Lora',serif;font-size:22px;margin-bottom:10px}
+    .cta p{font-size:15px;opacity:.9;margin-bottom:20px;line-height:1.65;max-width:500px;margin-left:auto;margin-right:auto}
+    .cta a{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue-dark);padding:12px 26px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .2s}
+    .cta a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
-        .blog-container { margin: 100px auto 40px; }
-        .blog-header h1 { font-size: 28px; padding: 0 5px; }
-        .featured-image { height: 220px; border-radius: 12px; }
-        .content-section { padding: 25px 20px; border-radius: 15px; }
-        h2 { font-size: 20px; margin-top: 25px; }
-        p, li { font-size: 16px; }
-        .tool-cta { padding: 25px 15px; }
-        .tool-cta h3 { font-size: 20px; }
-    }
+    /* TAGS / AUTHOR */
+    .tag-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+    .tag{background:var(--blue-light);color:var(--blue);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:20px;text-decoration:none}
+    .tag:hover{background:var(--blue);color:white}
+    .author-box{background:var(--blue-pale);border-radius:var(--radius);border:1px solid #c0d0f8;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
+    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .author-info h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
+    .author-info p{font-size:13.5px;color:#374a80;line-height:1.65}
 
-    /* ── FOOTER ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 20px 28px; margin-top: 8px; }
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 15px; font-size: 13px; color: rgba(255,255,255,.7); text-align: center; margin: 0 auto 28px; max-width: 1100px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 24px; color: #7dd3fc; font-weight: 700; margin-bottom: 12px; }
-    .footer-brand p { font-size: 14px; opacity: .8; line-height: 1.6; }
-    .footer-social { display: flex; gap: 12px; margin-top: 20px; }
-    .footer-social-btn { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
-    .footer-social-btn:hover { background: var(--blue); transform: translateY(-3px); }
-    
-    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; color: #7dd3fc; margin-bottom: 20px; letter-spacing: 1px; }
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
-    .footer-col li { margin-bottom: 12px; }
-    .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: 0.2s; }
-    .footer-col a:hover { color: white; padding-left: 5px; }
+    /* SIDEBAR */
+    .sidebar{display:flex;flex-direction:column;gap:18px}
+    .sb-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden}
+    .sb-hd{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 17px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:7px}
+    .sb-body{padding:14px 16px}
+    .toc-ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+    .toc-ul a{font-size:13px;color:var(--blue);text-decoration:none;display:flex;align-items:flex-start;gap:5px;padding:4px 0;border-bottom:1px solid #eef2ff;line-height:1.5}
+    .toc-ul a i{font-size:9px;margin-top:5px;flex-shrink:0;opacity:.6}
+    .toc-ul a:hover{color:var(--blue-dark)}
+    .rel-list{display:flex;flex-direction:column;gap:8px}
+    .rel-item{display:flex;gap:9px;align-items:flex-start;text-decoration:none;padding:7px 0;border-bottom:1px solid #eef2ff}
+    .rel-item:last-child{border-bottom:none}
+    .rel-icon{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:13px;flex-shrink:0}
+    .rel-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
+    .rel-title:hover{color:var(--blue)}
+    .sb-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:var(--radius);padding:18px;text-align:center;color:white}
+    .sb-cta h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
+    .sb-cta p{font-size:12.5px;opacity:.9;margin-bottom:13px;line-height:1.55}
+    .sb-cta a{display:inline-flex;align-items:center;gap:6px;background:white;color:var(--blue-dark);padding:9px 17px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
 
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; display: flex; justify-content: space-between; font-size: 13px; opacity: 0.8; flex-wrap: wrap; gap: 15px; }
-    .footer-bottom a { color: #7dd3fc; text-decoration: none; }
+    /* FOOTER */
+    footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255,.85);padding:52px 40px 28px}
+    .aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1060px;margin-left:auto;margin-right:auto}
+    .fi{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+    .fi .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+    .fi>div>p{font-size:13px;opacity:.72;line-height:1.7;max-width:220px}
+    .fsoc{display:flex;gap:10px;margin-top:14px}
+    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
+    .fsb:hover{background:var(--blue);color:white}
+    .fc h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:14px}
+    .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .fc ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+    .fc ul a:hover{color:#7dd3fc}
+    .fb{max-width:1060px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
+    .fb a{color:inherit;text-decoration:none}
+    @media(max-width:800px){.fi{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){footer{padding:36px 18px 22px}.fi{grid-template-columns:1fr;gap:20px}.fb{flex-direction:column;text-align:center}}
+      
+img,
+table,
+iframe {
+    max-width: 80%;
+}
 
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
+a {
+    overflow-wrap: break-word;
+}
+
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
+
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+html,
+body {
+    position: relative;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+ 
   </style>
+
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <button id="mobileMenuBtn" class="mobile-btn"><i class="fas fa-bars"></i></button>
-  <ul class="nav-links" id="navMenu">
-    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
+  <button class="mob" id="mob" onclick="document.getElementById('nl').classList.toggle('open');this.classList.toggle('x')" aria-label="Menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+  <ul class="nl" id="nl">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
+    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
+<script>
+document.addEventListener("click",function(e){
+  var n=document.getElementById("nl"),b=document.getElementById("mob");
+  if(n&&b&&!b.contains(e.target)&&!n.contains(e.target)){n.classList.remove("open");b.classList.remove("x");}
+});
+</script>
 
-<article class="blog-container">
-  <header class="blog-header">
-    <span style="color: var(--pink); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Technology Explained</span>
-    <h1>How QR Codes Work Explained Simply</h1>
-    <p style="color: var(--muted); font-size: 18px; margin-top: 5px;">Understand the engineering and magic behind those little black and white squares.</p>
-    <img src="../image/blog3.jpg" alt="How QR Codes Work Detailed Overview" class="featured-image">
-  </header>
-
-  <div class="content-section">
-    <p>From modern touchless restaurant menus to seamless digital cross-border payments, QR codes have seamlessly woven themselves into global data exchange infrastructure in 2026. But have you ever truly wondered how a simple, clustered pattern of monochromatic modules can transmit heavy chunks of data in a fraction of a second? Let us break down the computer vision technology into straightforward concepts.</p>
-
-    <h2>What is a QR Code?</h2>
-    <p>QR stands for <strong>Quick Response</strong>. Originally invented in 1994 by Denso Wave (a subsidiary of Toyota), it was engineered to track components across automotive manufacturing plants at lightning speed. Traditional barcodes are linear and one-dimensional (1D), saving digital data along a single horizontal axis. A QR code, however, is a two-dimensional (2D) matrix setup, packing bits vertically and horizontally. This advanced grid-based design allows a singular QR code matrix to store over <strong>100 times more data</strong> than an old-school grocery barcode, accommodating up to 7,089 numeric characters.</p>
-
-    <div class="blog-ad-container">
-      <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-layout="in-article"
-           data-ad-format="fluid"
-           data-ad-client="ca-pub-6309207317896311"
-           data-ad-slot="2485889698"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+<!-- HERO -->
+<section class="hero">
+  <div class="hi">
+    <div class="bc">
+      <a href="https://app-tool.vercel.app/index.html">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
+      <a href="https://app-tool.vercel.app/Blog.html">Blog</a>
+      <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
+      <span>QR Code Guide</span>
     </div>
-
-    <div class="qr-infographic">
-      <i class="fas fa-qrcode" style="font-size: 80px; color: var(--blue); margin-bottom: 15px;"></i>
-      <p style="font-size: 15px; color: #94a3b8; margin: 0; max-width: 600px; display: inline-block;">The three prominent outer-bound tracking blocks allow a mobile image sensor to instantaneously read the matrix regardless of target rotation, tilt, or peripheral skew.</p>
+    <span class="cp"> Technology Guide</span>
+    <h1>How QR Codes Work — A Simple Complete Guide for Digital Creators 2026</h1>
+    <div class="am">
+      <span><i class="fas fa-user"></i> Shaheera Sadia</span>
+      <span><i class="fas fa-calendar"></i> May 14, 2026</span>
+      <span><i class="fas fa-clock"></i> 11 min read</span>
+      <span><i class="fas fa-eye"></i> 4,753 views</span>
     </div>
-
-    <h2>Static vs. Dynamic QR Codes: The Operational Difference</h2>
-    <p>When engineering digital marketing workflows or planning physical asset generation, choosing the correct type of QR architecture is vital for system flexibility and long-term link tracking:</p>
-    <ul>
-      <li><strong>Static QR Codes:</strong> The data payload (like a direct URL or text string) is directly baked into the module grid layout. The denser the destination string, the tighter the grid pattern gets. Once printed or deployed, the raw destination data can never be altered. These are perfect for static information like home Wi-Fi credentials.</li>
-      <li><strong>Dynamic QR Codes:</strong> The printed grid contains a shortened, permanent redirect web link managed by a tracking server. When a smartphone scans it, the device hits the proxy server, which routes them to the final target page. You can change this destination link at any point without changing the printed image, while also capturing rich analytics like scan location and timestamp data.</li>
-    </ul>
-
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Feature Criteria</th>
-            <th>Static QR Framework</th>
-            <th>Dynamic QR Framework</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Data Modification</td>
-            <td>Permanently locked upon asset generation</td>
-            <td>Infinitely editable via redirect server</td>
-          </tr>
-          <tr>
-            <td>Analytics & Scans</td>
-            <td>No native tracking metrics available</td>
-            <td>Tracks exact scans, devices, and locations</td>
-          </tr>
-          <tr>
-            <td>Grid Matrix Density</td>
-            <td>Grows denser as character count increases</td>
-            <td>Stays clean and light (points to short link)</td>
-          </tr>
-          <tr>
-            <td>Best Use Cases</td>
-            <td>Wi-Fi passwords, plain text, fixed serials</td>
-            <td>Marketing campaigns, restaurant menus, product packaging</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="blog-ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-6309207317896311"
-           data-ad-slot="2485889698"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-
-    <div class="tool-cta">
-      <h3>Need a Clean, Functional QR Code?</h3>
-      <p>Whether it is an asset destination for an online portfolio, a custom web page, or text string transmission, use our completely free tool right here on <strong>Toolkit Pro</strong> to build professional high-resolution codes.</p>
-      <a href="https://app-tool.vercel.app/index.html#qr-section" class="btn-cta">Launch QR Generator &rarr;</a>
-    </div>
-
-    <h2>The Deep Anatomy of a QR Code Matrix</h2>
-    <p>To an advanced computer vision camera system, a QR block is not an unorganized maze of squares. It is an extremely uniform arrangement of strategic data sectors:</p>
-    
-    <p>1. <strong>Position Detection Patterns:</strong> Those distinct triple-nested boxes located at the top-left, top-right, and bottom-left bounds. These critical anchors instruct the scanner exactly where the outer edges of the matrix lie, enabling full processing speed even if you hold your mobile camera sideways or upside down.</p>
-    
-    <p>2. <strong>Alignment Elements:</strong> Smaller offset squares embedded in larger data-capacity grids. These targets act as visual stabilizers, allowing the camera system to digitally "flatten" the scanned layout if the code is affixed to a warped or curved surface, such as a bottle or soda can.</p>
-    
-    <p>3. <strong>Timing Patterns:</strong> Alternating black-and-white grid lines that span directly between the position detection markers. They serve as mechanical coordinate systems, letting the computer vision processor accurately calculate the total size of individual grid modules across the matrix.</p>
-    
-    <p>4. <strong>The Quiet Zone:</strong> The essential, solid border surrounding the matrix. This empty buffering space tells the camera software exactly where environmental graphics end and your actual data payload begins, preventing interference from surrounding text.</p>
-
-    <h2>Error Correction: The Unsung Hero of QR Tech</h2>
-    <p>A phenomenal element of QR architecture is its resilience against physical damage. Using specialized **Reed-Solomon mathematical error correction**, a QR matrix can have up to <strong>30% of its surface completely destroyed, smudged, or torn away</strong> without breaking its data integrity. The decoding engine automatically reconstructs missing bits on the fly. This structural safety is why marketers can cleanly inject logos right into the middle of the code without destroying the user experience.</p>
-
-    <h2>Why QR Codes Remain Essential in 2026</h2>
-    <p>QR infrastructure operates as the ultimate physical-to-digital link across modern app environments. Key industries depend heavily on this data routing method:</p>
-    <ul>
-        <li><strong>Hardware-Free Contactless Payments:</strong> Customers quickly scan vendor presentation terminals to authorize encrypted transactional payments safely without using card readers.</li>
-        <li><strong>Physical Print Marketing Analytics:</strong> Businesses append dynamic links to billboards, banners, and flyers to accurately pinpoint exactly which geographic placements are driving web conversions.</li>
-        <li><strong>Frictionless App Stores Distribution:</strong> Eliminates manual typos by redirecting consumer devices directly to targeted app download destinations via a single universal scan.</li>
-    </ul>
-
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    <h3>Can a QR code expire or run out of daily scans?</h3>
-    <p>No. A QR code is an open-standard visual pattern. As long as that pattern is physically legible and the target link it redirects to remains online, the code will remain fully scannable indefinitely.</p>
-
-    <h3>Is a special third-party app required to scan modern codes?</h3>
-    <p>In 2026, third-party scanner utilities are entirely unnecessary. Both iOS and Android operating systems have built-in, lightning-fast QR scanning protocols embedded right inside their native camera apps.</p>
   </div>
+</section>
+
+<!-- CONTENT -->
+<div class="layout">
+<main>
+<article class="article">
+
+<img src="https://app-tool.vercel.app/image/blog3.jpg" alt="How QR codes work complete simple guide for digital creators 2026 - scanning and creating QR codes" loading="eager"/>
+
+<p>You have probably seen them everywhere — on restaurant tables, bus stops, product packaging, business cards, and social media posts. That small black-and-white square with the strange pattern inside. You point your phone camera at it and suddenly a website opens, a menu appears, or a video starts playing.</p>
+
+<p>That is a QR code. And while they might look complicated, how they work is actually very simple once someone explains it clearly. Even better — you can create your own QR code completely free in about 30 seconds, no technical knowledge required.</p>
+
+<p>This guide explains everything you need to know about QR codes in plain, easy language. By the end of this article you will understand exactly what a QR code is, how your phone reads it, what you can put inside one, how to make one free, and the best ways to use one for your business, blog, or social media.</p>
+
+<div class="hl"><strong>What you will learn:</strong> What QR codes are, how they store information, how your phone reads them, the difference between static and dynamic QR codes, how to create your own free QR code, and the best uses for QR codes in 2026.</div>
+
+<!-- AD 1 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>What Is a QR Code?</h2>
+
+<p>QR stands for <strong>Quick Response</strong>. A QR code is a type of barcode — but instead of the simple straight lines you see on food packaging in a supermarket, a QR code is a square pattern made up of small black and white squares arranged in a grid.</p>
+
+<p>The big difference between a regular barcode and a QR code is how much information they can hold. A regular barcode can only hold about 20 numbers — enough for a product price or stock number. A QR code can hold up to 7,089 numbers, or about 4,296 letters and characters. That is enough space to store a full website address, a phone number, a Wi-Fi password, a business card, a short paragraph of text, or even a small poem.</p>
+
+<p>QR codes were invented in 1994 by a Japanese company called Denso Wave. They were originally created to track car parts moving through factories — workers could scan them quickly with a handheld reader to identify parts without typing anything. The "Quick Response" name comes from how fast they can be scanned compared to typing information manually.</p>
+
+<p>For most of us in 2026, QR codes are something we use with our smartphones every day — scanning menus, making payments, connecting to Wi-Fi, and visiting websites without typing anything.</p>
+
+<h2>How Does a QR Code Store Information?</h2>
+
+<p>This is the part that most people find interesting once they understand it. The information inside a QR code is not stored as visible text — it is encoded into the pattern of black and white squares.</p>
+
+<p>Think of it like Morse code. In Morse code, dots and dashes represent letters and numbers. In a QR code, black squares and white squares (spaces) represent data in a similar way. Each combination of black and white squares in the grid corresponds to a specific piece of information.</p>
+
+<p>The information is laid out in a very specific arrangement. Different areas of the QR code grid serve different purposes — some areas store the actual data, some areas help the scanner find and orient the code, and some areas contain backup copies of the data in case part of the code gets damaged or covered.</p>
+
+<p>When you create a QR code for a URL like <code style="background:#eef2ff;padding:2px 7px;border-radius:4px;font-size:14px;color:var(--blue)">https://app-tool.vercel.app</code>, a QR code generator converts those letters and symbols into a binary pattern — a series of 1s and 0s. Then it arranges those 1s and 0s as black and white squares in the grid. The resulting pattern is your QR code.</p>
+
+<!-- AD 2 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>The Parts of a QR Code — What Each Area Does</h2>
+
+<p>A QR code is not just a random pattern. It has specific zones that each serve a purpose. Here is what each part of a QR code does:</p>
+
+<div class="anatomy-grid">
+  <div class="anatomy-item">
+    <div class="num">1</div>
+    <h4>Position Markers</h4>
+    <p>The three large squares in three corners of the code. These tell your phone where the code is and how to orient it. Without them, your phone could not find the code in the camera view.</p>
+  </div>
+  <div class="anatomy-item">
+    <div class="num">2</div>
+    <h4>Alignment Pattern</h4>
+    <p>A smaller square near the bottom-right corner. It helps your phone read the code correctly even if the surface is curved — like a bottle or a can.</p>
+  </div>
+  <div class="anatomy-item">
+    <div class="num">3</div>
+    <h4>Timing Pattern</h4>
+    <p>Alternating black and white lines between the position markers. These define the grid spacing and help the scanner count how many squares are in each row and column.</p>
+  </div>
+  <div class="anatomy-item">
+    <div class="num">4</div>
+    <h4>Data Modules</h4>
+    <p>The main body of the code filled with small black and white squares. This is where your actual information — website URL, text, phone number — is stored as a binary pattern.</p>
+  </div>
+  <div class="anatomy-item">
+    <div class="num">5</div>
+    <h4>Error Correction</h4>
+    <p>Backup copies of the data distributed through the code. If part of your QR code is damaged, torn, or covered by a sticker, your phone can still read it because of this built-in backup system.</p>
+  </div>
+  <div class="anatomy-item">
+    <div class="num">6</div>
+    <h4>Quiet Zone</h4>
+    <p>The white border around the whole code. This empty space separates the code from surrounding text or images, telling the scanner where the code starts and ends.</p>
+  </div>
+</div>
+
+<h2>How Does Your Phone Read a QR Code?</h2>
+
+<p>When you point your phone camera at a QR code, something quite clever happens in under a second. Here is the whole process broken down into simple steps:</p>
+
+<div class="step-list">
+  <div class="step">
+    <div class="sn">1</div>
+    <div class="sb">
+      <h4>Camera captures the image</h4>
+      <p>Your phone's camera takes a photo of whatever you are pointing it at. It is continuously analyzing the image it sees, looking for the specific three-corner pattern that marks a QR code.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">2</div>
+    <div class="sb">
+      <h4>Phone finds the three position markers</h4>
+      <p>The QR reader software in your phone identifies the three large squares in the corners of the code. This tells it exactly where the code is in the image and which way it is oriented — even if the code is tilted or partially at an angle.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">3</div>
+    <div class="sb">
+      <h4>Phone maps out the grid</h4>
+      <p>Using the position markers and timing patterns, the phone maps a precise grid over all the small squares in the code. It identifies each cell in the grid as either black (1) or white (0).</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">4</div>
+    <div class="sb">
+      <h4>Error correction checks for damage</h4>
+      <p>The phone checks if any part of the code is damaged or unreadable. If so, it uses the built-in error correction data to fill in the gaps and reconstruct the full data. Up to 30% of a QR code can be missing or damaged and it will still work.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">5</div>
+    <div class="sb">
+      <h4>Data is decoded into readable text</h4>
+      <p>The binary pattern of black and white squares is translated back into the original text — a URL, phone number, Wi-Fi password, or whatever information was encoded. This all takes under one second.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">6</div>
+    <div class="sb">
+      <h4>Phone shows you the result</h4>
+      <p>A notification appears on your screen with the decoded information. If it is a URL, you can tap to open it in your browser. If it is a phone number, you can tap to call. If it is a Wi-Fi password, your phone connects automatically.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tip"><strong> Good to know:</strong> You do not need to download a special app to scan QR codes. Every modern smartphone — iPhone and Android — can scan QR codes directly from the built-in Camera app. Just open your camera, point it at the code, and a notification will appear. No extra app needed.</div>
+
+<!-- AD 3 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>What Can You Put Inside a QR Code?</h2>
+
+<p>Most people think QR codes can only hold website links. But they can actually store many different types of information. Here is a full list of everything you can encode into a QR code:</p>
+
+<table class="tbl">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>What Happens When Scanned</th>
+      <th>Common Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Website URL</strong></td><td>Browser opens the link automatically</td><td>Business cards, posters, menus, packaging</td></tr>
+    <tr><td><strong>Plain Text</strong></td><td>Text appears on screen</td><td>Short messages, instructions, event details</td></tr>
+    <tr><td><strong>Phone Number</strong></td><td>Phone app opens ready to call</td><td>Business contact cards, customer service</td></tr>
+    <tr><td><strong>Email Address</strong></td><td>Email app opens with address pre-filled</td><td>Contact forms, business cards</td></tr>
+    <tr><td><strong>SMS Message</strong></td><td>Text message app opens with number and message pre-filled</td><td>Promotions, customer opt-ins</td></tr>
+    <tr><td><strong>Wi-Fi Credentials</strong></td><td>Phone connects to the Wi-Fi network automatically</td><td>Cafes, hotels, offices, events</td></tr>
+    <tr><td><strong>Location / Map</strong></td><td>Maps app opens showing the location</td><td>Event venues, shop addresses</td></tr>
+    <tr><td><strong>vCard (Contact Info)</strong></td><td>Phone offers to save the contact</td><td>Business networking, trade shows</td></tr>
+    <tr><td><strong>Social Media Profile</strong></td><td>Opens your Instagram, Pinterest, or LinkedIn profile</td><td>Promotional materials, social media growth</td></tr>
+    <tr><td><strong>App Store Link</strong></td><td>Opens app store page for a specific app</td><td>App marketing and downloads</td></tr>
+    <tr><td><strong>PDF or Document</strong></td><td>Opens or downloads the document</td><td>Menus, catalogues, instruction manuals</td></tr>
+    <tr><td><strong>YouTube Video</strong></td><td>Opens the video in YouTube</td><td>Product demos, tutorials, promotions</td></tr>
+  </tbody>
+</table>
+
+<h2>Static vs Dynamic QR Codes — What Is the Difference?</h2>
+
+<p>There are two types of QR codes and it is important to understand the difference before you create one:</p>
+
+<h3>Static QR Codes</h3>
+<p>A static QR code has the information permanently encoded into the pattern. Whatever URL or text you put in when you created it stays there forever. You cannot change it later.</p>
+
+<p><strong>Advantages:</strong> Free to create and use, works forever with no subscription, no servers involved — the data is directly in the code itself.</p>
+
+<p><strong>Disadvantages:</strong> If you want to change the destination URL later, you have to create a brand new QR code and reprint all your materials. You also cannot track how many times the code has been scanned.</p>
+
+<h3>Dynamic QR Codes</h3>
+<p>A dynamic QR code encodes a short redirect URL. When someone scans it, they are sent to a server which then redirects them to the real destination. You can change the destination URL at any time — without changing the code itself.</p>
+
+<p><strong>Advantages:</strong> You can update the destination URL anytime, you can track scan statistics (how many scans, when, where, what device), much better for marketing campaigns.</p>
+
+<p><strong>Disadvantages:</strong> Usually requires a paid subscription service. If the service goes offline, your QR codes stop working.</p>
+
+<div class="hl"><strong>Which should you use?</strong> For most creators, bloggers, and small businesses, static QR codes are perfectly fine and completely free. If your URL is not going to change — like your website homepage, your Pinterest profile, or your business contact page — use a free static QR code. Toolkit Pro's free QR code generator creates high-quality static QR codes.</div>
+
+<!-- AD 4 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>How to Create a QR Code for Free — Step by Step</h2>
+
+<p>Creating a QR code with Toolkit Pro is completely free and takes about 30 seconds. Here is exactly how to do it:</p>
+
+<div class="step-list">
+  <div class="step">
+    <div class="sn">1</div>
+    <div class="sb">
+      <h4>Open the QR Code Generator</h4>
+      <p>Go to <a href="https://app-tool.vercel.app/index.html#qr-section">app-tool.vercel.app</a> and scroll to the QR Code Generator section. No sign-up, no account needed.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">2</div>
+    <div class="sb">
+      <h4>Type or paste your URL</h4>
+      <p>Enter the website address, text, or information you want to encode. Make sure to include the full URL including https:// at the start. For example: https://app-tool.vercel.app</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">3</div>
+    <div class="sb">
+      <h4>Click Generate</h4>
+      <p>Your QR code appears instantly on screen. It uses high error correction so it is scannable even when printed small or at an angle.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">4</div>
+    <div class="sb">
+      <h4>Test it before using it</h4>
+      <p>Before printing or sharing your QR code, always test it first. Point your phone camera at the code on screen and confirm it takes you to the right place.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="sn">5</div>
+    <div class="sb">
+      <h4>Download as PNG</h4>
+      <p>Click the Download button to save your QR code as a high-quality PNG file. This file can be used in print materials, websites, presentations, and social media posts.</p>
+    </div>
+  </div>
+</div>
+
+<div class="warn"><strong> Important:</strong> The URL you enter in the QR code cannot be changed once the code is generated. Make sure your URL is correct before downloading. Copy-paste it from your browser address bar to avoid typing mistakes — a single wrong character means the code will not work.</div>
+
+<h2>The Best Ways to Use QR Codes in 2026</h2>
+
+<p>QR codes have become one of the most versatile tools for creators, small businesses, and professionals. Here are the most effective ways people are using them right now:</p>
+
+<div class="use-grid">
+  <div class="use-card">
+    <i class="fas fa-id-card"></i>
+    <h4>Business Cards</h4>
+    <p>Add a QR code to your business card that links to your website, portfolio, or LinkedIn profile. When someone scans it, they go straight to your online presence — no typing required.</p>
+  </div>
+  <div class="use-card">
+    <i class="fab fa-pinterest"></i>
+    <h4>Pinterest Profile</h4>
+    <p>Create a QR code for your Pinterest profile URL. Include it in your Instagram bio, email signature, or printed materials to grow your Pinterest following.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-utensils"></i>
+    <h4>Restaurant Menus</h4>
+    <p>Replace printed menus with a QR code linking to a digital menu. Easy to update, no reprinting costs, and customers can view it on their own phone.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-box"></i>
+    <h4>Product Packaging</h4>
+    <p>Add a QR code to your product packaging that links to a tutorial video, warranty registration, or your online store. Turns physical products into digital touchpoints.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-wifi"></i>
+    <h4>Wi-Fi Sharing</h4>
+    <p>Create a QR code containing your Wi-Fi network name and password. Guests scan it and connect automatically — no more spelling out long passwords.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-bullhorn"></i>
+    <h4>Marketing Flyers</h4>
+    <p>Add a QR code to any printed marketing material — flyers, posters, banners — linking to your website, event registration, or special offer page.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-envelope"></i>
+    <h4>Email Signature</h4>
+    <p>Include a small QR code in your email signature linking to your website or portfolio. Makes it easy for email recipients to visit your site on their phone.</p>
+  </div>
+  <div class="use-card">
+    <i class="fas fa-chalkboard-teacher"></i>
+    <h4>Presentations & Teaching</h4>
+    <p>Add a QR code to your presentation slides linking to additional resources, your contact page, or a feedback form. Audience members can scan and access it immediately.</p>
+  </div>
+</div>
+
+<!-- AD 5 -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<h2>Tips for Making Sure Your QR Code Works Every Time</h2>
+
+<p>A QR code that does not scan properly is worse than no QR code at all. Here are the most important tips to make sure your QR code is always scannable:</p>
+
+<ul>
+  <li><strong>Keep enough contrast.</strong> QR codes need high contrast between the dark squares and the light background. Black on white is the most reliable combination. Avoid using light colors on light backgrounds or dark on dark. If you want to use brand colors, keep the squares dark and the background light.</li>
+  <li><strong>Do not make it too small.</strong> For print materials, QR codes should be at least 2 cm × 2 cm (about 0.8 inches). If printed smaller than this, many phones will struggle to read the small squares. Aim for 3–4 cm for most uses, and larger for anything viewed from a distance like a poster or banner.</li>
+  <li><strong>Keep the quiet zone clear.</strong> The white border around the QR code (called the quiet zone) must stay empty. Do not let other text, images, or design elements overlap with this border — it prevents the scanner from finding the edges of the code.</li>
+  <li><strong>Always test before printing.</strong> Scan your QR code with multiple phones (iPhone and Android if possible) before printing any materials. What looks fine on screen might be harder to read once printed. Test the printed version too before distributing.</li>
+  <li><strong>Use a short URL.</strong> Shorter URLs create simpler QR codes with fewer squares. Simpler codes are faster to scan and easier to read even at smaller sizes. If your URL is very long, consider using a URL shortener like bit.ly first.</li>
+  <li><strong>Save as PNG, not JPEG.</strong> QR codes should be saved and printed as PNG files, not JPEG. JPEG compression can blur the edges of the small squares, making the code harder to scan. PNG keeps the squares crisp and clear at any size.</li>
+</ul>
+
+<h2>Frequently Asked Questions About QR Codes</h2>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Do QR codes expire? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Static QR codes (like the ones Toolkit Pro generates for free) never expire. The information is encoded directly into the pattern and does not rely on any external server. As long as the QR code image is intact and the destination URL is still active, the code will work forever. Dynamic QR codes can expire if the service that manages the redirect stops working or if your subscription runs out — this is one reason many people prefer free static QR codes for long-term use.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Can QR codes be hacked or contain viruses? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">A QR code itself cannot contain a virus — it just contains text or a URL. However, that URL could potentially lead to a malicious website. This is called "QR code phishing" or "quishing." To stay safe, always check the URL that appears on your screen after scanning before you tap to open it. If the URL looks strange, misspelled, or unexpected, do not proceed. Only scan QR codes from sources you trust. When you create QR codes using Toolkit Pro, they link directly to whatever URL you entered — they are completely transparent and trustworthy.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">How small can I print a QR code and still have it scan? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">The minimum practical size for a QR code in print is about 2 cm × 2 cm (approximately 0.8 inches square). Below this size, the small modules become too tiny for most smartphone cameras to resolve clearly. For business cards, 2–3 cm is fine. For flyers and posters that people hold in their hands, 3–4 cm works well. For large format printing like banners or signs viewed from more than 1 meter away, make your QR code much larger — at least 10–15 cm for every 3 meters of viewing distance.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Can I add my logo to a QR code? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Yes — this is called a branded QR code. Because QR codes have built-in error correction (they can still be read even if up to 30% of the code is covered or damaged), you can place a small logo in the center of the code without affecting readability. Many QR code tools offer this feature. The logo should cover no more than about 20–25% of the code area. Always test a logo QR code thoroughly across different devices before using it in print materials.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Can QR codes be scanned from a screen? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Yes, absolutely. You can scan a QR code displayed on a computer screen, tablet screen, or even another phone screen with no problems. The camera does not require the code to be on paper. This is very useful for sharing links during presentations, video calls, or live events — just show the QR code on your screen and audience members can scan it with their phones instantly.</div>
+</div>
+
+<div class="faq-item" onclick="this.classList.toggle('open')">
+  <div class="faq-q">Is it free to generate a QR code? <i class="fas fa-chevron-down"></i></div>
+  <div class="faq-a">Yes — Toolkit Pro's QR Code Generator is completely free with no limits, no account required, and no hidden charges. You can generate as many QR codes as you need. The codes are generated entirely in your browser — the URL you enter is never stored on any server. Dynamic QR codes with tracking features are available from paid services, but for most creators and small businesses, the free static QR codes from Toolkit Pro are all you will ever need.</div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h3> Create Your Free QR Code Now</h3>
+  <p>Generate a high-quality, scannable QR code for any URL in seconds. No account, no signup, completely free — and your URL is never stored anywhere.</p>
+  <a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i> Open Free QR Generator</a>
+</div>
+
+<!-- TAGS -->
+<div class="tag-wrap">
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#QRCodes</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#HowQRCodesWork</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#FreeQRCodeGenerator</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#DigitalMarketing</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#BusinessTools</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#ContentCreator</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#TechGuide</a>
+  <a class="tag" href="https://app-tool.vercel.app/Blog.html">#FreeTools</a>
+</div>
+
+<!-- AUTHOR -->
+<div class="author-box">
+  <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
+      
+      <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. My mission is to bridge the gap between technical efficiency and aesthetic design, helping digital entrepreneurs grow their online presence with ease.</p>
+      
+      <p>Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>. Beyond development, I am an active Pinterest creator with <strong>87.6k monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
+
+      <div class="about-badges">
+        <span class="badge"> 87.6k Pinterest Views/Month</span>
+        <span class="badge"> 1,000+ LinkedIn Impressions</span>
+        <span class="badge"> 100% Private — No Server Uploads</span>
+        <span class="badge"> Mandi Bahauddin, Pakistan</span>
+        <span class="badge"> 33.3% Search CTR</span>
+  <div class="author-info">
+    <h4>Written by Shaheera Sadia</h4>
+    <p>Web and Mobile Application Developer from Mandi Bahauddin, Punjab, Pakistan. Creator of Toolkit Pro — 8 free browser-based tools for digital creators. Pinterest creator with 87.6k+ monthly views. I built the Toolkit Pro QR Generator because I kept needing a free, private, instant tool that worked without signing up for anything or uploading data to a server.</p>
+  </div>
+</div>
+
 </article>
+</main>
 
-<footer>
-  <div class="affiliate-footer">
-    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-cta">
+    <h4> Free QR Code Generator</h4>
+    <p>Create scannable QR codes for any URL in seconds. No account, no signup, 100% free and private.</p>
+    <a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i> Open Free Tool</a>
   </div>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">ToolkitPro</div>
-      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-list"></i> Table of Contents</div>
+    <div class="sb-body">
+      <ul class="toc-ul">
+        <li><a href="#"><i class="fas fa-chevron-right"></i> What Is a QR Code?</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> How QR Codes Store Information</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> The Parts of a QR Code</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> How Your Phone Reads a QR Code</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> What You Can Put in a QR Code</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Static vs Dynamic QR Codes</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> How to Create One Free</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Best Uses for QR Codes 2026</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Tips for Reliable Scanning</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ad-slot" style="min-height:250px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-newspaper"></i> Related Articles</div>
+    <div class="sb-body">
+      <div class="rel-list">
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">
+          <div class="rel-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+          <div class="rel-title">How to Compress Images Without Losing Quality</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">
+          <div class="rel-icon"><i class="fas fa-images"></i></div>
+          <div class="rel-title">Best Image Sizes for Social Media 2026</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">
+          <div class="rel-icon"><i class="fab fa-pinterest"></i></div>
+          <div class="rel-title">Pinterest Image SEO — Get 87k Monthly Views</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/How-to-Extract-Color-Palettes-from-Any-Image.html">
+          <div class="rel-icon"><i class="fas fa-palette"></i></div>
+          <div class="rel-title">How to Extract Color Palettes from Any Image</div>
+        </a>
+        <a class="rel-item" href="https://app-tool.vercel.app/Blog/why-image-optimization-matters-for-seo.html">
+          <div class="rel-icon"><i class="fas fa-search"></i></div>
+          <div class="rel-title">Why Image Optimization Matters for SEO</div>
+        </a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
-        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-        <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
-      </ul>
+  </div>
+
+  <div class="sb-card">
+    <div class="sb-hd"><i class="fas fa-tools"></i> All Free Tools</div>
+    <div class="sb-body">
+      <div class="rel-list">
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#uploadArea"><div class="rel-icon"><i class="fas fa-compress-arrows-alt"></i></div><div class="rel-title">Image Compressor</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#palette-section"><div class="rel-icon"><i class="fas fa-palette"></i></div><div class="rel-title">Color Palette Extractor</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#qr-section"><div class="rel-icon"><i class="fas fa-qrcode"></i></div><div class="rel-title">QR Code Generator</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/index.html#nature-designer"><div class="rel-icon"><i class="fas fa-leaf"></i></div><div class="rel-title">Nature Quote Designer</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/art-tool.html"><div class="rel-icon"><i class="fas fa-paint-brush"></i></div><div class="rel-title">Art Studio</div></a>
+        <a class="rel-item" href="https://app-tool.vercel.app/voice-studio.html"><div class="rel-icon"><i class="fas fa-microphone"></i></div><div class="rel-title">Voice Studio</div></a>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
+
+  <div class="ad-slot" style="min-height:250px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
+      <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="fsoc">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="fc"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
+    </ul></div>
+    <div class="fc"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
+  </div>
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
-      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
     </span>
   </div>
 </footer>
 
-<script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-
-  mobileBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      const icon = mobileBtn.querySelector('i');
-      if (navMenu.classList.contains('active')) {
-          icon.classList.replace('fa-bars', 'fa-times');
-      } else {
-          icon.classList.replace('fa-times', 'fa-bars');
-      }
-  });
-
-  document.addEventListener('click', (e) => {
-      if (!mobileBtn.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('active');
-          mobileBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-      }
-  });
-</script>
-
 </body>
 </html>
-
-
-
-
-
-
- 
