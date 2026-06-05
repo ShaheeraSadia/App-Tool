@@ -42,7 +42,6 @@
   --shadow:0 4px 18px rgba(43,79,216,.08);
 }
 
-/* کلیدی فکس: تمام ایلیمنٹس کو باکس ماڈل کے اندر زبردستی لاک کرنا */
 *,*::before,*::after{
   box-sizing:border-box;
   margin:0;
@@ -54,15 +53,13 @@ a {
   text-decoration: none; 
 }
 
-/* موبائل ویوپورٹ اسکرول کو سختی سے باؤنڈ کرنا */
+/* اسکرول بحال کرنے کے لیے اہم تبدیلیاں */
 html {
   scroll-behavior: smooth;
-  height: 100%;
-  background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+  background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden !important;
-  overscroll-behavior: none;
+  overflow-x: hidden; /* فکس: اہم ترین تبدیلیاں یہاں کی ہیں تاکہ لاک ختم ہو */
 }
 
 body {
@@ -74,10 +71,9 @@ body {
   max-width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: none;
+  overflow-x: hidden;
+  overflow-y: auto !important; /* موبائل اسکرول کو زبردستی ایکٹو رکھنے کے لیے */
+  -webkit-overflow-scrolling: touch; /* iOS اسکرول اسموتھنس */
 }
 
 main, aside {
@@ -85,7 +81,7 @@ main, aside {
 }
 
 /* ===============================
-   NAV & HEADER (MOBILE FIRST)
+   NAV & HEADER
 ================================= */
 nav{
   background:var(--white);
@@ -127,7 +123,7 @@ nav{
 .am span{display:flex;align-items:center;gap:5px}
 
 /* ===============================
-   LAYOUT & ARTICLES (MOBILE FIRST)
+   LAYOUT & ARTICLES
 ================================= */
 .layout{
   display:flex;
@@ -169,7 +165,7 @@ nav{
 .article a{color:var(--blue);font-weight:500}
 .article a:hover{text-decoration:underline}
 
-/* BLOCKS & GRIDS (MOBILE FIRST 1 COLUMN) */
+/* BLOCKS & GRIDS */
 .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:var(--radius);text-align:center;padding:10px 16px;color:var(--muted);font-size:13px;margin:36px 0;min-height:90px;display:flex;align-items:center;justify-content:center;max-width:100%}
 .hl{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#374a80;line-height:1.75;max-width:100%}
 .hl strong{color:var(--blue-dark)}
@@ -193,7 +189,7 @@ nav{
 .anatomy-item h4{font-size:14px;font-weight:700;color:var(--blue-dark);margin-bottom:5px}
 .anatomy-item p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
 
-/* TABLES (RESPONSIVE) */
+/* TABLES */
 .tbl{width:100%;max-width:100%;border-collapse:collapse;margin:24px 0;border-radius:12px;box-shadow:var(--shadow);display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tbl th{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 16px;font-size:14px;font-weight:600;text-align:left}
 .tbl td{padding:12px 16px;font-size:14.5px;color:var(--text);border-bottom:1px solid #eef2ff;background:var(--white)}
@@ -215,7 +211,7 @@ nav{
 .cta a{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue-dark);padding:12px 26px;border-radius:10px;font-size:15px;font-weight:700;transition:all .2s}
 .cta a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
-/* SIDEBAR ITEMS & AUTHOR BOX */
+/* SIDEBAR & AUTHOR BOX */
 .tag-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
 .tag{background:var(--blue-light);color:var(--blue);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:20px}
 .tag:hover{background:var(--blue);color:white}
@@ -243,7 +239,7 @@ nav{
 .sb-cta a{display:inline-flex;align-items:center;gap:6px;background:white;color:var(--blue-dark);padding:9px 17px;border-radius:8px;font-size:13px;font-weight:700}
 
 /* ===============================
-   FOOTER LAYOUT (MOBILE FIRST)
+   FOOTER LAYOUT
 ================================= */
 footer { 
   background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
@@ -288,10 +284,6 @@ footer {
 }
 
 @media (max-width: 860px) {
-  html, body {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
   .layout {
     display: flex !important;
     flex-direction: column !important;
@@ -322,7 +314,7 @@ footer {
 }
 
 /* ===============================
-   DESKTOP ENHANCEMENT (BIG SCREENS ONLY)
+   DESKTOP ENHANCEMENT (>= 860px)
 ================================= */
 @media (min-width: 860px){
   nav { padding: 0 40px; }
