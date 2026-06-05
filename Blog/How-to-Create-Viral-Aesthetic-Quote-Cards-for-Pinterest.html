@@ -273,6 +273,44 @@
         padding: 24px 18px !important; /* Retains clean reading scale inside post */
       }
     }
+
+    /* --- موبائل اسکرین کو فکس کرنے کا کوڈ --- */
+@media (max-width: 860px) {
+  /* 1. پورے پیج کو دائیں بائیں ہلنے سے سختی سے روکتا ہے */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 2. پیج کے ہر حصے کو موبائل اسکرین کے اندر رکھتا ہے */
+  .layout, .article, .sidebar, main, aside, section, div {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  /* 3. ٹیبل، اشتہارات اور ویڈیوز کو اسکرین سے باہر نکلنے نہیں دیتا */
+  .tbl, table, .ad-slot, iframe, pre, code {
+    max-width: 100% !important;
+    overflow-x: auto !important; /* اگر کوئی چیز بڑی ہو تو وہ پیج خراب کرنے کے بجائے اپنے اندر ہی اسکرول ہوگی */
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 4. موبائل پر پیج کے کناروں کو بالکل برابر اور صاف کرتا ہے */
+  .article {
+    padding: 20px 14px !important; 
+    border-radius: 0 !important; /* موبائل پر کونے گول ہونے کے بجائے اسکرین کے ساتھ فکس ہو جائیں گے */
+    border-left: none !important;
+    border-right: none !important;
+  }
+}
   </style>
 </head>
 
