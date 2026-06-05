@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   
-  <style>
+   <style>
     /* --- 1. Root & Base Reset (یہ سب اسکرینز کے لیے ہے) --- */
     :root {
       --blue: #2b4fd8;
@@ -53,9 +53,11 @@
       color: var(--text); 
       line-height: 1.7;
       width: 100%;
-      overflow-x: hidden; /* پیج کو دائیں بائیں ہلنے سے روکتا ہے */
+      overflow-x: hidden; 
       position: relative;
-      padding-top: 66px; /* نیویگیشن بار کی جگہ چھوڑتا ہے */
+      /* فکسڈ نیویگیشن کے لیے بالکل صحیح جگہ چھوڑتا ہے اور فالتو مارجن ختم کرتا ہے */
+      padding-top: 66px !important; 
+      margin: 0 !important;
       -webkit-overflow-scrolling: touch;
     }
 
@@ -90,7 +92,16 @@
     .mob .bar { width: 25px; height: 3px; background: var(--blue-dark); border-radius: 2px; transition: .3s; display: block; }
 
     /* --- 3. Hero Section --- */
-    .hero { background: linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan)); color: white; padding: 60px 24px 52px; position: relative; overflow: hidden; }
+    .hero { 
+      background: linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan)); 
+      color: white; 
+      padding: 60px 24px 52px; 
+      position: relative; 
+      overflow: hidden; 
+      /* نیویگیشن بار کے نیچے فالتو گیپ آنے سے روکتا ہے */
+      margin-top: 0 !important; 
+      margin-bottom: 0 !important;
+    }
     .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     .hi { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
     .bc { font-size: 13px; opacity: .75; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
@@ -100,7 +111,7 @@
     .am { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; font-size: 13px; opacity: .85; }
     .am span { display: flex; align-items: center; gap: 5px; }
 
-    /* --- 4. Laptop / Desktop Default Layout (صرف بڑی اسکرینز کے لیے گریڈ) --- */
+    /* --- 4. Laptop / Desktop Default Layout --- */
     .layout { 
       width: 100%;
       max-width: 1060px; 
@@ -204,7 +215,14 @@
     .sb-cta a { display: inline-flex; align-items: center; gap: 6px; background: white; color: var(--blue-dark); padding: 9px 17px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; }
 
     /* --- 7. Footer Layout --- */
-    footer { background: linear-gradient(135deg,#0d1b5e,#1a2f8a); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
+    footer { 
+      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+      color: rgba(255,255,255,.85); 
+      padding: 52px 40px 28px; 
+      /* فوٹر کے نیچے یا اوپر کسی قسم کی فالتو اسپییس کو ختم کرتا ہے */
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
     .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
     .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
     .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
@@ -219,7 +237,7 @@
     .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
     .fb a { color: inherit; text-decoration: none; }
 
-    /* --- 8. Responsive Rules (صرف مخصوص اسکرینز کے لیے چڑھے گا) --- */
+    /* --- 8. Responsive Rules --- */
     @media(max-width:960px) {
       nav { padding: 0 16px; }
       .mob { display: flex; }
@@ -238,7 +256,6 @@
     }
 
     @media (max-width: 860px) {
-      /* موبائل پر اسکرین کو ہر طرف سے دبا کر لاک کر دے گا */
       html, body {
         width: 100% !important;
         max-width: 100% !important;
@@ -263,7 +280,6 @@
         padding: 24px 16px !important;
       }
 
-      /* ٹیبلز اور اشتہارات کو پیج باہر دھکیلنے سے روکتا ہے */
       .tbl, table, .ad-slot, pre, code {
         max-width: 100% !important;
         display: block !important;
@@ -277,7 +293,7 @@
       .fi { grid-template-columns: 1fr; gap: 20px; } 
       .fb { flex-direction: column; text-align: center; } 
     }
-  </style>
+</style>
 </head>
 <body>
   
