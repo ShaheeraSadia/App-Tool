@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
  <style>
+ <style>
 /* ===============================
    TOOLKIT PRO — MOBILE FIRST CSS
    OPTIMIZED FOR CORE WEB VITALS
@@ -53,13 +54,21 @@ a {
   text-decoration: none; 
 }
 
-/* اسکرول بحال کرنے کے لیے اہم تبدیلیاں */
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
-  background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
+  background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden; /* فکس: اہم ترین تبدیلیاں یہاں کی ہیں تاکہ لاک ختم ہو */
+  overflow-x: hidden;
+  overscroll-behavior: none; /* آپ کا کوڈ */
 }
 
 body {
@@ -72,12 +81,9 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto !important; /* موبائل اسکرول کو زبردستی ایکٹو رکھنے کے لیے */
-  -webkit-overflow-scrolling: touch; /* iOS اسکرول اسموتھنس */
-}
-
-main, aside {
-  max-width: 100%;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none; /* آپ کا کوڈ */
 }
 
 /* ===============================
@@ -123,7 +129,7 @@ nav{
 .am span{display:flex;align-items:center;gap:5px}
 
 /* ===============================
-   LAYOUT & ARTICLES
+   LAYOUT & ARTICLES (MOBILE FIRST)
 ================================= */
 .layout{
   display:flex;
