@@ -223,7 +223,7 @@
       .fb { flex-direction: column; text-align: center; } 
     }
  
-    /* ── YOUR CUSTOM ADDITIONS (FIXED FOR SCROLLING) ── */
+    /* ── YOUR CUSTOM ADDITIONS (FULLY OPTIMIZED) ── */
     a {
         overflow-wrap: break-word;
     }
@@ -237,20 +237,19 @@
     }
 
     html {
-        background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
-        overscroll-behavior: none;
+        background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
         overflow-x: hidden;
+        /* overscroll-behavior کو صرف ڈیسک ٹاپ کے لیے رکھیں یا یہاں سے ہٹا دیں تاکہ موبائل لاک نہ ہو */
     }
 
     body {
         background: var(--bg);
         width: 100%;
         overflow-x: hidden;
-        overflow-y: auto !important; /* فکس: اسکرول لاک ہونے سے بچانے کے لیے اہم لائن */
+        overflow-y: auto !important; /* یہ لائن موبائل اسکرول کو ایکٹو رکھے گی */
         margin: 0;
         padding: 0;
-        overscroll-behavior: none;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch; /* iOS ڈیوائسز پر اسکرولنگ کو انتہائی اسموتھ بنانے کے لیے */
     }
 </style>
 </head>
