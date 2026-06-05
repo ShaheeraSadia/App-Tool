@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -28,57 +28,151 @@
       --bg:#f5f8ff;--white:#ffffff;--radius:14px;
       --shadow:0 4px 24px rgba(43,79,216,.09);
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+   
+    
+       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+    /* ── NAV ── 
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
+    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:500!important}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001;background:none;border:none;padding:4px}
+    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .menu-toggle{display:flex}
+      .nav-links{position:fixed;top:66px;left:-100%;width:82%;max-width:320px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nav-links.active{left:0}
+      .nav-links li{width:100%}
+      .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
+      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+*/
+     
 
     /* ── NAV ── */
-    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+    nav{
+      background:var(--white);border-bottom:1px solid #dde6ff;
+      padding:0 40px;display:flex;align-items:center;
+      justify-content:space-between;height:66px;
+      position:sticky;top:0;z-index:300;
+      box-shadow:0 2px 16px rgba(43,79,216,.07);
+    }
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--blue);font-size:18px}
     .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
     .nav-logo-text em{color:var(--pink);font-style:normal}
     .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
-    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
-    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
-    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
-    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
-    @media(max-width:960px){
-      nav{padding:0 16px}
-      .mob{display:flex}
-      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nl.open{left:0}
-      .nl li{width:100%}
-      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .mob.x .bar:nth-child(2){opacity:0}
-      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    .nl a{
+      text-decoration:none;color:var(--muted);font-size:14px;
+      font-weight:500;padding:7px 13px;border-radius:9px;
+      transition:all .2s;display:block;
     }
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{
+      background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;
+      color:white!important;border-radius:10px!important;
+      font-weight:700!important;
+    }
+    .mob{
+      display:none;flex-direction:column;gap:5px;
+      cursor:pointer;background:none;border:none;padding:4px;
+    }
+    .mob .bar{
+      width:25px;height:3px;background:var(--blue-dark);
+      border-radius:2px;transition:.3s;display:block;
+    }
+    .nav-overlay{
+      display:none;position:fixed;inset:66px 0 0 0;
+      background:rgba(0,0,0,.4);z-index:999;
+    }
+    .nav-overlay.show{display:block}
 
     /* ── HERO ── */
-    .hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan));color:white;padding:60px 24px 52px;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+    .hero{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue),var(--cyan));
+      color:white;padding:60px 24px 52px;
+      position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;
+      background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
     .hi{position:relative;z-index:1;max-width:800px;margin:0 auto}
-    .bc{font-size:13px;opacity:.75;margin-bottom:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .bc{
+      font-size:13px;opacity:.75;margin-bottom:14px;
+      display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+    }
     .bc a{color:rgba(255,255,255,.85);text-decoration:none}
     .bc a:hover{color:white;text-decoration:underline}
-    .cp{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px}
-    .hero h1{font-family:'Lora',serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:14px}
-    .am{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;opacity:.85}
+    .cp{
+      display:inline-block;background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.3);
+      font-size:11px;font-weight:700;letter-spacing:2px;
+      text-transform:uppercase;padding:4px 14px;
+      border-radius:20px;margin-bottom:16px;
+    }
+    .hero h1{
+      font-family:'Lora',serif;
+      font-size:clamp(24px,4vw,42px);
+      font-weight:700;line-height:1.2;margin-bottom:14px;
+    }
+    .am{
+      display:flex;align-items:center;gap:18px;
+      flex-wrap:wrap;font-size:13px;opacity:.85;
+    }
     .am span{display:flex;align-items:center;gap:5px}
 
-    /* ── LAYOUT ── */
-    .layout{max-width:1060px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
-    @media(max-width:860px){.layout{grid-template-columns:1fr;padding:24px 14px 60px}}
+    /* ── LAYOUT ── 
+    .layout{
+      max-width:1060px;margin:0 auto;
+      padding:40px 24px 80px;
+      display:grid;grid-template-columns:1fr 290px;
+      gap:28px;align-items:start;
+    }
+    .article,.layout,.sidebar,main,aside{max-width:100%}*/
+    .layout{
+  max-width:1060px;
+  margin:0 auto;
+  padding:40px 24px 80px;
+  display:grid;
+  grid-template-columns:1fr 290px;
+  gap:28px;
+  align-items:start;
+  flex:1;
+}
 
     /* ── ARTICLE ── */
-    .article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;padding:40px 44px}
-    @media(max-width:640px){.article{padding:24px 18px}}
-    .article img{width:100%;height:auto;border-radius:12px;margin:24px 0;box-shadow:var(--shadow)}
+    .article{
+      background:var(--white);border-radius:var(--radius);
+      box-shadow:var(--shadow);border:1px solid #dde6ff;
+      padding:40px 44px;
+    }
+    .article img{
+      width:100%;height:auto;border-radius:12px;
+      margin:24px 0;box-shadow:var(--shadow);
+    }
     .article p{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:22px}
-    .article h2{font-family:'Lora',serif;font-size:26px;color:var(--blue-dark);margin:44px 0 16px;font-weight:700;border-left:4px solid var(--blue);padding-left:14px;line-height:1.3}
-    .article h3{font-family:'Lora',serif;font-size:20px;color:var(--text);margin:28px 0 12px;font-weight:600}
+    .article h2{
+      font-family:'Lora',serif;font-size:26px;color:var(--blue-dark);
+      margin:44px 0 16px;font-weight:700;
+      border-left:4px solid var(--blue);padding-left:14px;
+      line-height:1.3;scroll-margin-top:80px;
+    }
+    .article h3{
+      font-family:'Lora',serif;font-size:20px;color:var(--text);
+      margin:28px 0 12px;font-weight:600;
+    }
     .article ul,.article ol{padding-left:24px;margin-bottom:22px}
     .article li{font-size:16.5px;color:#2c2c2e;line-height:1.9;margin-bottom:10px}
     .article strong{color:var(--text);font-weight:700}
@@ -86,171 +180,323 @@
     .article a:hover{text-decoration:underline}
 
     /* ── BLOCKS ── */
-    .ad-slot{background:#eef2ff;border:1.5px dashed #b8c8f8;border-radius:12px;text-align:center;padding:10px 16px;color:var(--muted);font-size:13px;margin:36px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
-    .hl{background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#374a80;line-height:1.75}
+    .ad-slot{
+      background:#eef2ff;border:1.5px dashed #b8c8f8;
+      border-radius:12px;text-align:center;padding:10px 16px;
+      color:var(--muted);font-size:13px;margin:36px 0;
+      min-height:90px;display:flex;align-items:center;
+      justify-content:center;width:100%;max-width:100%;
+    }
+    .hl{
+      background:var(--blue-pale);border-left:4px solid var(--blue);
+      border-radius:0 12px 12px 0;padding:18px 22px;
+      margin:24px 0;font-size:15.5px;color:#374a80;line-height:1.75;
+    }
     .hl strong{color:var(--blue-dark)}
-    .tip{background:#e8f5e9;border-left:4px solid #4caf50;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#1b5e20;line-height:1.75}
+    .tip{
+      background:#e8f5e9;border-left:4px solid #4caf50;
+      border-radius:0 12px 12px 0;padding:18px 22px;
+      margin:24px 0;font-size:15.5px;color:#1b5e20;line-height:1.75;
+    }
     .tip strong{color:#1b5e20}
-    .warn{background:#fff8e1;border-left:4px solid #ffc107;border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15.5px;color:#7c6b00;line-height:1.75}
+    .warn{
+      background:#fff8e1;border-left:4px solid #ffc107;
+      border-radius:0 12px 12px 0;padding:18px 22px;
+      margin:24px 0;font-size:15.5px;color:#7c6b00;line-height:1.75;
+    }
 
     /* ── TABLE ── */
-    .tbl{width:100%;border-collapse:collapse;margin:24px 0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-    .tbl th{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 16px;font-size:14px;font-weight:600;text-align:left}
-    .tbl td{padding:12px 16px;font-size:14.5px;color:var(--text);border-bottom:1px solid #eef2ff;background:var(--white)}
+    .tbl{
+      width:100%;border-collapse:collapse;margin:24px 0;
+      border-radius:12px;overflow:hidden;box-shadow:var(--shadow);
+    }
+    .tbl th{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+      color:white;padding:13px 16px;font-size:14px;
+      font-weight:600;text-align:left;
+    }
+    .tbl td{
+      padding:12px 16px;font-size:14.5px;color:var(--text);
+      border-bottom:1px solid #eef2ff;background:var(--white);
+    }
     .tbl tr:nth-child(even) td{background:var(--blue-pale)}
     .tbl tr:last-child td{border-bottom:none}
-    @media(max-width:600px){.tbl{display:block;overflow-x:auto}}
 
     /* ── STEP LIST ── */
     .step-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
-    .step{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--white);border:1.5px solid #dde6ff;border-radius:12px}
-    .sn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .step{
+      display:flex;gap:14px;align-items:flex-start;
+      padding:16px 18px;background:var(--white);
+      border:1.5px solid #dde6ff;border-radius:12px;
+    }
+    .sn{
+      width:34px;height:34px;border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+      color:white;display:flex;align-items:center;
+      justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;
+    }
     .sb h4{font-size:15px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
     .sb p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
 
-    /* ── COLOR SWATCHES ── */
-    .palette-demo{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
-    .swatch-box{border-radius:12px;padding:14px 18px;flex:1;min-width:100px;text-align:center;box-shadow:var(--shadow)}
-    .swatch-hex{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;margin-top:8px}
-    .swatch-role{font-size:11px;margin-top:3px;opacity:.75}
+    /* ── ANATOMY GRID ── */
+    .anatomy-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;margin:20px 0;
+    }
+    .anatomy-item{
+      background:var(--blue-pale);border:1.5px solid #dde6ff;
+      border-radius:12px;padding:18px;
+    }
+    .anatomy-item .num{
+      width:30px;height:30px;border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+      color:white;display:flex;align-items:center;
+      justify-content:center;font-weight:700;
+      font-size:14px;margin-bottom:10px;
+    }
+    .anatomy-item h4{
+      font-size:15px;font-weight:700;
+      color:var(--blue-dark);margin-bottom:6px;
+    }
+    .anatomy-item p{
+      font-size:14px;color:var(--muted);
+      line-height:1.65;margin:0;
+    }
 
     /* ── USE CASES ── */
-    .use-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
-    .use-card{background:var(--blue-pale);border-radius:12px;padding:18px;border:1.5px solid #dde6ff;text-align:center}
+    .use-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:14px;margin:20px 0;
+    }
+    .use-card{
+      background:var(--blue-pale);border-radius:12px;
+      padding:18px;border:1.5px solid #dde6ff;text-align:center;
+    }
     .use-card i{font-size:26px;color:var(--blue);margin-bottom:10px;display:block}
     .use-card h4{font-size:14.5px;font-weight:700;color:var(--blue-dark);margin-bottom:6px}
     .use-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
 
     /* ── FAQ ── */
-    .faq-item{border:1.5px solid #dde6ff;border-radius:12px;margin-bottom:10px;overflow:hidden}
-    .faq-q{padding:16px 20px;font-size:15.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--white);user-select:none}
+    .faq-item{
+      border:1.5px solid #dde6ff;border-radius:12px;
+      margin-bottom:10px;overflow:hidden;
+    }
+    .faq-q{
+      padding:16px 20px;font-size:15.5px;font-weight:600;
+      color:var(--text);cursor:pointer;
+      display:flex;justify-content:space-between;
+      align-items:center;gap:10px;background:var(--white);user-select:none;
+    }
     .faq-q:hover{background:var(--blue-pale)}
     .faq-q i{color:var(--blue);font-size:12px;transition:transform .3s;flex-shrink:0}
     .faq-item.open .faq-q i{transform:rotate(180deg)}
-    .faq-a{padding:0 20px;font-size:15px;color:#374a80;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;background:var(--blue-pale)}
-    .faq-item.open .faq-a{max-height:400px;padding:16px 20px}
+    .faq-a{
+      padding:0 20px;font-size:15px;color:#374a80;
+      line-height:1.8;max-height:0;overflow:hidden;
+      transition:max-height .35s ease,padding .3s;
+      background:var(--blue-pale);
+    }
+    .faq-item.open .faq-a{max-height:800px;padding:16px 20px}
 
     /* ── CTA ── */
-    .cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:white;border-radius:var(--radius);padding:30px 34px;text-align:center;margin:36px 0}
+    .cta{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+      color:white;border-radius:var(--radius);
+      padding:30px 34px;text-align:center;margin:36px 0;
+    }
     .cta h3{font-family:'Lora',serif;font-size:22px;margin-bottom:10px}
-    .cta p{font-size:15px;opacity:.9;margin-bottom:20px;line-height:1.65;max-width:500px;margin-left:auto;margin-right:auto}
-    .cta a{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue-dark);padding:12px 26px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .2s}
+    .cta p{
+      font-size:15px;opacity:.9;margin-bottom:20px;
+      line-height:1.65;max-width:500px;
+      margin-left:auto;margin-right:auto;
+    }
+    .cta a{
+      display:inline-flex;align-items:center;gap:8px;
+      background:white;color:var(--blue-dark);
+      padding:12px 26px;border-radius:10px;
+      font-size:15px;font-weight:700;text-decoration:none;transition:all .2s;
+    }
     .cta a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
     /* ── TAGS ── */
     .tag-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
-    .tag{background:var(--blue-light);color:var(--blue);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:20px;text-decoration:none}
+    .tag{
+      background:var(--blue-light);color:var(--blue);
+      font-size:12.5px;font-weight:600;
+      padding:5px 13px;border-radius:20px;text-decoration:none;
+    }
     .tag:hover{background:var(--blue);color:white}
 
     /* ── AUTHOR ── */
-    .author-box{background:var(--blue-pale);border-radius:var(--radius);border:1px solid #c0d0f8;padding:24px 28px;display:flex;gap:16px;align-items:flex-start;margin-top:32px}
-    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-    .author-info h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:4px}
-    .author-info p{font-size:13.5px;color:#374a80;line-height:1.65}
+    .author-box{
+      background:var(--blue-pale);border-radius:var(--radius);
+      border:1px solid #c0d0f8;padding:24px 28px;
+      display:flex;gap:16px;align-items:flex-start;margin-top:32px;
+    }
+    .author-ava{
+      width:56px;height:56px;border-radius:50%;
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px;color:white;flex-shrink:0;
+    }
+    .author-content{flex:1;min-width:0}
+    .author-content h4{
+      font-size:16px;font-weight:700;
+      color:var(--blue-dark);margin-bottom:6px;
+    }
+    .author-content p{
+      font-size:13.5px;color:#374a80;
+      line-height:1.65;margin-bottom:10px;
+    }
+    .about-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .badge{
+      background:var(--white);border:1px solid #c0d0f8;
+      color:var(--blue-dark);font-size:12px;
+      font-weight:600;padding:5px 12px;border-radius:20px;
+    }
 
     /* ── SIDEBAR ── */
     .sidebar{display:flex;flex-direction:column;gap:18px}
-    .sb-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden}
-    .sb-hd{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;padding:13px 17px;font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:7px}
+    .sb-card{
+      background:var(--white);border-radius:var(--radius);
+      box-shadow:var(--shadow);border:1px solid #dde6ff;overflow:hidden;
+    }
+    .sb-hd{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+      color:white;padding:13px 17px;font-size:13.5px;
+      font-weight:700;display:flex;align-items:center;gap:7px;
+    }
     .sb-body{padding:14px 16px}
     .toc-ul{list-style:none;display:flex;flex-direction:column;gap:5px}
-    .toc-ul a{font-size:13px;color:var(--blue);text-decoration:none;display:flex;align-items:flex-start;gap:5px;padding:4px 0;border-bottom:1px solid #eef2ff;line-height:1.5}
+    .toc-ul a{
+      font-size:13px;color:var(--blue);text-decoration:none;
+      display:flex;align-items:flex-start;gap:5px;
+      padding:4px 0;border-bottom:1px solid #eef2ff;line-height:1.5;
+    }
     .toc-ul a i{font-size:9px;margin-top:5px;flex-shrink:0;opacity:.6}
     .toc-ul a:hover{color:var(--blue-dark)}
     .rel-list{display:flex;flex-direction:column;gap:8px}
-    .rel-item{display:flex;gap:9px;align-items:flex-start;text-decoration:none;padding:7px 0;border-bottom:1px solid #eef2ff}
+    .rel-item{
+      display:flex;gap:9px;align-items:flex-start;
+      text-decoration:none;padding:7px 0;
+      border-bottom:1px solid #eef2ff;
+    }
     .rel-item:last-child{border-bottom:none}
-    .rel-icon{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:13px;flex-shrink:0}
+    .rel-icon{
+      width:32px;height:32px;border-radius:8px;
+      background:var(--blue-light);display:flex;
+      align-items:center;justify-content:center;
+      color:var(--blue);font-size:13px;flex-shrink:0;
+    }
     .rel-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4}
     .rel-title:hover{color:var(--blue)}
-    .sb-cta{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:var(--radius);padding:18px;text-align:center;color:white}
+    .sb-cta{
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+      border-radius:var(--radius);padding:18px;
+      text-align:center;color:white;
+    }
     .sb-cta h4{font-family:'Lora',serif;font-size:15px;margin-bottom:8px}
     .sb-cta p{font-size:12.5px;opacity:.9;margin-bottom:13px;line-height:1.55}
-    .sb-cta a{display:inline-flex;align-items:center;gap:6px;background:white;color:var(--blue-dark);padding:9px 17px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
+    .sb-cta a{
+      display:inline-flex;align-items:center;gap:6px;
+      background:white;color:var(--blue-dark);
+      padding:9px 17px;border-radius:8px;
+      font-size:13px;font-weight:700;text-decoration:none;
+    }
 
     /* ── FOOTER ── */
-    footer { 
-      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
-      color: rgba(255,255,255,.85); 
-      padding: 52px 40px 28px; 
-      margin-top: auto !important; 
-      margin-bottom: 0 !important;
-    }
-    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
-    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
-    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
-    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .fsb:hover { background: var(--blue); color: white; }
-    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
-    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .fc ul a:hover { color: #7dd3fc; }
-    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .fb a { color: inherit; text-decoration: none; }
+   
+    /* ── AUTHOR STRIP ── */
+    .author-strip{background:var(--blue-pale);border-radius:var(--radius);border:1px solid #c0d0f8;padding:24px 28px;display:flex;gap:18px;align-items:center;margin:40px 0;flex-wrap:wrap}
+    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .author-strip-info h4{font-size:16px;font-weight:700;color:var(--blue-dark);margin-bottom:3px}
+    .author-strip-info p{font-size:13.5px;color:#374a80;line-height:1.6}
 
-    /* ── RESPONSIVE RULES ── */
-    @media(max-width:960px) {
-      nav { padding: 0 16px; }
-      .mob { display: flex; }
-      .nl { 
-        position: fixed; top: 66px; left: -100%; width: 82%; max-width: 300px; height: 100vh; 
-        background: var(--white); flex-direction: column; align-items: flex-start; padding: 24px 20px; 
-        transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12); z-index: 1000; gap: 4px; overflow-y: auto; 
-      }
-      .nl.open { left: 0; }
-      .nl li { width: 100%; }
-      .nl a { font-size: 15px; padding: 12px 14px; border-radius: 10px; border-bottom: 1px solid var(--blue-pale); }
-      .mob.x .bar:nth-child(2) { opacity: 0; }
-      .mob.x .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .mob.x .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-      .fi { grid-template-columns: 1fr 1fr; }
+    /* ── FOOTER ── */
+      
+    /* ── FOOTER ── */
+    footer{
+      background:linear-gradient(135deg,#0d1b5e,#1a2f8a);
+      color:rgba(255,255,255,.85);
+      padding:52px 40px 28px;margin-top:auto;
     }
+    .aff-foot{
+      background:rgba(255,255,255,.06);border-radius:8px;
+      padding:10px 16px;font-size:12px;
+      color:rgba(255,255,255,.6);text-align:center;
+      margin-bottom:28px;max-width:1060px;
+      margin-left:auto;margin-right:auto;
+    }
+    .fi{
+      max-width:1060px;margin:0 auto;
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:40px;margin-bottom:36px;
+    }
+    .fi .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+    .fi p{font-size:13px;opacity:.72;line-height:1.7;max-width:220px}
+    .fsoc{display:flex;gap:10px;margin-top:14px}
+    .fsb{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(255,255,255,.08);display:flex;
+      align-items:center;justify-content:center;
+      color:rgba(255,255,255,.8);font-size:14px;
+      text-decoration:none;transition:background .2s;
+    }
+    .fsb:hover{background:var(--blue);color:white}
+    .fc h4{
+      font-size:12px;font-weight:700;letter-spacing:1.5px;
+      text-transform:uppercase;color:#7dd3fc;margin-bottom:14px;
+    }
+    .fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .fc ul a{
+      font-size:13px;color:rgba(255,255,255,.7);
+      text-decoration:none;transition:color .2s;
+    }
+    .fc ul a:hover{color:#7dd3fc}
+    .fb{
+      max-width:1060px;margin:0 auto;
+      border-top:1px solid rgba(255,255,255,.1);
+      padding-top:22px;display:flex;
+      justify-content:space-between;flex-wrap:wrap;
+      gap:10px;font-size:12px;opacity:.6;
+    }
+    .fb a{color:inherit;text-decoration:none}
 
-    @media (max-width: 860px) {
-      .tbl, table, .ad-slot, pre, code {
-        max-width: 100% !important;
-        display: block !important;
-        overflow-x: auto !important;
-        box-sizing: border-box !important;
-      }
-    }
 
-    @media(max-width:540px) { 
-      footer { padding: 36px 18px 22px; } 
-      .fi { grid-template-columns: 1fr; gap: 20px; } 
-      .fb { flex-direction: column; text-align: center; } 
-    }
+
+
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
+
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+html,
+body {
+    position: relative;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+  
+
+   
  
-    /* ── YOUR CUSTOM ADDITIONS (FULLY OPTIMIZED) ── */
-    a {
-        overflow-wrap: break-word;
-    }
-
-    .article,
-    .layout,
-    .sidebar,
-    main,
-    aside {
-        max-width: 100%;
-    }
-
-    html {
-        background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
-        overflow-x: hidden;
-        /* overscroll-behavior کو صرف ڈیسک ٹاپ کے لیے رکھیں یا یہاں سے ہٹا دیں تاکہ موبائل لاک نہ ہو */
-    }
-
-    body {
-        background: var(--bg);
-        width: 100%;
-        overflow-x: hidden;
-        overflow-y: auto !important; /* یہ لائن موبائل اسکرول کو ایکٹو رکھے گی */
-        margin: 0;
-        padding: 0;
-        -webkit-overflow-scrolling: touch; /* iOS ڈیوائسز پر اسکرولنگ کو انتہائی اسموتھ بنانے کے لیے */
-    }
 </style>
 </head>
 <body>
@@ -261,7 +507,7 @@
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <button class="mob" id="mob" onclick="document.getElementById('nl').classList.toggle('open');this.classList.toggle('x')" aria-label="Menu">
+  <button class="mob" id="mob" aria-label="Menu">
     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </button>
   <ul class="nl" id="nl">
@@ -274,7 +520,7 @@
     <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
- 
+<div class="nav-overlay" id="navOverlay"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -286,7 +532,7 @@
       <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
       <span>QR Code Guide</span>
     </div>
-    <span class="cp"> Technology Guide</span>
+    <span class="cp">Technology Guide</span>
     <h1>How QR Codes Work — A Simple Complete Guide for Digital Creators 2026</h1>
     <div class="am">
       <span><i class="fas fa-user"></i> Shaheera Sadia</span>
@@ -312,13 +558,12 @@
 
 <div class="hl"><strong>What you will learn:</strong> What QR codes are, how they store information, how your phone reads them, the difference between static and dynamic QR codes, how to create your own free QR code, and the best uses for QR codes in 2026.</div>
 
-<!-- AD 1 -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<h2>What Is a QR Code?</h2>
+<h2 id="what-is-qr">What Is a QR Code?</h2>
 
 <p>QR stands for <strong>Quick Response</strong>. A QR code is a type of barcode — but instead of the simple straight lines you see on food packaging in a supermarket, a QR code is a square pattern made up of small black and white squares arranged in a grid.</p>
 
@@ -328,7 +573,7 @@
 
 <p>For most of us in 2026, QR codes are something we use with our smartphones every day — scanning menus, making payments, connecting to Wi-Fi, and visiting websites without typing anything.</p>
 
-<h2>How Does a QR Code Store Information?</h2>
+<h2 id="how-store">How Does a QR Code Store Information?</h2>
 
 <p>This is the part that most people find interesting once they understand it. The information inside a QR code is not stored as visible text — it is encoded into the pattern of black and white squares.</p>
 
@@ -338,13 +583,12 @@
 
 <p>When you create a QR code for a URL like <code style="background:#eef2ff;padding:2px 7px;border-radius:4px;font-size:14px;color:var(--blue)">https://app-tool.vercel.app</code>, a QR code generator converts those letters and symbols into a binary pattern — a series of 1s and 0s. Then it arranges those 1s and 0s as black and white squares in the grid. The resulting pattern is your QR code.</p>
 
-<!-- AD 2 -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<h2>The Parts of a QR Code — What Each Area Does</h2>
+<h2 id="parts">The Parts of a QR Code — What Each Area Does</h2>
 
 <p>A QR code is not just a random pattern. It has specific zones that each serve a purpose. Here is what each part of a QR code does:</p>
 
@@ -381,7 +625,7 @@
   </div>
 </div>
 
-<h2>How Does Your Phone Read a QR Code?</h2>
+<h2 id="how-read">How Does Your Phone Read a QR Code?</h2>
 
 <p>When you point your phone camera at a QR code, something quite clever happens in under a second. Here is the whole process broken down into simple steps:</p>
 
@@ -430,15 +674,14 @@
   </div>
 </div>
 
-<div class="tip"><strong> Good to know:</strong> You do not need to download a special app to scan QR codes. Every modern smartphone — iPhone and Android — can scan QR codes directly from the built-in Camera app. Just open your camera, point it at the code, and a notification will appear. No extra app needed.</div>
+<div class="tip"><strong>Good to know:</strong> You do not need to download a special app to scan QR codes. Every modern smartphone — iPhone and Android — can scan QR codes directly from the built-in Camera app. Just open your camera, point it at the code, and a notification will appear. No extra app needed.</div>
 
-<!-- AD 3 -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<h2>What Can You Put Inside a QR Code?</h2>
+<h2 id="what-put">What Can You Put Inside a QR Code?</h2>
 
 <p>Most people think QR codes can only hold website links. But they can actually store many different types of information. Here is a full list of everything you can encode into a QR code:</p>
 
@@ -466,33 +709,28 @@
   </tbody>
 </table>
 
-<h2>Static vs Dynamic QR Codes — What Is the Difference?</h2>
+<h2 id="static-dynamic">Static vs Dynamic QR Codes — What Is the Difference?</h2>
 
 <p>There are two types of QR codes and it is important to understand the difference before you create one:</p>
 
 <h3>Static QR Codes</h3>
 <p>A static QR code has the information permanently encoded into the pattern. Whatever URL or text you put in when you created it stays there forever. You cannot change it later.</p>
-
 <p><strong>Advantages:</strong> Free to create and use, works forever with no subscription, no servers involved — the data is directly in the code itself.</p>
-
 <p><strong>Disadvantages:</strong> If you want to change the destination URL later, you have to create a brand new QR code and reprint all your materials. You also cannot track how many times the code has been scanned.</p>
 
 <h3>Dynamic QR Codes</h3>
 <p>A dynamic QR code encodes a short redirect URL. When someone scans it, they are sent to a server which then redirects them to the real destination. You can change the destination URL at any time — without changing the code itself.</p>
-
 <p><strong>Advantages:</strong> You can update the destination URL anytime, you can track scan statistics (how many scans, when, where, what device), much better for marketing campaigns.</p>
-
 <p><strong>Disadvantages:</strong> Usually requires a paid subscription service. If the service goes offline, your QR codes stop working.</p>
 
 <div class="hl"><strong>Which should you use?</strong> For most creators, bloggers, and small businesses, static QR codes are perfectly fine and completely free. If your URL is not going to change — like your website homepage, your Pinterest profile, or your business contact page — use a free static QR code. Toolkit Pro's free QR code generator creates high-quality static QR codes.</div>
 
-<!-- AD 4 -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<h2>How to Create a QR Code for Free — Step by Step</h2>
+<h2 id="create-free">How to Create a QR Code for Free — Step by Step</h2>
 
 <p>Creating a QR code with Toolkit Pro is completely free and takes about 30 seconds. Here is exactly how to do it:</p>
 
@@ -534,9 +772,9 @@
   </div>
 </div>
 
-<div class="warn"><strong> Important:</strong> The URL you enter in the QR code cannot be changed once the code is generated. Make sure your URL is correct before downloading. Copy-paste it from your browser address bar to avoid typing mistakes — a single wrong character means the code will not work.</div>
+<div class="warn"><strong>Important:</strong> The URL you enter in the QR code cannot be changed once the code is generated. Make sure your URL is correct before downloading. Copy-paste it from your browser address bar to avoid typing mistakes — a single wrong character means the code will not work.</div>
 
-<h2>The Best Ways to Use QR Codes in 2026</h2>
+<h2 id="best-uses">The Best Ways to Use QR Codes in 2026</h2>
 
 <p>QR codes have become one of the most versatile tools for creators, small businesses, and professionals. Here are the most effective ways people are using them right now:</p>
 
@@ -583,65 +821,62 @@
   </div>
 </div>
 
-<!-- AD 5 -->
 <div class="ad-slot">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<h2>Tips for Making Sure Your QR Code Works Every Time</h2>
+<h2 id="tips">Tips for Making Sure Your QR Code Works Every Time</h2>
 
 <p>A QR code that does not scan properly is worse than no QR code at all. Here are the most important tips to make sure your QR code is always scannable:</p>
 
 <ul>
-  <li><strong>Keep enough contrast.</strong> QR codes need high contrast between the dark squares and the light background. Black on white is the most reliable combination. Avoid using light colors on light backgrounds or dark on dark. If you want to use brand colors, keep the squares dark and the background light.</li>
-  <li><strong>Do not make it too small.</strong> For print materials, QR codes should be at least 2 cm × 2 cm (about 0.8 inches). If printed smaller than this, many phones will struggle to read the small squares. Aim for 3–4 cm for most uses, and larger for anything viewed from a distance like a poster or banner.</li>
-  <li><strong>Keep the quiet zone clear.</strong> The white border around the QR code (called the quiet zone) must stay empty. Do not let other text, images, or design elements overlap with this border — it prevents the scanner from finding the edges of the code.</li>
-  <li><strong>Always test before printing.</strong> Scan your QR code with multiple phones (iPhone and Android if possible) before printing any materials. What looks fine on screen might be harder to read once printed. Test the printed version too before distributing.</li>
-  <li><strong>Use a short URL.</strong> Shorter URLs create simpler QR codes with fewer squares. Simpler codes are faster to scan and easier to read even at smaller sizes. If your URL is very long, consider using a URL shortener like bit.ly first.</li>
-  <li><strong>Save as PNG, not JPEG.</strong> QR codes should be saved and printed as PNG files, not JPEG. JPEG compression can blur the edges of the small squares, making the code harder to scan. PNG keeps the squares crisp and clear at any size.</li>
+  <li><strong>Keep enough contrast.</strong> QR codes need high contrast between the dark squares and the light background. Black on white is the most reliable combination.</li>
+  <li><strong>Do not make it too small.</strong> For print materials, QR codes should be at least 2 cm × 2 cm (about 0.8 inches).</li>
+  <li><strong>Keep the quiet zone clear.</strong> The white border around the QR code must stay empty.</li>
+  <li><strong>Always test before printing.</strong> Scan your QR code with multiple phones before printing any materials.</li>
+  <li><strong>Use a short URL.</strong> Shorter URLs create simpler QR codes with fewer squares.</li>
+  <li><strong>Save as PNG, not JPEG.</strong> PNG keeps the squares crisp and clear at any size.</li>
 </ul>
 
-<h2>Frequently Asked Questions About QR Codes</h2>
+<h2 id="faq">Frequently Asked Questions About QR Codes</h2>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">Do QR codes expire? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">Static QR codes (like the ones Toolkit Pro generates for free) never expire. The information is encoded directly into the pattern and does not rely on any external server. As long as the QR code image is intact and the destination URL is still active, the code will work forever. Dynamic QR codes can expire if the service that manages the redirect stops working or if your subscription runs out — this is one reason many people prefer free static QR codes for long-term use.</div>
+  <div class="faq-a">Static QR codes (like the ones Toolkit Pro generates for free) never expire. The information is encoded directly into the pattern and does not rely on any external server. As long as the QR code image is intact and the destination URL is still active, the code will work forever.</div>
 </div>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">Can QR codes be hacked or contain viruses? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">A QR code itself cannot contain a virus — it just contains text or a URL. However, that URL could potentially lead to a malicious website. This is called "QR code phishing" or "quishing." To stay safe, always check the URL that appears on your screen after scanning before you tap to open it. If the URL looks strange, misspelled, or unexpected, do not proceed. Only scan QR codes from sources you trust. When you create QR codes using Toolkit Pro, they link directly to whatever URL you entered — they are completely transparent and trustworthy.</div>
+  <div class="faq-a">A QR code itself cannot contain a virus — it just contains text or a URL. However, that URL could potentially lead to a malicious website. Always check the URL that appears on your screen after scanning before you tap to open it.</div>
 </div>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">How small can I print a QR code and still have it scan? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">The minimum practical size for a QR code in print is about 2 cm × 2 cm (approximately 0.8 inches square). Below this size, the small modules become too tiny for most smartphone cameras to resolve clearly. For business cards, 2–3 cm is fine. For flyers and posters that people hold in their hands, 3–4 cm works well. For large format printing like banners or signs viewed from more than 1 meter away, make your QR code much larger — at least 10–15 cm for every 3 meters of viewing distance.</div>
+  <div class="faq-a">The minimum practical size for a QR code in print is about 2 cm × 2 cm (approximately 0.8 inches square). Below this size, the small modules become too tiny for most smartphone cameras to resolve clearly.</div>
 </div>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">Can I add my logo to a QR code? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">Yes — this is called a branded QR code. Because QR codes have built-in error correction (they can still be read even if up to 30% of the code is covered or damaged), you can place a small logo in the center of the code without affecting readability. Many QR code tools offer this feature. The logo should cover no more than about 20–25% of the code area. Always test a logo QR code thoroughly across different devices before using it in print materials.</div>
+  <div class="faq-a">Yes — this is called a branded QR code. Because QR codes have built-in error correction, you can place a small logo in the center of the code without affecting readability. Always test a logo QR code thoroughly across different devices before using it in print materials.</div>
 </div>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">Can QR codes be scanned from a screen? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">Yes, absolutely. You can scan a QR code displayed on a computer screen, tablet screen, or even another phone screen with no problems. The camera does not require the code to be on paper. This is very useful for sharing links during presentations, video calls, or live events — just show the QR code on your screen and audience members can scan it with their phones instantly.</div>
+  <div class="faq-a">Yes, absolutely. You can scan a QR code displayed on a computer screen, tablet screen, or even another phone screen with no problems.</div>
 </div>
 
 <div class="faq-item" onclick="this.classList.toggle('open')">
   <div class="faq-q">Is it free to generate a QR code? <i class="fas fa-chevron-down"></i></div>
-  <div class="faq-a">Yes — Toolkit Pro's QR Code Generator is completely free with no limits, no account required, and no hidden charges. You can generate as many QR codes as you need. The codes are generated entirely in your browser — the URL you enter is never stored on any server. Dynamic QR codes with tracking features are available from paid services, but for most creators and small businesses, the free static QR codes from Toolkit Pro are all you will ever need.</div>
+  <div class="faq-a">Yes — Toolkit Pro's QR Code Generator is completely free with no limits, no account required, and no hidden charges. You can generate as many QR codes as you need.</div>
 </div>
 
-<!-- CTA -->
 <div class="cta">
-  <h3> Create Your Free QR Code Now</h3>
+  <h3>Create Your Free QR Code Now</h3>
   <p>Generate a high-quality, scannable QR code for any URL in seconds. No account, no signup, completely free — and your URL is never stored anywhere.</p>
   <a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i> Open Free QR Generator</a>
 </div>
 
-<!-- TAGS -->
 <div class="tag-wrap">
   <a class="tag" href="https://app-tool.vercel.app/Blog.html">#QRCodes</a>
   <a class="tag" href="https://app-tool.vercel.app/Blog.html">#HowQRCodesWork</a>
@@ -653,23 +888,18 @@
   <a class="tag" href="https://app-tool.vercel.app/Blog.html">#FreeTools</a>
 </div>
 
-<!-- AUTHOR -->
 <div class="author-box">
-  <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
-      
-      <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. My mission is to bridge the gap between technical efficiency and aesthetic design, helping digital entrepreneurs grow their online presence with ease.</p>
-      
-      <p>Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>. Beyond development, I am an active Pinterest creator with <strong>87.6k monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
-
-      <div class="about-badges">
-        <span class="badge"> 87.6k Pinterest Views/Month</span>
-        <span class="badge"> 1,000+ LinkedIn Impressions</span>
-        <span class="badge"> 100% Private — No Server Uploads</span>
-        <span class="badge"> Mandi Bahauddin, Pakistan</span>
-        <span class="badge"> 33.3% Search CTR</span>
-  <div class="author-info">
+  <div class="author-ava"><i class="fas fa-user"></i></div>
+  <div class="author-content">
     <h4>Written by Shaheera Sadia</h4>
     <p>Web and Mobile Application Developer from Mandi Bahauddin, Punjab, Pakistan. Creator of Toolkit Pro — 8 free browser-based tools for digital creators. Pinterest creator with 87.6k+ monthly views. I built the Toolkit Pro QR Generator because I kept needing a free, private, instant tool that worked without signing up for anything or uploading data to a server.</p>
+    <div class="about-badges">
+      <span class="badge">87.6k Pinterest Views/Month</span>
+      <span class="badge">1,000+ LinkedIn Impressions</span>
+      <span class="badge">100% Private — No Server Uploads</span>
+      <span class="badge">Mandi Bahauddin, Pakistan</span>
+      <span class="badge">33.3% Search CTR</span>
+    </div>
   </div>
 </div>
 
@@ -679,7 +909,7 @@
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sb-cta">
-    <h4> Free QR Code Generator</h4>
+    <h4>Free QR Code Generator</h4>
     <p>Create scannable QR codes for any URL in seconds. No account, no signup, 100% free and private.</p>
     <a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i> Open Free Tool</a>
   </div>
@@ -688,16 +918,16 @@
     <div class="sb-hd"><i class="fas fa-list"></i> Table of Contents</div>
     <div class="sb-body">
       <ul class="toc-ul">
-        <li><a href="#"><i class="fas fa-chevron-right"></i> What Is a QR Code?</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> How QR Codes Store Information</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> The Parts of a QR Code</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> How Your Phone Reads a QR Code</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> What You Can Put in a QR Code</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> Static vs Dynamic QR Codes</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> How to Create One Free</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> Best Uses for QR Codes 2026</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> Tips for Reliable Scanning</a></li>
-        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+        <li><a href="#what-is-qr"><i class="fas fa-chevron-right"></i> What Is a QR Code?</a></li>
+        <li><a href="#how-store"><i class="fas fa-chevron-right"></i> How QR Codes Store Information</a></li>
+        <li><a href="#parts"><i class="fas fa-chevron-right"></i> The Parts of a QR Code</a></li>
+        <li><a href="#how-read"><i class="fas fa-chevron-right"></i> How Your Phone Reads a QR Code</a></li>
+        <li><a href="#what-put"><i class="fas fa-chevron-right"></i> What You Can Put in a QR Code</a></li>
+        <li><a href="#static-dynamic"><i class="fas fa-chevron-right"></i> Static vs Dynamic QR Codes</a></li>
+        <li><a href="#create-free"><i class="fas fa-chevron-right"></i> How to Create One Free</a></li>
+        <li><a href="#best-uses"><i class="fas fa-chevron-right"></i> Best Uses for QR Codes 2026</a></li>
+        <li><a href="#tips"><i class="fas fa-chevron-right"></i> Tips for Reliable Scanning</a></li>
+        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
       </ul>
     </div>
   </div>
@@ -802,22 +1032,33 @@
     </span>
   </div>
 </footer>
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function closeNav() {
+  document.getElementById('nl').classList.remove('open');
+  document.getElementById('mob').classList.remove('x');
+  document.getElementById('navOverlay').classList.remove('show');
+}
+
+document.getElementById('mob').addEventListener('click', () => {
+  document.getElementById('nl').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('x');
+  document.getElementById('navOverlay').classList.toggle('show');
+});
+
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
+document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 860) {
-    document.querySelectorAll(".sb-card").forEach(card => {
-      const title = card.querySelector(".sb-hd");
-      const body = card.querySelector(".sb-body");
-
+    document.querySelectorAll('.sb-card').forEach(card => {
+      const title = card.querySelector('.sb-hd');
+      const body = card.querySelector('.sb-body');
       if (!title || !body) return;
-
-      body.style.display = "none";
-
-      title.style.cursor = "pointer";
-
-      title.addEventListener("click", () => {
-        const isOpen = body.style.display === "block";
-        body.style.display = isOpen ? "none" : "block";
+      body.style.display = 'none';
+      title.style.cursor = 'pointer';
+      title.addEventListener('click', () => {
+        const isOpen = body.style.display === 'block';
+        body.style.display = isOpen ? 'none' : 'block';
       });
     });
   }
@@ -825,3 +1066,18 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
