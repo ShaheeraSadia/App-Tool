@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -29,33 +29,32 @@
       --bg:#f5f8ff;--white:#ffffff;--radius:14px;
       --shadow:0 4px 24px rgba(43,79,216,0.09);
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
-  
-  /* ── NAV ── */
-    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    /* ── NAV ── */
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--blue);font-size:18px}
     .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
     .nav-logo-text em{color:var(--pink);font-style:normal}
-    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
-    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
-    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
-    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001;background:none;border:none;padding:4px}
-    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
     @media(max-width:960px){
       nav{padding:0 16px}
-      .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:66px;left:-100%;width:82%;max-width:320px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nav-links.active{left:0}
-      .nav-links li{width:100%}
-      .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
-      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
     /* HERO */
     .hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--cyan) 100%);color:white;padding:60px 24px 52px;position:relative;overflow:hidden}
@@ -145,30 +144,85 @@
     .sb-cta a{display:inline-flex;align-items:center;gap:6px;background:white;color:var(--blue-dark);padding:9px 17px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none}
 
     /* FOOTER */
-    footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255,.85);padding:52px 40px 28px}
-    .aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1060px;margin-left:auto;margin-right:auto}
-    .foot-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
-    .foot-brand .logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
-    .foot-brand p{font-size:13px;opacity:.72;line-height:1.7;max-width:220px}
-    .foot-soc{display:flex;gap:10px;margin-top:14px}
-    .fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
-    .fsb:hover{background:var(--blue);color:white}
-    .foot-col h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:14px}
-    .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-    .foot-col ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
-    .foot-col ul a:hover{color:#7dd3fc}
-    .foot-bottom{max-width:1060px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
-    .foot-bottom a{color:inherit;text-decoration:none}
-    @media(max-width:800px){.foot-inner{grid-template-columns:1fr 1fr}}
-    @media(max-width:540px){footer{padding:36px 18px 22px}.foot-inner{grid-template-columns:1fr;gap:20px}.foot-bottom{flex-direction:column;text-align:center}}
-  
-img,
-table,
-iframe {
-    max-width: 80%;
-}
+      /* --- 7. Footer Layout --- */
+    footer { 
+      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+      color: rgba(255,255,255,.85); 
+      padding: 52px 40px 28px; 
+      margin-top: auto !important; 
+      margin-bottom: 0 !important;
+    }
+    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
+    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
+    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
+    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+    .fsb:hover { background: var(--blue); color: white; }
+    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .fc ul a:hover { color: #7dd3fc; }
+    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .fb a { color: inherit; text-decoration: none; }
 
-a {
+    /* --- 8. Responsive Rules --- */
+    @media(max-width:960px) {
+      nav { padding: 0 16px; }
+      .mob { display: flex; }
+      .nl { 
+        position: fixed; top: 66px; left: -100%; width: 82%; max-width: 300px; height: 100vh; 
+        background: var(--white); flex-direction: column; align-items: flex-start; padding: 24px 20px; 
+        transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12); z-index: 1000; gap: 4px; overflow-y: auto; 
+      }
+      .nl.open { left: 0; }
+      .nl li { width: 100%; }
+      .nl a { font-size: 15px; padding: 12px 14px; border-radius: 10px; border-bottom: 1px solid var(--blue-pale); }
+      .mob.x .bar:nth-child(2) { opacity: 0; }
+      .mob.x .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .mob.x .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      .fi { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 20px 16px 50px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .sidebar, .article {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      .article {
+        padding: 24px 16px !important;
+      }
+
+      .tbl, table, .ad-slot, pre, code {
+        max-width: 100% !important;
+        display: block !important;
+        overflow-x: auto !important;
+        box-sizing: border-box !important;
+      }
+    }
+
+    @media(max-width:540px) { 
+      footer { padding: 36px 18px 22px; } 
+      .fi { grid-template-columns: 1fr; gap: 20px; } 
+      .fb { flex-direction: column; text-align: center; } 
+    }
+ 
+ a {
     overflow-wrap: break-word;
 }
 
@@ -192,43 +246,41 @@ body {
     padding: 0;
     overscroll-behavior: none;
 }
-html,
-body {
-    position: relative;
-    min-height: 100%;
-    -webkit-overflow-scrolling: touch;
-}
-  </style>
+
+  
+</style>
+  
+     
 </head>
 <body>
 
- <!-- NAV -->
- <nav>
+ 
+
+    <!-- NAV -->
+<nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu">
+  <button class="mob" id="mob" onclick="document.getElementById('nl').classList.toggle('open');this.classList.toggle('x')" aria-label="Menu">
     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </button>
-  <ul class="nav-links" id="nav-links">
+  <ul class="nl" id="nl">
     <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
     <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
- 
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
- 
-  
-     
- <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
-  
-</li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
+    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
- 
-
+<script>
+document.addEventListener("click",function(e){
+  var n=document.getElementById("nl"),b=document.getElementById("mob");
+  if(n&&b&&!b.contains(e.target)&&!n.contains(e.target)){n.classList.remove("open");b.classList.remove("x");}
+});
+</script>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -239,7 +291,7 @@ body {
       <i class="fas fa-chevron-right" style="font-size:9px;opacity:.6"></i>
       <span>Image SEO Guide</span>
     </div>
-    <span class="cat-pill">SEO Guide</span>
+    <span class="cat-pill">🔍 SEO Guide</span>
     <h1>Why Image Optimization Matters for SEO in 2026</h1>
     <div class="art-meta">
       <span><i class="fas fa-user"></i> Shaheera Sadia</span>
@@ -355,7 +407,7 @@ body {
 
 <p>The difference between an unoptimized photo and a properly optimized WebP image can be a 98% reduction in file size. On a page with 6 images, that can mean the difference between a 30MB page and a 600KB page. The smaller page loads 50× faster.</p>
 
-<div class="tip"><strong> Quick win:</strong> Take your current website and run it through Google PageSpeed Insights (pagespeed.web.dev). Look at the "Opportunities" section. I guarantee "Serve images in next-gen formats" and "Efficiently encode images" will be in the top 3 suggestions. Fix those two things and your score will jump significantly.</div>
+<div class="tip"><strong>💡 Quick win:</strong> Take your current website and run it through Google PageSpeed Insights (pagespeed.web.dev). Look at the "Opportunities" section. I guarantee "Serve images in next-gen formats" and "Efficiently encode images" will be in the top 3 suggestions. Fix those two things and your score will jump significantly.</div>
 
 <h2>Which Image Format Should You Use?</h2>
 
@@ -636,42 +688,44 @@ body {
 </div>
 
 <!-- FOOTER -->
+ 
+<!-- FOOTER -->
 <footer>
-  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
-  <div class="foot-inner">
-    <div class="foot-brand">
+  <div class="aff-foot"> This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
       <div class="logo">ToolkitPro</div>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="foot-soc">
+      <div class="fsoc">
         <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
         <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
         <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <div class="foot-col"><h4>All Tools</h4><ul>
+    <div class="fc"><h4>All Tools</h4><ul>
       <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
       <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
       <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
       <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
       <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
-      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
     </ul></div>
-    <div class="foot-col"><h4>Blog</h4><ul>
+    <div class="fc"><h4>Blog</h4><ul>
       <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
       <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html">How QR Codes Work</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Blog Posts</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/how-qr-codes-work.html">QR Codes Guide</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
     </ul></div>
-    <div class="foot-col"><h4>Legal</h4><ul>
+    <div class="fc"><h4>Legal</h4><ul>
       <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
       <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
       <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
       <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
     </ul></div>
   </div>
-  <div class="foot-bottom">
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
       <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
@@ -681,115 +735,5 @@ body {
     </span>
   </div>
 </footer>
-<script>
-/* ── MOBILE MENU ── */
-const menuBtn = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
-
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuBtn.classList.toggle('is-active');
-});
-document.addEventListener('click', e => {
-  if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-    navLinks.classList.remove('active');
-    menuBtn.classList.remove('is-active');
-  }
-});
-<script>
-/* ── FILTER ── */
-function filterPosts(cat, btn) {
-  // Update active tab
-  if (btn) {
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-  }
-  // Update active category card
-  document.querySelectorAll('.cat-card').forEach(c => {
-    c.classList.toggle('active-cat', c.dataset.cat === cat);
-  });
-
-  const cards = document.querySelectorAll('#blogGrid .blog-card');
-  let visible = 0;
-  cards.forEach(card => {
-    if (card.dataset.cat === 'ad') {
-      card.style.display = cat === 'all' ? '' : 'none';
-      return;
-    }
-    const cardCats = card.dataset.cat || '';
-    const show = cat === 'all' || cardCats.includes(cat);
-    card.classList.toggle('hidden', !show);
-    if (show) visible++;
-  });
-
-  document.getElementById('gridTitle').textContent = cat === 'all' ? 'All Articles' : ` ${cat.charAt(0).toUpperCase()+cat.slice(1)} Articles`;
-  document.getElementById('gridCount').textContent = visible + ' article' + (visible !== 1 ? 's' : '');
-  document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
-  document.getElementById('searchInput').value = '';
-}
-
-/* ── SEARCH ── */
-function handleSearch(q) {
-  q = q.toLowerCase().trim();
-  // Reset filter tabs
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  document.querySelector('.filter-tab').classList.add('active');
-
-  const cards = document.querySelectorAll('#blogGrid .blog-card');
-  let visible = 0;
-  cards.forEach(card => {
-    if (card.dataset.cat === 'ad') { card.style.display = q ? 'none' : ''; return; }
-    if (!q) { card.classList.remove('hidden'); visible++; return; }
-    const title = card.dataset.title || '';
-    const text = card.innerText.toLowerCase();
-    const show = title.includes(q) || text.includes(q);
-    card.classList.toggle('hidden', !show);
-    if (show) visible++;
-  });
-
-  document.getElementById('gridTitle').textContent = q ? `🔍 Results for "${q}"` : ' All Articles';
-  document.getElementById('gridCount').textContent = visible + ' article' + (visible !== 1 ? 's' : '');
-  document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
-}
-</script>
-</body>
+ </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
