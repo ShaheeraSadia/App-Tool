@@ -142,61 +142,7 @@
  
  /* --- FIXED RESPONSIVE LAYOUT RULES --- */
 
-/* Ensure the root containers are responsive and fully fluid */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden; 
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-}
-
-html {
-    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* Matches footer theme */
-}
-
-body {
-    background: var(--bg);
-}
-
-/* Base image & media scaling */
-img, table, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-a {
-    overflow-wrap: break-word;
-}
-
-/* 
-   LAPTOP/DESKTOP FIX: 
-   Keep your original max-width layout limits for large screens so it centers beautifully!
-*/
-.layout {
-    max-width: 1090px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-    display: grid;
-    grid-template-columns: 1fr 290px;
-    gap: 28px;
-    align-items: start;
-    box-sizing: border-box;
-}
-
-.article {
-    width: 100%;
-    background: var(--white);
-    box-sizing: border-box;
-}
-
-.sidebar {
-    width: 100%;
-    box-sizing: border-box;
-}
+ 
 
 /* MOBILE FIX: Responsively drops the restrictions ONLY on small screens */
 @media (max-width: 860px) {
