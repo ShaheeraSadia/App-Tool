@@ -136,7 +136,31 @@
     .fb a{color:inherit;text-decoration:none}
     @media(max-width:800px){.fi{grid-template-columns:1fr 1fr}}
     @media(max-width:540px){footer{padding:36px 18px 22px}.fi{grid-template-columns:1fr;gap:20px}.fb{flex-direction:column;text-align:center}}
- 
+  /* ── MOBILE OPTIMIZATIONS ── */
+    @media (max-width: 768px) {
+        nav { padding: 0 20px; }
+        .mobile-btn { display: flex; }
+        .nav-links {
+            display: none; flex-direction: column; position: absolute;
+            top: 66px; left: 0; width: 100%; background: white;
+            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1000; box-sizing: border-box;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; text-align: center; }
+        .nav-links a { display: block; padding: 12px; color: var(--muted); }
+        .nav-links a:hover { background: #f1f5f9; }
+
+        .blog-container { margin: 100px auto 40px; }
+        .blog-header h1 { font-size: 28px; padding: 0 5px; }
+        .featured-image { height: 220px; border-radius: 12px; }
+        .content-section { padding: 25px 20px; border-radius: 15px; }
+        h2 { font-size: 20px; margin-top: 25px; }
+        p, li { font-size: 16px; }
+        .tool-cta { padding: 25px 15px; }
+        .tool-cta h3 { font-size: 20px; }
+    }
+
  
 
 img,
