@@ -140,7 +140,7 @@
     @media(max-width:800px){.fi{grid-template-columns:1fr 1fr}}
     @media(max-width:540px){footer{padding:36px 18px 22px}.fi{grid-template-columns:1fr;gap:20px}.fb{flex-direction:column;text-align:center}}
  
- /* --- FIXED MOBILE LAYOUT RULES --- */
+ /* --- FIXED RESPONSIVE LAYOUT RULES --- */
 
 /* Ensure the root containers are responsive and fully fluid */
 html, body {
@@ -148,9 +148,9 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden; /* Prevents unwanted horizontal structural shaking */
+    overflow-x: hidden; 
     position: relative;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+    -webkit-overflow-scrolling: touch;
 }
 
 html {
@@ -161,7 +161,7 @@ body {
     background: var(--bg);
 }
 
-/* Ensure media assets adapt cleanly without overflowing */
+/* Base image & media scaling */
 img, table, iframe {
     max-width: 100%;
     height: auto;
@@ -173,15 +173,32 @@ a {
 }
 
 /* 
-   FIX: Removed the restrictive 'max-width: 80%' from layout structural frames.
-   Instead, rely on the main fluid max-width constraints you established earlier.
+   LAPTOP/DESKTOP FIX: 
+   Keep your original max-width layout limits for large screens so it centers beautifully!
 */
-.article, .layout, .sidebar, main, aside {
-    width: 100%;
-    max-width: 100%; 
+.layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 28px;
+    align-items: start;
+    box-sizing: border-box;
 }
 
-/* Responsive adjustment for screens under tablet size */
+.article {
+    width: 100%;
+    background: var(--white);
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* MOBILE FIX: Responsively drops the restrictions ONLY on small screens */
 @media (max-width: 860px) {
     .layout {
         display: flex;
@@ -189,13 +206,13 @@ a {
         width: 100%;
         max-width: 100%;
         padding: 16px;
-        box-sizing: border-box;
+        gap: 20px;
     }
     
     .article {
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box;
+        padding: 24px 18px; /* Restores your original mobile padding */
     }
 }
 /*
