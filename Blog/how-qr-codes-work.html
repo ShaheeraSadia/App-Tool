@@ -312,6 +312,31 @@ footer {
   .fi { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
   .fb { flex-direction: row; text-align: left; }
 }
+  
+ a {
+    overflow-wrap: break-word;
+}
+
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
+
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
 </style>
     
 </head>
