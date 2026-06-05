@@ -622,6 +622,30 @@ body {
     <span><a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a></span>
   </div>
 </footer>
+<script>
+  // Mobile Menu Toggle
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navMenu = document.getElementById('navMenu');
 
+  mobileBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+      const icon = mobileBtn.querySelector('i');
+      if (navMenu.classList.contains('active')) {
+          icon.classList.replace('fa-bars', 'fa-times');
+      } else {
+          icon.classList.replace('fa-times', 'fa-bars');
+      }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+      if (!mobileBtn.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('active');
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.replace('fa-times', 'fa-bars');
+      }
+  });
+</script>
 </body>
 </html>
