@@ -17,8 +17,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  
-   <style>
+  <style>
     /* --- 1. Root & Base Reset (یہ سب اسکرینز کے لیے ہے) --- */
     :root {
       --blue: #2b4fd8;
@@ -42,21 +41,25 @@
       padding: 0; 
     }
 
+    /* اہم تبدیلی: html پر سے گریڈینٹ ہٹا دیا تاکہ نیچے فالتو پٹی نہ بنے */
     html { 
       scroll-behavior: smooth; 
-      background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
+      height: 100%;
     }
 
+    /* اہم تبدیلی: باڈی کو Flexbox بنا دیا تاکہ فوٹر ہمیشہ نیچے لاک رہے */
     body { 
       font-family: 'DM Sans', sans-serif; 
       background: var(--bg); 
       color: var(--text); 
       line-height: 1.7;
       width: 100%;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
       overflow-x: hidden; 
       position: relative;
-      /* فکسڈ نیویگیشن کے لیے بالکل صحیح جگہ چھوڑتا ہے اور فالتو مارجن ختم کرتا ہے 
-      padding-top: 66px !important; */
+      padding-top: 66px !important; /* نیویگیشن کی درست جگہ */
       margin: 0 !important;
       -webkit-overflow-scrolling: touch;
     }
@@ -98,7 +101,6 @@
       padding: 60px 24px 52px; 
       position: relative; 
       overflow: hidden; 
-      /* نیویگیشن بار کے نیچے فالتو گیپ آنے سے روکتا ہے */
       margin-top: 0 !important; 
       margin-bottom: 0 !important;
     }
@@ -121,6 +123,7 @@
       grid-template-columns: 1fr 290px; 
       gap: 28px; 
       align-items: start; 
+      flex-grow: 1; /* اہم تبدیلی: یہ لے آؤٹ کو خالی جگہ گھیرنے پر مجبور کرے گا تاکہ فوٹر نیچے رہے */
     }
     
     .article { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #dde6ff; padding: 40px 44px; width: 100%; }
@@ -219,8 +222,7 @@
       background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
       color: rgba(255,255,255,.85); 
       padding: 52px 40px 28px; 
-      /* فوٹر کے نیچے یا اوپر کسی قسم کی فالتو اسپییس کو ختم کرتا ہے */
-      margin-top: 0 !important;
+      margin-top: auto !important; /* اہم تبدیلی: فوٹر کو ہمیشہ اسکرین کے نچلے ترین حصے پر دھکیل دے گا */
       margin-bottom: 0 !important;
     }
     .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
@@ -294,6 +296,7 @@
       .fb { flex-direction: column; text-align: center; } 
     }
 </style>
+   
 </head>
 <body>
   
