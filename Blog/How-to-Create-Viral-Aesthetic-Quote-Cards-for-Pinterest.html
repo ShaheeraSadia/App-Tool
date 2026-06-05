@@ -46,10 +46,9 @@
     .hero h1{font-family:'Lora',serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.2;margin-bottom:14px}
     .am{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;opacity:.85}
     .am span{display:flex;align-items:center;gap:5px}
-   /* .layout{max-width:1100px;margin:0 auto;padding:0px 24px 80px;display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
-    @media(max-width:860px){.layout{grid-template-columns:1fr;padding:24px 14px 60px}}*/
-     .page-wrap{max-width:1200px;margin:0 auto;padding:36px 20px 80px}
-    @media(max-width:640px){.page-wrap{padding:24px 14px 60px}}
+    .layout{max-width:1100px;margin:0 auto;padding:40px 24px 80px;display:grid;grid-template-columns:1fr 290px;gap:28px;align-items:start}
+    @media(max-width:860px){.layout{grid-template-columns:1fr;padding:24px 14px 60px}}
+      
    
     .article{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #dde6ff;padding:40px 44px}
     @media(max-width:640px){.article{padding:24px 18px}}
@@ -141,8 +140,65 @@
     @media(max-width:800px){.fi{grid-template-columns:1fr 1fr}}
     @media(max-width:540px){footer{padding:36px 18px 22px}.fi{grid-template-columns:1fr;gap:20px}.fb{flex-direction:column;text-align:center}}
  
- 
+ /* --- FIXED MOBILE LAYOUT RULES --- */
 
+/* Ensure the root containers are responsive and fully fluid */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevents unwanted horizontal structural shaking */
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+}
+
+html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* Matches footer theme */
+}
+
+body {
+    background: var(--bg);
+}
+
+/* Ensure media assets adapt cleanly without overflowing */
+img, table, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    overflow-wrap: break-word;
+}
+
+/* 
+   FIX: Removed the restrictive 'max-width: 80%' from layout structural frames.
+   Instead, rely on the main fluid max-width constraints you established earlier.
+*/
+.article, .layout, .sidebar, main, aside {
+    width: 100%;
+    max-width: 100%; 
+}
+
+/* Responsive adjustment for screens under tablet size */
+@media (max-width: 860px) {
+    .layout {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    
+    .article {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+/*
    img,
 table,
 iframe {
@@ -178,7 +234,7 @@ body {
     position: relative;
     min-height: 100%;
     -webkit-overflow-scrolling: touch;
-}
+}*/
   </style>
 </head>
 <body>
