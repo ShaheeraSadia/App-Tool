@@ -274,41 +274,52 @@
       }
     }
 
-    /* --- موبائل اسکرین کو فکس کرنے کا کوڈ --- */
+    
+/* --- فائنل اور پرفیکٹ موبائل لاک ڈاؤن کوڈ --- */
 @media (max-width: 860px) {
-  /* 1. پورے پیج کو دائیں بائیں ہلنے سے سختی سے روکتا ہے */
+  
+  /* 1. صرف موبائل پر پورے پیج کو دائیں بائیں ہلنے یا سلائیڈ ہونے سے روکے گا */
   html, body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    position: relative !important;
     margin: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
-  /* 2. پیج کے ہر حصے کو موبائل اسکرین کے اندر رکھتا ہے */
-  .layout, .article, .sidebar, main, aside, section, div {
+  /* 2. صرف مین لے آؤٹ اور آرٹیکل کو موبائل اسکرین کے مطابق ایڈجسٹ کرے گا */
+  .layout {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px 16px 50px !important;
+    width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow-wrap: break-word !important;
-    word-wrap: break-word !important;
   }
 
-  /* 3. ٹیبل، اشتہارات اور ویڈیوز کو اسکرین سے باہر نکلنے نہیں دیتا */
-  .tbl, table, .ad-slot, iframe, pre, code {
+  .article, .sidebar {
+    width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important; /* اگر کوئی چیز بڑی ہو تو وہ پیج خراب کرنے کے بجائے اپنے اندر ہی اسکرول ہوگی */
+    box-sizing: border-box !important;
+  }
+
+  /* 3. اگر کوئی تصویر، ٹیبل، یا اشتہار بڑا ہو تو وہ موبائل اسکرین کو خراب نہیں کرے گا */
+  img, iframe, .ad-slot, .tbl, table, pre, code {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ٹیبلز اور کوڈ بلاکس کو پیج ٹیڑھا کرنے کے بجائے اپنے اندر اسکرول ہونے کی اجازت دے گا */
+  .tbl, table, pre, code {
     display: block !important;
-    box-sizing: border-box !important;
+    overflow-x: auto !important;
   }
 
-  /* 4. موبائل پر پیج کے کناروں کو بالکل برابر اور صاف کرتا ہے */
+  /* 4. موبائل پر آرٹیکل کی پیڈنگ کو سیٹ کرنا تاکہ ٹیکسٹ باہر نہ جائے */
   .article {
-    padding: 20px 14px !important; 
-    border-radius: 0 !important; /* موبائل پر کونے گول ہونے کے بجائے اسکرین کے ساتھ فکس ہو جائیں گے */
-    border-left: none !important;
-    border-right: none !important;
+    padding: 24px 16px !important;
   }
 }
   </style>
