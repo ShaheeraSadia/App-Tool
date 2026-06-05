@@ -21,8 +21,10 @@
     :root{--blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;--blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;--pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;--bg:#f5f8ff;--white:#ffffff;--radius:14px;--shadow:0 4px 24px rgba(43,79,216,.09)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
-      
+  /*  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}*/
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
     nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--blue);font-size:18px}
