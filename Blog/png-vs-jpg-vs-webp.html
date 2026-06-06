@@ -1,381 +1,1121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PNG vs JPG vs WebP vs AVIF: Which Format is Best for SEO? | Toolkit Pro</title>
- 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PNG vs JPG vs WebP - A complete guide to image formats. Learn which format is best for your website, photos, and graphics in 2024.">
+<meta name="keywords" content="PNG vs JPG, WebP format, image formats comparison, best image format for web, PNG JPG WebP difference">
+<meta name="author" content="TechBlog">
+<title>PNG vs JPG vs WebP: Which Image Format Should You Use? (2024 Guide)</title>
+<!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
 
-  <meta name="description" content="PNG vs JPG vs WebP vs AVIF: Which image format should you choose? Explore the comprehensive breakdown to maximize page speed and dominate Core Web Vitals.">
-  <meta name="keywords" content="PNG vs JPG, WebP Benefits, AVIF vs WebP, Image Formats for Web, SEO Images, Core Web Vitals, Toolkit Pro">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmUuo2X3D1E8KJ2duWTJp7STe63LcEtdYh1KWl1XB6F9WqVS7fFD6DkO0r5fXFzPXhVwJd7XIT7fI3jcePCw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
   
-  <style>
-    :root {
-      --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
-      --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
-      --muted: #94a3b8; --white: #ffffff;
-      --blue-pale: #eff6ff; --blue-light: #dbeafe;
-    }
-    
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-      margin: 0; padding: 0; line-height: 1.8;
-    }
+  
+   :root{--blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;--blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;--pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;--bg:#f5f8ff;--white:#fff;--radius:14px;--shadow:0 4px 24px rgba(43,79,216,.09);--primary:#2b4fd8;--primary-dark:#1a3199;--bg-alt:#eef3ff;--border:#dde6ff;--text-light:#6b7280;--max-width:1200px;--ad-bg:#f9fbff}
+ 
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
     /* ── NAV ── */
-    nav {
-      background: var(--white); border-bottom: 1px solid #dde6ff;
-      padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
-      position: sticky; top: 0; z-index: 300;
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
-    
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin:0; padding:0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-
-    .mobile-btn {
-        display: none; background: var(--blue-dark); border: none;
-        color: white; width: 40px; height: 40px; border-radius: 8px;
-        cursor: pointer; font-size: 1.2rem;
-    }
-
-    /* ── CONTENT ── */
-    .blog-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
-    .blog-header { text-align: center; margin-bottom: 40px; }
-    .blog-header h1 { font-size: 42px; color: #38bdf8; line-height: 1.2; margin: 15px 0; }
-    .featured-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 16px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    
-    .content-section { background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-    h2 { color: #facc15; margin-top: 35px; border-left: 4px solid var(--blue); padding-left: 15px; }
-    h3 { color: #38bdf8; margin-top: 25px; }
-    p { color: #cbd5e1; text-align: justify; }
-    ul, ol { color: #cbd5e1; padding-left: 20px; }
-    li { margin-bottom: 8px; }
-    
-    .table-container { margin: 25px 0; border-radius: 10px; overflow-hidden; }
-    table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); }
-    table th, table td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 15px; }
-    table th { background: var(--blue-dark); color: #7dd3fc; }
-
-    .highlight-box { background: rgba(59, 130, 246, 0.1); border: 1px dashed var(--blue); padding: 20px; border-radius: 12px; margin: 25px 0; color: #e2e8f0; }
-    code { background: #0f172a; color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 14px; }
-    pre { background: #0f172a; padding: 15px; border-radius: 8px; color: #7dd3fc; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); font-family: monospace; }
-
-    /* AdSense Slot Wrapper */
-    .adsense-wrapper {
-      margin: 35px auto;
-      text-align: center;
-      width: 100%;
-      overflow: hidden;
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
 
-    /* ── FOOTER ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .footer-social-btn:hover { background: var(--blue); color: white; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; padding: 0; }
-    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .footer-col ul a:hover { color: #7dd3fc; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .footer-bottom a { color: inherit; text-decoration: none; }
-    .footer-bottom a:hover { text-decoration: underline; }
+  /* ===== TOP AD BANNER ===== */
+  /*.ad-banner {
+    background: var(--ad-bg);
+    border: 1px dashed #bbb;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    min-height: 90px;
+    margin: 16px auto;
+    max-width: var(--max-width);
+    padding: 0 20px;
+  }*/
+  .ad-banner-inner {
+    width: 100%;
+    max-width: 728px;
+    min-height: 90px;
+    background: #e8eaed;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.5px;
+  }
 
-    /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
-        nav { padding: 0 20px; }
-        .mobile-btn { display: block; }
-        .nav-links {
-            display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: white;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; text-align: center; }
-        .nav-links a { display: block; padding: 12px; color: var(--muted); }
-        
-        .blog-container { margin: 30px auto; }
-        .blog-header h1 { font-size: 28px; padding: 0 10px; }
-        .featured-image { height: 250px; border-radius: 12px; }
-        .content-section { padding: 25px 20px; border-radius: 15px; }
-        h2 { font-size: 22px; margin-top: 25px; }
-        p, li { font-size: 16px; }
-        .table-container { overflow-x: auto; margin: 25px 0; border-radius: 10px; }
-        table { display: table; width: 100%; white-space: nowrap; }
+  /* ===== LAYOUT ===== */
+  .page-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: start;
+  }
+  .ad-slot { width: 100%; max-width: 100%; margin: 24px auto; }
+  .ad-slot ins { display: block; }
+
+  /* ===== MAIN CONTENT ===== */
+  main { min-width: 0; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 20px 0 16px;
+  }
+  .breadcrumb a { color: var(--primary); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb span { margin: 0 6px; }
+
+  /* Article Header */
+  .article-header { margin-bottom: 28px; }
+  .post-category {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-light);
+    align-items: center;
+  }
+  .post-meta span { display: flex; align-items: center; gap: 5px; }
+
+  /* Featured Image */
+  .featured-img {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 50%, #1565c0 100%);
+    border-radius: var(--radius);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(32px, 6vw, 56px);
+    color: rgba(255,255,255,0.9);
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Article Body */
+  .article-body h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--text);
+    margin: 36px 0 14px;
+    padding-top: 8px;
+    border-top: 3px solid var(--primary);
+    display: inline-block;
+  }
+  .article-body h3 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(17px, 2.5vw, 21px);
+    color: var(--text);
+    margin: 28px 0 10px;
+  }
+  .article-body p { margin-bottom: 18px; }
+  .article-body ul, .article-body ol {
+    padding-left: 22px;
+    margin-bottom: 18px;
+  }
+  .article-body li { margin-bottom: 8px; }
+  .article-body strong { color: var(--text); }
+
+  /* Intro paragraph */
+  .intro-para {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #3c3c3c;
+    border-left: 4px solid var(--primary);
+    padding-left: 18px;
+    margin-bottom: 28px;
+    background: var(--bg-alt);
+    padding: 16px 18px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  /* Comparison Table */
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); box-shadow: var(--shadow); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th {
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td { padding: 11px 16px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--bg-alt); }
+  .check { color: var(--blue); font-weight: bold; }
+  .cross { color: var(--blue-dark); font-weight: bold; }
+  .partial { color: var(--blue-mid); font-weight: bold; }
+
+  /* Callout / Tip Box */
+  .callout {
+    border-left: 4px solid var(--accent);
+    background: #fff3f2;
+    padding: 14px 18px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+  .callout.tip { border-color: var(--blue-mid); background: #e8f0ff; }
+  .callout.info { border-color: var(--primary); background: #f0f6ff; }
+  .callout strong { display: block; margin-bottom: 4px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Format Cards */
+  .format-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .format-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .format-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  .format-card .icon { font-size: 36px; margin-bottom: 10px; display: block; }
+  .format-card h3 { font-size: 18px; margin: 0 0 8px; color: var(--primary); }
+  .format-card p { font-size: 14px; color: var(--text-light); margin: 0; }
+  .png-card { border-top: 4px solid #1a73e8; }
+  .jpg-card { border-top: 4px solid var(--blue); }
+  .webp-card { border-top: 4px solid var(--blue-dark); }
+
+  /* In-Article Ad */
+  .ad-in-article {
+    background: var(--ad-bg);
+    border: 1px dashed #bbb;
+    border-radius: var(--radius);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #999;
+    margin: 32px 0;
+    text-align: center;
+  }
+
+  /* Use Case Section */
+  .use-case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .use-case-item {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 16px;
+    border: 1px solid var(--border);
+  }
+  .use-case-item h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .use-case-item ul { padding-left: 18px; margin: 0; font-size: 14px; }
+
+  /* FAQ Section */
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    background: var(--bg-alt);
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::after { content: '+'; font-size: 20px; color: var(--primary); }
+  .faq-a {
+    padding: 14px 18px;
+    font-size: 15px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Key Takeaway */
+  .key-takeaway {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .key-takeaway h3 { color: #fff; margin: 0 0 12px; font-size: 20px; }
+  .key-takeaway ul { padding-left: 20px; }
+  .key-takeaway li { margin-bottom: 6px; font-size: 15px; opacity: 0.95; }
+
+  /* Share Buttons */
+  .share-box {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .share-box span { font-weight: 600; font-size: 15px; }
+  .share-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+  .share-btn:hover { opacity: 0.85; }
+  .fb { background: #1877f2; color: #fff; }
+  .tw { background: #000; color: #fff; }
+  .wa { background: #25d366; color: #fff; }
+  .cp { background: var(--text); color: #fff; }
+
+  /* Tags */
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 32px; }
+  .tag {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .tag:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+  /* Related Posts */
+  .related-posts h2 { font-family: 'Merriweather', serif; font-size: 22px; margin-bottom: 16px; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .related-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .related-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .related-img {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+  .rc1 { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); }
+  .rc2 { background: linear-gradient(135deg, var(--blue-mid), var(--blue)); }
+  .related-info { padding: 14px; }
+  .related-info h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+  .related-info p { font-size: 13px; color: var(--text-light); }
+
+  /* ===== SIDEBAR ===== */
+  aside { position: sticky; top: 80px; }
+
+  .sidebar-ad {
+    background: var(--ad-bg);
+    border: 1px dashed #bbb;
+    border-radius: var(--radius);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .sidebar-widget {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .sidebar-widget h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+  }
+  .toc-list { list-style: none; padding: 0; }
+  .toc-list li { padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-list a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+  .toc-list a:hover { color: var(--primary); }
+
+  .popular-list { list-style: none; padding: 0; }
+  .popular-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .popular-list li:last-child { border-bottom: none; }
+  .pop-num {
+    width: 26px;
+    height: 26px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .popular-list a { color: var(--text); text-decoration: none; line-height: 1.4; }
+  .popular-list a:hover { color: var(--primary); }
+
+  .newsletter-form { display: flex; flex-direction: column; gap: 10px; }
+  .newsletter-form input {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-form input:focus { border-color: var(--primary); }
+  .newsletter-form button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .newsletter-form button:hover { background: var(--primary-dark); }
+ 
+ /* ── FOOTER ── */
+          /* --- 7. Footer Layout --- */
+    footer { 
+      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+      color: rgba(255,255,255,.85); 
+      padding: 52px 40px 28px; 
+      margin-top: auto !important; 
+      margin-bottom: 0 !important;
+    }
+    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
+    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
+    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
+    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+    .fsb:hover { background: var(--blue); color: white; }
+    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .fc ul a:hover { color: #7dd3fc; }
+    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .fb a { color: inherit; text-decoration: none; }
+
+    /* --- 8. Responsive Rules --- */
+    @media(max-width:960px) {
+      nav { padding: 0 16px; }
+      .mob { display: flex; }
+      .nl { 
+        position: fixed; top: 66px; left: -100%; width: 82%; max-width: 300px; height: 100vh; 
+        background: var(--white); flex-direction: column; align-items: flex-start; padding: 24px 20px; 
+        transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12); z-index: 1000; gap: 4px; overflow-y: auto; 
+      }
+      .nl.open { left: 0; }
+      .nl li { width: 100%; }
+      .nl a { font-size: 15px; padding: 12px 14px; border-radius: 10px; border-bottom: 1px solid var(--blue-pale); }
+      .mob.x .bar:nth-child(2) { opacity: 0; }
+      .mob.x .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .mob.x .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      .fi { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } }
-  </style>
+    @media (max-width: 860px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 20px 16px 50px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .sidebar, .article {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      .article {
+        padding: 24px 16px !important;
+      }
+
+      .tbl, table, .ad-slot, pre, code {
+        max-width: 100% !important;
+        display: block !important;
+        overflow-x: auto !important;
+        box-sizing: border-box !important;
+      }
+    }
+
+    @media(max-width:540px) { 
+      footer { padding: 36px 18px 22px; } 
+      .fi { grid-template-columns: 1fr; gap: 20px; } 
+      .fb { flex-direction: column; text-align: center; } 
+    }
+ 
+ a {
+    overflow-wrap: break-word;
+}
+
+.article,
+.layout,
+.sidebar,
+main,
+aside {
+    max-width: 100%;
+}
+  html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}
+
+body {
+    background: var(--bg);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+}
+     
+</style>
+     
 </head>
-
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
-    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <button id="mobileMenuBtn" class="mobile-btn" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-  <ul class="nav-links" id="navMenu">
-    <li><a href="https://app-tool.vercel.app/index.html">Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Resources.html" class="active">Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop">Shop Now</a></li>
+  <button class="mob" id="mob" aria-label="Menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+  <ul class="nl" id="nl">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
+    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
 
-<article class="blog-container">
-  <header class="blog-header">
-    <span style="color: var(--pink); font-weight: 700; text-transform: uppercase;">Technical Strategy Guide</span>
-    <h1>PNG vs JPG vs WebP vs AVIF: Which Format is Best for SEO?</h1>
-    <p style="color: var(--muted);">Mastering file extensions to optimize page speed, user retention, and organic search ranks.</p>
-    <img src="../image/blog2.jpg" alt="Comprehensive structural comparison between PNG, JPG, WebP, and AVIF image extensions" class="featured-image">
-  </header>
 
-  <div class="content-section">
-    <p>In 2026, the architectural performance of your web layout is heavily dependent on how efficiently you serve media payloads. With the mainstream scale of high-resolution 4K viewports and mobile-first Google indexing architectures, image configurations consume the majority of server-to-client bandwidth transmission channels. Selecting between <strong>PNG, JPG, WebP, and AVIF</strong> has shifted from an aesthetic UI asset decision into an absolute, rigorous technical SEO workflow necessity.</p>
+ 
+  
+ 
 
-    <h2>The Core Paradigm: Lossy vs. Lossless Pipelines</h2>
-    <p>To implement an elite asset rendering setup, you must understand the compression mechanisms processing your files under the hood:</p>
-    <ul>
-        <li><strong>Lossy Compression:</strong> Intelligently drops mathematical detail blocks that are minor enough to slip past human perceptual vision limits. This structural stripping slashes raw file size down dramatically. However, repeatedly editing and saving a lossy format compiles compounding visual artifacts known as generation loss.</li>
-        <li><strong>Lossless Compression:</strong> Completely maps and retains every individual pixel point code pattern without any degradation. Visual clarity remains structurally pristine, but asset byte sizes grow heavy, making large files dangerous to global loading timelines.</li>
-    </ul>
+<!-- PAGE LAYOUT -->
+<div class="page-wrapper" style="margin-top:24px;">
 
-    <div class="adsense-wrapper">
-        <ins class="adsbygoogle"
-             style="display:block; text-align:center;"
-             data-ad-layout="in-article"
-             data-ad-format="fluid"
-             data-ad-client="ca-pub-6309207317896311"
-             data-ad-slot="2983746510"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+  <!-- MAIN -->
+  <main>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="#">Home</a><span>›</span>
+      <a href="#">Web Design</a><span>›</span>
+      PNG vs JPG vs WebP
     </div>
 
-    <h2>1. JPG (Joint Photographic Experts Group)</h2>
-    <p>JPG stands as the reliable historical cornerstone for digital camera photography systems. Utilizing highly adjustable lossy encoding engines, it balances intricate, real-world texture data against aggressive byte reduction goals.</p>
-    <ul>
-        <li><strong>Best for:</strong> Real-life photography, complex organic color gradients, and golden hour landscape imagery.</li>
-        <li><strong>Pros:</strong> Global legacy environment rendering support; exceptionally uniform performance across color gradients.</li>
-        <li><strong>Cons:</strong> Lacks transparent Alpha-channel layers; shows harsh blocky artifacts when heavily compressed.</li>
-    </ul>
-    <p>When engineering web layouts, keeping your JPG compression ratios balanced is critical. For high-fidelity galleries hosted across <strong>Toolkit Pro</strong> layouts, we maintain export metrics between 70% and 85% to maximize optimization thresholds while shielding user interface visual clarity.</p>
-
-    <h2>2. PNG (Portable Network Graphics)</h2>
-    <p>PNG functions as the lossless authority for pixel-perfect structural rendering. It preserves graphic patterns identically to their original composition canvas state while embedding flexible Alpha transparency channels.</p>
-    <ul>
-        <li><strong>Best for:</strong> Vector branding elements, sharp text charts, minimal UI screenshots, and logos requiring clear alpha transparency layouts.</li>
-        <li><strong>Pros:</strong> Crisp edge containment without ringing artifacts; full transparent depth layer structures.</li>
-        <li><strong>Cons:</strong> Exponentially larger data weights; unoptimized usage severely degrades Core Web Vitals metrics.</li>
-    </ul>
-    
-    <div class="highlight-box">
-        <strong>Pro Developer Strategy:</strong> Serving full-size PNG files for standard rectangular blog posts or hero banners is an immediate performance failure. Unless your layout depends directly on transparency structures, migrating those paths into next-gen extensions decreases total structural data payloads by up to 80%.
-    </div>
-
-    <h2>3. WebP: Google's Core Web Vitals Benchmark</h2>
-    <p>WebP was custom engineered by Google to solve the historic trade-off between web resolution clarity and data transmission costs. Supported across both lossy and lossless algorithms, it handles both alpha transparency and interactive animation states with supreme ease.</p>
-    <ul>
-        <li><strong>Best for:</strong> Complete front-end UI asset rendering, complex hero layouts, and high-velocity blog templates.</li>
-        <li><strong>Pros:</strong> Drops payload dimensions down 25-34% lower than legacy JPG/PNG baselines; processes light-speed client decoding loops.</li>
-        <li><strong>Cons:</strong> Requires structural element fallback containers when accounting for ancient, isolated client browser systems.</li>
-    </ul>
-    <p>WebP leverages advanced <strong>predictive block coding</strong>. Rather than analyzing stand-alone pixel quadrants individually, its framework maps neighboring directional code paths to calculate color variations, producing significantly smoother gradients at tiny fractions of traditional file weights.</p>
-
-    <h2>4. AVIF: The Next-Gen Ultra-Efficient Frontier</h2>
-    <p>Representing the cutting-edge frontier of media compression in 2026, AVIF (AV1 Image File Format) leverages the state-of-the-art compression architectures originally developed for premium open-source video codecs. It offers performance that makes even WebP look heavy.</p>
-    <ul>
-        <li><strong>Best for:</strong> Media-dense portfolio apps, heavy landing pages, and extreme mobile loading environments.</li>
-        <li><strong>Pros:</strong> Slashes file sizing by an incredible 50% relative to JPG, and 20% relative to WebP; pristine preservation of high-contrast edge definitions.</li>
-        <li><strong>Cons:</strong> Higher CPU processing requirements during encoding phases; partial limitations in outdated automation build tools.</li>
-    </ul>
-
-    <h2>Technical Framework Comparison Matrix</h2>
-    <p>This technical layout illustrates how each extension variant processes media data structures under modern system requirements:</p>
-    
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Metric</th>
-                    <th>JPG</th>
-                    <th>PNG</th>
-                    <th>WebP</th>
-                    <th>AVIF</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Compression Mode</strong></td>
-                    <td>Lossy</td>
-                    <td>Lossless</td>
-                    <td>Lossy & Lossless</td>
-                    <td>Lossy & Lossless</td>
-                </tr>
-                <tr>
-                    <td><strong>Transparency Layer</strong></td>
-                    <td>No</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td><strong>Animation Engines</strong></td>
-                    <td>No</td>
-                    <td>No</td>
-                    <td>Yes (AWebP)</td>
-                    <td>Yes</td>
-                </tr>
-                <tr>
-                    <td><strong>Avg. Sizing Scale</strong></td>
-                    <td>Baseline (Heavy)</td>
-                    <td>Very Heavy</td>
-                    <td>30% Lower than JPG</td>
-                    <td>55% Lower than JPG</td>
-                </tr>
-                <tr>
-                    <td><strong>Google SEO Value</strong></td>
-                    <td>Medium</td>
-                    <td>Low (Size Penalties)</td>
-                    <td>Excellent</td>
-                    <td>Maximum Grade</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="adsense-wrapper">
-        <ins class="adsbygoogle"
-             style="display:block;"
-             data-ad-client="ca-pub-6309207317896311"
-             data-ad-slot="8374651029"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-
-    <h2>Advanced Implementation: Multi-Format Server Fallbacks</h2>
-    <p>To preserve cross-browser performance standards like a senior systems engineer, use the HTML5 <code>&lt;picture&gt;</code> element architecture. This method feeds elite AVIF data down to modern engines, while safely dropping back to standard formats for legacy environments:</p>
-    
-    <pre><code>&lt;picture&gt;
-  &lt;source srcset="assets/hero.avif" type="image/avif"&gt;
-  &lt;source srcset="assets/hero.webp" type="image/webp"&gt;
-  &lt;img src="assets/hero.jpg" alt="Optimized digital asset showcase layout" loading="lazy"&gt;
-&lt;/picture&gt;</code></pre>
-
-    <h3>Bonus: Automating Server Header Delivery via .htaccess</h3>
-    <p>If you prefer clean HTML structures over bloated picture tags, configure your Apache web server rewrite engines to transparently route WebP alternatives natively behind the scenes whenever browser headers permit:</p>
-    
-    <pre><code>&lt;IfModule mod_rewrite.c&gt;
-  RewriteEngine On
-  RewriteCond %{HTTP_ACCEPT} image/webp
-  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-  RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1.webp [T=image/webp,E=existing:1,L]
-&lt;/IfModule&gt;</code></pre>
-
-    <h2>Conclusion: The Architecture Blueprint</h2>
-    <p>To claim maximum page speed scores across your personal deployment frameworks in 2026, implement this production checklist:</p>
-    <ol>
-        <li>Default to **AVIF** or **WebP** for 90% of structural content assets to ensure maximum Core Web Vitals performance.</li>
-        <li>Limit **PNG** applications solely to tiny, intricate interface vectors or geometric layout icons needing transparency.</li>
-        <li>Keep legacy **JPG** configurations isolated to fallback structures or raw photographic data paths.</li>
-    </ol>
-    <p>Ready to update your web assets to modern speed standards? Run your designs through the native cloud processing tools inside our <a href="https://app-tool.vercel.app/index.html" style="color:var(--blue); font-weight:600;">Image Optimization Suite</a> to clean up your codebase today.</p>
-</div>
-</article>
-
-<footer>
-  <div class="affiliate-footer">
-    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
-  </div>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">ToolkitPro</div>
-      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <!-- Article Header -->
+    <div class="article-header">
+      <span class="post-category">Image Formats</span>
+      <h1>PNG vs JPG vs WebP: Which Image Format Should You Use? (Complete 2024 Guide)</h1>
+      <div class="post-meta">
+        <span> Alex Johnson</span>
+        <span> June 2, 2024</span>
+        <span> 12 min read</span>
+        <span> 45 Comments</span>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
+
+    <!-- Featured Image -->
+    <div class="featured-img">
+      PNG · JPG · WebP
+    </div>
+
+    <!-- Intro -->
+    <div class="article-body">
+      <p class="intro-para">
+        Picking the right image format can make your website load faster, look better, and even rank higher on Google. But with PNG, JPG, and WebP all available, which one should you actually use? In this guide, we break it all down in simple, plain English — no tech jargon required.
+      </p>
+
+      <p>Every image on the internet is stored in a specific format. The format you choose affects how big the file is, how sharp it looks, and whether it supports things like transparent backgrounds. Getting this wrong means slow pages and unhappy visitors. Getting it right means faster sites and happier users.</p>
+
+      <p>Let's walk through each format, compare them side by side, and help you make the right choice for every situation.</p>
+
+      <!-- Format Cards -->
+      <div class="format-cards">
+        <div class="format-card png-card">
+           
+          <h3>PNG</h3>
+          <p>Lossless quality. Supports transparency. Best for graphics, logos, and screenshots.</p>
+        </div>
+        <div class="format-card jpg-card">
+          
+          <h3>JPG / JPEG</h3>
+          <p>Lossy compression. Smaller file size. Best for photos and images with many colors.</p>
+        </div>
+        <div class="format-card webp-card">
+          
+          <h3>WebP</h3>
+          <p>Modern format by Google. Smaller than both PNG and JPG. Supports everything.</p>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 1 ===== -->
+      <h2 id="what-is-png">What Is PNG? (And Why People Use It)</h2>
+      <p><strong>PNG stands for "Portable Network Graphics."</strong> It was created in 1996 to replace an older format called GIF. The biggest thing that makes PNG special is that it uses <em>lossless compression</em> — which means when you save an image as PNG, it keeps every single pixel exactly as it was. Nothing is thrown away.</p>
+      <p>This makes PNG the go-to format when quality is everything. It's also the only format in this group that supports full transparency, meaning the background of your image can be completely see-through. That's why logos, icons, and graphics with clear backgrounds are almost always saved as PNG.</p>
+
+      <h3>Pros of PNG</h3>
       <ul>
-        <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#nature-designer">Nature Designer</a></li>
-        <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+        <li><strong>Perfect image quality:</strong> No information is lost when saving. What you put in is exactly what you get out.</li>
+        <li><strong>Supports transparency:</strong> You can have a logo with a transparent background that looks great on any color.</li>
+        <li><strong>Great for text and sharp edges:</strong> Screenshots, diagrams, and infographics with clean lines look amazing in PNG.</li>
+        <li><strong>No quality loss on re-save:</strong> You can save and re-save a PNG file many times without losing quality.</li>
+      </ul>
+
+      <h3>Cons of PNG</h3>
+      <ul>
+        <li><strong>Large file sizes:</strong> Because it keeps all the data, PNG files are much bigger than JPG files of the same image.</li>
+        <li><strong>Not ideal for photos:</strong> Photos have millions of subtle colors, and PNG struggles to compress these efficiently.</li>
+        <li><strong>Slower to load on websites:</strong> Bigger files take longer to download, especially on mobile connections.</li>
+      </ul>
+
+      <div class="callout info">
+        <strong> Pro Tip</strong>
+        Use PNG when your image has text, sharp lines, a transparent background, or when you're editing the image and need to save it multiple times without losing quality.
+      </div>
+
+      <!-- IN-ARTICLE AD 1 (300x250) -->
+      <div class="ad-in-article">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- ===== SECTION 2 ===== -->
+      <h2 id="what-is-jpg">What Is JPG? (The Most Popular Format)</h2>
+      <p><strong>JPG (or JPEG) stands for "Joint Photographic Experts Group"</strong> — the committee that created it back in 1992. It's by far the most widely used image format on the internet. The reason is simple: it makes images much smaller without making them look too bad.</p>
+      <p>JPG uses what's called <em>lossy compression</em>. This means it actually throws away some image data when saving — specifically, subtle details that most people won't notice. A JPG of a photograph might be 10 times smaller than the PNG version, while looking almost identical to the human eye.</p>
+
+      <h3>Pros of JPG</h3>
+      <ul>
+        <li><strong>Very small file sizes:</strong> JPG can compress a 10MB photo down to under 1MB with very little visible quality loss.</li>
+        <li><strong>Universal support:</strong> Every device, browser, and app in the world can open a JPG file.</li>
+        <li><strong>Perfect for photographs:</strong> Photos with smooth gradients and many colors compress beautifully as JPG.</li>
+        <li><strong>Adjustable quality:</strong> You can choose how much compression to apply — balance quality vs. file size.</li>
+      </ul>
+
+      <h3>Cons of JPG</h3>
+      <ul>
+        <li><strong>Quality loss:</strong> Every time you save a JPG, it loses a tiny bit of quality. This "compression artifact" looks like blurry blobs or blocky areas.</li>
+        <li><strong>No transparency:</strong> JPG does not support transparent backgrounds. The background is always a solid color.</li>
+        <li><strong>Bad for text and sharp lines:</strong> Text, logos, and line art look blurry and fuzzy when saved as JPG.</li>
+      </ul>
+
+      <div class="callout">
+        <strong> Warning</strong>
+        Never use JPG for your logo, screenshots with text, or any image you plan to edit further. The quality loss adds up every time you re-save the file.
+      </div>
+
+      <!-- ===== SECTION 3 ===== -->
+      <h2 id="what-is-webp">What Is WebP? (The Modern Choice)</h2>
+      <p><strong>WebP was created by Google in 2010</strong> to be the best of both worlds. It can do everything PNG can do (including transparency and lossless saving), and everything JPG can do (including tiny file sizes for photos) — and it does all of it better.</p>
+      <p>Compared to JPG, WebP files are typically <strong>25–35% smaller</strong> at the same visual quality. Compared to PNG, WebP lossless files are about <strong>26% smaller</strong>. This is a massive advantage for website speed.</p>
+
+      <h3>Pros of WebP</h3>
+      <ul>
+        <li><strong>Smallest file sizes:</strong> WebP beats both PNG and JPG in file size for the same visual quality.</li>
+        <li><strong>Supports transparency:</strong> Just like PNG, WebP supports transparent backgrounds — but at a smaller size.</li>
+        <li><strong>Supports animation:</strong> WebP can replace animated GIFs at a much smaller file size.</li>
+        <li><strong>Both lossy and lossless:</strong> You can save WebP in lossy mode (like JPG) or lossless mode (like PNG), depending on your needs.</li>
+        <li><strong>Great for Core Web Vitals:</strong> Faster image loading directly improves your Google PageSpeed score and SEO ranking.</li>
+      </ul>
+
+      <h3>Cons of WebP</h3>
+      <ul>
+        <li><strong>Not universally supported by older software:</strong> Some older photo editing apps can't open or save WebP files, though most modern tools now support it.</li>
+        <li><strong>Slightly worse than PNG at very high zoom:</strong> At extreme zoom levels for editing purposes, PNG lossless quality is still slightly better.</li>
+        <li><strong>Not ideal for print:</strong> WebP is a web format and isn't used in print workflows.</li>
+      </ul>
+
+      <div class="callout tip">
+        <strong>✅ Good News</strong>
+        As of 2024, all major browsers — Chrome, Firefox, Safari, Edge, and Opera — support WebP fully. There's no reason to avoid it on modern websites.
+      </div>
+
+      <!-- IN-ARTICLE AD 2 -->
+      <div class="ad-in-article">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- ===== COMPARISON TABLE ===== -->
+      <h2 id="comparison">Side-by-Side Comparison Table</h2>
+      <p>Here's everything you need to know in one quick table:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>PNG</th>
+              <th>JPG</th>
+              <th>WebP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Compression Type</td><td>Lossless</td><td>Lossy</td><td>Both</td></tr>
+            <tr><td>Transparency Support</td><td class="check">✔ Yes</td><td class="cross">✘ No</td><td class="check">✔ Yes</td></tr>
+            <tr><td>File Size (Photos)</td><td class="cross">✘ Large</td><td class="check">✔ Small</td><td class="check">✔ Smallest</td></tr>
+            <tr><td>File Size (Graphics)</td><td class="partial">⚡ Medium</td><td class="cross">✘ Poor</td><td class="check">✔ Smallest</td></tr>
+            <tr><td>Quality Loss on Save</td><td class="check">✔ None</td><td class="cross">✘ Yes</td><td class="partial">⚡ Optional</td></tr>
+            <tr><td>Animation Support</td><td class="cross">✘ No</td><td class="cross">✘ No</td><td class="check">✔ Yes</td></tr>
+            <tr><td>Browser Support</td><td class="check">✔ All</td><td class="check">✔ All</td><td class="check">✔ All modern</td></tr>
+            <tr><td>Best For</td><td>Logos, Graphics</td><td>Photos</td><td>Everything</td></tr>
+            <tr><td>Print Friendly</td><td class="check">✔ Yes</td><td class="check">✔ Yes</td><td class="cross">✘ No</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ===== SECTION 4: WHEN TO USE WHICH ===== -->
+      <h2 id="when-to-use">When Should You Use Each Format?</h2>
+      <p>Now that you know the basics, let's get practical. Here's exactly when to use each format:</p>
+
+      <div class="use-case-grid">
+        <div class="use-case-item">
+          <h4> Use PNG when:</h4>
+          <ul>
+            <li>Saving a logo with transparent background</li>
+            <li>Taking a screenshot with text</li>
+            <li>Creating infographics or diagrams</li>
+            <li>Working with line art or drawings</li>
+            <li>Editing and re-saving multiple times</li>
+          </ul>
+        </div>
+        <div class="use-case-item">
+          <h4> Use JPG when:</h4>
+          <ul>
+            <li>Displaying large photographic images</li>
+            <li>You need maximum compatibility everywhere</li>
+            <li>File size matters more than perfect quality</li>
+            <li>Sending photos by email</li>
+            <li>Printing photos</li>
+          </ul>
+        </div>
+        <div class="use-case-item">
+          <h4> Use WebP when:</h4>
+          <ul>
+            <li>Building or optimizing a website</li>
+            <li>You want the fastest page load speed</li>
+            <li>Replacing animated GIFs</li>
+            <li>You need transparent backgrounds in small size</li>
+            <li>Improving Google PageSpeed scores</li>
+          </ul>
+        </div>
+        <div class="use-case-item">
+          <h4> Avoid these mistakes:</h4>
+          <ul>
+            <li>Don't use JPG for logos or text images</li>
+            <li>Don't use PNG for large photo galleries</li>
+            <li>Don't use WebP for print design</li>
+            <li>Don't re-save JPG repeatedly</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== SECTION 5: FILE SIZES ===== -->
+      <h2 id="file-sizes">Real-World File Size Examples</h2>
+      <p>To really understand the difference, let's look at a real example. Imagine a high-quality photo of a mountain landscape (original size: 4000 × 3000 pixels):</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Format</th><th>File Size</th><th>Quality</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PNG (lossless)</td><td>~8–12 MB</td><td>Perfect</td><td>Huge — not for web photos</td></tr>
+            <tr><td>JPG (90% quality)</td><td>~2–3 MB</td><td>Excellent</td><td>Good balance for photos</td></tr>
+            <tr><td>JPG (70% quality)</td><td>~500–800 KB</td><td>Good</td><td>Noticeable but mild compression</td></tr>
+            <tr><td>WebP (lossy, 80%)</td><td>~350–500 KB</td><td>Excellent</td><td>Best option for web</td></tr>
+            <tr><td>WebP (lossless)</td><td>~5–8 MB</td><td>Perfect</td><td>Smaller than PNG, same quality</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>As you can see, a lossy WebP file at 80% quality produces the same visual quality as JPG at 90% — but at nearly half the file size. For a website with 50 images, that difference is enormous.</p>
+
+      <!-- ===== KEY TAKEAWAY ===== -->
+      <div class="key-takeaway">
+        <h3> Quick Decision Guide</h3>
+        <ul>
+          <li> <strong>Photograph for your website?</strong> → Use WebP (lossy). Fall back to JPG.</li>
+          <li> <strong>Logo or graphic with transparent background?</strong> → Use WebP or PNG.</li>
+          <li> <strong>Screenshot with text?</strong> → Use PNG for perfect clarity.</li>
+          <li> <strong>Going to print?</strong> → Use PNG or JPG (not WebP).</li>
+          <li> <strong>Replacing an animated GIF?</strong> → Use WebP animation or MP4 video.</li>
+        </ul>
+      </div>
+
+      <!-- IN-ARTICLE AD 3 -->
+      <div class="ad-in-article">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- ===== SECTION 6: SEO ===== -->
+      <h2 id="seo-impact">How Image Format Affects SEO and Page Speed</h2>
+      <p>Google cares deeply about how fast your website loads. One of the biggest factors in page load speed is image file size. Large, unoptimized images are one of the #1 reasons websites fail Google's Core Web Vitals test.</p>
+
+      <p>When you switch from JPG to WebP on a photo-heavy website, you can expect:</p>
+      <ul>
+        <li>Page load times to drop by 20–40%</li>
+        <li>Google PageSpeed scores to increase by 10–30 points</li>
+        <li>Better mobile performance, since phone connections are slower</li>
+        <li>Lower bounce rates, because visitors don't wait as long</li>
+        <li>Improved Google rankings over time (page speed is a ranking factor)</li>
+      </ul>
+
+      <p>WordPress websites can use plugins like <strong>ShortPixel</strong>, <strong>Imagify</strong>, or <strong>WebP Express</strong> to automatically convert all uploaded images to WebP. Most CDN services like Cloudflare also offer automatic WebP conversion.</p>
+
+      <!-- ===== SECTION 7: HOW TO CONVERT ===== -->
+      <h2 id="how-to-convert">How to Convert Between PNG, JPG, and WebP</h2>
+      <p>You don't need any special skills to convert image formats. Here are the easiest options:</p>
+
+      <h3>Free Online Tools</h3>
+      <ul>
+        <li><strong>Squoosh (squoosh.app)</strong> – Google's free image compression and conversion tool. Works in your browser, no install needed.</li>
+        <li><strong>CloudConvert</strong> – Convert any format to any other format online.</li>
+        <li><strong>Convertio</strong> – Drag, drop, and convert. Easy to use.</li>
+        <li><strong>ILoveIMG</strong> – Batch convert multiple images at once for free.</li>
+      </ul>
+
+      <h3>Desktop Software</h3>
+      <ul>
+        <li><strong>Adobe Photoshop</strong> – Export as WebP using the "Save for Web" feature (requires newer versions).</li>
+        <li><strong>GIMP</strong> – Free photo editor that exports to WebP and all other formats.</li>
+        <li><strong>Paint.NET</strong> – Free Windows app with WebP support via plugin.</li>
+        <li><strong>XnConvert</strong> – Batch convert hundreds of images at once, for free.</li>
+      </ul>
+
+      <h3>Command Line (For Developers)</h3>
+      <p>If you're comfortable with the command line, the <strong>cwebp</strong> tool from Google converts any image to WebP instantly. For example:</p>
+      <div style="background:#1e1e2e;color:#cdd6f4;padding:14px 18px;border-radius:var(--radius);font-family:monospace;font-size:14px;margin:12px 0;overflow-x:auto;">
+        cwebp -q 80 input.jpg -o output.webp
+      </div>
+      <p>The <code>-q 80</code> sets the quality to 80%. You can adjust this from 0 (worst quality, smallest file) to 100 (best quality, largest file).</p>
+
+      <!-- ===== FAQ ===== -->
+      <h2 id="faq">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Is WebP better than PNG?</div>
+        <div class="faq-a">For most web use cases, yes. WebP produces smaller files than PNG at similar or equal visual quality. However, PNG is still better for workflows that need 100% lossless quality (like graphic design editing) or for printing. For websites, WebP wins.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I use WebP in emails?</div>
+        <div class="faq-a">Unfortunately, no. Most email clients (including Gmail and Outlook) do not support WebP images. Stick with JPG or PNG for email images. WebP is designed for web browsers, not email.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will my website visitors see WebP images if their browser is old?</div>
+        <div class="faq-a">Modern best practice is to use the HTML &lt;picture&gt; element, which lets you offer WebP as the first option and JPG as a fallback. Old browsers that don't support WebP will automatically load the JPG version instead. Most modern CMS platforms handle this automatically.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is JPG the same as JPEG?</div>
+        <div class="faq-a">Yes, JPG and JPEG are exactly the same format. JPEG is the full name (Joint Photographic Experts Group), and JPG is the short version used for the file extension. They behave identically.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should I convert all my existing images to WebP?</div>
+        <div class="faq-a">If your website already has many JPG and PNG images, it's worth converting them to WebP to improve speed. Use a plugin (for WordPress) or a batch conversion tool to do it all at once. It's a one-time task that pays off in faster load times and better SEO.</div>
+      </div>
+
+      <!-- Tags -->
+      <div class="tag-list">
+        <a href="#" class="tag">PNG</a>
+        <a href="#" class="tag">JPG</a>
+        <a href="#" class="tag">WebP</a>
+        <a href="#" class="tag">Image Optimization</a>
+        <a href="#" class="tag">Web Performance</a>
+        <a href="#" class="tag">SEO</a>
+        <a href="#" class="tag">Page Speed</a>
+        <a href="#" class="tag">Image Formats</a>
+      </div>
+
+      <!-- Share Box -->
+      <div class="share-box">
+        <span>Share this article:</span>
+        <a href="#" class="share-btn fb"> Facebook</a>
+        <a href="#" class="share-btn tw"> Twitter</a>
+        <a href="#" class="share-btn wa"> WhatsApp</a>
+        <button class="share-btn cp" onclick="navigator.clipboard.writeText(window.location.href)">🔗 Copy Link</button>
+      </div>
+
+    </div><!-- /article-body -->
+
+    <!-- RELATED POSTS -->
+    <div class="related-posts">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        <div class="related-card">
+          <div class="related-img rc1"></div>
+          <div class="related-info">
+            <h4><a href="how-to-compress-images.html" style="color:var(--text);text-decoration:none;">How to Compress Images Without Losing Quality</a></h4>
+            <p>Step-by-step guide to making your images smaller without ruining them.</p>
+          </div>
+        </div>
+        <div class="related-card">
+          <div class="related-img rc2"></div>
+          <div class="related-info">
+            <h4><a href="#" style="color:var(--text);text-decoration:none;">10 Ways to Speed Up Your Website in 2024</a></h4>
+            <p>Simple changes that make a massive difference in page load speed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main><!-- /main -->
+
+  <!-- SIDEBAR -->
+  <aside>
+    <!-- Sidebar Ad (300x250) -->
+    <div class="sidebar-ad">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="sidebar-widget">
+      <h3>Table of Contents</h3>
+      <ul class="toc-list">
+        <li><a href="#what-is-png">What Is PNG?</a></li>
+        <li><a href="#what-is-jpg">What Is JPG?</a></li>
+        <li><a href="#what-is-webp">What Is WebP?</a></li>
+        <li><a href="#comparison">Side-by-Side Comparison</a></li>
+        <li><a href="#when-to-use">When to Use Each Format</a></li>
+        <li><a href="#file-sizes">Real-World File Sizes</a></li>
+        <li><a href="#seo-impact">SEO & Page Speed</a></li>
+        <li><a href="#how-to-convert">How to Convert</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
-        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-        <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+
+    <!-- Popular Posts -->
+    <div class="sidebar-widget">
+      <h3> Popular Posts</h3>
+      <ul class="popular-list">
+        <li>
+          <div class="pop-num">1</div>
+          <a href="how-to-compress-images.html">How to Compress Images Without Losing Quality</a>
+        </li>
+        <li>
+          <div class="pop-num">2</div>
+          <a href="#">Best Free Image Tools in 2024</a>
+        </li>
+        <li>
+          <div class="pop-num">3</div>
+          <a href="#">What Is Image Alt Text & Why It Matters for SEO</a>
+        </li>
+        <li>
+          <div class="pop-num">4</div>
+          <a href="#">How to Use SVG Icons on Your Website</a>
+        </li>
+        <li>
+          <div class="pop-num">5</div>
+          <a href="#">Lazy Loading Images: The Complete Guide</a>
+        </li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
-      </ul>
+
+    <!-- Sidebar Ad 2 (300x600) -->
+    <div class="sidebar-ad" style="min-height:300px;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
+    <!-- Newsletter -->
+    <div class="sidebar-widget">
+      <h3> Newsletter</h3>
+      <p style="font-size:14px;margin-bottom:12px;color:var(--text-light);">Get weekly web tips delivered to your inbox.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address">
+        <button type="button">Subscribe Free</button>
+      </div>
+    </div>
+  </aside>
+
+</div><!-- /page-wrapper -->
+
+<!-- BOTTOM AD -->
+<div style="max-width:1200px;margin:0 auto;padding:0 20px 32px;">
+  <div class="ad-banner-inner">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6309207317896311" data-ad-slot="2485889698" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
-  <div class="footer-bottom">
+</div>
+ 
+
+ <!-- FOOTER -->
+<footer>
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
+        <div class="logo">ToolkitPro</div>
+      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
+      <div class="fsoc">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="fc"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
+    </ul></div>
+    <div class="fc"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
+  </div>
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
-      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
     </span>
   </div>
 </footer>
 
-<script>
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-  
-  if (mobileBtn && navMenu) {
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        
-        // Use clean token swapping logic to handle mobile menu icons smoothly
-        if (navMenu.classList.contains('active')) {
-            icon.classList.replace('fa-bars', 'fa-xmark');
-        } else {
-            icon.classList.replace('fa-xmark', 'fa-bars');
-        }
-    });
-  }
-</script>
-
 </body>
-</html> 
+</html>
+
+
+
+
+
+ 
