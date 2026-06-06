@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -478,6 +478,44 @@
     transition: background 0.2s;
   }
   .newsletter-form button:hover { background: var(--primary-dark); }
+
+  /* ── AUTHOR BOX ── */
+  .author-box {
+    background: var(--blue-pale);
+    border-radius: var(--radius);
+    border: 1px solid #c0d0f8;
+    padding: 26px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin: 40px 0 24px;
+    box-shadow: var(--shadow);
+  }
+  .author-ava {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .author-content { flex: 1; min-width: 0; }
+  .author-content h4 { font-size: 18px; margin-bottom: 10px; color: var(--blue-dark); }
+  .author-content p { font-size: 15px; color: #283046; line-height: 1.8; margin-bottom: 14px; }
+  .about-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .badge {
+    background: white;
+    border: 1px solid #c0d0f8;
+    color: var(--blue-dark);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
  
  /* ── FOOTER ── */
           /* --- 7. Footer Layout --- */
@@ -569,9 +607,24 @@
       .ad-in-article,
       .sidebar-ad,
       .ad-slot,
-      .ad-banner-inner {
+      .ad-banner-inner,
+      .author-box {
         width: 100% !important;
         max-width: 100% !important;
+      }
+
+      .author-box {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 22px 18px !important;
+      }
+
+      .author-ava {
+        margin: 0 auto 18px !important;
+      }
+
+      .author-content h4 {
+        text-align: left !important;
       }
 
       .tbl, table, .ad-slot, pre, code {
@@ -586,6 +639,8 @@
       footer { padding: 36px 18px 22px; } 
       .fi { grid-template-columns: 1fr; gap: 20px; } 
       .fb { flex-direction: column; text-align: center; } 
+      .author-box { padding: 18px 14px !important; }
+      .author-ava { width: 52px !important; height: 52px !important; }
     }
  
  a {
@@ -633,7 +688,8 @@ body {
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
     <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
     <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
-    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
+      <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+  
     <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
@@ -1092,7 +1148,23 @@ body {
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 </div>
- 
+
+<div class="author-box">
+  <div class="author-ava"><i class="fas fa-user"></i></div>
+  <div class="author-content">
+    <h4>Written by Shaheera Sadia</h4>
+    <p>I am a <strong>Web and Mobile Application Developer</strong> from Mandi Bahauddin, Punjab, Pakistan. I specialize in building modern, high-performance digital tools that simplify complex workflows for creators, developers, and entrepreneurs around the world.</p>
+    <p>Toolkit Pro is my passion project — a suite of free, browser-based tools designed with one goal: to give every creator access to professional-grade utilities without needing expensive software or technical expertise. My mission is to bridge the gap between technical efficiency and aesthetic design, helping digital entrepreneurs grow their online presence with ease.</p>
+    <p>Every tool processes data locally in your browser, meaning your files stay private and <strong>never touch a server</strong>. Beyond development, I am an active Pinterest creator with <strong>87.6k monthly views</strong>, sharing aesthetic design inspiration and digital lifestyle content. I believe great design should be accessible, intuitive, and fast.</p>
+    <div class="about-badges">
+      <span class="badge">87.6k Pinterest Views/Month</span>
+      <span class="badge">1,000+ LinkedIn Impressions</span>
+      <span class="badge">100% Private — No Server Uploads</span>
+      <span class="badge">Mandi Bahauddin, Pakistan</span>
+      <span class="badge">33.3% Search CTR</span>
+    </div>
+  </div>
+</div>
 
  <!-- FOOTER -->
 <footer>
@@ -1173,4 +1245,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
-</html>
+</html> 
