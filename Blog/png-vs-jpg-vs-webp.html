@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -526,6 +526,22 @@
         max-width: 100% !important;
       }
       
+      .page-wrapper {
+        display: block !important;
+        padding: 0 16px !important;
+      }
+
+      main, aside {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      aside {
+        position: static !important;
+        top: auto !important;
+      }
+
       .layout {
         display: flex !important;
         flex-direction: column !important;
@@ -542,6 +558,20 @@
       
       .article {
         padding: 24px 16px !important;
+      }
+
+      .related-grid,
+      .format-cards,
+      .use-case-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .ad-in-article,
+      .sidebar-ad,
+      .ad-slot,
+      .ad-banner-inner {
+        width: 100% !important;
+        max-width: 100% !important;
       }
 
       .tbl, table, .ad-slot, pre, code {
@@ -1111,11 +1141,36 @@ body {
   </div>
 </footer>
 
+<script>
+function closeNav() {
+  document.getElementById('nl').classList.remove('open');
+  document.getElementById('mob').classList.remove('x');
+  document.getElementById('navOverlay').classList.remove('show');
+}
+
+document.getElementById('mob').addEventListener('click', () => {
+  document.getElementById('nl').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('x');
+  document.getElementById('navOverlay').classList.toggle('show');
+});
+
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 860) {
+    document.querySelectorAll('.sb-card').forEach(card => {
+      const title = card.querySelector('.sb-hd');
+      const body = card.querySelector('.sb-body');
+      if (!title || !body) return;
+      body.style.display = 'none';
+      title.style.cursor = 'pointer';
+      title.addEventListener('click', () => {
+        const isOpen = body.style.display === 'block';
+        body.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
-
-
-
-
-
- 
