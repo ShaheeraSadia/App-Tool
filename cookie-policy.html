@@ -1,165 +1,332 @@
-<!-- COOKIE POLICY PAGE -->
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cookie Policy  | Toolkit Pro by Shaheera Sadia</title>
-  <meta name="description" content="Terms of Service for Toolkit Pro — the rules and guidelines for using our free image optimization and design tools." />
-  <meta name="author" content="Shaheera Sadia" />
-  <link rel="canonical" href="https://app-tool.vercel.app/cookie-policy.html" />
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cookie Policy for Toolkit Pro. Learn what cookies we use, why we use them, and how you can control or turn them off.">
+<meta name="robots" content="index, follow">
+<title>Cookie Policy | Toolkit Pro</title>
+<link rel="canonical" href="https://app-tool.vercel.app/cookie-policy.html">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:linear-gradient(135deg,#0d1b5e,#1a2f8a);overscroll-behavior:none}
+:root{
+  --blue:#f4f6f9;--blue-dark:#1148e0;--blue-mid:#0754fc;
+  --blue-pale:#f6f8fb;--blue-light:#f6f9fd;
+  --pink:#ec4899;--white:#ffffff;
+  --bg:#eaebef;--card:#0a55ea;--card2:#290ef5;
+  --text:#fafafa;--muted:#f6f7f9;
+  --border:rgba(255,255,255,0.07);
+  --radius:16px;--max:1000px;
  
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;}
+      
+body{
+  font-family:'Source Sans 3',Arial,sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.8;font-size:16px;
+  overflow-x:hidden;
+}
+a{color:#0d71ec;text-decoration:none}
+a:hover{text-decoration:underline}
 
-  <title>Cookie Policy | Toolkit Pro</title>
- 
-  
-  <style>
-    /* ── VARIABLES ── */
-    :root {
-      --blue: #3b82f6;
-      --blue-dark: #1e3a8a;
-      --blue-mid: #2563eb;
-      --blue-pale: #eff6ff;
-      --blue-light: #dbeafe;
-      --pink: #ec4899;
-      --white: #ffffff;
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --radius: 20px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.3);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-    }
-
-  
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-
-    /* ── NAV ── */
-     
-    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+/* NAV */
+nav{
+  background:var(--white);border-bottom:1px solid #dde6ff;
+  padding:0 40px;display:flex;align-items:center;
+  justify-content:space-between;height:66px;
+  position:sticky;top:0;z-index:300;
+  box-shadow:0 2px 16px rgba(59, 6, 234, 0.07);
+}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo i{color:var(--blue);font-size:18px}
+.nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+.nav-logo-text em{color:var(--pink);font-style:normal}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;color:#0f0d228c;
+  font-size:14px;font-weight:500;
+  padding:7px 13px;border-radius:9px;transition:all .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale);text-decoration:none}
+.menu-toggle{
+  display:none;flex-direction:column;cursor:pointer;
+  gap:5px;background:none;border:none;padding:4px;z-index:1001;
+}
+.menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+.nav-links.active{left:0!important}
+.menu-toggle.is-active .bar:nth-child(2){opacity:0}
+.menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:960px){
+  nav{padding:0 16px}
+  .menu-toggle{display:flex}
+  .nav-links{
+    position:fixed;top:66px;left:-100%;
+    width:82%;max-width:320px;height:100vh;
+    background:var(--white);flex-direction:column;
+    align-items:flex-start;padding:24px 20px;
+    transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);
+    z-index:1000;gap:4px;overflow-y:auto;
+  }
+  .nav-links li{width:100%}
+  .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+} /* ── NAV ── 
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--blue);font-size:18px}
     .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
     .nav-logo-text em{color:var(--pink);font-style:normal}
-    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
-    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
-    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
-    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001;background:none;border:none;padding:4px}
-    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
-    @media(max-width:960px){
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+  @media(max-width:960px){
       nav{padding:0 16px}
-      .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:66px;left:-100%;width:82%;max-width:320px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nav-links.active{left:0}
-      .nav-links li{width:100%}
-      .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
-      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
+ */
 
-
-    /* ── CONTAINER & CONTENT ── */
-    .container { max-width: 900px; margin: auto; padding: 60px 20px; }
-    .card { background: var(--card-bg); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    h1 { font-size: 36px; margin-bottom: 20px; color: #38bdf8; }
-    h2 { margin-top: 30px; color: #facc15; font-size: 22px; }
-    p { color: #cbd5e1; margin-bottom: 16px; }
-    ul { margin-bottom: 20px; color: #cbd5e1; }
-
-    /* ── CONTACT SECTION ── */
-    .section-hd { text-align: center; margin-bottom: 40px; margin-top: 60px; }
-    .tag { background: var(--blue-pale); color: var(--blue); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px; }
-    .contact-form-wrap { background: var(--white); border-radius: var(--radius); padding: 28px; border: 1px solid #dde6ff; color: #333; }
-    .contact-form-wrap h3 { color: var(--blue-dark); margin-top: 0; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-    .form-group label { font-size: 13px; font-weight: 600; color: #475569; }
-    .form-group input, .form-group textarea { padding: 11px; border-radius: 10px; border: 1.5px solid #c8d8f8; outline: none; }
-    .contact-submit { width: 100%; padding: 13px; background: var(--blue-dark); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; }
-
-    .contact-info-card { background: var(--white); border-radius: var(--radius); padding: 24px; border: 1px solid #dde6ff; color: #333; margin-bottom: 20px; }
-    .contact-info-card h4 { margin-top: 0; color: var(--blue); font-size: 14px; text-transform: uppercase; }
-    .info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #475569; margin-bottom: 12px; }
-    .social-row { display: flex; gap: 10px; }
-    .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); text-decoration: none; }
-
-    /* ── FOOTER (same on all pages) ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .footer-social-btn:hover { background: var(--blue); color: white; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .footer-col ul a:hover { color: #7dd3fc; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .footer-bottom a { color: inherit; text-decoration: none; }
-    .footer-bottom a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
- 
- 
-
-a {
-    overflow-wrap: break-word;
+/* TOP AD */
+.ad-top{
+  max-width:728px;margin:14px auto;padding:0 16px;
+}
+.ad-shell{
+  background:rgba(255,255,255,.04);
+  border:1.5px dashed rgba(255,255,255,.12);
+  border-radius:12px;overflow:hidden;min-height:90px;
 }
 
-.article,
-.layout,
-.sidebar,
-main,
-aside {
-    max-width: 100%;
+/* PAGE WRAP */
+.page-wrap{max-width:var(--max);margin:32px auto 0;padding:0 24px 60px}
+
+/* HERO */
+.page-hero{
+  background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 60%,#3b82f6 100%);
+  border-radius:var(--radius);
+  padding:clamp(28px,5vw,52px) clamp(20px,4vw,48px);
+  margin-bottom:32px;position:relative;overflow:hidden;
 }
-  html {
-    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
-    overscroll-behavior: none;
+.page-hero::before{
+  content:'🍪';position:absolute;
+  font-size:clamp(80px,20vw,160px);
+  right:-10px;bottom:-20px;opacity:.07;pointer-events:none;
+}
+.hero-tag{
+  display:inline-block;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:20px;padding:4px 14px;
+  font-size:12px;font-weight:700;
+  letter-spacing:.6px;text-transform:uppercase;
+  color:#fff;margin-bottom:12px;
+}
+.page-hero h1{
+  font-family:'Merriweather',serif;
+  font-size:clamp(22px,4vw,34px);
+  font-weight:700;line-height:1.3;
+  color:#fff;margin-bottom:10px;
+  position:relative;z-index:1;
+}
+.page-hero p{
+  font-size:clamp(14px,2vw,16px);
+  color:rgba(255,255,255,.88);
+  max-width:540px;line-height:1.7;
+  position:relative;z-index:1;
+}
+.updated-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.18);
+  border-radius:20px;padding:4px 12px;
+  font-size:12px;color:rgba(255,255,255,.85);
+  margin-top:12px;position:relative;z-index:1;
 }
 
-body {
-    background: var(--bg);
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    overscroll-behavior: none;
+/* BREADCRUMB */
+.breadcrumb{
+  font-size:13px;color:var(--muted);
+  margin-bottom:22px;display:flex;
+  flex-wrap:wrap;gap:2px;align-items:center;
 }
-html,
-body {
-    position: relative;
-    min-height: 100%;
-    -webkit-overflow-scrolling: touch;
+.breadcrumb a{color:#60a5fa}
+.breadcrumb sep{margin:0 5px;color:#334155}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 10px 40px rgba(0,0,0,.35);
+  padding:clamp(20px,4vw,38px);
+  margin-bottom:22px;
 }
-  </style>
+.card h2{
+  font-family:'Merriweather',serif;
+  font-size:clamp(17px,2.5vw,22px);
+  color: #fff;margin:26px 0 12px;
+  display:flex;align-items:center;gap:10px;
+}
+.card h2:first-child{margin-top:0}
+.card h2 i{color: #f66e6e;font-size:16px;flex-shrink:0}
+.card h3{
+  font-family:'Merriweather',serif;
+  font-size:17px;color:#fff;
+  margin:20px 0 8px;
+}
+.card p{color:#f7f8f9;margin-bottom:14px;font-size:15px;line-height:1.8}
+.card p:last-child{margin-bottom:0}
+.card ul,.card ol{padding-left:20px;margin-bottom:14px}
+.card ul li,.card ol li{color:#fafbfb;margin-bottom:8px;font-size:15px;line-height:1.75}
+.card strong{color:#f0f2f4}
+.card a{color:#f8f8f8}
+
+/* COOKIE TYPE TABLE */
+.cookie-table{
+  width:100%;border-collapse:collapse;
+  font-size:14px;margin:18px 0;
+  border-radius:10px;overflow:hidden;
+}
+.cookie-table th{
+  background:rgba(37,99,235,.5);
+  color:#e0e7ff;padding:12px 14px;
+  text-align:left;font-weight:600;font-size:13px;
+}
+.cookie-table td{
+  padding:11px 14px;
+  border-bottom:1px solid var(--border);
+  color:#d1d5db;
+  vertical-align:top;
+}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+.cookie-table .cat{
+  font-weight:600;color:#f1f5f9;
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;
+}
+.dot-e{width:8px;height:8px;border-radius:50%;background:#6430f3;flex-shrink:0}
+.dot-f{width:8px;height:8px;border-radius:50%;background:#036eef;flex-shrink:0}
+.dot-a{width:8px;height:8px;border-radius:50%;background:#facc15;flex-shrink:0}
+.dot-m{width:8px;height:8px;border-radius:50%;background:#f87171;flex-shrink:0}
+
+/* CALLOUTS */
+.callout{
+  border-left:4px solid #3b82f6;
+  background:rgba(59,130,246,.1);
+  padding:14px 18px;
+  border-radius:0 10px 10px 0;
+  margin:18px 0;font-size:15px;color:#cbd5e1;
+}
+.callout.green{border-color:#f16d08;background:rgba(52,211,153,.08)}
+.callout.yellow{border-color:#facc15;background:rgba(250,204,21,.08)}
+.callout strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;color:#93c5fd}
+.callout.green strong{color:#6ee7b7}
+.callout.yellow strong{color:#fde68a}
+
+/* OPT-OUT BUTTONS */
+.optout-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.optout-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:10px;padding:16px;
+}
+.optout-card h4{font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.optout-card p{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.6}
+.optout-card a.optout-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(59,130,246,.2);
+  border:1px solid rgba(59,130,246,.3);
+  color:#60a5fa;
+  padding:7px 14px;border-radius:7px;
+  font-size:13px;font-weight:600;
+  transition:all .2s;
+}
+.optout-card a.optout-btn:hover{background:rgba(59,130,246,.35);text-decoration:none}
+
+/* AD INLINE */
+.ad-inline{
+  background:rgba(255,255,255,.04);
+  border:1.5px dashed rgba(255,255,255,.12);
+  border-radius:12px;overflow:hidden;
+  min-height:90px;margin:28px 0;
+}
+
+/* LEGAL PAGES SIDEBAR */
+.legal-sidebar{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;margin-top:24px;
+}
+.legal-sidebar h3{
+  font-family:'Merriweather',serif;
+  font-size:15px;color:#93c5fd;
+  margin-bottom:14px;padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+}
+.legal-links{list-style:none;padding:0}
+.legal-links li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.legal-links li:last-child{border-bottom:none}
+.legal-links a{color:var(--muted);display:flex;align-items:center;gap:9px;transition:color .2s}
+.legal-links a:hover{color:#60a5fa;text-decoration:none}
+.legal-links a i{width:16px;text-align:center;color:#3b82f6;font-size:12px}
+
+/* FOOTER */
+  footer { 
+      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+      color: rgba(255,255,255,.85); 
+      padding: 52px 40px 28px; 
+      margin-top: auto !important; 
+      margin-bottom: 0 !important;
+    }
+    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
+    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
+    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
+    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+    .fsb:hover { background: var(--blue); color: white; }
+    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .fc ul a:hover { color: #7dd3fc; }
+    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .fb a { color: inherit; text-decoration: none; }
+
+/* RESPONSIVE */
+@media(max-width:760px){
+  .optout-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:22px}
+}
+@media(max-width:500px){
+  .footer-inner{grid-template-columns:1fr;gap:18px}
+  .page-hero{padding:22px 18px}
+  .card{padding:18px 15px}
+}
+</style>
 </head>
-
 <body>
- <!-- NAV -->
+
+<!-- NAV -->
  <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
@@ -171,161 +338,390 @@ body {
   <ul class="nav-links" id="nav-links">
     <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
     <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
- 
+    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
- 
-  
+    <li><a href="https://app-tool.vercel.app/shopping.html"  style="background:linear-gradient(135deg,#f27db7,#ff9a9e);color:#fff;border-radius:15px;font: weight 4px;"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+  <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
      
- <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
-  
- 
+      <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+  <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
+   
+</ul>
+</nav>
+<!--<nav>
+  <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
+    <i class="fas fa-toolbox"></i>
+    <span class="nav-logo-text">ToolKit <em>Pro</em></span>
+  </a>
+  <button class="mob" id="mob" aria-label="Menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+  <ul class="nl" id="nl">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+    <li><a href="https://app-tool.vercel.app/Blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
+    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
+     
+      <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+  <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
+   
+       <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
+-->
+<!-- TOP AD -->
+<div class="ad-top">
+  <ins class="adsbygoogle ad-shell"
+       style="display:block;width:100%;min-height:90px"
+       data-ad-client="ca-pub-6309207317896311"
+       data-ad-slot="2485889698"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+</div>
+
+<!-- PAGE WRAP -->
+<div class="page-wrap">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="https://app-tool.vercel.app/index.html">Home</a>
+    <sep>›</sep> Cookie Policy
+  </div>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="hero-tag"> Legal &amp; Privacy</div>
+    <h1>Cookie Policy</h1>
+    <p>This page explains exactly what cookies Toolkit Pro uses, why we use them, and how you can control or turn them off at any time.</p>
+    <div class="updated-badge"><i class="fas fa-clock" style="font-size:11px"></i> Last Updated: June 2026</div>
+  </div>
+
+  <!-- CARD 1: What are cookies -->
+  <div class="card">
+    <h2><i class="fas fa-question-circle"></i> What Are Cookies?</h2>
+    <p>Cookies are small text files that websites save on your device (phone, tablet, or computer) when you visit them. They are very common and used by almost every website on the internet.</p>
+    <p>Cookies help websites remember things about you — like whether you've visited before, your preferences, or what's in your shopping cart. They make websites work better and allow site owners to understand how people use their sites.</p>
+    <p>Cookies <strong>cannot</strong> access other files on your device, run programs, or carry viruses. They are just small pieces of text data stored in your browser.</p>
+
+    <div class="callout green">
+      <strong>✅ Important Note About Toolkit Pro's Tools</strong>
+      All tools on this website (Image Compressor, Color Extractor, QR Generator, etc.) process your files entirely inside your own browser. Your images and files are <strong>never uploaded to our servers</strong>. Cookies have nothing to do with how our tools handle your files.
+    </div>
+  </div>
+
+  <!-- CARD 2: Cookie types table -->
+  <div class="card">
+    <h2><i class="fas fa-list"></i> What Cookies Does Toolkit Pro Use?</h2>
+    <p>We use four types of cookies on this website. Here is a clear breakdown of each one:</p>
+
+    <div style="overflow-x:auto;border-radius:10px">
+    <table class="cookie-table">
+      <thead>
+        <tr>
+          <th>Cookie Type</th>
+          <th>Who Sets It</th>
+          <th>What It Does</th>
+          <th>Can You Opt Out?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="cat"><div class="dot-e"></div>Essential Cookies</div></td>
+          <td>Toolkit Pro</td>
+          <td>Remember your cookie consent choice (Accept/Decline). The site cannot function properly without these.</td>
+          <td>No — these are required for the site to work</td>
+        </tr>
+        <tr>
+          <td><div class="cat"><div class="dot-f"></div>Functional Cookies</div></td>
+          <td>Toolkit Pro</td>
+          <td>Remember your tool preferences and settings between visits so you don't have to reconfigure every time.</td>
+          <td>Yes — clear browser storage to remove</td>
+        </tr>
+        <tr>
+          <td><div class="cat"><div class="dot-a"></div>Analytics Cookies</div></td>
+          <td>Google Analytics</td>
+          <td>Count how many people visit each page, which tools are most popular, and how long visitors stay. This data is anonymous — we never see your name or personal details.</td>
+          <td>Yes — see opt-out section below</td>
+        </tr>
+        <tr>
+          <td><div class="cat"><div class="dot-m"></div>Advertising Cookies</div></td>
+          <td>Google AdSense</td>
+          <td>Show you relevant ads based on your general interests and browsing activity. AdSense places these cookies when ads are displayed on our pages.</td>
+          <td>Yes — see opt-out section below</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Specific Cookies We Use</h3>
+    <div style="overflow-x:auto;border-radius:10px">
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Cookie Name</th><th>Provider</th><th>Purpose</th><th>Duration</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">tkpro_cookie_consent</code></td><td>Toolkit Pro</td><td>Stores your Accept/Decline cookie choice</td><td>1 year</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">_ga</code></td><td>Google Analytics</td><td>Distinguishes unique visitors (anonymous)</td><td>2 years</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">_gid</code></td><td>Google Analytics</td><td>Distinguishes visitors (resets daily)</td><td>24 hours</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">_gat</code></td><td>Google Analytics</td><td>Throttles request rate to Google servers</td><td>1 minute</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">IDE</code></td><td>Google AdSense / DoubleClick</td><td>Used for targeted advertising</td><td>1 year</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">DSID</code></td><td>Google AdSense</td><td>Identifies signed-in Google users for ad personalisation</td><td>2 weeks</td></tr>
+        <tr><td><code style="background:rgba(255,255,255,.07);padding:2px 7px;border-radius:4px;font-size:13px;color:#93c5fd">test_cookie</code></td><td>Google AdSense</td><td>Checks if your browser supports cookies</td><td>15 minutes</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- INLINE AD -->
+  <ins class="adsbygoogle ad-inline"
+       style="display:block;width:100%"
+       data-ad-client="ca-pub-6309207317896311"
+       data-ad-slot="2485889698"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+  <!-- CARD 3: Why we use them -->
+  <div class="card">
+    <h2><i class="fas fa-heart"></i> Why We Use Cookies</h2>
+
+    <h3>To Keep the Site Free</h3>
+    <p>Toolkit Pro is completely free to use. Every tool — Image Compressor, Color Extractor, QR Generator, Nature Designer, Art Tool, Voice Studio — is free, with no sign-up and no subscription. We keep it this way through two revenue streams:</p>
+    <ul>
+      <li><strong>Google AdSense advertising</strong> — Google shows ads on our pages. When you visit, AdSense may use cookies to show ads that are relevant to your interests. If you click an ad, we earn a small amount.</li>
+      <li><strong>Amazon affiliate links</strong> — Some of our blog posts and resource pages include affiliate links. These don't use additional cookies beyond what Amazon already sets.</li>
+    </ul>
+    <p>Without ad revenue, we would have to charge for the tools or shut down. Accepting cookies is a small way to support free tools for everyone.</p>
+
+    <h3>To Understand How the Site Is Used</h3>
+    <p>Google Analytics tells us things like: how many people visit each week, which blog posts are most popular, which tools get used most, and whether visitors come from Google, Pinterest, or direct links. This information helps us improve the site and create content people actually want.</p>
+    <p>Analytics data is completely anonymous. We never see your name, email address, or any personal information. We only see aggregate numbers — for example, "3,200 people visited the Image Compressor page this month."</p>
+
+    <div class="callout yellow">
+      <strong> Third-Party Cookies</strong>
+      Google AdSense and Google Analytics are operated by Google LLC. They set their own cookies subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. We don't control what Google does with these cookies — please review Google's policy for full details on how they handle your data.
+    </div>
+  </div>
+
+  <!-- CARD 4: How to control -->
+  <div class="card">
+    <h2><i class="fas fa-sliders-h"></i> How to Control or Turn Off Cookies</h2>
+    <p>You have full control over cookies. Here are your options:</p>
+
+    <h3>Option 1 — Use Our Cookie Banner</h3>
+    <p>Every time you visit Toolkit Pro for the first time (or after clearing your browser data), a cookie consent banner appears at the bottom of the page. Click <strong>Decline</strong> to refuse advertising and analytics cookies. Only the essential cookie that remembers your choice will be saved. You can change your mind any time by clicking the <strong>"Cookie Settings"</strong> button that appears after declining.</p>
+
+    <h3>Option 2 — Opt Out of Google Advertising</h3>
+    <div class="optout-grid">
+      <div class="optout-card">
+        <h4><i class="fab fa-google" style="color:#4285f4"></i> Google Ad Settings</h4>
+        <p>Turn off personalised ads across all Google products and websites that use AdSense.</p>
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="optout-btn"><i class="fas fa-external-link-alt" style="font-size:11px"></i> Open Ad Settings</a>
+      </div>
+      <div class="optout-card">
+        <h4><i class="fas fa-network-wired" style="color:#60a5fa"></i> Network Advertising Initiative</h4>
+        <p>Opt out of interest-based advertising from multiple ad networks at once.</p>
+        <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener" class="optout-btn"><i class="fas fa-external-link-alt" style="font-size:11px"></i> NAI Opt-Out</a>
+      </div>
+      <div class="optout-card">
+        <h4><i class="fas fa-chart-bar" style="color:#34d399"></i> Google Analytics Opt-Out</h4>
+        <p>Install Google's browser add-on to prevent Analytics from collecting data about your visits.</p>
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="optout-btn"><i class="fas fa-external-link-alt" style="font-size:11px"></i> Analytics Opt-Out</a>
+      </div>
+      <div class="optout-card">
+        <h4><i class="fas fa-globe" style="color:#facc15"></i> Your Ad Choices (YourAdChoices)</h4>
+        <p>Opt out of targeted advertising from companies participating in the Digital Advertising Alliance.</p>
+        <a href="https://youradchoices.com" target="_blank" rel="noopener" class="optout-btn"><i class="fas fa-external-link-alt" style="font-size:11px"></i> YourAdChoices</a>
+      </div>
+    </div>
+
+    <h3>Option 3 — Control Cookies in Your Browser</h3>
+    <p>Every browser has built-in settings to view, delete, and block cookies. Here are direct links to cookie settings for the most popular browsers:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome — Cookie Settings</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank" rel="noopener">Mozilla Firefox — Cookie Settings</a></li>
+      <li><a href="https://support.apple.com/en-us/HT201265" target="_blank" rel="noopener">Apple Safari — Cookie Settings</a></li>
+      <li><a href="https://support.microsoft.com/en-us/windows/manage-cookies-in-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge — Cookie Settings</a></li>
+      <li><a href="https://help.opera.com/en/latest/web-preferences/#cookies" target="_blank" rel="noopener">Opera — Cookie Settings</a></li>
+    </ul>
+
+    <div class="callout">
+      <strong> Note</strong>
+      If you block all cookies in your browser settings, some parts of Toolkit Pro may not work as expected — for example, the site won't remember your cookie consent choice. Our free tools (Image Compressor, QR Generator, etc.) will still work because they don't require cookies.
+    </div>
+  </div>
+
+  <!-- CARD 5: Your rights -->
+  <div class="card">
+    <h2><i class="fas fa-user-shield"></i> Your Rights</h2>
+
+    <h3>If You Are in the European Union (GDPR)</h3>
+    <p>Under the General Data Protection Regulation (GDPR), you have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — ask us what data we hold about you</li>
+      <li><strong>Deletion</strong> — ask us to delete your data</li>
+      <li><strong>Correction</strong> — ask us to correct inaccurate data</li>
+      <li><strong>Restriction</strong> — ask us to limit how we use your data</li>
+      <li><strong>Object</strong> — object to our use of your data for advertising</li>
+      <li><strong>Portability</strong> — receive your data in a portable format</li>
+    </ul>
+    <p>Since we collect very minimal personal data (we don't require sign-ups or accounts), most of the data that concerns you is held by Google, not by us. For data Google holds, you can manage it through your <a href="https://myaccount.google.com" target="_blank" rel="noopener">Google Account</a>.</p>
+
+    <h3>If You Are in California (CCPA)</h3>
+    <p>Under the California Consumer Privacy Act (CCPA), California residents have the right to know what personal information is collected, the right to delete it, and the right to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us using the details below.</p>
+
+    <h3>Changes to This Cookie Policy</h3>
+    <p>We may update this Cookie Policy from time to time — for example, if we add new tools or change our advertising setup. When we make significant changes, we will update the "Last Updated" date at the top of this page. We encourage you to check this page occasionally to stay informed.</p>
+
+    <h3>Contact Us About Cookies</h3>
+    <p>If you have any questions about this Cookie Policy, how we use cookies, or how to exercise your privacy rights, please contact us:</p>
+    <ul>
+      <li><strong>Name:</strong> Shaheera Sadia</li>
+      <li><strong>Location:</strong> Mandi Bahauddin, Punjab, Pakistan</li>
+      <li><strong>Email:</strong> <a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+      <li><strong>Contact Form:</strong> <a href="https://app-tool.vercel.app/contact.html">app-tool.vercel.app/contact.html</a></li>
+    </ul>
+  </div>
+
+  <!-- Legal pages sidebar -->
+  <div class="legal-sidebar">
+    <h3>📋 Other Legal Pages</h3>
+    <ul class="legal-links">
+      <li><a href="https://app-tool.vercel.app/privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html"><i class="fas fa-link"></i> Affiliate Disclosure</a></li>
+      <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-user"></i> About Toolkit Pro</a></li>
+    </ul>
+  </div>
+
+  <!-- BOTTOM AD -->
+  <ins class="adsbygoogle ad-inline"
+       style="display:block;width:100%;margin-top:24px"
+       data-ad-client="ca-pub-6309207317896311"
+       data-ad-slot="2485889698"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+</div><!-- /page-wrap -->
 
  
 
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+ 
 
-<div class="container">
-  <div class="card">
-    <h1>Cookie Policy</h1>
-    <p>This Cookie Policy explains how <strong>Toolkit Pro</strong> uses cookies and similar technologies to improve your experience when you visit our website.</p>
-
-    <h2>What Are Cookies?</h2>
-    <p>Cookies are small text files stored on your device that help websites function properly and remember your preferences.</p>
-
-    <h2>How We Use Cookies</h2>
-    <ul>
-      <li>To ensure essential website functionality.</li>
-      <li>For analytics and performance tracking.</li>
-      <li>To remember your user preferences.</li>
-      <li>For advertising and affiliate tracking purposes.</li>
-    </ul>
-
-    <h2>Managing Cookies</h2>
-    <p>You can control or disable cookies through your browser settings, though this may affect site functionality.</p>
-  </div>
-</div>
-
-<!-- CONTACT SECTION -->
-<div class="section-hd">
-  <span class="tag">Contact</span>
-  <h2>Get In Touch</h2>
-  <p>Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-</div>
-
-<div class="contact-grid">
-  <div class="contact-form-wrap">
-    <h3>Send a Message</h3>
-    <form action="https://formspree.io/f/xkoyzpvp" method="POST">
-      <div class="form-group"><label>Your Name</label><input type="text" name="name" required /></div>
-      <div class="form-group"><label>Email Address</label><input type="email" name="email" required /></div>
-      <div class="form-group"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
-      <button type="submit" class="contact-submit">Send Message</button>
-    </form>
-  </div>
-
-  <div class="contact-info-wrap">
-    <div class="contact-info-card">
-      <h4>Contact Info</h4>
-      <div class="info-row"><i class="fas fa-user"></i><span>Shaheera Sadia</span></div>
-      <div class="info-row"><i class="fas fa-map-marker-alt"></i><span>Mandi Bahauddin, Pakistan</span></div>
-    </div>
-    <div class="contact-info-card">
-      <h4>Follow Me</h4>
-      <div class="social-row">
-        <a href="https://www.pinterest.com/shaheerasadia" class="social-btn"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 <footer>
-  <div class="affiliate-footer">
-    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
-  </div>
-  <div class="footer-inner">
-    <div class="footer-brand">
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
       <div class="logo">ToolkitPro</div>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
-        
+      <div class="fsoc">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
+    <div class="fc"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
+    </ul></div>
+    <div class="fc"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
+    </ul></div>
     <div class="footer-col">
-      <h4>Tools</h4>
+     <div class="fc"><h4>Site</h4>
       <ul>
-        <li><a href="#uploadArea">Image Compressor</a></li>
-        <li><a href="#palette-section">Color Extractor</a></li>
-        <li><a href="#nature-designer">Nature Designer</a></li>
-        <li><a href="#qr-section">QR Generator</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
+        <li><a href="https://app-tool.vercel.app/about.html">About</a></li>
+        <li><a href="https://app-tool.vercel.app/contact.html">Contact</a></li>
+        <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">Blog</a></li>
         <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
-        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-        <a href="/cookie-policy.html">Cookie Policy</a>
-        <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
-        
-      </ul>
-    </div>
+    </div></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom">
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
-      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
-       <a href="/cookie-policy.html">Cookie Policy</a></li>
-        <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
     </span>
   </div>
 </footer>
-  
-  <!-- Mobile menu-->
- 
-  <script> 
- 
-const menuBtn=document.getElementById('mobile-menu');
-const navLinks=document.getElementById('nav-links');
-menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
+
+<!-- Cookie Banner (paste this on ALL pages) -->
+<style id="cookie-banner-css">
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid #1a73e8;box-shadow:0 -4px 24px rgba(0,0,0,.12);padding:16px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;font-family:'Source Sans 3',Arial,sans-serif;font-size:14px;line-height:1.5;transform:translateY(100%);transition:transform .35s ease}
+#cookie-banner.show{transform:translateY(0)}
+#cookie-banner .cb-text{flex:1;min-width:220px;color:#202124}
+#cookie-banner .cb-text a{color:#1a73e8;text-decoration:underline}
+#cookie-banner .cb-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+#cookie-banner .cb-btn{padding:9px 20px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s;white-space:nowrap}
+#cookie-banner .cb-btn:hover{opacity:.85}
+#cookie-banner .cb-accept{background:#1a73e8;color:#fff}
+#cookie-banner .cb-decline{background:#f1f3f4;color:#202124;border:1px solid #e0e0e0}
+#cookie-banner .cb-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:18px;color:#5f6368;cursor:pointer;padding:2px 6px;line-height:1}
+#cookie-reopen{position:fixed;bottom:16px;left:16px;z-index:99998;background:#1a73e8;color:#fff;border:none;border-radius:24px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(26,115,232,.35);display:none;align-items:center;gap:6px;transition:opacity .2s}
+#cookie-reopen:hover{opacity:.88}
+@media(max-width:600px){#cookie-banner{flex-direction:column;align-items:flex-start}#cookie-banner .cb-btns{width:100%}#cookie-banner .cb-btn{flex:1;text-align:center}}
+</style>
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <button class="cb-close" onclick="cookieBanner.dismiss()" aria-label="Close">✕</button>
+  <div class="cb-text"> <strong>We use cookies</strong> to serve relevant ads (Google AdSense) and understand how visitors use our site (Google Analytics). Your files are always processed locally — never uploaded. <a href="/cookie-policy.html">Learn more</a></div>
+  <div class="cb-btns">
+    <button class="cb-btn cb-decline" onclick="cookieBanner.decline()">Decline</button>
+    <button class="cb-btn cb-accept" onclick="cookieBanner.accept()">Accept All Cookies</button>
+  </div>
+</div>
+<button id="cookie-reopen" onclick="cookieBanner.reopen()" aria-label="Cookie settings"> Cookie Settings</button>
+<script>
+(function(){
+  var K='tkpro_cookie_consent',banner=document.getElementById('cookie-banner'),reopen=document.getElementById('cookie-reopen');
+  function get(){return localStorage.getItem(K)}
+  function set(v){localStorage.setItem(K,v)}
+  function loadAds(){if(window.adsbygoogle){try{(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0}catch(e){}}}
+  function pauseAds(){window.adsbygoogle=window.adsbygoogle||[];adsbygoogle.pauseAdRequests=1}
+  window.cookieBanner={
+    accept:function(){set('accepted');banner.classList.remove('show');reopen.style.display='none';loadAds()},
+    decline:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},
+    dismiss:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},
+    reopen:function(){reopen.style.display='none';banner.classList.add('show')}
+  };
+  var s=get();
+  if(!s){pauseAds();setTimeout(function(){banner.classList.add('show')},600)}
+  else if(s==='accepted'){loadAds()}
+  else{pauseAds();reopen.style.display='flex'}
+})();
 </script>
 
+<script>
+  var menuToggle=document.getElementById('mobile-menu');
+  var navLinks=document.getElementById('nav-links');
+  menuToggle.addEventListener('click',function(){navLinks.classList.toggle('active');menuToggle.classList.toggle('is-active')});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
