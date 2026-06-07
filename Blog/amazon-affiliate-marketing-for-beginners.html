@@ -577,7 +577,7 @@ aside{position:sticky;top:75px}
 =================================================== */
 @media(max-width:600px){
   /* header */
-  nav{display:none}
+  nav{display:flex}
   .menu-toggle{display:flex}
   .logo{font-size:17px}
 
@@ -1360,6 +1360,12 @@ body {
 
 </body>
 </html>
+ <!-- FOOTER -->
+<footer>
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
+      <div class="logo">ToolkitPro</div>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
       <div class="fsoc">
         <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
@@ -1401,7 +1407,36 @@ body {
   </div>
 </footer>
 
- 
+<script>
+function closeNav() {
+  document.getElementById('nl').classList.remove('open');
+  document.getElementById('mob').classList.remove('x');
+  document.getElementById('navOverlay').classList.remove('show');
+}
 
+document.getElementById('mob').addEventListener('click', () => {
+  document.getElementById('nl').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('x');
+  document.getElementById('navOverlay').classList.toggle('show');
+});
+
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 860) {
+    document.querySelectorAll('.sb-card').forEach(card => {
+      const title = card.querySelector('.sb-hd');
+      const body = card.querySelector('.sb-body');
+      if (!title || !body) return;
+      body.style.display = 'none';
+      title.style.cursor = 'pointer';
+      title.addEventListener('click', () => {
+        const isOpen = body.style.display === 'block';
+        body.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+  }
+});
+</script>
 </body>
 </html>
