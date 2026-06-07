@@ -117,7 +117,29 @@
     @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
 
   
- 
+ @media (max-width: 860px) {
+  /* کنٹیکٹ گرڈ کو ایک کالم میں تبدیل کریں */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 15px !important;
+  }
+
+  /* کنٹینر کی پیڈنگ کم کریں تاکہ مواد اسکرین سے باہر نہ جائے */
+  .container {
+    padding: 30px 15px !important;
+  }
+
+  /* کارڈ کے اندر کی پیڈنگ کم کریں */
+  .card {
+    padding: 20px !important;
+  }
+
+  /* ہیڈنگ کا سائز چھوٹا کریں */
+  h1 {
+    font-size: 28px !important;
+  }
+}
 
 a {
     overflow-wrap: break-word;
@@ -310,12 +332,14 @@ body {
   </div>
 </footer>
  <!-- ══ Mobile══ -->
- <script> 
- 
-const menuBtn=document.getElementById('mobile-menu');
-const navLinks=document.getElementById('nav-links');
-menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.classList.toggle('is-active');});
-document.addEventListener('click',e=>{if(!menuBtn.contains(e.target)&&!navLinks.contains(e.target)){navLinks.classList.remove('active');menuBtn.classList.remove('is-active');}});
+ <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('is-active');
+  });
 </script>
 </body>
 </html>
