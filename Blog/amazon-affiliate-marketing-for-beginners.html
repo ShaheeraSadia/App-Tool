@@ -1,4 +1,4 @@
- 
+   
   <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,14 +93,15 @@
     .nav-overlay{
       position:fixed;
       inset:0;
-      top:66px;
-      background:rgba(0,0,0,.4);
-      display:none;
+      background:rgba(0,0,0,.45);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s ease;
       z-index:900;
-      backdrop-filter: blur(2px);
     }
     .nav-overlay.show{
-      display:block !important;
+      opacity:1;
+      pointer-events:auto;
     }
 
 /* ===================================================
