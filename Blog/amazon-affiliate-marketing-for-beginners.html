@@ -51,6 +51,10 @@
       .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
+
+    /* overlay behind mobile nav */
+    .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.36);display:none;z-index:900}
+    .nav-overlay.show{display:block}
  
 
 /* ===================================================
@@ -1336,11 +1340,26 @@ body {
  
 
 <!-- FOOTER -->
-<footer>
-  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
-  <div class="fi">
-    <div>
-      <div class="logo">ToolkitPro</div>
+</footer>
+
+<script>
+// Mobile nav toggle
+(function(){
+  const btn = document.getElementById('mob');
+  const nl = document.getElementById('nl');
+  const overlay = document.getElementById('navOverlay');
+  if(!btn || !nl || !overlay) return;
+  function openMenu(){ btn.classList.add('x'); nl.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
+  function closeMenu(){ btn.classList.remove('x'); nl.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+  btn.addEventListener('click', function(){ nl.classList.contains('open') ? closeMenu() : openMenu(); });
+  overlay.addEventListener('click', closeMenu);
+  // close when a nav link is clicked
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+})();
+</script>
+
+</body>
+</html>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
       <div class="fsoc">
         <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
@@ -1381,38 +1400,6 @@ body {
     </span>
   </div>
 </footer>
-
-<script>
-function closeNav() {
-  document.getElementById('nl').classList.remove('open');
-  document.getElementById('mob').classList.remove('x');
-  document.getElementById('navOverlay').classList.remove('show');
-}
-
-document.getElementById('mob').addEventListener('click', () => {
-  document.getElementById('nl').classList.toggle('open');
-  document.getElementById('mob').classList.toggle('x');
-  document.getElementById('navOverlay').classList.toggle('show');
-});
-
-document.getElementById('navOverlay').addEventListener('click', closeNav);
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 860) {
-    document.querySelectorAll('.sb-card').forEach(card => {
-      const title = card.querySelector('.sb-hd');
-      const body = card.querySelector('.sb-body');
-      if (!title || !body) return;
-      body.style.display = 'none';
-      title.style.cursor = 'pointer';
-      title.addEventListener('click', () => {
-        const isOpen = body.style.display === 'block';
-        body.style.display = isOpen ? 'none' : 'block';
-      });
-    });
-  }
-});
-</script>
 
  
 
