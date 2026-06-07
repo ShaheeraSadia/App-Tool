@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -161,6 +161,10 @@ nav a:hover,nav a.active{color:var(--primary);background:var(--primary-light);te
 }
 .mob-nav a:last-child{border-bottom:none}
 .mob-nav a:hover{color:var(--primary);text-decoration:none}
+
+/* overlay behind mobile nav */
+.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.36);display:none;z-index:900}
+.nav-overlay.show{display:block}
 
 /* ═══════════════════════════════════════
    AD HELPERS
@@ -1218,7 +1222,21 @@ body {
 <!-- ══════════════════════════════════════
      FORM SUBMIT HANDLER (Formspree AJAX)
 ══════════════════════════════════════ -->
+ 
 <script>
+// Mobile nav toggle for contact page
+(function(){
+  const btn = document.getElementById('mob');
+  const nl = document.getElementById('nl');
+  const overlay = document.getElementById('navOverlay');
+  if(!btn || !nl || !overlay) return;
+  function openMenu(){ btn.classList.add('x'); nl.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ btn.classList.remove('x'); nl.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow=''; }
+  btn.addEventListener('click', function(){ nl.classList.contains('open') ? closeMenu() : openMenu(); });
+  overlay.addEventListener('click', closeMenu);
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+})();
+</script>
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('successMsg');
 const errorMsg = document.getElementById('errorMsg');
