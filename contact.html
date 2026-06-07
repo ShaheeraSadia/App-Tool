@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Contact Shaheera Sadia — developer of Toolkit Pro. Send a message, report a bug, suggest a tool, or ask about collaboration. Based in Mandi Bahauddin, Pakistan.">
 <meta name="keywords" content="contact Toolkit Pro, Shaheera Sadia contact, contact web developer Pakistan, Toolkit Pro feedback">
 <meta name="author" content="Shaheera Sadia">
@@ -21,7 +22,7 @@
 <style>
 /* ═══════════════════════════════════════
    RESET & ROOT
-═══════════════════════════════════════ */
+═══════════════════════════════════════ 
  :root{
       --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
       --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
@@ -46,8 +47,39 @@
   --shadow-lg:0 8px 30px rgba(0,0,0,.1);
   --radius:10px;
  
-}
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+}*/
+   :root {
+  /* Colors */
+  --blue: #2b4fd8;
+  --blue-dark: #1a3199;
+  --blue-mid: #3d72d4;
+  --blue-light: #e8f0fe;
+  --blue-pale: #f0f4ff;
+  --cyan: #00b4db;
+  --pink: #ff6eb4;
+  --primary: #1a73e8;
+  --primary-dark: #1557b0;
+  --primary-light: #e8f0fe;
+  --accent: #ea4335;
+  --green: #34a853;
+  --yellow: #fbbc04;
+  --text: #202124;
+  --text-light: #5f6368;
+  --muted: #6b7280;
+  --white: #ffffff;
+  
+  /* Layout Options (جو پہلے غائب تھیں) */
+  --max: 1200px; /* یہ آپ کے پورے پیج کی چوڑائی کنٹرول کرے گا */
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --border: #e0e0e0;
+  --ad-bg: #f1f3f4;
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,.1);
+}  
+ 
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
@@ -710,16 +742,43 @@ aside {
     background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
     overscroll-behavior: none;
 }
-
 body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.85;
+  width: 100%;
+  overflow-x: hidden; /* یہ پیج کو دائیں بائیں ہلنے سے روکے گا */
+  margin: 0;
+  padding: 0;
+}
+/*body {
     background: var(--bg);
     width: 100%;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
     overscroll-behavior: none;
+}*/
+     @media (max-width: 860px) {
+  /* فارم اور معلومات کے کالمز کو ایک دوسرے کے نیچے لانے کے لیے */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  /* وائی سیکشن کے تینوں کارڈز کو موبائل پر ترتیب دینے کے لیے */
+  .why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* فارم کے اندر دو کالمز (جیسے نام اور ای میل) کو ایک کرنے کے لیے */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
 }
-     
  
 </style>
 </head>
