@@ -30,9 +30,7 @@
   --text-light:#6b7280;
   --max:1100px;
 }
-    
-   
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
@@ -48,8 +46,37 @@
     .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
     .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
     .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    @media(max-width:960px){
+      nav{padding:0 16px}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+    
+   /*
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
-    /* ── MOBILE NAV RESPONSIVE (960px) ── */
+    ── NAV ── 
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+    .nav-logo i{color:var(--blue);font-size:18px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
+    .nav-logo-text em{color:var(--pink);font-style:normal}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+
+     ── MOBILE NAV RESPONSIVE (960px) ── 
     @media(max-width:960px){
       nav{padding:0 16px}
       .mob{display:flex !important; position:relative; z-index:1001;}
@@ -57,7 +84,7 @@
       .nl{
         position:fixed;
         top:66px;
-        left:-100% !important; /* ڈیفالٹ اسکرین سے باہر */
+        left:-100% !important;  
         width:82%;
         max-width:300px;
         height:calc(100vh - 66px);
@@ -73,7 +100,7 @@
         overflow-y:auto;
       }
       
-      /* جب جاوا اسکرپٹ کلاس 'open' ایڈ کرے گا */
+    
       .nl.open{
         left:0 !important;
       }
@@ -81,7 +108,7 @@
       .nl li{width:100%}
       .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale);width:100%;box-sizing:border-box}
       
-      /* ہیمبرگر اینیمیشن (کراس آئیکن) */
+   
       .mob.x .bar:nth-child(2){opacity:0; transform: scale(0);}
       .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
@@ -89,7 +116,7 @@
       .fi { grid-template-columns: 1fr 1fr; }
     }
 
-    /* overlay behind mobile nav */
+ 
     .nav-overlay{
       position:fixed;
       top:66px;
@@ -105,7 +132,7 @@
     .nav-overlay.show{
       opacity:1;
       pointer-events:auto;
-    }
+    }*/
 
 /* ===================================================
    AD WRAPPERS
@@ -772,7 +799,8 @@ body {
 <!-- ═══════════════════════════════════
      HEADER
 ════════════════════════════════════ -->
- <!-- NAV -->
+   
+<!-- NAV -->
 <nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
@@ -787,14 +815,15 @@ body {
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
     <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
     <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
-    <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+ <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
   
  <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
-   
-      <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+  
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
+ 
 
  
 
@@ -1452,90 +1481,34 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </footer>
  <script>
+function closeNav() {
+  document.getElementById('nl').classList.remove('open');
+  document.getElementById('mob').classList.remove('x');
+  document.getElementById('navOverlay').classList.remove('show');
+}
+
+document.getElementById('mob').addEventListener('click', () => {
+  document.getElementById('nl').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('x');
+  document.getElementById('navOverlay').classList.toggle('show');
+});
+
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
 document.addEventListener('DOMContentLoaded', () => {
-  const mobBtn = document.getElementById('mob');
-  const navList = document.getElementById('nl');
-  const overlay = document.getElementById('navOverlay');
-
-  if (mobBtn && navList && overlay) {
-    
-    // 1. مینو کو اوپن اور کلوز (Toggle) کرنے کے لیے
-    mobBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation(); // کلک کو باڈی پر جانے سے روکے گا تاکہ مینو فوراً بند نہ ہو
-      navList.classList.toggle('open');
-      mobBtn.classList.toggle('x');
-      overlay.classList.toggle('show');
-    });
-
-    // 2. اوورلے (بیک گراؤنڈ) پر کلک کرنے سے مینو بند ہو جائے
-    overlay.addEventListener('click', () => {
-      navList.classList.remove('open');
-      mobBtn.classList.remove('x');
-      overlay.classList.remove('show');
-    });
-
-    // 3. اگر مینو کے اندر کسی لنک پر کلک ہو تو مینو خود بخود بند ہو جائے
-    navList.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('open');
-        mobBtn.classList.remove('x');
-        overlay.classList.remove('show');
-      });
-    });
-
-    // 4. مینو سے باہر کہیں بھی اسکرین پر کلک ہو تو مینو بند ہو جائے
-    document.addEventListener('click', (e) => {
-      if (!navList.contains(e.target) && !mobBtn.contains(e.target)) {
-        navList.classList.remove('open');
-        mobBtn.classList.remove('x');
-        overlay.classList.remove('show');
-      }
-    });
-  }
-
-  /* ===================================================
-     سائیڈ بار ایکارڈین (Sidebar Accordion for Mobile <= 960px)
-  =================================================== */
-  if (window.innerWidth <= 960) {
-    document.querySelectorAll('.sw').forEach(card => {
-      const title = card.querySelector('h3');
-      // سائیڈ بار کے تمام ممکنہ ایلیمنٹس (TOC, Popular Posts, Forms) کو تلاش کرنا
-      const body = card.querySelector('.toc-list') || 
-                   card.querySelector('.pop-list') || 
-                   card.querySelector('.tool-links') || 
-                   card.querySelector('.nl-form');
-      
+  if (window.innerWidth <= 860) {
+    document.querySelectorAll('.sb-card').forEach(card => {
+      const title = card.querySelector('.sb-hd');
+      const body = card.querySelector('.sb-body');
       if (!title || !body) return;
-      
-      // ڈیفالٹ اسٹیٹ: موبائل پر سائیڈ بار کے وزٹس بند رہیں گے
       body.style.display = 'none';
       title.style.cursor = 'pointer';
-      title.style.position = 'relative';
-      title.style.paddingRight = '20px';
-      
-      // پلس (+) آئیکن ایڈ کرنا
-      title.insertAdjacentHTML('beforeend', '<span class="tg-icon" style="position:absolute; right:0; top:50%; transform:translateY(-50%); font-size:16px; font-weight:bold; color:var(--primary);">+</span>');
-      const icon = title.querySelector('.tg-icon');
-
       title.addEventListener('click', () => {
         const isOpen = body.style.display === 'block';
         body.style.display = isOpen ? 'none' : 'block';
-        if (icon) {
-          icon.innerText = isOpen ? '+' : '−';
-        }
       });
     });
   }
-});
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log('JS Loaded');
-
-    const mobBtn = document.getElementById('mob');
-
-    mobBtn.addEventListener('click', () => {
-        console.log('Menu clicked');
-    });
 });
 </script>
 </body>
