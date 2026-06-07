@@ -19,10 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-  /* ══════════════════════════════════
-     VARIABLES & RESET
-  
-  /* ═══════════════════════════════════════
+ 
    RESET & ROOT
 ═══════════════════════════════════════ */
  :root{
@@ -538,8 +535,12 @@ main,
 aside {
     max-width: 100%;
 }
-  html {
+ /* html {
     background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+    overscroll-behavior: none;
+}*/
+   html {
+    background: var(--bg); /* یہاں سائیڈ پر دیا گیا کلر یا سادہ وائٹ یوز کریں */
     overscroll-behavior: none;
 }
 
@@ -551,7 +552,43 @@ body {
     padding: 0;
     overscroll-behavior: none;
 }
-     
+  /* موبائل کے لیے فکسڈ لے آؤٹ */
+@media (max-width: 960px) {
+  .page-wrap {
+    grid-template-columns: 1fr !important; /* سائیڈ بار کو نیچے لے آئے گا */
+    padding: 20px 15px !important;
+    gap: 20px !important;
+    width: 100% !important;
+    overflow: hidden;
+  }
+  
+  .ad-slot {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 !important;
+  }
+
+  /* کنٹینر کو اسکرین کے اندر رکھنے کے لیے */
+  main, .page-wrap, .container {
+    max-width: 100vw !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  /* امیجز اور ٹیبلز کو اسکرین سے باہر نکلنے سے روکنا */
+  img, table, pre, code {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* باڈی کے لیے حتمی سیکیورٹی */
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative;
+}   
 </style>
 </head>
 <body>
