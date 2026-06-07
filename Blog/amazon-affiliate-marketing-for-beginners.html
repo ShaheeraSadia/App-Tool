@@ -29,7 +29,7 @@
   --border:#dde6ff;
   --bg-alt:#f0f4ff;
   --text-light:#6b7280;
-  --max:1200px;
+  --max:1100px;
 }
     }
    
@@ -1497,6 +1497,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+});
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('JS Loaded');
+
+    const mobBtn = document.getElementById('mob');
+
+    mobBtn.addEventListener('click', () => {
+        console.log('Menu clicked');
+    });
 });
 </script>
 </body>
