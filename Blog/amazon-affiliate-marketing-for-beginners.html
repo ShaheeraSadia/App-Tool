@@ -1426,62 +1426,33 @@ body {
     </span>
   </div>
 </footer>
- <script>
-// جب پورا پیج (DOM) لوڈ ہو جائے، تب یہ کوڈ چلے گا
+ 
+<script>
+function closeNav() {
+  document.getElementById('nl').classList.remove('open');
+  document.getElementById('mob').classList.remove('x');
+  document.getElementById('navOverlay').classList.remove('show');
+}
+
+document.getElementById('mob').addEventListener('click', () => {
+  document.getElementById('nl').classList.toggle('open');
+  document.getElementById('mob').classList.toggle('x');
+  document.getElementById('navOverlay').classList.toggle('show');
+});
+
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
 document.addEventListener('DOMContentLoaded', () => {
-  
-  const mobBtn = document.getElementById('mob');
-  const navList = document.getElementById('nl');
-  const overlay = document.getElementById('navOverlay');
-
-  // فنکشن جو مینو کو بند کرے گا
-  function closeNav() {
-    if (navList) navList.classList.remove('open');
-    if (mobBtn) mobBtn.classList.remove('x');
-    if (overlay) overlay.classList.remove('show');
-  }
-
-  // مینو بٹن پر کلک کا ایونٹ (اگر ایلیمنٹس موجود ہوں)
-  if (mobBtn && navList && overlay) {
-    mobBtn.addEventListener('click', () => {
-      navList.classList.toggle('open');
-      mobBtn.classList.toggle('x');
-      overlay.classList.toggle('show');
-    });
-
-    // اوورلے پر کلک کرنے سے مینو بند ہو جائے
-    overlay.addEventListener('click', closeNav);
-  }
-
-  /* ===================================================
-     SIDEBAR ACCORDION FOR MOBILE (<= 960px)
-  =================================================== */
-  // نوٹ: آپ کے پچھلے CSS میں بریک پوائنٹ 960px تھا، اس لیے یہاں بھی 960px کر دیا گیا ہے
-  if (window.innerWidth <= 960) {
-    // آپ کے کوڈ کے مطابق اگر کلاسز .sw اور .toc-list / .pop-list ہیں تو ان کو ہینڈل کرنا
-    document.querySelectorAll('.sw').forEach(card => {
-      const title = card.querySelector('h3');
-      // سائیڈ بار کے اندر موجود لسٹس یا فارم کو تلاش کرنا
-      const body = card.querySelector('ul') || card.querySelector('.nl-form');
-      
+  if (window.innerWidth <= 860) {
+    document.querySelectorAll('.sb-card').forEach(card => {
+      const title = card.querySelector('.sb-hd');
+      const body = card.querySelector('.sb-body');
       if (!title || !body) return;
-      
-      // ڈیفالٹ بند رکھیں اور کرسر پوائنٹر کریں
       body.style.display = 'none';
       title.style.cursor = 'pointer';
-      title.style.position = 'relative';
-      title.style.paddingRight = '20px';
-      
-      // چھوٹا سا پلس (+) آئیکن دکھانے کے لیے
-      title.innerHTML += ' <span style="position:absolute; right:0; top:0;">+</span>';
-      const indicator = title.querySelector('span');
-
       title.addEventListener('click', () => {
         const isOpen = body.style.display === 'block';
         body.style.display = isOpen ? 'none' : 'block';
-        if (indicator) {
-          indicator.innerText = isOpen ? '+' : '−';
-        }
       });
     });
   }
