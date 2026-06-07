@@ -771,8 +771,7 @@ body {
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
     <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
     <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
-    <li><a href="https://app-tool.vercel.app/nature-gallery.html"><i class="fas fa-images" style="margin-right:5px;font-size:11px"></i>Gallery</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+      <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
 <div class="nav-overlay" id="navOverlay"></div>
@@ -1407,36 +1406,6 @@ body {
   </div>
 </footer>
 
-<script>
-function closeNav() {
-  document.getElementById('nl').classList.remove('open');
-  document.getElementById('mob').classList.remove('x');
-  document.getElementById('navOverlay').classList.remove('show');
-}
-
-document.getElementById('mob').addEventListener('click', () => {
-  document.getElementById('nl').classList.toggle('open');
-  document.getElementById('mob').classList.toggle('x');
-  document.getElementById('navOverlay').classList.toggle('show');
-});
-
-document.getElementById('navOverlay').addEventListener('click', closeNav);
-
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 860) {
-    document.querySelectorAll('.sb-card').forEach(card => {
-      const title = card.querySelector('.sb-hd');
-      const body = card.querySelector('.sb-body');
-      if (!title || !body) return;
-      body.style.display = 'none';
-      title.style.cursor = 'pointer';
-      title.addEventListener('click', () => {
-        const isOpen = body.style.display === 'block';
-        body.style.display = isOpen ? 'none' : 'block';
-      });
-    });
-  }
-});
-</script>
+ 
 </body>
 </html>
