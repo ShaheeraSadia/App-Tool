@@ -3,145 +3,531 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- 
+  <meta name="description" content="Affiliate Disclosure for Toolkit Pro. We earn from Amazon affiliate links. Learn how affiliate marketing works and how it keeps our tools free for everyone.">
+  <meta name="keywords" content="affiliate disclosure, Toolkit Pro affiliate, Amazon associate disclosure, affiliate links disclosure">
+  <meta name="author" content="Shaheera Sadia">
+  <title>Affiliate Disclosure | Toolkit Pro</title>
+  <link rel="canonical" href="https://app-tool.vercel.app/affiliate-disclosure.html">
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
 
-
-  <title>Affiliate Disclosure | Toolkit Pro</title>
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ── VARIABLES ── */
-    :root {
-      --blue: #3b82f6;
-      --blue-dark: #1e3a8a;
-      --blue-mid: #2563eb;
-      --blue-pale: #eff6ff;
-      --blue-light: #dbeafe;
-      --pink: #ec4899;
-      --white: #ffffff;
-      --bg: #0f172a;
-      --card-bg: #111827;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --radius: 20px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
+  /* ══════════════════════════════════
+     VARIABLES & RESET
+  
+  /* ═══════════════════════════════════════
+   RESET & ROOT
+═══════════════════════════════════════ */
+ :root{
+      --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
+      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
+      --pink:#ff6eb4;--muted:#6b7280;
+      --bg:#fff;--white:#ffffff;--radius:14px;
+      --shadow:0 4px 24px rgba(43,79,216,.09);
+    
+  /* improved readable colors */
+  --primary:#1a73e8;
+  --primary-dark:#1557b0;
+  --primary-light:#e8f0fe;
+  --accent:#ea4335;
+  --green:#34a853;
+  --yellow:#220de4;
+  --text:#0f1724; /* darker body text for readability */
+  --text-light:#475569; /* readable secondary text */
+  --muted:#6b7280;
+  --bg-alt:#f8f9fa;
+  --border:#e0e0e0;
+  --ad-bg:#f1f3f4;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 30px rgba(0,0,0,.1);
+  --radius:10px;
+  --max:1100px;
+}
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      line-height: 1.8;
-    }
-
-   
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-
-     
     /* ── NAV ── */
-    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,0.07)}
+    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
     .nav-logo i{color:var(--blue);font-size:18px}
     .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
     .nav-logo-text em{color:var(--pink);font-style:normal}
-    .nav-links{display:flex;gap:4px;list-style:none;align-items:center}
-    .nav-links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
-    .nav-links a:hover,.nav-links a.active{color:var(--blue);background:var(--blue-pale)}
-    .nav-shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:600!important}
-    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001;background:none;border:none;padding:4px}
-    .menu-toggle .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
+    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
+    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
     @media(max-width:960px){
       nav{padding:0 16px}
-      .menu-toggle{display:flex}
-      .nav-links{position:fixed;top:66px;left:-100%;width:82%;max-width:320px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nav-links.active{left:0}
-      .nav-links li{width:100%}
-      .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .menu-toggle.is-active .bar:nth-child(2){opacity:0}
-      .menu-toggle.is-active .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .menu-toggle.is-active .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+      .mob{display:flex}
+      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+      .nl.open{left:0}
+      .nl li{width:100%}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
+      .mob.x .bar:nth-child(2){opacity:0}
+      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+    }
+  /* ══════════════════════════════════
+     AD SLOTS
+  ══════════════════════════════════ */
+  .ad-slot {
+    background: rgba(255,255,255,.04);
+    border: 1.5px dashed rgba(255,255,255,.12);
+    border-radius: 12px;
+    margin: 32px auto;
+    overflow: hidden;
+    display: block;
+    min-height: 90px;
+    max-width: var(--max);
+  }
+  .ad-slot-top { max-width: 728px; }
+  .ad-slot-full { max-width: var(--max); }
+
+  /* ══════════════════════════════════
+     PAGE WRAPPER
+  ══════════════════════════════════ */
+  .page-wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* ══════════════════════════════════
+     HERO BANNER
+  ══════════════════════════════════ */
+  .page-hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+    border-radius: var(--radius);
+    padding: clamp(28px,5vw,52px) clamp(20px,4vw,48px);
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+    grid-column: 1 / -1;
+  }
+  .page-hero::before {
+    content: '🔗';
+    position: absolute; font-size: clamp(80px,20vw,180px);
+    right: -10px; bottom: -25px; opacity: .06; pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(217, 10, 10, 0.18);
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 20px; padding: 4px 14px;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: .6px; text-transform: uppercase;
+    color: #ffffff; margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(22px,4vw,36px);
+    font-weight: 700; line-height: 1.3;
+    color: #fff; margin-bottom: 10px;
+    position: relative; z-index: 1;
+  }
+  .page-hero p {
+    font-size: clamp(14px,2vw,17px);
+    color: rgba(246, 243, 243, 0.88);
+    max-width: 560px; line-height: 1.7;
+    position: relative; z-index: 1;
+  }
+
+  /* ══════════════════════════════════
+     BREADCRUMB
+  ══════════════════════════════════ */
+  .breadcrumb {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 22px;
+    display: flex; flex-wrap: wrap; gap: 2px; align-items: center;
+    grid-column: 1 / -1;
+  }
+  .breadcrumb a { color: #1409dd; }
+  .breadcrumb sep { margin: 0 5px; color: #334155; }
+
+  /* ══════════════════════════════════
+     MAIN CONTENT CARDS
+  ══════════════════════════════════ */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(22px,4vw,40px);
+    margin-bottom: 24px;
+  }
+  .card h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(17px,2.5vw,22px);
+    color: #2914ec;
+    margin: 28px 0 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .card h2:first-child { margin-top: 0; }
+  .card h2 i { color: #290ddd; font-size: 16px; flex-shrink: 0; }
+  .card p { color: var(--text-light); margin-bottom: 14px; font-size: 16px; line-height: 1.8; }
+  .card p:last-child { margin-bottom: 0; }
+  .card ul { padding-left: 20px; margin-bottom: 14px; }
+  .card ul li { color: var(--text-light); margin-bottom: 8px; font-size: 15px; line-height: 1.75; }
+  .card strong { color: var(--text); }
+
+  /* page-level h1 inside card */
+  .card .page-h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(22px,4vw,32px);
+    color: #2a0bd8;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+
+  /* last-updated badge */
+  .updated-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(5, 96, 244, 0.927);
+    border: 1px solid rgba(59,130,246,.3);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 12px; color: #f7f3f3; font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  /* callout boxes */
+  .callout {
+    border-left: 4px solid #044dc1;
+    background: rgba(59,130,246,.06);
+    padding: 14px 18px;
+    border-radius: 0 10px 10px 0;
+    margin: 20px 0;
+    font-size: 15px;
+    color: var(--text-light);
+  }
+  .callout.warn { border-color: #330be5; background: rgba(250,204,21,.08); }
+  .callout.green { border-color: #0a14c7; background: rgba(52,211,153,.08); }
+  .callout strong { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 5px; color: #93c5fd; }
+  .callout.warn strong { color: #0d14ed; }
+  .callout.green strong { color: #2904bf; }
+
+  /* highlight box */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(238, 140, 95, 0.6), rgba(37,99,235,.4));
+    border: 1px solid rgba(59,130,246,.3);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    margin: 24px 0;
+  }
+  .highlight-box h3 {
+    font-family: 'Merriweather', serif;
+    color: #4616e5; font-size: 18px; margin-bottom: 10px;
+  }
+  .highlight-box p { color: var(--text-light); font-size: 15px; margin: 0; line-height: 1.75; }
+
+  /* step rows */
+  .step-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .step-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .step-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(59,130,246,.2); color: #05428c;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+  }
+  .step-text h4 { font-size: 15px; font-weight: 600; color: #2405a1; margin-bottom: 4px; }
+  .step-text p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+  /* commission table */
+  .table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 320px; }
+  th { background: rgba(32, 10, 231, 0.5); color: #f5f6f9; padding: 11px 14px; text-align: left; font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-light); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.03); }
+  .g { color: #34d399; font-weight: 700; }
+  .y { color: #facc15; font-weight: 700; }
+  .r { color: #f87171; font-weight: 700; }
+
+  /* ══════════════════════════════════
+     CONTACT SECTION
+  ══════════════════════════════════ */
+  .section-hd { text-align: center; margin: 50px 0 32px; grid-column: 1 / -1; }
+  .tag-label {
+    background: var(--blue-pale); color: var(--blue-mid);
+    padding: 4px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    display: inline-block; margin-bottom: 10px;
+  }
+  .section-hd h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(20px,3vw,28px);
+    color: var(--text); margin-bottom: 8px;
+  }
+  .section-hd p { color: var(--muted); font-size: 15px; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    grid-column: 1 / -1;
+    margin-bottom: 48px;
+  }
+
+  /* form card */
+  .contact-form-wrap {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: clamp(20px,4vw,30px);
+    color: #333;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  }
+  .contact-form-wrap h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 18px; margin-bottom: 20px;
+    color: var(--blue-dark);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .contact-form-wrap h3 i { color: var(--blue-mid); }
+  .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+  .form-group label { font-size: 13px; font-weight: 600; color: #374151; }
+  .form-group label .req { color: #ef4444; margin-left: 3px; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 11px 13px;
+    border-radius: 9px;
+    border: 1.5px solid #c8d8f8;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    background: #fff;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--blue-mid);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: #bbb; }
+  .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+  .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .contact-submit {
+    width: 100%;
+    padding: 13px 20px;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+    color: white; border: none;
+    border-radius: 10px; cursor: pointer;
+    font-weight: 700; font-size: 15px;
+    font-family: inherit;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: opacity .2s, transform .15s;
+    box-shadow: 0 4px 14px rgba(37,99,235,.3);
+    margin-top: 4px;
+  }
+  .contact-submit:hover { opacity: .9; transform: translateY(-1px); }
+  .form-msg {
+    display: none; margin-top: 14px;
+    padding: 12px 16px; border-radius: 9px;
+    font-size: 14px; font-weight: 500;
+    align-items: center; gap: 8px;
+  }
+  .form-msg.success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; display: flex; }
+  .form-msg.error { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; display: flex; }
+
+  /* info cards */
+  .contact-info-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .contact-info-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    color: #1f2937;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  }
+  .contact-info-card h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 15px; font-weight: 700;
+    margin-bottom: 14px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--blue-light);
+    color: var(--blue-dark);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .contact-info-card h4 i { color: var(--blue-mid); font-size: 13px; }
+  .info-row {
+    display: flex; align-items: flex-start; gap: 11px;
+    padding: 8px 0; border-bottom: 1px solid #f0f4ff;
+    font-size: 14px; color: #374151;
+  }
+  .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .info-row i {
+    width: 28px; height: 28px;
+    background: var(--blue-pale); color: var(--blue-mid);
+    border-radius: 7px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+  }
+  .info-row span, .info-row a { color: #374151; line-height: 1.5; word-break: break-word; }
+  .info-row a:hover { color: var(--blue-mid); }
+  .social-row { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 2px; }
+  .social-btn {
+    width: 38px; height: 38px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; transition: all .2s; text-decoration: none;
+  }
+  .social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.15); text-decoration: none; }
+  .sb-pi { background: #fde8ea; color: #e60023; }
+  .sb-pi:hover { background: #e60023; color: #fff; }
+  .sb-li { background: #e8f3fe; color: #0a66c2; }
+  .sb-li:hover { background: #0a66c2; color: #fff; }
+  .sb-gh { background: #f1f3f4; color: #1c1c1e; }
+  .sb-gh:hover { background: #1c1c1e; color: #fff; }
+  .sb-em { background: #fff0ef; color: #ea4335; }
+  .sb-em:hover { background: #ea4335; color: #fff; }
+  .email-inline {
+    display: flex; align-items: center; gap: 6px;
+    margin-top: 10px; padding: 9px 12px;
+    background: var(--blue-pale); border-radius: 8px;
+    font-size: 13px; flex-wrap: wrap;
+  }
+  .email-inline strong { color: var(--blue-dark); }
+  .email-inline a { color: #374151; word-break: break-all; }
+  .email-inline a:hover { color: var(--blue-mid); }
+  .response-dot {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 13px; color: #374151;
+    background: #f0fdf4; border-radius: 8px;
+    padding: 9px 12px; margin-top: 6px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.85)} }
+
+  /* ══════════════════════════════════
+     SIDEBAR
+  ══════════════════════════════════ */
+  aside { position: sticky; top: 76px; }
+  .sw {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px; margin-bottom: 20px;
+  }
+  .sw h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 15px; margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(19, 23, 215, 0.942);
+    color: #0d24f6;
+  }
+  .sw-links { list-style: none; padding: 0; }
+  .sw-links li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .sw-links li:last-child { border-bottom: none; }
+  .sw-links a { color: var(--muted); display: flex; align-items: center; gap: 9px; transition: color .2s; }
+  .sw-links a:hover { color: #0824af; text-decoration: none; }
+  .sw-links a i { width: 18px; text-align: center; color: #060b92; font-size: 12px; }
+
+  .ad-sidebar {
+    background: rgba(255,255,255,.04);
+    border: 1.5px dashed rgba(255,255,255,.12);
+    border-radius: var(--radius);
+    min-height: 250px; margin-bottom: 20px;
+    overflow: hidden; display: block;
+  }
+  .ad-sidebar-tall { min-height: 320px; }
+
+    /* ── FOOTER ── */
+          /* --- 7. Footer Layout --- */
+    footer { 
+      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+      color: rgba(255,255,255,.85); 
+      padding: 52px 40px 28px; 
+      margin-top: auto !important; 
+      margin-bottom: 0 !important;
+    }
+    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
+    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
+    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
+    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+    .fsb:hover { background: var(--blue); color: white; }
+    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+    .fc ul a:hover { color: #7dd3fc; }
+    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+    .fb a { color: inherit; text-decoration: none; }
+
+    /* --- 8. Responsive Rules --- */
+    @media(max-width:960px) {
+      nav { padding: 0 16px; }
+      .mob { display: flex; }
+      .nl { 
+        position: fixed; top: 66px; left: -100%; width: 82%; max-width: 300px; height: 100vh; 
+        background: var(--white); flex-direction: column; align-items: flex-start; padding: 24px 20px; 
+        transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12); z-index: 1000; gap: 4px; overflow-y: auto; 
+      }
+      .nl.open { left: 0; }
+      .nl li { width: 100%; }
+      .nl a { font-size: 15px; padding: 12px 14px; border-radius: 10px; border-bottom: 1px solid var(--blue-pale); }
+      .mob.x .bar:nth-child(2) { opacity: 0; }
+      .mob.x .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .mob.x .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      .fi { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ── AD SLOT ── */
-    .ad-slot { background: #eef2ff; border: 1.5px dashed #b8c8f8; border-radius: 12px; text-align: center; padding: 10px 20px; color: var(--muted); font-size: 13px; margin: 44px 0; min-height: 90px; }
+    @media (max-width: 860px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 20px 16px 50px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
 
+      .sidebar, .article {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      
+      .article {
+        padding: 24px 16px !important;
+      }
 
-    /* ── CONTENT ── */
-    .container { max-width: 900px; margin: auto; padding: 60px 20px; }
-    .card { background: var(--card-bg); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.05); }
-    h1 { font-size: 36px; margin-bottom: 20px; color: #60a5fa; }
-    h2 { margin-top: 30px; color: #facc15; font-size: 22px; }
-    p { color: #d1d5db; margin-bottom: 16px; }
+      .tbl, table, .ad-slot, pre, code {
+        max-width: 100% !important;
+        display: block !important;
+        overflow-x: auto !important;
+        box-sizing: border-box !important;
+      }
+    }
 
-    /* ── CONTACT SECTION ── */
-    .section-hd { text-align: center; margin: 60px 0 40px 0; }
-    .tag { background: var(--blue-pale); color: var(--blue); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-    .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; max-width: 1100px; margin: 0 auto 60px auto; padding: 0 20px; }
-    .contact-form-wrap { background: var(--white); border-radius: var(--radius); padding: 28px; color: #333; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-    .form-group label { font-size: 13px; font-weight: 600; }
-    .form-group input, .form-group textarea { padding: 11px; border-radius: 10px; border: 1.5px solid #c8d8f8; outline: none; }
-    .contact-submit { width: 100%; padding: 13px; background: var(--blue-dark); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; }
-
-    .contact-info-card { background: var(--white); border-radius: var(--radius); padding: 24px; color: #333; margin-bottom: 20px; }
-    .info-row { display: flex; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 12px; }
-    .social-row { display: flex; gap: 10px; }
-    .social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; color: var(--blue); text-decoration: none; }
+    @media(max-width:540px) { 
+      footer { padding: 36px 18px 22px; } 
+      .fi { grid-template-columns: 1fr; gap: 20px; } 
+      .fb { flex-direction: column; text-align: center; } 
+    }
  
-    /* ── FOOTER (same on all pages) ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .footer-social-btn:hover { background: var(--blue); color: white; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .footer-col ul a:hover { color: #7dd3fc; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .footer-bottom a { color: inherit; text-decoration: none; }
-    .footer-bottom a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
-
-  
- @media (max-width: 860px) {
-  /* کنٹیکٹ گرڈ کو ایک کالم میں تبدیل کریں */
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 0 15px !important;
-  }
-
-  /* کنٹینر کی پیڈنگ کم کریں تاکہ مواد اسکرین سے باہر نہ جائے */
-  .container {
-    padding: 30px 15px !important;
-  }
-
-  /* کارڈ کے اندر کی پیڈنگ کم کریں */
-  .card {
-    padding: 20px !important;
-  }
-
-  /* ہیڈنگ کا سائز چھوٹا کریں */
-  h1 {
-    font-size: 28px !important;
-  }
-}
-
-a {
+ a {
     overflow-wrap: break-word;
 }
 
@@ -165,181 +551,508 @@ body {
     padding: 0;
     overscroll-behavior: none;
 }
-html,
-body {
-    position: relative;
-    min-height: 100%;
-    -webkit-overflow-scrolling: touch;
-}
+     
 </style>
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
-  <nav>
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+ 
+<!-- NAV -->
+<nav>
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu">
+  <button class="mob" id="mob" aria-label="Menu">
     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </button>
-  <ul class="nav-links" id="nav-links">
+  <ul class="nl" id="nl">
     <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
- 
+    <li><a href="https://app-tool.vercel.app/Blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
- 
-  
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice</a></li>
      
- <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
-  
-</li>
+      <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+  <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
+   
+       <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
 
  
-
-
- <div class="ad-slot" style="min-height: 250px; background: rgba(0,0,0,0.02); margin: 20px auto; clear: both;">
-  <ins class="adsbygoogle" 
-       style="display:block" 
-       data-ad-client="ca-pub-6309207317896311" 
-       data-ad-slot="2485889698" 
-       data-ad-format="auto" 
-       data-full-width-responsive="true">
-  </ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
  
-<!-- MAIN CONTENT -->
-<div class="container">
-  <div class="card">
-    <h1>Affiliate Disclosure</h1>
-    <p>Toolkit Pro participates in affiliate marketing programs, which means we may earn commissions on purchases made through our links.</p>
 
-    <h2>Amazon Affiliate Disclosure</h2>
-    <p>As an Amazon Associate, we earn from qualifying purchases.</p>
+<!-- ══════════════════════════════════
+     PAGE GRID
+══════════════════════════════════ -->
+<div class="page-wrap">
 
-    <h2>How Affiliate Links Work</h2>
-    <p>When you click an affiliate link and purchase a product, we may receive a small commission at no extra cost to you.</p>
-
-    <h2>Why We Use Affiliate Links</h2>
-    <p>Affiliate commissions help support the maintenance, development, and hosting costs of <strong>Toolkit Pro</strong>.</p>
-
-    <h2>Honest Recommendations</h2>
-    <p>We aim to recommend useful and relevant products only. However, users should always do their own research before purchasing.</p>
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="https://app-tool.vercel.app/index.html">Home</a>
+    <sep>›</sep>
+    Affiliate Disclosure
   </div>
-</div>
+
+  <!-- HERO — full width -->
+  <div class="page-hero">
+    <div class="hero-tag"> Legal &amp; Transparency</div>
+    <h1>Affiliate Disclosure</h1>
+    <p>We believe in being 100% honest with our readers. This page explains exactly how affiliate links work on Toolkit Pro and how they help keep all our tools free for everyone.</p>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+
+    <!-- Card 1: What Is This -->
+    <div class="card">
+      <div class="updated-badge"><i class="fas fa-clock" style="font-size:11px"></i> Last Updated: June 2026</div>
+
+      <div class="page-h1"><i class="fas fa-link" style="color:#60a5fa;font-size:26px"></i> What Is Affiliate Disclosure?</div>
+
+      <p>When you read something on our website and click a link to buy a product, we want you to know: <strong>some of those links are affiliate links</strong>. This means if you buy that product, we earn a small commission.</p>
+      <p>This page explains what that means, how it works, and what it means for you. We keep this page here because we believe you deserve to know exactly how this website works. There are no hidden surprises.</p>
+
+      <div class="callout green">
+        <strong>✅ Short Version</strong>
+        Toolkit Pro earns money through Amazon affiliate links and Google AdSense ads. This costs you absolutely nothing extra. All our tools stay free for everyone, forever.
+      </div>
+
+      <h2><i class="fab fa-amazon"></i> Amazon Affiliate Disclosure</h2>
+      <p>Toolkit Pro is a participant in the <strong>Amazon Services LLC Associates Program</strong>, which is an affiliate advertising program. It is designed to provide a way for websites to earn money by linking to products on Amazon.com.</p>
+      <p>This means: when you click an Amazon link on this website and buy something, Amazon pays us a small percentage of the sale price. This commission comes from Amazon — not from you. <strong>You pay exactly the same price</strong> whether you use our link or go to Amazon directly.</p>
+      <p>As an Amazon Associate, we earn from qualifying purchases. We want you to know this clearly, as required by the FTC (Federal Trade Commission) in the United States and similar laws in other countries.</p>
+
+      <h2><i class="fas fa-percentage"></i> How Much Commission Do We Earn?</h2>
+      <p>Amazon pays different commission rates depending on what product category is purchased. Here's a quick overview:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Product Category</th><th>Commission Rate</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Luxury Beauty, Amazon Coins</td><td class="g">10%</td></tr>
+            <tr><td>Books, Kitchen, Automotive, DIY</td><td class="g">4–5%</td></tr>
+            <tr><td>Clothing, Shoes, Home, Garden</td><td class="y">3–4%</td></tr>
+            <tr><td>Electronics, Cameras, Computers</td><td class="y">2.5–3%</td></tr>
+            <tr><td>Video Games, Health &amp; Personal Care</td><td class="r">1–2%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For example: if you buy a $50 product in a category that pays 4% commission, we earn $2.00. That's it. The rest goes to Amazon and the seller.</p>
+    </div>
+
+    <!-- IN-ARTICLE AD 1 -->
+    <ins class="adsbygoogle ad-slot ad-slot-full"
+         style="display:block;min-height:100px"
+         data-ad-client="ca-pub-6309207317896311"
+         data-ad-slot="2485889698"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+    <!-- Card 2: How It Works -->
+    <div class="card">
+      <h2><i class="fas fa-cogs"></i> How Do Affiliate Links Actually Work?</h2>
+      <p>Here's a simple step-by-step of what happens when you click one of our affiliate links:</p>
+
+      <div class="step-row">
+        <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+        <div class="step-text">
+          <h4>Step 1 — You click the link</h4>
+          <p>You click a product link on our blog or resource page. The link contains a special tracking code that tells Amazon the visitor came from Toolkit Pro.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-icon"><i class="fab fa-amazon"></i></div>
+        <div class="step-text">
+          <h4>Step 2 — Amazon tracks your visit for 24 hours</h4>
+          <p>Amazon places a cookie on your browser that lasts 24 hours. If you buy anything on Amazon within that 24-hour window — not just the product we linked to — we earn a commission on your entire order.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-icon"><i class="fas fa-shopping-cart"></i></div>
+        <div class="step-text">
+          <h4>Step 3 — You buy something (or not)</h4>
+          <p>You decide to buy or not. There's never any pressure. We recommend products because they're genuinely helpful — not just to earn money. If you don't buy, that's perfectly fine.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-icon"><i class="fas fa-coins"></i></div>
+        <div class="step-text">
+          <h4>Step 4 — Amazon pays us a commission</h4>
+          <p>If you do buy, Amazon pays us a small percentage. This money goes toward server hosting, domain costs, and development time — so we can keep all tools on Toolkit Pro free for everyone.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-icon"><i class="fas fa-lock"></i></div>
+        <div class="step-text">
+          <h4>Step 5 — Your price never changes</h4>
+          <p>You pay exactly the same amount you would have paid going to Amazon directly. The affiliate commission is paid by Amazon out of their own revenue. It costs you nothing at all.</p>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <strong> Important</strong>
+        Amazon's 24-hour cookie means if you add a product to your cart but don't buy immediately, you have 24 hours to complete the purchase and we still receive a commission. After 24 hours, the tracking expires.
+      </div>
+    </div>
+
+    <!-- Card 3: Why We Use It -->
+    <div class="card">
+      <h2><i class="fas fa-heart"></i> Why We Use Affiliate Links</h2>
+      <p>Running a website costs money. Toolkit Pro uses real server hosting, a registered domain, and significant development time. We have two ways we pay for these costs:</p>
+
+      <ul>
+        <li><strong>Google AdSense ads</strong> — You may see ads on some pages. When you visit a page, Google shows relevant ads. If you click one, we earn a small amount. This costs you nothing.</li>
+        <li><strong>Amazon affiliate commissions</strong> — When we recommend a product and you buy it through our link, we earn a small commission from Amazon.</li>
+      </ul>
+
+      <p>These two income sources allow us to keep <strong>every tool on Toolkit Pro completely free</strong>, with no subscriptions, no sign-ups, and no hidden fees. Without them, we would need to charge users or shut down.</p>
+
+      <div class="highlight-box">
+        <h3> Our Promise to You</h3>
+        <p>Affiliate commissions never influence what we recommend. We only recommend products we genuinely believe are useful and good quality. We write honest reviews and honest blog posts. If something isn't good, we won't recommend it just to earn a commission — that would betray your trust, and your trust is worth more than any commission.</p>
+      </div>
+
+      <h2><i class="fas fa-star"></i> Honest Recommendations Only</h2>
+      <p>Before we include an affiliate link for any product, we ask ourselves these questions:</p>
+      <ul>
+        <li>Is this product genuinely useful for our readers?</li>
+        <li>Does it have good reviews from real buyers?</li>
+        <li>Would we recommend this product even if there was no commission?</li>
+        <li>Is the price fair and reasonable for what you get?</li>
+      </ul>
+      <p>If the answer is "no" to any of these, we don't recommend the product — simple as that. We'd rather earn nothing than steer you toward something that wastes your money.</p>
+    </div>
+
+    <!-- IN-ARTICLE AD 2 -->
+    <ins class="adsbygoogle ad-slot ad-slot-full"
+         style="display:block;min-height:100px"
+         data-ad-client="ca-pub-6309207317896311"
+         data-ad-slot="2485889698"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+    <!-- Card 4: Google Ads + Privacy -->
+    <div class="card">
+      <h2><i class="fab fa-google"></i> Google AdSense</h2>
+      <p>This website also uses <strong>Google AdSense</strong>, a service that displays ads on web pages. Google uses cookies and browsing data to show ads that are relevant to you. This is called "interest-based advertising."</p>
+      <p>You can control interest-based ads or opt out through Google's Ad Settings at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>. You can also opt out of third-party cookies through the Network Advertising Initiative at <a href="https://optout.networkadvertising.org" target="_blank" rel="noopener">optout.networkadvertising.org</a>.</p>
+
+      <h2><i class="fas fa-user-shield"></i> Your Privacy</h2>
+      <p>We respect your privacy. When you use our tools (Image Compressor, Color Extractor, QR Generator, etc.), <strong>your files never leave your device</strong>. Everything runs inside your browser — we never see, store, or access your images or files.</p>
+      <p>However, like most websites, we do use cookies for analytics and advertising purposes. These are standard web cookies from Google Analytics and Google AdSense. Please see our <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> and <a href="/cookie-policy.html">Cookie Policy</a> for full details.</p>
+
+      <h2><i class="fas fa-balance-scale"></i> Legal Requirements</h2>
+      <p>This disclosure page is required by:</p>
+      <ul>
+        <li><strong>FTC (Federal Trade Commission)</strong> guidelines in the United States, which require bloggers and content creators to disclose any material connection to advertisers or product sellers.</li>
+        <li><strong>Amazon Associates Program</strong> Terms of Service, which require all Associates to clearly disclose their participation in the program.</li>
+        <li><strong>ASA (Advertising Standards Authority)</strong> guidelines in the UK.</li>
+        <li>Similar consumer protection laws in the EU, Australia, Canada, Pakistan, and other countries where our readers are based.</li>
+      </ul>
+      <p>We take these requirements seriously. This disclosure is not just a legal checkbox — it's a reflection of how we believe websites should operate: with full transparency and respect for our readers.</p>
+
+      <div class="callout">
+        <strong> Simple Summary</strong>
+        We earn from Amazon affiliate links and Google ads. It costs you nothing. All tools stay free. We only recommend things we genuinely believe in. Your trust matters more to us than any commission.
+      </div>
+
+      <h2><i class="fas fa-question-circle"></i> Questions About This Disclosure?</h2>
+      <p>If you have any questions about our affiliate relationships, how our links work, or anything else on this page, please use the contact form below. We're happy to explain anything in more detail.</p>
+    </div>
+
+  </main><!-- /main -->
+
+  <!-- ── SIDEBAR ── -->
+  <aside>
+
+     
+
+    <!-- Legal Links -->
+    <div class="sw">
+      <h3> Legal Pages</h3>
+      <ul class="sw-links">
+        <li><a href="/affiliate-disclosure.html" style="color:#60a5fa"><i class="fas fa-link"></i> Affiliate Disclosure</a></li>
+        <li><a href="https://app-tool.vercel.app/privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+        <li><a href="https://app-tool.vercel.app/terms.html"><i class="fas fa-file-alt"></i> Terms of Service</a></li>
+        <li><a href="/cookie-policy.html"><i class="fas fa-cookie-bite"></i> Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Tools -->
+    <div class="sw">
+      <h3> Free Tools</h3>
+      <ul class="sw-links">
+        <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-compress-arrows-alt"></i> Image Compressor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#palette-section"><i class="fas fa-palette"></i> Color Extractor</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i> QR Generator</a></li>
+        <li><a href="https://app-tool.vercel.app/index.html#nature-designer"><i class="fas fa-leaf"></i> Nature Designer</a></li>
+        <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-paint-brush"></i> Art Tool</a></li>
+        <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone"></i> Voice Studio</a></li>
+      </ul>
+    </div>
+ 
+<!-- Sidebar Ad 300×250 -->
+    <div class="ad-sidebar">
+      <ins class="adsbygoogle"
+           style="display:block;width:100%;min-height:250px"
+           data-ad-client="ca-pub-6309207317896311"
+           data-ad-slot="2485889698"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+    </div>
+    <!-- Blog Links -->
+    <div class="sw">
+      <h3> Recent Blog Posts</h3>
+      <ul class="sw-links">
+        <li><a href="https://app-tool.vercel.app/Blog/amazon-affiliate-marketing-for-beginners.html"><i class="fas fa-dollar-sign"></i> Amazon Affiliate Guide</a></li>
+        <li><a href="https://app-tool.vercel.app/Blog/how-to-speed-up-website-image.html"><i class="fas fa-bolt"></i> Speed Up Images</a></li>
+        <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html"><i class="fas fa-compress"></i> Compress Images</a></li>
+        <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html"><i class="fas fa-image"></i> PNG vs JPG vs WebP</a></li>
+      </ul>
+    </div>
+
+  </aside>
+
+</div><!-- /page-wrap -->
+
  
 
-<!-- CONTACT SECTION -->
-<div class="section-hd">
-  <span class="tag">Contact</span>
+<!-- ══════════════════════════════════
+     CONTACT SECTION
+══════════════════════════════════ -->
+<div class="section-hd" id="contact-section" style="scroll-margin-top:80px">
+  <span class="tag-label"> Contact</span>
   <h2>Get In Touch</h2>
-  <p>Built with passion by <strong>Shaheera Sadia</strong> from Mandi Bahauddin, Pakistan.</p>
+  <p>Have a question about this disclosure, our affiliate links, or anything else? Send a message — I read every one personally.</p>
 </div>
 
-<div class="contact-grid">
+<div class="contact-grid" style="max-width:1100px;margin:0 auto;padding:0 20px 60px">
+
+  <!-- FORM -->
   <div class="contact-form-wrap">
-    <h3>Send a Message</h3>
-    <form action="https://formspree.io/f/xkoyzpvp" method="POST">
-      <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
-      <div class="form-group"><label>Email</label><input type="email" name="email" required /></div>
-      <div class="form-group"><label>Message</label><textarea name="message" rows="4" required></textarea></div>
-      <button type="submit" class="contact-submit">Send Message</button>
+    <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
+    <form action="https://formspree.io/f/xkoyzpvp" method="POST" id="contactForm">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Your Name <span class="req">*</span></label>
+          <input type="text" name="name" placeholder="Your full name" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <select name="subject">
+          <option value="" disabled selected>— What is this about? —</option>
+          <option value="Affiliate Link Question"> Question About Affiliate Links</option>
+          <option value="Privacy Question"> Privacy Question</option>
+          <option value="Bug Report"> Report a Bug</option>
+          <option value="Tool Suggestion"> Suggest a Tool</option>
+          <option value="Collaboration"> Collaboration</option>
+          <option value="General Question"> General Question</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Message <span class="req">*</span></label>
+        <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+      <button type="submit" class="contact-submit">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <div class="form-msg success" id="successMsg">
+        <i class="fas fa-check-circle"></i>
+        <span>Message sent! I'll reply within 24–48 hours. Thank you!</span>
+      </div>
+      <div class="form-msg error" id="errorMsg">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Something went wrong. Please try again or email shaheerasadia@gmail.com directly.</span>
+      </div>
     </form>
   </div>
 
+  <!-- INFO -->
   <div class="contact-info-wrap">
     <div class="contact-info-card">
-      <h4>Contact Info</h4>
-      <div class="info-row"><i class="fas fa-user"></i><span>Shaheera Sadia</span></div>
-      <div class="info-row"><i class="fas fa-map-marker-alt"></i><span>Mandi Bahauddin, Pakistan</span></div>
+      <h4><i class="fas fa-address-card"></i> Contact Info</h4>
+      <div class="info-row">
+        <i class="fas fa-user"></i>
+        <span>Shaheera Sadia</span>
+      </div>
+      <div class="info-row">
+        <i class="fas fa-code"></i>
+        <span>Web &amp; Mobile App Developer</span>
+      </div>
+      <div class="info-row">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Mandi Bahauddin, Punjab, Pakistan</span>
+      </div>
+      <div class="info-row">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/shaheerasadia" target="_blank" rel="noopener">github.com/shaheerasadia</a>
+      </div>
+      <div class="response-dot">
+        <div class="dot"></div>
+        Replies within 24–48 hours
+      </div>
     </div>
+
     <div class="contact-info-card">
-      <h4>Follow Me</h4>
+      <h4><i class="fas fa-share-alt"></i> Follow Me</h4>
       <div class="social-row">
-        <a href="https://www.pinterest.com/shaheerasadia" class="social-btn"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" rel="noopener noreferrer" class="social-btn sb-pi" title="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" rel="noopener noreferrer" class="social-btn sb-li" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/shaheerasadia" target="_blank" rel="noopener noreferrer" class="social-btn sb-gh" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="social-btn sb-em" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <div class="email-inline">
+        <strong>Email:</strong>
+        <a href="mailto:&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#115;&#104;&#97;&#104;&#101;&#101;&#114;&#97;&#115;&#97;&#100;&#105;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
       </div>
     </div>
   </div>
+
+</div><!-- /contact-grid -->
+
+<!-- BOTTOM AD -->
+<div style="max-width:728px;margin:0 auto;padding:0 16px 36px">
+  <ins class="adsbygoogle"
+       style="display:block;min-height:90px"
+       data-ad-client="ca-pub-6309207317896311"
+       data-ad-slot="2485889698"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
 
- <!-- /page-wrap -->
-
-<!-- ══ FOOTER ══ -->
+<!-- ══════════════════════════════════
+     FOOTER
+ 
+<!-- FOOTER -->
 <footer>
-  <div class="affiliate-footer">
-    This site contains Amazon affiliate links. If you make a purchase through our links, we may earn a small commission at no extra cost to you. All tools remain free for everyone.
-  </div>
-  <div class="footer-inner">
-    <div class="footer-brand">
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
       <div class="logo">ToolkitPro</div>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="footer-social-btn"><i class="fab fa-github"></i></a>
-        
+      <div class="fsoc">
+        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
+        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="#uploadArea">Image Compressor</a></li>
-        <li><a href="#palette-section">Color Extractor</a></li>
-        <li><a href="#nature-designer">Nature Designer</a></li>
-        <li><a href="#qr-section">QR Generator</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Pages</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-        <li><a href="https://app-tool.vercel.app/shopping.html">Shopping Picks</a></li>
-        <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-        <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-        <a href="/cookie-policy.html">Cookie Policy</a>
-        <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="https://www.pinterest.com/shaheerasadia" target="_blank">Pinterest</a></li>
-        <li><a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/shaheerasadia" target="_blank">GitHub</a></li>
-        
-      </ul>
-    </div>
+    <div class="fc"><h4>All Tools</h4><ul>
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
+    </ul></div>
+    <div class="fc"><h4>Blog</h4><ul>
+      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
+      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Legal</h4><ul>
+      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
+      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
+      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom">
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
     <span>
-      <a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-      <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a>
-       <a href="/cookie-policy.html">Cookie Policy</a></li>
-        <a href="/affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
     </span>
   </div>
 </footer>
- <!-- ══ Mobile══ -->
- <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('is-active');
+
+<!-- ══════════════════════════════════════
+     FORM SUBMIT HANDLER (Formspree AJAX)
+══════════════════════════════════════ -->
+<script>
+// Mobile nav toggle for contact page
+(function(){
+  const btn = document.getElementById('mob');
+  const nl = document.getElementById('nl');
+  const overlay = document.getElementById('navOverlay');
+  if(!btn || !nl || !overlay) return;
+  function openMenu(){ btn.classList.add('x'); nl.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ btn.classList.remove('x'); nl.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow=''; }
+  btn.addEventListener('click', function(){ nl.classList.contains('open') ? closeMenu() : openMenu(); });
+  overlay.addEventListener('click', closeMenu);
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
+})();
+
+// Formspree AJAX handler
+const form = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMsg');
+const errorMsg = document.getElementById('errorMsg');
+
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.submit-btn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+    btn.disabled = true;
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        successMsg.style.display = 'flex';
+        form.reset();
+        btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      errorMsg.style.display = 'flex';
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+    }
   });
+}
 </script>
+
 </body>
 </html>
