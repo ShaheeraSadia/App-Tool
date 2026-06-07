@@ -29,7 +29,24 @@
       --bg:#f5f8ff;--white:#ffffff;--radius:14px;
       --shadow:0 4px 24px rgba(43,79,216,.09);
     }
-   
+   :root{
+  --primary:#1a73e8;
+  --primary-dark:#1557b0;
+  --primary-light:#e8f0fe;
+  --accent:#ea4335;
+  --green:#34a853;
+  --yellow:#fbbc04;
+  --text:#202124;
+  --text-light:#5f6368;
+  --bg:#fff;
+  --bg-alt:#f8f9fa;
+  --border:#e0e0e0;
+  --ad-bg:#f1f3f4;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 30px rgba(0,0,0,.1);
+  --radius:10px;
+  --max:1100px;
+}
       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
@@ -57,115 +74,7 @@
       .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
     }
-
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --primary:#1a73e8;
-  --primary-dark:#1557b0;
-  --primary-light:#e8f0fe;
-  --accent:#ea4335;
-  --green:#34a853;
-  --yellow:#fbbc04;
-  --text:#202124;
-  --text-light:#5f6368;
-  --bg:#fff;
-  --bg-alt:#f8f9fa;
-  --border:#e0e0e0;
-  --ad-bg:#f1f3f4;
-  --shadow:0 2px 8px rgba(0,0,0,.08);
-  --shadow-lg:0 8px 30px rgba(0,0,0,.1);
-  --radius:10px;
-  --max:1100px;
-}
-/*html{scroll-behavior:smooth}
-body{
-  font-family:'Source Sans 3',sans-serif;
-  font-size:16px;
-  line-height:1.75;
-  color:var(--text);
-  background:var(--bg);
-}
-a{color:var(--primary);text-decoration:none}
-a:hover{text-decoration:underline}*/
-
-/* ═══════════════════════════════════════
-   HEADER
-═══════════════════════════════════════ */
-header{
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-  padding:13px 20px;
-  position:sticky;
-  top:0;
-  z-index:300;
-  box-shadow:var(--shadow);
-}
-.hdr{
-  max-width:var(--max);
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-/*.logo{
-  font-family:'Merriweather',serif;
-  font-size:20px;
-  font-weight:700;
-  color:var(--primary);
-  white-space:nowrap;
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-nav{display:flex;gap:2px}
-nav a{
-  font-size:14px;
-  font-weight:500;
-  color:var(--text-light);
-  padding:6px 11px;
-  border-radius:6px;
-  transition:all .2s;
-  white-space:nowrap;
-}
-nav a:hover,nav a.active{color:var(--primary);background:var(--primary-light);text-decoration:none}
-.menu-btn{
-  display:none;
-  background:none;
-  border:1px solid var(--border);
-  border-radius:6px;
-  padding:7px 11px;
-  font-size:18px;
-  cursor:pointer;
-  color:var(--text);
-  flex-shrink:0;
-}
- mobile nav drawer 
-.mob-nav{
-  display:none;
-  flex-direction:column;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-  padding:6px 20px 14px;
-}
-.mob-nav.open{display:flex}
-.mob-nav a{
-  padding:11px 4px;
-  font-size:15px;
-  font-weight:500;
-  color:var(--text);
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  gap:9px;
-}
-.mob-nav a:last-child{border-bottom:none}
-.mob-nav a:hover{color:var(--primary);text-decoration:none}
-
- overlay behind mobile nav 
-.nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.36);display:none;z-index:900}
-.nav-overlay.show{display:block}*/
-
+ 
 /* ═══════════════════════════════════════
    AD HELPERS
 ═══════════════════════════════════════ */
@@ -190,7 +99,7 @@ nav a:hover,nav a.active{color:var(--primary);background:var(--primary-light);te
 
 /* ═══════════════════════════════════════
    PAGE WRAPPER
-═══════════════════════════════════════ 
+═══════════════════════════════════════ */
 .page-wrap{
   max-width:var(--max);
   margin:28px auto 0;
@@ -200,11 +109,7 @@ nav a:hover,nav a.active{color:var(--primary);background:var(--primary-light);te
   gap:36px;
   align-items:start;
 }
-*/
-  /* ── PAGE WRAPPER ── */
-  .page-wrap { max-width: var(--max-width); margin: 28px auto 0; padding: 0 20px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: start; }
 
-  
 /* ═══════════════════════════════════════
    BREADCRUMB
 ═══════════════════════════════════════ */
@@ -655,6 +560,50 @@ aside{position:sticky;top:75px}
  
 
  
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — MOBILE 600px
+═══════════════════════════════════════ */
+@media(max-width:600px){
+  /* header */
+  nav{display:flex}
+  .mob{display:flex}
+  .logo{font-size:17px}
+
+  /* hero */
+  .page-hero{padding:24px 18px}
+
+  /* form */
+  .form-card{padding:22px 16px}
+  .form-row{grid-template-columns:1fr}
+
+  /* info cards */
+  .info-stack{flex-direction:column}
+  .info-card{min-width:unset;width:100%}
+
+  /* why grid */
+  .why-grid{grid-template-columns:1fr}
+
+  /* footer */
+  .footer-grid{grid-template-columns:1fr;gap:18px}
+
+  /* page wrap padding */
+  .page-wrap{padding:0 14px;margin-top:18px}
+
+  /* ads full width on mobile */
+  .ad-leaderboard .adsbygoogle{width:100%!important}
+}
+/* nav overlay for mobile menu */
+.nav-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease;
+  z-index:900;
+}
+.nav-overlay.show{opacity:1;pointer-events:auto}
   /* ── FOOTER ── */
           /* --- 7. Footer Layout --- */
     footer { 
@@ -1193,7 +1142,6 @@ body {
 <!-- ══════════════════════════════════════
      FORM SUBMIT HANDLER (Formspree AJAX)
 ══════════════════════════════════════ -->
- 
 <script>
 // Mobile nav toggle for contact page
 (function(){
@@ -1207,42 +1155,45 @@ body {
   overlay.addEventListener('click', closeMenu);
   nl.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
 })();
- 
+
+// Formspree AJAX handler
 const form = document.getElementById('contactForm');
 const successMsg = document.getElementById('successMsg');
 const errorMsg = document.getElementById('errorMsg');
 
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = form.querySelector('.submit-btn');
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-  btn.disabled = true;
-  successMsg.style.display = 'none';
-  errorMsg.style.display = 'none';
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.submit-btn');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+    btn.disabled = true;
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
 
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      successMsg.style.display = 'flex';
-      form.reset();
-      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        btn.disabled = false;
-      }, 4000);
-    } else {
-      throw new Error('Server error');
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        successMsg.style.display = 'flex';
+        form.reset();
+        btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      errorMsg.style.display = 'flex';
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
     }
-  } catch {
-    errorMsg.style.display = 'flex';
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.disabled = false;
-  }
-});
+  });
+}
 </script>
 
 </body>
