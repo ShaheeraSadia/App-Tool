@@ -81,30 +81,7 @@ nav{
   }
   .nav-links li{width:100%}
   .nav-links a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-} /* ── NAV ── 
-    nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
-    .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-    .nav-logo i{color:var(--blue);font-size:18px}
-    .nav-logo-text{font-size:20px;font-weight:700;color:var(--blue-dark)}
-    .nav-logo-text em{color:var(--pink);font-style:normal}
-    .nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
-    .nl a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
-    .nl a:hover,.nl a.active{color:var(--blue);background:var(--blue-pale)}
-    .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
-    .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-    .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
-  @media(max-width:960px){
-      nav{padding:0 16px}
-      .mob{display:flex}
-      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nl.open{left:0}
-      .nl li{width:100%}
-      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .mob.x .bar:nth-child(2){opacity:0}
-      .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
-      .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-    }
- */
+}  
 
 /* TOP AD */
 .ad-top{
@@ -311,8 +288,75 @@ nav{
     .fc ul a:hover { color: #7dd3fc; }
     .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
     .fb a { color: inherit; text-decoration: none; }
+/* ==========================================================================
+   PERFECT MOBILE LAYOUT FIXES (ADD OR REPLACE AT THE BOTTOM OF CSS)
+   ========================================================================== */
 
-/* RESPONSIVE */
+/* 960px اور اس سے کم اسکرینز کے لیے (Tablets & Menu Fix) */
+@media(max-width: 960px) {
+  nav { padding: 0 16px; }
+  .menu-toggle { display: flex; }
+  .nav-links {
+    position: fixed; top: 66px; left: -100%;
+    width: 82%; max-width: 320px; height: 100vh;
+    background: var(--white); flex-direction: column;
+    align-items: flex-start; padding: 24px 20px;
+    transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12);
+    z-index: 1000; gap: 4px; overflow-y: auto;
+  }
+  .nav-links.open { left: 0 !important; } /* مینو کو کھولنے کے لیے */
+  .nav-links li { width: 100%; }
+  .nav-links a { 
+    font-size: 15px; padding: 12px 14px; 
+    border-radius: 10px; border-bottom: 1px solid var(--blue-pale); 
+    color: #1a2f8a;
+  }
+  
+  /* فوٹر گرڈ کو 2 کالمز میں تبدیل کیا */
+  .fi { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+/* 760px اور اس سے کم اسکرینز کے لیے (Main Responsive Bridge) */
+@media(max-width: 760px){
+  .page-wrap { padding: 0 16px 40px; }
+  
+  /* آپٹ آؤٹ کے دو کالمز کو موبائل پر اوپر نیچے کیا تاکہ متن کٹے نہ */
+  .optout-grid { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* 540px اور اس سے کم اسکرینز کے لیے (Smartphones Layout Optimization) */
+@media(max-width: 540px){
+  /* ہیرو سیکشن اور کارڈز کی پیڈنگ کم کی تاکہ موبائل پر ٹیکسٹ کے لیے زیادہ جگہ بچے */
+  .page-hero { padding: 24px 16px !important; }
+  .card { padding: 20px 14px !important; }
+  
+  /* کوکی ڈیٹا ٹیبل کو اسکرین سے باہر نکلنے سے روکنے کا حل */
+  .cookie-table, table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* فوٹر کے تمام لنکس اور معلومات کو ایک کالم میں ترتیب دیا */
+  .fi { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+  .fi p { max-width: 100%; margin: 0 auto; }
+  .fsoc { justify-content: center; }
+  
+  /* کاپی رائٹ بار کو موبائل پر سینٹر کیا */
+  .fb { flex-direction: column; text-align: center; gap: 10px; }
+}
+
+/* ہوریزونٹل سکرولنگ (Horizontal Scroll) کو مستقل ختم کرنے کے لیے بنیادی فکس */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* RESPONSIVE 
 @media(max-width:760px){
   .optout-grid{grid-template-columns:1fr}
   .footer-inner{grid-template-columns:1fr 1fr;gap:22px}
@@ -321,7 +365,7 @@ nav{
   .footer-inner{grid-template-columns:1fr;gap:18px}
   .page-hero{padding:22px 18px}
   .card{padding:18px 15px}
-}
+}*/
 </style>
 </head>
 <body>
