@@ -1335,53 +1335,8 @@ body {
 
  
 
-<!-- FOOTER -->
-</footer>
-
-<script>
-// Mobile nav toggle
-document.addEventListener('DOMContentLoaded', function(){
-  const btn = document.getElementById('mob');
-  const nl = document.getElementById('nl');
-  const overlay = document.getElementById('navOverlay');
-  
-  if(!btn || !nl || !overlay) {
-    console.warn('Mobile nav elements not found');
-    return;
-  }
-  
-  function openMenu(){ 
-    console.log('Opening menu');
-    btn.classList.add('x'); 
-    nl.classList.add('open'); 
-    overlay.classList.add('show'); 
-    document.body.style.overflow = 'hidden'; 
-  }
-  
-  function closeMenu(){ 
-    console.log('Closing menu');
-    btn.classList.remove('x'); 
-    nl.classList.remove('open'); 
-    overlay.classList.remove('show'); 
-    document.body.style.overflow = ''; 
-  }
-  
-  btn.addEventListener('click', function(){ 
-    console.log('Button clicked, menu open:', nl.classList.contains('open'));
-    nl.classList.contains('open') ? closeMenu() : openMenu(); 
-  });
-  
-  overlay.addEventListener('click', closeMenu);
-  
-  // close when a nav link is clicked
-  nl.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
-  });
-});
-</script>
-
-</body>
-</html>
+ 
+ 
  <!-- FOOTER -->
 <footer>
   <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
@@ -1459,9 +1414,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
+ 
+
 </body>
 </html>
-
   
   
  
