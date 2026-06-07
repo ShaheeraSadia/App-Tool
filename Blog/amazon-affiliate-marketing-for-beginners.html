@@ -1,5 +1,4 @@
-   
-  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -63,6 +62,7 @@
         max-width:300px;
         height:calc(100vh - 66px);
         background:var(--white);
+        display:flex;
         flex-direction:column;
         align-items:flex-start;
         padding:24px 20px;
@@ -92,7 +92,10 @@
     /* overlay behind mobile nav */
     .nav-overlay{
       position:fixed;
-      inset:0;
+      top:66px;
+      left:0;
+      right:0;
+      bottom:0;
       background:rgba(0,0,0,.45);
       opacity:0;
       pointer-events:none;
@@ -1360,18 +1363,44 @@ body {
 
 <script>
 // Mobile nav toggle
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   const btn = document.getElementById('mob');
   const nl = document.getElementById('nl');
   const overlay = document.getElementById('navOverlay');
-  if(!btn || !nl || !overlay) return;
-  function openMenu(){ btn.classList.add('x'); nl.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-  function closeMenu(){ btn.classList.remove('x'); nl.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
-  btn.addEventListener('click', function(){ nl.classList.contains('open') ? closeMenu() : openMenu(); });
+  
+  if(!btn || !nl || !overlay) {
+    console.warn('Mobile nav elements not found');
+    return;
+  }
+  
+  function openMenu(){ 
+    console.log('Opening menu');
+    btn.classList.add('x'); 
+    nl.classList.add('open'); 
+    overlay.classList.add('show'); 
+    document.body.style.overflow = 'hidden'; 
+  }
+  
+  function closeMenu(){ 
+    console.log('Closing menu');
+    btn.classList.remove('x'); 
+    nl.classList.remove('open'); 
+    overlay.classList.remove('show'); 
+    document.body.style.overflow = ''; 
+  }
+  
+  btn.addEventListener('click', function(){ 
+    console.log('Button clicked, menu open:', nl.classList.contains('open'));
+    nl.classList.contains('open') ? closeMenu() : openMenu(); 
+  });
+  
   overlay.addEventListener('click', closeMenu);
+  
   // close when a nav link is clicked
-  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeMenu));
-})();
+  nl.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+});
 </script>
 
 </body>
@@ -1511,3 +1540,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
+  
+  
+ 
