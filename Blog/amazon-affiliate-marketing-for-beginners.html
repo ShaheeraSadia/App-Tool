@@ -32,7 +32,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
+ <style>
     :root{
       --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
       --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
@@ -41,7 +41,7 @@
       --shadow:0 4px 24px rgba(43,79,216,.09);
     }
    
-      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
 
@@ -57,22 +57,59 @@
     .nl .shop{background:linear-gradient(135deg,#ff6eb4,#ff9a9e)!important;color:white!important;border-radius:10px!important;font-weight:700!important}
     .mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
     .mob .bar{width:25px;height:3px;background:var(--blue-dark);border-radius:2px;transition:.3s;display:block}
+
+    /* ── MOBILE NAV RESPONSIVE (960px) ── */
     @media(max-width:960px){
       nav{padding:0 16px}
-      .mob{display:flex}
-      .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:100vh;background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
-      .nl.open{left:0}
+      .mob{display:flex !important; position:relative; z-index:1001;}
+      
+      .nl{
+        position:fixed;
+        top:66px;
+        left:-100% !important; /* ڈیفالٹ اسکرین سے باہر */
+        width:82%;
+        max-width:300px;
+        height:calc(100vh - 66px);
+        background:var(--white);
+        flex-direction:column;
+        align-items:flex-start;
+        padding:24px 20px;
+        transition:left .35s ease-in-out !important;
+        box-shadow:8px 0 24px rgba(0,0,0,.12);
+        z-index:1000;
+        gap:4px;
+        overflow-y:auto;
+      }
+      
+      /* جب جاوا اسکرپٹ کلاس 'open' ایڈ کرے گا */
+      .nl.open{
+        left:0 !important;
+      }
+      
       .nl li{width:100%}
-      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale)}
-      .mob.x .bar:nth-child(2){opacity:0}
+      .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale);width:100%;box-sizing:border-box}
+      
+      /* ہیمبرگر اینیمیشن (کراس آئیکن) */
+      .mob.x .bar:nth-child(2){opacity:0; transform: scale(0);}
       .mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
       .mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+      
+      .fi { grid-template-columns: 1fr 1fr; }
     }
 
     /* overlay behind mobile nav */
-    .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.36);display:none;z-index:900}
-    .nav-overlay.show{display:block}
- 
+    .nav-overlay{
+      position:fixed;
+      inset:0;
+      top:66px;
+      background:rgba(0,0,0,.4);
+      display:none;
+      z-index:900;
+      backdrop-filter: blur(2px);
+    }
+    .nav-overlay.show{
+      display:block !important;
+    }
 
 /* ===================================================
    AD WRAPPERS
@@ -576,8 +613,6 @@ aside{position:sticky;top:75px}
 }
 .nl-form button:hover{background:var(--primary-dark)}
 
-
-
 /* ===================================================
    RESPONSIVE — TABLET 900px
 =================================================== */
@@ -593,29 +628,18 @@ aside{position:sticky;top:75px}
    RESPONSIVE — MOBILE 600px
 =================================================== */
 @media(max-width:600px){
-  /* header */
   nav{display:flex}
   .menu-toggle{display:flex}
   .logo{font-size:17px}
-
-  /* ad leaderboard → responsive block on mobile */
   .ad-top-inner .adsbygoogle{width:100%!important;min-height:60px}
-
-  /* body text */
   h1{font-size:20px}
   .article-body h2{font-size:18px;margin-top:30px}
   .article-body h3{font-size:16px}
   .intro-para{font-size:16px}
   body{font-size:16px}
-
-  /* step cards go single column */
   .step-card{grid-template-columns:42px 1fr;gap:12px;padding:16px 14px}
   .step-num{width:42px;height:42px;font-size:17px;border-radius:10px}
-
-  /* tables scroll */
   td,th{padding:9px 10px;font-size:13px}
-
-  /* pros/cons already 1 col from 900 */
   .related-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:20px}
   .share-box{flex-direction:column;align-items:flex-start}
@@ -661,98 +685,77 @@ aside{position:sticky;top:75px}
 }
 .btn-outline:hover{background:var(--primary);color:#fff;text-decoration:none}
 
-    /* ── FOOTER ── */
-          /* --- 7. Footer Layout --- */
-    footer { 
-      background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
-      color: rgba(255,255,255,.85); 
-      padding: 52px 40px 28px; 
-      margin-top: auto !important; 
-      margin-bottom: 0 !important;
-    }
-    .aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
-    .fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
-    .fsoc { display: flex; gap: 10px; margin-top: 14px; }
-    .fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .fsb:hover { background: var(--blue); color: white; }
-    .fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
-    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .fc ul a:hover { color: #7dd3fc; }
-    .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .fb a { color: inherit; text-decoration: none; }
+/* ── FOOTER ── */
+footer { 
+  background: linear-gradient(135deg,#0d1b5e,#1a2f8a); 
+  color: rgba(255,255,255,.85); 
+  padding: 52px 40px 28px; 
+  margin-top: auto !important; 
+  margin-bottom: 0 !important;
+}
+.aff-foot { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1060px; margin-left: auto; margin-right: auto; }
+.fi { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+.fi .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
+.fi p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 220px; }
+.fsoc { display: flex; gap: 10px; margin-top: 14px; }
+.fsb { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
+.fsb:hover { background: var(--blue); color: white; }
+.fc h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 14px; }
+.fc ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.fc ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
+.fc ul a:hover { color: #7dd3fc; }
+.fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
+.fb a { color: inherit; text-decoration: none; }
 
-    /* --- 8. Responsive Rules --- */
-    @media(max-width:960px) {
-      nav { padding: 0 16px; }
-      .mob { display: flex; }
-      .nl { 
-        position: fixed; top: 66px; left: -100%; width: 82%; max-width: 300px; height: 100vh; 
-        background: var(--white); flex-direction: column; align-items: flex-start; padding: 24px 20px; 
-        transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12); z-index: 1000; gap: 4px; overflow-y: auto; 
-      }
-      .nl.open { left: 0; }
-      .nl li { width: 100%; }
-      .nl a { font-size: 15px; padding: 12px 14px; border-radius: 10px; border-bottom: 1px solid var(--blue-pale); }
-      .mob.x .bar:nth-child(2) { opacity: 0; }
-      .mob.x .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .mob.x .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-      .fi { grid-template-columns: 1fr 1fr; }
-    }
+/* ── RESPONSIVE OVERRIDES FIX ── */
+@media(max-width:860px) {
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .layout {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px 16px 50px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-    @media (max-width: 860px) {
-      html, body {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      
-      .layout {
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 20px 16px 50px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
+  .sidebar, .article {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .article {
+    padding: 24px 16px !important;
+  }
 
-      .sidebar, .article {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      
-      .article {
-        padding: 24px 16px !important;
-      }
+  .tbl, table, .ad-slot, pre, code {
+    max-width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important;
+    box-sizing: border-box !important;
+  }
+}
 
-      .tbl, table, .ad-slot, pre, code {
-        max-width: 100% !important;
-        display: block !important;
-        overflow-x: auto !important;
-        box-sizing: border-box !important;
-      }
-    }
+@media(max-width:540px) { 
+  footer { padding: 36px 18px 22px; } 
+  .fi { grid-template-columns: 1fr; gap: 20px; } 
+  .fb { flex-direction: column; text-align: center; } 
+}
 
-    @media(max-width:540px) { 
-      footer { padding: 36px 18px 22px; } 
-      .fi { grid-template-columns: 1fr; gap: 20px; } 
-      .fb { flex-direction: column; text-align: center; } 
-    }
- 
- a {
+a {
     overflow-wrap: break-word;
 }
 
-.article,
-.layout,
-.sidebar,
-main,
-aside {
+.article, .layout, .sidebar, main, aside {
     max-width: 100%;
 }
-  html {
-    background: linear-gradient(135deg,#0d1b5e,#1a2f8a); /* footer color */
+
+html {
+    background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
     overscroll-behavior: none;
 }
 
@@ -764,8 +767,8 @@ body {
     padding: 0;
     overscroll-behavior: none;
 }
-     
 </style>
+ 
   
 </head>
 <body>
@@ -1426,33 +1429,79 @@ body {
     </span>
   </div>
 </footer>
- 
-<script>
-function closeNav() {
-  document.getElementById('nl').classList.remove('open');
-  document.getElementById('mob').classList.remove('x');
-  document.getElementById('navOverlay').classList.remove('show');
-}
-
-document.getElementById('mob').addEventListener('click', () => {
-  document.getElementById('nl').classList.toggle('open');
-  document.getElementById('mob').classList.toggle('x');
-  document.getElementById('navOverlay').classList.toggle('show');
-});
-
-document.getElementById('navOverlay').addEventListener('click', closeNav);
-
+ <script>
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 860) {
-    document.querySelectorAll('.sb-card').forEach(card => {
-      const title = card.querySelector('.sb-hd');
-      const body = card.querySelector('.sb-body');
+  const mobBtn = document.getElementById('mob');
+  const navList = document.getElementById('nl');
+  const overlay = document.getElementById('navOverlay');
+
+  if (mobBtn && navList && overlay) {
+    
+    // 1. مینو کو اوپن اور کلوز (Toggle) کرنے کے لیے
+    mobBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // کلک کو باڈی پر جانے سے روکے گا تاکہ مینو فوراً بند نہ ہو
+      navList.classList.toggle('open');
+      mobBtn.classList.toggle('x');
+      overlay.classList.toggle('show');
+    });
+
+    // 2. اوورلے (بیک گراؤنڈ) پر کلک کرنے سے مینو بند ہو جائے
+    overlay.addEventListener('click', () => {
+      navList.classList.remove('open');
+      mobBtn.classList.remove('x');
+      overlay.classList.remove('show');
+    });
+
+    // 3. اگر مینو کے اندر کسی لنک پر کلک ہو تو مینو خود بخود بند ہو جائے
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('open');
+        mobBtn.classList.remove('x');
+        overlay.classList.remove('show');
+      });
+    });
+
+    // 4. مینو سے باہر کہیں بھی اسکرین پر کلک ہو تو مینو بند ہو جائے
+    document.addEventListener('click', (e) => {
+      if (!navList.contains(e.target) && !mobBtn.contains(e.target)) {
+        navList.classList.remove('open');
+        mobBtn.classList.remove('x');
+        overlay.classList.remove('show');
+      }
+    });
+  }
+
+  /* ===================================================
+     سائیڈ بار ایکارڈین (Sidebar Accordion for Mobile <= 960px)
+  =================================================== */
+  if (window.innerWidth <= 960) {
+    document.querySelectorAll('.sw').forEach(card => {
+      const title = card.querySelector('h3');
+      // سائیڈ بار کے تمام ممکنہ ایلیمنٹس (TOC, Popular Posts, Forms) کو تلاش کرنا
+      const body = card.querySelector('.toc-list') || 
+                   card.querySelector('.pop-list') || 
+                   card.querySelector('.tool-links') || 
+                   card.querySelector('.nl-form');
+      
       if (!title || !body) return;
+      
+      // ڈیفالٹ اسٹیٹ: موبائل پر سائیڈ بار کے وزٹس بند رہیں گے
       body.style.display = 'none';
       title.style.cursor = 'pointer';
+      title.style.position = 'relative';
+      title.style.paddingRight = '20px';
+      
+      // پلس (+) آئیکن ایڈ کرنا
+      title.insertAdjacentHTML('beforeend', '<span class="tg-icon" style="position:absolute; right:0; top:50%; transform:translateY(-50%); font-size:16px; font-weight:bold; color:var(--primary);">+</span>');
+      const icon = title.querySelector('.tg-icon');
+
       title.addEventListener('click', () => {
         const isOpen = body.style.display === 'block';
         body.style.display = isOpen ? 'none' : 'block';
+        if (icon) {
+          icon.innerText = isOpen ? '+' : '−';
+        }
       });
     });
   }
