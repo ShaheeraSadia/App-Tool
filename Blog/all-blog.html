@@ -74,6 +74,36 @@
     .hero-search input::placeholder{color:var(--muted)}
     .hero-search button{padding:12px 20px;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));color:white;border:none;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap}
     .hero-search button:hover{opacity:.9}
+   
+/* COOKIE TYPE TABLE */
+.cookie-table{
+  width:100%;border-collapse:collapse;
+  font-size:14px;margin:18px 0;
+  border-radius:10px;overflow:hidden;
+}
+.cookie-table th{
+  background:rgba(37,99,235,.5);
+  color:#e0e7ff;padding:12px 14px;
+  text-align:left;font-weight:600;font-size:13px;
+}
+.cookie-table td{
+  padding:11px 14px;
+  border-bottom:1px solid var(--border);
+  color:#d1d5db;
+  vertical-align:top;
+}
+.cookie-table tr:last-child td{border-bottom:none}
+.cookie-table tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+.cookie-table .cat{
+  font-weight:600;color:#f1f5f9;
+  display:flex;align-items:center;gap:7px;
+  font-size:13px;
+}
+.dot-e{width:8px;height:8px;border-radius:50%;background:#6430f3;flex-shrink:0}
+.dot-f{width:8px;height:8px;border-radius:50%;background:#036eef;flex-shrink:0}
+.dot-a{width:8px;height:8px;border-radius:50%;background:#facc15;flex-shrink:0}
+.dot-m{width:8px;height:8px;border-radius:50%;background:#f87171;flex-shrink:0}
+
 
     /* ── FILTER TABS ── */
     .filter-bar{background:var(--white);border-bottom:1px solid #dde6ff;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
