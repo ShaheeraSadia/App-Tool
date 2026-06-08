@@ -363,26 +363,7 @@ footer {
     .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
     .fb a { color: inherit; text-decoration: none; }
 
-/* 960px اور اس سے کم اسکرینز کے لیے (Tablets & Menu Fix) */
-@media(max-width: 960px) {
-  nav { padding: 0 16px; }
-  .menu-toggle { display: flex; }
-  .nav-links {
-    position: fixed; top: 66px; left: -100%;
-    width: 82%; max-width: 320px; height: 100vh;
-    background: var(--white); flex-direction: column;
-    align-items: flex-start; padding: 24px 20px;
-    transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12);
-    z-index: 1000; gap: 4px; overflow-y: auto;
-  }
-  .nav-links.open { left: 0 !important; } /* مینو کو کھولنے کے لیے */
-  .nav-links li { width: 100%; }
-  .nav-links a { 
-    font-size: 15px; padding: 12px 14px; 
-    border-radius: 10px; border-bottom: 1px solid var(--blue-pale); 
-    color: #1a2f8a;
-  }
-  
+ 
   /* فوٹر گرڈ کو 2 کالمز میں تبدیل کیا */
   .fi { grid-template-columns: 1fr 1fr; gap: 30px; }
 }
@@ -429,9 +410,9 @@ html, body {
 }
    
   
-}/* ── RESPONSIVE ── 
+}/* ── RESPONSIVE ──*/ 
     @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } .preview-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }*/
+    @media (max-width: 640px) { nav { padding: 0 16px; } .tools-nav { padding: 0 16px; } .hero h1 { font-size: 28px; } .tool-body { padding: 20px; } .tool-header { padding: 20px; } .qr-input-row { flex-direction: column; } .about-wrap { flex-direction: column; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } .pinterest-banner { flex-direction: column; } }
   
   
 img,
