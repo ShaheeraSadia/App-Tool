@@ -209,62 +209,7 @@
     .fb { max-width: 1060px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top:22px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
     .fb a { color: inherit; text-decoration: none; }
     
-
-/* 960px اور اس سے کم اسکرینز کے لیے (Tablets & Menu Fix) */
-@media(max-width: 960px) {
-  nav { padding: 0 16px; }
-  .menu-toggle { display: flex; }
-  .nav-links {
-    position: fixed; top: 66px; left: -100%;
-    width: 82%; max-width: 320px; height: 100vh;
-    background: var(--white); flex-direction: column;
-    align-items: flex-start; padding: 24px 20px;
-    transition: .35s ease; box-shadow: 8px 0 24px rgba(0,0,0,.12);
-    z-index: 1000; gap: 4px; overflow-y: auto;
-  }
-  .nav-links.open { left: 0 !important; } /* مینو کو کھولنے کے لیے */
-  .nav-links li { width: 100%; }
-  .nav-links a { 
-    font-size: 15px; padding: 12px 14px; 
-    border-radius: 10px; border-bottom: 1px solid var(--blue-pale); 
-    color: #1a2f8a;
-  }
-  
-  /* فوٹر گرڈ کو 2 کالمز میں تبدیل کیا */
-  .fi { grid-template-columns: 1fr 1fr; gap: 30px; }
-}
-
-/* 760px اور اس سے کم اسکرینز کے لیے (Main Responsive Bridge) */
-@media(max-width: 760px){
-  .page-wrap { padding: 0 16px 40px; }
-  
-  /* آپٹ آؤٹ کے دو کالمز کو موبائل پر اوپر نیچے کیا تاکہ متن کٹے نہ */
-  .optout-grid { grid-template-columns: 1fr; gap: 14px; }
-}
-
-/* 540px اور اس سے کم اسکرینز کے لیے (Smartphones Layout Optimization) */
-@media(max-width: 540px){
-  /* ہیرو سیکشن اور کارڈز کی پیڈنگ کم کی تاکہ موبائل پر ٹیکسٹ کے لیے زیادہ جگہ بچے */
-  .page-hero { padding: 24px 16px !important; }
-  .card { padding: 20px 14px !important; }
-  
-  /* کوکی ڈیٹا ٹیبل کو اسکرین سے باہر نکلنے سے روکنے کا حل */
-  .cookie-table, table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  /* فوٹر کے تمام لنکس اور معلومات کو ایک کالم میں ترتیب دیا */
-  .fi { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-  .fi p { max-width: 100%; margin: 0 auto; }
-  .fsoc { justify-content: center; }
-  
-  /* کاپی رائٹ بار کو موبائل پر سینٹر کیا */
-  .fb { flex-direction: column; text-align: center; gap: 10px; }
-}
+ 
 
 /* ہوریزونٹل سکرولنگ (Horizontal Scroll) کو مستقل ختم کرنے کے لیے بنیادی فکس */
 html, body {
@@ -337,7 +282,7 @@ body {
  <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
     <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
   
-</li>
+ 
   </ul>
 </nav>
 
