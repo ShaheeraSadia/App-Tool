@@ -1,0 +1,175 @@
+<!-- ═══════════════════════════════════════════════════════════
+     COOKIE CONSENT BANNER — Toolkit Pro
+     HOW TO USE:
+     1. Paste this entire block just before </body> on EVERY page
+     2. The banner auto-shows on first visit, remembers the choice
+     3. If user clicks Accept → AdSense & Analytics cookies load
+     4. If user clicks Decline → only essential cookies load
+     ALSO ADD: the <link> and the <style> block to your <head>
+     (or copy the CSS into your existing stylesheet)
+═══════════════════════════════════════════════════════════ -->
+
+<!-- ── COOKIE BANNER STYLES (add to <head> or existing CSS) ── -->
+<style id="cookie-banner-css">
+#cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:99999;
+  background:#fff;border-top:2px solid #1a73e8;
+  box-shadow:0 -4px 24px rgba(0,0,0,.12);
+  padding:16px 20px;
+  display:flex;align-items:center;
+  flex-wrap:wrap;gap:12px;
+  font-family:'Source Sans 3',Arial,sans-serif;
+  font-size:14px;line-height:1.5;
+  transform:translateY(100%);
+  transition:transform .35s ease;
+}
+#cookie-banner.show{transform:translateY(0)}
+#cookie-banner .cb-text{flex:1;min-width:220px;color:#202124}
+#cookie-banner .cb-text a{color:#1a73e8;text-decoration:underline}
+#cookie-banner .cb-text strong{color:#202124}
+#cookie-banner .cb-btns{
+  display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap;
+}
+#cookie-banner .cb-btn{
+  padding:9px 20px;border-radius:7px;
+  font-size:14px;font-weight:600;
+  cursor:pointer;border:none;
+  font-family:inherit;transition:opacity .2s;
+  white-space:nowrap;
+}
+#cookie-banner .cb-btn:hover{opacity:.85}
+#cookie-banner .cb-accept{background:#1a73e8;color:#fff}
+#cookie-banner .cb-decline{background:#f1f3f4;color:#202124;border:1px solid #e0e0e0}
+#cookie-banner .cb-close{
+  position:absolute;top:10px;right:14px;
+  background:none;border:none;font-size:18px;
+  color:#5f6368;cursor:pointer;padding:2px 6px;
+  line-height:1;
+}
+/* floating re-open button (shown after decline) */
+#cookie-reopen{
+  position:fixed;bottom:16px;left:16px;z-index:99998;
+  background:#1a73e8;color:#fff;border:none;
+  border-radius:24px;padding:8px 16px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  font-family:inherit;box-shadow:0 4px 14px rgba(26,115,232,.35);
+  display:none;align-items:center;gap:6px;
+  transition:opacity .2s;
+}
+#cookie-reopen:hover{opacity:.88}
+@media(max-width:600px){
+  #cookie-banner{flex-direction:column;align-items:flex-start}
+  #cookie-banner .cb-btns{width:100%}
+  #cookie-banner .cb-btn{flex:1;text-align:center}
+  #cookie-reopen{font-size:12px;padding:7px 13px}
+}
+</style>
+
+<!-- ── COOKIE BANNER HTML ── -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <button class="cb-close" onclick="cookieBanner.dismiss()" aria-label="Close">✕</button>
+  <div class="cb-text">
+    🍪 <strong>We use cookies</strong> to serve relevant ads (Google AdSense) and understand how visitors use our site (Google Analytics).
+    Your files and images are always processed <strong>100% locally</strong> — never uploaded.
+    <a href="/cookie-policy.html">Learn more</a>
+  </div>
+  <div class="cb-btns">
+    <button class="cb-btn cb-decline" onclick="cookieBanner.decline()">Decline</button>
+    <button class="cb-btn cb-accept" onclick="cookieBanner.accept()">Accept All Cookies</button>
+  </div>
+</div>
+
+<!-- re-open button shown after decline -->
+<button id="cookie-reopen" onclick="cookieBanner.reopen()" aria-label="Cookie settings">
+  🍪 Cookie Settings
+</button>
+
+<!-- ── COOKIE BANNER SCRIPT ── -->
+<script>
+(function(){
+  var STORAGE_KEY = 'tkpro_cookie_consent';
+  var banner      = document.getElementById('cookie-banner');
+  var reopen      = document.getElementById('cookie-reopen');
+
+  /* ── helpers ── */
+  function getChoice(){ return localStorage.getItem(STORAGE_KEY); }
+  function setChoice(v){ localStorage.setItem(STORAGE_KEY, v); }
+
+  /* ── load AdSense + Analytics after consent ── */
+  function loadAds(){
+    /* AdSense is already in <head> via async script.
+       This just enables ad personalisation / pushes the queue. */
+    if(window.adsbygoogle){
+      try{(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;}catch(e){}
+    }
+    /* Optional: load Google Analytics here if you use it */
+    /*
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+    */
+  }
+
+  /* ── pause ad requests until consent given ── */
+  function pauseAds(){
+    window.adsbygoogle=window.adsbygoogle||[];
+    adsbygoogle.pauseAdRequests=1;
+  }
+
+  /* ── show / hide banner ── */
+  function showBanner(){
+    setTimeout(function(){ banner.classList.add('show'); }, 600);
+  }
+  function hideBanner(){
+    banner.classList.remove('show');
+  }
+
+  /* ── public API ── */
+  window.cookieBanner = {
+    accept: function(){
+      setChoice('accepted');
+      hideBanner();
+      reopen.style.display='none';
+      loadAds();
+    },
+    decline: function(){
+      setChoice('declined');
+      hideBanner();
+      reopen.style.display='flex';
+      pauseAds();
+    },
+    dismiss: function(){
+      /* treat close-button same as decline */
+      setChoice('declined');
+      hideBanner();
+      reopen.style.display='flex';
+      pauseAds();
+    },
+    reopen: function(){
+      reopen.style.display='none';
+      banner.classList.add('show');
+    }
+  };
+
+  /* ── on page load ── */
+  var saved = getChoice();
+  if(!saved){
+    /* first visit — pause ads, show banner */
+    pauseAds();
+    showBanner();
+  } else if(saved === 'accepted'){
+    loadAds();
+  } else {
+    /* previously declined */
+    pauseAds();
+    reopen.style.display='flex';
+  }
+})();
+</script>
+<!-- ═══════════════════════════════════════════════════════════
+     END COOKIE BANNER
+═══════════════════════════════════════════════════════════ -->
