@@ -26,7 +26,7 @@
 html {
   scroll-behavior: smooth;
   background: #fff;
-  overscroll-behavior-x: none;
+  overscroll-behavior-y: auto;
 }
 html, body {
   width: 100%;
@@ -67,7 +67,42 @@ a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; height: auto; }
 
-/* ══ NAVIGATION (DESKTOP) ══ */
+ 
+nav.main-nav {
+  background: var(--white);
+  border-bottom: 1px solid #dde6ff;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+}
+ /* The Sticky Fix Combo */
+  position: -webkit-sticky; /* Safari Support */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* Crank up the z-index to stay above feature banners, code blocks, and absolute SVGs */
+  z-index: 9999 !important; 
+  box-shadow: 0 2px 16px rgba(43,79,216,.07);
+}
+
+/* 3. Ensure the main page wrap does not hide or clip the nav layout */
+.page-wrap {
+  max-width: var(--max);
+  margin: 24px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+  
+  /* CRITICAL: Ensure no parents contain 'overflow: hidden' which kills sticky positioning */
+  overflow: visible !important; 
+}
+/* ══ NAVIGATION (DESKTOP) ══ 
 nav.main-nav {
   background: var(--white);
   border-bottom: 1px solid #dde6ff;
@@ -79,7 +114,7 @@ nav.main-nav {
   position: sticky;
   top: 0;
   z-index: 300;
-  box-shadow: 0 2px 16px rgba(43,79,216,.07);
+  box-shadow: 0 2px 16px rgba(43,79,216,.07);*/
 }
 .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .nav-logo i { color: var(--primary); font-size: 18px; }
