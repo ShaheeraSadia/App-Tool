@@ -539,52 +539,78 @@ footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255
   }
 }
 */
-/* ══════════════════════════════════
-   RESPONSIVE — MOBILE  600px
+ /* ══════════════════════════════════
+   RESPONSIVE — TABLET & MOBILE NAV FIX (960px)
 ══════════════════════════════════ */
-@media(max-width:600px){
-  /* nav */
-  nav.main-nav{padding:0 14px;height:58px}
-  .nl{top:58px;height:calc(100vh - 58px)}
-
-  /* page padding */
-  .page-wrap{padding:0 14px;margin-top:16px}
-
-  /* typography */
-  h1{font-size:20px}
-  body{font-size:16px}
-  .article-body h2{font-size:18px;margin-top:30px}
-  .article-body h3{font-size:16px}
-  .intro-para{font-size:16px}
-
-  /* step cards */
-  .step-card{grid-template-columns:42px 1fr;gap:12px;padding:14px 12px}
-  .step-num{width:40px;height:40px;font-size:16px;border-radius:10px}
-
-  /* code blocks */
-  .code-block{font-size:12px;padding:12px 14px}
-
-  /* related & tools */
-  .related-grid{grid-template-columns:1fr}
-  .tools-grid{grid-template-columns:1fr}
-
-  /* key box */
-  .key-box{padding:18px 16px}
-  .key-box h3{font-size:17px}
-
-  /* share */
-  .share-box{flex-direction:column;align-items:flex-start}
-
-  /* footer */
-  footer{padding:36px 18px 22px}
-  .fi{grid-template-columns:1fr;gap:18px}
-  .fi>div>p{max-width:100%}
-  .fb{flex-direction:column;text-align:center}
-
-  /* tables */
-  td,th{padding:8px 10px;font-size:13px}
-  .ad-top-wrap{padding:0 14px}
+@media(max-width:960px){
+  nav.main-nav {
+    padding: 0 16px;
+  }
+  
+  .mob {
+    display: flex; /* Shows hamburger menu */
+  }
+  
+  /* Slide-in drawer navigation mobile overlay fix */
+  .nl {
+    position: fixed;
+    top: 66px;
+    left: -100%;
+    width: 82%;
+    max-width: 300px;
+    height: calc(100vh - 66px);
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    transition: left .35s ease;
+    box-shadow: 8px 0 24px rgba(0,0,0,.12);
+    z-index: 1000;
+    gap: 4px;
+    overflow-y: auto;
+  }
+  
+  .nl.open {
+    left: 0; /* Slides the menu out when .open class is added via JS */
+  }
+  
+  .nl li {
+    width: 100%;
+  }
+  
+  .nl a {
+    font-size: 15px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--blue-pale);
+    color: var(--text);
+    display: block;
+  }
+  
+  /* Main Grid Layout -> Collapse from 2-columns to 1-column stack */
+  .page-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+    padding: 0 16px;
+  }
+  
+  aside {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .tools-grid, 
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fi {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
 }
+ 
 
 /* ══════════════════════════════════
    RESPONSIVE — SMALL MOBILE  380px
