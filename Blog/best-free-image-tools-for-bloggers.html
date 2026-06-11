@@ -22,11 +22,21 @@ html,body{width:100%;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
   --border:#e0e0e0;--card:#fff;--radius:12px;
   --shadow:0 2px 12px rgba(0,0,0,.08);--max:1200px;
 }
-body{font-family:'Source Sans 3',Arial,sans-serif;font-size:17px;line-height:1.8;color:var(--text);background:var(--bg);word-wrap:break-word;overflow-wrap:break-word}
+/*body{font-family:'Source Sans 3',Arial,sans-serif;font-size:17px;line-height:1.8;color:var(--text);background:var(--bg);word-wrap:break-word;overflow-wrap:break-word}
 a{color:var(--blue);text-decoration:none;word-break:break-all}
-a:hover{text-decoration:underline}
+a:hover{text-decoration:underline}*/
+  body{
+  font-family:'Source Sans 3',Arial,sans-serif;
+  font-size:17px;
+  line-height:1.8;
+  color:var(--text);
+  background:var(--bg);
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  padding-top:66px;
+}
 
-/* NAV - Added transform transition for hide/show effect */
+/* NAV - Added transform transition for hide/show effect 
 nav{
   background:var(--white);
   border-bottom:1px solid var(--border);
@@ -40,6 +50,20 @@ nav{
   z-index:300;
   box-shadow:0 2px 12px rgba(26,115,232,.07);
   transition:transform 0.3s ease-in-out;
+}*/nav{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:66px;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9999;
+  box-shadow:0 2px 12px rgba(26,115,232,.07)
 }
 /* This class will be applied via JavaScript when scrolling */
 nav.nav-hidden {
@@ -135,9 +159,10 @@ h1{font-family:'Merriweather',serif;font-size:clamp(20px, 4vw, 36px);line-height
 
 /* COMPARISON TABLE */
 .table-wrap{overflow-x:auto;margin:22px 0;border-radius:var(--radius);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch;max-width:100%}
-table{width:100%;border-collapse:collapse;font-size:15px;min-width:460px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:400px}
 th{background:var(--blue);color:#fff;padding:12px 10px;text-align:left;font-weight:600;font-size:14px}
 td{padding:11px 10px;border-bottom:1px solid var(--border);color:var(--text)}
+  
 
 /* KEY TAKEAWAY */
 .key-takeaway{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;border-radius:var(--radius);padding:22px;margin:36px 0;max-width:100%}
@@ -234,6 +259,36 @@ footer{background:linear-gradient(135deg,#0d1b5e 0%,#1a2f8a 100%);color:rgba(255
   .share-btn{display:block;width:100%}
   footer{padding:40px 12px 24px}
   td,th{padding:10px 6px;font-size:13px}
+}
+  /* FIX MOBILE OVERFLOW */
+*{
+  min-width:0;
+}
+
+.page-wrap > *,
+.tool-card > *{
+  min-width:0;
+}
+
+img,
+iframe,
+video{
+  max-width:100%;
+  height:auto;
+}
+
+.nav-links{
+  max-width:100%;
+}
+
+.article-body,
+.tool-body,
+.related-card,
+.sw,
+aside{
+  max-width:100%;
+  overflow-wrap:break-word;
+  word-wrap:break-word;
 }
 </style>
    
@@ -681,7 +736,7 @@ footer{background:linear-gradient(135deg,#0d1b5e 0%,#1a2f8a 100%);color:rgba(255
 <script>
 (function(){var K='tkpro_cookie_consent',banner=document.getElementById('cookie-banner'),reopen=document.getElementById('cookie-reopen');function get(){return localStorage.getItem(K)}function set(v){localStorage.setItem(K,v)}function loadAds(){if(window.adsbygoogle){try{(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0}catch(e){}}}function pauseAds(){window.adsbygoogle=window.adsbygoogle||[];adsbygoogle.pauseAdRequests=1}window.cookieBanner={accept:function(){set('accepted');banner.classList.remove('show');reopen.style.display='none';loadAds()},decline:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},dismiss:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},reopen:function(){reopen.style.display='none';banner.classList.add('show')}};var s=get();if(!s){pauseAds();setTimeout(function(){banner.classList.add('show')},600)}else if(s==='accepted'){loadAds()}else{pauseAds();reopen.style.display='flex'}})();
 </script>
-  <script>
+<!--  <script>
   let lastScrollTop = 0;
   const navbar = document.querySelector('nav');
 
@@ -701,12 +756,12 @@ footer{background:linear-gradient(135deg,#0d1b5e 0%,#1a2f8a 100%);color:rgba(255
     
     lastScrollTop = scrollTop;
   });
-</script>
-<!--<script>
+</script>-->
+<script>
 var mt=document.getElementById('mobile-menu'),nl=document.getElementById('nav-links');
 mt.addEventListener('click',function(){nl.classList.toggle('active');mt.classList.toggle('is-active')});
 document.addEventListener('click',function(e){if(!mt.contains(e.target)&&!nl.contains(e.target)){nl.classList.remove('active');mt.classList.remove('is-active')}});
 document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open')})});
-</script>-->
+</script>
 </body>
 </html>
