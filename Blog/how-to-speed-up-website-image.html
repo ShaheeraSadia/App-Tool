@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
  
   <style>
- /* ═══ 1. ACCURATE RESET & STICKY FOOTER FRAMEWORK ═══ */
+  /* ═══ 1. ACCURATE RESET & STICKY FOOTER FRAMEWORK ═══ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -37,7 +37,7 @@ html {
   max-width: 100%;
   overflow-x: hidden;
   background: var(--bg);
-  height: 100%; /* Required for sticky footer layout calculation */
+  height: 100%; 
 }
 
 body {
@@ -52,7 +52,6 @@ body {
   padding: 0 !important;
   -webkit-text-size-adjust: 100%;
   
-  /* Flexbox setup forces footer down and handles laptop fixed positions smoothly */
   display: flex;
   flex-direction: column;
   min-height: 100%; 
@@ -86,7 +85,7 @@ body {
   --max: 1200px;
 }
 
-/* ═══ 2. NAVIGATION HEADER (FIXED TOP ON LAPTOP) ═══ */
+/* ═══ 2. NAVIGATION HEADER (FIXED TOP) ═══ */
 nav {
   background: var(--white);
   border-bottom: 1px solid #dde6ff;
@@ -94,11 +93,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 66px;
+  height: 70px; /* Locked precise height */
   box-shadow: 0 2px 16px rgba(43,79,216,.07);
   width: 100%;
   
-  /* Desktop/Laptop Default: Permanent Fixed Top Placement */
   position: fixed;
   top: 0;
   left: 0;
@@ -245,19 +243,24 @@ nav {
   min-height: 320px;
 }
 
-/* ═══ 4. CORE LAYOUT FRAMEWORK (WITH TOP/BOTTOM PADDING FIXED) ═══ */
+/* ═══ 4. CORE LAYOUT FRAMEWORK (FIXED NO-OVERLAP SPACING) ═══ */
 .page-wrap {
   max-width: var(--max);
+  margin: 0 auto;
   
-  /* CRITICAL: margin-top prevents text content from hiding behind your fixed top navbar */
-  margin: 90px auto 0; 
-  padding: 1px 20px 140px; /* Large bottom padding protects text from hidden fixed footer overlap */
+  /* CRITICAL FIXES: 
+     padding-top: 94px pushes body content out from underneath the fixed top navbar.
+     padding-bottom: 240px ensures content never hides behind the fixed footer when scrolling down. */
+  padding-top: 94px !important; 
+  padding-bottom: 240px !important;
+  padding-left: 20px;
+  padding-right: 20px;
   
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 40px;
   align-items: start;
-  flex: 1 0 auto; /* Pushes layout content to use all available middle space */
+  flex: 1 0 auto;
 }
 
 /* ═══ 5. TYPOGRAPHY & COMPONENTS ═══ */
@@ -502,7 +505,7 @@ tr:nth-child(even) td { background: var(--bg-alt); }
 .rc-info p { font-size: 13px; color: var(--text-light); margin: 0; }
 
 /* ═══ 9. SIDEBAR ELEMENTS ═══ */
-aside { position: sticky; top: 90px; } /* Bumped down slightly to account for the fixed navbar */
+aside { position: sticky; top: 94px; } 
 .sw { background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
 .sw h3 { font-family: 'Merriweather', serif; font-size: 16px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); color: var(--text); }
 .toc-list { list-style: none; padding: 0; counter-reset: toc; }
@@ -532,15 +535,14 @@ aside { position: sticky; top: 90px; } /* Bumped down slightly to account for th
 .nl-form button { background: var(--primary); color: #fff; border: none; padding: 10px; border-radius: var(--radius); font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background .2s; }
 .nl-form button:hover { background: var(--primary-dark); }
 
-/* ═══ 10. FOOTER SECTION (FIXED BOTTOM ON LAPTOP) ═══ */
+/* ═══ 10. FOOTER SECTION (FIXED BOTTOM) ═══ */
 footer {
   background: linear-gradient(135deg,#0d1b5e,#1a2f8a);
   color: rgba(255,255,255,.85);
-  padding: 30px 40px; /* Reduced vertical padding slightly for better screen space efficiency */
-  margin-top: auto !important; /* System safety default backup */
+  padding: 30px 40px; 
   width: 100%;
+  height: 200px; /* Locked height so our padding-bottom calculations are precise */
   
-  /* Desktop/Laptop Default: Permanent Fixed Bottom sticky layout */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -564,16 +566,10 @@ footer {
 .fb a { color: inherit; text-decoration: none; }
 a { overflow-wrap: break-word; }
 
-/* ═══ 11. CLEAN RESPONSIVE MEDIA BREAKPOINTS ═══ */
-
-/* --- Tablet / Navigation Breakpoint (Max 960px) --- */
+/* ═══ 11. Responsive Media Breakpoints ═══ */
 @media(max-width: 960px) {
-  nav {
-    padding: 0 16px;
-  }
-  .mob {
-    display: flex;
-  }
+  nav { padding: 0 16px; }
+  .mob { display: flex; }
   .nl {
     position: fixed;
     top: 66px;
@@ -602,54 +598,33 @@ a { overflow-wrap: break-word; }
   .fi { grid-template-columns: 1fr 1fr; }
 }
 
-/* --- Mobile Device Screen Settings (Max 860px) --- */
 @media (max-width: 860px) {
-  /* IMPORTANT MOBILE CHANGE: On mobile devices, fixed positions take up too much screen space. 
-     We restore natural document scrolling flow for the header and footer here. */
-  nav, footer {
-    position: static; /* Restores standard layout block mechanics for mobile */
-  }
-
+  /* On small screens, un-fix the headers/footers so content is fully accessible */
+  nav, footer { position: static; height: auto; }
+  
   .page-wrap {
     display: block;
-    padding: 20px 16px;
-    margin-top: 0; /* Reset laptop margin offset since header is now static */
+    padding-top: 20px !important;    /* Reset desktop padding spacing values on mobile */
+    padding-bottom: 40px !important;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
-  main, aside {
-    width: 100%;
-    max-width: 100%;
-  }
+  main, aside { width: 100%; max-width: 100%; }
+  aside { position: static; top: auto; margin-top: 40px; }
 
-  aside {
-    position: static;
-    top: auto;
-    margin-top: 40px;
-  }
-
-  .about-intro,
-  .stats-row,
-  .values-grid,
-  .testimonials,
-  .contact-grid,
-  .why-grid,
-  .form-row,
-  .tools-grid,
-  .related-grid {
+  .about-intro, .stats-row, .values-grid, .testimonials, .contact-grid, .why-grid, .form-row, .tools-grid, .related-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
-
   .tool-card { flex-direction: column; }
   .timeline { padding-left: 0; }
   .timeline::before { left: 12px; }
   .tl-item { flex-direction: column; gap: 12px; }
-
   pre, code { max-width: 100%; overflow-x: auto; }
   table, .table-wrap { display: block; max-width: 100%; overflow-x: auto; }
 }
 
-/* --- Small Display Mobile Viewports (Max 540px) --- */
 @media(max-width: 540px) {
   footer { padding: 36px 16px 22px; }
   .fi { grid-template-columns: 1fr; gap: 24px; }
