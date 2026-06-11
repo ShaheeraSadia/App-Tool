@@ -28,34 +28,33 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{width:100%;max-width:100%;overflow-x:hidden}
+ :root {
+  --blue: #2b4fd8;
+  --blue-dark: #1a3199;
+  --blue-mid: #3d72d4;
+  --blue-light: #e8f0fe;
+  --blue-pale: #f0f4ff;
+  --pink: #ff6eb4;
 
-:root{
-   --blue:#2b4fd8;--blue-dark:#1a3199;--blue-mid:#3d72d4;
-      --blue-light:#e8f0fe;--blue-pale:#f0f4ff;--cyan:#00b4db;
-      --pink:#ff6eb4;--text:#1c1c1e;--muted:#6b7280;
-      --bg:#f5f8ff;--white:#ffffff;--radius:14px;
-      --shadow:0 4px 24px rgba(43,79,216,.09);
-      --primary:#2b4fd8;--primary-dark:#1a3199;
-      --bg-alt:#ffffff;--border:#dde6ff;--text-light:#6b7280;
-      --ad-bg:#f7f9ff;--max-width:1200px;
-  --primary:#1a73e8;
-  --primary-dark:#1557b0;
-  --primary-light:#e8f0fe;
-  --accent:#ea4335;
-  --green:#34a853;
-  --yellow:#fbbc04;
-  --text:#202124;
-  --text-light:#5f6368;
-  --bg:#ffffff;
-  --bg-alt:#f8f9fa;
-  --border:#e0e0e0;
-  --ad-bg:#f1f3f4;
-  --shadow:0 2px 8px rgba(0,0,0,.08);
-  --shadow-lg:0 8px 28px rgba(0,0,0,.1);
-  --radius:10px;
-  --max:1200px;
-} 
+  --primary: #1a73e8;
+  --primary-dark: #1557b0;
+  --primary-light: #e8f0fe;
 
+  --text: #202124;
+  --text-light: #5f6368;
+
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+
+  --border: #e0e0e0;
+  --white: #ffffff;
+
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,.1);
+
+  --max: 1200px;
+}
     /* ── NAV ── */
     nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
     .nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
@@ -1058,412 +1057,14 @@ body {
 
 <!-- ═══ SCRIPTS ═══ -->
 <script>
-  // Mobile nav
-  document.getElementById('menu-btn').addEventListener('click',function(){
-    document.getElementById('mob-nav').classList.toggle('open');
-  });
+   
   // FAQ accordion
   document.querySelectorAll('.faq-q').forEach(function(q){
     q.addEventListener('click',function(){
       q.parentElement.classList.toggle('open');
     });
   });
-</script>
-</body>
-</html>
-
-
-
-
-
-
-
-//old
-
-
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>How to Speed Up Website Images (2026 Guide) | Toolkit Pro Blog</title>
-  <meta name="description" content="Master the art of image optimization. Learn how to speed up your website using WebP, lazy loading, responsive layouts, and professional compression techniques.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
-
-
-  <style>
-    /* ── MOBILE OPTIMIZATIONS ── */
-    @media (max-width: 768px) {
-        .blog-container {
-            margin: 30px auto;
-        }
-        
-        .blog-header h1 {
-            font-size: 28px;
-            padding: 0 10px;
-        }
-
-        .featured-image {
-            height: 250px;
-            border-radius: 12px;
-        }
-
-        .content-section {
-            padding: 25px 20px;
-            border-radius: 15px;
-        }
-
-        h2 {
-            font-size: 22px;
-            margin-top: 25px;
-        }
-
-        p, li {
-            font-size: 16px;
-        }
-
-        /* Make the table scrollable horizontally on small screens */
-        .table-container {
-            overflow-x: auto;
-            margin: 25px 0;
-            border-radius: 10px;
-        }
-        table {
-            display: table;
-            width: 100%;
-            white-space: nowrap;
-        }
-
-        .tool-cta {
-            padding: 20px;
-        }
-        
-        .tool-cta h3 {
-            font-size: 20px;
-        }
-    }
-    :root {
-      --blue: #3b82f6; --blue-dark: #1e3a8a; --pink: #ec4899;
-      --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc;
-      --muted: #94a3b8; --white: #ffffff;
-      --blue-pale: #eff6ff; --blue-light: #dbeafe;
-    }
-
-    body {
-      font-family: 'DM Sans', Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-      margin: 0; padding: 0; line-height: 1.8;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--white); border-bottom: 1px solid #dde6ff;
-      padding: 0 40px; display: flex; align-items: center;
-      justify-content: space-between; height: 66px;
-      position: sticky; top: 0; z-index: 300;
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
-    
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin:0; padding:0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
-
-    .mobile-btn {
-        display: none; background: var(--blue-dark); border: none;
-        color: white; width: 40px; height: 40px; border-radius: 8px;
-        cursor: pointer; font-size: 1.2rem;
-    }
-
-    @media (max-width: 768px) {
-        nav { padding: 0 20px; }
-        .mobile-btn { display: block; }
-        .nav-links {
-            display: none; flex-direction: column; position: absolute;
-            top: 66px; left: 0; width: 100%; background: white;
-            padding: 20px 0; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; text-align: center; }
-        .nav-links a { display: block; padding: 12px; }
-    }
-
-    /* ── BLOG CONTENT ── */
-    .blog-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
-    .blog-header { text-align: center; margin-bottom: 40px; }
-    .blog-header h1 { font-size: 42px; color: #38bdf8; line-height: 1.2; }
-    .meta-info { color: var(--muted); font-size: 14px; margin-top: 10px; }
-
-    .featured-image { width: 100%; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); object-fit: cover; height: 400px; }
-
-    .content-section { background: var(--card-bg); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-    h2 { color: #facc15; margin-top: 35px; border-left: 4px solid var(--blue); padding-left: 15px; }
-    p { color: #cbd5e1; font-size: 17px; margin-bottom: 20px; }
-    
-    code { background: #0f172a; color: #f43f5e; padding: 2px 6px; border-radius: 4px; font-family: Courier, monospace; font-size: 15px; }
-    pre { background: #0f172a; padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255,255,255,0.05); }
-    pre code { color: #38bdf8; padding: 0; background: transparent; }
-
-    .tool-cta {
-      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      padding: 30px; border-radius: 15px; text-align: center; margin: 40px 0;
-    }
-    .tool-cta h3 { margin-top: 0; color: white; }
-    .btn-cta {
-      display: inline-block; background: var(--pink); color: white;
-      padding: 12px 25px; border-radius: 10px; text-decoration: none;
-      font-weight: 700; margin-top: 15px; transition: 0.3s;
-    }
-    .btn-cta:hover { transform: scale(1.05); }
-
-    table { width: 100%; border-collapse: collapse; margin: 25px 0; background: rgba(255,255,255,0.05); overflow: hidden; border-radius: 10px; }
-    table th, table td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
-    table th { background: var(--blue-dark); color: #7dd3fc; }
-
-    /* ── FOOTER ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; }
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .footer-social-btn:hover { background: var(--blue); color: white; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; padding: 0; }
-    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .footer-col ul a:hover { color: #7dd3fc; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .footer-bottom a { color: inherit; text-decoration: none; }
-    .footer-bottom a:hover { text-decoration: underline; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { nav { padding: 0 16px; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; text-align: center; } }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="../index.html" class="nav-logo">
-    <i class="fas fa-toolbox" style="color: var(--blue);"></i>
-    <span class="nav-logo-text">Toolkit <em>Pro</em></span>
-  </a>
-  <ul class="nav-links">
-      <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
-    <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
-    <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
  
-    <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
-  <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
-  
- <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
- 
-     
- <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
-  </ul>
-</nav>
-
-<article class="blog-container">
-    <header>
-        <h1>How to Speed Up Website Images</h1>
-        <div class="meta-info">Published May 2026 • By Shaheera Sadia</div>
-        <img src="../image/blog6.jpg" alt="Fast loading website concept with high aesthetic nature elements" class="featured-image">
-    </header>
-
-    <div class="content-section">
-        <p>In 2026, web performance is no longer an option—it is a requirement for survival. Research shows that a one-second delay in page load time can lead to a 7% reduction in conversions. As a developer building <strong>Toolkit Pro</strong>, I prioritize image speed above all else.</p>
-        
-        <h2>The Core Problem: Bloated Media</h2>
-        <p>Images often account for over 60% of a website's total weight. High-resolution photos, while beautiful, can slow down your site if not handled correctly. The goal is to achieve the smallest file size possible while maintaining the visual quality of your nature and floral designs.</p>
-
-        <h2>Understanding the Core Performance Metrics</h2>
-        <p>When Google crawls your website, it heavily scores page layout metrics via <strong>Core Web Vitals</strong>. Unoptimized images directly degrade two key performance pillars:</p>
-        <ul>
-            <li><strong>Largest Contentful Paint (LCP):</strong> Measures how long it takes for the main content or hero image area of a webpage to fully render on screen. Huge files delay this completely.</li>
-            <li><strong>Cumulative Layout Shift (CLS):</strong> If your images do not explicitly state width and height dimensions in the HTML, the text elements will unpleasantly bounce around while loading, causing a poor user experience.</li>
-        </ul>
-
-        <h2>Step 1: Adopt Modern Formats (WebP & AVIF)</h2>
-        <p>The first step is moving away from traditional JPEGs and PNGs. <strong>WebP</strong> offers superior lossless and lossy compression. By converting your gallery to WebP, you can save significant bandwidth without sacrificing the "Golden Hour" aesthetic of your photography.</p>
-
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Format</th>
-                        <th>Average Reduction</th>
-                        <th>Transparency Support</th>
-                        <th>Best Used For</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>JPEG</strong></td>
-                        <td>Baseline (0%)</td>
-                        <td>No</td>
-                        <td>Legacy browsers only</td>
-                    </tr>
-                    <tr>
-                        <td><strong>WebP</strong></td>
-                        <td>30% – 35% smaller</td>
-                        <td>Yes</td>
-                        <td>Standard web design graphics</td>
-                    </tr>
-                    <tr>
-                        <td><strong>AVIF</strong></td>
-                        <td>50% – 60% smaller</td>
-                        <td>Yes</td>
-                        <td>Ultra high-efficiency hero banners</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="tool-cta">
-            <h3>Ready to Optimize Your Gallery?</h3>
-            <p>Use our professional image compressor to slash file sizes while keeping your designs crisp.</p>
-            <a href="../index.html#uploadArea" class="btn-cta">Go to Image Compressor</a>
-        </div>
-
-        <h2>Step 2: Implement Native Lazy Loading</h2>
-        <p>Lazy loading ensures that images are only downloaded when they are about to appear on the user's screen. This saves critical data for mobile users and makes the initial page setup load instantaneously.</p>
-        <p>Modern browsers natively support this. All you have to do is apply the loading attribute to your element structures like this:</p>
-        <pre><code>&lt;img src="nature-bloom.jpg" loading="lazy" alt="Beautiful white floral arrangement"&gt;</code></pre>
-
-        <h2>Step 3: Serve Responsive Images with Srcset</h2>
-        <p>Never send a 4000px wide desktop image to a small mobile phone. Using the <code>srcset</code> attribute allows the browser to dynamically choose the perfect media asset path based on the specific dimensional constraints of the user's viewport.</p>
-        <pre><code>&lt;img src="flower-small.jpg" 
-     srcset="flower-small.jpg 480w, flower-medium.jpg 800w, flower-large.jpg 1200w" 
-     sizes="(max-width: 600px) 480px, 800px" 
-     alt="Optimized responsive nature layout"&gt;</code></pre>
-
-        <h2>Frequently Asked Questions (FAQ)</h2>
-        <p><strong>Q: Does image compression hurt organic SEO scores?</strong><br>
-        A: No! In fact, it dramatically improves it. Faster sites score higher in Google search indexes because they keep mobile bounce rates extremely low.</p>
-        
-        <p><strong>Q: Should I use PNG or WebP for my logos?</strong><br>
-        A: Use WebP whenever possible. Only fall back to standard PNG pipelines if you require ultra-sharp transparent vector elements that legacy systems can't parse.</p>
-
-        <p><strong>Q: What is the optimal file weight for standard blog graphics?</strong><br>
-        A: For wide header hero canvases, aim for sizes below 150KB. Smaller inline graphics or contextual thumbnails should be kept under 30KB to guarantee crisp, lightning-fast loads.</p>
-    </div>
-</article>
-
- 
-   
-<footer>
-  <div class="aff-foot"> This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="logo">ToolkitPro</div>
-      <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
-        <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
-        <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
-        <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-    
-    <div class="footer-col"><h4>All Tools</h4><ul>
-      <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
-      <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
-      <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
-      <li><a href="https://app-tool.vercel.app/art-tool.html">Art Studio</a></li>
-      <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
-      <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
-    </ul></div>
-    <div class="footer-col"><h4>Blog</h4><ul>
-      <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
-      <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
-    </ul></div>
-    
-    <div class="footer-col">
-     <h4>Site</h4>
-      <ul>
-        <li><a href="https://app-tool.vercel.app/about.html">About</a></li>
-        <li><a href="https://app-tool.vercel.app/contact.html">Contact</a></li>
-        <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">Blog</a></li>
-        <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
-      </ul>
-   </div>
-    <div class="footer-col"><h4>Legal</h4><ul>
-      <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
-      <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
-      <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
-      <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
-    </ul></div>
-  </div>
-    
-     
- 
-  <div class="footer-bottom">
-    <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
-    <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
-  </div>
-</footer>
- 
-
-<!-- Cookie Banner (paste this on ALL pages) -->
-<style id="cookie-banner-css">
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid #1a73e8;box-shadow:0 -4px 24px rgba(0,0,0,.12);padding:16px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;font-family:'Source Sans 3',Arial,sans-serif;font-size:14px;line-height:1.5;transform:translateY(100%);transition:transform .35s ease}
-#cookie-banner.show{transform:translateY(0)}
-#cookie-banner .cb-text{flex:1;min-width:220px;color:#202124}
-#cookie-banner .cb-text a{color:#1a73e8;text-decoration:underline}
-#cookie-banner .cb-btns{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
-#cookie-banner .cb-btn{padding:9px 20px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s;white-space:nowrap}
-#cookie-banner .cb-btn:hover{opacity:.85}
-#cookie-banner .cb-accept{background:#1a73e8;color:#fff}
-#cookie-banner .cb-decline{background:#f1f3f4;color:#202124;border:1px solid #e0e0e0}
-#cookie-banner .cb-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:18px;color:#5f6368;cursor:pointer;padding:2px 6px;line-height:1}
-#cookie-reopen{position:fixed;bottom:16px;left:16px;z-index:99998;background:#1a73e8;color:#fff;border:none;border-radius:24px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(26,115,232,.35);display:none;align-items:center;gap:6px;transition:opacity .2s}
-#cookie-reopen:hover{opacity:.88}
-@media(max-width:600px){#cookie-banner{flex-direction:column;align-items:flex-start}#cookie-banner .cb-btns{width:100%}#cookie-banner .cb-btn{flex:1;text-align:center}}
-</style>
-<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <button class="cb-close" onclick="cookieBanner.dismiss()" aria-label="Close">✕</button>
-  <div class="cb-text"> <strong>We use cookies</strong> to serve relevant ads (Google AdSense) and understand how visitors use our site (Google Analytics). Your files are always processed locally — never uploaded. <a href="/cookie-policy.html">Learn more</a></div>
-  <div class="cb-btns">
-    <button class="cb-btn cb-decline" onclick="cookieBanner.decline()">Decline</button>
-    <button class="cb-btn cb-accept" onclick="cookieBanner.accept()">Accept All Cookies</button>
-  </div>
-</div>
-<button id="cookie-reopen" onclick="cookieBanner.reopen()" aria-label="Cookie settings"> Cookie Settings</button>
-<script>
-(function(){
-  var K='tkpro_cookie_consent',banner=document.getElementById('cookie-banner'),reopen=document.getElementById('cookie-reopen');
-  function get(){return localStorage.getItem(K)}
-  function set(v){localStorage.setItem(K,v)}
-  function loadAds(){if(window.adsbygoogle){try{(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0}catch(e){}}}
-  function pauseAds(){window.adsbygoogle=window.adsbygoogle||[];adsbygoogle.pauseAdRequests=1}
-  window.cookieBanner={
-    accept:function(){set('accepted');banner.classList.remove('show');reopen.style.display='none';loadAds()},
-    decline:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},
-    dismiss:function(){set('declined');banner.classList.remove('show');reopen.style.display='flex';pauseAds()},
-    reopen:function(){reopen.style.display='none';banner.classList.add('show')}
-  };
-  var s=get();
-  if(!s){pauseAds();setTimeout(function(){banner.classList.add('show')},600)}
-  else if(s==='accepted'){loadAds()}
-  else{pauseAds();reopen.style.display='flex'}
-})();
-</script>
-<script>
   const mob = document.getElementById('mob');
 const nl = document.getElementById('nl');
 const overlay = document.getElementById('navOverlay');
