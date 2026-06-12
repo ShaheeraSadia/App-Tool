@@ -1,370 +1,787 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unleash Your Creativity: Introduce the New Free Digital Art Studio by Toolkit Pro</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://app-tool.vercel.app/Blog/art-studio.html"/>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to use Toolkit Pro Art Studio — a free browser-based drawing tool. Create digital art, illustrations, and graphics without installing any software. Easy guide for beginners 2026.">
+<meta name="keywords" content="free online drawing tool, browser art studio, digital art for beginners, free art tool no download, online drawing app 2026, create digital art free">
+<meta name="author" content="Shaheera Sadia">
+<meta property="og:title" content="How to Use Art Studio: Free Digital Drawing Tool for Beginners (2026) | Toolkit Pro">
+<meta property="og:description" content="Create beautiful digital art right in your browser — no download, no sign-up, 100% free. Complete beginner's guide to Toolkit Pro Art Studio.">
+<meta property="og:url" content="https://app-tool.vercel.app/Blog/art-studio.html">
+<meta property="og:type" content="article">
+<title>How to Use Art Studio: Free Digital Drawing for Beginners (2026) | Toolkit Pro</title>
+<link rel="canonical" href="https://app-tool.vercel.app/Blog/art-studio.html">
 
-  <style>
-    :root {
-      --blue-dark: #1e293b;
-      --blue-primary: #2563eb;
-      --blue-light: #eff6ff;
-      --blue: #2563eb;
-      --white: #ffffff;
-      --muted: #64748b;
-      --pink: #ff477e;
-      --text-main: #334155;
-      --text-muted: #64748b;
-      --bg-pale: #f8fafc;
-      --border-color: #e2e8f0;
-      --radius: 12px;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-    }
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6309207317896311" crossorigin="anonymous"></script>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.7;
-      color: var(--text-main);
-      background-color: #ffffff;
-      margin: 0;
-      padding: 0;
-      padding-top: 86px; /* Prevents navigation bar overlapping content */
-    }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    /* ── NAV (FIXED & RESPONSIVE) ── */
-    nav {
-      background: var(--white) !important; 
-      border-bottom: 1px solid #dde6ff;
-      padding: 0 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 66px;
-      position: fixed; 
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      box-sizing: border-box; 
-      z-index: 9999; 
-      box-shadow: 0 2px 16px rgba(43,79,216,0.07);
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
-    .nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .nav-logo i { color: var(--blue); font-size: 18px; }
-    .nav-logo-text { font-size: 20px; font-weight: 700; color: var(--blue-dark); }
-    .nav-logo-text em { color: var(--pink); font-style: normal; }
+<style>
+/* ═══ RESET ═══ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;background:#fff;overscroll-behavior:none}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
 
-    .nav-links { display: flex; gap: 4px; list-style: none; align-items: center; margin: 0; padding: 0; }
-    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500; padding: 7px 13px; border-radius: 9px; transition: all .2s; }
-    .nav-links a:hover { color: var(--blue); background: #f1f5f9; }
-    .nav-links a.active { color: var(--blue); background: var(--blue-light); font-weight: 600; }
-    .nav-shop { background: linear-gradient(135deg, var(--pink), #ff9a9e) !important; color: white !important; border-radius: 10px !important; font-weight: 600 !important; }
+/* ═══ VARIABLES — pure white & blue ═══ */
+:root{
+  --primary:#1a73e8;
+  --primary-dark:#1557b0;
+  --primary-light:#e8f0fe;
+  --accent:#ea4335;
+  --green:#34a853;
+  --yellow:#fbbc04;
+  --pink:#ec4899;
+  --purple:#7c3aed;
+  --text:#202124;
+  --text-light:#5f6368;
+  --bg:#ffffff;
+  --bg-alt:#f8f9fa;
+  --border:#e0e0e0;
+  --ad-bg:#f1f3f4;
+  --white:#ffffff;
+  --blue-pale:#eff6ff;
+  --shadow:0 2px 8px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 28px rgba(0,0,0,.1);
+  --radius:10px;
+  --max:1200px;
+}
+body{font-family:'Source Sans 3',Arial,sans-serif;font-size:17px;line-height:1.8;color:var(--text);background:var(--bg)}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
 
-    .mobile-btn {
-        display: none; 
-        background: var(--blue-dark); 
-        border: none;
-        color: white; 
-        width: 40px; 
-        height: 40px; 
-        border-radius: 8px;
-        cursor: pointer; 
-        font-size: 1.2rem;
-        align-items: center;
-        justify-content: center;
-    }
+/* ═══ NAV ═══ */
+nav.main-nav{background:var(--white);border-bottom:1px solid #dde6ff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:66px;position:sticky;top:0;z-index:300;box-shadow:0 2px 16px rgba(43,79,216,.07)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo i{color:var(--primary);font-size:18px}
+.nav-logo-text{font-size:20px;font-weight:700;color:var(--primary-dark)}
+.nav-logo-text em{color:var(--pink);font-style:normal}
+.nl{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nl a{text-decoration:none;color:var(--text-light);font-size:14px;font-weight:500;padding:7px 13px;border-radius:9px;transition:all .2s;display:block}
+.nl a:hover,.nl a.active{color:var(--primary);background:var(--blue-pale)}
+.nl .shop{background:linear-gradient(135deg,var(--pink),#ff9a9e)!important;color:#fff!important;border-radius:10px!important;font-weight:700!important}
+.mob{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;z-index:1001}
+.mob .bar{width:25px;height:3px;background:var(--primary-dark);border-radius:2px;transition:.3s;display:block}
+.mob.x .bar:nth-child(2){opacity:0}
+.mob.x .bar:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.mob.x .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:299}
+.nav-overlay.show{display:block}
 
-    /* ── BLOG CONTAINER ── */
-    .blog-container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 24px;
-    }
+/* ═══ ADS ═══ */
+.ad-wrap{background:var(--ad-bg);border:1px dashed #ccc;border-radius:var(--radius);overflow:hidden;min-height:90px;display:flex;align-items:center;justify-content:center}
+.ad-top-wrap{max-width:var(--max);margin:12px auto 0;padding:0 20px;display:flex;justify-content:center}
+.ad-leader{max-width:728px;width:100%}
+.ad-article{width:100%;min-height:250px;background:var(--ad-bg);border:1px dashed #ccc;border-radius:var(--radius);margin:36px 0;overflow:hidden}
+.ad-sb{width:100%;min-height:250px;background:var(--ad-bg);border:1px dashed #ccc;border-radius:var(--radius);margin-bottom:22px;overflow:hidden}
+.ad-sb-tall{min-height:320px}
 
-    .blog-header {
-      margin-bottom: 40px;
-    }
+/* ═══ PAGE LAYOUT ═══ */
+.page-wrap{max-width:var(--max);margin:24px auto 0;padding:0 20px;display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+.breadcrumb{font-size:13px;color:var(--text-light);margin-bottom:16px;display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.breadcrumb a{color:var(--primary)}
+.breadcrumb sep{margin:0 5px;color:#bbb}
 
-    .blog-title {
-      font-family: 'Lora', serif;
-      font-size: 36px;
-      color: var(--blue-dark);
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
+/* ═══ ARTICLE HEADER ═══ */
+.post-cat{display:inline-block;background:var(--primary);color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 11px;border-radius:4px;margin-bottom:12px}
+h1{font-family:'Merriweather',serif;font-size:clamp(21px,4vw,36px);line-height:1.3;color:var(--text);margin-bottom:16px}
+.post-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--text-light);margin-bottom:24px;align-items:center}
 
-    .blog-meta {
-      display: flex;
-      gap: 16px;
-      font-size: 14px;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 20px;
-    }
+/* ═══ FEATURED BANNER ═══ */
+.feat-banner{width:100%;aspect-ratio:16/7;background:linear-gradient(135deg,#1a73e8 0%,#7c3aed 55%,#1557b0 100%);border-radius:var(--radius);margin-bottom:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:20px;position:relative;overflow:hidden;gap:10px}
+.feat-banner::before{content:'🎨';position:absolute;font-size:clamp(80px,22vw,200px);right:-15px;bottom:-30px;opacity:.07;pointer-events:none}
+.fb-title{font-family:'Merriweather',serif;font-weight:700;font-size:clamp(18px,4vw,32px);position:relative;z-index:1;max-width:640px}
+.fb-sub{font-size:clamp(13px,2vw,16px);opacity:.88;position:relative;z-index:1}
 
-    .blog-content p {
-      font-size: 16px;
-      margin-bottom: 24px;
-    }
+/* ═══ ARTICLE BODY ═══ */
+.article-body h2{font-family:'Merriweather',serif;font-size:clamp(19px,3vw,26px);color:var(--text);margin:40px 0 14px;padding-bottom:10px;border-bottom:3px solid var(--primary);display:inline-block}
+.article-body h3{font-family:'Merriweather',serif;font-size:clamp(16px,2.5vw,20px);color:var(--text);margin:26px 0 10px}
+.article-body p{margin-bottom:18px}
+.article-body ul,.article-body ol{padding-left:22px;margin-bottom:18px}
+.article-body li{margin-bottom:9px}
+.article-body strong{color:var(--text)}
+.intro-para{font-size:18px;line-height:1.9;background:var(--bg-alt);border-left:4px solid var(--primary);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:28px}
 
-    .blog-content h2 {
-      font-family: 'Lora', serif;
-      font-size: 24px;
-      color: var(--blue-dark);
-      margin-top: 40px;
-      margin-bottom: 16px;
-    }
+/* ═══ FEATURE CARDS ═══ */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.feature-card{border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:var(--radius);padding:20px;text-align:center;transition:box-shadow .2s,transform .2s;background:var(--bg)}
+.feature-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.feature-card .icon{font-size:32px;margin-bottom:10px;display:block}
+.feature-card h4{font-family:'Merriweather',serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--primary)}
+.feature-card p{font-size:13px;color:var(--text-light);margin:0;line-height:1.6}
 
-    .blog-content ul, .blog-content ol {
-      margin-bottom: 24px;
-      padding-left: 20px;
-    }
+/* ═══ STEP CARDS ═══ */
+.step-card{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start;border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;position:relative;transition:box-shadow .2s,border-color .2s;background:var(--bg)}
+.step-card:hover{box-shadow:0 6px 22px rgba(26,115,232,.1);border-color:#c5d8f8}
+.step-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary);border-radius:var(--radius) 0 0 var(--radius)}
+.step-num{width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;font-family:'Merriweather',serif;flex-shrink:0;box-shadow:0 3px 10px rgba(26,115,232,.3)}
+.step-body h3{margin:0 0 8px;font-size:17px;font-family:'Merriweather',serif;color:var(--text)}
+.step-body p{font-size:15px;color:#3c3c3c;margin:0 0 10px;line-height:1.75}
+.step-body p:last-child{margin:0}
+.step-tip{background:var(--primary-light);border-radius:6px;padding:10px 14px;font-size:14px;color:var(--primary-dark);display:flex;align-items:flex-start;gap:8px;margin-top:8px}
+.step-tip i{flex-shrink:0;margin-top:2px;font-size:13px}
 
-    .blog-content li {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
+/* ═══ USE CASE GRID ═══ */
+.use-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+.use-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:18px}
+.use-card h4{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;color:var(--text)}
+.use-card h4 i{color:var(--primary);font-size:14px}
+.use-card ul{padding-left:18px;margin:0;font-size:14px}
+.use-card ul li{margin-bottom:6px;color:var(--text-light)}
 
-    .blog-content strong {
-      color: var(--blue-dark);
-    }
+/* ═══ IDEA CARDS ═══ */
+.idea-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+.idea-card{border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:var(--radius);padding:16px;text-align:center;background:var(--bg);transition:box-shadow .2s}
+.idea-card:hover{box-shadow:var(--shadow-lg)}
+.idea-card .ic-icon{font-size:26px;margin-bottom:8px}
+.idea-card h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+.idea-card p{font-size:12px;color:var(--text-light);margin:0;line-height:1.5}
 
-    /* Ad Slot Wrapper Container Styling */
-    .blog-ad-container {
-        margin: 35px auto;
-        text-align: center;
-        clear: both;
-        min-height: 90px;
-        background: rgba(0, 0, 0, 0.02);
-        border-radius: var(--radius);
-        padding: 12px 0;
-    }
+/* ═══ TABLE ═══ */
+.table-wrap{overflow-x:auto;margin:24px 0;border-radius:var(--radius);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:380px}
+th{background:var(--primary);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:14px}
+td{padding:11px 14px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:var(--bg-alt)}
+.g{color:var(--green);font-weight:700}
+.r{color:var(--accent);font-weight:700}
 
-    /* Feature Highlight Block */
-    .cta-block {
-      background: linear-gradient(135deg, var(--blue-light) 0%, #f0f4ff 100%);
-      border: 1px solid #c2dbff;
-      border-radius: var(--radius);
-      padding: 32px;
-      margin: 40px 0;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
+/* ═══ CALLOUTS ═══ */
+.callout{border-left:4px solid var(--accent);background:#fff5f5;padding:14px 18px;border-radius:0 var(--radius) var(--radius) 0;margin:24px 0;font-size:16px}
+.callout.tip{border-color:var(--green);background:#f0faf3}
+.callout.info{border-color:var(--primary);background:#f0f6ff}
+.callout strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
 
-    .cta-block h3 {
-      font-family: 'Lora', serif;
-      font-size: 22px;
-      color: var(--blue-dark);
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
+/* ═══ KEY BOX ═══ */
+.key-box{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;border-radius:var(--radius);padding:26px 30px;margin:36px 0}
+.key-box h3{font-family:'Merriweather',serif;color:#fff;font-size:20px;margin:0 0 14px}
+.key-box ul{padding-left:20px}
+.key-box li{margin-bottom:7px;font-size:15px;opacity:.95}
 
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: var(--blue-primary);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 32px;
-      font-weight: 600;
-      font-size: 16px;
-      border-radius: 8px;
-      transition: background-color 0.2s, transform 0.2s;
-      margin-top: 16px;
-      box-shadow: 0 4px 14px rgb(37 99 235 / 0.3);
-    }
+/* ═══ CTA BLOCK ═══ */
+.cta-block{background:var(--primary-light);border:1px solid #c5d8f8;border-radius:var(--radius);padding:26px 30px;margin:32px 0;text-align:center}
+.cta-block h3{font-family:'Merriweather',serif;font-size:20px;margin-bottom:10px;color:var(--text)}
+.cta-block p{color:var(--text-light);font-size:15px;margin-bottom:20px}
+.cta-btn{display:inline-block;background:var(--primary);color:#fff;padding:12px 30px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;transition:background .2s}
+.cta-btn:hover{background:var(--primary-dark);text-decoration:none}
 
-    .cta-btn:hover {
-      background-color: #1d4ed8;
-      transform: translateY(-1px);
-    }
+/* ═══ FAQ ═══ */
+.faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;background:var(--bg)}
+.faq-q{background:var(--bg-alt);padding:14px 18px;font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;user-select:none}
+.faq-q::after{content:'+';font-size:22px;color:var(--primary);flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{padding:14px 18px;font-size:15px;color:var(--text-light);border-top:1px solid var(--border);line-height:1.75;display:none}
+.faq-item.open .faq-a{display:block}
 
-    hr {
-      border: 0;
-      height: 1px;
-      background: var(--border-color);
-      margin: 40px 0;
-    }
+/* ═══ SHARE & TAGS ═══ */
+.share-box{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;margin:32px 0;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.share-box span{font-weight:600}
+.share-btn{padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:opacity .2s;text-decoration:none;display:inline-block}
+.share-btn:hover{opacity:.82;text-decoration:none}
+.s-pi{background:#e60023;color:#fff}.s-fb{background:#1877f2;color:#fff}.s-wa{background:#25d366;color:#fff}.s-cp{background:var(--text);color:#fff}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 32px}
+.tag{background:var(--bg-alt);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:13px;color:var(--text-light);transition:all .2s;text-decoration:none;display:inline-block}
+.tag:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
 
-    /* ── FOOTER (same on all pages) ── */
-    footer { background: linear-gradient(135deg, #0d1b5e 0%, #1a2f8a 100%); color: rgba(255,255,255,.85); padding: 52px 40px 28px; margin-top: 80px;}
-    .affiliate-footer { background: rgba(255,255,255,.06); border-radius: 8px; padding: 10px 16px; font-size: 12px; color: rgba(255,255,255,.6); text-align: center; margin-bottom: 28px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
-    .footer-brand .logo { font-size: 20px; color: #7dd3fc; font-weight: 700; margin-bottom: 10px; }
-    .footer-brand p { font-size: 13px; opacity: .72; line-height: 1.7; max-width: 230px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; transition: background .2s; }
-    .footer-social-btn:hover { background: var(--blue); color: white; }
-    .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7dd3fc; margin-bottom: 16px; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; padding: 0; margin: 0; }
-    .footer-col ul a { font-size: 13px; color: rgba(255,255,255,.7); text-decoration: none; transition: color .2s; }
-    .footer-col ul a:hover { color: #7dd3fc; }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; opacity: .6; }
-    .footer-bottom a { color: inherit; text-decoration: none; }
-    .footer-bottom a:hover { text-decoration: underline; }
+/* ═══ RELATED ═══ */
+.related-posts h2{font-family:'Merriweather',serif;font-size:22px;margin-bottom:16px;border:none;padding:0;display:block;color:var(--text)}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.related-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .2s;text-decoration:none;display:block;color:var(--text);background:var(--bg)}
+.related-card:hover{box-shadow:var(--shadow-lg)}
+.rc-img{height:100px;display:flex;align-items:center;justify-content:center;font-size:32px}
+.rc1{background:linear-gradient(135deg,#1a73e8,#0d47a1)}.rc2{background:linear-gradient(135deg,#34a853,#0d7a3a)}.rc3{background:linear-gradient(135deg,#7c3aed,#4c1d95)}.rc4{background:linear-gradient(135deg,#ea4335,#9c1c12)}
+.rc-info{padding:14px}
+.rc-info h4{font-size:14px;font-weight:600;margin-bottom:4px;line-height:1.4;color:var(--text)}
+.rc-info p{font-size:13px;color:var(--text-light);margin:0}
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) { 
-      .footer-inner { grid-template-columns: 1fr 1fr; } 
-    }
-    @media (max-width: 640px) { 
-      nav { padding: 0 16px; } 
-      .blog-title { font-size: 28px; }
-      .mobile-btn { display: flex; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 66px; left: 0; right: 0; background: white; border-bottom: 1px solid var(--border-color); padding: 20px; gap: 12px; box-shadow: var(--shadow); }
-      .nav-links.show { display: flex; }
-      .footer-inner { grid-template-columns: 1fr; gap: 24px; } 
-      .footer-bottom { flex-direction: column; text-align: center; } 
-    }
-  </style>
+/* ═══ SIDEBAR ═══ */
+aside{position:sticky;top:75px}
+.sw{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px}
+.sw h3{font-family:'Merriweather',serif;font-size:16px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--primary);color:var(--text)}
+.toc-list{list-style:none;padding:0;counter-reset:toc}
+.toc-list li{padding:7px 0;border-bottom:1px solid var(--border);font-size:14px;display:flex;align-items:baseline;gap:8px}
+.toc-list li:last-child{border-bottom:none}
+.toc-list li::before{counter-increment:toc;content:counter(toc);background:var(--primary);color:#fff;min-width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.toc-list a{color:var(--text-light);line-height:1.4;transition:color .2s;text-decoration:none}
+.toc-list a:hover{color:var(--primary)}
+.sw-links{list-style:none;padding:0}
+.sw-links li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.sw-links li:last-child{border-bottom:none}
+.sw-links a{color:var(--text-light);display:flex;align-items:center;gap:9px;transition:color .2s;text-decoration:none}
+.sw-links a:hover{color:var(--primary)}
+.sw-links a i{width:18px;text-align:center;color:var(--primary);font-size:12px}
+.pop-list{list-style:none;padding:0}
+.pop-list li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.pop-list li:last-child{border-bottom:none}
+.pop-n{width:22px;height:22px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.pop-list a{font-size:13px;color:var(--text);line-height:1.4;text-decoration:none}
+.pop-list a:hover{color:var(--primary)}
+.nl-form{display:flex;flex-direction:column;gap:10px}
+.nl-form input{padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;font-family:inherit;outline:none;background:var(--bg)}
+.nl-form input:focus{border-color:var(--primary)}
+.nl-form button{background:var(--primary);color:#fff;border:none;padding:10px;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s}
+.nl-form button:hover{background:var(--primary-dark)}
+
+/* ═══ FOOTER ═══ */
+footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255,.85);padding:52px 40px 28px;margin-top:60px}
+.aff-foot{background:rgba(255,255,255,.06);border-radius:8px;padding:10px 16px;font-size:12px;color:rgba(255,255,255,.6);text-align:center;margin-bottom:28px;max-width:1060px;margin-left:auto;margin-right:auto}
+.fi{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.fi-logo{font-size:20px;color:#7dd3fc;font-weight:700;margin-bottom:10px}
+.fi>div>p{font-size:13px;opacity:.72;line-height:1.7;max-width:220px}
+.fsoc{display:flex;gap:10px;margin-top:14px}
+.fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8);font-size:14px;text-decoration:none;transition:background .2s}
+.fsb:hover{background:var(--primary);color:white;text-decoration:none}
+.fc h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:14px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc ul a{font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+.fc ul a:hover{color:#7dd3fc}
+.fb{max-width:1060px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.6}
+.fb a{color:inherit;text-decoration:none}
+.fb a:hover{text-decoration:underline}
+
+/* ═══════════════════════════════
+   RESPONSIVE — TABLET 900px
+═══════════════════════════════ */
+@media(max-width:960px){
+  nav.main-nav{padding:0 16px}
+  .mob{display:flex}
+  .nl{position:fixed;top:66px;left:-100%;width:82%;max-width:300px;height:calc(100vh - 66px);background:var(--white);flex-direction:column;align-items:flex-start;padding:24px 20px;transition:.35s ease;box-shadow:8px 0 24px rgba(0,0,0,.12);z-index:1000;gap:4px;overflow-y:auto}
+  .nl.open{left:0}
+  .nl li{width:100%}
+  .nl a{font-size:15px;padding:12px 14px;border-radius:10px;border-bottom:1px solid var(--blue-pale);color:var(--text)}
+  .page-wrap{grid-template-columns:1fr;gap:28px}
+  aside{position:static;top:auto}
+  .feature-grid{grid-template-columns:1fr 1fr}
+  .idea-grid{grid-template-columns:1fr 1fr}
+  .use-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr 1fr}
+  .fi{grid-template-columns:1fr 1fr;gap:24px}
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — MOBILE 600px
+═══════════════════════════════ */
+@media(max-width:600px){
+  nav.main-nav{padding:0 14px;height:58px}
+  .nl{top:58px;height:calc(100vh - 58px)}
+  .page-wrap{padding:0 14px;margin-top:16px}
+  h1{font-size:20px}
+  body{font-size:16px}
+  .article-body h2{font-size:18px;margin-top:30px}
+  .article-body h3{font-size:16px}
+  .intro-para{font-size:16px}
+  .feature-grid{grid-template-columns:1fr}
+  .idea-grid{grid-template-columns:1fr 1fr}
+  .use-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
+  .step-card{grid-template-columns:42px 1fr;gap:12px;padding:14px 12px}
+  .step-num{width:40px;height:40px;font-size:16px;border-radius:10px}
+  .fi{grid-template-columns:1fr;gap:18px}
+  .fi>div>p{max-width:100%}
+  footer{padding:36px 18px 22px}
+  .fb{flex-direction:column;text-align:center}
+  .fsoc{flex-wrap:wrap}
+  .share-box{flex-direction:column;align-items:flex-start}
+  .key-box{padding:18px 16px}
+  .key-box h3{font-size:17px}
+  .cta-block{padding:20px 16px}
+  td,th{padding:8px 10px;font-size:13px}
+  .ad-top-wrap{padding:0 14px}
+  .feat-banner{aspect-ratio:auto;min-height:140px;padding:18px}
+  .fb-title{font-size:16px}
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — SMALL 380px
+═══════════════════════════════ */
+@media(max-width:380px){
+  h1{font-size:18px}
+  .idea-grid{grid-template-columns:1fr}
+  .step-card{grid-template-columns:36px 1fr;gap:10px;padding:12px 10px}
+  .step-num{width:36px;height:36px;font-size:14px}
+}
+</style>
 </head>
 <body>
 
-<nav>
+<!-- ═══ NAV ═══ -->
+<nav class="main-nav">
   <a href="https://app-tool.vercel.app/index.html" class="nav-logo">
     <i class="fas fa-toolbox"></i>
     <span class="nav-logo-text">ToolKit <em>Pro</em></span>
   </a>
-   
-  <button class="mobile-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
+  <button class="mob" id="mob" aria-label="Menu">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
   </button>
-   
-  <ul class="nav-links" id="navMenu">
-      <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
+  <ul class="nl" id="nl">
+    <li><a href="https://app-tool.vercel.app/index.html"><i class="fas fa-home" style="margin-right:5px;font-size:11px"></i>Home</a></li>
     <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-image" style="margin-right:5px;font-size:11px"></i>Tools</a></li>
     <li><a href="https://app-tool.vercel.app/Blog/all-blog.html" class="active"><i class="fas fa-book-open" style="margin-right:5px;font-size:11px"></i>Blog</a></li>
- 
     <li><a href="https://app-tool.vercel.app/Resources.html"><i class="fas fa-star" style="margin-right:5px;font-size:11px"></i>Resources</a></li>
-    <li><a href="https://app-tool.vercel.app/shopping.html" class="nav-shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
-  <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
-  
- <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
- 
-     
- <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:4px;font-size:11px"></i>Art</a></li>
-    <li><a href="https://app-tool.vercel.app/voice-studio.html" class="active"><i class="fas fa-microphone" style="margin-right:4px;font-size:11px"></i>Voice Studio</a></li>
+    <li><a href="https://app-tool.vercel.app/shopping.html" class="shop"><i class="fas fa-shopping-bag" style="margin-right:5px;font-size:11px"></i>Shop</a></li>
+    <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-palette" style="margin-right:5px;font-size:11px"></i>Art</a></li>
+    <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone" style="margin-right:5px;font-size:11px"></i>Voice Studio</a></li>
+    <li><a href="https://app-tool.vercel.app/about.html"><i class="fas fa-info-circle" style="margin-right:5px;font-size:11px"></i>About</a></li>
+    <li><a href="https://app-tool.vercel.app/contact.html"><i class="fas fa-envelope" style="margin-right:5px;font-size:11px"></i>Contact</a></li>
   </ul>
 </nav>
+<div class="nav-overlay" id="navOverlay"></div>
 
-  <article class="blog-container">
-    
-    <header class="blog-header">
-      <h1 class="blog-title">Unleash Your Creativity: Introduce the New Free Digital Art Studio by Toolkit Pro</h1>
-      <div class="blog-meta">
-        <span><i class="far fa-calendar-alt"></i> May 2026</span>
-        <span><i class="far fa-folder"></i> Web Tools</span>
+ 
+<!-- ═══ PAGE GRID ═══ -->
+<div class="page-wrap">
+
+<!-- ════ MAIN ════ -->
+<main>
+
+  <div class="breadcrumb">
+    <a href="https://app-tool.vercel.app/index.html">Home</a><sep>›</sep>
+    <a href="https://app-tool.vercel.app/Blog/all-blog.html">Blog</a><sep>›</sep>
+    Art Studio Guide
+  </div>
+
+  <span class="post-cat"><i class="fas fa-paint-brush" style="margin-right:5px"></i>Creative Tools</span>
+  <h1>How to Use Toolkit Pro Art Studio: Complete Guide for Beginners (2026)</h1>
+  <div class="post-meta">
+    <span><i class="fas fa-user"></i> Shaheera Sadia</span>
+    <span><i class="fas fa-calendar"></i> June 2026</span>
+    <span><i class="fas fa-clock"></i> 11 min read</span>
+    <span><i class="fas fa-comment"></i> 25 Comments</span>
+  </div>
+
+  <div class="feat-banner">
+    <div class="fb-title">Toolkit Pro Art Studio — Free Digital Drawing in Your Browser</div>
+    <div class="fb-sub">No download · No sign-up · Works on phone, tablet &amp; desktop · 100% free</div>
+  </div>
+
+  <div class="article-body">
+
+    <p class="intro-para">
+      Have you ever wanted to create digital art but didn't want to pay for expensive software or download heavy apps? Toolkit Pro Art Studio is your answer. It's a free drawing tool that works right inside your web browser — on any device. This guide explains everything you need to know to get started, even if you have never drawn digitally before.
+    </p>
+
+    <p>Digital art used to require expensive software and a powerful computer. Not anymore. Toolkit Pro Art Studio gives you a real drawing and design tool that works directly inside your browser — on your phone, tablet, or computer — with no downloads, no accounts, and no cost. Just open it and start creating.</p>
+
+    <h2 id="what-is">What Is Toolkit Pro Art Studio?</h2>
+    <p>Art Studio is a free digital drawing tool built directly into the Toolkit Pro website. It runs completely inside your web browser. This means:</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        
+        <h4>Instant — No Download</h4>
+        <p>Open your browser, go to the Art Studio page, and start drawing immediately. Nothing to install, no app store needed.</p>
       </div>
-    </header>
-
-    <div class="blog-content">
-      <p>Finding the perfect digital canvas shouldn't come with a hefty price tag, annoying pop-up ads, or mandatory sign-ups. Whether you are a web developer looking to sketch a quick wireframe, a content creator designing Pinterest pins, or just someone who loves to doodle, having a quick, accessible drawing tool right in your browser can completely change your workflow.</p>
-      
-      <p>That is why we are thrilled to introduce the <strong>Digital Art Studio</strong>—the latest addition to the <strong>Toolkit Pro</strong> ecosystem!</p>
-      
-      <p>Built completely with speed and user experience in mind, this web-based application lets you paint, sketch, and design instantly, completely free of charge.</p>
-
-      <hr>
-
-      <h2>Why Choose the Toolkit Pro Art Studio?</h2>
-      <p>Most online drawing applications require you to create an account, accept cookies, or watch a 30-second ad before you can even touch the canvas. We wanted to build something different. Here is what makes our Art Tool stand out:</p>
-      
-      <ul>
-        <li><strong>No Sign-Up, No Uploads Required:</strong> Just open the link and start drawing immediately. Your privacy is completely yours.</li>
-        <li><strong>Completely Free to Use:</strong> No hidden premium features or watermarks on your final work.</li>
-        <li><strong>Lightweight & Fast:</strong> Optimized to run smoothly in any modern web browser without lagging.</li>
-      </ul>
-
-      <div class="blog-ad-container">
-        <ins class="adsbygoogle"
-             style="display:block; text-align:center;"
-             data-ad-layout="in-article"
-             data-ad-format="fluid"
-             data-ad-client="ca-pub-6309207317896311"
-             data-ad-slot="2485889698"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+      <div class="feature-card">
+         
+        <h4>100% Private</h4>
+        <p>Everything you draw stays on your device. Nothing is sent to any server. Your artwork is completely private.</p>
       </div>
-
-      <h2>Powerful Features at Your Fingertips</h2>
-      <p>Despite its minimalist and clean interface, the studio comes packed with all the essential tools you need to create beautiful sketches or abstract digital art:</p>
-      
-      <ul>
-        <li><strong><i class="fas fa-paint-brush"></i> Versatile Brush Mechanics:</strong> Swap seamlessly between a standard <strong>Pen</strong>, a smooth <strong>Brush</strong>, and a retro <strong>Spray</strong> tool to add texture to your drawings.</li>
-        <li><strong><i class="fas fa-shapes"></i> Built-in Geometric Shapes:</strong> Need perfect lines or structure? Easily insert various geometric <strong>Shapes</strong> to structure your canvas.</li>
-        <li><strong><i class="fas fa-palette"></i> Unlimited Color Palette:</strong> Choose from an extensive range of colors to bring your imagination to life.</li>
-        <li><strong><i class="fas fa-download"></i> Instant PNG Downloads:</strong> Once your masterpiece is finished, click download to save your artwork as a high-quality <strong>PNG</strong> instantly to your device.</li>
-      </ul>
-
-      <h2>Perfect For Creators, Developers, and Dreamers</h2>
-      <p>How can you leverage the Toolkit Pro Art Studio in your daily digital routine?</p>
-      
-      <ol>
-        <li><strong>For Content Creators:</strong> Quickly sketch out abstract backdrops, experiment with fluid blending concepts, or design unique graphic elements for your next viral <strong>Pinterest Pin</strong> or <strong>blog image</strong>.</li>
-        <li><strong>For Developers & UI Designers:</strong> Need to map out an application's layout? Use the canvas as a quick digital whiteboard to sketch wireframes and component hierarchies on the fly.</li>
-        <li><strong>For Casual Doodlers:</strong> Destress after a long coding or writing session by turning a blank canvas into a colorful display of abstract fluid art.</li>
-      </ol>
-
-    
-
-      <div class="cta-block">
-        <h3>Ready to Paint Your Next Masterpiece?</h3>
-        <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 8px;">You don't need expensive software to create something beautiful. Let your creativity run wild!</p>
-        <a href="https://app-tool.vercel.app/art-tool.html" class="cta-btn" target="_blank">
-          Launch The Digital Art Studio <i class="fas fa-rocket"></i>
-        </a>
+      <div class="feature-card">
+        
+        <h4>Completely Free</h4>
+        <p>No subscription, no trial, no watermarks on downloads. Art Studio is free forever — for everyone.</p>
       </div>
-
-      <p><em>Bookmark the page, add it to your browser shortcuts, and let your creativity run wild whenever inspiration strikes. Happy drawing!</em></p>
+      <div class="feature-card">
+        
+        <h4>Works on Any Device</h4>
+        <p>Phone, tablet, laptop, or desktop — Art Studio adapts to your screen. Draw with your finger or a mouse.</p>
+      </div>
+      <div class="feature-card">
+       
+        <h4>Full Color Control</h4>
+        <p>Choose any color from a full color picker. Adjust brush size, opacity, and style. Create anything from sketches to illustrations.</p>
+      </div>
+      <div class="feature-card">
+         
+        <h4>Download Your Work</h4>
+        <p>Save your finished artwork as a PNG image in one click. No watermarks. No sign-in required.</p>
+      </div>
     </div>
 
-  </article>
+    <!-- IN-ARTICLE AD 1 -->
+    <ins class="adsbygoogle ad-article"
+      style="display:block;width:100%"
+      data-ad-client="ca-pub-6309207317896311"
+      data-ad-slot="2485889698"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 
-  <div class="blog-container" style="margin-top: 40px; margin-bottom: 60px;">
-    <div style="padding: 24px; border-top: 1px solid #e2e8f0; background-color: #fafafa; border-radius: 8px; font-size: 13px; color: #64748b; line-height: 1.6;">
-      <h4 style="color: #1e293b; font-size: 15px; margin-top: 0; margin-bottom: 12px; font-weight: 600;">Terms of Service & Privacy Disclosure</h4>
-      
-      <p style="margin-bottom: 12px;">
-        <strong>Usage & Licensing:</strong> The Digital Art Studio by Toolkit Pro is entirely free to use for both personal and commercial projects. Any artwork, sketches, or PNG files created and downloaded using this tool belong fully to the user. No royalties or credits are required.
-      </p>
+    <h2 id="how-to-use">How to Use Art Studio — Step by Step</h2>
+    <p>Getting started takes less than a minute. Here is exactly what to do:</p>
 
-      <p style="margin-bottom: 12px;">
-        <strong>Data Privacy:</strong> We value your privacy. The Art Tool operates entirely within your web browser. Your drawings, strokes, and uploaded canvas modifications are processed locally and are never uploaded, stored, or processed on our servers. 
-      </p>
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Open Art Studio in Your Browser</h3>
+        <p>Go to <a href="https://app-tool.vercel.app/art-tool.html" style="font-weight:600">app-tool.vercel.app/art-tool.html</a> in any modern browser — Chrome, Firefox, Safari, or Edge all work perfectly. You can also click "Art" in the top navigation bar on any Toolkit Pro page.</p>
+        <p>The Art Studio loads immediately — no login screen, no permissions, no loading spinner. It is just instantly ready for you to draw.</p>
+        <div class="step-tip"><i class="fas fa-mobile-alt"></i> On a phone? Add the page to your home screen (from your browser's share menu) for one-tap access — it works like an app without using any storage space.</div>
+      </div>
+    </div>
 
-      <p style="margin-bottom: 0;">
-        <strong>Advertising & Third-Party Cookies:</strong> This website uses Google AdSense to serve advertisements. Google, as a third-party vendor, uses cookies to serve ads based on your prior visits to this website or other websites on the Internet. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to this site. You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" style="color: #2563eb; text-decoration: none;">Google Ads Settings</a>.
-      </p>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Choose Your Canvas Background</h3>
+        <p>When Art Studio opens, you will see a blank white canvas — your drawing area. If you want a different background color, use the background color option in the toolbar. Choose your canvas color before you start drawing.</p>
+        <p>For most uses — social media graphics, illustrations, quote cards — a white background is the best starting point. It saves as a clean PNG that looks great everywhere.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Pick Your Drawing Tool</h3>
+        <p>Art Studio has several tools. The main ones you will use are:</p>
+        <ul>
+          <li><strong>Pencil / Brush</strong> — for freehand drawing and sketching. Click and drag (or touch and drag on mobile) to draw lines.</li>
+          <li><strong>Eraser</strong> — removes what you have drawn. Adjust the eraser size to fix small details or large areas.</li>
+          <li><strong>Fill / Paint Bucket</strong> — fills a closed area with a solid color instantly. Great for backgrounds.</li>
+          <li><strong>Shapes</strong> — draw perfect circles, rectangles, and lines. Useful for clean layouts and design work.</li>
+        </ul>
+        <div class="step-tip"><i class="fas fa-lightbulb"></i> Start with a medium-sized brush (around 10–20px) to get a feel for the tool. You can always change the size as you work.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Choose Your Color</h3>
+        <p>Click the color picker in the toolbar to open a full color selection panel. You can click anywhere on the color wheel, adjust brightness with the slider, or type in a specific hex color code (e.g., <strong>#1a73e8</strong> for Toolkit Pro blue).</p>
+        <div class="step-tip"><i class="fas fa-palette"></i> Need color ideas? Use the <a href="https://app-tool.vercel.app/index.html#palette-section" style="font-weight:600">Toolkit Pro Color Extractor</a> to pull beautiful color palettes from any photo — then type those exact hex codes into Art Studio for perfect color matching.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Adjust Brush Size and Opacity</h3>
+        <p>The <strong>brush size</strong> slider controls how thick your strokes are. Small brush (1–5px) for fine details. Large brush (30–80px) for covering big areas quickly.</p>
+        <p>The <strong>opacity</strong> slider controls how transparent your strokes are. At 100%, the color is fully solid. At 30–50%, strokes are semi-transparent — this creates a beautiful layered watercolor effect when you paint over the same area multiple times.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h3>Draw, Edit, and Undo</h3>
+        <p>Now just draw! Use your mouse on desktop or your finger on touch screens. Made a mistake? Press <strong>Ctrl+Z</strong> (Windows) or <strong>Cmd+Z</strong> (Mac) to undo. You can undo multiple steps. On mobile, tap the undo button (↩) in the toolbar.</p>
+        <div class="step-tip"><i class="fas fa-undo"></i> Undo is your best friend. Don't be afraid to experiment — you can always go back. Digital art is completely forgiving, unlike drawing on paper.</div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <h3>Download Your Finished Artwork</h3>
+        <p>When your artwork is ready, click the <strong>Download</strong> or <strong>Save</strong> button in the toolbar. Your artwork saves as a PNG file to your downloads folder — immediately, with no watermarks and no "upgrade to download" popups. The file is high resolution and ready to use anywhere.</p>
+      </div>
+    </div>
+ 
+
+    <h2 id="what-to-create">What Can You Create With Art Studio?</h2>
+    <p>Art Studio is surprisingly versatile. Here are the most popular things people use it for:</p>
+
+    <div class="idea-grid">
+      <div class="idea-card"> <h4>Pinterest Graphics</h4><p>Custom pin image backgrounds for your blog posts.</p></div>
+      <div class="idea-card"> <h4>Social Media Posts</h4><p>Instagram posts, Facebook graphics without needing Canva.</p></div>
+      <div class="idea-card"> <h4>Sketches &amp; Doodles</h4><p>Quick idea sketches, mind maps, diagrams for presentations.</p></div>
+      <div class="idea-card"> <h4>Quote Card Backgrounds</h4><p>Hand-drawn backgrounds for text quote cards.</p></div>
+      <div class="idea-card"> <h4>Digital Illustrations</h4><p>Full digital paintings, character sketches, abstract art.</p></div>
+      <div class="idea-card"> <h4>Visual Notes</h4><p>Hand-drawn notes and infographics more memorable than text.</p></div>
+      <div class="idea-card"> <h4>Blog Graphics</h4><p>Custom featured images, icons, decorative elements for posts.</p></div>
+      <div class="idea-card"> <h4>Fun &amp; Creative Play</h4><p>Just doodle for fun — let your kids draw too. No mess!</p></div>
+    </div>
+
+    <h2 id="who-uses">Who Is Art Studio For?</h2>
+
+    <div class="use-grid">
+      <div class="use-card">
+        <h4><i class="fas fa-blog"></i> Bloggers &amp; Content Creators</h4>
+        <ul>
+          <li>Create unique featured images for blog posts</li>
+          <li>Draw custom Pinterest pin backgrounds</li>
+          <li>Make hand-drawn infographics and diagrams</li>
+          <li>Design email newsletter header graphics</li>
+        </ul>
+      </div>
+      <div class="use-card">
+        <h4><i class="fas fa-store"></i> Small Business Owners</h4>
+        <ul>
+          <li>Quick social media graphics for promotions</li>
+          <li>Hand-drawn product illustrations</li>
+          <li>Simple packaging design sketches</li>
+          <li>Logo concept sketches and mood boards</li>
+        </ul>
+      </div>
+      <div class="use-card">
+        <h4><i class="fas fa-graduation-cap"></i> Students &amp; Teachers</h4>
+        <ul>
+          <li>Visual diagrams and illustrated study notes</li>
+          <li>Hand-drawn mind maps and concept art</li>
+          <li>Illustrated presentations and reports</li>
+          <li>Digital art projects for school assignments</li>
+        </ul>
+      </div>
+      <div class="use-card">
+        <h4><i class="fas fa-heart"></i> Hobbyists &amp; Everyone</h4>
+        <ul>
+          <li>Digital doodling and relaxation drawing</li>
+          <li>Learning digital art for the first time</li>
+          <li>Creating art with kids — no mess, no cleanup</li>
+          <li>Experimenting with color and abstract design</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="vs-others">Art Studio vs Other Drawing Tools</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tool</th><th>Cost</th><th>Download Needed</th><th>Privacy</th><th>Mobile</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Toolkit Pro Art Studio</strong></td><td class="g">Free forever</td><td class="g">✔ No — browser only</td><td class="g">✔ 100% private</td><td class="g">✔ Yes</td></tr>
+          <tr><td>Adobe Photoshop</td><td class="r">$22–55/month</td><td class="r">✘ Large download</td><td class="g">✔ Local</td><td class="r">Limited</td></tr>
+          <tr><td>Canva</td><td class="g">Free / Paid plans</td><td class="g">✔ Browser-based</td><td class="r">Files upload to servers</td><td class="g">✔ Yes</td></tr>
+          <tr><td>Procreate</td><td class="r">$12.99 one-time</td><td class="r">✘ iPad app only</td><td class="g">✔ Local</td><td class="g">iPad only</td></tr>
+          <tr><td>MS Paint</td><td class="g">Free</td><td class="r">Windows only</td><td class="g">✔ Local</td><td class="r">✘ No</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <strong>✅ When to Use Art Studio</strong>
+      Art Studio is perfect for quick digital drawings, social media graphics, Pinterest pin backgrounds, blog illustrations, and creative fun. For complex photo editing, professional tools like Photoshop are still better — but for most everyday creative tasks, Art Studio is the fastest, simplest, and most private free option.
+    </div>
+
+    <!-- IN-ARTICLE AD 3 -->
+    <ins class="adsbygoogle ad-article"
+      style="display:block;width:100%"
+      data-ad-client="ca-pub-6309207317896311"
+      data-ad-slot="2485889698"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+    <h2 id="tips">10 Tips for Better Results in Art Studio</h2>
+    <ol>
+      <li><strong>Start with light, thin strokes.</strong> Build up your drawing gradually instead of using a thick brush from the start.</li>
+      <li><strong>Use undo freely.</strong> Digital drawing lets you undo any mistake instantly. Experiment without fear.</li>
+      <li><strong>Try lower opacity for shading.</strong> Set your brush to 20–40% opacity and paint over the same area multiple times for a natural gradient effect.</li>
+      <li><strong>Zoom in for fine details.</strong> Use Ctrl+Plus (or Cmd+Plus on Mac) to zoom in when working on small areas.</li>
+      <li><strong>Use the Color Extractor first.</strong> Pull a beautiful color palette from a photo using Toolkit Pro, then use those hex codes in Art Studio for a professional, cohesive look.</li>
+      <li><strong>Draw loose and fast first.</strong> Don't try to make it perfect immediately. Sketch the rough shape quickly, then refine it. Fast sketches often have more energy.</li>
+      <li><strong>Vary your brush size.</strong> Use a large brush for backgrounds and a small brush for details. This contrast makes artwork look more dynamic and professional.</li>
+      <li><strong>Use shapes for clean geometry.</strong> The shape tools (rectangle, circle, line) are much easier than drawing perfect shapes freehand. Use them as a foundation.</li>
+      <li><strong>Take breaks and look at it fresh.</strong> Step away for 5 minutes then look again. You'll see problems and improvements you couldn't see while working on it.</li>
+      <li><strong>Save versions as you go.</strong> Download your artwork at different stages. If you go in a direction you don't like, you can refer back to an earlier saved version.</li>
+    </ol>
+
+    <!-- KEY BOX -->
+    <div class="key-box">
+      <h3> Art Studio Quick Start Summary</h3>
+      <ul>
+        <li> Open at <strong>app-tool.vercel.app/art-tool.html</strong> — no download, no sign-up</li>
+        <li> Pick your background color before you start drawing</li>
+        <li> Choose brush → select color → adjust brush size → draw</li>
+        <li> Ctrl+Z (Cmd+Z on Mac) to undo any mistake instantly</li>
+        <li> Works on phone with finger drawing — no stylus needed</li>
+        <li> 100% private — your artwork never leaves your device</li>
+        <li> Download as PNG with no watermarks when finished</li>
+        <li> Great for blog graphics, Pinterest pins, social posts, and fun doodling</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h3> Ready to Create Your First Digital Artwork?</h3>
+      <p>Open Art Studio right now — no download, no sign-up, completely free. Works on your phone, tablet, or computer.</p>
+      <a href="https://app-tool.vercel.app/art-tool.html" class="cta-btn">🎨 Open Art Studio Free</a>
+    </div>
+
+    <!-- FAQ -->
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to create an account to use Art Studio?</div>
+      <div class="faq-a">No. Art Studio requires absolutely no sign-up, no email address, no password, and no account of any kind. Just open the page in your browser and start drawing. This is by design — Toolkit Pro believes all tools should be instantly accessible to everyone without any barriers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is Art Studio free forever, or is there a free trial?</div>
+      <div class="faq-a">Art Studio is free forever — not a trial, not a limited free plan. There is no paid version of Art Studio, no feature lock, and no watermarks on downloads. Toolkit Pro is supported by Google AdSense ads and Amazon affiliate links, which allows all tools to remain completely free for every user.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use Art Studio on my iPhone or Android phone?</div>
+      <div class="faq-a">Yes. Art Studio is designed to work on mobile devices. Open the page in Safari (iPhone) or Chrome (Android) and use your finger to draw directly on the canvas. For more precise control, any stylus that works with your phone's screen will work too. The toolbar adapts to mobile screen sizes for easy tap access.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What file format does Art Studio save in?</div>
+      <div class="faq-a">Art Studio saves your artwork as a PNG file. PNG is ideal for digital artwork because it supports transparent backgrounds, preserves sharp edges and details without compression, and works on every image viewer, social platform, and website. If you need a JPG or WebP version, convert the PNG using the Toolkit Pro Image Compressor.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is my artwork safe and private?</div>
+      <div class="faq-a">Completely. Art Studio runs entirely inside your browser. Nothing you draw is ever sent to any server — Toolkit Pro's servers don't even know you're using the tool. Your artwork exists only on your device until you save it to your downloads folder.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use my Art Studio creations commercially?</div>
+      <div class="faq-a">Yes. Any artwork you create using Art Studio belongs entirely to you. You can use it for commercial purposes — selling it, using it in client work, publishing it in products, or monetizing it on social media or a blog. There are no usage restrictions on artwork created with Toolkit Pro tools.</div>
+    </div>
+
+    <!-- Tags -->
+    <div class="tag-list">
+      <a href="#" class="tag">Digital Art</a>
+      <a href="#" class="tag">Free Drawing Tool</a>
+      <a href="#" class="tag">Browser Art</a>
+      <a href="#" class="tag">Online Drawing</a>
+      <a href="#" class="tag">No Download</a>
+      <a href="#" class="tag">Creative Tools</a>
+      <a href="#" class="tag">Social Media Graphics</a>
+      <a href="#" class="tag">Pinterest Art</a>
+    </div>
+
+    <!-- Share -->
+    <div class="share-box">
+      <span>Share this guide:</span>
+      <a href="https://www.pinterest.com" target="_blank" class="share-btn s-pi">📌 Pinterest</a>
+      <a href="#" class="share-btn s-fb">📘 Facebook</a>
+      <a href="#" class="share-btn s-wa">💬 WhatsApp</a>
+      <button class="share-btn s-cp" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✅ Copied!'">🔗 Copy Link</button>
+    </div>
+
+  </div><!-- /article-body -->
+
+  <!-- Related -->
+  <div class="related-posts">
+    <h2>Related Articles</h2>
+    <div class="related-grid">
+      <a href="How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html" class="related-card"><div class="rc-img rc3">🌿</div><div class="rc-info"><h4>How to Create Viral Aesthetic Quote Cards for Pinterest</h4><p>Use Nature Designer to make beautiful quote pins.</p></div></a>
+      <a href="How-to-Extract-Color-Palettes-from-Any-Image.html" class="related-card"><div class="rc-img rc2">🎨</div><div class="rc-info"><h4>How to Extract Color Palettes From Any Image</h4><p>Find perfect colors for your artwork instantly.</p></div></a>
+      <a href="pinterest-image-seo.html" class="related-card"><div class="rc-img rc1">📌</div><div class="rc-info"><h4>Pinterest Image SEO Guide</h4><p>Get more views by optimizing your pin images.</p></div></a>
+      <a href="best-image-size-for-social-media.html" class="related-card"><div class="rc-img rc4">📐</div><div class="rc-info"><h4>Best Image Sizes for Social Media 2026</h4><p>Exact pixel dimensions for every platform.</p></div></a>
     </div>
   </div>
- 
- 
+
+</main>
+
+<!-- ════ SIDEBAR ════ -->
+<aside>
   
+
+  <!-- TOC -->
+  <div class="sw">
+    <h3> In This Guide</h3>
+    <ul class="toc-list">
+      <li><a href="#what-is">What Is Art Studio?</a></li>
+      <li><a href="#how-to-use">Step-by-Step Guide</a></li>
+      <li><a href="#what-to-create">What Can You Create?</a></li>
+      <li><a href="#who-uses">Who Is It For?</a></li>
+      <li><a href="#vs-others">Art Studio vs Others</a></li>
+      <li><a href="#tips">10 Tips for Better Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+
+  <!-- Tool CTA -->
+  <div class="sw" style="text-align:center">
+    <h3> Try Art Studio Now</h3>
+    <p style="font-size:14px;color:var(--text-light);margin-bottom:14px">Free digital drawing in your browser. No download, no sign-up, no watermarks.</p>
+    <a href="https://app-tool.vercel.app/art-tool.html"
+      style="display:block;background:var(--primary);color:#fff;padding:12px 16px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;margin-bottom:10px">
+       Open Art Studio Free
+    </a>
+    <a href="https://app-tool.vercel.app/index.html#palette-section"
+      style="display:block;background:var(--bg-alt);color:var(--primary);padding:10px 16px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--border)">
+      Color Extractor
+    </a>
+  </div>
+
+  <!-- Sidebar Ad Tall -->
+  <div class="ad-sb ad-sb-tall">
+    <ins class="adsbygoogle"
+      style="display:block;width:100%;min-height:320px"
+      data-ad-client="ca-pub-6309207317896311"
+      data-ad-slot="2485889698"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+  </div>
+
+  <!-- Popular Posts -->
+  <div class="sw">
+    <h3> Popular Posts</h3>
+    <ul class="pop-list">
+      <li><div class="pop-n">1</div><a href="amazon-affiliate-marketing-for-beginners.html">Amazon Affiliate for Beginners</a></li>
+      <li><div class="pop-n">2</div><a href="pinterest-image-seo.html">Pinterest Image SEO Guide</a></li>
+      <li><div class="pop-n">3</div><a href="how-to-compress-images.html">Compress Images Without Quality Loss</a></li>
+      <li><div class="pop-n">4</div><a href="how-to-speed-up-website-image.html">Speed Up Website Images</a></li>
+      <li><div class="pop-n">5</div><a href="How-to-Create-Viral-Aesthetic-Quote-Cards-for-Pinterest.html">Create Viral Quote Cards</a></li>
+    </ul>
+  </div>
+
+  <!-- Free Tools -->
+  <div class="sw">
+    <h3> All Free Tools</h3>
+    <ul class="sw-links">
+      <li><a href="https://app-tool.vercel.app/index.html#uploadArea"><i class="fas fa-compress-arrows-alt"></i>Image Compressor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#palette-section"><i class="fas fa-palette"></i>Color Extractor</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#qr-section"><i class="fas fa-qrcode"></i>QR Generator</a></li>
+      <li><a href="https://app-tool.vercel.app/index.html#nature-designer"><i class="fas fa-leaf"></i>Nature Designer</a></li>
+      <li><a href="https://app-tool.vercel.app/art-tool.html"><i class="fas fa-paint-brush"></i>Art Studio</a></li>
+      <li><a href="https://app-tool.vercel.app/voice-studio.html"><i class="fas fa-microphone"></i>Voice Studio</a></li>
+    </ul>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="sw">
+    <h3> Newsletter</h3>
+    <p style="font-size:14px;color:var(--text-light);margin-bottom:12px">Weekly tips on free creative tools, design &amp; digital art.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com">
+      <button type="button">Subscribe Free</button>
+    </div>
+  </div>
+</aside>
+
+</div><!-- /page-wrap -->
+
+<!-- BOTTOM AD 728×90 -->
+<div class="ad-top-wrap" style="padding-bottom:32px">
+  <div class="ad-leader">
+    <ins class="adsbygoogle ad-wrap"
+      style="display:block;width:100%;min-height:90px"
+      data-ad-client="ca-pub-6309207317896311"
+      data-ad-slot="2485889698"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+  </div>
+</div>
+
+ 
+
+<!-- FOOTER -->
 <footer>
-  <div class="aff-foot"> This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
-  <div class="footer-inner">
-    <div class="footer-brand">
+  <div class="aff-foot">This site contains Amazon affiliate links. If you purchase through our links, we earn a small commission at no extra cost to you. All tools remain free for everyone.</div>
+  <div class="fi">
+    <div>
       <div class="logo">ToolkitPro</div>
       <p>Free browser-based tools for digital creators. Built with passion by Shaheera Sadia from Mandi Bahauddin, Pakistan.</p>
-      <div class="footer-social">
+      <div class="fsoc">
         <a href="https://www.pinterest.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-pinterest-p"></i></a>
         <a href="https://www.linkedin.com/in/shaheera-sadia-038944374/" target="_blank" class="fsb"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/shaheerasadia" target="_blank" class="fsb"><i class="fab fa-github"></i></a>
         <a href="mailto:shaheerasadia@gmail.com" class="fsb"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    
-    <div class="footer-col"><h4>All Tools</h4><ul>
+    <div class="fc"><h4>All Tools</h4><ul>
       <li><a href="https://app-tool.vercel.app/index.html#uploadArea">Image Compressor</a></li>
       <li><a href="https://app-tool.vercel.app/index.html#palette-section">Color Extractor</a></li>
       <li><a href="https://app-tool.vercel.app/index.html#qr-section">QR Generator</a></li>
@@ -372,40 +789,40 @@
       <li><a href="https://app-tool.vercel.app/voice-studio.html">Voice Studio</a></li>
       <li><a href="https://app-tool.vercel.app/nature-gallery.html">Nature Gallery</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Blog</h4><ul>
+    <div class="fc"><h4>Blog</h4><ul>
       <li><a href="https://app-tool.vercel.app/Blog/how-to-compress-images.html">Image Compression</a></li>
       <li><a href="https://app-tool.vercel.app/Blog/pinterest-image-seo.html">Pinterest SEO</a></li>
       <li><a href="https://app-tool.vercel.app/Blog/best-image-size-for-social-media.html">Social Media Sizes</a></li>
       <li><a href="https://app-tool.vercel.app/Blog/png-vs-jpg-vs-webp.html">PNG vs JPG vs WebP</a></li>
       <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">All Articles →</a></li>
     </ul></div>
-    
-    <div class="footer-col">
-     <h4>Site</h4>
+   
+     <div class="fc"><h4>Site</h4>
       <ul>
         <li><a href="https://app-tool.vercel.app/about.html">About</a></li>
         <li><a href="https://app-tool.vercel.app/contact.html">Contact</a></li>
         <li><a href="https://app-tool.vercel.app/Blog/all-blog.html">Blog</a></li>
         <li><a href="https://app-tool.vercel.app/Resources.html">Resources</a></li>
       </ul>
-   </div>
-    <div class="footer-col"><h4>Legal</h4><ul>
+    </div> 
+    <div class="fc"><h4>Legal</h4><ul>
       <li><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a></li>
       <li><a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></li>
       <li><a href="https://app-tool.vercel.app/cookie-policy.html">Cookie Policy</a></li>
       <li><a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate Disclosure</a></li>
     </ul></div>
   </div>
- 
-     
- 
-  <div class="footer-bottom">
+  <div class="fb">
     <span>© 2026 Toolkit Pro | Developed by <strong>Shaheera Sadia</strong> — Mandi Bahauddin, Punjab, Pakistan</span>
-    <span><a href="https://app-tool.vercel.app/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://app-tool.vercel.app/terms.html">Terms of Service</a></span>
+    <span>
+      <a href="https://app-tool.vercel.app/privacy.html">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/terms.html">Terms</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/cookie-policy.html">Cookies</a> &nbsp;·&nbsp;
+      <a href="https://app-tool.vercel.app/affiliate-disclosure.html">Affiliate</a>
+    </span>
   </div>
 </footer>
-
-<!-- Cookie Banner (paste this on ALL pages) -->
+<!-- ═══ COOKIE BANNER ═══ -->
 <style id="cookie-banner-css">
 #cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid #1a73e8;box-shadow:0 -4px 24px rgba(0,0,0,.12);padding:16px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;font-family:'Source Sans 3',Arial,sans-serif;font-size:14px;line-height:1.5;transform:translateY(100%);transition:transform .35s ease}
 #cookie-banner.show{transform:translateY(0)}
@@ -423,16 +840,20 @@
 </style>
 <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
   <button class="cb-close" onclick="cookieBanner.dismiss()" aria-label="Close">✕</button>
-  <div class="cb-text"> <strong>We use cookies</strong> to serve relevant ads (Google AdSense) and understand how visitors use our site (Google Analytics). Your files are always processed locally — never uploaded. <a href="/cookie-policy.html">Learn more</a></div>
+  <div class="cb-text"><strong>We use cookies</strong> to serve relevant ads (Google AdSense) and understand how visitors use our site. Your files are always processed locally — never uploaded. <a href="https://app-tool.vercel.app/cookie-policy.html">Learn more</a></div>
   <div class="cb-btns">
     <button class="cb-btn cb-decline" onclick="cookieBanner.decline()">Decline</button>
     <button class="cb-btn cb-accept" onclick="cookieBanner.accept()">Accept All Cookies</button>
   </div>
 </div>
-<button id="cookie-reopen" onclick="cookieBanner.reopen()" aria-label="Cookie settings"> Cookie Settings</button>
+<button id="cookie-reopen" onclick="cookieBanner.reopen()" aria-label="Cookie settings">🍪 Cookie Settings</button>
+
 <script>
+/* Cookie banner */
 (function(){
-  var K='tkpro_cookie_consent',banner=document.getElementById('cookie-banner'),reopen=document.getElementById('cookie-reopen');
+  var K='tkpro_cookie_consent',
+      banner=document.getElementById('cookie-banner'),
+      reopen=document.getElementById('cookie-reopen');
   function get(){return localStorage.getItem(K)}
   function set(v){localStorage.setItem(K,v)}
   function loadAds(){if(window.adsbygoogle){try{(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0}catch(e){}}}
@@ -448,30 +869,44 @@
   else if(s==='accepted'){loadAds()}
   else{pauseAds();reopen.style.display='flex'}
 })();
+
+/* Mobile nav */
+var mob=document.getElementById('mob'),
+    nl=document.getElementById('nl'),
+    overlay=document.getElementById('navOverlay');
+mob.addEventListener('click',function(){
+  nl.classList.toggle('open');
+  mob.classList.toggle('x');
+  overlay.classList.toggle('show');
+});
+overlay.addEventListener('click',function(){
+  nl.classList.remove('open');
+  mob.classList.remove('x');
+  overlay.classList.remove('show');
+});
+
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){q.parentElement.classList.toggle('open')});
+});
 </script>
-<script>
-  // Mobile Menu Toggle Javascript
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
-
-  mobileMenuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-    const icon = mobileMenuBtn.querySelector('i');
-    if (navMenu.classList.contains('show')) {
-        icon.classList.replace('fa-bars', 'fa-times');
-    } else {
-        icon.classList.replace('fa-times', 'fa-bars');
-    }
-  });
-
-  // Global click alignment to close mobile menu
-  document.addEventListener('click', (e) => {
-      if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
-          navMenu.classList.remove('show');
-          mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-      }
-  });
-</script>
-
 </body>
-</html> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
