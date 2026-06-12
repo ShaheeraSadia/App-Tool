@@ -264,11 +264,23 @@ footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255
   .related-grid{grid-template-columns:1fr 1fr}
   .fi{grid-template-columns:1fr 1fr;gap:24px}
 }
+  html {
+    /* اوور اسکرول لاک ختم کریں تاکہ موبائل پر اسکرول نارمل ہو */
+    overscroll-behavior: auto !important; 
+}
+
+@media(max-width:960px) {
+  .page-wrap {
+    grid-template-columns: minmax(0, 1fr) !important; /* یہ کنٹینٹ کو زبردستی کنٹینر کے اندر رکھے گا */
+    gap: 28px;
+    width: 100%;
+  }
+}
 
 /* ═══════════════════════════════
    RESPONSIVE — MOBILE 600px
 ═══════════════════════════════ */
-@media(max-width:500px){
+@media(max-width:600px){
   nav.main-nav{padding:0 14px;height:58px}
   .nl{top:58px;height:calc(100vh - 58px)}
   .page-wrap{padding:0 14px;margin-top:16px}
@@ -306,6 +318,29 @@ footer{background:linear-gradient(135deg,#0d1b5e,#1a2f8a);color:rgba(255,255,255
   .idea-grid{grid-template-columns:1fr}
   .step-card{grid-template-columns:36px 1fr;gap:10px;padding:12px 10px}
   .step-num{width:36px;height:36px;font-size:14px}
+}
+  /* ═══ GLOBAL RESPONSIVE SAFETY NET ═══ */
+@media (max-width: 600px) {
+  /* تمام بڑے بلاکس کو اپنے پیرنٹ کنٹینر کے اندر محدود کریں */
+  .ad-wrap, .ad-leader, .ad-article, .ad-sb, .feat-banner, table, .table-wrap {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* اگر ٹیبلز بہت لمبی ہوں تو وہ پورے پیج کو خراب کرنے کے بجائے اپنے اندر اسکرول ہوں گی */
+  .table-wrap {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  /* کسی بھی بڑے عنصر کو دائیں بائیں پکسل پھٹنے سے روکنے کے لیے */
+  .article-body, main, aside {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
 }
 </style>
 </head>
