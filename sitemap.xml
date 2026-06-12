@@ -178,7 +178,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
+         
+<url>
+    <loc>https://app-tool.vercel.app/Blog/best-free-image-tools-for-bloggers.html</loc>
+    <lastmod>2026-06-012</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- ─── LEGAL & POLICY PAGES ─── -->
 
